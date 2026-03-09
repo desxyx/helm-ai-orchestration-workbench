@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Council</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar-copy">
+          <p class="eyebrow">Local Multi-Model Runner</p>
+          <h1>Run one prompt across three models.</h1>
+          <p id="global-message" class="top-hint"></p>
+        </div>
+        <div class="topbar-actions">
+          <button id="new-session-button" class="ghost-button">New Session</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="sidebar">
+          <section class="panel compose-panel">
+            <div class="session-head">
+              <div>
+                <p class="panel-label">Current Session</p>
+                <p id="session-indicator" class="session-indicator">No active session</p>
+              </div>
+            </div>
+            <label for="prompt-input">Prompt</label>
+            <textarea id="prompt-input" placeholder="Enter the next round prompt..."></textarea>
+            <button id="send-button" class="primary-button">Run Round</button>
+          </section>
+
+          <section class="panel sessions-panel">
+            <div class="panel-title-row">
+              <h2>Session Review</h2>
+              <button id="refresh-sessions" class="ghost-button">Refresh</button>
+            </div>
+            <div class="review-selects">
+              <div>
+                <label for="session-select">Session</label>
+                <select id="session-select" class="session-select"></select>
+              </div>
+              <div>
+                <label for="round-select">Round</label>
+                <select id="round-select" class="session-select"></select>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel summary-panel">
+            <h2>Summary</h2>
+            <pre id="summary-output" class="summary-output">Current round summary will appear here.</pre>
+          </section>
+        </aside>
+
+        <section class="board">
+          <div class="columns">
+            <article class="panel agent-panel" data-agent="gemini">
+              <div class="agent-header">
+                <h2>Gemini</h2>
+                <span id="badge-gemini" class="agent-badge queued">queued</span>
+              </div>
+              <p id="stage-gemini" class="agent-stage">Waiting to start.</p>
+              <pre id="content-gemini" class="agent-content"></pre>
+            </article>
+
+            <article class="panel agent-panel" data-agent="claude">
+              <div class="agent-header">
+                <h2>Claude</h2>
+                <span id="badge-claude" class="agent-badge queued">queued</span>
+              </div>
+              <p id="stage-claude" class="agent-stage">Waiting to start.</p>
+              <pre id="content-claude" class="agent-content"></pre>
+            </article>
+
+            <article class="panel agent-panel" data-agent="chatgpt">
+              <div class="agent-header">
+                <h2>ChatGPT</h2>
+                <span id="badge-chatgpt" class="agent-badge queued">queued</span>
+              </div>
+              <p id="stage-chatgpt" class="agent-stage">Waiting to start.</p>
+              <pre id="content-chatgpt" class="agent-content"></pre>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>

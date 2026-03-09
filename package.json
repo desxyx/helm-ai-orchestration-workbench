@@ -1,0 +1,13 @@
+{
+  "name": "council-orchestrator",
+  "version": "0.1.0",
+  "description": "Local browser-based multi-model runner prototype",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "ui": "node server.js"
+  },
+  "dependencies": {
+    "playwright": "^1.42.0"
+  }
+}

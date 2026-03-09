@@ -1,0 +1,5 @@
+node_modules/
+browser-profiles/
+data/sessions/
+.DS_Store
+npm-debug.log*
