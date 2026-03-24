@@ -1,5 +1,10 @@
-node_modules/
-browser-profiles/
-data/sessions/
 .DS_Store
+node_modules/
+user/platform/node_modules/
+user/platform/browser-profiles/
+user/data/sessions/
+user/data/audits/
+user/data/temp/
+user/web_data/save_score/
+user/web_data/todolist/
 npm-debug.log*

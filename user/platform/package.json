@@ -1,0 +1,13 @@
+{
+  "name": "helm-platform",
+  "version": "0.1.0",
+  "description": "H.E.L.M local council runtime and orchestration platform",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "ui": "node server.js"
+  },
+  "dependencies": {
+    "playwright": "^1.42.0"
+  }
+}

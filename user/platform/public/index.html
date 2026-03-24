@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>H.E.L.M</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="save-toast" class="save-toast" role="status" aria-live="polite" hidden></div>
+    <div class="app-shell">
+      <header class="topbar topbar--compact">
+        <div class="topbar-copy">
+          <p class="eyebrow">H.E.L.M Local-First Council</p>
+          <h1>Three minds, one workbench.</h1>
+          <p id="global-message" class="top-hint"></p>
+        </div>
+        <div class="topbar-actions">
+          <button id="new-session-button" class="ghost-button">New Session</button>
+        </div>
+      </header>
+
+      <!-- Control Panel -->
+      <div class="chair-tools-panel">
+
+        <!-- To-Do Module -->
+        <div class="ct-module ct-todo">
+          <h2 class="ct-module-title">To-Do</h2>
+          <div class="ct-todo-input-row">
+            <input type="text" id="todo-input" placeholder="Add item..." />
+            <button id="todo-add-btn" class="ct-btn-primary">Add</button>
+          </div>
+          <ul id="todo-active-list" class="ct-todo-list"></ul>
+        </div>
+
+        <!-- Template Viewer Module -->
+        <div class="ct-module ct-template">
+          <h2 class="ct-module-title">Templates</h2>
+          <div class="ct-tabs">
+            <button class="ct-tab active" data-tab="voting">voting</button>
+            <button class="ct-tab" data-tab="answer">answer</button>
+            <button class="ct-tab" data-tab="template">template</button>
+            <button class="ct-tab ct-tab-temp" data-tab="pad1">pad 1</button>
+            <button class="ct-tab ct-tab-temp" data-tab="pad2">pad 2</button>
+          </div>
+          <div class="ct-tab-body">
+            <pre id="tpl-voting" class="ct-tpl-content active" data-fixed="voting_process.MD"></pre>
+            <pre id="tpl-answer" class="ct-tpl-content" data-fixed="answer.MD"></pre>
+            <pre id="tpl-template" class="ct-tpl-content" data-fixed="template.MD"></pre>
+            <textarea id="tpl-pad1" class="ct-tpl-pad" placeholder="Temporary pad 1 — lost on refresh" hidden></textarea>
+            <textarea id="tpl-pad2" class="ct-tpl-pad" placeholder="Temporary pad 2 — lost on refresh" hidden></textarea>
+          </div>
+        </div>
+
+        <!-- Score Calculator Module -->
+        <div class="ct-module ct-calc">
+          <h2 class="ct-module-title">Score Calculator</h2>
+          <div class="ct-calc-controls">
+            <select id="calc-mode">
+              <option value="" disabled selected>— scoring mode —</option>
+              <option value="1x2">×2 · 1 proposal</option>
+              <option value="1x2_two">×2 · 2 proposals</option>
+              <option value="1x3">×3 · 1 proposal (self-score)</option>
+              <option value="1x3_two">×3 · 2 proposals (self-score)</option>
+            </select>
+            <select id="calc-scene">
+              <option value="" disabled selected>— scene / rubric —</option>
+              <option value="core_only">Core Only</option>
+              <option value="template_protocol">Template / Protocol</option>
+              <option value="delivery_handoff">Delivery / Handoff</option>
+              <option value="idea_strategy">Idea / Strategy</option>
+              <option value="merge_final">Merge / Final</option>
+            </select>
+          </div>
+          <div id="calc-grid-wrap" class="ct-calc-grid-wrap">
+            <table id="calc-grid" class="ct-calc-grid">
+              <thead id="calc-grid-head"></thead>
+              <tbody id="calc-grid-body"></tbody>
+              <tfoot id="calc-grid-foot"></tfoot>
+            </table>
+          </div>
+          <p id="calc-error" class="ct-calc-error" hidden></p>
+          <div class="ct-calc-actions">
+            <button id="calc-submit" class="ct-btn-primary" disabled>Calculate</button>
+            <button id="calc-reset" class="ct-btn-ghost">Reset</button>
+          </div>
+          <div id="calc-result" class="ct-calc-result" hidden></div>
+        </div>
+
+      </div>
+      <!-- /Control Panel -->
+
+      <main class="workspace">
+        <aside class="sidebar">
+          <section class="panel compose-panel">
+            <div class="session-head">
+              <div>
+                <p class="panel-label">Current Session</p>
+                <p id="session-indicator" class="session-indicator">No active session</p>
+              </div>
+            </div>
+            <label for="prompt-input">Prompt</label>
+            <textarea id="prompt-input" placeholder="Send the next council round..."></textarea>
+            <button id="send-button" class="primary-button">Dispatch To Council</button>
+            <p id="dispatch-guard-hint" class="dispatch-guard-hint" hidden></p>
+          </section>
+
+          <section class="panel sessions-panel">
+            <div class="panel-title-row">
+              <h2>Session Review</h2>
+              <button id="refresh-sessions" class="ghost-button">Refresh</button>
+            </div>
+            <div class="review-selects">
+              <div>
+                <label for="session-select">Session</label>
+                <select id="session-select" class="session-select"></select>
+              </div>
+              <div>
+                <label for="round-select">Round</label>
+                <select id="round-select" class="session-select"></select>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel summary-panel">
+            <div class="panel-title-row">
+              <h2>Summary</h2>
+              <div class="summary-actions">
+                <select
+                  id="save-type-select"
+                  class="session-select summary-save-select"
+                  aria-label="Select summary save type"
+                >
+                  <option value="audit">Audit</option>
+                  <option value="scoring_criteria">Criteria</option>
+                </select>
+                <div class="summary-action-row">
+                  <button
+                    id="save-summary-button"
+                    type="button"
+                    class="ghost-button summary-action-button"
+                  >
+                    Save
+                  </button>
+                  <button
+                    id="summary-attach-toggle"
+                    type="button"
+                    class="ghost-button summary-toggle-button"
+                    aria-pressed="true"
+                    aria-label="Toggle whether the next dispatch includes the carried summary"
+                  >
+                    Attached
+                  </button>
+                </div>
+              </div>
+            </div>
+            <pre id="summary-output" class="summary-output">Current round summary will appear here.</pre>
+          </section>
+        </aside>
+
+        <section class="board">
+          <div class="columns">
+            <article class="panel agent-panel" data-agent="gemini">
+              <div class="agent-header">
+                <div class="agent-heading">
+                  <h2>Gemini</h2>
+                  <button
+                    id="refresh-gemini"
+                    type="button"
+                    class="ghost-button refresh-button"
+                  >
+                    Refresh Reply
+                  </button>
+                </div>
+                <span id="badge-gemini" class="agent-badge queued">queued</span>
+              </div>
+              <p id="stage-gemini" class="agent-stage">Waiting to start.</p>
+              <pre id="content-gemini" class="agent-content"></pre>
+            </article>
+
+            <article class="panel agent-panel" data-agent="claude">
+              <div class="agent-header">
+                <div class="agent-heading">
+                  <h2>Claude</h2>
+                  <button
+                    id="refresh-claude"
+                    type="button"
+                    class="ghost-button refresh-button"
+                  >
+                    Refresh Reply
+                  </button>
+                </div>
+                <span id="badge-claude" class="agent-badge queued">queued</span>
+              </div>
+              <p id="stage-claude" class="agent-stage">Waiting to start.</p>
+              <pre id="content-claude" class="agent-content"></pre>
+            </article>
+
+            <article class="panel agent-panel" data-agent="chatgpt">
+              <div class="agent-header">
+                <div class="agent-heading">
+                  <h2>ChatGPT</h2>
+                  <button
+                    id="refresh-chatgpt"
+                    type="button"
+                    class="ghost-button refresh-button"
+                  >
+                    Refresh Reply
+                  </button>
+                </div>
+                <span id="badge-chatgpt" class="agent-badge queued">queued</span>
+              </div>
+              <p id="stage-chatgpt" class="agent-stage">Waiting to start.</p>
+              <pre id="content-chatgpt" class="agent-content"></pre>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>

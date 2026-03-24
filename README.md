@@ -1,91 +1,57 @@
-# AI Council
+# H.E.L.M
 
-Local prototype for sending the same prompt to ChatGPT, Gemini, and Claude through browser automation, then storing each round locally for review.
+Public demonstration repo for H.E.L.M: Human-Executed Layered Multi-model.
 
-This repository is meant to stay lightweight and publishable. Local browser profiles, saved sessions, and other machine-specific files are not part of the repo.
+H.E.L.M started as a browser-automation prototype and grew into something much more interesting: a protocol-aware, three-layer workspace for making real decisions with multiple frontier models under real constraints.
 
-## What it does
+The core structure is:
 
-- Opens separate browser profiles for ChatGPT, Gemini, and Claude
-- Sends one round prompt to all three products
-- Captures each reply and stores the round as local JSON
-- Carries the previous round summary into the next round
-- Shows live status and saved history in a small local UI
+- `council/` for the decision layer: constitutions, kickoff patterns, task contracts, and template assets
+- `user/` for the current human-driven orchestration layer: platform runtime, local tools, handoff points, and session-side records
+- `executors/` for the execution layer: executor charter, vault, MCP notes, and shared skill library
 
-## Tech stack
+The important part is not just that these folders exist. The structure became strong because many of the key boundaries were not pre-scripted line by line by the human operator. Under prompt discipline, file boundaries, and repeated review loops, the council and executors kept surfacing the same structural demands:
 
-- Node.js
-- Playwright
-- Plain HTML, CSS, and JavaScript
-- Local JSON storage
+- the decision layer should stay separate from heavy execution
+- executor work needs its own folder, handoff path, and charter
+- council assets should not be silently edited by executors
+- the middle layer needs its own records, tools, and routing responsibility
 
-## Project structure
+In other words, a large part of the architecture was pressure-tested into existence. It did not come from a single clean whiteboard moment; it emerged from repeated constrained interaction between Council, Executors, and the human operator.
 
-```text
-ai_council_public/
-├── server.js
-├── config.js
-├── main.js
-├── package.json
-├── public/
-│   ├── index.html
-│   ├── styles.css
-│   └── app.js
-├── data/
-│   └── sessions/
-└── src/
-    ├── adapters/
-    ├── browser/
-    ├── orchestrator/
-    ├── storage/
-    └── utils/
-```
+That is why this repo matters. It is not only a demo app. It is evidence that a local-first multi-model workflow can evolve from "three AI chats" into a layered operating structure with memory, delivery discipline, and boundary control.
 
-## Setup
+Some of the strongest parts of the system came from the models themselves pushing the structure forward inside constraints:
 
-1. Install dependencies.
+- the early move toward unified template replies was not just UI polish; council itself kept converging on template discipline, and the template library later became one of the project's real assets
+- the first serious folder cleanup was driven by council pressure that decision assets should stop hanging off the platform root and live in their own layer
+- after scanning the repo, executors pushed for another restructure so execution would have its own folder, vault, and charter rather than living as an afterthought
+- once that restructure landed, executors themselves proposed reviewing the raw sessions; council agreed, issued a scanner contract, and the system completed its first real `council -> executor -> council` loop
+- the middle layer also got pushed into better behavior: repeated friction around messy input, context drift, and weak tracking pushed the user layer toward stronger process discipline, explicit records, and local tools instead of "just try harder" human orchestration
+
+That is the brag here. The repo is good not because someone invented a pretty three-folder diagram. It is good because the structure kept surviving contact with real work, and because council and executors repeatedly forced sharper boundaries, better records, and more disciplined handoff behavior.
+
+One more reason the structure is valuable: in the working system, `council/task/` preserves task-level decision records, while `user/data/sessions/` preserves round-by-round AI dialogue. Together, those two record streams form the beginning of a future training corpus for a stronger middle-layer AI: one that could compress messy human input, route work more cleanly, carry forward context, and reduce the user's orchestration burden.
+
+The long-term idea is simple: keep the human in control, but gradually make the middle layer less exhausting. The future middle layer is not imagined as magic. It would be trained on exactly the kinds of artifacts this structure already produces: task contracts, round records, handoffs, review notes, and structured corrections.
+
+This repository is a curated public snapshot, not the full working archive. Sensitive session data, audit records, review packs, and most private operating notes have been removed. What remains is the platform, the three-layer repo shape, and a representative subset of governance files.
+
+## Run the platform
 
 ```bash
+cd user/platform
 npm install
-```
-
-2. Prepare local browser profiles for:
-
-- `./browser-profiles/chatgpt`
-- `./browser-profiles/gemini`
-- `./browser-profiles/claude`
-
-These directories are created and used locally. They should not be committed.
-
-3. Make sure each profile can access its target product with a valid logged-in session.
-
-4. Start the local UI server.
-
-```bash
 npm run ui
 ```
 
-5. Open `http://127.0.0.1:3030`.
+Then open `http://127.0.0.1:3030`.
 
-## Usage
+Local browser login state lives under `user/platform/browser-profiles/` and should remain machine-local.
 
-- Click `New Session` to open a fresh set of model tabs
-- Enter a prompt and click `Run Round`
-- Wait for all three replies to finish
-- Review saved sessions and earlier rounds from the sidebar
+## Public Repo Boundaries
 
-There is also a single-agent entry path for quick checks:
-
-```bash
-node main.js --agent=chatgpt
-node main.js --agent=gemini
-node main.js --agent=claude
-```
-
-## Notes
-
-- This is a prototype, not a production service.
-- Reply capture depends on page structure and selectors in each adapter.
-- If a provider changes its UI, that adapter may need to be updated.
-- Running tabs that already hold the same browser profile can block a new session from starting.
-- Session files under `data/sessions/` are local output and can be safely left out of the public repo.
+- Runtime sessions, audits, temp data, and browser profiles are not part of the public demo.
+- Public model names are standardized as `Claude`, `Gemini`, and `ChatGPT`.
+- The goal of this repo is to show the architecture and workflow shape, not to publish the full internal operating history.
+- Project history and public-facing repo updates are combined in `CHANGELOG.md`.
