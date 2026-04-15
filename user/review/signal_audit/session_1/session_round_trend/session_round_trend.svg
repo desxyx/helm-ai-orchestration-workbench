@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<style>
+text { font-family: Menlo, Consolas, monospace; fill: #253239; }
+.title { font-size: 24px; font-weight: 700; }
+.subtitle { font-size: 14px; fill: #5d6d73; }
+.axis { stroke: #7b8b8f; stroke-width: 1.5; }
+.grid { stroke: #d8e2e5; stroke-width: 1; }
+.line { fill: none; stroke: #006d77; stroke-width: 3; }
+.point { fill: #e76f51; }
+.xlabel { font-size: 12px; fill: #516268; }
+.ylabel { font-size: 12px; fill: #516268; }
+</style>
+<rect width="1280" height="720" fill="#f7fbfc" />
+<text x="80" y="36" class="title">Session Round Trend</text>
+<text x="80" y="58" class="subtitle">Included sessions only (round_count >= 3)</text>
+<line x1="80" y1="610.00" x2="1240" y2="610.00" class="grid" />
+<text x="68" y="614.00" text-anchor="end" class="ylabel">0</text>
+<line x1="80" y1="528.18" x2="1240" y2="528.18" class="grid" />
+<text x="68" y="532.18" text-anchor="end" class="ylabel">5</text>
+<line x1="80" y1="446.36" x2="1240" y2="446.36" class="grid" />
+<text x="68" y="450.36" text-anchor="end" class="ylabel">10</text>
+<line x1="80" y1="364.55" x2="1240" y2="364.55" class="grid" />
+<text x="68" y="368.55" text-anchor="end" class="ylabel">15</text>
+<line x1="80" y1="282.73" x2="1240" y2="282.73" class="grid" />
+<text x="68" y="286.73" text-anchor="end" class="ylabel">20</text>
+<line x1="80" y1="200.91" x2="1240" y2="200.91" class="grid" />
+<text x="68" y="204.91" text-anchor="end" class="ylabel">25</text>
+<line x1="80" y1="119.09" x2="1240" y2="119.09" class="grid" />
+<text x="68" y="123.09" text-anchor="end" class="ylabel">30</text>
+<line x1="80" y1="70.00" x2="1240" y2="70.00" class="grid" />
+<text x="68" y="74.00" text-anchor="end" class="ylabel">33</text>
+<line x1="80" y1="70" x2="80" y2="610" class="axis" />
+<line x1="80" y1="610" x2="1240" y2="610" class="axis" />
+<polyline points="80.00,430.00 138.00,266.36 196.00,315.45 254.00,430.00 312.00,282.73 370.00,184.55 428.00,282.73 486.00,86.36 544.00,380.91 602.00,446.36 660.00,315.45 718.00,380.91 776.00,348.18 834.00,430.00 892.00,380.91 950.00,511.82 1008.00,430.00 1066.00,430.00 1124.00,511.82 1182.00,462.73 1240.00,495.45" class="line" />
+<circle cx="80.00" cy="430.00" r="4.5" class="point"><title>session_006: 11 rounds</title></circle>
+<text x="80.00" y="634" text-anchor="middle" class="xlabel">session_006</text>
+<circle cx="138.00" cy="266.36" r="4.5" class="point"><title>session_008: 21 rounds</title></circle>
+<circle cx="196.00" cy="315.45" r="4.5" class="point"><title>session_012: 18 rounds</title></circle>
+<circle cx="254.00" cy="430.00" r="4.5" class="point"><title>session_013: 11 rounds</title></circle>
+<text x="254.00" y="634" text-anchor="middle" class="xlabel">session_013</text>
+<circle cx="312.00" cy="282.73" r="4.5" class="point"><title>session_017: 20 rounds</title></circle>
+<circle cx="370.00" cy="184.55" r="4.5" class="point"><title>session_025: 26 rounds</title></circle>
+<circle cx="428.00" cy="282.73" r="4.5" class="point"><title>session_027: 20 rounds</title></circle>
+<text x="428.00" y="634" text-anchor="middle" class="xlabel">session_027</text>
+<circle cx="486.00" cy="86.36" r="4.5" class="point"><title>session_028: 32 rounds</title></circle>
+<circle cx="544.00" cy="380.91" r="4.5" class="point"><title>session_029: 14 rounds</title></circle>
+<circle cx="602.00" cy="446.36" r="4.5" class="point"><title>session_030: 10 rounds</title></circle>
+<text x="602.00" y="634" text-anchor="middle" class="xlabel">session_030</text>
+<circle cx="660.00" cy="315.45" r="4.5" class="point"><title>session_031: 18 rounds</title></circle>
+<circle cx="718.00" cy="380.91" r="4.5" class="point"><title>session_032: 14 rounds</title></circle>
+<circle cx="776.00" cy="348.18" r="4.5" class="point"><title>session_033: 16 rounds</title></circle>
+<text x="776.00" y="634" text-anchor="middle" class="xlabel">session_033</text>
+<circle cx="834.00" cy="430.00" r="4.5" class="point"><title>session_034: 11 rounds</title></circle>
+<circle cx="892.00" cy="380.91" r="4.5" class="point"><title>session_035: 14 rounds</title></circle>
+<circle cx="950.00" cy="511.82" r="4.5" class="point"><title>session_037: 6 rounds</title></circle>
+<text x="950.00" y="634" text-anchor="middle" class="xlabel">session_037</text>
+<circle cx="1008.00" cy="430.00" r="4.5" class="point"><title>session_041: 11 rounds</title></circle>
+<circle cx="1066.00" cy="430.00" r="4.5" class="point"><title>session_044: 11 rounds</title></circle>
+<circle cx="1124.00" cy="511.82" r="4.5" class="point"><title>session_045: 6 rounds</title></circle>
+<text x="1124.00" y="634" text-anchor="middle" class="xlabel">session_045</text>
+<circle cx="1182.00" cy="462.73" r="4.5" class="point"><title>session_046: 9 rounds</title></circle>
+<circle cx="1240.00" cy="495.45" r="4.5" class="point"><title>session_047: 7 rounds</title></circle>
+<text x="1240.00" y="634" text-anchor="middle" class="xlabel">session_047</text>
+<text x="660.00" y="686" text-anchor="middle" class="subtitle">Session ID</text>
+<text x="24" y="340.00" transform="rotate(-90 24 340.00)" text-anchor="middle" class="subtitle">Round count</text>
+</svg>

@@ -18,7 +18,7 @@ const HOST = "127.0.0.1";
 const PUBLIC_DIR = path.join(__dirname, "public");
 const DEFAULT_SAVE_TYPE = auditStore.SAVE_TYPE_AUDIT;
 
-// Control Panel — web_data paths
+// Chair Tools — web_data paths
 const WEB_DATA_DIR = path.join(__dirname, "..", "web_data");
 const TODO_ACTIVE = path.join(WEB_DATA_DIR, "todolist", "active.json");
 const TODO_DONE = path.join(WEB_DATA_DIR, "todolist", "done.json");
@@ -892,7 +892,7 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // --- Control Panel API ---
+  // --- Chair Tools API ---
 
   // GET /api/template/:name — read fixed template file (whitelist-enforced)
   if (req.method === "GET" && pathname.startsWith("/api/template/")) {

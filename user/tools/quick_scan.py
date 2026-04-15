@@ -148,7 +148,7 @@ def file_list_table(root: Path):
 
 def main() -> int:
     if USE_OVERRIDE and (
-        "/Users/yourname/path/to/project" in ROOT_FOLDER
+        "/path/to/project" in ROOT_FOLDER
         or ROOT_FOLDER.strip() == ""
     ):
         print("[ERROR] ROOT_FOLDER looks like a placeholder; set it to a real directory.", file=sys.stderr)

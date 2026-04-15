@@ -3,10 +3,14 @@ const { createAgentError } = require("../utils/errors");
 const logger = require("../utils/logger");
 const { waitForHybridCompletion } = require("../utils/completion");
 const {
+  clickCopyAndRead,
+  pollForCopyButton,
+  scrollToBottom,
+} = require("./copyCapture");
+const {
   buildFullPromptText,
   clearInput,
   findEditableInput,
-  getPromptLines,
   injectPrompt,
   readInputText,
   waitForInputEmpty,
@@ -16,305 +20,437 @@ const { sleep } = require("../utils/time");
 
 const geminiConfig = config.gemini;
 const { completion } = config;
-// F07: Merge per-adapter injection overrides over shared base.
-// Gemini injection section is intentionally empty — preserve current working values.
 const injection = { ...config.injection, ...(geminiConfig.injection || {}) };
-let lastPromptText = "";
 const sendButtonSelectors = [
   'button[aria-label="Send message"]',
+  'button[aria-label*="Send"]',
   'button[mattooltip="Send message"]',
+  'button[mattooltip*="Send"]',
+  'button[data-testid*="send"]',
   'button:has-text("Send")',
+  'button[aria-label="Run"]',
+  'button[mattooltip="Run"]',
+  'button:has-text("Run")',
+  'button[type="submit"]',
 ];
-const promptMetaPrefixes = [
-  "[Session]:",
-  "[Round]:",
-  "[Previous Summary]:",
-  "[New Prompt]:",
-];
-
-function isPromptScaffoldLine(text) {
-  if (!text) {
-    return false;
-  }
-
-  const normalized = text.trim();
-  const promptLines = getPromptLines(lastPromptText);
-
-  return (
-    normalized === "(empty)" ||
-    promptLines.includes(normalized) ||
-    promptMetaPrefixes.some((prefix) => normalized.startsWith(prefix))
-  );
-}
-
-function isIgnoredReplyText(text) {
-  return (
-    !text ||
-    text === lastPromptText ||
-    isPromptScaffoldLine(text) ||
-    text === "Show thinking" ||
-    text === "Gemini said" ||
-    text === "Answer now" ||
-    text.includes("Gemini can make mistakes") ||
-    text.includes("Double-check responses") ||
-    text.includes("Google AI") ||
-    text.includes("Extensions") ||
-    text.includes("Gems") ||
-    text.includes("Recent") ||
-    text.includes("Activity") ||
-    text.includes("Settings") ||
-    text.includes("Help") ||
-    text.includes("Apps")
-  );
-}
-
-function extractReplyFromLines(lines) {
-  return lines
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .filter((line) => !isIgnoredReplyText(line) && !line.startsWith("Thinking"))
-    .join("\n")
-    .trim();
-}
-
-function extractReplyFromFallbackLines(lines) {
-  const seenLongLines = new Set();
-
-  return extractReplyFromLines(
-    lines.filter((line) => {
-      const normalized = String(line || "").trim();
-
-      if (!normalized) {
-        return false;
-      }
-
-      if (normalized.length <= 4) {
-        return true;
-      }
-
-      if (seenLongLines.has(normalized)) {
-        return false;
-      }
-
-      seenLongLines.add(normalized);
-      return true;
-    })
-  );
-}
-
-async function readReplyAfterPrompt(page) {
-  return page.evaluate(({ promptText, promptLines, metaPrefixes }) => {
-    const isVisible = (element) => {
-      const style = window.getComputedStyle(element);
-      const rect = element.getBoundingClientRect();
-      return (
-        style.visibility !== "hidden" &&
-        style.display !== "none" &&
-        rect.width > 0 &&
-        rect.height > 0
-      );
-    };
-
-    const isRelevant = (element) =>
-      !element.closest(
-        'nav, aside, [role="navigation"], [role="complementary"], [data-testid*="sidebar"], [data-testid*="history"], [class*="sidebar"], [class*="history"]'
-      );
-
-    const shouldIgnore = (text) =>
-      !text ||
-      text === promptText ||
-      text === "(empty)" ||
-      promptLines.includes(text) ||
-      metaPrefixes.some((prefix) => text.startsWith(prefix)) ||
-      text === "Show thinking" ||
-      text === "Gemini said" ||
-      text === "Answer now" ||
-      text.includes("Gemini can make mistakes") ||
-      text.includes("Double-check responses") ||
-      text.includes("Google AI") ||
-      text.includes("Extensions") ||
-      text.includes("Gems") ||
-      text.includes("Recent") ||
-      text.includes("Activity") ||
-      text.includes("Settings") ||
-      text.includes("Help") ||
-      text.includes("Apps");
-
-    const main = document.querySelector("main") || document.body;
-    const elements = Array.from(main.querySelectorAll("*")).filter(
-      (element) => isVisible(element) && isRelevant(element)
-    );
-    const promptCandidates = elements
-      .map((element) => ({
-        element,
-        text: (element.innerText || "").trim(),
-      }))
-      .filter(({ text }) => text === promptText || text.includes(promptText));
-
-    const exactPrompt =
-      promptCandidates
-        .filter(({ text }) => text === promptText)
-        .sort((a, b) => a.text.length - b.text.length)[0] || null;
-
-    const partialPrompt =
-      promptCandidates.sort((a, b) => a.text.length - b.text.length)[0] || null;
-
-    const promptElement = exactPrompt?.element || partialPrompt?.element;
-    if (!promptElement) {
-      return [];
-    }
-
-    const walker = document.createTreeWalker(main, NodeFilter.SHOW_ELEMENT, {
-      acceptNode(node) {
-        return isVisible(node) && isRelevant(node)
-          ? NodeFilter.FILTER_ACCEPT
-          : NodeFilter.FILTER_SKIP;
-      },
-    });
-
-    const lines = [];
-    let foundPrompt = false;
-
-    while (walker.nextNode()) {
-      const element = walker.currentNode;
-
-      if (!foundPrompt) {
-        if (element === promptElement) {
-          foundPrompt = true;
-        }
-        continue;
-      }
-
-      const text = (element.innerText || "").trim();
-      if (shouldIgnore(text) || text.startsWith("Thinking")) {
-        continue;
-      }
-
-      const parts = text
-        .split("\n")
-        .map((line) => line.trim())
-        .filter(Boolean)
-        .filter((line) => !shouldIgnore(line) && !line.startsWith("Thinking"));
-
-      if (parts.length) {
-        lines.push(...parts);
-      }
-
-      if (lines.length && /[.!?。！？]$/.test(lines[lines.length - 1])) {
-        break;
-      }
-    }
-
-    return lines;
-  }, {
-    promptText: lastPromptText,
-    promptLines: getPromptLines(lastPromptText),
-    metaPrefixes: promptMetaPrefixes,
-  });
-}
-
-async function readTextFromSelectors(page) {
-  for (const selector of geminiConfig.replySelectors) {
-    const locator = page.locator(selector);
-    const count = await locator.count().catch(() => 0);
-
-    if (!count) {
-      continue;
-    }
-
-    for (let index = count - 1; index >= 0; index -= 1) {
-      const candidate = locator.nth(index);
-      const text = await candidate.innerText({ timeout: 1500 }).catch(() => "");
-      const extracted = extractReplyFromLines(text.split("\n"));
-
-      if (extracted) {
-        return extracted;
-      }
-    }
-  }
-
-  return "";
-}
-
-async function readLastReplyFromSelectors(page) {
-  for (const selector of geminiConfig.replySelectors) {
-    const locator = page.locator(selector);
-    const count = await locator.count().catch(() => 0);
-
-    if (!count) {
-      continue;
-    }
-
-    const text = await locator
-      .nth(count - 1)
-      .innerText({ timeout: 1500 })
-      .catch(() => "");
-    const extracted = extractReplyFromLines(text.split("\n"));
-
-    if (extracted) {
-      return { count, text: extracted };
-    }
-
-    const rawText = text
-      .split("\n")
-      .map((line) => line.trim())
-      .filter(Boolean)
-      .filter((line) => !isPromptScaffoldLine(line))
-      .join("\n")
-      .trim();
-
-    return { count, text: rawText };
-  }
-
-  return { count: 0, text: "" };
-}
-
-async function readTextFromMain(page) {
-  return page.evaluate(({ promptText, promptLines, metaPrefixes }) => {
-    const main = document.querySelector("main") || document.body;
-    return (main.innerText || "")
-      .split("\n")
-      .map((line) => line.trim())
-      .filter(Boolean)
-      .filter((line) => line !== promptText)
-      .filter((line) => line !== "(empty)")
-      .filter((line) => !promptLines.includes(line))
-      .filter((line) => !metaPrefixes.some((prefix) => line.startsWith(prefix)));
-  }, {
-    promptText: lastPromptText,
-    promptLines: getPromptLines(lastPromptText),
-    metaPrefixes: promptMetaPrefixes,
-  });
-}
-
-async function readReplyState(page) {
-  const selectorState = await readLastReplyFromSelectors(page);
-
-  if (selectorState.text) {
-    return selectorState;
-  }
-
-  const replyAfterPrompt = extractReplyFromFallbackLines(await readReplyAfterPrompt(page));
-  if (replyAfterPrompt) {
-    return {
-      count: Math.max(1, selectorState.count),
-      text: replyAfterPrompt,
-    };
-  }
-
-  const selectorText = await readTextFromSelectors(page);
-  if (selectorText) {
-    return {
-      count: Math.max(1, selectorState.count),
-      text: selectorText,
-    };
-  }
-
-  return selectorState;
-}
+const GEMINI_MESSAGE_SELECTOR = "message-content";
+const GEMINI_COPY_BUTTON_SELECTOR = 'button[mattooltip="Copy response"]';
 
 async function findInputLocator(page) {
   return findEditableInput(page, geminiConfig.inputSelector);
+}
+
+async function getLatestAssistantMessage(page) {
+  const selectors = Array.from(
+    new Set([GEMINI_MESSAGE_SELECTOR, ...(geminiConfig.replySelectors || [])])
+  );
+
+  for (const selector of selectors) {
+    const messages = page.locator(selector);
+    const count = await messages.count().catch(() => 0);
+
+    if (count > 0) {
+      return {
+        count,
+        locator: messages.nth(count - 1),
+      };
+    }
+  }
+
+  return {
+    count: 0,
+    locator: null,
+  };
+}
+
+async function readLatestAssistantActionDiagnostics(page) {
+  const selectors = Array.from(
+    new Set([GEMINI_MESSAGE_SELECTOR, ...(geminiConfig.replySelectors || [])])
+  );
+  const selectorCounts = {};
+
+  for (const selector of selectors) {
+    selectorCounts[selector] = await page
+      .locator(selector)
+      .count()
+      .catch(() => 0);
+  }
+
+  const { count, locator } = await getLatestAssistantMessage(page);
+  const globalCopyButtonCount = await page
+    .locator(GEMINI_COPY_BUTTON_SELECTOR)
+    .count()
+    .catch(() => 0);
+
+  if (!locator) {
+    return { messageCount: count, selectorCounts, globalCopyButtonCount, latestMessage: null };
+  }
+
+  await locator.scrollIntoViewIfNeeded().catch(() => null);
+  await locator.hover().catch(() => null);
+  await sleep(150);
+
+  const latestMessage = await locator
+    .evaluate((element) => {
+      const describe = (node) => {
+        if (!(node instanceof Element)) {
+          return null;
+        }
+
+        return {
+          tag: node.tagName.toLowerCase(),
+          id: node.id || "",
+          className: String(node.className || "")
+            .split(/\s+/)
+            .filter(Boolean)
+            .slice(0, 4)
+            .join("."),
+          dataTestId: node.getAttribute("data-testid") || "",
+          ariaLabel: node.getAttribute("aria-label") || "",
+          mattooltip: node.getAttribute("mattooltip") || "",
+        };
+      };
+      const isCopyLike = (node) => {
+        const label = (
+          node.getAttribute("aria-label") ||
+          node.getAttribute("mattooltip") ||
+          node.textContent ||
+          ""
+        )
+          .trim()
+          .toLowerCase();
+        return label.includes("copy");
+      };
+
+      const root = element.getRootNode();
+      const parent = element.parentElement;
+      const siblings = parent ? Array.from(parent.children) : [];
+      const index = siblings.indexOf(element);
+
+      return {
+        self: describe(element),
+        textPreview: ((element.innerText || element.textContent || "").trim() || "").slice(0, 220),
+        childButtonCount: element.querySelectorAll("button").length,
+        copyLikeButtonCount: Array.from(element.querySelectorAll("button")).filter(isCopyLike).length,
+        parent: describe(parent),
+        grandparent: describe(parent?.parentElement || null),
+        siblingWindow: siblings
+          .slice(Math.max(0, index - 2), index + 3)
+          .map((node) => describe(node)),
+        inShadowRoot: root instanceof ShadowRoot,
+        shadowHost: root instanceof ShadowRoot ? describe(root.host) : null,
+      };
+    })
+    .catch(() => null);
+
+  const buttons = await locator
+    .locator("button")
+    .evaluateAll((elements) =>
+      elements
+        .slice(0, 10)
+        .map((element) => {
+          const describe = (node) => {
+            if (!(node instanceof Element)) {
+              return null;
+            }
+
+            return {
+              tag: node.tagName.toLowerCase(),
+              id: node.id || "",
+              className: String(node.className || "")
+                .split(/\s+/)
+                .filter(Boolean)
+                .slice(0, 4)
+                .join("."),
+              dataTestId: node.getAttribute("data-testid") || "",
+              ariaLabel: node.getAttribute("aria-label") || "",
+              mattooltip: node.getAttribute("mattooltip") || "",
+            };
+          };
+
+          const label = (
+            element.getAttribute("aria-label") ||
+            element.getAttribute("mattooltip") ||
+            element.textContent ||
+            ""
+          ).trim();
+          const style = window.getComputedStyle(element);
+          const rect = element.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const hit =
+            rect.width > 0 && rect.height > 0 ? document.elementFromPoint(centerX, centerY) : null;
+          const root = element.getRootNode();
+
+          return {
+            label: label.slice(0, 80),
+            visible:
+              style.visibility !== "hidden" &&
+              style.display !== "none" &&
+              rect.width > 0 &&
+              rect.height > 0,
+            disabled: element.disabled === true,
+            opacity: style.opacity,
+            pointerEvents: style.pointerEvents,
+            rect: {
+              x: Math.round(rect.x),
+              y: Math.round(rect.y),
+              width: Math.round(rect.width),
+              height: Math.round(rect.height),
+            },
+            centerHit: describe(hit),
+            unobscured:
+              !hit || hit === element || element.contains(hit) || (hit instanceof Element && hit.contains(element)),
+            parent: describe(element.parentElement),
+            inShadowRoot: root instanceof ShadowRoot,
+            shadowHost: root instanceof ShadowRoot ? describe(root.host) : null,
+          };
+        })
+        .filter((entry) => entry.label)
+    )
+    .catch(() => []);
+
+  const copyButtons = await locator
+    .locator(GEMINI_COPY_BUTTON_SELECTOR)
+    .evaluateAll((elements) =>
+      elements.slice(0, 10).map((element) => ({
+        ariaLabel: element.getAttribute("aria-label") || "",
+        mattooltip: element.getAttribute("mattooltip") || "",
+        dataTestId: element.getAttribute("data-testid") || "",
+        text: (element.textContent || "").trim().slice(0, 80),
+      }))
+    )
+    .catch(() => []);
+
+  const globalCopyButtons = await page
+    .locator(GEMINI_COPY_BUTTON_SELECTOR)
+    .evaluateAll((elements) =>
+      elements.slice(0, 10).map((element) => ({
+        ariaLabel: element.getAttribute("aria-label") || "",
+        mattooltip: element.getAttribute("mattooltip") || "",
+        dataTestId: element.getAttribute("data-testid") || "",
+        text: (element.textContent || "").trim().slice(0, 80),
+      }))
+    )
+    .catch(() => []);
+
+  return {
+    messageCount: count,
+    selectorCounts,
+    globalCopyButtonCount,
+    latestMessage,
+    buttons,
+    copyButtons,
+    globalCopyButtons,
+  };
+}
+
+async function checkSiteGenerationSignal(page, baselineReplyCount = 0) {
+  try {
+    return await page.evaluate((baselineCount) => {
+      const isVisible = (element) => {
+        if (!(element instanceof HTMLElement)) {
+          return false;
+        }
+
+        const style = window.getComputedStyle(element);
+        const rect = element.getBoundingClientRect();
+        return (
+          style.visibility !== "hidden" &&
+          style.display !== "none" &&
+          rect.width > 0 &&
+          rect.height > 0
+        );
+      };
+
+      const buttons = Array.from(document.querySelectorAll("button"));
+      for (const button of buttons) {
+        if (!isVisible(button)) {
+          continue;
+        }
+
+        const label = (
+          button.getAttribute("aria-label") ||
+          button.getAttribute("mattooltip") ||
+          button.innerText ||
+          ""
+        )
+          .trim()
+          .toLowerCase();
+
+        if (
+          label === "stop" ||
+          label.includes("stop generating") ||
+          label.includes("stop response")
+        ) {
+          return "stop_button_visible";
+        }
+      }
+
+      const replyCount = document.querySelectorAll("message-content").length;
+      if (replyCount > baselineCount) {
+        return "assistant_turn_present";
+      }
+
+      const mainText = (
+        document.querySelector("main")?.innerText ||
+        document.body?.innerText ||
+        ""
+      ).toLowerCase();
+      if (mainText.includes("thinking") || mainText.includes("show thinking")) {
+        return "thinking_visible";
+      }
+
+      return "none";
+    }, baselineReplyCount);
+  } catch {
+    return "unknown";
+  }
+}
+
+async function isLocatorReady(locator) {
+  return locator
+    .isVisible()
+    .then((visible) => visible && locator.isEnabled())
+    .catch(() => false);
+}
+
+async function waitForSendButtonCandidate(
+  page,
+  timeoutMs = injection.sendButtonReadyTimeoutMs || 2500
+) {
+  const deadline = Date.now() + timeoutMs;
+
+  while (Date.now() < deadline) {
+    for (const selector of sendButtonSelectors) {
+      const locator = page.locator(selector).last();
+      if (await isLocatorReady(locator)) {
+        return { selector, locator };
+      }
+    }
+
+    await sleep(100);
+  }
+
+  return null;
+}
+
+async function readVisibleButtonDiagnostics(page) {
+  try {
+    return await page.evaluate(() => {
+      const isVisible = (element) => {
+        if (!(element instanceof HTMLElement)) {
+          return false;
+        }
+
+        const style = window.getComputedStyle(element);
+        const rect = element.getBoundingClientRect();
+        return (
+          style.visibility !== "hidden" &&
+          style.display !== "none" &&
+          rect.width > 0 &&
+          rect.height > 0
+        );
+      };
+
+      return Array.from(document.querySelectorAll("button"))
+        .filter((button) => isVisible(button))
+        .slice(0, 20)
+        .map((button) => ({
+          label: (
+            button.getAttribute("aria-label") ||
+            button.getAttribute("mattooltip") ||
+            button.innerText ||
+            ""
+          )
+            .trim()
+            .slice(0, 60),
+          disabled: !!button.disabled,
+          type: button.getAttribute("type") || "",
+        }));
+    });
+  } catch {
+    return [];
+  }
+}
+
+async function attemptButtonSubmission(page, inputLocator, selector, locator, label) {
+  logger.info(
+    `[DIAG][gemini][waitForMessageSubmission] trying ${label} | selector="${selector}"`
+  );
+
+  await locator.scrollIntoViewIfNeeded().catch(() => null);
+  await locator.click().catch(() => null);
+
+  if (await waitForInputEmpty(inputLocator, injection.sendSettledTimeoutMs)) {
+    if (await waitForSubmissionAcknowledgement(page, label)) {
+      return true;
+    }
+  }
+
+  logger.info(
+    `[DIAG][gemini][waitForMessageSubmission] ${label} did not clear input | selector="${selector}"`
+  );
+
+  await locator.click({ force: true }).catch(() => null);
+
+  if (await waitForInputEmpty(inputLocator, injection.sendSettledTimeoutMs)) {
+    if (await waitForSubmissionAcknowledgement(page, `${label}_force`)) {
+      return true;
+    }
+  }
+
+  logger.info(
+    `[DIAG][gemini][waitForMessageSubmission] ${label} force-click did not clear input | selector="${selector}"`
+  );
+  return false;
+}
+
+async function waitForSubmissionAcknowledgement(page, label, baselineReplyCount) {
+  const submissionAckTimeoutMs = Math.max(injection.sendSettledTimeoutMs || 0, 5000);
+  const deadline = Date.now() + submissionAckTimeoutMs;
+  let lastSignal = "none";
+
+  while (Date.now() < deadline) {
+    const inputMatch = await findInputLocator(page);
+    const currentInput = inputMatch ? await readInputText(inputMatch.locator) : "";
+    lastSignal = await checkSiteGenerationSignal(page, baselineReplyCount);
+
+    if (!currentInput.trim() && lastSignal !== "none" && lastSignal !== "unknown") {
+      logger.info(
+        `[DIAG][gemini][waitForMessageSubmission] submit=${label} | inputEmpty=true | siteSignal=${lastSignal}`
+      );
+      return true;
+    }
+
+    await sleep(100);
+  }
+
+  logger.info(
+    `[DIAG][gemini][waitForMessageSubmission] submit=${label} not acknowledged | lastSignal=${lastSignal}`
+  );
+  return false;
+}
+
+async function readReplyState(page) {
+  await scrollToBottom(page);
+  const { count, locator } = await getLatestAssistantMessage(page);
+
+  if (!locator) {
+    return { count: 0, text: "" };
+  }
+
+  const copyButton = await pollForCopyButton(
+    locator,
+    page.locator(GEMINI_COPY_BUTTON_SELECTOR).last(),
+    250,
+    750
+  );
+
+  return {
+    count,
+    text: copyButton ? `copy_ready:${count}` : "",
+  };
 }
 
 async function open(page) {
@@ -374,32 +510,53 @@ async function isReady(page) {
 }
 
 async function waitForMessageSubmission(page, inputLocator) {
+  const baselineReplyCount = await getLatestAssistantMessage(page)
+    .then((state) => state.count)
+    .catch(() => 0);
+
   await inputLocator.click().catch(() => null);
+  logger.info("[DIAG][gemini][waitForMessageSubmission] attempting Enter key");
   await page.keyboard.press("Enter");
 
   if (await waitForInputEmpty(inputLocator, injection.sendSettledTimeoutMs)) {
-    return;
+    if (await waitForSubmissionAcknowledgement(page, "Enter", baselineReplyCount)) {
+      return;
+    }
   }
 
-  for (const selector of sendButtonSelectors) {
-    const sendButton = page.locator(selector).first();
-    const sendButtonReady = await sendButton
-      .isVisible()
-      .then((visible) => visible && sendButton.isEnabled())
-      .catch(() => false);
+  const sendKey = process.platform === "darwin" ? "Meta+Enter" : "Control+Enter";
+  logger.info(
+    `[DIAG][gemini][waitForMessageSubmission] attempting platform sendKey=${sendKey}`
+  );
+  await inputLocator.click().catch(() => null);
+  await page.keyboard.press(sendKey).catch(() => null);
 
-    if (!sendButtonReady) {
-      continue;
+  if (await waitForInputEmpty(inputLocator, injection.sendSettledTimeoutMs)) {
+    if (await waitForSubmissionAcknowledgement(page, sendKey, baselineReplyCount)) {
+      return;
     }
+  }
 
-    await sendButton.click();
-
-    if (await waitForInputEmpty(inputLocator, injection.sendSettledTimeoutMs)) {
+  const sendButtonCandidate = await waitForSendButtonCandidate(page);
+  if (sendButtonCandidate) {
+    const submitted = await attemptButtonSubmission(
+      page,
+      inputLocator,
+      sendButtonCandidate.selector,
+      sendButtonCandidate.locator,
+      `sendButton selector="${sendButtonCandidate.selector}"`
+    );
+    if (submitted) {
       return;
     }
   }
 
   const observedInput = await readInputText(inputLocator);
+  const siteSignal = await checkSiteGenerationSignal(page, baselineReplyCount);
+  const visibleButtons = await readVisibleButtonDiagnostics(page);
+  logger.warn(
+    `[DIAG][gemini][waitForMessageSubmission] ALL_PATHS_FAILED | inputEmpty=${!observedInput.trim()} | siteSignal=${siteSignal} | visibleButtons=${JSON.stringify(visibleButtons)} | observedInput="${observedInput.slice(0, 120)}"`
+  );
   throw createAgentError(
     "message_not_submitted",
     "Gemini prompt remained in the input box after submit.",
@@ -411,10 +568,7 @@ async function waitForMessageSubmission(page, inputLocator) {
 }
 
 async function sendMessage(page, text) {
-  const normalizedText =
-    typeof text === "string" ? text : text.fullText || text.promptBlock || "";
   const expectedText = buildFullPromptText(text);
-  lastPromptText = normalizedText.trim();
   const deadline = Date.now() + geminiConfig.inputReadyTimeoutMs;
   let inputMatch = null;
 
@@ -493,50 +647,69 @@ async function sendMessage(page, text) {
 }
 
 async function waitForCompletion(page) {
-  return waitForHybridCompletion({
+  const completionState = await waitForHybridCompletion({
     page,
     readReplyState,
     completionConfig: completion,
     detectionConfig: geminiConfig.completionDetection,
     onTimeout: () => {
-      logger.warn("Gemini completion polling hit hard timeout; proceeding to capture.");
+      logger.warn("Gemini copy-button readiness timed out.");
     },
     onError: (error) => {
-      logger.error(`Gemini completion polling failed: ${error.message}`);
+      logger.error(`Gemini copy-button readiness failed: ${error.message}`);
     },
   });
+
+  if (completionState.reason === "stable") {
+    logger.info("[gemini] copy button is ready for the latest assistant reply.");
+  }
+
+  return completionState;
 }
 
 async function captureLastReply(page) {
-  const deadline = Date.now() + geminiConfig.captureTimeoutMs;
-  while (Date.now() < deadline) {
-    const selectorState = await readLastReplyFromSelectors(page);
-    if (selectorState.text) {
-      return selectorState.text;
-    }
+  await scrollToBottom(page);
+  const { count, locator } = await getLatestAssistantMessage(page);
 
-    const replyAfterPrompt = extractReplyFromFallbackLines(await readReplyAfterPrompt(page));
-    if (replyAfterPrompt) {
-      return replyAfterPrompt;
-    }
-
-    const selectorText = await readTextFromSelectors(page);
-    if (selectorText) {
-      return selectorText;
-    }
-
-    const mainText = extractReplyFromLines(await readTextFromMain(page));
-    if (mainText) {
-      return mainText;
-    }
-
-    await sleep(500);
+  if (!locator) {
+    throw createAgentError("selector_not_found", "Gemini assistant reply was not found.", {
+      selector: GEMINI_MESSAGE_SELECTOR,
+      stage: "capture",
+    });
   }
 
-  throw createAgentError("selector_not_found", "Gemini reply selector did not resolve.", {
-    selector: geminiConfig.replySelectors.join(", "),
-    stage: "capture",
-  });
+  const copyButton = await pollForCopyButton(
+    locator,
+    page.locator(GEMINI_COPY_BUTTON_SELECTOR).last(),
+    250,
+    geminiConfig.captureTimeoutMs
+  );
+
+  if (!copyButton) {
+    const actionDiagnostics = await readLatestAssistantActionDiagnostics(page);
+    logger.warn("[gemini] copy button did not become ready before capture timeout.");
+    logger.warn(
+      `[gemini] latest assistant action diagnostics: ${JSON.stringify(actionDiagnostics)}`
+    );
+    throw createAgentError("selector_not_found", "Gemini copy button did not resolve.", {
+      selector: `${GEMINI_MESSAGE_SELECTOR} -> ${GEMINI_COPY_BUTTON_SELECTOR}`,
+      stage: "capture",
+    });
+  }
+
+  logger.info("[gemini] copy button ready; clicking and reading clipboard.");
+
+  try {
+    const content = await clickCopyAndRead(page, locator, copyButton);
+    logger.info(`[gemini] copy capture succeeded (${content.length} chars).`);
+    return content;
+  } catch (error) {
+    throw createAgentError(error.code || "capture_failed", error.message, {
+      stage: "capture",
+      selector: `${GEMINI_MESSAGE_SELECTOR} -> ${GEMINI_COPY_BUTTON_SELECTOR}`,
+      ...(error.details || {}),
+    });
+  }
 }
 
 module.exports = {

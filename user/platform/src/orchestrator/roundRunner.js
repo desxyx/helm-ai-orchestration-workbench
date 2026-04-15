@@ -2,6 +2,10 @@ const sessionStore = require("../storage/sessionStore");
 const { getErrorCode } = require("../utils/errors");
 const logger = require("../utils/logger");
 
+function buildTimeoutAutoUnlockContent(agentName) {
+  return `[capture timeout] ${agentName} reply was not captured before the provider copy button became available. Dispatch auto-unlocked by operator timeout policy.`;
+}
+
 async function runRound({
   adapter,
   page,
@@ -93,7 +97,19 @@ async function runRound({
       await onStage({ agent: agentName, stage: "capture", message: "Capturing last reply." });
     }
     const captureStartedAt = Date.now();
-    content = await adapter.captureLastReply(page);
+    try {
+      content = await adapter.captureLastReply(page);
+    } catch (error) {
+      if (completion.reason === "timeout") {
+        timings.captureMs = Date.now() - captureStartedAt;
+        content = buildTimeoutAutoUnlockContent(agentName);
+        logger.warn(
+          `[${agentName}] [capture] ${error.message}. Recording bounded timeout placeholder and auto-unlocking dispatch.`
+        );
+      } else {
+        throw error;
+      }
+    }
     timings.captureMs = Date.now() - captureStartedAt;
     logger.info(
       `[${agentName}] Captured ${content.length} characters (${completionReason}).`

@@ -2,90 +2,69 @@
 
 Public development story for H.E.L.M.
 
+## 2026-04-14
+
+The public repository now reflects a much thicker execution and runtime layer than the first March public slice.
+
+- Published the newer executor protocol shape, including stronger execution-state discipline, boot and handoff material, and a broader executor-layer archive surface.
+- Exposed more review and audit artifacts showing how H.E.L.M preserves decision, execution, and verification traces as separate but connected records.
+- Refreshed the runnable platform around the newer reply-capture path, which now uses provider copy controls instead of deep DOM scraping.
+
+The important point is not that the repository gained volume. The important point is that H.E.L.M became easier to operate as a long-running layered system.
+
+## 2026-04-12
+
+The executor layer gained a startup spine.
+
+- Boot checklist
+- reusable executor memory
+- coarse executor changelog discipline
+- stronger handoff structure
+- environment-state notes
+
+This is where the executor layer stopped feeling like a loose tool area and started looking more like a disciplined operating surface.
+
+## 2026-04-07
+
+The runtime side matured under real cross-environment pressure.
+
+- platform diagnostics became more structured
+- review outputs became more reusable
+- environment-specific problems were treated as protocol and tooling problems, not just operator mistakes
+
+That shift matters because it is one thing to design a layered system. It is another to keep it stable when the environment fights back.
+
+## 2026-04-01
+
+The executor protocol was upgraded from a thinner early charter into a clearer operating model.
+
+Key improvements included:
+
+- explicit pause semantics for normal waiting states
+- clearer separation between role and permission ceiling
+- stronger verifier boundaries
+- better handoff structure
+- clearer escalation guidance
+
+This was a meaningful maturity jump for the execution layer.
+
 ## 2026-03-24
 
-This public repo was rebuilt around the current `council/`, `user/`, and `executors/` structure. Private session-review artifacts, audit traces, personal notes, and machine-local debris were removed. Public naming was standardized around `Claude`, `Gemini`, and `ChatGPT`, and the orchestration layer was renamed to `user/` for the public version.
+The public repository was rebuilt around the current layered shape: `council/`, `user/`, and `executors/`.
 
-More importantly, this repo stopped presenting itself like a thin app snapshot and started presenting itself like what it actually became: a layered working structure.
+That was the point where the project stopped presenting itself like a thin app snapshot and started presenting itself as what it had actually become: a layered working structure.
 
 ## Development Story
 
-### 2026-03-06 to 2026-03-08
+H.E.L.M started from a direct question: if frontier models genuinely differ, can their independent judgment be preserved without collapsing into one routed answer?
 
-The project did not begin as a polished architecture. It began with a very direct question: if frontier models are genuinely different, can they be made to think in parallel without flattening them into one routed answer?
+The answer was not a magic multi-agent runtime. It was a layered system that kept growing stronger where real work kept creating pressure:
 
-The first loop was manual and rough. Prompts were drafted by hand, replies were moved manually, and context had to be stitched together by force. But that primitive phase exposed the real problem early: the challenge was not only sending prompts to three AIs. The challenge was keeping judgment clean under drift, contamination, and messy human input.
+- the council layer pushed toward clearer framing and comparison discipline
+- the execution layer pushed toward stronger delivery and verification rules
+- the orchestration layer kept preserving more native records instead of relying on memory alone
 
-### 2026-03-09
+That is still the core story of H.E.L.M.
 
-This was the first real turning point. Structured JSON conversation records appeared, the browser-automation prototype became runnable, and the public repo line was opened.
-
-Just as important, council started becoming more than "three AIs chatting". The workflow began to harden into staged rounds. That shift matters because it marks the moment the project stopped being a prompt experiment and started becoming a decision process.
-
-### 2026-03-10
-
-One of the most important assets in the whole system started to emerge here: templates.
-
-The template layer was not added as decoration. Council itself kept converging toward template-based replies because structure was the only way to keep comparison, scoring, and freezing coherent across rounds. Over time, the template library became one of the system's real engines, not an accessory.
-
-This is one of the recurring patterns in H.E.L.M: a useful piece of structure first appears as a survival response, and only later gets recognized as infrastructure.
-
-### 2026-03-12 to 2026-03-13
-
-Cross-platform continuity got tested, and governance began to wake up. The project started admitting uncomfortable truths:
-
-- web runtime is useful, but constrained
-- context stitching is powerful, but contamination-prone
-- the human middle layer is necessary, but also a major drift source
-
-From that point on, the system became less interested in pretending to be a perfect multi-agent setup and more interested in becoming a resilient one.
-
-### 2026-03-15 to 2026-03-17
-
-This is where the architecture really earned the right to exist.
-
-The three-layer structure was not simply drawn on a whiteboard and imposed top-down. It was repeatedly pushed into shape by the behavior of the system under constraint.
-
-Council first pushed for clearer physical separation, arguing that decision assets should not remain loosely attached to the platform root. Then executors scanned the repo and pushed again: if execution was going to be real, it needed its own folder, its own vault, and its own charter. That second restructure did not come from human neatness. It came from execution pressure.
-
-The result was stronger because the pressure came from multiple directions:
-
-- council wanted cleaner decision-layer boundaries
-- executors wanted protected execution territory and reliable handoff
-- the middle layer needed somewhere to put tools, data, and routing records
-
-This period also produced one of the strongest proofs in the whole repo. After the restructure landed, executors themselves proposed reviewing the raw sessions. Council agreed, issued a scanner contract, and the system completed its first real `council -> executor -> council` loop. That did not prove the system was magically mature. But it did prove the loop could run, produce artifacts, and feed judgment back upward.
-
-That is a serious step up from a demo.
-
-### Why The Structure Is Strong
-
-The bragging point of H.E.L.M is not that it has three folders. Plenty of repos have three folders.
-
-The bragging point is that many of its important decisions were not just manually declared. They were surfaced, reinforced, or demanded by the constrained interaction between layers:
-
-- council converged toward template discipline
-- council pushed for the first real folder separation
-- executors pushed for a second restructure and their own boundary docs
-- executors later pushed to review historical sessions instead of only doing forward execution
-- criticism around messy input, weak tracking, and middle-layer overload kept pushing the `user/` layer toward stronger records and local tools
-
-That is what makes the structure interesting. It was not only designed. It was stress-shaped.
-
-### Why The Records Matter
-
-In the working system, `council/task/` holds task-level decision records and scoped council deliveries. `user/data/sessions/` holds round-by-round AI dialogue and orchestration-side runtime memory.
-
-Those two streams matter far beyond documentation. Together they start to look like the raw material for a future middle-layer AI: one that could take messy human input, compress it into cleaner task framing, route work across layers, keep better continuity, and reduce the burden currently carried by the user.
-
-That future layer is still an open problem. But the repo is already producing the kind of records such a layer would need.
-
-### 2026-03-18 and After
-
-By this point the project had clearly moved beyond "prototype app". Formal boundary files existed. Layer separation was real. Handoff and return discipline had names and storage locations. The conversation was no longer only about what the models could say. It was about what the system could preserve, transfer, and recover.
-
-That is the deeper story of H.E.L.M.
-
-It began as an attempt to make three frontier AIs talk.
-
-It became an attempt to build a human-executed, layered system that could keep getting smarter without collapsing under its own context.
+It did not mature by endlessly adding prompt weight.
+It matured because the layer boundaries kept proving useful, absorbent, and worth reinforcing.

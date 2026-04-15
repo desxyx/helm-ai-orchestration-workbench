@@ -1,58 +1,62 @@
+## AI Voting Process
 
-[Scoring Round]:
-Retrospective calibration — covering all framing template votes in Session 013
-(CORE_07 through EXT_11).
+### Round 1 — Scoring Calibration
 
-[Scoring Principle]:
+Before scoring the other two AI outputs, calibrate against the shared score anchors:
 
-1. Score only what is observable in the template structure, not what could
-   be inferred from good intentions.
-2. A field that adds boundary value outweighs a field that adds information
-   volume — length is not quality.
-3. Each dimension must be scored independently; a high Boundary Control
-   score must not inflate Clarity.
+- 54-60 = exceptional, almost ready to serve as the merged final base
+- 46-53 = strong and usable, but still has meaningful gaps
+- 36-45 = workable, but materially flawed or risky
+- 26-35 = partial, unstable, or too incomplete
+- 0-25 = weak, off-target, or not safely usable
 
-[Bias Disclosure]:
-I weight Boundary Control most heavily because a template that fails to
-constrain AI behavior will produce drift regardless of how clear or light
-it is — boundary failure has the highest downstream cost in concrete
-execution terms.
+Scoring rules:
 
-[Calibration Anchor]:
-CORE_07 final template — it passed the session's most contested vote,
-absorbed patches from two sides, and produced no field-name disputes
-in the final merge.
+- Use the shared anchors instead of your personal strictness or leniency habit.
+- Score by task fit, merge value, and risk profile rather than by writing-style preference.
+- It is valid to give high scores or meaningful score gaps when justified.
+- After scoring, state which version is currently stronger and whether the gap is small, medium, or large.
 
-[Score Band Meaning]:
-High (9–10): Template structure alone prevents the most common failure
-mode for its use case without requiring user discipline.
-Mid (6–8): Template works when used correctly but has at least one field
-that a careless AI could expand, skip, or misread.
-Low (5 or below): Template has a structural gap that will predictably
-produce drift or bloat in normal use.
+Always-active dimensions:
 
-[Score Floor Rule]:
-Score 5 or below if the template contains a field with no length
-constraint that sits adjacent to a high-drift topic.
+- Clarity
+- Boundary Control
+- Executability
+- Constraint Fit
 
-[Score Ceiling Rule]:
-Score 9 or above only if the template includes clear structural
-anti-drift mechanisms, explicit field discipline, and strong reuse
-value across future rounds.
+Scene-specific dimensions:
 
-[Drift Check]:
-Inflated — my scores in the final two rounds (EXT_09, EXT_11) averaged
-higher than earlier rounds; likely caused by familiarity with the
-session's own output creating a halo effect.
+- Scene A · Template / Protocol -> Reusability + Mergeability
+- Scene B · Delivery / Handoff -> Coverage + Risk Control
+- Scene C · Idea / Strategy -> Novelty + Reality Check
+- Scene D · Merge / Final -> Mergeability + Constraint Fit (weighted)
 
-[Update Trigger]:
-If the same AI wins three consecutive rounds by a margin greater than
-5 points, or if repeated score gaps are caused by different internal
-meanings of the same score band, AI-Voting.md should require a pre-vote
-Bias Disclosure step and a shared score-band definition before scoring begins.
+Use 6 dimensions total, for a 60-point maximum. Score the other two outputs and note 2-3 core strengths for each.
 
-[Proposed Update to AI-Voting]:
-Add to Round 1 rules: "Before submitting scores, each AI must state in
-one line which scoring dimension it weights most heavily this round,
-name one shared benchmark anchor, and apply a shared High / Mid / Low
-score-band definition for that round."
+### Round 2 — Focused Critique
+
+One model may be rested for the round. The remaining two should provide 2-3 focused criticisms of the leading version, centered on:
+
+- missing risks
+- prematurely frozen decisions
+- likely causes of execution drift in the delivery contract
+
+### Round 3 — Final Merge
+
+The two non-leading models may be rested and acknowledge only. The leading model should:
+
+- absorb the strongest criticisms from the other two
+- reuse strengths already identified in the scoring round
+- reject weak suggestions when they do not improve the final result
+- produce one final English version
+
+---
+
+Additional engineering evaluation dimensions that may be activated when relevant:
+
+1. Correctness
+2. Readability / Clarity
+3. Robustness / Error Handling
+4. Maintainability
+5. Modularity / Separation of Concerns
+6. Scalability / Extensibility

@@ -21,6 +21,16 @@ module.exports = {
     injection: {
       inputSettleTimeoutMs: 8000,
       sendButtonReadyTimeoutMs: 2500,
+      // Claude.ai: Enter = newline (not send). Disable shared-base Enter fallback.
+      // Platform-aware send key (Meta+Enter / Control+Enter) is used instead — see claude.js.
+      submitWithEnter: false,
+      // CORE_06: Windows-only bounded timing repair for Path A settle false-fail.
+      // stableForMs reduced so DOM needs fewer quiet-ms to pass; timeout extended for budget.
+      // Mac path unchanged — only applied when process.platform === "win32".
+      windows: {
+        stableForMs: 200,
+        inputSettleTimeoutMs: 12000,
+      },
     },
   },
 
@@ -118,6 +128,14 @@ module.exports = {
     sendButtonReadyTimeoutMs: 2500,
     longPromptThresholdChars: 320,
     longPromptTypedRatio: 0.3,
+  },
+
+  // Diagnostic flags — all false by default. Enable only for specific test runs.
+  diagnostics: {
+    // Test 2 toggle: set true to bypass type-lead strategy and paste full prompt at once
+    // on Claude and ChatGPT. Isolates whether mixed type+paste is the Windows failure source.
+    // Reset to false after Test 2 completes. Never leave enabled in production.
+    forceFullPaste: false,
   },
 
   storage: {

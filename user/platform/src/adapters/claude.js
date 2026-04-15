@@ -1,11 +1,16 @@
 const config = require("../../config");
 const { createAgentError } = require("../utils/errors");
 const logger = require("../utils/logger");
+const { waitForHybridCompletion } = require("../utils/completion");
+const {
+  clickCopyAndRead,
+  pollForCopyButton,
+  scrollToBottom,
+} = require("./copyCapture");
 const {
   buildFullPromptText,
   clearInput,
   findEditableInput,
-  getPromptLines,
   injectPrompt,
   pasteText,
   readInputText,
@@ -14,93 +19,16 @@ const { sleep } = require("../utils/time");
 
 const claudeConfig = config.claude;
 const { completion } = config;
-// F07: Merge per-adapter injection overrides over shared base.
-// Allows Claude (ProseMirror contentEditable) to be tuned independently from
-// ChatGPT and Gemini without global side effects.
 const injection = { ...config.injection, ...(claudeConfig.injection || {}) };
-let lastPromptText = "";
-let lastDispatchHumanTurnCount = 0;
+const diagnostics = config.diagnostics || {};
 const sendButtonSelector = 'button[aria-label="Send message"]';
+const CLAUDE_MESSAGE_SELECTOR =
+  '[data-testid="assistant-message"], [data-testid*="assistant"], [data-message-role="assistant"]';
+const CLAUDE_COPY_BUTTON_SELECTOR = '[data-testid="action-bar-copy"]';
 const promptInjectionOptions = {
   promptMode: "insert",
   summaryMode: "insert",
 };
-const promptMetaPrefixes = [
-  "[Session]:",
-  "[Round]:",
-  "[Previous Summary]:",
-  "[New Prompt]:",
-];
-
-function isPromptScaffoldLine(text) {
-  if (!text) {
-    return false;
-  }
-
-  const normalized = text.trim();
-  const promptLines = getPromptLines(lastPromptText);
-
-  return (
-    normalized === "(empty)" ||
-    normalized === "Extended" ||
-    promptLines.includes(normalized) ||
-    promptMetaPrefixes.some((prefix) => normalized.startsWith(prefix))
-  );
-}
-
-function isIgnoredReplyText(text) {
-  return (
-    !text ||
-    text === lastPromptText ||
-    isPromptScaffoldLine(text) ||
-    text.includes("Claude is AI and can make mistakes.") ||
-    text.includes("Back at it") ||
-    text.includes("Sonnet") ||
-    text === "+" ||
-    text.includes("Share") ||
-    text.includes("Copy") ||
-    text.includes("Retry") ||
-    text.includes("Edit") ||
-    text.includes("Search chats") ||
-    text.includes("New chat") ||
-    text.includes("Projects") ||
-    text.includes("Recents")
-  );
-}
-
-function extractReplyFromLines(lines) {
-  return lines
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .filter((line) => !isIgnoredReplyText(line) && !line.startsWith("Thinking"))
-    .join("\n")
-    .trim();
-}
-
-function extractReplyFromFallbackLines(lines) {
-  const seenLongLines = new Set();
-
-  return extractReplyFromLines(
-    lines.filter((line) => {
-      const normalized = String(line || "").trim();
-
-      if (!normalized) {
-        return false;
-      }
-
-      if (normalized.length <= 4) {
-        return true;
-      }
-
-      if (seenLongLines.has(normalized)) {
-        return false;
-      }
-
-      seenLongLines.add(normalized);
-      return true;
-    })
-  );
-}
 
 function normalizeInputForComparison(text) {
   return String(text || "")
@@ -144,10 +72,16 @@ async function waitForSendButtonReady(page, timeoutMs = injection.sendButtonRead
 async function waitForClaudePromptReady(page, inputLocator, expectedText) {
   const normalizedExpected = normalizeInputForComparison(expectedText);
   const { head, tail } = buildComparisonMarkers(expectedText);
+  const windowsOverrides =
+    process.platform === "win32" && injection.windows ? injection.windows : {};
+  const effectiveSettleTimeoutMs =
+    windowsOverrides.inputSettleTimeoutMs || injection.inputSettleTimeoutMs || 4000;
+  const effectiveStableForMs =
+    windowsOverrides.stableForMs !== undefined ? windowsOverrides.stableForMs : 400;
   const deadline =
     Date.now() +
     Math.max(
-      injection.inputSettleTimeoutMs || 4000,
+      effectiveSettleTimeoutMs,
       (injection.sendButtonReadyTimeoutMs || 2500) + 1500
     );
 
@@ -163,20 +97,21 @@ async function waitForClaudePromptReady(page, inputLocator, expectedText) {
     if (normalizedObserved) {
       sawContent = true;
     } else if (sawContent) {
-      // F01: Input cleared after seeing content. Don't treat empty-input alone as
-      // submitted — ProseMirror paste triggers a transient DOM-empty during React
-      // reconciliation. Playwright polls at 100ms and can catch this gap.
-      // Require send-button-gone as secondary confirmation before concluding submitted.
       const sendButtonGone = !(await isSendButtonReady(page));
       if (sendButtonGone) {
-        logger.info(
-          "[claude] waitForClaudePromptReady: submitted confirmed (input empty + send button gone)"
-        );
-        return { ready: false, submitted: true, observedInput };
+        await sleep(200);
+        const stillEmpty = !(await readInputText(inputLocator)).trim();
+        const buttonStillGone = !(await isSendButtonReady(page));
+        if (stillEmpty && buttonStillGone) {
+          logger.info(
+            "[claude] waitForClaudePromptReady: submitted confirmed (double-check passed)"
+          );
+          return { ready: false, submitted: true, observedInput };
+        }
+        await sleep(100);
+        continue;
       }
-      // Send button still present — likely transient ProseMirror clear; continue polling.
       await sleep(100);
-      // eslint-disable-next-line no-continue
       continue;
     }
 
@@ -198,7 +133,13 @@ async function waitForClaudePromptReady(page, inputLocator, expectedText) {
       stableForMs = 0;
     }
 
-    if (sendReady && hasHead && hasTail && lengthRatio >= 0.95 && stableForMs >= 400) {
+    if (
+      sendReady &&
+      hasHead &&
+      hasTail &&
+      lengthRatio >= 0.95 &&
+      stableForMs >= effectiveStableForMs
+    ) {
       return { ready: true, submitted: false, observedInput };
     }
 
@@ -208,372 +149,243 @@ async function waitForClaudePromptReady(page, inputLocator, expectedText) {
   return { ready: false, submitted: false, observedInput };
 }
 
-async function readReplyAfterPrompt(page) {
-  return page.evaluate(({ promptText, promptLines, metaPrefixes }) => {
-    const isVisible = (element) => {
-      const style = window.getComputedStyle(element);
-      const rect = element.getBoundingClientRect();
-      return (
-        style.visibility !== "hidden" &&
-        style.display !== "none" &&
-        rect.width > 0 &&
-        rect.height > 0
-      );
-    };
-
-    const isRelevant = (element) =>
-      !element.closest(
-        'nav, aside, [role="navigation"], [role="complementary"], [data-testid*="sidebar"], [data-testid*="history"], [class*="sidebar"], [class*="history"]'
-      );
-
-    const shouldIgnore = (text) =>
-      !text ||
-      text === promptText ||
-      text === "(empty)" ||
-      text === "Extended" ||
-      promptLines.includes(text) ||
-      metaPrefixes.some((prefix) => text.startsWith(prefix)) ||
-      text.includes("Claude is AI and can make mistakes.") ||
-      text.includes("Back at it") ||
-      text.includes("Sonnet") ||
-      text === "+" ||
-      text.includes("Share") ||
-      text.includes("Copy") ||
-      text.includes("Retry") ||
-      text.includes("Edit") ||
-      text.includes("Search chats") ||
-      text.includes("New chat") ||
-      text.includes("Projects") ||
-      text.includes("Recents");
-
-    const main = document.querySelector("main") || document.body;
-    const elements = Array.from(main.querySelectorAll("*")).filter(
-      (element) => isVisible(element) && isRelevant(element)
-    );
-    const promptCandidates = elements
-      .map((element) => ({
-        element,
-        text: (element.innerText || "").trim(),
-      }))
-      .filter(({ text }) => text === promptText || text.includes(promptText));
-
-    const exactPrompt =
-      promptCandidates
-        .filter(({ text }) => text === promptText)
-        .sort((a, b) => a.text.length - b.text.length)[0] || null;
-
-    const partialPrompt =
-      promptCandidates.sort((a, b) => a.text.length - b.text.length)[0] || null;
-
-    const promptElement = exactPrompt?.element || partialPrompt?.element;
-    if (!promptElement) {
-      return [];
-    }
-
-    const walker = document.createTreeWalker(main, NodeFilter.SHOW_ELEMENT, {
-      acceptNode(node) {
-        return isVisible(node) && isRelevant(node)
-          ? NodeFilter.FILTER_ACCEPT
-          : NodeFilter.FILTER_SKIP;
-      },
-    });
-
-    const lines = [];
-    let foundPrompt = false;
-
-    while (walker.nextNode()) {
-      const element = walker.currentNode;
-
-      if (!foundPrompt) {
-        if (element === promptElement) {
-          foundPrompt = true;
-        }
-        continue;
-      }
-
-      const text = (element.innerText || "").trim();
-      if (shouldIgnore(text) || text.startsWith("Thinking")) {
-        continue;
-      }
-
-      const parts = text
-        .split("\n")
-        .map((line) => line.trim())
-        .filter(Boolean)
-        .filter((line) => !shouldIgnore(line) && !line.startsWith("Thinking"));
-
-      if (parts.length) {
-        lines.push(...parts);
-      }
-
-      if (lines.length && /[.!?。！？]$/.test(lines[lines.length - 1])) {
-        break;
-      }
-    }
-
-    return lines;
-  }, {
-    promptText: lastPromptText,
-    promptLines: getPromptLines(lastPromptText),
-    metaPrefixes: promptMetaPrefixes,
-  });
+async function findInputLocator(page) {
+  return findEditableInput(page, claudeConfig.inputSelector);
 }
 
-async function readTextFromSelectors(page) {
-  for (const selector of claudeConfig.replySelectors) {
-    const locator = page.locator(selector);
-    const count = await locator.count().catch(() => 0);
+async function getLatestAssistantMessage(page) {
+  const selectors = Array.from(
+    new Set([
+      CLAUDE_MESSAGE_SELECTOR,
+      '[data-message-role="assistant"]',
+      ...(claudeConfig.replySelectors || []),
+    ])
+  );
 
-    if (!count) {
-      continue;
-    }
+  for (const selector of selectors) {
+    const messages = page.locator(selector);
+    const count = await messages.count().catch(() => 0);
 
-    for (let index = count - 1; index >= 0; index -= 1) {
-      const candidate = locator.nth(index);
-      const text = await candidate.innerText({ timeout: 1500 }).catch(() => "");
-      const extracted = extractReplyFromLines(text.split("\n"));
-
-      if (!extracted) {
-        continue;
-      }
-
-      return extracted;
+    if (count > 0) {
+      return {
+        count,
+        locator: messages.nth(count - 1),
+      };
     }
   }
 
-  return "";
+  return {
+    count: 0,
+    locator: null,
+  };
 }
 
-async function readLastReplyFromSelectors(page) {
-  // F03: Use the human-turn count recorded at dispatch time as a DOM anchor.
-  // claude.ai retains all historical message nodes — the "most paragraphs" heuristic
-  // can match an earlier long reply. Anchoring to the current round's human-turn node
-  // restricts capture to content that appeared after the current dispatch.
-  const humanTurnCount = lastDispatchHumanTurnCount;
+async function readLatestAssistantActionDiagnostics(page) {
+  const selectors = Array.from(
+    new Set([
+      CLAUDE_MESSAGE_SELECTOR,
+      '[data-message-role="assistant"]',
+      ...(claudeConfig.replySelectors || []),
+    ])
+  );
+  const selectorCounts = {};
 
-  for (const selector of claudeConfig.replySelectors) {
-    if (selector === "p.font-claude-response-body") {
-      const text = await page.evaluate(({ humanTurnCount: htCount }) => {
-        const isVisible = (element) => {
+  for (const selector of selectors) {
+    selectorCounts[selector] = await page
+      .locator(selector)
+      .count()
+      .catch(() => 0);
+  }
+
+  const { count, locator } = await getLatestAssistantMessage(page);
+  const globalCopyButtonCount = await page
+    .locator(CLAUDE_COPY_BUTTON_SELECTOR)
+    .count()
+    .catch(() => 0);
+
+  if (!locator) {
+    return {
+      messageCount: count,
+      selectorCounts,
+      globalCopyButtonCount,
+      latestMessage: null,
+    };
+  }
+
+  await locator.scrollIntoViewIfNeeded().catch(() => null);
+  await locator.hover().catch(() => null);
+  await sleep(150);
+
+  const latestMessage = await locator
+    .evaluate((element) => {
+      const describe = (node) => {
+        if (!(node instanceof Element)) {
+          return null;
+        }
+
+        return {
+          tag: node.tagName.toLowerCase(),
+          id: node.id || "",
+          className: String(node.className || "")
+            .split(/\s+/)
+            .filter(Boolean)
+            .slice(0, 4)
+            .join("."),
+          dataTestId: node.getAttribute("data-testid") || "",
+          ariaLabel: node.getAttribute("aria-label") || "",
+        };
+      };
+      const isCopyLike = (node) => {
+        const label = (
+          node.getAttribute("aria-label") ||
+          node.getAttribute("data-testid") ||
+          node.textContent ||
+          ""
+        )
+          .trim()
+          .toLowerCase();
+        return label.includes("copy");
+      };
+
+      const root = element.getRootNode();
+      const parent = element.parentElement;
+      const siblings = parent ? Array.from(parent.children) : [];
+      const index = siblings.indexOf(element);
+
+      return {
+        self: describe(element),
+        textPreview: ((element.innerText || element.textContent || "").trim() || "").slice(0, 220),
+        childButtonCount: element.querySelectorAll("button").length,
+        copyLikeButtonCount: Array.from(element.querySelectorAll("button")).filter(isCopyLike).length,
+        parent: describe(parent),
+        grandparent: describe(parent?.parentElement || null),
+        siblingWindow: siblings
+          .slice(Math.max(0, index - 2), index + 3)
+          .map((node) => describe(node)),
+        inShadowRoot: root instanceof ShadowRoot,
+        shadowHost: root instanceof ShadowRoot ? describe(root.host) : null,
+      };
+    })
+    .catch(() => null);
+
+  const buttons = await locator
+    .locator("button")
+    .evaluateAll((elements) =>
+      elements
+        .slice(0, 10)
+        .map((element) => {
+          const describe = (node) => {
+            if (!(node instanceof Element)) {
+              return null;
+            }
+
+            return {
+              tag: node.tagName.toLowerCase(),
+              id: node.id || "",
+              className: String(node.className || "")
+                .split(/\s+/)
+                .filter(Boolean)
+                .slice(0, 4)
+                .join("."),
+              dataTestId: node.getAttribute("data-testid") || "",
+              ariaLabel: node.getAttribute("aria-label") || "",
+            };
+          };
+
+          const label = (
+            element.getAttribute("aria-label") ||
+            element.getAttribute("data-testid") ||
+            element.textContent ||
+            ""
+          ).trim();
           const style = window.getComputedStyle(element);
           const rect = element.getBoundingClientRect();
-          return (
-            style.visibility !== "hidden" &&
-            style.display !== "none" &&
-            rect.width > 0 &&
-            rect.height > 0
-          );
-        };
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const hit =
+            rect.width > 0 && rect.height > 0 ? document.elementFromPoint(centerX, centerY) : null;
+          const root = element.getRootNode();
 
-        const humanTurns = Array.from(
-          document.querySelectorAll('[data-testid="human-turn"]')
-        );
-        const anchorNode =
-          htCount > 0 && humanTurns.length >= htCount
-            ? humanTurns[htCount - 1]
-            : null;
+          return {
+            label: label.slice(0, 80),
+            visible:
+              style.visibility !== "hidden" &&
+              style.display !== "none" &&
+              rect.width > 0 &&
+              rect.height > 0,
+            disabled: element.disabled === true,
+            opacity: style.opacity,
+            pointerEvents: style.pointerEvents,
+            rect: {
+              x: Math.round(rect.x),
+              y: Math.round(rect.y),
+              width: Math.round(rect.width),
+              height: Math.round(rect.height),
+            },
+            centerHit: describe(hit),
+            unobscured:
+              !hit || hit === element || element.contains(hit) || (hit instanceof Element && hit.contains(element)),
+            parent: describe(element.parentElement),
+            inShadowRoot: root instanceof ShadowRoot,
+            shadowHost: root instanceof ShadowRoot ? describe(root.host) : null,
+          };
+        })
+        .filter((entry) => entry.label)
+    )
+    .catch(() => []);
 
-        const paragraphs = Array.from(
-          document.querySelectorAll("p.font-claude-response-body")
-        ).filter(isVisible);
+  const copyButtons = await locator
+    .locator(CLAUDE_COPY_BUTTON_SELECTOR)
+    .evaluateAll((elements) =>
+      elements.slice(0, 10).map((element) => ({
+        ariaLabel: element.getAttribute("aria-label") || "",
+        dataTestId: element.getAttribute("data-testid") || "",
+        text: (element.textContent || "").trim().slice(0, 80),
+      }))
+    )
+    .catch(() => []);
 
-        if (paragraphs.length === 0) {
-          return "";
-        }
+  const globalCopyButtons = await page
+    .locator(CLAUDE_COPY_BUTTON_SELECTOR)
+    .evaluateAll((elements) =>
+      elements.slice(0, 10).map((element) => ({
+        ariaLabel: element.getAttribute("aria-label") || "",
+        dataTestId: element.getAttribute("data-testid") || "",
+        text: (element.textContent || "").trim().slice(0, 80),
+      }))
+    )
+    .catch(() => []);
 
-        // Prefer paragraphs appearing after the current round's human-turn node.
-        const anchoredParagraphs = anchorNode
-          ? paragraphs.filter(
-              (p) =>
-                // eslint-disable-next-line no-bitwise
-                anchorNode.compareDocumentPosition(p) & Node.DOCUMENT_POSITION_FOLLOWING
-            )
-          : paragraphs;
-
-        // Fall back to full set if anchor-based filter is empty (DOM may not retain
-        // historical nodes, or anchor was not established yet).
-        const workingSet = anchoredParagraphs.length > 0 ? anchoredParagraphs : paragraphs;
-        const lastParagraph = workingSet[workingSet.length - 1];
-
-        let current = lastParagraph.parentElement;
-        while (current && current !== document.body) {
-          const paragraphCount = Array.from(
-            current.querySelectorAll("p.font-claude-response-body")
-          )
-            .filter(isVisible)
-            .filter(
-              (p) =>
-                !anchorNode ||
-                // eslint-disable-next-line no-bitwise
-                anchorNode.compareDocumentPosition(p) & Node.DOCUMENT_POSITION_FOLLOWING
-            ).length;
-
-          if (paragraphCount > 1) {
-            return (current.innerText || "").trim();
-          }
-
-          current = current.parentElement;
-        }
-
-        return (lastParagraph.innerText || "").trim();
-      }, { humanTurnCount });
-
-      const extracted = extractReplyFromFallbackLines(text.split("\n"));
-      if (extracted) {
-        return { count: 1, text: extracted };
-      }
-
-      continue;
-    }
-
-    const locator = page.locator(selector);
-    const count = await locator.count().catch(() => 0);
-
-    if (!count) {
-      continue;
-    }
-
-    const text = await locator
-      .nth(count - 1)
-      .innerText({ timeout: 1500 })
-      .catch(() => "");
-    const extracted = extractReplyFromLines(text.split("\n"));
-
-    if (extracted) {
-      return { count, text: extracted };
-    }
-  }
-
-  return { count: 0, text: "" };
-}
-
-async function readTextFromVisibleBlocks(page) {
-  return page.evaluate(({ promptText, promptLines, metaPrefixes }) => {
-    const isVisible = (element) => {
-      const style = window.getComputedStyle(element);
-      const rect = element.getBoundingClientRect();
-      return (
-        style.visibility !== "hidden" &&
-        style.display !== "none" &&
-        rect.width > 0 &&
-        rect.height > 0
-      );
-    };
-
-    const elements = Array.from(document.querySelectorAll("main *"));
-    const texts = [];
-    const isRelevant = (element) =>
-      !element.closest(
-        'nav, aside, [role="navigation"], [role="complementary"], [data-testid*="sidebar"], [data-testid*="history"], [class*="sidebar"], [class*="history"]'
-      );
-    const shouldIgnore = (text) =>
-      !text ||
-      text === promptText ||
-      text === "(empty)" ||
-      text === "Extended" ||
-      promptLines.includes(text) ||
-      metaPrefixes.some((prefix) => text.startsWith(prefix)) ||
-      text.includes("Claude is AI and can make mistakes.") ||
-      text.includes("Back at it") ||
-      text.includes("Sonnet") ||
-      text === "+" ||
-      text.includes("Share") ||
-      text.includes("Copy") ||
-      text.includes("Retry") ||
-      text.includes("Edit") ||
-      text.includes("Search chats") ||
-      text.includes("New chat") ||
-      text.includes("Projects") ||
-      text.includes("Recents");
-
-    for (const element of elements) {
-      if (!isVisible(element) || !isRelevant(element)) {
-        continue;
-      }
-
-      const text = (element.innerText || "").trim();
-      if (shouldIgnore(text)) {
-        continue;
-      }
-
-      texts.push(...text.split("\n").map((line) => line.trim()).filter(Boolean));
-    }
-
-    return texts;
-  }, {
-    promptText: lastPromptText,
-    promptLines: getPromptLines(lastPromptText),
-    metaPrefixes: promptMetaPrefixes,
-  });
-}
-
-async function readTextFromBody(page) {
-  return page.evaluate(({ promptText, promptLines, metaPrefixes }) => {
-    const bodyText = (document.body?.innerText || "")
-      .split("\n")
-      .map((line) => line.trim())
-      .filter(Boolean);
-
-    const ignorePatterns = [
-      "Back at it",
-      "Sonnet",
-      "Share",
-      "Copy",
-      "Retry",
-      "Thinking",
-      "Edit",
-      "Search chats",
-      "New chat",
-      "Projects",
-      "Recents",
-    ];
-
-    return bodyText.filter((line) => {
-      if (line === promptText) {
-        return false;
-      }
-
-      if (line === "(empty)" || line === "Extended") {
-        return false;
-      }
-
-      if (promptLines.includes(line)) {
-        return false;
-      }
-
-      if (metaPrefixes.some((prefix) => line.startsWith(prefix))) {
-        return false;
-      }
-
-      return !ignorePatterns.some((pattern) => line.includes(pattern));
-    });
-  }, {
-    promptText: lastPromptText,
-    promptLines: getPromptLines(lastPromptText),
-    metaPrefixes: promptMetaPrefixes,
-  });
+  return {
+    messageCount: count,
+    selectorCounts,
+    globalCopyButtonCount,
+    latestMessage,
+    buttons,
+    copyButtons,
+    globalCopyButtons,
+  };
 }
 
 async function readReplyState(page) {
-  const selectorState = await readLastReplyFromSelectors(page);
+  await scrollToBottom(page);
+  const { count, locator } = await getLatestAssistantMessage(page);
 
-  if (selectorState.text) {
-    return selectorState;
+  if (!locator) {
+    return { count: 0, text: "" };
   }
 
-  const replyAfterPrompt = extractReplyFromFallbackLines(await readReplyAfterPrompt(page));
-  if (replyAfterPrompt) {
-    return {
-      count: Math.max(1, selectorState.count),
-      text: replyAfterPrompt,
-    };
-  }
+  const copyButton = await pollForCopyButton(
+    locator,
+    page.locator(CLAUDE_COPY_BUTTON_SELECTOR).last(),
+    250,
+    750
+  );
 
-  return selectorState;
-}
-
-async function findInputLocator(page) {
-  return findEditableInput(page, claudeConfig.inputSelector);
+  return {
+    count,
+    text: copyButton ? `copy_ready:${count}` : "",
+  };
 }
 
 async function open(page) {
@@ -632,6 +444,27 @@ async function isReady(page) {
   }
 }
 
+// Diagnostic only; does not affect control flow.
+async function checkSiteGenerationSignal(page) {
+  try {
+    return await page.evaluate(() => {
+      const stopBtn = document.querySelector(
+        'button[aria-label="Stop streaming"], button[aria-label="Stop generating"], button[aria-label="Stop response"]'
+      );
+      if (stopBtn && stopBtn.offsetParent !== null) return "stop_button_visible";
+      const streamingBtn = document.querySelector('[data-testid="stop-button"], .streaming button');
+      if (streamingBtn && streamingBtn.offsetParent !== null) return "stop_button_visible";
+      const assistantTurn = document.querySelector(
+        '[data-testid="assistant-message"], [data-message-role="assistant"]'
+      );
+      if (assistantTurn) return "assistant_turn_present";
+      return "none";
+    });
+  } catch {
+    return "unknown";
+  }
+}
+
 async function waitForSubmissionStart(page, inputLocator, timeoutMs) {
   const deadline = Date.now() + timeoutMs;
 
@@ -651,8 +484,10 @@ async function waitForSubmissionStart(page, inputLocator, timeoutMs) {
 async function waitForMessageSubmission(page, inputLocator) {
   const sendButton = page.locator(sendButtonSelector).first();
   const sendButtonReady = await waitForSendButtonReady(page);
+  logger.info(`[DIAG][claude][waitForMessageSubmission] sendButtonReady=${sendButtonReady}`);
 
   if (sendButtonReady) {
+    logger.info("[DIAG][claude][waitForMessageSubmission] attempting sendButton.click()");
     await sendButton.click();
 
     if (
@@ -662,15 +497,27 @@ async function waitForMessageSubmission(page, inputLocator) {
         Math.max(injection.sendSettledTimeoutMs, 5000)
       )
     ) {
+      const siteSignal = await checkSiteGenerationSignal(page);
+      logger.info(
+        `[DIAG][claude][waitForMessageSubmission] submit=sendButton_click | inputEmpty=true | siteSignal=${siteSignal}`
+      );
       return;
     }
+    logger.info(
+      "[DIAG][claude][waitForMessageSubmission] sendButton.click() did not clear input - trying fallbacks"
+    );
   }
 
   if (await waitForSubmissionStart(page, inputLocator, 1200)) {
+    const siteSignal = await checkSiteGenerationSignal(page);
+    logger.info(
+      `[DIAG][claude][waitForMessageSubmission] submit=already_cleared | inputEmpty=true | siteSignal=${siteSignal}`
+    );
     return;
   }
 
   if (injection.submitWithEnter) {
+    logger.info("[DIAG][claude][waitForMessageSubmission] attempting Enter key");
     await inputLocator.click().catch(() => null);
     await page.keyboard.press("Enter");
 
@@ -681,11 +528,43 @@ async function waitForMessageSubmission(page, inputLocator) {
         Math.max(injection.sendSettledTimeoutMs, 4000)
       )
     ) {
+      const siteSignal = await checkSiteGenerationSignal(page);
+      logger.info(
+        `[DIAG][claude][waitForMessageSubmission] submit=Enter | inputEmpty=true | siteSignal=${siteSignal}`
+      );
       return;
     }
+    logger.info("[DIAG][claude][waitForMessageSubmission] Enter key did not clear input");
+  }
+
+  {
+    const sendKey = process.platform === "darwin" ? "Meta+Enter" : "Control+Enter";
+    logger.info(
+      `[DIAG][claude][waitForMessageSubmission] attempting platform sendKey=${sendKey}`
+    );
+    await inputLocator.click().catch(() => null);
+    await page.keyboard.press(sendKey);
+
+    if (
+      await waitForSubmissionStart(
+        page,
+        inputLocator,
+        Math.max(injection.sendSettledTimeoutMs, 4000)
+      )
+    ) {
+      const siteSignal = await checkSiteGenerationSignal(page);
+      logger.info(
+        `[DIAG][claude][waitForMessageSubmission] submit=${sendKey} | inputEmpty=true | siteSignal=${siteSignal}`
+      );
+      return;
+    }
+    logger.info(`[DIAG][claude][waitForMessageSubmission] ${sendKey} did not clear input`);
   }
 
   const observedInput = await readInputText(inputLocator);
+  logger.warn(
+    `[DIAG][claude][waitForMessageSubmission] ALL_PATHS_FAILED | inputEmpty=false | observedInput="${observedInput.slice(0, 120)}"`
+  );
   throw createAgentError(
     "message_not_submitted",
     "Claude prompt remained in the input box after submit.",
@@ -697,10 +576,12 @@ async function waitForMessageSubmission(page, inputLocator) {
 }
 
 async function sendMessage(page, text) {
-  const normalizedText =
-    typeof text === "string" ? text : text.fullText || text.promptBlock || "";
   const expectedText = buildFullPromptText(text);
-  lastPromptText = normalizedText.trim();
+  const promptLengthClass =
+    (expectedText || "").length >= (injection.longPromptThresholdChars || 320) ? "long" : "short";
+  logger.info(
+    `[DIAG][claude][sendMessage] start | platform=${process.platform} | len=${(expectedText || "").length} | class=${promptLengthClass} | forceFullPaste=${!!diagnostics.forceFullPaste}`
+  );
   const deadline = Date.now() + claudeConfig.inputReadyTimeoutMs;
   let inputMatch = null;
 
@@ -731,6 +612,9 @@ async function sendMessage(page, text) {
   let observedInput = "";
 
   for (let attempt = 0; attempt < 2; attempt += 1) {
+    logger.info(
+      `[DIAG][claude][sendMessage] attempt=${attempt} | class=${promptLengthClass} | forceFullPaste=${!!diagnostics.forceFullPaste}`
+    );
     await clearInput(page, inputMatch.locator).catch((error) => {
       throw createAgentError("input_not_focusable", error.message, {
         selector: inputMatch.selector,
@@ -738,18 +622,22 @@ async function sendMessage(page, text) {
       });
     });
 
-    await injectPrompt(page, text, injection.keystrokeDelayMs, promptInjectionOptions).catch(
-      (error) => {
-        throw createAgentError("input_not_focusable", error.message, {
-          stage: "inject",
-        });
-      }
-    );
+    if (diagnostics.forceFullPaste) {
+      await pasteText(page, expectedText).catch((error) => {
+        throw createAgentError("input_not_focusable", error.message, { stage: "inject" });
+      });
+      await sleep(injection.promptPastePauseMs || 1000);
+    } else {
+      await injectPrompt(page, text, injection.keystrokeDelayMs, promptInjectionOptions).catch(
+        (error) => {
+          throw createAgentError("input_not_focusable", error.message, {
+            stage: "inject",
+          });
+        }
+      );
+    }
 
-    // Detect if Claude.ai cleared the input mid-typing (lead chars lost, pastes landed in wrong state).
-    // When this happens the box has restBlock+summary but is missing the typed lead portion.
-    // Repair by clearing and pasting the full expected text at once, bypassing keyboard simulation.
-    if (expectedText) {
+    if (expectedText && !diagnostics.forceFullPaste) {
       const { head: expectedHead } = buildComparisonMarkers(expectedText);
       if (expectedHead) {
         const postInjectNorm = normalizeInputForComparison(await readInputText(inputMatch.locator));
@@ -764,21 +652,39 @@ async function sendMessage(page, text) {
     const settleState = await waitForClaudePromptReady(page, inputMatch.locator, expectedText);
     injectionSettled = settleState.ready;
     observedInput = settleState.observedInput;
+    const settleVerdict = settleState.ready
+      ? "ready"
+      : settleState.submitted
+        ? "submitted"
+        : "timed-out";
+    logger.info(
+      `[DIAG][claude][sendMessage] attempt=${attempt} | settle=${settleVerdict} | observedInput="${(observedInput || "").slice(0, 120)}"`
+    );
 
     if (settleState.submitted) {
-      // F03: Record human-turn anchor so captureLastReply scopes to current round.
-      lastDispatchHumanTurnCount = await page
-        .evaluate(() => document.querySelectorAll('[data-testid="human-turn"]').length)
-        .catch(() => 0);
+      const siteSignal = await checkSiteGenerationSignal(page);
+      logger.info(
+        `[DIAG][claude][sendMessage] early_exit via settle.submitted | siteSignal=${siteSignal}`
+      );
       return;
     }
 
     if (injectionSettled) {
+      logger.info(
+        `[DIAG][claude][sendMessage] attempt=${attempt} injection settled - proceeding to submit`
+      );
       break;
     }
+
+    logger.info(
+      `[DIAG][claude][sendMessage] attempt=${attempt} injection not settled - ${attempt < 1 ? "retrying" : "retry budget exhausted"}`
+    );
   }
 
   if (!injectionSettled) {
+    logger.warn(
+      `[DIAG][claude][sendMessage] injection never settled after 2 attempts | class=${promptLengthClass}`
+    );
     throw createAgentError(
       "prompt_injection_incomplete",
       "Claude prompt did not fully settle in the input box before submit.",
@@ -790,6 +696,9 @@ async function sendMessage(page, text) {
     );
   }
 
+  logger.info(
+    `[DIAG][claude][sendMessage] entering waitForMessageSubmission | class=${promptLengthClass}`
+  );
   await waitForMessageSubmission(page, inputMatch.locator).catch((error) => {
     throw createAgentError(error.code || "input_not_focusable", error.message, {
       selector: inputMatch.selector,
@@ -798,90 +707,80 @@ async function sendMessage(page, text) {
     });
   });
 
-  // F03: Record human-turn anchor after confirmed submission.
-  lastDispatchHumanTurnCount = await page
-    .evaluate(() => document.querySelectorAll('[data-testid="human-turn"]').length)
-    .catch(() => 0);
+  const siteSignalFinal = await checkSiteGenerationSignal(page);
+  logger.info(
+    `[DIAG][claude][sendMessage] sendMessage complete | siteSignal=${siteSignalFinal}`
+  );
 }
 
 async function waitForCompletion(page) {
-  try {
-    const startTime = Date.now();
-    const baseline = await readReplyState(page);
-    let generationStarted = false;
-    let lastObservedText = "";
-    let stableForMs = 0;
+  const completionState = await waitForHybridCompletion({
+    page,
+    readReplyState,
+    completionConfig: completion,
+    detectionConfig: claudeConfig.completionDetection || {},
+    onTimeout: () => {
+      logger.warn("Claude copy-button readiness timed out.");
+    },
+    onError: (error) => {
+      logger.error(`Claude copy-button readiness failed: ${error.message}`);
+    },
+  });
 
-    while (Date.now() - startTime < completion.hardTimeoutMs) {
-      await sleep(completion.pollIntervalMs);
-
-      const current = await readReplyState(page);
-      const hasNewReply =
-        current.count > baseline.count ||
-        (baseline.count === 0 && current.text.length > 0) ||
-        (baseline.count > 0 && current.text !== baseline.text);
-
-      if (!generationStarted) {
-        if (!hasNewReply) {
-          continue;
-        }
-
-        generationStarted = true;
-        lastObservedText = current.text;
-        stableForMs = 0;
-        continue;
-      }
-
-      if (!current.text) {
-        stableForMs = 0;
-        continue;
-      }
-
-      if (current.text === lastObservedText) {
-        stableForMs += completion.pollIntervalMs;
-
-        if (stableForMs >= completion.stabilityWindowMs) {
-          return { completed: true, reason: "stable" };
-        }
-      } else {
-        lastObservedText = current.text;
-        stableForMs = 0;
-      }
-    }
-
-    logger.warn("Claude completion polling hit hard timeout; proceeding to capture.");
-    return { completed: false, reason: "timeout" };
-  } catch (error) {
-    logger.error(`Claude completion polling failed: ${error.message}`);
-    return { completed: false, reason: "error" };
+  if (completionState.reason === "stable") {
+    logger.info("[claude] copy button is ready for the latest assistant reply.");
   }
+
+  return completionState;
 }
 
 async function captureLastReply(page) {
-  const deadline = Date.now() + claudeConfig.captureTimeoutMs;
-  while (Date.now() < deadline) {
-    const { text } = await readLastReplyFromSelectors(page);
-    if (text) {
-      return text;
-    }
+  await scrollToBottom(page);
+  const { count, locator } = await getLatestAssistantMessage(page);
 
-    const replyAfterPrompt = extractReplyFromFallbackLines(await readReplyAfterPrompt(page));
-    if (replyAfterPrompt) {
-      return replyAfterPrompt;
-    }
-
-    const visibleBlockText = extractReplyFromFallbackLines(await readTextFromVisibleBlocks(page));
-    if (visibleBlockText) {
-      return visibleBlockText;
-    }
-
-    await sleep(500);
+  if (!locator) {
+    const actionDiagnostics = await readLatestAssistantActionDiagnostics(page);
+    logger.warn(
+      `[claude] latest assistant action diagnostics: ${JSON.stringify(actionDiagnostics)}`
+    );
+    throw createAgentError("selector_not_found", "Claude assistant reply was not found.", {
+      selector: CLAUDE_MESSAGE_SELECTOR,
+      stage: "capture",
+    });
   }
 
-  throw createAgentError("selector_not_found", "Claude reply selector did not resolve.", {
-    selector: claudeConfig.replySelectors.join(", "),
-    stage: "capture",
-  });
+  const copyButton = await pollForCopyButton(
+    locator,
+    page.locator(CLAUDE_COPY_BUTTON_SELECTOR).last(),
+    250,
+    claudeConfig.captureTimeoutMs
+  );
+
+  if (!copyButton) {
+    const actionDiagnostics = await readLatestAssistantActionDiagnostics(page);
+    logger.warn("[claude] copy button did not become ready before capture timeout.");
+    logger.warn(
+      `[claude] latest assistant action diagnostics: ${JSON.stringify(actionDiagnostics)}`
+    );
+    throw createAgentError("selector_not_found", "Claude copy button did not resolve.", {
+      selector: `${CLAUDE_MESSAGE_SELECTOR} -> ${CLAUDE_COPY_BUTTON_SELECTOR}`,
+      stage: "capture",
+    });
+  }
+
+  logger.info("[claude] copy button ready; clicking and reading clipboard.");
+
+  try {
+    const content = await clickCopyAndRead(page, locator, copyButton);
+    logger.info(`[claude] copy capture succeeded (${content.length} chars).`);
+    return content;
+  } catch (error) {
+    throw createAgentError(error.code || "capture_failed", error.message, {
+      stage: "capture",
+      selector: `${CLAUDE_MESSAGE_SELECTOR} -> ${CLAUDE_COPY_BUTTON_SELECTOR}`,
+      ...(error.details || {}),
+    });
+  }
 }
 
 module.exports = {

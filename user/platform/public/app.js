@@ -1043,7 +1043,7 @@ connectEvents();
 loadUiState(true);
 
 // ─────────────────────────────────────────────
-// Control Panel
+// Chair Tools Panel
 // ─────────────────────────────────────────────
 
 // ── Helpers ──

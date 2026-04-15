@@ -1,16 +1,17 @@
+/* Editorial direction: keep the interface visually quiet so the reply content remains primary. */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-  --bg: #EAE9E4; 
+  --bg: #EAE9E4;
   --text-primary: #111111;
   --text-secondary: #666666;
   --text-tertiary: #999999;
   --accent: #000000;
-  --border: rgba(0,0,0,0.08); 
-  --mimir: #2B5B43;
-  --aether: #2F5C85;
-  --thoth: #6A4C82;
+  --border: rgba(0,0,0,0.08);
+  --gemini: #2B5B43;
+  --claude: #2F5C85;
+  --chatgpt: #6A4C82;
 }
 
 body {
@@ -136,9 +137,9 @@ textarea:focus, .session-select:focus { outline: none; border-color: var(--accen
   content: ''; position: absolute; top: -1px; left: 0; height: 1px; width: 0%; transition: width 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .agent-panel:hover::before { width: 100%; }
-.agent-panel[data-agent="gemini"]::before { background: var(--mimir); }
-.agent-panel[data-agent="claude"]::before { background: var(--aether); }
-.agent-panel[data-agent="chatgpt"]::before { background: var(--thoth); }
+.agent-panel[data-agent="gemini"]::before { background: var(--gemini); }
+.agent-panel[data-agent="claude"]::before { background: var(--claude); }
+.agent-panel[data-agent="chatgpt"]::before { background: var(--chatgpt); }
 
 .agent-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
 .agent-heading { display: flex; flex-direction: column; gap: 8px; }
@@ -147,7 +148,7 @@ textarea:focus, .session-select:focus { outline: none; border-color: var(--accen
 .agent-badge::before { content: '• '; }
 .queued { color: var(--text-tertiary); }
 .running, .persisting { color: #D4A373; animation: breathe 2s infinite ease-in-out; }
-.done { color: var(--mimir); }
+.done { color: var(--gemini); }
 .error { color: #E57373; }
 
 @keyframes breathe { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
@@ -194,7 +195,7 @@ textarea:focus, .session-select:focus { outline: none; border-color: var(--accen
 }
 .topbar--compact h1 { font-size: 2rem; }
 
-/* ── Control Panel ── */
+/* ── Chair Tools Panel ── */
 .chair-tools-panel {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
