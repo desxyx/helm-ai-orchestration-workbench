@@ -1,4 +1,4 @@
-# H.E.L.M
+# H.E.L.M  — AI Orchestration Workbench
 
 Public demonstration repository for H.E.L.M: Human-Executed Layered Multi-model.
 
