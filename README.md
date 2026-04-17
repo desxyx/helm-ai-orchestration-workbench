@@ -141,3 +141,7 @@ Local browser login state is intentionally not included in this repository and s
 - Private identities, machine-local paths, browser data, and personal operating traces are removed.
 - The public naming surface uses `Claude`, `Gemini`, and `ChatGPT`.
 - The goal is to show why H.E.L.M works, how the layers cooperate, and how the system has matured — without publishing the full private operating history.
+
+## Contributors
+* [OpenAI Codex](https://openai.com) - AI Coding Partner
+
