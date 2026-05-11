@@ -9,8 +9,8 @@ from pathlib import Path
 from statistics import median
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-DES_DIR = SCRIPT_DIR.parents[1]
-SESSIONS_DIR = DES_DIR / "data" / "sessions"
+CHAIR_DIR = SCRIPT_DIR.parents[1]
+SESSIONS_DIR = CHAIR_DIR / "data" / "sessions"
 OUTPUT_DIR = SCRIPT_DIR / "session_2"
 RUNBOOK_PATH = SCRIPT_DIR / "Review_Runbook_Lite.md"
 
@@ -25,11 +25,11 @@ CATS = {
     3: {"name": "Handoff Quality Failures", "side": "council", "en": ["unclear handoff", "not executable", "missing detail", "missing file", "executor cannot proceed", "ambiguous contract"], "cn": ["\u4e0d\u6e05\u695a", "\u6ca1\u6cd5\u6267\u884c", "\u7f3a\u6587\u4ef6", "\u7f3a\u7ec6\u8282", "\u6267\u884c\u4e0d\u4e86", "\u592a\u6a21\u7cca"]},
     4: {"name": "Scoring Inconsistency", "side": "council", "en": ["score gap", "inconsistent scoring", "vote conflict", "ranking mismatch", "scoring issue"], "cn": ["\u5206\u6570\u4e0d\u4e00\u81f4", "\u8bc4\u5206\u4e0d\u4e00\u81f4", "\u6295\u7968\u51b2\u7a81", "\u6392\u540d\u4e0d\u4e00\u81f4"]},
     5: {"name": "AI Drift / Cross-Session Contamination", "side": "council", "en": ["contamination", "carry over", "cross-session", "inherited tone", "previous session brought in", "drift", "hallucination"], "cn": ["\u4e0a\u4e0b\u6587\u6c61\u67d3", "\u8de8session", "\u524d\u6587\u5e26\u5165", "\u7ee7\u627f\u4e86\u8bed\u6c14", "\u4e0a\u6b21\u9057\u7559", "\u6f02\u79fb", "\u98d8\u9038", "\u5e7b\u89c9"]},
-    6: {"name": "Chair Usage / Habit Failures", "side": "des", "en": ["i don't understand", "not sure what to do", "too tired", "i'm confused", "what were we doing"], "cn": ["\u6211\u4e0d\u61c2", "\u542c\u4e0d\u61c2", "\u597d\u7d2f", "\u6709\u70b9\u4e71", "\u641e\u4e0d\u6e05\u695a", "\u4e0d\u77e5\u9053\u600e\u4e48\u529e", "\u54c8\u54c8", "\u54c8\u54c8\u54c8", "\u5367\u69fd", "\u5bf9\u4e0d\u8d77", "\u6211\u7684\u9519", "\u653e\u5fc3", "\u4f60\u4eec\u653e\u5fc3"]},
-    7: {"name": "Framing / Structure Failures", "side": "des", "en": ["unclear goal", "messy", "too broad", "not structured", "what is the goal", "where do we start"], "cn": ["\u76ee\u6807\u4e0d\u6e05", "\u592a\u4e71", "\u6ca1\u60f3\u6e05\u695a", "\u7ed3\u6784\u4e0d\u6e05", "\u592a\u5927\u4e86", "\u4ece\u54ea\u5f00\u59cb"]},
-    8: {"name": "Compression / Communication Failures", "side": "des", "en": ["too long", "hard to read", "can't follow", "impossible to summarise", "too verbose"], "cn": ["\u592a\u957f\u4e86", "\u8bf4\u4e0d\u6e05", "\u770b\u4e0d\u61c2", "\u6ca1\u6cd5\u603b\u7ed3", "\u592a\u5570\u55e6", "\u89e3\u91ca\u4e0d\u6e05"]},
-    9: {"name": "Scope Expansion Habit", "side": "des", "en": ["one more thing", "in addition to that", "while we're at it", "and one more", "can we also"], "cn": ["\u8fd8\u6709\u4e00\u4e2a", "\u518d\u52a0\u4e00\u4e2a", "\u987a\u5e26\u505a\u4e86", "\u5bf9\u4e86\u8fd8\u6709", "\u53e6\u5916\u52a0\u4e0a", "\u8fd9\u6837\u5427", "\u8fd9\u6837\u628a"]},
-    10: {"name": "Focus / Target Failures", "side": "des", "en": ["what exactly do we want", "lost track", "what is the main goal", "what were we trying to do"], "cn": ["\u5230\u5e95\u8981\u4ec0\u4e48", "\u504f\u9898\u4e86", "\u5fd8\u4e86\u76ee\u6807", "\u4e3b\u7ebf\u662f\u4ec0\u4e48", "\u641e\u6df7\u4e86"]},
+    6: {"name": "Chair Usage / Habit Failures", "side": "chair", "en": ["i don't understand", "not sure what to do", "too tired", "i'm confused", "what were we doing"], "cn": ["\u6211\u4e0d\u61c2", "\u542c\u4e0d\u61c2", "\u597d\u7d2f", "\u6709\u70b9\u4e71", "\u641e\u4e0d\u6e05\u695a", "\u4e0d\u77e5\u9053\u600e\u4e48\u529e", "\u54c8\u54c8", "\u54c8\u54c8\u54c8", "\u5367\u69fd", "\u5bf9\u4e0d\u8d77", "\u6211\u7684\u9519", "\u653e\u5fc3", "\u4f60\u4eec\u653e\u5fc3"]},
+    7: {"name": "Framing / Structure Failures", "side": "chair", "en": ["unclear goal", "messy", "too broad", "not structured", "what is the goal", "where do we start"], "cn": ["\u76ee\u6807\u4e0d\u6e05", "\u592a\u4e71", "\u6ca1\u60f3\u6e05\u695a", "\u7ed3\u6784\u4e0d\u6e05", "\u592a\u5927\u4e86", "\u4ece\u54ea\u5f00\u59cb"]},
+    8: {"name": "Compression / Communication Failures", "side": "chair", "en": ["too long", "hard to read", "can't follow", "impossible to summarise", "too verbose"], "cn": ["\u592a\u957f\u4e86", "\u8bf4\u4e0d\u6e05", "\u770b\u4e0d\u61c2", "\u6ca1\u6cd5\u603b\u7ed3", "\u592a\u5570\u55e6", "\u89e3\u91ca\u4e0d\u6e05"]},
+    9: {"name": "Scope Expansion Habit", "side": "chair", "en": ["one more thing", "in addition to that", "while we're at it", "and one more", "can we also"], "cn": ["\u8fd8\u6709\u4e00\u4e2a", "\u518d\u52a0\u4e00\u4e2a", "\u987a\u5e26\u505a\u4e86", "\u5bf9\u4e86\u8fd8\u6709", "\u53e6\u5916\u52a0\u4e0a", "\u8fd9\u6837\u5427", "\u8fd9\u6837\u628a"]},
+    10: {"name": "Focus / Target Failures", "side": "chair", "en": ["what exactly do we want", "lost track", "what is the main goal", "what were we trying to do"], "cn": ["\u5230\u5e95\u8981\u4ec0\u4e48", "\u504f\u9898\u4e86", "\u5fd8\u4e86\u76ee\u6807", "\u4e3b\u7ebf\u662f\u4ec0\u4e48", "\u641e\u6df7\u4e86"]},
 }
 
 EXPANSIONS = {
@@ -97,7 +97,7 @@ def scan_round(data: dict) -> dict:
     dual_en = "drift" in (prompt + "\n" + replies).lower()
     dual_cn = any(t in (prompt + "\n" + replies) for t in ("\u6f02\u79fb", "\u98d8\u9038"))
     for cat_id, spec in CATS.items():
-        text = prompt if spec["side"] == "des" else f"{prompt}\n{replies}"
+        text = prompt if spec["side"] == "chair" else f"{prompt}\n{replies}"
         out[cat_id] = scan_text(text, spec)
     if dual_en or dual_cn:
         for cat_id in (2, 5):

@@ -81,11 +81,11 @@ EN and CN reported separately. incident_like and structural_discussion reported 
 | 3 | Handoff Quality Failures | council | 0.0 | 0.035 | 0.0 | 0.006 |
 | 4 | Scoring Inconsistency | council | 0.016 | 0.0 | 0.0 | 0.0 |
 | 5 | AI Drift / Cross-Session Contamination | council | 0.032 | 0.164 | 0.0 | 0.013 |
-| 6 | Chair Usage / Habit Failures | des | 0.0 | 0.003 | 0.0 | 0.0 |
-| 7 | Framing / Structure Failures | des | 0.0 | 0.003 | 0.0 | 0.003 |
-| 8 | Compression / Communication Failures | des | 0.006 | 0.013 | 0.0 | 0.0 |
-| 9 | Scope Expansion Habit | des | 0.0 | 0.01 | 0.0 | 0.0 |
-| 10 | Focus / Target Failures | des | 0.0 | 0.0 | 0.0 | 0.0 |
+| 6 | Chair Usage / Habit Failures | chair | 0.0 | 0.003 | 0.0 | 0.0 |
+| 7 | Framing / Structure Failures | chair | 0.0 | 0.003 | 0.0 | 0.003 |
+| 8 | Compression / Communication Failures | chair | 0.006 | 0.013 | 0.0 | 0.0 |
+| 9 | Scope Expansion Habit | chair | 0.0 | 0.01 | 0.0 | 0.0 |
+| 10 | Focus / Target Failures | chair | 0.0 | 0.0 | 0.0 | 0.0 |
 
 ## Section 4 — Tag Distribution
 

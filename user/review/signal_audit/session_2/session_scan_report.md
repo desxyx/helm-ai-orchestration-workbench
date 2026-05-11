@@ -68,11 +68,11 @@ Generated: 2026-04-07 18:00:17
 | 3 | Handoff Quality Failures | council | 0.000 | 0.033 | 0.000 | 0.000 |
 | 4 | Scoring Inconsistency | council | 0.000 | 0.000 | 0.000 | 0.000 |
 | 5 | AI Drift / Cross-Session Contamination | council | 0.558 | 1.087 | 0.021 | 0.054 |
-| 6 | Chair Usage / Habit Failures | des | 0.000 | 0.054 | 0.000 | 0.000 |
-| 7 | Framing / Structure Failures | des | 0.008 | 0.004 | 0.000 | 0.000 |
-| 8 | Compression / Communication Failures | des | 0.000 | 0.000 | 0.000 | 0.000 |
-| 9 | Scope Expansion Habit | des | 0.000 | 0.013 | 0.000 | 0.000 |
-| 10 | Focus / Target Failures | des | 0.000 | 0.000 | 0.000 | 0.000 |
+| 6 | Chair Usage / Habit Failures | chair | 0.000 | 0.054 | 0.000 | 0.000 |
+| 7 | Framing / Structure Failures | chair | 0.008 | 0.004 | 0.000 | 0.000 |
+| 8 | Compression / Communication Failures | chair | 0.000 | 0.000 | 0.000 | 0.000 |
+| 9 | Scope Expansion Habit | chair | 0.000 | 0.013 | 0.000 | 0.000 |
+| 10 | Focus / Target Failures | chair | 0.000 | 0.000 | 0.000 | 0.000 |
 
 ## Section 4 - Tag Distribution
 

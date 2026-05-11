@@ -2,6 +2,23 @@
 
 Public development story for H.E.L.M.
 
+## 2026-05-11
+
+The public repository now reflects H.E.L.M's newest maturity jump: a durable UserOps surface.
+
+This is not a fourth Council member and not another executor. UserOps is a file-backed operating layer that keeps task state, routing memory, decision records, closure summaries, reusable lessons, and re-entry warnings visible across model rotations and interrupted work.
+
+What changed in the public story:
+
+- H.E.L.M now presents itself as a layered workbench with decision, execution, orchestration, and UserOps responsibilities separated.
+- The strongest new evidence is governance execution discipline: a large protocol update was split into staged batches, reviewed at each gate, and closed with task state, retrospective, and memory-candidate records.
+- New public case notes summarize the operations-steward rollout and the local role-pack experiment without exposing private identities, local paths, or raw internal sessions.
+- The local role-pack experiment shows that Council and Executor identities can survive a runtime change: browser, CLI, API-backed model, or future local runtime are implementation details as long as layer boundaries hold.
+- Added a redacted public structure map and a sanitized test-environment role-pack prototype, including BAT templates and compressed Council/Executor entry charters.
+- Added `userops/` as the public operations-steward layer with a redacted charter, config example, memory index, routine checks, trap archive, task folder convention, and reusable task templates.
+
+This is the real flex: H.E.L.M did not become stronger by turning every prompt into a bigger prompt. It became stronger by moving repeated coordination burden into explicit records, role boundaries, review gates, and reusable operating memory.
+
 ## 2026-04-14
 
 The public repository now reflects a much thicker execution and runtime layer than the first March public slice.

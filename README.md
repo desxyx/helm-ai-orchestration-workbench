@@ -2,7 +2,7 @@
 
 **Human-Executed Layered Multi-model**
 
-Most multi-model AI setups fail the same way: no accountability between models, no handoff discipline when sessions break, no way to verify that outputs actually match the task. H.E.L.M solves this with a structured three-layer system that keeps decision quality and execution quality separate, auditable, and resumable.
+Most multi-model AI setups fail the same way: no accountability between models, no handoff discipline when sessions break, no way to verify that outputs actually match the task, and no durable memory of why a task moved the way it did. H.E.L.M solves this with a layered system that keeps decision quality, execution quality, and operational continuity separate, auditable, and resumable.
 
 This is not a prompt template. It is a working system with defined protocols, layered authority, and traceable records built up over 120+ real sessions.
 
@@ -11,6 +11,7 @@ This is not a prompt template. It is a working system with defined protocols, la
 ```mermaid
 flowchart LR
     Orch(["Human Orchestrator"])
+    Ops["UserOps\nstate · routing · memory"]
 
     subgraph Council["Council — Decision Layer"]
         direction TB
@@ -33,6 +34,9 @@ flowchart LR
     end
 
     Orch -->|"① task brief"| Council
+    Orch <-.->|"state · closure · re-entry"| Ops
+    Ops -.->|"task package / memory cue"| Council
+    Ops -.->|"scope + stage state"| Exec
     Contract -->|"② contract delivery"| Orch
     Orch -->|"③ assign task + contract"| Exec
     Exec -.->|"EXEC_ACK"| Orch
@@ -47,6 +51,7 @@ flowchart LR
 |---|---|---|
 | Council | Debate, vote, produce contracts, final review | ChatGPT · Claude · Gemini |
 | Orchestrator | Route, confirm, escalate | Human |
+| UserOps | Preserve task state, decision records, closure learning, and re-entry signals | File-backed operations layer |
 | Executor | Execute · Review · Observe | Any available model |
 
 ## Mutual Optimization Loop
@@ -62,6 +67,7 @@ flowchart TB
     Council(("Council"))
     Orchestrator(("Orchestrator"))
     Executor(("Executor"))
+    Ops(("UserOps"))
 
     AbsC --> Council
     AbsD --> Orchestrator
@@ -69,6 +75,10 @@ flowchart TB
 
     Council -->|"EXEC_ACK"| Executor
     Orchestrator -->|"EXEC_ACK"| Executor
+    Orchestrator -->|"decisions · closure"| Ops
+    Ops -->|"state · re-entry packages"| Orchestrator
+    Ops -->|"task memory"| Council
+    Ops -->|"stage state"| Executor
     Executor -->|"session · save_score · task"| Council
     Orchestrator -->|"session · save_score · task"| Council
     Executor -->|"session · task"| Orchestrator
@@ -83,7 +93,8 @@ The interesting part is not that H.E.L.M has three layers. The interesting part 
 
 - The council layer stayed focused on framing, comparison, criticism, and delivery discipline.
 - The executor layer kept getting thicker where thickness actually helped: clearer execution states, stronger handoff structure, better verification boundaries, and better traceability.
-- The orchestration layer kept more native artifacts instead of relying on memory or paraphrase, which made the whole system easier to resume, audit, and improve.
+- The orchestration layer kept more native artifacts instead of relying on memory or paraphrase.
+- The operations steward layer turned those artifacts into a durable task-state and learning surface.
 
 That is also why H.E.L.M could absorb ideas from adjacent systems without collapsing into prompt bloat. When outside examples exposed a strong mechanism, H.E.L.M did not need a total rewrite. The underlying layer model was already sound enough to take in targeted improvements with low structural shock.
 
@@ -96,6 +107,8 @@ That is also why H.E.L.M could absorb ideas from adjacent systems without collap
 | No way to verify AI output quality | Trust or spot-check | Built-in Reviewer + Observer roles |
 | Scope creep in AI tasks | Better prompting | Formal contracts with frozen scope |
 | Can't tell why a decision was made | Chat logs | Traceable audit trail per task |
+| Repeated tasks lose lessons | More reminders | File-backed memory candidates, traps, routine checks, and closure records |
+| Evidence invalidates the plan | Improvise | Explicit Council re-entry path |
 
 ## Executor Role Split
 
@@ -123,6 +136,46 @@ That matters because the long-term direction is not "keep the human manually sti
 4. Executors stay focused on delivery.
 5. The human remains in control — the orchestration burden gets lighter.
 
+## UserOps Layer
+
+The newest public slice adds the missing operational spine between raw human routing and formal Council/Executor work.
+
+This layer does not vote. It does not implement. It does not overrule review gates. Its job is to keep the system coherent across time:
+
+- task state files for active work
+- decision ledgers when the human changes scope or accepts risk
+- re-entry warnings when evidence breaks the contract
+- closure summaries before context disappears
+- memory candidates for reusable lessons
+- trap archives for repeatable failure patterns
+- routine checks for stale contracts, unclosed tasks, and template drift
+
+That is a major step. H.E.L.M is no longer just a strong council plus a strong executor protocol. It now has a durable UserOps layer that makes the whole system less dependent on one perfect chat window or one perfect human memory.
+
+Public UserOps files:
+
+- [UserOps README](userops/README.md)
+- [UserOps Charter](userops/USEROPS_CHARTER.md)
+- [UserOps task templates](userops/templates/)
+
+## Local Role-Pack Experiment
+
+H.E.L.M has also tested a local/API-based role-pack path for Council and Executor participants.
+
+The experiment used file-based identity packs, session folders, strict write boundaries, and nonce-based submissions so CLI/API-hosted models could enter the same Council or Executor roles without owning the source system. The result was not a replacement for the main platform, but it proved an important architectural point: H.E.L.M's layer identity can survive a runtime change.
+
+That matters for the next phase. If a model enters through a browser, a terminal, an API-backed CLI, or a future local runtime, the important question is not where the model came from. The important question is whether it can hold the right layer boundary.
+
+Public case notes:
+
+- [Operations stewardship rollout](council/task/operations-stewardship-rollout/README.md)
+- [Local role-pack experiment](council/task/local-role-pack-experiment/README.md)
+
+Public structure and prototype entry:
+
+- [H.E.L.M structure map](H.E.L.M_structure.md)
+- [Test environment role-pack prototype](test_environment/README.md)
+
 ## Run The Public Platform
 
 ```bash
@@ -134,6 +187,14 @@ npm run ui
 Then open `http://127.0.0.1:3030`.
 
 Local browser login state is intentionally not included in this repository and should stay machine-local.
+
+## Contributors
+
+| | Model | Role |
+|---|---|---|
+| [![ChatGPT](https://img.shields.io/badge/ChatGPT-openai-74aa9c?logo=openai&logoColor=white)](https://github.com/openai) | ChatGPT | Council · Executor |
+| [![Claude](https://img.shields.io/badge/Claude-Anthropic-cc785c?logo=anthropic&logoColor=white)](https://github.com/anthropics) | Claude | Council · Executor |
+| [![Gemini](https://img.shields.io/badge/Gemini-Google-4285F4?logo=google&logoColor=white)](https://github.com/google-gemini) | Gemini | Council · Executor |
 
 ## Public Boundaries
 
