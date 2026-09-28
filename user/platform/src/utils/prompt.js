@@ -39,6 +39,16 @@ function normalizeInputText(text) {
     .trim();
 }
 
+function hasPositiveSubmissionEvidence(evidence = {}) {
+  return Boolean(
+    evidence.stopSelector ||
+      evidence.stopButtonVisible ||
+      evidence.userTurnAdded ||
+      evidence.assistantTurnAdded ||
+      evidence.urlChanged
+  );
+}
+
 function resolvePromptSections(payload) {
   if (typeof payload === "string") {
     return {
@@ -274,6 +284,10 @@ async function appendText(page, text, baseDelayMs, { preferPaste = true } = {}) 
   }
 }
 
+function resolveInjectionMode(mode) {
+  return mode === "insert" ? "insert" : "paste";
+}
+
 async function pauseBeforePaste(ms) {
   if (ms > 0) {
     await sleep(ms);
@@ -284,8 +298,13 @@ async function injectPromptBlock(
   page,
   text,
   baseDelayMs,
-  { pauseBeforePasteMs = 0 } = {}
+  { mode = "paste", pauseBeforePasteMs = 0 } = {}
 ) {
+  if (resolveInjectionMode(mode) === "insert") {
+    await appendText(page, text, baseDelayMs, { preferPaste: false });
+    return;
+  }
+
   const segments = splitPromptForInjection(text);
 
   if (!segments.typedText && !segments.pastedText) {
@@ -305,18 +324,24 @@ async function injectPromptBlock(
 async function injectPrompt(page, payload, baseDelayMs, options = {}) {
   const { promptBlock, summaryBlock } = resolvePromptSections(payload);
   const pastePauseMs = resolvePromptPastePauseMs();
+  const promptMode = resolveInjectionMode(options.promptMode);
+  const summaryMode = resolveInjectionMode(options.summaryMode);
 
   if (promptBlock) {
     await injectPromptBlock(page, promptBlock, baseDelayMs, {
-      pauseBeforePasteMs: pastePauseMs,
+      mode: promptMode,
+      pauseBeforePasteMs: promptMode === "paste" ? pastePauseMs : 0,
     });
   }
 
   if (summaryBlock) {
     const summarySuffix = promptBlock ? `\n\n${summaryBlock}` : summaryBlock;
-    const pauseBeforeSummaryMs = promptBlock ? pastePauseMs : 0;
+    const pauseBeforeSummaryMs =
+      promptBlock && summaryMode === "paste" ? pastePauseMs : 0;
     await pauseBeforePaste(pauseBeforeSummaryMs);
-    await appendText(page, summarySuffix, baseDelayMs, { preferPaste: true });
+    await appendText(page, summarySuffix, baseDelayMs, {
+      preferPaste: summaryMode === "paste",
+    });
   }
 }
 
@@ -325,6 +350,7 @@ module.exports = {
   clearInput,
   findEditableInput,
   getPromptLines,
+  hasPositiveSubmissionEvidence,
   injectPrompt,
   normalizeInputText,
   pasteText,

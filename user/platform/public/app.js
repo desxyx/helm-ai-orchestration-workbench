@@ -453,7 +453,12 @@ function getManualRefreshRemainingMs() {
   return Math.max(0, startedAtMs + getManualRefreshUnlockMs() - Date.now());
 }
 
-function canRefreshCurrentRunningRound() {
+function isAgentFinishedInRunningRound(agent) {
+  const status = state.activeRun?.agents?.[agent]?.status;
+  return status === "done" || status === "error";
+}
+
+function canRefreshCurrentRunningRound(agent = null) {
   if (!state.activeRun || state.activeRun.status !== "running" || !state.selectedSession) {
     return false;
   }
@@ -466,7 +471,7 @@ function canRefreshCurrentRunningRound() {
   return Boolean(
     round &&
       round.roundNumber === state.activeRun.roundNumber &&
-      getManualRefreshRemainingMs() === 0
+      (getManualRefreshRemainingMs() === 0 || (agent && isAgentFinishedInRunningRound(agent)))
   );
 }
 
@@ -480,7 +485,7 @@ function canRefreshReply(agent) {
   }
 
   if (state.activeRun && state.activeRun.status === "running") {
-    return canRefreshCurrentRunningRound();
+    return canRefreshCurrentRunningRound(agent);
   }
 
   const round = getSelectedRound();
@@ -499,7 +504,9 @@ function getRefreshButtonTitle(agent, enabled, refreshing) {
 
   if (enabled) {
     if (state.activeRun && state.activeRun.status === "running") {
-      return "Manual refresh is temporarily unlocked because this round has been waiting a while.";
+      return isAgentFinishedInRunningRound(agent)
+        ? "This agent has finished — re-capture its latest reply."
+        : "Manual refresh is temporarily unlocked because this round has been waiting a while.";
     }
 
     return "Re-capture the latest visible reply from this agent. Shift+click also arms manual dispatch override for this round.";

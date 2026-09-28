@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
-    "ui": "node server.js"
+    "ui": "node server.js",
+    "test": "node --test test/*.test.js"
   },
   "dependencies": {
     "playwright": "^1.42.0"

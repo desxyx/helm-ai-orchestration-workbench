@@ -176,12 +176,28 @@ Public structure and prototype entry:
 - [H.E.L.M structure map](H.E.L.M_structure.md)
 - [Test environment role-pack prototype](test_environment/README.md)
 
+## Protocol Refresh: Evidence, Convergence, Independent Review
+
+The latest public slice refreshes all three governing documents together, because a rule added to one layer is checked against the other two before it lands:
+
+- [Council Constitution — Public v1.7](council/council_constitution_v1.7.md): Frozen Truth must pass an evidence admission check before it can bind execution; merged Council results require an independent phase, a cross-review phase, and one designated merge owner; re-entry triggers are based on boundary expansion, not arbitrary counts.
+- [Executor Charter — Public v1.0](executors/EXECUTOR%20CHARTER%20—%20v1.0.md): role-scoped loading, a first-class Reviewer appendix, raw-first review, cross-model-family independence, and a hard rule that whoever authored a change is never the sole source of its acceptance.
+- [UserOps Charter — Public v0.5](userops/USEROPS_CHARTER.md): preflight into a neutral task entry, write-once evidence artifacts, a capped priority memory index, and cold-start takeover readiness.
+
+The documents got sharper, not heavier: each layer still loads only what its role needs.
+
 ## Run The Public Platform
 
 ```bash
 cd user/platform
 npm install
 npm run ui
+```
+
+Regression tests for the reply-capture path (requires a Playwright Chromium install):
+
+```bash
+npm test
 ```
 
 Then open `http://127.0.0.1:3030`.

@@ -8,7 +8,7 @@ const claudeAdapter = require("./src/adapters/claude");
 const geminiAdapter = require("./src/adapters/gemini");
 const chatgptAdapter = require("./src/adapters/chatgpt");
 const { launchBrowser, closeBrowser } = require("./src/browser/playwrightManager");
-const { runRound } = require("./src/orchestrator/roundRunner");
+const { applyStaleSuspect, runRound } = require("./src/orchestrator/roundRunner");
 const sessionStore = require("./src/storage/sessionStore");
 const auditStore = require("./src/storage/auditStore");
 const logger = require("./src/utils/logger");
@@ -506,7 +506,11 @@ async function handleRefreshReply({ sessionId, roundNumber, agentId }) {
         (a) => a.status === "done" || a.status === "error"
       );
 
-    if (!allAgentsDone) {
+    // An agent that has already finished (done/error) may be refreshed at once, even while other
+    // agents in the same round are still running; only a still-running agent waits for the timer.
+    const thisAgentFinished = ["done", "error"].includes(activeRun.agents?.[agentId]?.status);
+
+    if (!allAgentsDone && !thisAgentFinished) {
       const unlockMs = activeRun.manualRefreshUnlockMs || MANUAL_REFRESH_UNLOCK_MS;
       const startedAtMs = Date.parse(activeRun.startedAt || "");
       const remainingMs = Number.isFinite(startedAtMs)
@@ -578,7 +582,9 @@ async function handleRefreshReply({ sessionId, roundNumber, agentId }) {
 
   const browser = activeSession.browsers[agent.id];
   await browser.page.bringToFront().catch(() => null);
-  const content = await agent.adapter.captureLastReply(browser.page);
+  // force: true — this is an operator-initiated manual refresh, so the normal automatic-capture
+  // visibility/enabled gate is bypassed in favor of grabbing the bottom-most copy control directly.
+  const content = await agent.adapter.captureLastReply(browser.page, { force: true });
   const refreshedAt = new Date().toISOString();
   const existingReply = targetRound.replies.find((reply) => reply.agent === agent.id);
   const previousStatus = existingReply?.status || null;
@@ -610,6 +616,12 @@ async function handleRefreshReply({ sessionId, roundNumber, agentId }) {
     previousStatus === "ok" && previousCompletionReason
       ? previousCompletionReason
       : "manual_refresh";
+  applyStaleSuspect(reply, currentSession, roundNumber);
+  if (reply.staleSuspect) {
+    logger.warn(
+      `[${agent.id}] Manual refresh: reply is identical to the previous round's reply; flagged staleSuspect.`
+    );
+  }
 
   targetRound.summary = buildSummary(targetRound.replies);
   sessionStore.writeSession(currentSession);

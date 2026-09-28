@@ -4,13 +4,17 @@ const logger = require("../utils/logger");
 const { waitForHybridCompletion } = require("../utils/completion");
 const {
   clickCopyAndRead,
+  locateLatestTurnCopyButton,
+  probeCopyReady,
   pollForCopyButton,
+  readLatestTurnState,
   scrollToBottom,
 } = require("./copyCapture");
 const {
   buildFullPromptText,
   clearInput,
   findEditableInput,
+  hasPositiveSubmissionEvidence,
   injectPrompt,
   pasteText,
   readInputText,
@@ -24,11 +28,28 @@ const diagnostics = config.diagnostics || {};
 const sendButtonSelector = 'button[aria-label="Send message"]';
 const CLAUDE_MESSAGE_SELECTOR =
   '[data-testid="assistant-message"], [data-testid*="assistant"], [data-message-role="assistant"]';
+const CLAUDE_USER_MESSAGE_SELECTOR =
+  '[data-testid="user-message"], [data-testid*="user-message"], [data-message-role="user"]';
 const CLAUDE_COPY_BUTTON_SELECTOR = '[data-testid="action-bar-copy"]';
+const CLAUDE_STOP_BUTTON_SELECTOR =
+  'button[aria-label="Stop streaming"], button[aria-label="Stop generating"], button[aria-label="Stop response"], [data-testid="stop-button"], .streaming button';
 const promptInjectionOptions = {
   promptMode: "insert",
   summaryMode: "insert",
 };
+const CLAUDE_REPLY_SCOPE = {
+  messageSelectors: Array.from(
+    new Set([
+      CLAUDE_MESSAGE_SELECTOR,
+      '[data-message-role="assistant"]',
+      ...(claudeConfig.replySelectors || []),
+    ])
+  ),
+  copyButtonSelector: CLAUDE_COPY_BUTTON_SELECTOR,
+};
+// Assistant-turn count recorded just before each submit; the reply for that submit must be a
+// turn beyond it (guards against capturing the previous round's reply).
+const submitBaselines = new WeakMap();
 
 function normalizeInputForComparison(text) {
   return String(text || "")
@@ -88,32 +109,10 @@ async function waitForClaudePromptReady(page, inputLocator, expectedText) {
   let observedInput = "";
   let stableForMs = 0;
   let lastNormalizedInput = "";
-  let sawContent = false;
 
   while (Date.now() < deadline) {
     observedInput = await readInputText(inputLocator);
     const normalizedObserved = normalizeInputForComparison(observedInput);
-
-    if (normalizedObserved) {
-      sawContent = true;
-    } else if (sawContent) {
-      const sendButtonGone = !(await isSendButtonReady(page));
-      if (sendButtonGone) {
-        await sleep(200);
-        const stillEmpty = !(await readInputText(inputLocator)).trim();
-        const buttonStillGone = !(await isSendButtonReady(page));
-        if (stillEmpty && buttonStillGone) {
-          logger.info(
-            "[claude] waitForClaudePromptReady: submitted confirmed (double-check passed)"
-          );
-          return { ready: false, submitted: true, observedInput };
-        }
-        await sleep(100);
-        continue;
-      }
-      await sleep(100);
-      continue;
-    }
 
     if (normalizedObserved === normalizedExpected) {
       return { ready: true, submitted: false, observedInput };
@@ -177,6 +176,16 @@ async function getLatestAssistantMessage(page) {
   return {
     count: 0,
     locator: null,
+  };
+}
+
+async function getLatestUserMessage(page) {
+  const messages = page.locator(CLAUDE_USER_MESSAGE_SELECTOR);
+  const count = await messages.count().catch(() => 0);
+
+  return {
+    count,
+    locator: count > 0 ? messages.nth(count - 1) : null,
   };
 }
 
@@ -368,23 +377,13 @@ async function readLatestAssistantActionDiagnostics(page) {
 }
 
 async function readReplyState(page) {
-  await scrollToBottom(page);
-  const { count, locator } = await getLatestAssistantMessage(page);
-
-  if (!locator) {
-    return { count: 0, text: "" };
-  }
-
-  const copyButton = await pollForCopyButton(
-    locator,
-    page.locator(CLAUDE_COPY_BUTTON_SELECTOR).last(),
-    250,
-    750
-  );
+  const { count, copyAttached, textLength } = await readLatestTurnState(page, CLAUDE_REPLY_SCOPE);
+  const baselineCount = submitBaselines.get(page);
+  const isNewTurn = baselineCount === undefined || count > baselineCount;
 
   return {
     count,
-    text: copyButton ? `copy_ready:${count}` : "",
+    text: isNewTurn && copyAttached ? `copy_ready:${count}:${textLength}` : "",
   };
 }
 
@@ -465,41 +464,92 @@ async function checkSiteGenerationSignal(page) {
   }
 }
 
-async function waitForSubmissionStart(page, inputLocator, timeoutMs) {
+async function readSubmissionEvidence(page, baseline) {
+  const currentInput = await findInputLocator(page).catch(() => null);
+  const currentInputText = currentInput
+    ? await readInputText(currentInput.locator)
+    : null;
+  const currentInputEmpty =
+    currentInputText !== null && !normalizeInputForComparison(currentInputText);
+  const stopButtonVisible = await page
+    .locator(CLAUDE_STOP_BUTTON_SELECTOR)
+    .first()
+    .isVisible()
+    .catch(() => false);
+  const userTurn = await getLatestUserMessage(page);
+  const assistantTurn = await getLatestAssistantMessage(page);
+  const currentUrl = page.url();
+  const userTurnAdded = userTurn.count > baseline.userTurnCount;
+  const assistantTurnAdded = assistantTurn.count > baseline.assistantTurnCount;
+  const urlChanged = currentUrl !== baseline.url;
+
+  return {
+    submitted: hasPositiveSubmissionEvidence({
+      stopButtonVisible,
+      userTurnAdded,
+      assistantTurnAdded,
+      urlChanged,
+    }),
+    currentInputEmpty,
+    currentInputFound: Boolean(currentInput),
+    stopButtonVisible,
+    userTurnAdded,
+    assistantTurnAdded,
+    urlChanged,
+  };
+}
+
+function summarizeSubmissionEvidence(evidence) {
+  if (!evidence) {
+    return "none";
+  }
+
+  return [
+    `inputFound=${evidence.currentInputFound}`,
+    `inputEmpty=${evidence.currentInputEmpty}`,
+    `stop=${evidence.stopButtonVisible}`,
+    `userTurnAdded=${evidence.userTurnAdded}`,
+    `assistantTurnAdded=${evidence.assistantTurnAdded}`,
+    `urlChanged=${evidence.urlChanged}`,
+  ].join(" | ");
+}
+
+async function waitForSubmissionStart(page, baseline, timeoutMs) {
   const deadline = Date.now() + timeoutMs;
+  let latestEvidence = null;
 
   while (Date.now() < deadline) {
-    const currentInput = await readInputText(inputLocator);
+    latestEvidence = await readSubmissionEvidence(page, baseline);
 
-    if (!currentInput.trim()) {
-      return true;
+    if (latestEvidence.submitted) {
+      return latestEvidence;
     }
 
     await sleep(100);
   }
 
-  return false;
+  return latestEvidence;
 }
 
-async function waitForMessageSubmission(page, inputLocator) {
+async function waitForMessageSubmission(page, inputLocator, baseline) {
   const sendButton = page.locator(sendButtonSelector).first();
   const sendButtonReady = await waitForSendButtonReady(page);
   logger.info(`[DIAG][claude][waitForMessageSubmission] sendButtonReady=${sendButtonReady}`);
+  let submissionEvidence = null;
 
   if (sendButtonReady) {
     logger.info("[DIAG][claude][waitForMessageSubmission] attempting sendButton.click()");
     await sendButton.click();
 
-    if (
-      await waitForSubmissionStart(
-        page,
-        inputLocator,
-        Math.max(injection.sendSettledTimeoutMs, 5000)
-      )
-    ) {
+    submissionEvidence = await waitForSubmissionStart(
+      page,
+      baseline,
+      Math.max(injection.sendSettledTimeoutMs, 5000)
+    );
+    if (submissionEvidence?.submitted) {
       const siteSignal = await checkSiteGenerationSignal(page);
       logger.info(
-        `[DIAG][claude][waitForMessageSubmission] submit=sendButton_click | inputEmpty=true | siteSignal=${siteSignal}`
+        `[DIAG][claude][waitForMessageSubmission] submit=sendButton_click | ${summarizeSubmissionEvidence(submissionEvidence)} | siteSignal=${siteSignal}`
       );
       return;
     }
@@ -508,10 +558,11 @@ async function waitForMessageSubmission(page, inputLocator) {
     );
   }
 
-  if (await waitForSubmissionStart(page, inputLocator, 1200)) {
+  submissionEvidence = await waitForSubmissionStart(page, baseline, 1200);
+  if (submissionEvidence?.submitted) {
     const siteSignal = await checkSiteGenerationSignal(page);
     logger.info(
-      `[DIAG][claude][waitForMessageSubmission] submit=already_cleared | inputEmpty=true | siteSignal=${siteSignal}`
+      `[DIAG][claude][waitForMessageSubmission] submit=late_signal | ${summarizeSubmissionEvidence(submissionEvidence)} | siteSignal=${siteSignal}`
     );
     return;
   }
@@ -521,16 +572,15 @@ async function waitForMessageSubmission(page, inputLocator) {
     await inputLocator.click().catch(() => null);
     await page.keyboard.press("Enter");
 
-    if (
-      await waitForSubmissionStart(
-        page,
-        inputLocator,
-        Math.max(injection.sendSettledTimeoutMs, 4000)
-      )
-    ) {
+    submissionEvidence = await waitForSubmissionStart(
+      page,
+      baseline,
+      Math.max(injection.sendSettledTimeoutMs, 4000)
+    );
+    if (submissionEvidence?.submitted) {
       const siteSignal = await checkSiteGenerationSignal(page);
       logger.info(
-        `[DIAG][claude][waitForMessageSubmission] submit=Enter | inputEmpty=true | siteSignal=${siteSignal}`
+        `[DIAG][claude][waitForMessageSubmission] submit=Enter | ${summarizeSubmissionEvidence(submissionEvidence)} | siteSignal=${siteSignal}`
       );
       return;
     }
@@ -545,16 +595,15 @@ async function waitForMessageSubmission(page, inputLocator) {
     await inputLocator.click().catch(() => null);
     await page.keyboard.press(sendKey);
 
-    if (
-      await waitForSubmissionStart(
-        page,
-        inputLocator,
-        Math.max(injection.sendSettledTimeoutMs, 4000)
-      )
-    ) {
+    submissionEvidence = await waitForSubmissionStart(
+      page,
+      baseline,
+      Math.max(injection.sendSettledTimeoutMs, 4000)
+    );
+    if (submissionEvidence?.submitted) {
       const siteSignal = await checkSiteGenerationSignal(page);
       logger.info(
-        `[DIAG][claude][waitForMessageSubmission] submit=${sendKey} | inputEmpty=true | siteSignal=${siteSignal}`
+        `[DIAG][claude][waitForMessageSubmission] submit=${sendKey} | ${summarizeSubmissionEvidence(submissionEvidence)} | siteSignal=${siteSignal}`
       );
       return;
     }
@@ -563,7 +612,7 @@ async function waitForMessageSubmission(page, inputLocator) {
 
   const observedInput = await readInputText(inputLocator);
   logger.warn(
-    `[DIAG][claude][waitForMessageSubmission] ALL_PATHS_FAILED | inputEmpty=false | observedInput="${observedInput.slice(0, 120)}"`
+    `[DIAG][claude][waitForMessageSubmission] ALL_PATHS_FAILED | ${summarizeSubmissionEvidence(submissionEvidence)} | observedInput="${observedInput.slice(0, 120)}"`
   );
   throw createAgentError(
     "message_not_submitted",
@@ -600,6 +649,15 @@ async function sendMessage(page, text) {
       stage: "inject",
     });
   }
+
+  const baselineUserTurn = await getLatestUserMessage(page);
+  const baselineAssistantTurn = await getLatestAssistantMessage(page);
+  const submissionBaseline = {
+    url: page.url(),
+    userTurnCount: baselineUserTurn.count,
+    assistantTurnCount: baselineAssistantTurn.count,
+  };
+  submitBaselines.set(page, baselineAssistantTurn.count);
 
   await inputMatch.locator.click().catch((error) => {
     throw createAgentError("input_not_focusable", error.message, {
@@ -643,8 +701,7 @@ async function sendMessage(page, text) {
         const postInjectNorm = normalizeInputForComparison(await readInputText(inputMatch.locator));
         if (postInjectNorm && !postInjectNorm.includes(expectedHead)) {
           await clearInput(page, inputMatch.locator).catch(() => null);
-          await pasteText(page, expectedText);
-          await sleep(injection.promptPastePauseMs || 1000);
+          await injectPrompt(page, text, injection.keystrokeDelayMs, promptInjectionOptions);
         }
       }
     }
@@ -652,22 +709,10 @@ async function sendMessage(page, text) {
     const settleState = await waitForClaudePromptReady(page, inputMatch.locator, expectedText);
     injectionSettled = settleState.ready;
     observedInput = settleState.observedInput;
-    const settleVerdict = settleState.ready
-      ? "ready"
-      : settleState.submitted
-        ? "submitted"
-        : "timed-out";
+    const settleVerdict = settleState.ready ? "ready" : "timed-out";
     logger.info(
       `[DIAG][claude][sendMessage] attempt=${attempt} | settle=${settleVerdict} | observedInput="${(observedInput || "").slice(0, 120)}"`
     );
-
-    if (settleState.submitted) {
-      const siteSignal = await checkSiteGenerationSignal(page);
-      logger.info(
-        `[DIAG][claude][sendMessage] early_exit via settle.submitted | siteSignal=${siteSignal}`
-      );
-      return;
-    }
 
     if (injectionSettled) {
       logger.info(
@@ -699,7 +744,7 @@ async function sendMessage(page, text) {
   logger.info(
     `[DIAG][claude][sendMessage] entering waitForMessageSubmission | class=${promptLengthClass}`
   );
-  await waitForMessageSubmission(page, inputMatch.locator).catch((error) => {
+  await waitForMessageSubmission(page, inputMatch.locator, submissionBaseline).catch((error) => {
     throw createAgentError(error.code || "input_not_focusable", error.message, {
       selector: inputMatch.selector,
       stage: "inject",
@@ -713,12 +758,29 @@ async function sendMessage(page, text) {
   );
 }
 
+async function probeReplyFinished(page, { allowHover = false } = {}) {
+  const target = await locateLatestTurnCopyButton(page, CLAUDE_REPLY_SCOPE);
+  const hoverTarget = allowHover ? (await getLatestAssistantMessage(page)).locator : null;
+  return probeCopyReady(target, hoverTarget);
+}
+
 async function waitForCompletion(page) {
   const completionState = await waitForHybridCompletion({
     page,
     readReplyState,
     completionConfig: completion,
-    detectionConfig: claudeConfig.completionDetection || {},
+    detectionConfig: {
+      ...(claudeConfig.completionDetection || {}),
+      busySelectors: [
+        ...((claudeConfig.completionDetection || {}).busySelectors || []),
+        CLAUDE_STOP_BUTTON_SELECTOR,
+      ],
+    },
+    baselineState: submitBaselines.has(page)
+      ? { count: submitBaselines.get(page), text: "" }
+      : null,
+    probeFinished: probeReplyFinished,
+    label: "Claude",
     onTimeout: () => {
       logger.warn("Claude copy-button readiness timed out.");
     },
@@ -727,14 +789,14 @@ async function waitForCompletion(page) {
     },
   });
 
-  if (completionState.reason === "stable") {
+  if (completionState.reason === "stable" || completionState.reason === "stable_probe") {
     logger.info("[claude] copy button is ready for the latest assistant reply.");
   }
 
   return completionState;
 }
 
-async function captureLastReply(page) {
+async function captureLastReply(page, { force = false } = {}) {
   await scrollToBottom(page);
   const { count, locator } = await getLatestAssistantMessage(page);
 
@@ -749,12 +811,33 @@ async function captureLastReply(page) {
     });
   }
 
-  const copyButton = await pollForCopyButton(
+  const baselineCount = submitBaselines.get(page);
+  if (!force && baselineCount !== undefined && count <= baselineCount) {
+    throw createAgentError(
+      "no_new_assistant_turn",
+      "Claude has no assistant reply newer than the one before this submit.",
+      { stage: "capture", baselineCount, count }
+    );
+  }
+
+  const lastCopyButtonLocator = page.locator(CLAUDE_COPY_BUTTON_SELECTOR).last();
+  let copyButton = await pollForCopyButton(
     locator,
-    page.locator(CLAUDE_COPY_BUTTON_SELECTOR).last(),
+    () => locateLatestTurnCopyButton(page, CLAUDE_REPLY_SCOPE),
     250,
-    claudeConfig.captureTimeoutMs
+    force ? Math.max(claudeConfig.captureTimeoutMs, 20000) : claudeConfig.captureTimeoutMs,
+    { requireEnabled: !force }
   );
+
+  if (!copyButton && force) {
+    // Manual Refresh Reply: the operator has already looked at the page and confirmed a
+    // copy control is there. Grab the bottom-most match directly instead of failing on
+    // Playwright's visibility/enabled gate (see clickCopyAndRead's force path).
+    logger.info(
+      "[claude] force refresh: copy button did not clear the normal readiness gate; grabbing the bottom-most match directly."
+    );
+    copyButton = lastCopyButtonLocator;
+  }
 
   if (!copyButton) {
     const actionDiagnostics = await readLatestAssistantActionDiagnostics(page);
@@ -771,7 +854,7 @@ async function captureLastReply(page) {
   logger.info("[claude] copy button ready; clicking and reading clipboard.");
 
   try {
-    const content = await clickCopyAndRead(page, locator, copyButton);
+    const content = await clickCopyAndRead(page, locator, copyButton, { force });
     logger.info(`[claude] copy capture succeeded (${content.length} chars).`);
     return content;
   } catch (error) {

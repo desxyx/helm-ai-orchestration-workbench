@@ -4,7 +4,10 @@ const logger = require("../utils/logger");
 const { waitForHybridCompletion } = require("../utils/completion");
 const {
   clickCopyAndRead,
+  locateLatestTurnCopyButton,
+  probeCopyReady,
   pollForCopyButton,
+  readLatestTurnState,
   scrollToBottom,
 } = require("./copyCapture");
 const {
@@ -34,7 +37,19 @@ const sendButtonSelectors = [
   'button[type="submit"]',
 ];
 const GEMINI_MESSAGE_SELECTOR = "message-content";
-const GEMINI_COPY_BUTTON_SELECTOR = 'button[mattooltip="Copy response"]';
+const GEMINI_COPY_BUTTON_SELECTOR = 'copy-button button[aria-label="Copy"]';
+const GEMINI_REPLY_SCOPE = {
+  messageSelectors: Array.from(
+    new Set([GEMINI_MESSAGE_SELECTOR, ...(geminiConfig.replySelectors || [])])
+  ),
+  // The copy button sits in the response's action bar, beside message-content rather than
+  // inside it, so scope to the enclosing model-response.
+  containerSelector: "model-response",
+  copyButtonSelector: GEMINI_COPY_BUTTON_SELECTOR,
+};
+// Assistant-turn count recorded just before each submit; the reply for that submit must be a
+// turn beyond it (guards against capturing the previous round's reply).
+const submitBaselines = new WeakMap();
 
 async function findInputLocator(page) {
   return findEditableInput(page, geminiConfig.inputSelector);
@@ -433,23 +448,13 @@ async function waitForSubmissionAcknowledgement(page, label, baselineReplyCount)
 }
 
 async function readReplyState(page) {
-  await scrollToBottom(page);
-  const { count, locator } = await getLatestAssistantMessage(page);
-
-  if (!locator) {
-    return { count: 0, text: "" };
-  }
-
-  const copyButton = await pollForCopyButton(
-    locator,
-    page.locator(GEMINI_COPY_BUTTON_SELECTOR).last(),
-    250,
-    750
-  );
+  const { count, copyAttached, textLength } = await readLatestTurnState(page, GEMINI_REPLY_SCOPE);
+  const baselineCount = submitBaselines.get(page);
+  const isNewTurn = baselineCount === undefined || count > baselineCount;
 
   return {
     count,
-    text: copyButton ? `copy_ready:${count}` : "",
+    text: isNewTurn && copyAttached ? `copy_ready:${count}:${textLength}` : "",
   };
 }
 
@@ -513,6 +518,7 @@ async function waitForMessageSubmission(page, inputLocator) {
   const baselineReplyCount = await getLatestAssistantMessage(page)
     .then((state) => state.count)
     .catch(() => 0);
+  submitBaselines.set(page, baselineReplyCount);
 
   await inputLocator.click().catch(() => null);
   logger.info("[DIAG][gemini][waitForMessageSubmission] attempting Enter key");
@@ -646,12 +652,23 @@ async function sendMessage(page, text) {
   });
 }
 
+async function probeReplyFinished(page, { allowHover = false } = {}) {
+  const target = await locateLatestTurnCopyButton(page, GEMINI_REPLY_SCOPE);
+  const hoverTarget = allowHover ? (await getLatestAssistantMessage(page)).locator : null;
+  return probeCopyReady(target, hoverTarget);
+}
+
 async function waitForCompletion(page) {
   const completionState = await waitForHybridCompletion({
     page,
     readReplyState,
     completionConfig: completion,
     detectionConfig: geminiConfig.completionDetection,
+    baselineState: submitBaselines.has(page)
+      ? { count: submitBaselines.get(page), text: "" }
+      : null,
+    probeFinished: probeReplyFinished,
+    label: "Gemini",
     onTimeout: () => {
       logger.warn("Gemini copy-button readiness timed out.");
     },
@@ -660,14 +677,14 @@ async function waitForCompletion(page) {
     },
   });
 
-  if (completionState.reason === "stable") {
+  if (completionState.reason === "stable" || completionState.reason === "stable_probe") {
     logger.info("[gemini] copy button is ready for the latest assistant reply.");
   }
 
   return completionState;
 }
 
-async function captureLastReply(page) {
+async function captureLastReply(page, { force = false } = {}) {
   await scrollToBottom(page);
   const { count, locator } = await getLatestAssistantMessage(page);
 
@@ -678,12 +695,33 @@ async function captureLastReply(page) {
     });
   }
 
-  const copyButton = await pollForCopyButton(
+  const baselineCount = submitBaselines.get(page);
+  if (!force && baselineCount !== undefined && count <= baselineCount) {
+    throw createAgentError(
+      "no_new_assistant_turn",
+      "Gemini has no assistant reply newer than the one before this submit.",
+      { stage: "capture", baselineCount, count }
+    );
+  }
+
+  const lastCopyButtonLocator = page.locator(GEMINI_COPY_BUTTON_SELECTOR).last();
+  let copyButton = await pollForCopyButton(
     locator,
-    page.locator(GEMINI_COPY_BUTTON_SELECTOR).last(),
+    () => locateLatestTurnCopyButton(page, GEMINI_REPLY_SCOPE),
     250,
-    geminiConfig.captureTimeoutMs
+    force ? Math.max(geminiConfig.captureTimeoutMs, 20000) : geminiConfig.captureTimeoutMs,
+    { requireEnabled: !force }
   );
+
+  if (!copyButton && force) {
+    // Manual Refresh Reply: the operator has already looked at the page and confirmed a
+    // copy control is there. Grab the bottom-most match directly instead of failing on
+    // Playwright's visibility/enabled gate (see clickCopyAndRead's force path).
+    logger.info(
+      "[gemini] force refresh: copy button did not clear the normal readiness gate; grabbing the bottom-most match directly."
+    );
+    copyButton = lastCopyButtonLocator;
+  }
 
   if (!copyButton) {
     const actionDiagnostics = await readLatestAssistantActionDiagnostics(page);
@@ -700,7 +738,7 @@ async function captureLastReply(page) {
   logger.info("[gemini] copy button ready; clicking and reading clipboard.");
 
   try {
-    const content = await clickCopyAndRead(page, locator, copyButton);
+    const content = await clickCopyAndRead(page, locator, copyButton, { force });
     logger.info(`[gemini] copy capture succeeded (${content.length} chars).`);
     return content;
   } catch (error) {

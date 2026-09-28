@@ -6,6 +6,42 @@ function buildTimeoutAutoUnlockContent(agentName) {
   return `[capture timeout] ${agentName} reply was not captured before the provider copy button became available. Dispatch auto-unlocked by operator timeout policy.`;
 }
 
+// A capture identical to this agent's previous-round reply is flagged, not dropped: it is the
+// signature of grabbing the previous turn's copy button, but a legitimate reply can repeat.
+function isStaleSuspect(session, roundNumber, agentName, content) {
+  const text = String(content || "").trim();
+  if (
+    !text ||
+    text === buildTimeoutAutoUnlockContent(agentName) ||
+    !Array.isArray(session?.rounds)
+  ) {
+    return false;
+  }
+
+  const previousRound = session.rounds
+    .filter((item) => item.roundNumber < roundNumber)
+    .sort((a, b) => b.roundNumber - a.roundNumber)[0];
+  const previousReply = previousRound?.replies?.find((reply) => reply.agent === agentName);
+
+  return Boolean(
+    previousReply &&
+      previousReply.status === "ok" &&
+      String(previousReply.content || "").trim() === text
+  );
+}
+
+// Recomputes the flag after a reply's content is replaced (e.g. manual refresh), clearing a
+// stale true as well as setting a new one.
+function applyStaleSuspect(reply, session, roundNumber) {
+  if (isStaleSuspect(session, roundNumber, reply.agent, reply.content)) {
+    reply.staleSuspect = true;
+  } else {
+    delete reply.staleSuspect;
+  }
+
+  return reply;
+}
+
 async function runRound({
   adapter,
   page,
@@ -124,6 +160,14 @@ async function runRound({
 
   timings.totalMs = Date.now() - runStartedAt;
 
+  const staleSuspect =
+    status === "ok" && isStaleSuspect(session, roundNumber, agentName, content);
+  if (staleSuspect) {
+    logger.warn(
+      `[${agentName}] [capture] Reply is identical to the previous round's reply; flagged staleSuspect.`
+    );
+  }
+
   const round = sessionStore.buildRound({
     roundNumber,
     prompt:
@@ -135,6 +179,7 @@ async function runRound({
     completionReason,
     errorCode,
     metrics: timings,
+    staleSuspect,
   });
 
   logger.stage(agentName, "persist", "Writing round to disk.");
@@ -156,5 +201,6 @@ async function runRound({
 }
 
 module.exports = {
+  applyStaleSuspect,
   runRound,
 };

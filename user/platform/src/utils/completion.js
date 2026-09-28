@@ -1,4 +1,5 @@
 const { sleep } = require("./time");
+const logger = require("./logger");
 
 function createRequestTracker(page, requestUrlPatterns) {
   const inflight = new Set();
@@ -59,11 +60,11 @@ async function hasBusyUi(page, busySelectors) {
       .catch(() => false);
 
     if (visible) {
-      return true;
+      return selector;
     }
   }
 
-  return false;
+  return "";
 }
 
 async function hasBusyText(page, busyTextPatterns) {
@@ -72,7 +73,7 @@ async function hasBusyText(page, busyTextPatterns) {
     .filter(Boolean);
 
   if (!patterns.length) {
-    return false;
+    return "";
   }
 
   return page.evaluate((candidatePatterns) => {
@@ -113,34 +114,56 @@ async function hasBusyText(page, busyTextPatterns) {
         continue;
       }
 
-      if (candidatePatterns.some((pattern) => matchesBusyText(text, pattern))) {
-        return true;
+      const hit = candidatePatterns.find((pattern) => matchesBusyText(text, pattern));
+      if (hit) {
+        return hit;
       }
     }
 
-    return false;
-  }, patterns).catch(() => false);
+    return "";
+  }, patterns).catch(() => "");
 }
 
+// Returns a label naming what matched ("selector:<css>" / "text:<pattern>"), or "" when idle.
 async function hasBusySignal(page, busySelectors, busyTextPatterns) {
-  const selectorBusy = await hasBusyUi(page, busySelectors);
-  if (selectorBusy) {
-    return true;
+  const selectorHit = await hasBusyUi(page, busySelectors);
+  if (selectorHit) {
+    return `selector:${selectorHit}`;
   }
 
-  return hasBusyText(page, busyTextPatterns);
+  const textHit = await hasBusyText(page, busyTextPatterns);
+  return textHit ? `text:${textHit}` : "";
 }
+
+// Probe-based fallback. The heuristic path (reply text stable + no busy signal + network quiet)
+// can be blocked indefinitely by a signal that never clears on a finished page (a leftover
+// "Thought for Ns" header, a page that never goes network-idle), which used to cost the full
+// hard timeout even though the reply had been on screen for a minute. Once the reply content has
+// stopped changing, the adapter's own probe is asked whether the latest turn's Copy control is
+// actually usable — the same fact the capture step relies on — and two agreeing probes end the wait.
+const PROBE_AFTER_MS = 10000;
+const PROBE_INTERVAL_MS = 5000;
+const PROBE_CONFIRMATIONS = 2;
+const PROBE_BUSY_QUIET_MS = 20000;
+const PROBE_HOVER_AFTER_UNCHANGED_MS = 30000;
+const PROGRESS_LOG_INTERVAL_MS = 30000;
 
 async function waitForHybridCompletion({
   page,
   readReplyState,
   completionConfig,
   detectionConfig = {},
+  baselineState = null,
+  probeFinished = null,
+  label = "adapter",
   onTimeout,
   onError,
 }) {
   const tracker = createRequestTracker(page, detectionConfig.requestUrlPatterns || []);
-  const baseline = await readReplyState(page);
+  // baselineState: the reply state recorded before submit. Without it, a reply that is already
+  // finished when polling starts reads as "no change" and only ends at the hard timeout.
+  const baseline = baselineState || (await readReplyState(page));
+  const hardTimeoutMs = detectionConfig.hardTimeoutMs || completionConfig.hardTimeoutMs;
   const stabilityWindowMs =
     detectionConfig.stabilityWindowMs || completionConfig.stabilityWindowMs;
   const networkQuietMs =
@@ -154,16 +177,28 @@ async function waitForHybridCompletion({
   const fastStabilityWindowMs =
     detectionConfig.fastStabilityWindowMs || stabilityWindowMs;
   const fastReplyMinChars = detectionConfig.fastReplyMinChars || 0;
+  const pick = (key, fallback) => detectionConfig[key] || completionConfig[key] || fallback;
+  const probeAfterMs = pick("probeAfterMs", PROBE_AFTER_MS);
+  const probeIntervalMs = pick("probeIntervalMs", PROBE_INTERVAL_MS);
+  const probeConfirmations = pick("probeConfirmations", PROBE_CONFIRMATIONS);
+  const probeBusyQuietMs = pick("probeBusyQuietMs", PROBE_BUSY_QUIET_MS);
+  const probeHoverAfterMs = pick("probeHoverAfterUnchangedMs", PROBE_HOVER_AFTER_UNCHANGED_MS);
 
   let generationStarted = false;
   let lastObservedText = "";
   let stableForMs = 0;
   let lastBusyAt = 0;
   let sawBusyOrTraffic = false;
+  let generationStartedAt = 0;
+  let probeTextSeen = "";
+  let probeTextChangedAt = 0;
+  let probeStreak = 0;
+  let lastProbeAt = 0;
   const startedAt = Date.now();
+  let lastProgressAt = startedAt;
 
   try {
-    while (Date.now() - startedAt < completionConfig.hardTimeoutMs) {
+    while (Date.now() - startedAt < hardTimeoutMs) {
       await sleep(completionConfig.pollIntervalMs);
 
       const current = await readReplyState(page);
@@ -196,6 +231,7 @@ async function waitForHybridCompletion({
         }
 
         generationStarted = true;
+        generationStartedAt = Date.now();
         lastObservedText = current.text;
         stableForMs = 0;
         continue;
@@ -229,6 +265,52 @@ async function waitForHybridCompletion({
         busyCooldownElapsed
       ) {
         return { completed: true, reason: "stable" };
+      }
+
+      if (probeFinished && current.text) {
+        const now = Date.now();
+        if (current.text !== probeTextSeen) {
+          probeTextSeen = current.text;
+          probeTextChangedAt = now;
+          probeStreak = 0;
+        }
+
+        const unchangedMs = now - probeTextChangedAt;
+        // While a busy signal is still asserted, demand a longer quiet period before believing the
+        // probe, so a real (if unusual) still-generating state is not cut short.
+        const requiredQuietMs = busyUi ? Math.max(probeBusyQuietMs, probeIntervalMs) : probeIntervalMs;
+        if (
+          now - generationStartedAt >= probeAfterMs &&
+          unchangedMs >= requiredQuietMs &&
+          now - lastProbeAt >= probeIntervalMs
+        ) {
+          lastProbeAt = now;
+          let ready = false;
+          try {
+            ready = Boolean(await probeFinished(page, { allowHover: unchangedMs >= probeHoverAfterMs }));
+          } catch (_) {
+            ready = false;
+          }
+
+          probeStreak = ready ? probeStreak + 1 : 0;
+          if (probeStreak >= probeConfirmations) {
+            logger.info(
+              `[${label}] [wait] completion confirmed by copy-button probe after ${Math.round(
+                (now - startedAt) / 1000
+              )}s (heuristic was blocked: busy=${busyUi || "none"}, networkQuiet=${networkQuiet}).`
+            );
+            return { completed: true, reason: "stable_probe" };
+          }
+        }
+      }
+
+      if (Date.now() - lastProgressAt >= PROGRESS_LOG_INTERVAL_MS) {
+        lastProgressAt = Date.now();
+        logger.info(
+          `[${label}] [wait] ${Math.round((lastProgressAt - startedAt) / 1000)}s in, not complete: ` +
+            `reply=${current.text || "none"} stableForMs=${stableForMs} busy=${busyUi || "none"} ` +
+            `networkQuiet=${networkQuiet} inflight=${tracker.getInflightCount()} probeStreak=${probeStreak}`
+        );
       }
     }
 

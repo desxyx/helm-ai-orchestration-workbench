@@ -74,12 +74,22 @@ module.exports = {
     userDataDir: "browser-profiles/chatgpt",
     inputSelectors: [
       "#prompt-textarea",
+      '[data-testid="prompt-textarea"]',
+      '[contenteditable="true"][data-lexical-editor="true"]',
+      'form[data-chatgpt-composer] [data-composer-markdown][contenteditable="true"][role="textbox"]',
       'textarea[data-id="root"]',
       'textarea[placeholder*="Message"]',
       "textarea",
       'div[contenteditable="true"]',
     ],
-    replySelectors: ['[data-message-author-role="assistant"]'],
+    replySelectors: [
+      '[data-turn-key]:has([data-conversation-role="assistant"])',
+      'section[data-turn="assistant"]',
+      '[data-testid^="conversation-turn-"][data-turn="assistant"]',
+      '[data-testid^="conversation-turn-"][data-message-author-role="assistant"]',
+      '[data-testid^="conversation-turn-"]:has([data-message-author-role="assistant"])',
+      '[data-message-author-role="assistant"]',
+    ],
     verificationText: "Verify you are human",
     navigationTimeoutMs: 120000,
     inputReadyTimeoutMs: 30000,
@@ -113,7 +123,9 @@ module.exports = {
   completion: {
     pollIntervalMs: 500,
     stabilityWindowMs: 3000,
-    hardTimeoutMs: 60000,
+    // Shared by all three adapters (none overrides it). Long research/writing replies
+    // routinely ran past the old 60s cap; per operator decision, unified at 180s.
+    hardTimeoutMs: 180000,
     networkQuietMs: 1500,
     startTimeoutMs: 5000,
   },

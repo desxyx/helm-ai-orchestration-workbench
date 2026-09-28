@@ -481,7 +481,7 @@ At every HANDOFF or session end on a formal task, executor additionally
 outputs a compact memory file:
 
 ```
-executor_vault/session_memory/MEM_CORE06_2026-04-01_Aether.md
+executor_vault/session_memory/MEM_CORE06_2026-04-01_Claude.md
 ```
 
 Content:

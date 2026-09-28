@@ -4,13 +4,17 @@ const logger = require("../utils/logger");
 const { waitForHybridCompletion } = require("../utils/completion");
 const {
   clickCopyAndRead,
+  locateLatestTurnCopyButton,
+  probeCopyReady,
   pollForCopyButton,
+  readLatestTurnState,
   scrollToBottom,
 } = require("./copyCapture");
 const {
   buildFullPromptText,
   clearInput,
   findEditableInput,
+  hasPositiveSubmissionEvidence,
   injectPrompt,
   normalizeInputText,
   pasteText,
@@ -23,48 +27,109 @@ const { completion } = config;
 const injection = { ...config.injection, ...(chatgptConfig.injection || {}) };
 const diagnostics = config.diagnostics || {};
 const sendButtonSelectors = [
+  "#composer-submit-button",
   'button[data-testid="send-button"]',
+  'form[data-chatgpt-composer] button[type="submit"]',
   'button[aria-label="Send prompt"]',
   'button[aria-label="Send message"]',
 ];
-const CHATGPT_MESSAGE_SELECTOR = '[data-message-author-role="assistant"]';
-const CHATGPT_COPY_BUTTON_SELECTOR = '[data-testid="copy-turn-action-button"]';
+const stopButtonSelectors = [
+  'button[data-testid="stop-button"]',
+  'button[aria-label="Stop"]',
+  'button[aria-label="Stop generating"]',
+];
+const CHATGPT_ASSISTANT_TURN_SELECTORS = Array.from(
+  new Set([
+    ...(chatgptConfig.replySelectors || []),
+    '[data-turn-key]:has([data-conversation-role="assistant"])',
+    'section[data-turn="assistant"]',
+    '[data-testid^="conversation-turn-"][data-turn="assistant"]',
+    '[data-testid^="conversation-turn-"][data-message-author-role="assistant"]',
+    '[data-testid^="conversation-turn-"]:has([data-message-author-role="assistant"])',
+    '[data-message-author-role="assistant"]',
+  ])
+);
+const CHATGPT_USER_TURN_SELECTORS = [
+  '[data-turn-key]:has([data-user-message-bubble])',
+  'section[data-turn="user"]',
+  '[data-testid^="conversation-turn-"][data-turn="user"]',
+  '[data-testid^="conversation-turn-"][data-message-author-role="user"]',
+  '[data-testid^="conversation-turn-"]:has([data-message-author-role="user"])',
+  '[data-message-author-role="user"]',
+];
+const CHATGPT_MESSAGE_SELECTOR = CHATGPT_ASSISTANT_TURN_SELECTORS.join(", ");
+const CHATGPT_COPY_BUTTON_SELECTOR = [
+  'button[data-testid="copy-turn-action-button"]',
+  'button[aria-label*="Copy response" i]',
+  'button[aria-label="Copy"]',
+].join(", ");
 const promptInjectionOptions = {
   promptMode: "insert",
   summaryMode: "insert",
 };
+// The assistant turn container can also hold the user's message and its own copy button, so
+// the copy button must come after the assistant content anchor inside the turn.
+const CHATGPT_REPLY_SCOPE = {
+  messageSelectors: CHATGPT_ASSISTANT_TURN_SELECTORS,
+  visibleOnly: true,
+  anchorSelector: '[data-message-author-role="assistant"], [data-conversation-role="assistant"]',
+  copyButtonSelector: CHATGPT_COPY_BUTTON_SELECTOR,
+};
+// Assistant-turn count recorded just before each submit; the reply for that submit must be a
+// turn beyond it (guards against capturing the previous round's reply).
+const submitBaselines = new WeakMap();
 
 async function findInputLocator(page) {
   return findEditableInput(page, chatgptConfig.inputSelectors);
 }
 
-async function getLatestAssistantMessage(page) {
-  const selectors = Array.from(
-    new Set([CHATGPT_MESSAGE_SELECTOR, ...(chatgptConfig.replySelectors || [])])
-  );
-
+async function getLatestVisibleTurn(page, selectors) {
   for (const selector of selectors) {
     const messages = page.locator(selector);
     const count = await messages.count().catch(() => 0);
 
-    if (count > 0) {
-      return {
-        count,
-        locator: messages.nth(count - 1),
-      };
+    for (let index = count - 1; index >= 0; index -= 1) {
+      const candidate = messages.nth(index);
+      const visible = await candidate.isVisible().catch(() => false);
+      if (visible) {
+        return {
+          count,
+          locator: candidate,
+          selector,
+        };
+      }
     }
   }
 
   return {
     count: 0,
     locator: null,
+    selector: "",
   };
 }
 
+async function getLatestAssistantMessage(page) {
+  return getLatestVisibleTurn(page, CHATGPT_ASSISTANT_TURN_SELECTORS);
+}
+
+async function getLatestUserMessage(page) {
+  return getLatestVisibleTurn(page, CHATGPT_USER_TURN_SELECTORS);
+}
+
+async function findVisibleStopButton(page) {
+  for (const selector of stopButtonSelectors) {
+    const button = page.locator(selector).first();
+    const visible = await button.isVisible().catch(() => false);
+    if (visible) {
+      return selector;
+    }
+  }
+
+  return "";
+}
+
 async function readLatestAssistantActionDiagnostics(page) {
-  const selectors = Array.from(
-    new Set([CHATGPT_MESSAGE_SELECTOR, ...(chatgptConfig.replySelectors || [])])
-  );
+  const selectors = CHATGPT_ASSISTANT_TURN_SELECTORS;
   const selectorCounts = {};
 
   for (const selector of selectors) {
@@ -240,23 +305,13 @@ async function readLatestAssistantActionDiagnostics(page) {
 }
 
 async function readReplyState(page) {
-  await scrollToBottom(page);
-  const { count, locator } = await getLatestAssistantMessage(page);
-
-  if (!locator) {
-    return { count: 0, text: "" };
-  }
-
-  const copyButton = await pollForCopyButton(
-    locator,
-    page.locator(CHATGPT_COPY_BUTTON_SELECTOR).last(),
-    250,
-    750
-  );
+  const { count, copyAttached, textLength } = await readLatestTurnState(page, CHATGPT_REPLY_SCOPE);
+  const baselineCount = submitBaselines.get(page);
+  const isNewTurn = baselineCount === undefined || count > baselineCount;
 
   return {
     count,
-    text: copyButton ? `copy_ready:${count}` : "",
+    text: isNewTurn && copyAttached ? `copy_ready:${count}:${textLength}` : "",
   };
 }
 
@@ -319,56 +374,97 @@ async function isReady(page) {
 // Diagnostic only; does not affect control flow.
 async function checkSiteGenerationSignal(page) {
   try {
-    return await page.evaluate(() => {
-      const stopBtn = document.querySelector('button[aria-label="Stop generating"]');
-      const assistantTurn = document.querySelector('[data-message-author-role="assistant"]');
-      if (stopBtn && stopBtn.offsetParent !== null) return "stop_button_visible";
-      if (assistantTurn) return "assistant_turn_present";
-      return "none";
-    });
+    const stopSelector = await findVisibleStopButton(page);
+    if (stopSelector) {
+      return `stop_button_visible:${stopSelector}`;
+    }
+
+    const assistantTurn = await getLatestAssistantMessage(page);
+    return assistantTurn.locator
+      ? `assistant_turn_present:${assistantTurn.selector}`
+      : "none";
   } catch {
     return "unknown";
   }
 }
 
-async function waitForSubmissionStart(page, inputLocator, timeoutMs) {
+async function readSubmissionEvidence(page, baseline) {
+  const currentInput = await findInputLocator(page).catch(() => null);
+  const currentInputText = currentInput
+    ? await readInputText(currentInput.locator)
+    : null;
+  const currentInputEmpty =
+    currentInputText !== null && !normalizeInputText(currentInputText);
+  const stopSelector = await findVisibleStopButton(page);
+  const userTurn = await getLatestUserMessage(page);
+  const assistantTurn = await getLatestAssistantMessage(page);
+  const currentUrl = page.url();
+  const urlChanged = currentUrl !== baseline.url;
+  const userTurnAdded = userTurn.count > baseline.userTurnCount;
+  const assistantTurnAdded = assistantTurn.count > baseline.assistantTurnCount;
+
+  return {
+    submitted: hasPositiveSubmissionEvidence({
+      stopSelector,
+      userTurnAdded,
+      assistantTurnAdded,
+      urlChanged,
+    }),
+    currentInputEmpty,
+    currentInputFound: Boolean(currentInput),
+    stopSelector,
+    userTurnAdded,
+    assistantTurnAdded,
+    urlChanged,
+    currentUrl,
+    userTurnSelector: userTurn.selector,
+    assistantTurnSelector: assistantTurn.selector,
+  };
+}
+
+function summarizeSubmissionEvidence(evidence) {
+  if (!evidence) {
+    return "none";
+  }
+
+  return [
+    `inputFound=${evidence.currentInputFound}`,
+    `inputEmpty=${evidence.currentInputEmpty}`,
+    `stop=${evidence.stopSelector || "none"}`,
+    `userTurnAdded=${evidence.userTurnAdded}`,
+    `assistantTurnAdded=${evidence.assistantTurnAdded}`,
+    `urlChanged=${evidence.urlChanged}`,
+  ].join(" | ");
+}
+
+async function waitForSubmissionStart(page, baseline, timeoutMs) {
   const deadline = Date.now() + timeoutMs;
+  let latestEvidence = null;
 
   while (Date.now() < deadline) {
-    const currentInput = await readInputText(inputLocator);
+    latestEvidence = await readSubmissionEvidence(page, baseline);
 
-    if (!currentInput.trim()) {
-      return true;
+    if (latestEvidence.submitted) {
+      return latestEvidence;
     }
 
     await sleep(100);
   }
 
-  return false;
+  return latestEvidence;
 }
 
 async function waitForInjectedPrompt(page, inputLocator, expectedText) {
   const normalizedExpected = normalizeInputText(expectedText);
   const deadline = Date.now() + injection.inputSettleTimeoutMs;
   let observedInput = "";
-  let sawContent = false;
 
   while (Date.now() < deadline) {
     observedInput = await readInputText(inputLocator);
     const normalizedObserved = normalizeInputText(observedInput);
 
-    if (normalizedObserved) {
-      sawContent = true;
-
-      if (normalizedObserved === normalizedExpected) {
-        return { ready: true, submitted: false, observedInput };
-      }
-    } else if (sawContent) {
-      await sleep(150);
-      observedInput = await readInputText(inputLocator);
-      if (!normalizeInputText(observedInput)) {
-        return { ready: false, submitted: true, observedInput };
-      }
+    if (normalizedObserved === normalizedExpected) {
+      return { ready: true, submitted: false, observedInput };
     }
 
     await sleep(100);
@@ -377,11 +473,12 @@ async function waitForInjectedPrompt(page, inputLocator, expectedText) {
   return { ready: false, submitted: false, observedInput };
 }
 
-async function waitForMessageSubmission(page, inputLocator) {
-  if (await waitForSubmissionStart(page, inputLocator, 500)) {
+async function waitForMessageSubmission(page, inputLocator, baseline) {
+  let submissionEvidence = await waitForSubmissionStart(page, baseline, 500);
+  if (submissionEvidence?.submitted) {
     const siteSignal = await checkSiteGenerationSignal(page);
     logger.info(
-      `[DIAG][chatgpt][waitForMessageSubmission] submit=already_cleared | inputEmpty=true | siteSignal=${siteSignal}`
+      `[DIAG][chatgpt][waitForMessageSubmission] submit=already_started | ${summarizeSubmissionEvidence(submissionEvidence)} | siteSignal=${siteSignal}`
     );
     return;
   }
@@ -390,20 +487,21 @@ async function waitForMessageSubmission(page, inputLocator) {
     logger.info("[DIAG][chatgpt][waitForMessageSubmission] attempting Enter key");
     await inputLocator.click().catch(() => null);
     await page.keyboard.press("Enter");
-    if (
-      await waitForSubmissionStart(
-        page,
-        inputLocator,
-        Math.max(injection.sendSettledTimeoutMs, 5000)
-      )
-    ) {
+    submissionEvidence = await waitForSubmissionStart(
+      page,
+      baseline,
+      Math.max(injection.sendSettledTimeoutMs, 5000)
+    );
+    if (submissionEvidence?.submitted) {
       const siteSignal = await checkSiteGenerationSignal(page);
       logger.info(
-        `[DIAG][chatgpt][waitForMessageSubmission] submit=Enter | inputEmpty=true | siteSignal=${siteSignal}`
+        `[DIAG][chatgpt][waitForMessageSubmission] submit=Enter | ${summarizeSubmissionEvidence(submissionEvidence)} | siteSignal=${siteSignal}`
       );
       return;
     }
-    logger.info("[DIAG][chatgpt][waitForMessageSubmission] Enter key did not clear input");
+    logger.info(
+      `[DIAG][chatgpt][waitForMessageSubmission] Enter did not produce submission evidence | ${summarizeSubmissionEvidence(submissionEvidence)}`
+    );
   }
 
   for (const selector of sendButtonSelectors) {
@@ -423,16 +521,15 @@ async function waitForMessageSubmission(page, inputLocator) {
 
     await sendButton.click();
 
-    if (
-      await waitForSubmissionStart(
-        page,
-        inputLocator,
-        Math.max(injection.sendSettledTimeoutMs, 5000)
-      )
-    ) {
+    submissionEvidence = await waitForSubmissionStart(
+      page,
+      baseline,
+      Math.max(injection.sendSettledTimeoutMs, 5000)
+    );
+    if (submissionEvidence?.submitted) {
       const siteSignal = await checkSiteGenerationSignal(page);
       logger.info(
-        `[DIAG][chatgpt][waitForMessageSubmission] submit=sendButton selector="${selector}" | inputEmpty=true | siteSignal=${siteSignal}`
+        `[DIAG][chatgpt][waitForMessageSubmission] submit=sendButton selector="${selector}" | ${summarizeSubmissionEvidence(submissionEvidence)} | siteSignal=${siteSignal}`
       );
       return;
     }
@@ -441,17 +538,18 @@ async function waitForMessageSubmission(page, inputLocator) {
     );
   }
 
-  if (await waitForSubmissionStart(page, inputLocator, 1200)) {
+  submissionEvidence = await waitForSubmissionStart(page, baseline, 1200);
+  if (submissionEvidence?.submitted) {
     const siteSignal = await checkSiteGenerationSignal(page);
     logger.info(
-      `[DIAG][chatgpt][waitForMessageSubmission] submit=late_clear | inputEmpty=true | siteSignal=${siteSignal}`
+      `[DIAG][chatgpt][waitForMessageSubmission] submit=late_signal | ${summarizeSubmissionEvidence(submissionEvidence)} | siteSignal=${siteSignal}`
     );
     return;
   }
 
   const observedInput = await readInputText(inputLocator);
   logger.warn(
-    `[DIAG][chatgpt][waitForMessageSubmission] ALL_PATHS_FAILED | inputEmpty=false | observedInput="${observedInput.slice(0, 120)}"`
+    `[DIAG][chatgpt][waitForMessageSubmission] ALL_PATHS_FAILED | ${summarizeSubmissionEvidence(submissionEvidence)} | observedInput="${observedInput.slice(0, 120)}"`
   );
   throw createAgentError(
     "message_not_submitted",
@@ -488,6 +586,15 @@ async function sendMessage(page, text) {
       stage: "inject",
     });
   }
+
+  const baselineUserTurn = await getLatestUserMessage(page);
+  const baselineAssistantTurn = await getLatestAssistantMessage(page);
+  const submissionBaseline = {
+    url: page.url(),
+    userTurnCount: baselineUserTurn.count,
+    assistantTurnCount: baselineAssistantTurn.count,
+  };
+  submitBaselines.set(page, baselineAssistantTurn.count);
 
   await inputMatch.locator.click().catch((error) => {
     throw createAgentError("input_not_focusable", error.message, {
@@ -532,22 +639,10 @@ async function sendMessage(page, text) {
     );
     injectionSettled = settleState.ready;
     observedInput = settleState.observedInput;
-    const settleVerdict = settleState.ready
-      ? "ready"
-      : settleState.submitted
-        ? "submitted"
-        : "timed-out";
+    const settleVerdict = settleState.ready ? "ready" : "timed-out";
     logger.info(
       `[DIAG][chatgpt][sendMessage] attempt=${attempt} | settle=${settleVerdict} | observedInput="${(observedInput || "").slice(0, 120)}"`
     );
-
-    if (settleState.submitted) {
-      const siteSignal = await checkSiteGenerationSignal(page);
-      logger.info(
-        `[DIAG][chatgpt][sendMessage] early_exit via settle.submitted | siteSignal=${siteSignal}`
-      );
-      return;
-    }
 
     if (injectionSettled) {
       logger.info(
@@ -579,7 +674,7 @@ async function sendMessage(page, text) {
   logger.info(
     `[DIAG][chatgpt][sendMessage] entering waitForMessageSubmission | class=${promptLengthClass}`
   );
-  await waitForMessageSubmission(page, inputMatch.locator).catch((error) => {
+  await waitForMessageSubmission(page, inputMatch.locator, submissionBaseline).catch((error) => {
     throw createAgentError(error.code || "input_not_focusable", error.message, {
       selector: inputMatch.selector,
       stage: "inject",
@@ -593,12 +688,29 @@ async function sendMessage(page, text) {
   );
 }
 
+async function probeReplyFinished(page, { allowHover = false } = {}) {
+  const target = await locateLatestTurnCopyButton(page, CHATGPT_REPLY_SCOPE);
+  const hoverTarget = allowHover ? (await getLatestAssistantMessage(page)).locator : null;
+  return probeCopyReady(target, hoverTarget);
+}
+
 async function waitForCompletion(page) {
   const completionState = await waitForHybridCompletion({
     page,
     readReplyState,
     completionConfig: completion,
-    detectionConfig: chatgptConfig.completionDetection,
+    detectionConfig: {
+      ...chatgptConfig.completionDetection,
+      busySelectors: [
+        ...(chatgptConfig.completionDetection.busySelectors || []),
+        ...stopButtonSelectors,
+      ],
+    },
+    baselineState: submitBaselines.has(page)
+      ? { count: submitBaselines.get(page), text: "" }
+      : null,
+    probeFinished: probeReplyFinished,
+    label: "ChatGPT",
     onTimeout: () => {
       logger.warn("ChatGPT copy-button readiness timed out.");
     },
@@ -607,14 +719,14 @@ async function waitForCompletion(page) {
     },
   });
 
-  if (completionState.reason === "stable") {
+  if (completionState.reason === "stable" || completionState.reason === "stable_probe") {
     logger.info("[chatgpt] copy button is ready for the latest assistant reply.");
   }
 
   return completionState;
 }
 
-async function captureLastReply(page) {
+async function captureLastReply(page, { force = false } = {}) {
   await scrollToBottom(page);
   const { count, locator } = await getLatestAssistantMessage(page);
 
@@ -625,12 +737,33 @@ async function captureLastReply(page) {
     });
   }
 
-  const copyButton = await pollForCopyButton(
+  const baselineCount = submitBaselines.get(page);
+  if (!force && baselineCount !== undefined && count <= baselineCount) {
+    throw createAgentError(
+      "no_new_assistant_turn",
+      "ChatGPT has no assistant reply newer than the one before this submit.",
+      { stage: "capture", baselineCount, count }
+    );
+  }
+
+  const lastCopyButtonLocator = page.locator(CHATGPT_COPY_BUTTON_SELECTOR).last();
+  let copyButton = await pollForCopyButton(
     locator,
-    page.locator(CHATGPT_COPY_BUTTON_SELECTOR).last(),
+    () => locateLatestTurnCopyButton(page, CHATGPT_REPLY_SCOPE),
     250,
-    chatgptConfig.captureTimeoutMs
+    force ? Math.max(chatgptConfig.captureTimeoutMs, 20000) : chatgptConfig.captureTimeoutMs,
+    { requireEnabled: !force }
   );
+
+  if (!copyButton && force) {
+    // Manual Refresh Reply: the operator has already looked at the page and confirmed a
+    // copy control is there. Grab the bottom-most match directly instead of failing on
+    // Playwright's visibility/enabled gate (see clickCopyAndRead's force path).
+    logger.info(
+      "[chatgpt] force refresh: copy button did not clear the normal readiness gate; grabbing the bottom-most match directly."
+    );
+    copyButton = lastCopyButtonLocator;
+  }
 
   if (!copyButton) {
     const actionDiagnostics = await readLatestAssistantActionDiagnostics(page);
@@ -647,7 +780,7 @@ async function captureLastReply(page) {
   logger.info("[chatgpt] copy button ready; clicking and reading clipboard.");
 
   try {
-    const content = await clickCopyAndRead(page, locator, copyButton);
+    const content = await clickCopyAndRead(page, locator, copyButton, { force });
     logger.info(`[chatgpt] copy capture succeeded (${content.length} chars).`);
     return content;
   } catch (error) {

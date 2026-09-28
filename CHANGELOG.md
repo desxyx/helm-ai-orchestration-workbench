@@ -2,6 +2,33 @@
 
 Public development story for H.E.L.M.
 
+## 2026-09-28
+
+The three governing documents were refreshed together: Council Constitution Public v1.7, Executor Charter Public v1.0, and UserOps Charter Public v0.5. The previous public editions are kept under the archive folders so the evolution stays visible.
+
+What changed in the public story:
+
+- Evidence discipline moved upstream. A factual claim now has to pass an admission check (evidence layer, freshness, locator, verification status) before it can become Frozen Truth, and Council must confirm that the evidence it asks Executors to produce is actually reachable before dispatch.
+- Council convergence became accountable: independent phase, cross-review phase, and exactly one merge owner per round. Anything missing a phase is reported as a proposal, not a converged result.
+- Council re-entry triggers were rewritten around real boundary expansion instead of arbitrary counts or elapsed days.
+- The Executor Charter was restructured into a role-scoped common core plus role appendices. Reviewer became a first-class role with raw-first review, register-and-continue verdicts, and cross-model-family independence.
+- One acceptance rule now runs through every layer: whoever executed or authored a change is never the sole source of its acceptance.
+- A negative result ("none found", "clean") must now show that the same instrument can find a known-present target.
+- UserOps gained a neutral task-entry preflight, three artifact classes with write-once evidence rounds, a capped relevance-ranked memory index, and cold-start takeover rules.
+
+Platform hardening in `user/platform`:
+
+- Reply capture now scopes copy controls to the latest assistant turn, so a previous turn's reply is not captured by mistake. A reply that matches the previous round is flagged `staleSuspect` instead of being silently accepted.
+- Completion detection records a pre-submit baseline and reads the latest turn without scrolling or hovering.
+- Live runs showed some providers waiting for the full hard timeout even though the reply was already on screen. Completion now has a probe fallback: once the reply stops changing, two consecutive checks that the latest turn's Copy control is usable end the wait (`stable_probe`), and a periodic diagnostic line records why the heuristic path has not completed yet. This is fixture-tested; live-provider confirmation and the underlying root cause are still open.
+- Manual Refresh unlocks for an agent as soon as that agent has finished, instead of waiting for the whole round.
+- Prompt injection supports a clipboard-free insert mode. Submission requires positive evidence that the message was actually sent.
+- Session storage skips corrupt session files with a clear warning instead of failing the whole listing.
+- The shared hard timeout was raised from 60s to 180s for long research and writing replies. Updated ChatGPT composer and reply selectors.
+- Added `npm test` with Playwright-backed regression tests for the capture, completion, and injection paths. Test runs log to a separate path (`HELM_LOG_PATH`) instead of the live log.
+
+As before, H.E.L.M got stronger by tightening boundaries and evidence rules, not by making every prompt longer.
+
 ## 2026-05-11
 
 The public repository now reflects H.E.L.M's newest maturity jump: a durable UserOps surface.

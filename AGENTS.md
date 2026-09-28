@@ -11,8 +11,8 @@ H.E.L.M is a local-first layered repository for browser-based multi-model decisi
 
 ## Load Order
 
-1. `executors/EXECUTOR CHARTER — v0.5.md`
-2. `council/council_constitution_v1.5.md`
+1. `executors/EXECUTOR CHARTER — v1.0.md`
+2. `council/council_constitution_v1.7.md`
 3. Current entry brief under `council/task/`
 
 Charter and constitution take precedence over this file.

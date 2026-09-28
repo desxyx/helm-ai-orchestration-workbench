@@ -5,7 +5,7 @@ The `executors/` layer contains the live charter, executor records, curated skil
 
 ## Key Paths
 
-- `EXECUTOR CHARTER — v0.5.md`: operating context and entry format.
+- `EXECUTOR CHARTER — v1.0.md`: operating context and entry format.
 - `executor_vault/`: changelog, boot material, memory, handoff templates, and related records.
 - `skills/`: core skills, extended skills, shared learned skills, and import tracking.
 - `tools/`: executor-owned utility scripts.
@@ -13,7 +13,7 @@ The `executors/` layer contains the live charter, executor records, curated skil
 
 ## Orientation
 
-- Load `EXECUTOR CHARTER — v0.5.md` first for operating rules.
+- Load `EXECUTOR CHARTER — v1.0.md` first for operating rules.
 - Check `executor_vault/` for records, handoff state, and recent executor changes.
 
 Charter takes precedence over this file.

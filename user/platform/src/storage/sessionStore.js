@@ -7,6 +7,7 @@ const { nowIso } = require("../utils/time");
 const councilRootDir = path.resolve(__dirname, "../../../");
 const outputDir = path.resolve(councilRootDir, config.storage.outputDir);
 const sessionSequenceFilePath = path.join(outputDir, ".session-sequence.json");
+const warnedInvalidSessions = new Set();
 
 function ensureOutputDir() {
   if (!fs.existsSync(outputDir)) {
@@ -140,6 +141,7 @@ function buildRound({
   completionReason,
   errorCode = null,
   metrics = {},
+  staleSuspect = false,
 }) {
   const capturedAt = nowIso();
 
@@ -154,6 +156,7 @@ function buildRound({
         status,
         completionReason,
         errorCode,
+        ...(staleSuspect ? { staleSuspect: true } : {}),
       },
     ],
     metrics: {
@@ -168,8 +171,36 @@ function writeJson(filePath, payload) {
   fs.writeFileSync(filePath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 }
 
+function buildStoragePathLabel(filePath) {
+  const relativePath = path.relative(councilRootDir, filePath);
+  return relativePath && !relativePath.startsWith("..") ? relativePath : filePath;
+}
+
 function readJson(filePath) {
-  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+  try {
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+  } catch (error) {
+    const wrappedError = new SyntaxError(
+      `Invalid JSON in ${buildStoragePathLabel(filePath)}: ${error.message}`
+    );
+    wrappedError.code = "invalid_json";
+    wrappedError.filePath = filePath;
+    wrappedError.cause = error;
+    throw wrappedError;
+  }
+}
+
+function warnInvalidSession(sessionId, error) {
+  if (warnedInvalidSessions.has(sessionId)) {
+    return;
+  }
+
+  warnedInvalidSessions.add(sessionId);
+  console.warn(`[sessionStore] Skipping ${sessionId}: ${error.message}`);
+}
+
+function clearInvalidSessionWarning(sessionId) {
+  warnedInvalidSessions.delete(sessionId);
 }
 
 function loadRoundFiles(sessionId) {
@@ -195,28 +226,45 @@ function loadLegacySession(sessionId) {
 }
 
 function loadSession(sessionId) {
-  const sessionFile = getSessionFilePath(sessionId);
-  if (fs.existsSync(sessionFile)) {
-    const metadata = readJson(sessionFile);
-    const rounds = loadRoundFiles(sessionId);
-    return attachPaths({
-      sessionId: metadata.sessionId || sessionId,
-      createdAt: metadata.createdAt || nowIso(),
-      rounds,
-    });
-  }
+  try {
+    const sessionFile = getSessionFilePath(sessionId);
+    if (fs.existsSync(sessionFile)) {
+      const metadata = readJson(sessionFile);
+      const rounds = loadRoundFiles(sessionId);
+      const session = attachPaths({
+        sessionId: metadata.sessionId || sessionId,
+        createdAt: metadata.createdAt || nowIso(),
+        rounds,
+      });
+      clearInvalidSessionWarning(sessionId);
+      return session;
+    }
 
-  const sessionDir = getSessionDirPath(sessionId);
-  if (fs.existsSync(sessionDir)) {
-    const rounds = loadRoundFiles(sessionId);
-    return attachPaths({
-      sessionId,
-      createdAt: rounds[0]?.createdAt || nowIso(),
-      rounds,
-    });
-  }
+    const sessionDir = getSessionDirPath(sessionId);
+    if (fs.existsSync(sessionDir)) {
+      const rounds = loadRoundFiles(sessionId);
+      const session = attachPaths({
+        sessionId,
+        createdAt: rounds[0]?.createdAt || nowIso(),
+        rounds,
+      });
+      clearInvalidSessionWarning(sessionId);
+      return session;
+    }
 
-  return loadLegacySession(sessionId);
+    const legacySession = loadLegacySession(sessionId);
+    if (legacySession) {
+      clearInvalidSessionWarning(sessionId);
+    }
+    return legacySession;
+  } catch (error) {
+    if (error?.code === "invalid_json") {
+      warnInvalidSession(sessionId, error);
+      return null;
+    }
+
+    throw error;
+  }
 }
 
 function buildSessionMetadata(session) {

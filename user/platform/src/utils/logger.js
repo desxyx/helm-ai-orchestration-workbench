@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { nowIso } = require("./time");
 
-const LOG_PATH = path.join(__dirname, "../../ui.out.log");
+const LOG_PATH = process.env.HELM_LOG_PATH || path.join(__dirname, "../../ui.out.log");
 const logStream = fs.createWriteStream(LOG_PATH, { flags: "a" });
 
 function format(level, message) {

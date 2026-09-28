@@ -32,8 +32,8 @@ README.md
 CHANGELOG.md
 AGENTS.md
 H.E.L.M_structure.md
-council/council_constitution_v1.5.md
-executors/EXECUTOR CHARTER - v0.5.md
+council/council_constitution_v1.7.md
+executors/EXECUTOR CHARTER - v1.0.md
 test_environment/README.md
 ```
 
@@ -57,7 +57,7 @@ ai_council_public/
 
 ```text
 council/
-|-- council_constitution_v1.5.md
+|-- council_constitution_v1.7.md
 |-- assets/
 |-- kickoff/
 |-- task/
@@ -93,7 +93,7 @@ The public template library is intentionally compressed. The full private templa
 
 ```text
 executors/
-|-- EXECUTOR CHARTER - v0.5.md
+|-- EXECUTOR CHARTER - v1.0.md
 |-- AGENTS.md
 |-- ENV_STATE.md
 |-- executor_vault/
