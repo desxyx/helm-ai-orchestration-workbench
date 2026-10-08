@@ -1,0 +1,1 @@
+ANOMALY 2026-10-04T22:23:27+1100: Q12 (sql instances list) stopped at gcloud prompt "API [sqladmin.googleapis.com] not enabled ... enable and retry (y/N)?". No answer was given; Executor terminated its own gcloud process. No API enablement occurred. Remaining queries rerun with CLOUDSDK_CORE_DISABLE_PROMPTS=1 (prompts take their default = No).

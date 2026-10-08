@@ -1,0 +1,11 @@
+{
+  "rollout_line": 281,
+  "timestamp": "2026-10-05T02:22:24.717Z",
+  "result": {
+    "chunk_id": "3ad805",
+    "wall_time_seconds": 2.075e-05,
+    "exit_code": 0,
+    "original_token_count": 177,
+    "output": "Created [<PRIVATE_URL_0393>].\n[\n  {\n    \"address\": \"<IP_ADDRESS_114>\",\n    \"addressType\": \"EXTERNAL\",\n    \"creationTimestamp\": \"2026-10-04T19:22:22.117-07:00\",\n    \"description\": \"\",\n    \"id\": \"<NUMERIC_RESOURCE_0021>\",\n    \"kind\": \"compute#address\",\n    \"labelFingerprint\": \"<PRIVATE_RESOURCE_FINGERPRINT>\",\n    \"name\": \"<W2_RUN_RESOURCE_PREFIX>-ip\",\n    \"networkTier\": \"PREMIUM\",\n    \"region\": \"<PRIVATE_URL_0399>\",\n    \"selfLink\": \"<PRIVATE_URL_0393>\",\n    \"status\": \"RESERVED\"\n  }\n]\n"
+  }
+}

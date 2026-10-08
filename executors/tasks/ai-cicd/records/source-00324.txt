@@ -1,0 +1,14 @@
+$ gcloud compute disks create <RUN_DATA_DISK> --zone australia-southeast1-b --size 10GB --type pd-balanced --project <CLOUD_PROJECT>
+# started 2026-10-06T12:51:21.000Z  ended 2026-10-06T12:51:29.000Z  exit 0
+--- stdout
+NAME        ZONE                    SIZE_GB  TYPE         STATUS
+<RUN_DATA_DISK>  australia-southeast1-b  10       pd-balanced  READY
+--- stderr
+Created [<PRIVATE_URL_0432>].
+
+New disks are unformatted. You must format and mount a disk before it
+can be used. You can find instructions on how to do this at:
+
+For Linux: <PRIVATE_URL_0075>ogle.com/compute/docs/disks/format-mount-disk-linux
+For Windows: <PRIVATE_URL_0075>ogle.com/compute/docs/disks/format-mount-disk-windows
+

@@ -1,0 +1,145 @@
+{
+  "candidate": {
+    "commit": "<PRIVATE_REF_01823>",
+    "tree": "<PRIVATE_REF_01954>",
+    "version": "0.1.1"
+  },
+  "at": "2026-10-06T06:30:56.534Z",
+  "wmc2": {
+    "declaration": {
+      "package": "reduced example: no DNS provider profile",
+      "omitted": [
+        "providers/dns-cloudflare.md"
+      ],
+      "reason": "This package is for targets whose DNS is handled outside the skills; the generic rules and approvals still apply."
+    },
+    "actual_missing": [
+      "providers/dns-cloudflare.md"
+    ],
+    "actual_included_matches": true,
+    "source_omitted_file_still_present": true,
+    "before_open_items": [
+      {
+        "text": "Package gap (declared in skills/package-omissions.json): providers/dns-cloudflare.md is not in this package. Impact: no provider-specific DNS steps; follow the generic loop and the DNS provider's official documentation; any DNS change still needs its own approval.",
+        "owner": "ai",
+        "blocking": false
+      }
+    ],
+    "after_open_items": [
+      {
+        "text": "Package gap (declared in skills/package-omissions.json): providers/dns-cloudflare.md is not in this package. Impact: no provider-specific DNS steps; follow the generic loop and the DNS provider's official documentation; any DNS change still needs its own approval.",
+        "owner": "ai",
+        "blocking": false
+      }
+    ],
+    "actual_continuation_commit": {
+      "committed": true,
+      "dirSync": "synced",
+      "post": {
+        "ok": true,
+        "errors": [],
+        "secret_scan": {
+          "self_test": "passed",
+          "patterns": 11,
+          "findings": 0
+        }
+      }
+    },
+    "approval_pending": null,
+    "next": {
+      "action": "Finish the plan with the generic rules; the DNS record request will be a separate dns approval",
+      "decision_owner": "ai"
+    }
+  },
+  "wmc3": {
+    "request": {
+      "schema_version": "0.1",
+      "id": "evt-0010",
+      "at": "2026-10-06T00:42:12Z",
+      "actor": {
+        "role": "ai",
+        "name": "ai-deployer"
+      },
+      "session_id": "session-a",
+      "type": "decision_request",
+      "summary": "Asked to delete exactly this run's delta run-key-1..run-key-8 from the shared metadata; team-shared-setting stays",
+      "request": {
+        "id": "dec-02",
+        "categories": [
+          "delete"
+        ]
+      }
+    },
+    "approval": {
+      "schema_version": "0.1",
+      "id": "evt-0011",
+      "at": "2026-10-06T00:43:12Z",
+      "actor": {
+        "role": "human",
+        "name": "operator"
+      },
+      "session_id": "session-a",
+      "type": "decision",
+      "summary": "Human approved deleting exactly the 8 run keys",
+      "decision": {
+        "request_id": "dec-02",
+        "reply": "approve",
+        "redacted": false,
+        "outcome": "approved"
+      },
+      "related": [
+        "evt-0010"
+      ]
+    },
+    "undo": {
+      "schema_version": "0.1",
+      "id": "evt-0012",
+      "at": "2026-10-06T00:44:12Z",
+      "actor": {
+        "role": "ai",
+        "name": "ai-deployer"
+      },
+      "session_id": "session-a",
+      "type": "intent",
+      "summary": "Remove exactly this run's 8 keys (approved dec-02)",
+      "target": "shared metadata",
+      "action": "remove keys run-key-1..run-key-8 only",
+      "action_kinds": [
+        "local",
+        "gated"
+      ],
+      "related": [
+        "evt-0011"
+      ]
+    },
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "secret_scan": {
+        "self_test": "passed",
+        "patterns": 11,
+        "findings": 0
+      }
+    },
+    "baseline": {
+      "team-shared-setting": "synthetic-original-value"
+    },
+    "delta": {
+      "run-key-1": "synthetic-1",
+      "run-key-2": "synthetic-2",
+      "run-key-3": "synthetic-3",
+      "run-key-4": "synthetic-4",
+      "run-key-5": "synthetic-5",
+      "run-key-6": "synthetic-6",
+      "run-key-7": "synthetic-7",
+      "run-key-8": "synthetic-8"
+    },
+    "after": {
+      "team-shared-setting": "synthetic-original-value"
+    },
+    "baseline_hash": "<PRIVATE_REF_02700>",
+    "restored_hash": "<PRIVATE_REF_02700>",
+    "unproved_preservation": "UNKNOWN"
+  },
+  "product_mutations": "none; own probes use exact archive and private copies"
+}

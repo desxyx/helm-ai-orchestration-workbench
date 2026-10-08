@@ -1,0 +1,220 @@
+{
+  "stage": "check",
+  "run_id": "DRYRUN",
+  "runtime_lock_sha256": "<PRIVATE_REF_02231>",
+  "observed_runtime": {
+    "codex_cli_version": "codex-cli 0.160.0",
+    "model": "gpt-6.1-sol",
+    "model_reasoning_effort": "high",
+    "approval_policy": "on-request",
+    "sandbox_mode": "workspace-write",
+    "check_for_update_on_startup": null,
+    "enabled_plugins": [
+      "browser@openai-bundled",
+      "documents@openai-primary-runtime",
+      "github@openai-curated",
+      "pdf@openai-primary-runtime",
+      "presentations@openai-primary-runtime",
+      "spreadsheets@openai-primary-runtime",
+      "template-creator@openai-primary-runtime",
+      "warp@codex-warp"
+    ],
+    "mcp_servers": [
+      "node_repl",
+      "openaiDeveloperDocs"
+    ],
+    "features": {
+      "js_repl": "false"
+    }
+  },
+  "pin_mismatches": [
+    {
+      "pin": "model",
+      "expected": "gpt-5.6-sol",
+      "observed": "gpt-6.1-sol"
+    },
+    {
+      "pin": "check_for_update_on_startup",
+      "expected": "false",
+      "observed": null
+    },
+    {
+      "pin": "enabled_plugins",
+      "expected": [],
+      "observed": [
+        "browser@openai-bundled",
+        "documents@openai-primary-runtime",
+        "github@openai-curated",
+        "pdf@openai-primary-runtime",
+        "presentations@openai-primary-runtime",
+        "spreadsheets@openai-primary-runtime",
+        "template-creator@openai-primary-runtime",
+        "warp@codex-warp"
+      ]
+    },
+    {
+      "pin": "mcp_servers",
+      "expected": [],
+      "observed": [
+        "node_repl",
+        "openaiDeveloperDocs"
+      ]
+    }
+  ],
+  "config_exposure": [
+    {
+      "surface": "writable_root",
+      "entry": "~/Desktop/Coding/WatchOver_AI_CICD_W1_2026-09-28"
+    },
+    {
+      "surface": "writable_root",
+      "entry": "~/Desktop/project/H.E.L.M/<OPERATIONS_ROOT>/tasks/AI_CICD"
+    },
+    {
+      "surface": "trusted_project",
+      "entry": "~/Desktop/project/H.E.L.M"
+    },
+    {
+      "surface": "trusted_project",
+      "entry": "~/Desktop/project"
+    },
+    {
+      "surface": "trusted_project",
+      "entry": "/"
+    },
+    {
+      "surface": "trusted_project",
+      "entry": "~"
+    },
+    {
+      "surface": "trusted_project",
+      "entry": "~/Desktop/project/ai_council_public"
+    },
+    {
+      "surface": "trusted_project",
+      "entry": "~/Desktop"
+    },
+    {
+      "surface": "trusted_project",
+      "entry": "/private/tmp/watchover-codex-instruction-probe"
+    },
+    {
+      "surface": "trusted_project",
+      "entry": "~/Desktop/Coding/WatchOver_AI_CICD_W1_2026-09-28/deployer"
+    },
+    {
+      "surface": "trusted_project",
+      "entry": "~/Desktop/helmls-studio/watchover-ai-devops"
+    },
+    {
+      "surface": "trusted_project",
+      "entry": "~/Desktop/Coding/WatchOver_AI_DevOps_Rehearsal_2026-09-29/workspace"
+    },
+    {
+      "surface": "trusted_project",
+      "entry": "~/Desktop/Coding/WatchOver_AI_DevOps_Rehearsal_2026-09-30/attempt_02/workspace"
+    },
+    {
+      "surface": "trusted_project",
+      "entry": "~/Desktop/Coding/WatchOver_AI_CICD_MA1_2026-09-30/reviewer"
+    },
+    {
+      "surface": "rules",
+      "entry": "~/.codex/rules/default.rules",
+      "hits": 9
+    }
+  ],
+  "autoload_inventory": [
+    {
+      "locator": "~/.codex/AGENTS.md",
+      "scope": "global_instruction_empty_not_loaded",
+      "sha256": "<PRIVATE_REF_03399>",
+      "size": 0,
+      "hits": []
+    },
+    {
+      "locator": "~/.codex/memories/prefer-markitdown-for-documents.md",
+      "scope": "global_memory",
+      "sha256": "<PRIVATE_REF_01036>",
+      "size": 702,
+      "hits": [
+        "H.E.L.M",
+        "~/Desktop/project/H.E.L.M"
+      ]
+    },
+    {
+      "locator": "~/.codex/skills/.system/imagegen/SKILL.md",
+      "scope": "global_skill",
+      "sha256": "<PRIVATE_REF_01945>",
+      "size": 19201,
+      "hits": []
+    },
+    {
+      "locator": "~/.codex/skills/.system/openai-docs/SKILL.md",
+      "scope": "global_skill",
+      "sha256": "<PRIVATE_REF_02716>",
+      "size": 5437,
+      "hits": []
+    },
+    {
+      "locator": "~/.codex/skills/.system/review-agent/SKILL.md",
+      "scope": "global_skill",
+      "sha256": "<PRIVATE_REF_00548>",
+      "size": 2661,
+      "hits": []
+    },
+    {
+      "locator": "~/.codex/skills/.system/skill-creator/SKILL.md",
+      "scope": "global_skill",
+      "sha256": "<PRIVATE_REF_01926>",
+      "size": 15311,
+      "hits": []
+    },
+    {
+      "locator": "~/.codex/skills/.system/skill-installer/SKILL.md",
+      "scope": "global_skill",
+      "sha256": "<PRIVATE_REF_03235>",
+      "size": 3367,
+      "hits": [
+        "experiment"
+      ]
+    }
+  ],
+  "prohibited_autoload": [
+    {
+      "locator": "~/.codex/memories/prefer-markitdown-for-documents.md",
+      "scope": "global_memory",
+      "hit_count": 2
+    },
+    {
+      "locator": "~/.codex/skills/.system/skill-installer/SKILL.md",
+      "scope": "global_skill",
+      "hit_count": 1
+    }
+  ],
+  "discoverability": {
+    "workspace_relative_to_chain_top": "site/app",
+    "targets": [
+      "W2B_EXPORT",
+      "HELM",
+      "PRODUCT_REPO"
+    ],
+    "labels_checked": 14,
+    "label_check_above_chain_top": false,
+    "entries_listed": 89,
+    "entry_cap_reached": false,
+    "findings": [],
+    "unlistable": [],
+    "verdict": "CLEAN"
+  },
+  "prompt_input_crosscheck": {
+    "status": "NOT_RUN"
+  },
+  "failures": [
+    "RUNTIME_PIN_MISMATCH",
+    "CONFIG_EXPOSES_PROHIBITED",
+    "PROHIBITED_AUTOLOAD"
+  ],
+  "verdict": "FAIL",
+  "timestamp": "2026-10-04T09:48:55.475Z"
+}

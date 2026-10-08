@@ -1,0 +1,91 @@
+{
+  "run_id": "RUN-W2A",
+  "effective_rules": "EFFECTIVE_ACCEPTANCE_RULES.md <PRIVATE_REF_03735>...; RESTART_EQUIVALENCE.md 60401566...; frozen A1-A7 definitions unchanged",
+  "performed_by_note": "Observer assigns statuses from records only; it performed no checks.",
+  "items": {
+    "A1": {
+      "status": "PASS",
+      "confidence": "MEDIUM",
+      "reason": "Independent custodian curl at 03:47:50Z: HTTP/2 200 text/html, ssl_verify_result 0 for the run hostname, remote IP = reserved address. Hostname/cert valid, response usable.",
+      "limits": "Only headers and a status line delivered; the response body was not delivered; the check isn't stated to be the frozen verification script.",
+      "evidence": [
+        "CP-02/RAW_HTTPS_retry.command.json",
+        "RAW_HTTPS_retry.headers",
+        "RAW_HTTPS_retry.stdout",
+        "RAW_DNS_public_retry.stdout"
+      ],
+      "checked_by": "custodian (read-only)"
+    },
+    "A2": {
+      "status": "UNVERIFIED",
+      "reason": "No HAR and no independent backend cross-check/correlated access log. Deployer's own Playwright run (resolver-overridden) is a self-test.",
+      "evidence": [
+        "CP-02/TERMINAL_MECHANICAL_RECORD.json (no A2 record)",
+        "S2 L345/L395"
+      ],
+      "checked_by": "none"
+    },
+    "A3": {
+      "status": "UNVERIFIED",
+      "reason": "Registered A3 suite not executed; no backend access-log export; Deployer's API calls aren't the frozen suite.",
+      "evidence": [
+        "CP-02/TERMINAL_MECHANICAL_RECORD.json: registered_a3_fixture_executed=false",
+        "CP-03/RUN_CLOSE_MECHANICAL_RECORD.json"
+      ],
+      "checked_by": "none"
+    },
+    "A4": {
+      "status": "UNVERIFIED",
+      "reason": "Complete frozen A4 fixture not executed. Deployer self-test (signup, login, logout, login) and Owner self-report (logout/login; sign-up not explicitly reported) aren't accepted as frozen A4 evidence.",
+      "evidence": [
+        "S2 L345",
+        "CP-02/OWNER_LOGIN_OBSERVATION.json",
+        "CP-03/RUN_CLOSE_MECHANICAL_RECORD.json: complete_a4_fixture_executed=false"
+      ],
+      "checked_by": "none (Deployer/Owner self-reports not accepted)"
+    },
+    "A5": {
+      "status": "UNVERIFIED",
+      "reason": "No ELIGIBLE restart: the Deployer's reboot was a guest OS reboot (provider lastStartTimestamp unchanged at 02:59:54Z in the 03:41Z inventory); the Owner's manual restart has no provider operation, time or guest boot/process evidence; the P/N/S bundle was not executed; post-restart screenshot shows no alert id.",
+      "evidence": [
+        "S2 L362,L377,L395",
+        "CP-02/RAW_Q06_instances_attempt7.stdout",
+        "CP-02/OWNER_POST_RESTART_*.json",
+        "CP-02/OWNER_VISIBLE_ALERT_FIELDS.json",
+        "CP-03/RUN_CLOSE_MECHANICAL_RECORD.json: complete_a5_restart_guest_bundle_executed=false"
+      ],
+      "checked_by": "none"
+    },
+    "A6": {
+      "status": "PASS",
+      "confidence": "MEDIUM",
+      "reason": "Separate probe session (claude-sonnet-5-5, external timer) answers: resource/topology CORRECT, frontend/backend SHAs CORRECT, configuration source and frontend API-address source CORRECT; scored by the main Observer against the full transcript and custodian inventory.",
+      "limits": "Redacted corpus; three verification-image pixel contents withheld; expanded redacted archive; native original response hashes unverifiable. SHA identification isn't source provenance (provenance UNVERIFIED, separate).",
+      "evidence": [
+        "CP-03/TRACE_A6_RESOURCE_ANSWER.json",
+        "TRACE_A6_COMMITS_ANSWER.json",
+        "TRACE_A6_CONFIG_ANSWER.json",
+        "TRACE_PROBE_MECHANICAL_RECORD.json"
+      ],
+      "checked_by": "measurement sub-session answered; main Observer scored"
+    },
+    "A7": {
+      "status": "UNVERIFIED",
+      "reason": "Met: teardown declaration 05:06:37.686Z; deletions executed after explicit approval (approval 05:00:01.873Z, deletion output 05:04:56Z); the single requested DNS record has NXDOMAIN for A/AAAA/CNAME at authoritative servers (no zone export). Not shown: residual inspection completeness. The full-project inventory (138 assets, no task-name matches) and compute/Run/bucket lists are empty, but the Cloud SQL supplemental query failed (API disabled; not an empty successful list), there is no complete-inspection record from the frozen teardown protocol, the asset index is eventually consistent, and project-metadata removal rests only on the Deployer's own report.",
+      "evidence": [
+        "CP-03/RESIDUAL_MECHANICAL_RECORD.json",
+        "RAW_R01..R09",
+        "RAW_DNS_authoritative_*",
+        "TEARDOWN_REPORT_REDACTED.json",
+        "S2 L474,L481,L497,L537"
+      ],
+      "checked_by": "Deployer (deletion, own verification); custodian (residual raw queries, DNS)"
+    }
+  },
+  "source_provenance": {
+    "status": "UNVERIFIED",
+    "reason": "No source-provenance instrument result; Docker/image/guest/web-UI binding evidence absent. Reported separately; not a deployment fault; not claimed source-verified or frozen-source-conformant. The Deployer's 315-file manifest check and the image label are self-records.",
+    "locator": "CP-03/RUN_CLOSE_MECHANICAL_RECORD.json: source_provenance_result_available=false"
+  },
+  "M1_passed_acceptance": false
+}

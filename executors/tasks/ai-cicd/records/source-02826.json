@@ -1,0 +1,24 @@
+{
+  "attempt": 5,
+  "query": "DNS_SOA_POSITIVE_2",
+  "executable": "/usr/bin/dig",
+  "argv": [
+    "+time=3",
+    "+tries=1",
+    "+noall",
+    "+answer",
+    "+authority",
+    "+comments",
+    "@<DNS_RESOLVER_B>",
+    "<EXPERIMENT_DOMAIN>",
+    "SOA"
+  ],
+  "start_utc": "2026-10-05T23:58:45.963+11:00",
+  "end_utc": "2026-10-05T23:58:46.004+11:00",
+  "exit_code": 0,
+  "stdout": "DNS_SOA_POSITIVE_2_attempt5.stdout",
+  "stdout_sha256": "<PRIVATE_REF_03065>",
+  "stderr": "DNS_SOA_POSITIVE_2_attempt5.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

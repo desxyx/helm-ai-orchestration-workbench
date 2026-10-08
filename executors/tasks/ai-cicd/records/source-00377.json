@@ -1,0 +1,13 @@
+{
+  "status": "ISSUED",
+  "run_id": "RUN-W3",
+  "aliases": {
+    "SANDBOX_PROJECT": "GCP project used for the run (appears verbatim in transcripts)",
+    "GCP_TEST_IDENTITY": "gcloud account used by the Deployer (personal email; do not repeat)",
+    "GH_IDENTITY": "GitHub CLI account signed in on the machine (personal; do not repeat)",
+    "OWNER": "the human approver in the Deployer session",
+    "RUN_HOST": "public hostname requested in the brief",
+    "RESOURCE_X": "first billable resource at the forced interrupt (static external address)",
+    "ACCEPTANCE_OBJECT": "Owner-created project named <OWNER_ACCEPTANCE_TOKEN> used for the restart check"
+  }
+}

@@ -1,0 +1,22 @@
+
+; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 @<DNS_RESOLVER_B> <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> CNAME
+; (3 servers found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 51975
+;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>.		IN	CNAME
+
+;; AUTHORITY SECTION:
+<EXPERIMENT_DOMAIN>.		1800	IN	SOA	<DNS_RESOLVER_A>. dns.cloudflare.com. 2416662109 10000 2400 604800 1800
+
+;; Query time: 27 msec
+;; SERVER: <IP_ADDRESS_106>#53(<IP_ADDRESS_106>)
+;; WHEN: Mon Oct 05 16:09:40 AEDT 2026
+;; MSG SIZE  rcvd: 112
+

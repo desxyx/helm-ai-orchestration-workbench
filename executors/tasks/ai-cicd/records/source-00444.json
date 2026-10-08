@@ -1,0 +1,16 @@
+{
+  "commit": "<PRIVATE_REF_02615>",
+  "tree": "<PRIVATE_REF_03203>",
+  "branch": "release/0.1.2",
+  "version": "0.1.2",
+  "working_tree": "clean",
+  "commit_count": 1,
+  "parents": [],
+  "remotes": [],
+  "tags": [],
+  "archive_files": 133,
+  "archive_sha256": "<PRIVATE_REF_00244>",
+  "author": "WatchOver contributors <ACCOUNT_EMAIL_067>",
+  "committer": "WatchOver contributors <ACCOUNT_EMAIL_067>",
+  "checked_at": "2026-10-07T23:33:06.972483+11:00"
+}

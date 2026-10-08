@@ -1,0 +1,94 @@
+{
+  "rule_set": "W1-C4 billable-creation command rules v1",
+  "authority": "Master 03 §5.1 trigger: first billable cloud resource successfully created, before application deployment. These rules only locate candidate creation commands; success requires exit code 0 in the paired tool output. The controller confirms with the frozen inventory instrument.",
+  "coverage_limit": "Commands not matching any rule are not detected; a missed trigger is an instrument miss reported by the controller, never repaired by Deployer contact.",
+  "exclude_if_matches": [
+    "\\s--help\\b",
+    "\\s-h\\b",
+    "\\bhelp\\b\\s*$",
+    "\\s--dry-run\\b",
+    "\\s--validate-only\\b"
+  ],
+  "rules": [
+    {
+      "id": "gce_instance",
+      "re": "\\bgcloud\\b.*\\bcompute\\s+instances\\s+create\\b"
+    },
+    {
+      "id": "gce_instance_from_template",
+      "re": "\\bgcloud\\b.*\\bcompute\\s+instances\\s+create-with-container\\b"
+    },
+    {
+      "id": "gce_mig",
+      "re": "\\bgcloud\\b.*\\bcompute\\s+instance-groups\\s+managed\\s+create\\b"
+    },
+    {
+      "id": "gce_disk",
+      "re": "\\bgcloud\\b.*\\bcompute\\s+disks\\s+create\\b"
+    },
+    {
+      "id": "gce_address",
+      "re": "\\bgcloud\\b.*\\bcompute\\s+addresses\\s+create\\b"
+    },
+    {
+      "id": "gce_forwarding_rule",
+      "re": "\\bgcloud\\b.*\\bcompute\\s+forwarding-rules\\s+create\\b"
+    },
+    {
+      "id": "gce_router_nat",
+      "re": "\\bgcloud\\b.*\\bcompute\\s+routers\\s+nats\\s+create\\b"
+    },
+    {
+      "id": "cloud_sql",
+      "re": "\\bgcloud\\b.*\\bsql\\s+instances\\s+create\\b"
+    },
+    {
+      "id": "cloud_run_deploy",
+      "re": "\\bgcloud\\b.*\\brun\\s+deploy\\b"
+    },
+    {
+      "id": "cloud_run_services_create",
+      "re": "\\bgcloud\\b.*\\brun\\s+services\\s+(create|replace)\\b"
+    },
+    {
+      "id": "gke_cluster",
+      "re": "\\bgcloud\\b.*\\bcontainer\\s+clusters\\s+create(-auto)?\\b"
+    },
+    {
+      "id": "memorystore",
+      "re": "\\bgcloud\\b.*\\bredis\\s+instances\\s+create\\b"
+    },
+    {
+      "id": "filestore",
+      "re": "\\bgcloud\\b.*\\bfilestore\\s+instances\\s+create\\b"
+    },
+    {
+      "id": "app_engine",
+      "re": "\\bgcloud\\b.*\\bapp\\s+(create|deploy)\\b"
+    },
+    {
+      "id": "functions",
+      "re": "\\bgcloud\\b.*\\bfunctions\\s+deploy\\b"
+    },
+    {
+      "id": "cloud_build",
+      "re": "\\bgcloud\\b.*\\bbuilds\\s+submit\\b"
+    },
+    {
+      "id": "artifact_registry",
+      "re": "\\bgcloud\\b.*\\bartifacts\\s+repositories\\s+create\\b"
+    },
+    {
+      "id": "storage_bucket",
+      "re": "(\\bgcloud\\b.*\\bstorage\\s+buckets\\s+create\\b|\\bgsutil\\b.*\\bmb\\b)"
+    },
+    {
+      "id": "secret_manager",
+      "re": "\\bgcloud\\b.*\\bsecrets\\s+create\\b"
+    },
+    {
+      "id": "iac_apply",
+      "re": "\\b(terraform|tofu)\\s+apply\\b|\\bpulumi\\s+up\\b"
+    }
+  ]
+}

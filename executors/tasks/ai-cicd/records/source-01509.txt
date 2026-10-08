@@ -1,0 +1,6 @@
+Frontend production build passed. Config and shell syntax checks passed. Source commits match requested pins. Release archive contains backend git archive and built frontend. Live HTTPS, signup/login, and reboot persistence await authorized cloud deployment.
+{
+  "frontend": "<PRIVATE_REF_03446>",
+  "backend": "<PRIVATE_REF_01617>",
+  "frontend_index_sha256": "<PRIVATE_REF_03242>"
+}

@@ -1,0 +1,26 @@
+{
+  "artifact_class": "HC_ANSWER_LOCK",
+  "run_id": "RUN-W2B",
+  "point": "HC-INT",
+  "locked_at": "2026-10-05T20:51:24+11:00",
+  "answers_locator": "HC_INT_OWNER_ANSWERS_LOCKED.txt",
+  "answers_sha256": "<PRIVATE_REF_02585>",
+  "owner_text_preserved": true,
+  "owner_delivery_observation": "Owner reports first seeing questions at8:45 and beginning then; not independent delivery/receipt clock. Original 10min delivery-to-lock timebox is not reset to first read.",
+  "native_message_delivery_time": "PENDING_SOURCE_RECONCILIATION",
+  "timebox_validity": "UNVERIFIED_PENDING_NATIVE_TIMESTAMPS; mark INVALID_FOR_HC if original delivery-to-lock exceeds10min",
+  "confidence_per_field": [
+    "NOT_RECORDED",
+    "NOT_RECORDED",
+    "NOT_RECORDED",
+    "NOT_RECORDED",
+    "NOT_RECORDED",
+    "NOT_RECORDED"
+  ],
+  "confidence_not_retrofilled": true,
+  "answer_completeness": "Original text retained including quotations and references; no controller paraphrase fills omitted objective elements",
+  "graded_by_Operations Coordinator": false,
+  "score": null,
+  "key_derived": false,
+  "quarantine": "No Observer, Deployer, trace-probe or later-arm delivery"
+}

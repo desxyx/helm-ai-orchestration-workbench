@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-06T01:06:39.778846+00:00",
+  "scope": "Execution-package source pins and preserved seals only; not product patch acceptance",
+  "product_head": "<PRIVATE_REF_02752>",
+  "product_pins_verified": 20,
+  "product_worktree_unchanged": true,
+  "prior_source_documents_verified": 10,
+  "preserved_manifests": [
+    {
+      "manifest": "handoff/Operations Coordinator/W2_comparison_close_2026-10-06/SHA256SUMS_HANDOFF",
+      "files": 4,
+      "sha256": "<PRIVATE_REF_01248>"
+    },
+    {
+      "manifest": "execution/w2_comparison_2026-10-06/SHA256SUMS_FINAL",
+      "files": 38,
+      "sha256": "<PRIVATE_REF_02349>"
+    }
+  ],
+  "package_content_review": "8 bounded patches, explicit Owner HTML exception, role-specific prompts, Mac/Windows split and one final freeze",
+  "implementation_claimed": false
+}

@@ -1,0 +1,393 @@
+{
+  "run_id": "RUN-W3",
+  "issued_manifest_sha256": "<PRIVATE_REF_00673>",
+  "entries": [
+    {
+      "packet_path": "ACCEPTANCE_MATRIX.md",
+      "archive_path": "observer_definitions/ACCEPTANCE_MATRIX.md",
+      "sha256": "<PRIVATE_REF_03025>"
+    },
+    {
+      "packet_path": "ACCEPTANCE_VERIFICATION_PROCEDURE.md",
+      "archive_path": "observer_definitions/ACCEPTANCE_VERIFICATION_PROCEDURE.md",
+      "sha256": "<PRIVATE_REF_02445>"
+    },
+    {
+      "packet_path": "ALIASES.json",
+      "archive_path": "sealed_run_record/observer/packet_meta/ALIASES.json",
+      "sha256": "<PRIVATE_REF_02035>"
+    },
+    {
+      "packet_path": "CONTROL_FACTS.md",
+      "archive_path": "sealed_run_record/observer/packet_meta/CONTROL_FACTS.md",
+      "sha256": "<PRIVATE_REF_02914>"
+    },
+    {
+      "packet_path": "EVENT_TAXONOMY.md",
+      "archive_path": "observer_definitions/EVENT_TAXONOMY.md",
+      "sha256": "<PRIVATE_REF_01416>"
+    },
+    {
+      "packet_path": "MEASUREMENT_INTEGRITY_RULES.md",
+      "archive_path": "observer_definitions/MEASUREMENT_INTEGRITY_RULES.md",
+      "sha256": "<PRIVATE_REF_02778>"
+    },
+    {
+      "packet_path": "METRICS_DEFINITIONS.md",
+      "archive_path": "observer_definitions/METRICS_DEFINITIONS.md",
+      "sha256": "<PRIVATE_REF_01277>"
+    },
+    {
+      "packet_path": "OBSERVER_PROTOCOL.md",
+      "archive_path": "observer_definitions/OBSERVER_PROTOCOL.md",
+      "sha256": "<PRIVATE_REF_03170>"
+    },
+    {
+      "packet_path": "RESTART_EQUIVALENCE.md",
+      "archive_path": "observer_definitions/RESTART_EQUIVALENCE.md",
+      "sha256": "<PRIVATE_REF_01847>"
+    },
+    {
+      "packet_path": "RUN_MANIFEST.md",
+      "archive_path": "sealed_run_record/observer/packet_meta/RUN_MANIFEST.md",
+      "sha256": "<PRIVATE_REF_03295>"
+    },
+    {
+      "packet_path": "TRACEABILITY_PROBE.md",
+      "archive_path": "observer_definitions/TRACEABILITY_PROBE.md",
+      "sha256": "<PRIVATE_REF_03741>"
+    },
+    {
+      "packet_path": "W3_MEASUREMENT_SCOPE.md",
+      "archive_path": "observer_definitions/W3_MEASUREMENT_SCOPE.md",
+      "sha256": "<PRIVATE_REF_00928>"
+    },
+    {
+      "packet_path": "event.schema.json",
+      "archive_path": "observer_definitions/event.schema.json",
+      "sha256": "<PRIVATE_REF_00975>"
+    },
+    {
+      "packet_path": "evidence/acceptance_screenshots/1st_login.png",
+      "archive_path": "acceptance_screenshots/1st_login.png",
+      "sha256": "<PRIVATE_REF_01262>"
+    },
+    {
+      "packet_path": "evidence/acceptance_screenshots/Create_project.png",
+      "archive_path": "acceptance_screenshots/Create_project.png",
+      "sha256": "<PRIVATE_REF_00138>"
+    },
+    {
+      "packet_path": "evidence/acceptance_screenshots/landing_page.png",
+      "archive_path": "acceptance_screenshots/landing_page.png",
+      "sha256": "<PRIVATE_REF_00534>"
+    },
+    {
+      "packet_path": "evidence/acceptance_screenshots/re_login_via_edge.png",
+      "archive_path": "acceptance_screenshots/re_login_via_edge.png",
+      "sha256": "<PRIVATE_REF_03291>"
+    },
+    {
+      "packet_path": "evidence/acceptance_screenshots/vm_stopped.png",
+      "archive_path": "acceptance_screenshots/vm_stopped.png",
+      "sha256": "<PRIVATE_REF_03206>"
+    },
+    {
+      "packet_path": "evidence/control/DEPLOYER_CONTINUATION_MESSAGE.txt",
+      "archive_path": "sealed_run_record/control/DEPLOYER_CONTINUATION_MESSAGE.txt",
+      "sha256": "<PRIVATE_REF_01179>"
+    },
+    {
+      "packet_path": "evidence/control/DEPLOYER_OPENING_MESSAGE.txt",
+      "archive_path": "sealed_run_record/control/DEPLOYER_OPENING_MESSAGE.txt",
+      "sha256": "<PRIVATE_REF_02386>"
+    },
+    {
+      "packet_path": "evidence/control/RESIDUAL_INVENTORY_POST_TEARDOWN.txt",
+      "archive_path": "sealed_run_record/custody/RESIDUAL_INVENTORY_POST_TEARDOWN.txt",
+      "sha256": "<PRIVATE_REF_01505>"
+    },
+    {
+      "packet_path": "evidence/control/TEARDOWN_PROMPT.txt",
+      "archive_path": "sealed_run_record/control/TEARDOWN_PROMPT.txt",
+      "sha256": "<PRIVATE_REF_02476>"
+    },
+    {
+      "packet_path": "evidence/control/W3_DEPLOYER_BRIEF.txt",
+      "archive_path": "sealed_run_record/control/W3_DEPLOYER_BRIEF.txt",
+      "sha256": "<PRIVATE_REF_03637>"
+    },
+    {
+      "packet_path": "evidence/control/project_inventory_CP02.txt",
+      "archive_path": "sealed_run_record/custody/project_inventory_CP02.txt",
+      "sha256": "<PRIVATE_REF_02464>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/README.md",
+      "archive_path": "sealed_run_record/deployer_record/README.md",
+      "sha256": "<PRIVATE_REF_03547>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/events.jsonl",
+      "archive_path": "sealed_run_record/deployer_record/events.jsonl",
+      "sha256": "<PRIVATE_REF_03004>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0002-gcp-identity.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0002-gcp-identity.txt",
+      "sha256": "<PRIVATE_REF_00576>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0003-gcp-inventory.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0003-gcp-inventory.txt",
+      "sha256": "<PRIVATE_REF_02971>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0004-dns-precheck.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0004-dns-precheck.txt",
+      "sha256": "<PRIVATE_REF_01110>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0005-source-checkout.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0005-source-checkout.txt",
+      "sha256": "<PRIVATE_REF_02500>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0006-app-config-findings.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0006-app-config-findings.txt",
+      "sha256": "<PRIVATE_REF_00152>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0007-price-catalog.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0007-price-catalog.txt",
+      "sha256": "<PRIVATE_REF_03431>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0008-preflight.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0008-preflight.txt",
+      "sha256": "<PRIVATE_REF_02186>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0009-address-create.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0009-address-create.txt",
+      "sha256": "<PRIVATE_REF_03571>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0010-resume-inventory.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0010-resume-inventory.txt",
+      "sha256": "<PRIVATE_REF_01092>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0011-firewall-create.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0011-firewall-create.txt",
+      "sha256": "<PRIVATE_REF_02516>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0012-disk-create.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0012-disk-create.txt",
+      "sha256": "<PRIVATE_REF_03135>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0013-snapshot-policy-create.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0013-snapshot-policy-create.txt",
+      "sha256": "<PRIVATE_REF_01858>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0014-disk-attach-policy.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0014-disk-attach-policy.txt",
+      "sha256": "<PRIVATE_REF_03118>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0015-created-describe.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0015-created-describe.txt",
+      "sha256": "<PRIVATE_REF_03010>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0016-vm-create.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0016-vm-create.txt",
+      "sha256": "<PRIVATE_REF_03013>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0017-vm-absent-check.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0017-vm-absent-check.txt",
+      "sha256": "<PRIVATE_REF_02581>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0018-vm-create.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0018-vm-create.txt",
+      "sha256": "<PRIVATE_REF_03651>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0019-vm-describe.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0019-vm-describe.txt",
+      "sha256": "<PRIVATE_REF_01076>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0020-stage-check.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0020-stage-check.txt",
+      "sha256": "<PRIVATE_REF_03290>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0021-vm-ssh-key.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0021-vm-ssh-key.txt",
+      "sha256": "<PRIVATE_REF_03230>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0022-setup-vm.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0022-setup-vm.txt",
+      "sha256": "<PRIVATE_REF_02213>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0023-dns-precheck2.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0023-dns-precheck2.txt",
+      "sha256": "<PRIVATE_REF_01732>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0024-dns-record-check.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0024-dns-record-check.txt",
+      "sha256": "<PRIVATE_REF_02082>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0025-build-result.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0025-build-result.txt",
+      "sha256": "<PRIVATE_REF_03681>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0026-compose-up.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0026-compose-up.txt",
+      "sha256": "<PRIVATE_REF_01335>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0027-back-crashloop.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0027-back-crashloop.txt",
+      "sha256": "<PRIVATE_REF_02438>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0028-crlf-cause.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0028-crlf-cause.txt",
+      "sha256": "<PRIVATE_REF_01928>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0029-tarball-blob-check.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0029-tarball-blob-check.txt",
+      "sha256": "<PRIVATE_REF_03150>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0030-setup-vm-rerun.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0030-setup-vm-rerun.txt",
+      "sha256": "<PRIVATE_REF_02446>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0031-rebuild-result.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0031-rebuild-result.txt",
+      "sha256": "<PRIVATE_REF_01592>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0032-compose-up2.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0032-compose-up2.txt",
+      "sha256": "<PRIVATE_REF_02837>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0033-e2e-create.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0033-e2e-create.txt",
+      "sha256": "<PRIVATE_REF_01676>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0034-e2e-create.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0034-e2e-create.txt",
+      "sha256": "<PRIVATE_REF_02182>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0035-deployed-ref-health.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0035-deployed-ref-health.txt",
+      "sha256": "<PRIVATE_REF_02787>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0036-expected-blobs.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0036-expected-blobs.txt",
+      "sha256": "<PRIVATE_REF_03073>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0037-vm-stop-start.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0037-vm-stop-start.txt",
+      "sha256": "<PRIVATE_REF_01595>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0038-e2e-after-restart.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0038-e2e-after-restart.txt",
+      "sha256": "<PRIVATE_REF_02462>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0039-teardown-inventory-before.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0039-teardown-inventory-before.txt",
+      "sha256": "<PRIVATE_REF_01054>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0040-dns-removed-check.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0040-dns-removed-check.txt",
+      "sha256": "<PRIVATE_REF_01198>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0041-delete-vm.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0041-delete-vm.txt",
+      "sha256": "<PRIVATE_REF_03289>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0042-delete-disk.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0042-delete-disk.txt",
+      "sha256": "<PRIVATE_REF_02584>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0043-delete-policy.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0043-delete-policy.txt",
+      "sha256": "<PRIVATE_REF_01909>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0044-delete-firewall.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0044-delete-firewall.txt",
+      "sha256": "<PRIVATE_REF_02137>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0045-dns-removed-check2.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0045-dns-removed-check2.txt",
+      "sha256": "<PRIVATE_REF_03407>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0046-delete-ip.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0046-delete-ip.txt",
+      "sha256": "<PRIVATE_REF_02338>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/evidence/0047-teardown-inventory-after.txt",
+      "archive_path": "sealed_run_record/deployer_record/evidence/0047-teardown-inventory-after.txt",
+      "sha256": "<PRIVATE_REF_01730>"
+    },
+    {
+      "packet_path": "evidence/deployer_record/state.json",
+      "archive_path": "sealed_run_record/deployer_record/state.json",
+      "sha256": "<PRIVATE_REF_01056>"
+    },
+    {
+      "packet_path": "evidence/transcripts/<NATIVE_ID_0991>.jsonl",
+      "archive_path": "sealed_run_record/deployer_transcripts/<NATIVE_ID_0991>.jsonl",
+      "sha256": "<PRIVATE_REF_02699>"
+    },
+    {
+      "packet_path": "evidence/transcripts/<NATIVE_ID_0991>/tool-results/b0ajh8f1p.txt",
+      "archive_path": "sealed_run_record/deployer_transcripts/<NATIVE_ID_0991>/tool-results/b0ajh8f1p.txt",
+      "sha256": "<PRIVATE_REF_02195>"
+    },
+    {
+      "packet_path": "evidence/transcripts/<NATIVE_ID_1514>.jsonl",
+      "archive_path": "sealed_run_record/deployer_transcripts/<NATIVE_ID_1514>.jsonl",
+      "sha256": "<PRIVATE_REF_02595>"
+    },
+    {
+      "packet_path": "metrics.schema.json",
+      "archive_path": "observer_definitions/metrics.schema.json",
+      "sha256": "<PRIVATE_REF_01911>"
+    }
+  ],
+  "all_entries_match": true,
+  "note": "Paths remapped only; bytes match the issued 77-file packet. No new or corrected packet issued."
+}

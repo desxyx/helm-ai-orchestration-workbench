@@ -1,0 +1,473 @@
+{
+  "tool": "project-inventory",
+  "project_alias": "WATCHOVER_SANDBOX",
+  "timestamp": "2026-09-28T06:51:44.183Z",
+  "instrument_version": "experiment-control-tool/0.2.0",
+  "mode": "LIVE_READONLY",
+  "status": "PASS_PRIMARY_INSTRUMENT_AVAILABLE",
+  "query_coverage_description": "primary: Cloud Asset project-wide search; supplementary: selected service list calls for coverage diagnostics only",
+  "primary_project_wide_inventory": {
+    "instrument": "gcloud asset search-all-resources",
+    "status": "COVERED_PROJECT_WIDE",
+    "detected_count": 35,
+    "detected_resources": [
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigqueryconnection.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/datastore.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudtrace.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Project",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "cloudbilling.googleapis.com/ProjectBillingInfo",
+        "name_alias": "//cloudbilling.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/billingInfo",
+        "state": "ACTIVE",
+        "location": "global"
+      },
+      {
+        "asset_type": "cloudresourcemanager.googleapis.com/Project",
+        "name_alias": "//cloudresourcemanager.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]",
+        "state": "ACTIVE",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage-component.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigqueryreservation.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "logging.googleapis.com/LogSink",
+        "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/sinks/_Required",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/billingbudgets.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/servicemanagement.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/dataplex.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/logging.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/analyticshub.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquery.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "logging.googleapis.com/LogBucket",
+        "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/locations/global/buckets/_Default",
+        "state": "ACTIVE",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/apptopology.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/oslogin.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/monitoring.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerymigration.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerystorage.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/telemetry.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerydatapolicy.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/compute.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "logging.googleapis.com/LogSink",
+        "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/sinks/_Default",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerydatatransfer.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/sql-component.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudapis.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/iap.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/dataform.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudasset.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage-api.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/serviceusage.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "logging.googleapis.com/LogBucket",
+        "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/locations/global/buckets/_Required",
+        "state": "ACTIVE",
+        "location": "global"
+      }
+    ]
+  },
+  "supplementary_checks": [
+    {
+      "resource_class": "compute.googleapis.com/Instance",
+      "status": "API_NOT_ENABLED",
+      "detected_count": null,
+      "note": "API [compute.googleapis.com] not enabled on project \n[[ALIAS:WATCHOVER_SANDBOX]]. Would you like to enable and retry (this will take\n a few minutes)? (y/N)?  \nERROR: (gcloud.compute.instances.list) PERMISSION_DENIED: Compute Engine API has not been used in project [ALIAS:WATCHOVER_SANDBOX] before or it is disabled. Enable it by visiting <PRIVATE_URL_0094>.google.com/apis/api/compute.googleapis.com/overview?project=[ALIAS:WATCHOVER_SANDBOX] then retry. If you enabled this API recently,"
+    },
+    {
+      "resource_class": "storage.googleapis.com/Bucket",
+      "status": "COVERED_SUPPLEMENTARY",
+      "detected_count": 0
+    },
+    {
+      "resource_class": "sqladmin.googleapis.com/Instance",
+      "status": "API_NOT_ENABLED",
+      "detected_count": null,
+      "note": "API [sqladmin.googleapis.com] not enabled on project \n[[ALIAS:WATCHOVER_SANDBOX]]. Would you like to enable and retry (this will take\n a few minutes)? (y/N)?  \nERROR: (gcloud.sql.instances.list) [[ALIAS:PERSONAL_GCP]] does not have permission to access projects instance [[ALIAS:WATCHOVER_SANDBOX]] (or it may not exist): Cloud SQL Admin API has not been used in project [ALIAS:WATCHOVER_SANDBOX] before or it is disabled. Enable it by visiting <PRIVATE_URL_0094>.google.com/apis/api/sqlad"
+    },
+    {
+      "resource_class": "run.googleapis.com/Service",
+      "status": "API_NOT_ENABLED",
+      "detected_count": null,
+      "note": "API [run.googleapis.com] not enabled on project [[ALIAS:WATCHOVER_SANDBOX]]. \nWould you like to enable and retry (this will take a few minutes)? (y/N)?  \nERROR: (gcloud.run.services.list) PERMISSION_DENIED: Cloud Run Admin API has not been used in project [ALIAS:WATCHOVER_SANDBOX] before or it is disabled. Enable it by visiting <PRIVATE_URL_0094>.google.com/apis/api/run.googleapis.com/overview?project=[ALIAS:WATCHOVER_SANDBOX] then retry. If you enabled this API recently, wait a few m"
+    }
+  ],
+  "resource_classes_covered": [
+    "serviceusage.googleapis.com/Service",
+    "compute.googleapis.com/Project",
+    "cloudbilling.googleapis.com/ProjectBillingInfo",
+    "cloudresourcemanager.googleapis.com/Project",
+    "logging.googleapis.com/LogSink",
+    "logging.googleapis.com/LogBucket"
+  ],
+  "detected_residuals": [
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigqueryconnection.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/datastore.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudtrace.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Project",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "cloudbilling.googleapis.com/ProjectBillingInfo",
+      "name_alias": "//cloudbilling.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/billingInfo",
+      "state": "ACTIVE",
+      "location": "global"
+    },
+    {
+      "asset_type": "cloudresourcemanager.googleapis.com/Project",
+      "name_alias": "//cloudresourcemanager.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]",
+      "state": "ACTIVE",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage-component.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigqueryreservation.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "logging.googleapis.com/LogSink",
+      "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/sinks/_Required",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/billingbudgets.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/servicemanagement.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/dataplex.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/logging.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/analyticshub.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquery.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "logging.googleapis.com/LogBucket",
+      "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/locations/global/buckets/_Default",
+      "state": "ACTIVE",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/apptopology.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/oslogin.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/monitoring.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerymigration.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerystorage.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/telemetry.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerydatapolicy.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/compute.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "logging.googleapis.com/LogSink",
+      "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/sinks/_Default",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerydatatransfer.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/sql-component.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudapis.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/iap.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/dataform.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudasset.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage-api.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/serviceusage.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "logging.googleapis.com/LogBucket",
+      "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/locations/global/buckets/_Required",
+      "state": "ACTIVE",
+      "location": "global"
+    }
+  ],
+  "sanitisation_status": "SANITISED_ALIAS_ONLY",
+  "note": "Master 03 §10.3 known-present Resource X positive control is deferred to W1 FORCED_INTERRUPT. An empty result here is not a zero-residual claim."
+}

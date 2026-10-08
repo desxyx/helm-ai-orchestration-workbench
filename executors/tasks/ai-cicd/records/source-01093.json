@@ -1,0 +1,73 @@
+{
+  "artifact_class": "AUTHORITY_DRAFT",
+  "status": "AWAIT_OWNER_APPROVAL_AND_PROBE_RETURN",
+  "project": "<CLOUD_PROJECT>",
+  "executor": "Existing held Deployer S2; not Observer and not a new Execution team",
+  "resources": [
+    {
+      "type": "compute_instance",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-alerta",
+      "zone": "us-central1-a"
+    },
+    {
+      "type": "persistent_disk",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-alerta",
+      "zone": "us-central1-a"
+    },
+    {
+      "type": "persistent_disk",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-data",
+      "zone": "us-central1-a"
+    },
+    {
+      "type": "static_address",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-ip",
+      "region": "us-central1",
+      "ip": "<IP_ADDRESS_114>"
+    },
+    {
+      "type": "firewall_rule",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-web"
+    },
+    {
+      "type": "firewall_rule",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh"
+    },
+    {
+      "type": "subnetwork",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-subnet",
+      "region": "us-central1"
+    },
+    {
+      "type": "network",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-network"
+    }
+  ],
+  "dns_owner_action": {
+    "type": "A",
+    "name": "<W2_RUN_RESOURCE_PREFIX>",
+    "zone": "<EXPERIMENT_DOMAIN>",
+    "content": "<IP_ADDRESS_114>",
+    "actor": "Human Operator; Deployer only requests exact deletion"
+  },
+  "data_effect": "Deleting the two disks destroys this run application/database data, including accounts and alerts; no backup existence or retention guarantee is assumed",
+  "disk_auto_delete_fact": "Both disk attachments autoDelete=false; VM deletion alone is not complete cleanup",
+  "excluded": [
+    "Default VPC/firewall/provider defaults",
+    "Unrelated resources",
+    "API disablement",
+    "Source repositories/local preserved evidence",
+    "Client login/config changes"
+  ],
+  "order": "Fresh trace probe returns and existing acceptance evidence/limits are archived; Human Operator then sends the unchanged frozen teardown prompt; Deployer asks for deletion approval and declares completion; Operations Coordinator runs a newly authorized project-wide residual capture and records Owner DNS removal",
+  "residual_capture_scope": {
+    "actor": "Operations Coordinator",
+    "mode": "ReadOnly",
+    "provider_attempt_cap": 12,
+    "window_minutes": 10,
+    "bundles": 1,
+    "query_scope": "Existing frozen project-wide Cloud Asset inventory plus VM/disks/addresses/networks/firewalls/Run/buckets/SQL read-only lists; no API enablement",
+    "activation": "Only after explicit matched Owner authorization and Deployer teardown declaration"
+  },
+  "created_at": "2026-10-05T15:44:38+11:00"
+}

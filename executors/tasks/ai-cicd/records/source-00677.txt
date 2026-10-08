@@ -1,0 +1,4 @@
+prompt-input bytes 13270
+HIT 'AGENTS.md' 2 ctx: 'hen explicitly requested by the user, applicable `AGENTS.md` instructions, or skill instructions; wh'
+labels checked 19
+top-level type list items 4

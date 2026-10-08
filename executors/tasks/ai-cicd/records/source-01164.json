@@ -1,0 +1,15 @@
+{
+  "query": "DNS_local",
+  "argv": [
+    "/usr/bin/dig",
+    "+time=3",
+    "+tries=1",
+    "<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>",
+    "A"
+  ],
+  "started_at": "2026-10-05T03:40:13.089930+00:00",
+  "ended_at": "2026-10-05T03:40:13.096730+00:00",
+  "exit_code": 10,
+  "stdout_sha256": "<PRIVATE_REF_03399>",
+  "stderr_sha256": "<PRIVATE_REF_02339>"
+}

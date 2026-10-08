@@ -1,0 +1,8 @@
+2026-09-27 00:06:28,646 alerta.plugins[92096]: [ERROR] Failed to load plugin 'remote_ip': 'remote_ip' [in <scratch>/w2_backend_src/alerta/utils/plugin.py:49]
+2026-09-27 00:06:28,647 alerta.plugins[92096]: [ERROR] Failed to load plugin 'reject': 'reject' [in <scratch>/w2_backend_src/alerta/utils/plugin.py:49]
+2026-09-27 00:06:28,647 alerta.plugins[92096]: [ERROR] Failed to load plugin 'heartbeat': 'heartbeat' [in <scratch>/w2_backend_src/alerta/utils/plugin.py:49]
+2026-09-27 00:06:28,647 alerta.plugins[92096]: [ERROR] Failed to load plugin 'blackout': 'blackout' [in <scratch>/w2_backend_src/alerta/utils/plugin.py:49]
+2026-09-27 00:06:28,648 alerta.plugins[92096]: [ERROR] Failed to load plugin 'forwarder': 'forwarder' [in <scratch>/w2_backend_src/alerta/utils/plugin.py:49]
+APP CREATED OK under Python 3.12: alerta.app
+/ -> 200
+/management/status -> 200

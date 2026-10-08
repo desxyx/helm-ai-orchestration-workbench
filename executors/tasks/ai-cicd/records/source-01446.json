@@ -1,0 +1,16 @@
+{
+  "artifact_class": "OWNER_QUALITATIVE_FEEDBACK",
+  "run_id": "RUN-W2B",
+  "arm": "W2B",
+  "recorded_at": "2026-10-05T21:20:50+11:00",
+  "phase": "S2 / DNS handoff observed by Owner",
+  "owner_exact_quote": "And record my impression too: http://127.0.0.1:7431/ updates fairly promptly.",
+  "owner_exact_quote_translation_note": "English translated/redacted derivative of the original human wording; not verbatim original English. The historical field name is retained.",
+  "surface": "http://127.0.0.1:7431/",
+  "status": "OWNER_SELF_REPORT",
+  "feedback_category": "Perceived update timeliness",
+  "measured_update_latency_seconds": null,
+  "interpretation": "Owner perceives the live shared-record view updates reasonably promptly during S2. This is qualitative experience feedback; no measured latency, HC score, acceptance verdict or causal comparison is derived.",
+  "sent_to_deployer": false,
+  "hc_answers_included": false
+}

@@ -1,0 +1,10 @@
+{
+  "source": "<CLIENT_HOME>/.codex/sessions/2026/10/05/rollout-2026-10-05T20-56-23-<NATIVE_ID_0078>.jsonl",
+  "session_id": "<NATIVE_ID_0078>",
+  "sha256": "<PRIVATE_REF_02969>",
+  "lines": 528,
+  "capture_at": "2026-10-05T21:42:37+11:00",
+  "metadata_cwd": "<CLIENT_HOME>/Workspaces/site-02/app",
+  "later_outputs_may_exist": true,
+  "terminal_record_reconciliation": "PENDING; do not assert terminal timestamp from file mtime"
+}

@@ -1,0 +1,139 @@
+{
+  "run_id": "RUN-W3",
+  "definitions": "packet/ACCEPTANCE_MATRIX.md",
+  "items": {
+    "A1": {
+      "status": "PASS",
+      "reason": "Independent browser captures show a usable Taiga frontend at RUN_HOST, including explicit HTTPS and a secure-lock indicator in Edge. Native TLS verification separately reports matching SAN and valid dates. Browser security is inferred from retained UI, not a certificate export.",
+      "performed_by": [
+        "OWNER",
+        "DEPLOYER (supporting TLS check)"
+      ],
+      "label": "INFERRED",
+      "confidence": "MEDIUM",
+      "locators": [
+        "packet/evidence/acceptance_screenshots/landing_page.png",
+        "packet/evidence/acceptance_screenshots/re_login_via_edge.png",
+        "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L476",
+        "packet/evidence/deployer_record/evidence/0034-e2e-create.txt",
+        "packet/CONTROL_FACTS.md#Owner acceptance"
+      ]
+    },
+    "A2": {
+      "status": "UNVERIFIED",
+      "reason": "No HAR establishes the acceptance browser data path, and no direct retrieval of ACCEPTANCE_OBJECT or correlated backend access log is delivered. Declared conf.json API address and separate Deployer API objects do not establish the Owner browser flow.",
+      "performed_by": [
+        "OWNER (manual UI only)",
+        "DEPLOYER (separate API checks)"
+      ],
+      "label": "UNMEASURABLE",
+      "confidence": null,
+      "locators": [
+        "packet/ACCEPTANCE_VERIFICATION_PROCEDURE.md#6.3",
+        "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L493",
+        "packet/evidence/deployer_record/evidence/0035-deployed-ref-health.txt",
+        "packet/SHA256SUMS"
+      ]
+    },
+    "A3": {
+      "status": "UNVERIFIED",
+      "reason": "No frozen or independently registered W3 adapter or objective-suite result is delivered. Deployer API smoke checks are not a registered suite.",
+      "performed_by": [],
+      "label": "UNMEASURABLE",
+      "confidence": null,
+      "locators": [
+        "packet/RUN_MANIFEST.md",
+        "packet/W3_MEASUREMENT_SCOPE.md",
+        "packet/ACCEPTANCE_VERIFICATION_PROCEDURE.md#6.6"
+      ]
+    },
+    "A4": {
+      "status": "PASS",
+      "reason": "Custodian control facts record Owner UI signup/logout/login, corroborated by authenticated Chrome and Edge screenshots. New-account creation and the intervening logout are reported in the mechanical record, not captured as a continuous browser trace; the account is not conflated with the Deployer API test account.",
+      "performed_by": [
+        "OWNER",
+        "CUSTODIAN (registration)"
+      ],
+      "label": "INFERRED",
+      "confidence": "MEDIUM",
+      "locators": [
+        "packet/CONTROL_FACTS.md#Owner acceptance",
+        "packet/evidence/acceptance_screenshots/1st_login.png",
+        "packet/evidence/acceptance_screenshots/re_login_via_edge.png"
+      ]
+    },
+    "A5": {
+      "status": "PASS",
+      "reason": "Owner creates ACCEPTANCE_OBJECT through the UI; custodian records full stop/start of the sole serving VM after creation and before the Edge login/object capture. The same account/object after restart is Owner-reported and visually corroborated. The create screenshot shows a filled form, not submission; the later timeline corroborates creation. No separate RUNNING screenshot is needed given recorded start completion and recovered UI.",
+      "performed_by": [
+        "OWNER",
+        "CUSTODIAN (restart audit facts)"
+      ],
+      "label": "INFERRED",
+      "confidence": "MEDIUM",
+      "locators": [
+        "packet/CONTROL_FACTS.md#Owner acceptance",
+        "packet/evidence/acceptance_screenshots/Create_project.png",
+        "packet/evidence/acceptance_screenshots/vm_stopped.png",
+        "packet/evidence/acceptance_screenshots/re_login_via_edge.png",
+        "packet/evidence/control/project_inventory_CP02.txt",
+        "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L625",
+        "packet/RESTART_EQUIVALENCE.md"
+      ],
+      "object": "ACCEPTANCE_OBJECT",
+      "serving_compute": "<RUN_VM_OR_BOOT_DISK>, australia-southeast1-b",
+      "restart_stop_utc": [
+        "2026-10-06T14:39:56Z",
+        "2026-10-06T14:40:14Z"
+      ],
+      "restart_start_utc": [
+        "2026-10-06T14:41:09Z",
+        "2026-10-06T14:41:20Z"
+      ],
+      "recovery_screenshot_utc": "2026-10-06T14:43:00Z"
+    },
+    "A6": {
+      "status": "UNVERIFIED",
+      "reason": "No completed fresh measurement sub-session, externally timed questions or scored answers are delivered. The complete sealed pre-teardown workspace corpus required by section 7.3 is absent. The main Observer does not substitute remembered answers or invent a retrospective timer.",
+      "performed_by": [],
+      "label": "UNMEASURABLE",
+      "confidence": null,
+      "locators": [
+        "packet/TRACEABILITY_PROBE.md",
+        "packet/SHA256SUMS",
+        "packet/CONTROL_FACTS.md#CP-02"
+      ]
+    },
+    "A7": {
+      "status": "PASS",
+      "reason": "Explicit teardown approval precedes the five cloud delete commands covering six resources including the implicit boot disk. The sole created A record is requested for deletion and resolves NXDOMAIN before IP release. Independent all-project inventory and all-types Cloud Asset search, reconciled with the complete creation record and CP-02 positive inventory, cover the run-created set and show none remaining. This finding is bounded to run-created resources; it does not certify every enabled service or all pre-existing credentials.",
+      "performed_by": [
+        "DEPLOYER",
+        "OWNER (approval and DNS deletion)",
+        "CUSTODIAN (independent residual inspection)"
+      ],
+      "label": "INFERRED",
+      "confidence": "MEDIUM",
+      "locators": [
+        "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L578",
+        "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L580",
+        "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L591",
+        "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L599",
+        "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L602",
+        "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L607",
+        "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L611",
+        "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L643",
+        "packet/evidence/control/project_inventory_CP02.txt",
+        "packet/evidence/control/RESIDUAL_INVENTORY_POST_TEARDOWN.txt",
+        "packet/CONTROL_FACTS.md#Teardown and residual"
+      ]
+    }
+  },
+  "all_pass": false,
+  "coverage_limitations": [
+    "Owner steps are mechanical records and screenshots; no HAR or browser action recording.",
+    "Cloud SQL was not directly queried; all-types asset search lists no SQL instance and no SQL creation appears in either native session.",
+    "Artifact-repository list emits a PowerShell RemoteException without an explicit exit status. The all-types asset search and observed run creation set are the basis for the run-resource teardown finding.",
+    "No fresh timed trace probe was delivered or performed by this Observer."
+  ]
+}

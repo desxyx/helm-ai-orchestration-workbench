@@ -1,0 +1,64 @@
+{
+  "artifact_class": "HELM_SYNC_OPERATIONAL_RECEIPT",
+  "recorded_at": "2026-10-06T21:26:14+11:00",
+  "repository": "<PRIVATE_URL_0143>",
+  "private": true,
+  "branch": "main",
+  "primary_sync_commit": "<PRIVATE_REF_02669>",
+  "primary_sync_tree": "<PRIVATE_REF_00946>",
+  "both_prior_heads_preserved": [
+    "<PRIVATE_REF_01910>",
+    "<PRIVATE_REF_01627>"
+  ],
+  "remote_handoff_blob": "<PRIVATE_REF_01958>",
+  "primary_push": "SUCCEEDED_API_REF_AND_DOCUMENT_BLOB_MATCH",
+  "handoff_manifest_sha256": "<PRIVATE_REF_03622>",
+  "root_ignore_and_attributes": "explicit local-only cache/raw-custody exclusions plus AI_CICD -text",
+  "merge_resolution": "only .claude/settings.local.json; union59local+30remote with common27 =62existing allow entries; equal defaultMode retained; no new permission literal",
+  "scope": "entire current normal Git-tracked HELM work-record snapshot, not Mac raw image or Desktop/Coding transfer",
+  "independent_integrity_acceptance": "PENDING_REVIEWER; product local PASS retained",
+  "windows_receipt": "NOT_YET_ACKNOWLEDGED",
+  "final_locator": "handoff/windows-Operations Coordinator-2026-10-06 tag on receipt follow-up commit; obtain exact final commit from tag/main rather than using primary_sync_commit as final HEAD",
+  "raw_operational_reads": [
+    {
+      "i": 0,
+      "chunk_id": "0cae0b",
+      "wall_time_seconds": 7e-06,
+      "exit_code": 0,
+      "original_token_count": 21,
+      "output": "<PRIVATE_REF_02669>\n<PRIVATE_REF_00946>\n"
+    },
+    {
+      "i": 1,
+      "chunk_id": "561a29",
+      "wall_time_seconds": 0.3803565,
+      "exit_code": 0,
+      "original_token_count": 24,
+      "output": "{\"default_branch\":\"main\",\"full_name\":\"<PUBLIC_ACCOUNT_HANDLE>/H.E.L.M\",\"private\":true,\"visibility\":\"private\"}\n"
+    },
+    {
+      "i": 2,
+      "chunk_id": "0bc81a",
+      "wall_time_seconds": 0.363330792,
+      "exit_code": 0,
+      "original_token_count": 19,
+      "output": "{\"ref\":\"refs/heads/main\",\"sha\":\"<PRIVATE_REF_02669>\"}\n"
+    },
+    {
+      "i": 3,
+      "chunk_id": "d9050a",
+      "wall_time_seconds": 0.350776458,
+      "exit_code": 0,
+      "original_token_count": 40,
+      "output": "{\"path\":\"council/task/AI_CICD/handoff/Operations Coordinator/WINDOWS_W3_TAKEOVER_2026-10-06/OPERATIONS_COORDINATOR_HANDOFF.md\",\"sha\":\"<PRIVATE_REF_01958>\",\"size\":7810}\n"
+    },
+    {
+      "i": 4,
+      "chunk_id": "21edfd",
+      "wall_time_seconds": 7.25e-06,
+      "exit_code": 0,
+      "original_token_count": 6,
+      "output": "## main...origin/main\n"
+    }
+  ]
+}

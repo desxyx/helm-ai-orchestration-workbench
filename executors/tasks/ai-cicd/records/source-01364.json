@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 96888,
+  "stop_reason": "end_turn",
+  "session_id": "<NATIVE_ID_2154>",
+  "total_cost_usd": 0.7354566,
+  "usage": {
+    "input_tokens": 38,
+    "cache_creation_input_tokens": 22866,
+    "cache_read_input_tokens": 1407433,
+    "output_tokens": 6615,
+    "output_tokens_details": {
+      "thinking_tokens": 539
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22866,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1368,
+        "cache_read_input_tokens": 81478,
+        "cache_creation_input_tokens": 398,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 398
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 56,
+      "outputTokens": 11043,
+      "thinkingTokens": 737,
+      "cacheReadInputTokens": 1547333,
+      "cacheCreationInputTokens": 78862,
+      "webSearchRequests": 0,
+      "costUSD": 0.7354566,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 29,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**Short answer:** the records name frontend `<PRIVATE_REF_03446>` and backend `<PRIVATE_REF_01617>`. The records only partly show that these are what is running. Nothing shows that the frontend commit itself is running.\n\n**Claimed and pinned (build and deployment records):**\n- `README.txt:14-16` lists the frontend `<PRIVATE_REF_03446>…` and backend `<PRIVATE_REF_01617>…` as the source revisions.\n- `build-manifest.json:2-3` gives the same two values as `frontend_commit` and `backend_commit`. It also holds sha256 hashes of the deployed files.\n- `backend.Dockerfile:2-4` sets `BACKEND_COMMIT=<PRIVATE_REF_01617>…` as a build argument. It writes that value into the image label `org.opencontainers.image.revision`.\n- `compose.yaml:28` tags the API image `<W2_RUN_RESOURCE_PREFIX>-api:<PRIVATE_REF_01617>`.\n- `verification/deployment.json:2-5` was written at `2026-10-05T03:10:41Z`. It records `backend_image_revision` `<PRIVATE_REF_01617>…` and `frontend_commit` `<PRIVATE_REF_03446>…`, with 315 files verified. It is a summary file, so it is a claim, not raw evidence.\n\n**What was observed on the VM:** one command at `S2.jsonl:392` (completed `2026-10-05T03:09:21.553Z`) ran over IAP SSH to `<W2_RUN_RESOURCE_PREFIX>-alerta`. It ran `verify-files.py` and then `docker inspect <W2_RUN_RESOURCE_PREFIX>-api-1`. The output is:\n- `verify-files.py` printed `files_verified: 315`, `frontend_commit: <PRIVATE_REF_03446>…`, `backend_commit: <PRIVATE_REF_01617>…`.\n  - That script (`verify-files.py:6-16`) compares each file under `/opt/<W2_RUN_RESOURCE_PREFIX>` to the sha256 in the manifest. It then prints the commit values from the manifest.\n  - So 315 deployed files match the manifest hashes. The two commit values in that output are copied from the manifest. They are not read from the running software.\n- `docker inspect <W2_RUN_RESOURCE_PREFIX>-api-1` printed the label `org.opencontainers.image.revision` as `<PRIVATE_REF_01617>`. This comes from the running backend container, so it is the strongest runtime evidence for the backend commit.\n  - The label is set from a build argument. It shows what the image was built with, not independently what source it contains.\n  - The same command's `docker compose images` row for `<W2_RUN_RESOURCE_PREFIX>-api-1` shows `<none>` for repository and tag and `unknown` for platform. The record does not explain this.\n\n**Frontend:** the frontend is static files in `./frontend-dist`, which Caddy serves read-only (`compose.yaml:62`). The only link to commit `<PRIVATE_REF_03446>…` is the manifest's file hashes and its `frontend_commit` field. No record I found reads that commit from the running site or from the files on the VM. So the hashes show the served files match the manifest. They do not independently prove the manifest's frontend commit is the source those files were built from.\n\n**Not verified:**\n- The backend source hashes were added to the manifest late (`S2.jsonl:367`, \"Added pinned backend source hashes to the final deployment manifest\").\n- The backend Dockerfile and the admin-bootstrap script were edited after first deployment (`S2.jsonl:216`, `:227`, `:281-292`), and the bundle and manifest were rebuilt. I did not check whether those edits changed any pinned-source files.\n- I did not check the git history of the source checkouts. The transcript says \"Validated both pinned commits, unchanged backend source\" at `S2.jsonl:70`, but that is the agent's own statement.",
+  "ttft_ms": 1598,
+  "type": "result",
+  "duration_ms": 61975,
+  "uuid": "<NATIVE_ID_0324>",
+  "ttft_stream_ms": 1329,
+  "time_to_request_ms": 21,
+  "first_content_frame_ms": 1329,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

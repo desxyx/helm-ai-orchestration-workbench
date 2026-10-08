@@ -1,0 +1,12 @@
+{
+  "equal_reordered_same_digest": true,
+  "changed_binding_new_digest": true,
+  "projection_has_no_secret": true,
+  "delta_recoverable_from_projection": [
+    {
+      "principal": "sa:<ACCOUNT_EMAIL_034>",
+      "role": "roles/owner"
+    }
+  ],
+  "limit_secret_only_change_invisible": true
+}

@@ -1,0 +1,48 @@
+{
+  "tool": "project-inventory",
+  "project_alias": "FIXTURE_SANDBOX",
+  "timestamp": "2026-09-26T12:57:48.018Z",
+  "instrument_version": "experiment-control-tool/0.2.0",
+  "mode": "FIXTURE",
+  "status": "PASS_FIXTURE_SHAPE_ONLY",
+  "query_coverage_description": "synthetic shape test only",
+  "primary_project_wide_inventory": {
+    "instrument": "fixture project-wide inventory",
+    "status": "FIXTURE_ONLY",
+    "detected_count": 1,
+    "detected_resources": [
+      {
+        "resource_class": "storage_buckets",
+        "count": 1,
+        "note": "synthetic fixture residual, not a real resource"
+      }
+    ]
+  },
+  "supplementary_checks": [
+    {
+      "resource_class": "compute_instances",
+      "status": "COVERED",
+      "detected_count": 0
+    },
+    {
+      "resource_class": "storage_buckets",
+      "status": "COVERED",
+      "detected_count": 1
+    },
+    {
+      "resource_class": "cloud_sql_instances",
+      "status": "COVERED",
+      "detected_count": 0
+    }
+  ],
+  "resource_classes_covered": [],
+  "detected_residuals": [
+    {
+      "resource_class": "storage_buckets",
+      "count": 1,
+      "note": "synthetic fixture residual, not a real resource"
+    }
+  ],
+  "sanitisation_status": "SANITISED_ALIAS_ONLY",
+  "note": "Master 03 §10.3 known-present Resource X positive control is deferred to W1 FORCED_INTERRUPT. An empty result here is not a zero-residual claim."
+}

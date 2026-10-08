@@ -1,0 +1,20 @@
+=== step 1: start server (run1) ===
+Watching for file changes with StatReloader
+[26/Sep/2026 14:04:38] "GET /api/tags HTTP/1.1" 200 12
+=== step 2: first registration attempt (uses .test TLD, EXPECTED to 422) ===
+Unprocessable Entity: /api/users
+[26/Sep/2026 14:04:38] "POST /api/users HTTP/1.1" 422 154
+{"errors": {"email": ["value is not a valid email address: The part after the @-sign is a special-use or reserved name that cannot be used with email."]}}
+=== step 3: second registration attempt (uses .com TLD, expected success) ===
+[26/Sep/2026 14:04:38] "POST /api/users HTTP/1.1" 201 337
+{"user": {"username": "screeninguser1", "email": "<ACCOUNT_EMAIL_048>", "bio": null, "image": null, "token": "<CREDENTIAL_REMOVED>"}}
+=== step 4: login pre-restart (confirms registration worked) ===
+[26/Sep/2026 14:04:38] "POST /api/users/login HTTP/1.1" 200 337
+{"user": {"username": "screeninguser1", "email": "<ACCOUNT_EMAIL_048>", "bio": null, "image": null, "token": "<CREDENTIAL_REMOVED>"}}
+=== step 5: restart server (run2), same db.sqlite3 file ===
+Watching for file changes with StatReloader
+[26/Sep/2026 14:04:40] "GET /api/tags HTTP/1.1" 200 12
+=== step 6: login after restart, NO re-registration ===
+[26/Sep/2026 14:04:40] "POST /api/users/login HTTP/1.1" 200 337
+{"user": {"username": "screeninguser1", "email": "<ACCOUNT_EMAIL_048>", "bio": null, "image": null, "token": "<CREDENTIAL_REMOVED>"}}
+=== done ===

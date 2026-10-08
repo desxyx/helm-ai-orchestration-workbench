@@ -1,0 +1,17 @@
+$ gcloud compute networks describe <W2_RUN_RESOURCE_PREFIX>-net --format=json --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+{
+  "autoCreateSubnetworks": false,
+  "creationTimestamp": "2026-10-05T02:23:54.373-07:00",
+  "id": "<NUMERIC_RESOURCE_0085>",
+  "kind": "compute#network",
+  "name": "<W2_RUN_RESOURCE_PREFIX>-net",
+  "networkFirewallPolicyEnforcementOrder": "AFTER_CLASSIC_FIREWALL",
+  "routingConfig": {
+    "bgpBestPathSelectionMode": "LEGACY",
+    "routingMode": "REGIONAL"
+  },
+  "selfLink": "<PRIVATE_URL_0282>",
+  "selfLinkWithId": "<PRIVATE_URL_0279>",
+  "x_gcloud_bgp_routing_mode": "REGIONAL",
+  "x_gcloud_subnet_mode": "CUSTOM"
+}

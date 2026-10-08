@@ -1,0 +1,60 @@
+Human Operator has designated Council Member A as the one-time Phase 3 merge owner for this Pre-W2 freeze
+round. This designation ends with this merge. It does not confer implementation, Reviewer,
+Operations Coordinator, Observer or experiment authority.
+
+Remain at the Council layer. Do not edit files, run shell/product/experiment commands, dispatch an
+Executor, build MA-1, change WatchOver, start a patch, or start W2. Do not claim ratification or
+Council convergence from your own output.
+
+Read the Council Constitution v1.7 in full, then read these inputs in full:
+
+1. source-00219.md
+2. source-00220.md
+3. source-00222.md
+4. source-00224.md
+5. source-00226.md
+6. source-00223.md
+7. source-00232.md
+8. source-00233.md
+9. source-00229.md
+
+Also use your complete Council Member A self-review already present in this session. It is a self-review
+input, not an independent cross-review. Council Member C and Council Member B are the two independent cross-reviews.
+
+Task: synthesize one complete merged candidate containing these separately headed normative
+artifacts:
+
+1. MEASUREMENT_CONTROL_PATCH_AUTHORIZATION;
+2. W2_EXPERIMENT_FREEZE;
+3. W2_MEASUREMENT_ADDENDUM, including the complete MA-1 validation contract and HC contract;
+4. the full proposed Constitution §3 amendment texts for DK-2 and DK-5;
+5. a short merge record mapping every Council Member A/Council Member C/Council Member B finding to ACCEPTED, MODIFIED,
+   SUPERSEDED or REJECTED with a one-sentence reason.
+
+Resolve DVG-1 through DVG-7 from item 9 explicitly by evidence and authority, not by vote count.
+In particular:
+
+- separate endpoint-substitution proof from an application-level non-vacuous A3 negative control;
+- make the A5 negative control prove that disappearance of the target object causes failure;
+- do not call HC complete without freezing the time box, per-field rubric, confident-wrong
+  definition and admissible-answer rules for judgment fields;
+- make PA classifications atomic and non-duplicative;
+- do not use Constitution §12.1 as the ratification route for ordinary task-level DK-3/DK-6
+  rules; clarity fields may still be written without mislabelling their authority;
+- choose one normative owner and authority route for DK-6;
+- make WF-8 the single normative W2A T0 gate and use references elsewhere;
+- use the full product SHA `<PRIVATE_REF_02752>`;
+- purge superseded options and working-note language from the ratifiable text.
+
+The candidate must state prominently:
+
+- `MERGED CANDIDATE — NOT RATIFIED`;
+- no implementation, MA-1 execution, package export, patch dispatch, W2C build or W2 entry is
+  authorized;
+- the candidate must receive Council Member C and Council Member B review of the merged text before Human Operator ratification;
+- ratification is not dispatch.
+
+Do not merely emit another patch list. Produce the full replacement text so later reviewers do
+not need to reconstruct it from prior rounds. Do not nominate a future merge owner. If and only if
+a genuinely policy-changing Chair decision is unavoidable, end with one concise blocking question;
+otherwise state `Blocking question for Human Operator: none`.

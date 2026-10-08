@@ -1,0 +1,712 @@
+{
+  "fixture": "/private/tmp/r.pi8Rs32A/review_layout",
+  "negative": {
+    "workspace_relative_to_chain_top": "site/app",
+    "targets": [
+      "W2B_EXPORT_R2"
+    ],
+    "labels_checked": 0,
+    "label_check_above_chain_top": false,
+    "entries_listed": 94,
+    "entry_cap_reached": false,
+    "findings": [],
+    "unlistable": [],
+    "verdict": "CLEAN"
+  },
+  "positive": {
+    "workspace_relative_to_chain_top": "site/app",
+    "targets": [
+      "W2B_EXPORT_R2"
+    ],
+    "labels_checked": 0,
+    "label_check_above_chain_top": false,
+    "entries_listed": 95,
+    "entry_cap_reached": false,
+    "findings": [
+      {
+        "kind": "SYMLINK_TO_TARGET",
+        "target": "W2B_EXPORT_R2",
+        "via": "workspace_tree",
+        "entry": "/private/tmp/r.pi8Rs32A/review_layout/site/app/shared"
+      }
+    ],
+    "unlistable": [],
+    "verdict": "DISCOVERABLE"
+  },
+  "known_path_router_read_bytes": 7876,
+  "permission_boundary": "fixture listing only; actual actor read-denial/isolation remains pending",
+  "safe_runner_root": "/private/tmp/r.pi8Rs32A",
+  "stub_calls": {
+    "gcloud": 14,
+    "codex": 2,
+    "gh": 4
+  },
+  "raw_json_outputs": [
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-appr-TNnrEm/approval_extract/approvals_1791109050868.json",
+      "sha256": "<PRIVATE_REF_02259>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-appr-mSLayp/approval_extract/approvals_1791109050868.json",
+      "sha256": "<PRIVATE_REF_02259>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-appr-nCr7Vs/approval_extract/approvals_1791109050864.json",
+      "sha256": "<PRIVATE_REF_02259>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-entry-DiORhN/entry_check/entry_check_TEST_1791109052083.json",
+      "sha256": "<PRIVATE_REF_01590>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-entry-HNC3yX/entry_check/entry_check_TEST_1791109052098.json",
+      "sha256": "<PRIVATE_REF_00982>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-entry-fs2HQj/entry_check/entry_check_TEST_1791109052060.json",
+      "sha256": "<PRIVATE_REF_02159>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-entry-fs2HQj/expected.json",
+      "sha256": "<PRIVATE_REF_02901>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-entry-fs2HQj/identity.json",
+      "sha256": "<PRIVATE_REF_03173>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-entry-yxcOj6/entry_check/entry_check_TEST_1791109052073.json",
+      "sha256": "<PRIVATE_REF_01920>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-inv-BKAqYC/project_inventory/inventory_fixture_1791109050869.json",
+      "sha256": "<PRIVATE_REF_01541>",
+      "verdict": "PASS_FIXTURE_SHAPE_ONLY",
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-pkginc-71mm3x/package_increment/packets_cp1_1791109050874.json",
+      "sha256": "<PRIVATE_REF_01117>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-pkginc-AQclQt/package_increment/packets_cp1_1791109050872.json",
+      "sha256": "<PRIVATE_REF_01117>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-pkginc-AQclQt/package_increment/packets_cp2_1791109050873.json",
+      "sha256": "<PRIVATE_REF_00558>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-pkginc-EaOxCf/package_increment/packets_cp1_1791109050885.json",
+      "sha256": "<PRIVATE_REF_02734>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-pkginc-HFE2qG/package_increment/packets_cp1_1791109050897.json",
+      "sha256": "<PRIVATE_REF_00913>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-pkginc-TCY7nA/package_increment/packets_cp1_1791109050869.json",
+      "sha256": "<PRIVATE_REF_01117>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-0CHfTv/EVIDENCE_REGISTRY.json",
+      "sha256": "<PRIVATE_REF_02347>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-0CHfTv/EVIDENCE_REGISTRY_CHECK.json",
+      "sha256": "<PRIVATE_REF_02480>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-C2CLXS/EVIDENCE_REGISTRY.json",
+      "sha256": "<PRIVATE_REF_03633>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-C2CLXS/EVIDENCE_REGISTRY_CHECK.json",
+      "sha256": "<PRIVATE_REF_02413>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-C2CLXS/entry_check/sample.json",
+      "sha256": "<PRIVATE_REF_02007>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-Ebwmq7/EVIDENCE_REGISTRY.json",
+      "sha256": "<PRIVATE_REF_01790>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-Ebwmq7/EVIDENCE_REGISTRY_CHECK.json",
+      "sha256": "<PRIVATE_REF_01227>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-Ebwmq7/entry_check/sample.json",
+      "sha256": "<PRIVATE_REF_01631>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-q0S2SB/EVIDENCE_REGISTRY.json",
+      "sha256": "<PRIVATE_REF_02463>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-q0S2SB/EVIDENCE_REGISTRY_CHECK.json",
+      "sha256": "<PRIVATE_REF_01274>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-q0S2SB/entry_check/sample.json",
+      "sha256": "<PRIVATE_REF_02007>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-vA6PN7/EVIDENCE_REGISTRY.json",
+      "sha256": "<PRIVATE_REF_02902>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-vA6PN7/EVIDENCE_REGISTRY_CHECK.json",
+      "sha256": "<PRIVATE_REF_01754>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-registry-vA6PN7/entry_check/leaky.json",
+      "sha256": "<PRIVATE_REF_01871>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-render-SxO5nJ/rendered/controller_report_render_1791109050876.json",
+      "sha256": "<PRIVATE_REF_02410>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-render-VKlUeg/clean_case.json",
+      "sha256": "<PRIVATE_REF_01875>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-render-VKlUeg/correctable_failure_case.json",
+      "sha256": "<PRIVATE_REF_01071>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-render-VKlUeg/invalid_case.json",
+      "sha256": "<PRIVATE_REF_01818>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-render-VKlUeg/known_limitation_case.json",
+      "sha256": "<PRIVATE_REF_03627>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-render-VKlUeg/rendered/reset_attestation_render_1791109050873.json",
+      "sha256": "<PRIVATE_REF_02175>",
+      "verdict": "CLEAN",
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-render-VKlUeg/rendered/reset_attestation_render_1791109050874.json",
+      "sha256": "<PRIVATE_REF_03067>",
+      "verdict": "INVALID",
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-render-edNbFG/rendered/run_card_render_1791109050872.json",
+      "sha256": "<PRIVATE_REF_02431>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-render-edNbFG/run_card_valid.json",
+      "sha256": "<PRIVATE_REF_02260>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-render-oDhC6X/bad-controller.json",
+      "sha256": "<PRIVATE_REF_02881>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-secret-5Tiqr2/secret_scan/secret_scan_evaluate_1791109050870.json",
+      "sha256": "<PRIVATE_REF_02990>",
+      "verdict": "INVALID_POSITIVE_CONTROL_NOT_FOUND",
+      "stage": "evaluate"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-secret-Z7zIW3/secret_scan/secret_scan_cleanup_1791109050869.json",
+      "sha256": "<PRIVATE_REF_02474>",
+      "verdict": null,
+      "stage": "cleanup"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-secret-Z7zIW3/secret_scan/secret_scan_evaluate_1791109050869.json",
+      "sha256": "<PRIVATE_REF_02729>",
+      "verdict": "PASS_NO_REAL_SECRET_MATCHES",
+      "stage": "evaluate"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-secret-Z7zIW3/secret_scan/secret_scan_plant_1791109050867.json",
+      "sha256": "<PRIVATE_REF_03430>",
+      "verdict": null,
+      "stage": "plant"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-secret-lbRtwh/secret_scan/secret_scan_evaluate_1791109050871.json",
+      "sha256": "<PRIVATE_REF_03528>",
+      "verdict": "PASS_NO_REAL_SECRET_MATCHES",
+      "stage": "evaluate"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-secret-lbRtwh/secret_scan/secret_scan_plant_1791109050871.json",
+      "sha256": "<PRIVATE_REF_01306>",
+      "verdict": null,
+      "stage": "plant"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-secret-xL5lDB/secret_scan/secret_scan_evaluate_1791109050870.json",
+      "sha256": "<PRIVATE_REF_01843>",
+      "verdict": "FAIL_SECRET_MATCH",
+      "stage": "evaluate"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-secret-xL5lDB/secret_scan/secret_scan_plant_1791109050870.json",
+      "sha256": "<PRIVATE_REF_02670>",
+      "verdict": null,
+      "stage": "plant"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-snap-B5LpFM/snapshot/archive_stage/workspace_archive_TEST_1791109051297.json",
+      "sha256": "<PRIVATE_REF_01615>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-snap-B5LpFM/snapshot/snapshot_deployment_terminal_1791109051306.json",
+      "sha256": "<PRIVATE_REF_01251>",
+      "verdict": null,
+      "stage": "DEPLOYMENT_TERMINAL"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-snap-HOiw9p/nested/config.json",
+      "sha256": "<PRIVATE_REF_01143>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/experiment-control-tool-test-snap-MatfyH/snapshot/snapshot_forced_interrupt_1791109051286.json",
+      "sha256": "<PRIVATE_REF_00940>",
+      "verdict": null,
+      "stage": "FORCED_INTERRUPT"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c1n-CJgQRn/control/registry.json",
+      "sha256": "<PRIVATE_REF_02266>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c1n-CJgQRn/ev/secret_scan/secret_scan_plant_1791109050875.json",
+      "sha256": "<PRIVATE_REF_03621>",
+      "verdict": null,
+      "stage": "plant"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c1n-CJgQRn/ev/synthetic_scan/synthetic_scan_1791109050876.json",
+      "sha256": "<PRIVATE_REF_02107>",
+      "verdict": "PASS_NO_REAL_SECRET_MATCHES",
+      "stage": "scan"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c1p-UCYWEc/control/registry.json",
+      "sha256": "<PRIVATE_REF_02266>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c1p-UCYWEc/ev/secret_scan/secret_scan_plant_1791109050869.json",
+      "sha256": "<PRIVATE_REF_03270>",
+      "verdict": null,
+      "stage": "plant"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c1p-UCYWEc/ev/synthetic_scan/synthetic_redact_1791109050872.json",
+      "sha256": "<PRIVATE_REF_01902>",
+      "verdict": "REDACTED_CLEAN",
+      "stage": "redact"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c1p-UCYWEc/ev/synthetic_scan/synthetic_scan_1791109050871.json",
+      "sha256": "<PRIVATE_REF_01058>",
+      "verdict": "PASS_NO_REAL_SECRET_MATCHES",
+      "stage": "scan"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c2n-G8eIiw/control/resource_x.json",
+      "sha256": "<PRIVATE_REF_02422>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c2n-G8eIiw/designation.json",
+      "sha256": "<PRIVATE_REF_00239>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c2n-G8eIiw/ev/resource_x/resource_x_define_1791109050877.json",
+      "sha256": "<PRIVATE_REF_03746>",
+      "verdict": null,
+      "stage": "define"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c2n-G8eIiw/ev/resource_x/resource_x_propagate_1791109050877.json",
+      "sha256": "<PRIVATE_REF_03500>",
+      "verdict": null,
+      "stage": "propagate"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c2n-G8eIiw/ev/resource_x/resource_x_verify_1791109050878.json",
+      "sha256": "<PRIVATE_REF_01603>",
+      "verdict": "SOURCE_MISMATCH",
+      "stage": "verify"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c2n-G8eIiw/probe_packet.json",
+      "sha256": "<PRIVATE_REF_02743>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c2p-bfi4tx/control/resource_x.json",
+      "sha256": "<PRIVATE_REF_01864>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c2p-bfi4tx/designation.json",
+      "sha256": "<PRIVATE_REF_00239>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c2p-bfi4tx/ev/resource_x/resource_x_define_1791109050876.json",
+      "sha256": "<PRIVATE_REF_02370>",
+      "verdict": null,
+      "stage": "define"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c2p-bfi4tx/ev/resource_x/resource_x_propagate_1791109050877.json",
+      "sha256": "<PRIVATE_REF_03500>",
+      "verdict": null,
+      "stage": "propagate"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c2p-bfi4tx/ev/resource_x/resource_x_verify_1791109050877.json",
+      "sha256": "<PRIVATE_REF_02587>",
+      "verdict": "MATCH",
+      "stage": "verify"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c2p-bfi4tx/probe_packet.json",
+      "sha256": "<PRIVATE_REF_01281>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c4n-COhvgB/ev/interrupt_detect/interrupt_detect_1791109050881.json",
+      "sha256": "<PRIVATE_REF_02265>",
+      "verdict": "ARMED_PENDING_RESULT",
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c4p-HYQ1Gg/ev/interrupt_detect/interrupt_detect_1791109050879.json",
+      "sha256": "<PRIVATE_REF_02885>",
+      "verdict": "FIRED",
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c4p-HYQ1Gg/ev/interrupt_detect/interrupt_detect_1791109050880.json",
+      "sha256": "<PRIVATE_REF_03062>",
+      "verdict": "FIRED",
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c9n-4v6Hjl/cp1.json",
+      "sha256": "<PRIVATE_REF_01661>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c9n-4v6Hjl/cp2.json",
+      "sha256": "<PRIVATE_REF_01439>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c9n-4v6Hjl/ev/package_increment/packets_cp1_1791109050889.json",
+      "sha256": "<PRIVATE_REF_01661>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c9n-4v6Hjl/ev/package_increment/packets_cp2_1791109050889.json",
+      "sha256": "<PRIVATE_REF_01439>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c9n-4v6Hjl/ev/package_increment/packets_cp3_1791109050889.json",
+      "sha256": "<PRIVATE_REF_01499>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c9p-u5p69s/cp1.json",
+      "sha256": "<PRIVATE_REF_01661>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c9p-u5p69s/cp2.json",
+      "sha256": "<PRIVATE_REF_01439>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c9p-u5p69s/ev/package_increment/packets_cp1_1791109050888.json",
+      "sha256": "<PRIVATE_REF_01661>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c9p-u5p69s/ev/package_increment/packets_cp2_1791109050888.json",
+      "sha256": "<PRIVATE_REF_01439>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-c9p-u5p69s/ev/package_increment/packets_cp3_1791109050888.json",
+      "sha256": "<PRIVATE_REF_01499>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-crn-41sKL7/control/values.json",
+      "sha256": "<PRIVATE_REF_01218>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-crn-41sKL7/ev/cred_delivery/cred_deliver_1791109050891.json",
+      "sha256": "<PRIVATE_REF_01996>",
+      "verdict": null,
+      "stage": "deliver"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-crn-41sKL7/ev/cred_delivery/cred_verify_1791109050892.json",
+      "sha256": "<PRIVATE_REF_02825>",
+      "verdict": "MISMATCH",
+      "stage": "verify"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-crn-41sKL7/form.json",
+      "sha256": "<PRIVATE_REF_03088>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-crp-xhJEYN/control/values.json",
+      "sha256": "<PRIVATE_REF_01218>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-crp-xhJEYN/ev/cred_delivery/cred_deliver_1791109050890.json",
+      "sha256": "<PRIVATE_REF_03054>",
+      "verdict": null,
+      "stage": "deliver"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-crp-xhJEYN/ev/cred_delivery/cred_verify_1791109050891.json",
+      "sha256": "<PRIVATE_REF_03175>",
+      "verdict": "MATCH",
+      "stage": "verify"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-crp-xhJEYN/form.json",
+      "sha256": "<PRIVATE_REF_03088>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-epc-gP68oy/observed.json",
+      "sha256": "<PRIVATE_REF_02162>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-epc-gP68oy/targets.json",
+      "sha256": "<PRIVATE_REF_01835>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-epp-yHh2jG/observed.json",
+      "sha256": "<PRIVATE_REF_02162>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-epp-yHh2jG/targets.json",
+      "sha256": "<PRIVATE_REF_02867>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-epr-lUYg3o/observed.json",
+      "sha256": "<PRIVATE_REF_02768>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-epr-lUYg3o/targets.json",
+      "sha256": "<PRIVATE_REF_03625>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-epw-ub5HKA/observed.json",
+      "sha256": "<PRIVATE_REF_02162>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-epw-ub5HKA/targets.json",
+      "sha256": "<PRIVATE_REF_01657>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-hcc-ogCng9/ev/hc_custody/hc_deliver_1791109050911.json",
+      "sha256": "<PRIVATE_REF_03685>",
+      "verdict": null,
+      "stage": "deliver"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-hcc-ogCng9/ev/hc_custody/hc_lock_1791109050911.json",
+      "sha256": "<PRIVATE_REF_03058>",
+      "verdict": null,
+      "stage": "lock"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-hcn-QJJTQo/ev/hc_custody/hc_deliver_1791109050910.json",
+      "sha256": "<PRIVATE_REF_01788>",
+      "verdict": null,
+      "stage": "deliver"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-hcn-QJJTQo/ev/hc_custody/hc_lock_1791109050910.json",
+      "sha256": "<PRIVATE_REF_03126>",
+      "verdict": null,
+      "stage": "lock"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-hcn-QJJTQo/ev/hc_custody/hc_verify_1791109050911.json",
+      "sha256": "<PRIVATE_REF_02757>",
+      "verdict": "ALTERATION_DETECTED",
+      "stage": "verify"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-hcp-RnkcL4/ev/hc_custody/hc_deliver_1791109050909.json",
+      "sha256": "<PRIVATE_REF_03146>",
+      "verdict": null,
+      "stage": "deliver"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-hcp-RnkcL4/ev/hc_custody/hc_lock_1791109050910.json",
+      "sha256": "<PRIVATE_REF_03395>",
+      "verdict": null,
+      "stage": "lock"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-hcp-RnkcL4/ev/hc_custody/hc_verify_1791109050910.json",
+      "sha256": "<PRIVATE_REF_00903>",
+      "verdict": "VERIFIED",
+      "stage": "verify"
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-sli-g2tBQq/ev/slip_capture/slip_capture_1791109050894.json",
+      "sha256": "<PRIVATE_REF_02190>",
+      "verdict": "CAPTURE_INCOMPLETE",
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-sln-8fHUjY/ev/slip_capture/slip_capture_1791109050893.json",
+      "sha256": "<PRIVATE_REF_02865>",
+      "verdict": "NO_PRE_T0_OUTPUT",
+      "stage": null
+    },
+    {
+      "locator": "/private/tmp/r.pi8Rs32A/tmp/pa4-slp-TdG7dv/ev/slip_capture/slip_capture_1791109050892.json",
+      "sha256": "<PRIVATE_REF_03109>",
+      "verdict": "PRE_T0_ACTIVITY_CAPTURED",
+      "stage": null
+    }
+  ]
+}

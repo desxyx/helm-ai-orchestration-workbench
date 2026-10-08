@@ -1,0 +1,9 @@
+{
+  "format": "Operations Coordinator-workspace-archive-v1",
+  "archive_sha256": "<PRIVATE_REF_03520>",
+  "file_count": 333,
+  "captured_at": "2026-10-05T03:14:30.989Z",
+  "scope": "complete legitimate run workspace, opaque private custody; no credential values rendered",
+  "distribution": "CONTROL_PRIVATE_ONLY; must decode/redact permitted artifacts before measurement-session delivery",
+  "implementation": "unchanged accepted snapshot.archiveWorkspace; no provider call"
+}

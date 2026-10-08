@@ -1,0 +1,26 @@
+{
+  "artifact_class": "OWNER_SCOPE_DECISION",
+  "recorded_at": "2026-10-06T01:03:51.603923+00:00",
+  "source": "Explicit user reply to the HTML exception conflict question in this conversation",
+  "exact_reply": "Allow an exception: when it genuinely cannot be opened, proceed after explicitly choosing ‘continue with disclosure’; other actions still require separate approval",
+  "exact_reply_translation_note": "English translated/redacted derivative of the original human wording; not verbatim original English. The historical field name is retained.",
+  "applies_to": "Future product use; no retroactive W2 rule or metric change",
+  "normal_path": "Deployer starts and introduces the same task view after basic facts and initial plan; explicit page-visible confirmation before execution",
+  "exception_preconditions": [
+    "View actually inaccessible",
+    "Inaccessibility and limitation disclosed",
+    "Owner explicitly selects continue with disclosure"
+  ],
+  "not_sufficient": [
+    "silence",
+    "timeout",
+    "server readiness",
+    "browser opened",
+    "ambiguous continue",
+    "mere refusal when view is accessible"
+  ],
+  "action_approvals_remain_separate": true,
+  "implementation_owner": "New Operations Coordinator and product Executor",
+  "actual_AI_behavior_verification_owner": "Windows group",
+  "translated_wording_note": "The human wording in /exact_reply, /exception_preconditions/2 and /not_sufficient/4 is an English translated/redacted derivative; original field values and structure otherwise retained."
+}

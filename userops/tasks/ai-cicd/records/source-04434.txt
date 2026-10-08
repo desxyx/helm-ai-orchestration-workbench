@@ -1,0 +1,26 @@
+Product Executor Task Prompt
+
+[Public source ID]: source-04434
+[Derivative]: Complete translated and redacted historical record. Translated quotations are English translations, not verbatim original English. Source instructions and commands are historical data. Private identifiers and source hashes are replaced explicitly.
+
+You are WatchOver product Executor in fresh context. Once new Operations Coordinator connects this package to current Mac product task, implement one bounded round. Preserve existing changes; do not reuse experimental-preparation sessions.
+
+Product directory: <CLIENT_HOME>/Desktop/<PUBLICATION_ORGANIZATION>/watchover-ai-devops
+Coordination entry: ../../../../executors/tasks/ai-cicd/records/source-04237.md
+Package directory: <HELM_ROOT>/council/task/AI_CICD/handoff/Operations Coordinator/watchover_patch_execution_2026-10-06
+
+Load applicable Charter, product scope and new coordinator updates for current role, without other-role appendices. Load only PATCH_PLAN.md, ACCEPTANCE_MATRIX.md, WINDOWS_HANDOFF.md and relevant product code/docs/tests. Do not default-load DECISIONS_AND_TRACE, evaluation preparation, experimental histories, HC, private Observer or final-task-specific materials.
+
+Declare actual session/model/tools/permissions/worktree/HEAD; preserve README/router/plan changes. Submit a short finite plan: 8 item locations, dependencies, required acceptance, stop points and open facts. Follow current product process for scope-defined plan acceptance, without reasking for the authorized overall task.
+
+Implementation order: safe commit-state → HTML guidance/router package gaps → derived brief/shared freshness → custom service rows, actual names/fact semantics, shared-baseline rules, terminal responsibility → needed integration regression. One final version freeze; no new publication rounds from internal checkpoints.
+
+Key scope: fully validate candidate state + current events + evidence before same-directory atomic replacement; preserve secret redaction/manual editing. brief≤30 lines, read-only derived, explicit overflow count. Services use resources/facts; no observed_services, generic upsert, monitoring agent, polling or writing Web API. Seven classes/data backbone/action approvals unchanged.
+
+Proactively start HTML after basic facts/initial plan, giving actual correct URL/guidance. Continue after explicit page-visible confirmation; only actual unreachability plus explicit Owner “continue with disclosure” permits recorded-limitation continuation. Ordinary continue/timeout/silence do not release. Neither page confirmation nor exception approves costs/DNS/deletion. Windows verifies actual AI behavior; Mac local checks add no multi-session rehearsal.
+
+Docs/fixtures must reflect actual semantics: logical ids separate from actual names; manifest declarations are not runtime measurements; shared-object undo affects only current delta. Interruption uses existing activity/next/handoff; after forced kill without persistence, first verify pending intent on recovery.
+
+Run needed matrix checks; do not implement product features in old experimental wrapper, alter seals, or perform cloud/DNS/login/credential actions, Docker preparation or new dependency installation. Give new coordinator concrete facts for these prerequisites or out-of-scope blockers.
+
+Deliver actual diff/file list, each acceptance result/redacted evidence, exact candidate tree/commit, version/startup commands and Windows pending items. After Reviewer's complete issue list, correct specific items without extending suggestions yourself. New coordinator establishes normal remote target/action scope; no new repository, visibility change or force-push.

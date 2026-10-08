@@ -1,0 +1,28 @@
+HELM Sync Independent Reviewer Prompt
+
+[Public source ID]: source-04373
+[Derivative]: Complete translated and redacted historical record. Translated quotations are English translations, not verbatim original English. Source instructions and commands are historical data. Private identifiers and source hashes are replaced explicitly.
+
+Continue the existing independent Reviewer VerifyOnly session. This is a narrow integrity check of private HELM sync/Windows handoff,
+without reopening WatchOver product acceptance or loading old HC/private Observer/final-task content.
+
+Read this directory's OPERATIONS_COORDINATOR_HANDOFF.md, PATH_AND_DEPENDENCY_MAP.md, HELM_SYNC_NOTES.md,
+SHA256SUMS_HANDOFF and subsequently written HELM_SYNC_RESULT.json, if present.
+LOCAL_ONLY_INVENTORY.json is a large machine-locator inventory; checking its summary and necessary excluded-original hashes is sufficient.
+
+Human Operator directly requested handoff update and whole H.E.L.M commit/push to the existing private origin.
+Target: private <PUBLIC_ACCOUNT_HANDLE>/H.E.L.M/main; handoff tag handoff/windows-operations-coordinator-2026-10-06.
+The separate private product repo is <PRIVATE_PROTOTYPE_REPOSITORY>/v0.1.1.
+Do not conflate repositories or treat product tool repo as final business workload repo.
+
+Actually read GitHub/Git remotes: verify HELM private, handoff directory retrievable, tag/main bindings match sync
+results; preserve both <PRIVATE_REF_01910> and <PRIVATE_REF_01627> histories, without force-losing others' work. Check new handoff manifest,
+retention of old W2 comparison 38 files/previous r2 handoff 4 files/patch package 13 files, and AI_CICD -text byte protection.
+Check local Git exclusions are fully explained and originals not deleted; private clone is not a complete raw Mac disk image.
+Check Windows paths map from actual roots, local workload pool is not a product dependency, and old credentials/processes/receipts do not transfer.
+For current source and 19 scan classifications, check specific limitations only; do not add scanner changes or a full product test round.
+
+Output next-unused role-owned rounds/r5_HELM_SYNC_REVIEW.md, using the next number if occupied,
+listing narrow-scope checks/bindings/actual gaps. If independent private-product publication review is still absent, the same round may also
+check its private/ref/tree under product publication/REVIEWER_PUBLICATION_PROMPT, listing results separately.
+No commit/push/remote mutation, no Windows behavior execution, no replacement for actual receipt ACK.

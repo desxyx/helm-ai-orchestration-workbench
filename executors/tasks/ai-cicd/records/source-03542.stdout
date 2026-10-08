@@ -1,0 +1,25 @@
+{
+  "a5_components": {
+    "A5-N": null,
+    "A5-N-delete": null,
+    "A5-N-setup": null,
+    "A5-P": null,
+    "A5-P-setup": null,
+    "A5-S": null,
+    "A5-S-precheck": null
+  },
+  "acceptance": {
+    "A3": "FAIL",
+    "A4": "UNVERIFIED",
+    "A5": "UNVERIFIED"
+  },
+  "app_profile": "alerta",
+  "instrument_revalidation": {},
+  "objects": {},
+  "provenance": null,
+  "provenance_gate": "UNVERIFIED",
+  "restart": null,
+  "run_id": "RUN-W2B",
+  "script_sha256": "<PRIVATE_REF_02821>",
+  "state_sha256": "<PRIVATE_REF_02362>"
+}

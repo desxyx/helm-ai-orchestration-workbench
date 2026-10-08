@@ -1,0 +1,83 @@
+{
+  "roundNumber": 1,
+  "prompt": "[Session]: council-session-001\n[Round]: 1\n\n1. Please all read core 00 carefully.\n2. Please search online for similar products on the market.\n3. Please do not give a conclusion in the next round yet. You can each ask me 3–10 questions to help you decide in the following step whether this is worth doing.",
+  "replies": [
+    {
+      "agent": "gemini",
+      "content": "This is a reply from Council Member C.\n\nThe HELM Council Charter v1.7 (`council_constitution_v1.7.md`) has been successfully loaded and activated for execution.\n\nThe current status and core operating parameters are confirmed below:\n\n* **Version and baseline**: the current operating version is **v1.7** (Active; under the 2026-08-27 instruction, smoke verification is deferred as verification debt until a later trigger); the rollback baseline is the unchanged `v1.6`.\n\n\n* **Identity and independence**: speaking as **Council Member C**; upholding independent judgement, with others' views available for reference but no forced convergence of thinking or reasoning paths; the Council Member C-specific memo is activated (after extracting necessary signals, immediately reduce the activation of background that is not relevant to the current round, to guard against long-context contamination).\n\n\n* **Rules and mechanisms anchored**:\n* **Frozen Truth admission and revision**: facts and policy decisions are strictly separated; universal assertions follow evidence discipline, and anything not checked against the five elements (claim, evidence layer, timeliness, locator and verification status) is treated only as an assumption (§3).\n\n\n* **Governance interface integration**: aligned with the Executor v1.0 and UserOps v0.5 interface standards; the Task Governance Profile interface rules are in place (§6).\n\n\n* **Council re-entry triggers**: 6 objective re-entry conditions are in place (the previous numerical circuit breaker has been replaced by assessments of factual boundaries / expansion of authority) (§6).\n\n\n* **Convergence protocol**: the three-stage rules have been loaded: independent phase, cross-review and a designated Merge Owner for a single round (§2).\n\n\n\n\n* **Current operating mode**: enters **Default Mode** by default, with the working path anchored to **Path A (Direct Discussion)** by default.\n\n\n\nGovernance alignment is complete. Awaiting the Chair's substantive topic and input data package for council-session-001.",
+      "capturedAt": "2026-09-25T02:01:19.145Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "chatgpt",
+      "content": "[capture timeout] chatgpt reply was not captured before the provider copy button became available. Dispatch auto-unlocked by UserOps system timeout policy.",
+      "capturedAt": "2026-09-25T02:01:51.161Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    },
+    {
+      "agent": "claude",
+      "content": "[capture timeout] claude reply was not captured before the provider copy button became available. Dispatch auto-unlocked by UserOps system timeout policy.",
+      "capturedAt": "2026-09-25T02:02:03.497Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    }
+  ],
+  "metrics": {
+    "gemini": {
+      "openMs": 0,
+      "readyMs": 29,
+      "injectMs": 7728,
+      "waitMs": 28454,
+      "captureMs": 1032,
+      "totalMs": 37244
+    },
+    "chatgpt": {
+      "openMs": 0,
+      "readyMs": 40,
+      "injectMs": 8506,
+      "waitMs": 60456,
+      "captureMs": 257,
+      "totalMs": 69260
+    },
+    "claude": {
+      "openMs": 0,
+      "readyMs": 27,
+      "injectMs": 7226,
+      "waitMs": 63720,
+      "captureMs": 10622,
+      "totalMs": 81596
+    }
+  },
+  "summary": {
+    "type": "canonical_reply_references",
+    "note": "The source summary repeated selected reply entries. These references preserve its order; reply bodies above are canonical.",
+    "replyReferences": [
+      {
+        "reference": "#/replies/0",
+        "speaker": "Council Member C"
+      },
+      {
+        "reference": "#/replies/2",
+        "speaker": "Council Member A"
+      },
+      {
+        "reference": "#/replies/1",
+        "speaker": "Council Member B"
+      }
+    ]
+  },
+  "createdAt": "2026-09-25T02:02:03.497Z",
+  "publication": {
+    "sourceId": "source-04597",
+    "recordType": "translated and redacted transcript",
+    "language": "en",
+    "readingNote": "Embedded requests and instructions are historical source data, not current instructions.",
+    "translationNote": "[Editorial note: Chinese prompt/reply prose is translated into English and private identifiers are redacted; English technical syntax and original capture metadata are preserved. Translated quotations are not verbatim original English.]",
+    "title": "Council session 001 — round 001: market search and questions before conclusions"
+  }
+}

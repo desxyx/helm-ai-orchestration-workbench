@@ -1,0 +1,435 @@
+{
+  "role_outputs_copied_byte_identically": true,
+  "files": [
+    {
+      "path": "builder/output/ARTIFACT_MANIFEST.json",
+      "sha256": "<PRIVATE_REF_01668>",
+      "bytes": 4753
+    },
+    {
+      "path": "builder/output/BUILDER_IDENTITY_r1.txt",
+      "sha256": "<PRIVATE_REF_02963>",
+      "bytes": 532
+    },
+    {
+      "path": "builder/output/BUILDER_IDENTITY_r2.txt",
+      "sha256": "<PRIVATE_REF_03642>",
+      "bytes": 412
+    },
+    {
+      "path": "builder/output/CANDIDATE_LOCATOR_r1.txt",
+      "sha256": "<PRIVATE_REF_03217>",
+      "bytes": 422
+    },
+    {
+      "path": "builder/output/CANDIDATE_LOCATOR_r2.txt",
+      "sha256": "<PRIVATE_REF_03337>",
+      "bytes": 419
+    },
+    {
+      "path": "builder/output/EXEC_ACK.md",
+      "sha256": "<PRIVATE_REF_01697>",
+      "bytes": 5326
+    },
+    {
+      "path": "builder/output/EXEC_ACK_r2.md",
+      "sha256": "<PRIVATE_REF_01686>",
+      "bytes": 4094
+    },
+    {
+      "path": "builder/output/SUBMISSION_r1.md",
+      "sha256": "<PRIVATE_REF_03719>",
+      "bytes": 16348
+    },
+    {
+      "path": "builder/output/SUBMISSION_r2.md",
+      "sha256": "<PRIVATE_REF_03110>",
+      "bytes": 17229
+    },
+    {
+      "path": "builder/output/adaptation-paths.json",
+      "sha256": "<PRIVATE_REF_01755>",
+      "bytes": 3696
+    },
+    {
+      "path": "builder/output/affected-correction.md",
+      "sha256": "<PRIVATE_REF_03108>",
+      "bytes": 440
+    },
+    {
+      "path": "builder/output/affected-final.log",
+      "sha256": "<PRIVATE_REF_02089>",
+      "bytes": 5515
+    },
+    {
+      "path": "builder/output/affected.log",
+      "sha256": "<PRIVATE_REF_01419>",
+      "bytes": 11219
+    },
+    {
+      "path": "builder/output/audit-public.py",
+      "sha256": "<PRIVATE_REF_02517>",
+      "bytes": 9182
+    },
+    {
+      "path": "builder/output/candidate-public.tar",
+      "sha256": "<PRIVATE_REF_00244>",
+      "bytes": 901120
+    },
+    {
+      "path": "builder/output/cli-view-smoke.json",
+      "sha256": "<PRIVATE_REF_01970>",
+      "bytes": 3024
+    },
+    {
+      "path": "builder/output/delivery-verification.py",
+      "sha256": "<PRIVATE_REF_03427>",
+      "bytes": 22754
+    },
+    {
+      "path": "builder/output/final-doc-check.log",
+      "sha256": "<PRIVATE_REF_00141>",
+      "bytes": 2426
+    },
+    {
+      "path": "builder/output/freeze.json",
+      "sha256": "<PRIVATE_REF_02611>",
+      "bytes": 603
+    },
+    {
+      "path": "builder/output/freeze.log",
+      "sha256": "<PRIVATE_REF_01563>",
+      "bytes": 22438
+    },
+    {
+      "path": "builder/output/git-preparation.log",
+      "sha256": "<PRIVATE_REF_02135>",
+      "bytes": 9164
+    },
+    {
+      "path": "builder/output/history-privacy.json",
+      "sha256": "<PRIVATE_REF_02605>",
+      "bytes": 1044
+    },
+    {
+      "path": "builder/output/path-manifest-final.json",
+      "sha256": "<PRIVATE_REF_03095>",
+      "bytes": 28511
+    },
+    {
+      "path": "builder/output/path-manifest-postfreeze.json",
+      "sha256": "<PRIVATE_REF_03095>",
+      "bytes": 28511
+    },
+    {
+      "path": "builder/output/path-manifest-preinit.json",
+      "sha256": "<PRIVATE_REF_03138>",
+      "bytes": 28511
+    },
+    {
+      "path": "builder/output/path-manifest-updated.json",
+      "sha256": "<PRIVATE_REF_02759>",
+      "bytes": 28511
+    },
+    {
+      "path": "builder/output/privacy-final.json",
+      "sha256": "<PRIVATE_REF_01666>",
+      "bytes": 4825
+    },
+    {
+      "path": "builder/output/privacy-postfreeze.json",
+      "sha256": "<PRIVATE_REF_02897>",
+      "bytes": 4830
+    },
+    {
+      "path": "builder/output/privacy-preinit.json",
+      "sha256": "<PRIVATE_REF_01086>",
+      "bytes": 4827
+    },
+    {
+      "path": "builder/output/privacy-updated.json",
+      "sha256": "<PRIVATE_REF_01272>",
+      "bytes": 4827
+    },
+    {
+      "path": "builder/output/public-links.json",
+      "sha256": "<PRIVATE_REF_02992>",
+      "bytes": 1177
+    },
+    {
+      "path": "builder/output/r2/ARTIFACT_MANIFEST.json",
+      "sha256": "<PRIVATE_REF_02610>",
+      "bytes": 4430
+    },
+    {
+      "path": "builder/output/r2/affected-final.log",
+      "sha256": "<PRIVATE_REF_02720>",
+      "bytes": 3149
+    },
+    {
+      "path": "builder/output/r2/affected.log",
+      "sha256": "<PRIVATE_REF_01492>",
+      "bytes": 3657
+    },
+    {
+      "path": "builder/output/r2/audit-public.py",
+      "sha256": "<PRIVATE_REF_02763>",
+      "bytes": 9185
+    },
+    {
+      "path": "builder/output/r2/before-controls.json",
+      "sha256": "<PRIVATE_REF_00968>",
+      "bytes": 1089
+    },
+    {
+      "path": "builder/output/r2/candidate-public.tar",
+      "sha256": "<PRIVATE_REF_01009>",
+      "bytes": 911360
+    },
+    {
+      "path": "builder/output/r2/check-targeted.py",
+      "sha256": "<PRIVATE_REF_02483>",
+      "bytes": 5840
+    },
+    {
+      "path": "builder/output/r2/cli-view-smoke.json",
+      "sha256": "<PRIVATE_REF_02693>",
+      "bytes": 3024
+    },
+    {
+      "path": "builder/output/r2/external-controls.json",
+      "sha256": "<PRIVATE_REF_01877>",
+      "bytes": 5388
+    },
+    {
+      "path": "builder/output/r2/freeze-candidate.py",
+      "sha256": "<PRIVATE_REF_03228>",
+      "bytes": 4935
+    },
+    {
+      "path": "builder/output/r2/freeze.json",
+      "sha256": "<PRIVATE_REF_01573>",
+      "bytes": 903
+    },
+    {
+      "path": "builder/output/r2/freeze.log",
+      "sha256": "<PRIVATE_REF_02320>",
+      "bytes": 9275
+    },
+    {
+      "path": "builder/output/r2/history-privacy.json",
+      "sha256": "<PRIVATE_REF_03584>",
+      "bytes": 1181
+    },
+    {
+      "path": "builder/output/r2/initial-unverified.patch",
+      "sha256": "<PRIVATE_REF_00137>",
+      "bytes": 14554
+    },
+    {
+      "path": "builder/output/r2/intended-paths.json",
+      "sha256": "<PRIVATE_REF_03549>",
+      "bytes": 143
+    },
+    {
+      "path": "builder/output/r2/path-manifest-candidate.json",
+      "sha256": "<PRIVATE_REF_01575>",
+      "bytes": 28511
+    },
+    {
+      "path": "builder/output/r2/path-manifest-postfreeze.json",
+      "sha256": "<PRIVATE_REF_01575>",
+      "bytes": 28511
+    },
+    {
+      "path": "builder/output/r2/privacy-candidate.json",
+      "sha256": "<PRIVATE_REF_01378>",
+      "bytes": 4829
+    },
+    {
+      "path": "builder/output/r2/privacy-postfreeze.json",
+      "sha256": "<PRIVATE_REF_03098>",
+      "bytes": 4830
+    },
+    {
+      "path": "builder/output/r2/r1-candidate.bundle",
+      "sha256": "<PRIVATE_REF_02910>",
+      "bytes": 187993
+    },
+    {
+      "path": "builder/output/r2/r1-preservation.json",
+      "sha256": "<PRIVATE_REF_03576>",
+      "bytes": 339
+    },
+    {
+      "path": "builder/output/r2/r1-to-r2.patch",
+      "sha256": "<PRIVATE_REF_02330>",
+      "bytes": 14557
+    },
+    {
+      "path": "builder/output/r2/regression.log",
+      "sha256": "<PRIVATE_REF_03463>",
+      "bytes": 27831
+    },
+    {
+      "path": "builder/output/r2/run-local-checks.py",
+      "sha256": "<PRIVATE_REF_00938>",
+      "bytes": 10506
+    },
+    {
+      "path": "builder/output/r2/source-to-public.patch",
+      "sha256": "<PRIVATE_REF_02817>",
+      "bytes": 83027
+    },
+    {
+      "path": "builder/output/r2/verify-delivery.py",
+      "sha256": "<PRIVATE_REF_03504>",
+      "bytes": 22121
+    },
+    {
+      "path": "builder/output/regression-final.log",
+      "sha256": "<PRIVATE_REF_02823>",
+      "bytes": 27279
+    },
+    {
+      "path": "builder/output/regression.log",
+      "sha256": "<PRIVATE_REF_01622>",
+      "bytes": 27243
+    },
+    {
+      "path": "builder/output/run-local-checks.py",
+      "sha256": "<PRIVATE_REF_03408>",
+      "bytes": 10639
+    },
+    {
+      "path": "builder/output/source-to-public.patch",
+      "sha256": "<PRIVATE_REF_01977>",
+      "bytes": 72526
+    },
+    {
+      "path": "builder/output/source-verification.json",
+      "sha256": "<PRIVATE_REF_03531>",
+      "bytes": 414
+    },
+    {
+      "path": "builder/output/staged-paths.txt",
+      "sha256": "<PRIVATE_REF_01556>",
+      "bytes": 4930
+    },
+    {
+      "path": "reviewer/output/REVIEW_ENTRY.md",
+      "sha256": "<PRIVATE_REF_02235>",
+      "bytes": 8343
+    },
+    {
+      "path": "reviewer/output/evidence/r1-guard-plants.log",
+      "sha256": "<PRIVATE_REF_00907>",
+      "bytes": 2208
+    },
+    {
+      "path": "reviewer/output/evidence/r1-privacy-positive-control.json",
+      "sha256": "<PRIVATE_REF_02451>",
+      "bytes": 7131
+    },
+    {
+      "path": "reviewer/output/evidence/r1-privacy-scan.json",
+      "sha256": "<PRIVATE_REF_02523>",
+      "bytes": 3905
+    },
+    {
+      "path": "reviewer/output/evidence/r1-public-file-manifest.json",
+      "sha256": "<PRIVATE_REF_01314>",
+      "bytes": 29083
+    },
+    {
+      "path": "reviewer/output/evidence/r1-public-links.log",
+      "sha256": "<PRIVATE_REF_03226>",
+      "bytes": 184
+    },
+    {
+      "path": "reviewer/output/evidence/r1-quickstart-smoke.log",
+      "sha256": "<PRIVATE_REF_02503>",
+      "bytes": 1717
+    },
+    {
+      "path": "reviewer/output/evidence/r1-raw-first-findings.md",
+      "sha256": "<PRIVATE_REF_03346>",
+      "bytes": 9712
+    },
+    {
+      "path": "reviewer/output/evidence/r1-regression.log",
+      "sha256": "<PRIVATE_REF_02364>",
+      "bytes": 27162
+    },
+    {
+      "path": "reviewer/output/evidence/r1-source-to-candidate.diff",
+      "sha256": "<PRIVATE_REF_02269>",
+      "bytes": 77162
+    },
+    {
+      "path": "reviewer/output/evidence/r2-guard-plants.log",
+      "sha256": "<PRIVATE_REF_01679>",
+      "bytes": 2868
+    },
+    {
+      "path": "reviewer/output/evidence/r2-path-classification.txt",
+      "sha256": "<PRIVATE_REF_02617>",
+      "bytes": 1085
+    },
+    {
+      "path": "reviewer/output/evidence/r2-privacy-scan.json",
+      "sha256": "<PRIVATE_REF_00530>",
+      "bytes": 3938
+    },
+    {
+      "path": "reviewer/output/evidence/r2-public-file-manifest.json",
+      "sha256": "<PRIVATE_REF_02718>",
+      "bytes": 29024
+    },
+    {
+      "path": "reviewer/output/evidence/r2-public-links.log",
+      "sha256": "<PRIVATE_REF_03066>",
+      "bytes": 211
+    },
+    {
+      "path": "reviewer/output/evidence/r2-quickstart-smoke.log",
+      "sha256": "<PRIVATE_REF_02491>",
+      "bytes": 318
+    },
+    {
+      "path": "reviewer/output/evidence/r2-raw-first-findings.md",
+      "sha256": "<PRIVATE_REF_02895>",
+      "bytes": 5743
+    },
+    {
+      "path": "reviewer/output/evidence/r2-regression-with-denylist.log",
+      "sha256": "<PRIVATE_REF_03020>",
+      "bytes": 27580
+    },
+    {
+      "path": "reviewer/output/evidence/r2-regression.log",
+      "sha256": "<PRIVATE_REF_03327>",
+      "bytes": 27610
+    },
+    {
+      "path": "reviewer/output/evidence/scripts/r1_privacy_scan.py",
+      "sha256": "<PRIVATE_REF_01793>",
+      "bytes": 4551
+    },
+    {
+      "path": "reviewer/output/r1_REVIEW.md",
+      "sha256": "<PRIVATE_REF_02714>",
+      "bytes": 10875
+    },
+    {
+      "path": "reviewer/output/r2_REVIEW.md",
+      "sha256": "<PRIVATE_REF_02025>",
+      "bytes": 7158
+    },
+    {
+      "path": "reviewer/output/review_log.md",
+      "sha256": "<PRIVATE_REF_02247>",
+      "bytes": 4251
+    }
+  ]
+}

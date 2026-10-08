@@ -1,0 +1,7 @@
+$ sha256 of `git archive --format=tar <pinned>` vs gunzip of deploy/stage/<repo>.tar.gz
+# run at 2026-10-06T12:54:35Z
+taiga-back <PRIVATE_REF_01638> archive=<PRIVATE_REF_02880> staged=<PRIVATE_REF_02880>
+taiga-front <PRIVATE_REF_03189> archive=<PRIVATE_REF_02118> staged=<PRIVATE_REF_02118>
+--- compose fix
+31:    entrypoint: ["bash", "-c", "cp /srv-config/deploy.py settings/deploy.py && cp -a /taiga-back/static/. /srv-static/ && exec ./docker/entrypoint.sh --workers 2 --timeout 120"]
+33:      - /srv/taiga/app/deploy_settings.py:/srv-config/deploy.py:ro

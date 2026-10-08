@@ -1,0 +1,9 @@
+<PRIVATE_REF_01190>  ./clock_probe.test.mjs
+<PRIVATE_REF_03043>  ./clock_shift_plus10d_new.tap
+<PRIVATE_REF_02042>  ./clock_shift_plus10d_old_87fe794_control.tap
+<PRIVATE_REF_03131>  ./clock_shift.mjs
+<PRIVATE_REF_02385>  ./commits_since_r2.txt
+<PRIVATE_REF_02733>  ./diffstat_since_r2.txt
+<PRIVATE_REF_01955>  ./final_272.tap
+<PRIVATE_REF_03736>  ./fixture_generator/lib.mjs
+<PRIVATE_REF_03182>  ./fixture_generator/rework.mjs

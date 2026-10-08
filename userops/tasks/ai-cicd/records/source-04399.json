@@ -1,0 +1,11 @@
+{
+  "package": "reduced runtime package",
+  "omitted": [
+    "providers/gcp.md",
+    "providers/dns-cloudflare.md",
+    "providers/aws.md",
+    "providers/azure.md",
+    "providers/nectar.md"
+  ],
+  "reason": "Provider profiles are not shipped. Use the generic router and stage rules, live evidence and official provider documentation. Missing profiles confer no permissions or verification."
+}

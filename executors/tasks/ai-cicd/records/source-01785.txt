@@ -1,0 +1,21 @@
+$ dig +time=3 +tries=1 <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> A @1.1.1.1
+
+; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> A @1.1.1.1
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58406
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>.		IN	A
+
+;; ANSWER SECTION:
+<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>.	204	IN	A	<IP_ADDRESS_113>
+
+;; Query time: 31 msec
+;; SERVER: 1.1.1.1#53(1.1.1.1)
+;; WHEN: Mon Oct 05 21:21:04 AEDT 2026
+;; MSG SIZE  rcvd: 64
+

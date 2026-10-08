@@ -1,0 +1,15 @@
+{
+  "run_id": "RUN-W2B",
+  "nature": "Different evidence layers, not a delivered segment/hash-chain mismatch",
+  "private_original_sha256": "<PRIVATE_REF_03350>",
+  "delivered_redacted_sha256": "<PRIVATE_REF_03382>",
+  "mechanical_field_increment_sha256_targets": "private original, original S2 records529–734",
+  "private_original_lines": 206,
+  "delivered_redacted_lines": 206,
+  "delivered_packet_reconstruction_equals_redacted": true,
+  "private_s2_prefix_528_verified": true,
+  "observer_manifest_and_chain_match_delivered": true,
+  "observer_final_report_unchanged": true,
+  "source_binding": "Existing LOCAL_CLOSE_CUSTODY.json and CP03_REDACTION_REPORT_PRIVATE.json link private_source_sha256 and delivered_sha256; private source was intentionally not delivered to Observer",
+  "remaining_limit": "Observer cannot reproduce private-original hash because private original was not in its packet; this custody note discloses linkage, not raw private source or a changed Observer verdict"
+}

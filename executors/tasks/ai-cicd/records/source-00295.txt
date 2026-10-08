@@ -1,0 +1,33 @@
+﻿Captured 2026-10-06T14:24:19Z read-only, identity <ACCOUNT>, project <CLOUD_PROJECT>
+## addresses
+NAME      REGION                ADDRESS        STATUS  USERS
+<RUN_STATIC_IP>  australia-southeast1  <IP_ADDRESS_115>  IN_USE  1
+## instances
+NAME      ZONE                    MACHINE_TYPE  STATUS   CREATION_TIMESTAMP
+<RUN_VM_OR_BOOT_DISK>  australia-southeast1-b  e2-small      RUNNING  2026-10-06T05:53:22.215-07:00
+## disks
+NAME        ZONE                    SIZE_GB  TYPE         USERS
+<RUN_DATA_DISK>  australia-southeast1-b  10       pd-balanced  1
+<RUN_VM_OR_BOOT_DISK>    australia-southeast1-b  20       pd-balanced  1
+## firewall
+NAME                    SOURCE_RANGES  ALLOW                         TARGET_TAGS
+default-allow-icmp      0.0.0.0/0      icmp
+default-allow-internal  <IP_ADDRESS_004>/9   tcp:0-65535,udp:0-65535,icmp
+default-allow-rdp       0.0.0.0/0      tcp:3389
+default-allow-ssh       0.0.0.0/0      tcp:22
+<RUN_FIREWALL>         0.0.0.0/0      tcp:80,tcp:443,udp:443        taiga-web
+## resource-policies
+NAME         REGION
+<RUN_SNAPSHOT_POLICY>  australia-southeast1
+## snapshots
+## run services
+## buckets
+## artifact repos
+python.exe : Listing items under project <CLOUD_PROJECT>, across all locations.
+At C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin\gcloud.ps1:114 char:3
++   & "$cloudsdk_python" $run_args_array
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Listing items u... all locations.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+

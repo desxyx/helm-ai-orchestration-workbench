@@ -1,0 +1,92 @@
+$ gcloud compute ssh <ACCOUNT>@<W2_RUN_RESOURCE_PREFIX>-vm --zone=australia-southeast2-a --tunnel-through-iap --ssh-key-file=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-ssh-key --ssh-flag=-oUserKnownHostsFile=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-known-hosts '--command=sudo findmnt /srv/<W2_RUN_RESOURCE_PREFIX>; sudo docker compose -f /opt/<W2_RUN_RESOURCE_PREFIX>/compose.yaml ps; curl -v --max-time 10 http://127.0.0.1:18080/api/management/gtg; sudo docker compose -f /opt/<W2_RUN_RESOURCE_PREFIX>/compose.yaml logs --tail=35 web api' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+TARGET      SOURCE   FSTYPE OPTIONS
+/srv/<W2_RUN_RESOURCE_PREFIX> /dev/sdb ext4   rw,relatime
+NAME           IMAGE                  COMMAND                  SERVICE   CREATED          STATUS                   PORTS
+<W2_RUN_RESOURCE_PREFIX>-api-1   <W2_RUN_RESOURCE_PREFIX>-api             "gunicorn --bind 0.0…"   api       15 minutes ago   Up 9 minutes (healthy)   8080/tcp
+<W2_RUN_RESOURCE_PREFIX>-db-1    postgres:17-bookworm   "docker-entrypoint.s…"   db        15 minutes ago   Up 9 minutes (healthy)   5432/tcp
+<W2_RUN_RESOURCE_PREFIX>-web-1   caddy:2.10.2-alpine    "caddy run --config …"   web       15 minutes ago   Up 9 minutes             0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp, 443/udp, 2019/tcp, 127.0.0.1:18080->8080/tcp
+OKapi-1  | [2026-10-05 10:04:21 +0000] [1] [INFO] Starting gunicorn 23.0.0
+api-1  | [2026-10-05 10:04:21 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+api-1  | [2026-10-05 10:04:21 +0000] [1] [INFO] Using worker: gthread
+api-1  | [2026-10-05 10:04:21 +0000] [6] [INFO] Booting worker with pid: 6
+api-1  | [2026-10-05 10:04:21 +0000] [7] [INFO] Booting worker with pid: 7
+api-1  | [2026-10-05 10:04:23 +0000] [1] [ERROR] Worker (pid:6) exited with code 3
+api-1  | [2026-10-05 10:04:24 +0000] [1] [ERROR] Shutting down: Master
+api-1  | [2026-10-05 10:04:24 +0000] [1] [ERROR] Reason: Worker failed to boot.
+api-1  | [2026-10-05 10:04:24 +0000] [1] [INFO] Starting gunicorn 23.0.0
+api-1  | [2026-10-05 10:04:24 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+api-1  | [2026-10-05 10:04:24 +0000] [1] [INFO] Using worker: gthread
+api-1  | [2026-10-05 10:04:24 +0000] [8] [INFO] Booting worker with pid: 8
+api-1  | [2026-10-05 10:04:25 +0000] [9] [INFO] Booting worker with pid: 9
+api-1  | [2026-10-05 10:10:16 +0000] [1] [INFO] Starting gunicorn 23.0.0
+api-1  | [2026-10-05 10:10:16 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+api-1  | [2026-10-05 10:10:16 +0000] [1] [INFO] Using worker: gthread
+api-1  | [2026-10-05 10:10:16 +0000] [7] [INFO] Booting worker with pid: 7
+api-1  | [2026-10-05 10:10:16 +0000] [8] [INFO] Booting worker with pid: 8
+web-1  | {"level":"warn","ts":1791195016.6969845,"logger":"admin","msg":"admin endpoint disabled"}
+web-1  | {"level":"info","ts":1791195016.6972055,"logger":"http.auto_https","msg":"server is listening only on the HTTPS port but has no TLS connection policies; adding one to enable TLS","server_name":"srv0","https_port":443}
+web-1  | {"level":"info","ts":1791195016.6972237,"logger":"http.auto_https","msg":"enabling automatic HTTP->HTTPS redirects","server_name":"srv0"}
+web-1  | {"level":"info","ts":1791195016.6972306,"logger":"tls.cache.maintenance","msg":"started background certificate maintenance","cache":"0xc00051f180"}
+web-1  | {"level":"warn","ts":1791195016.6983006,"logger":"http","msg":"HTTP/2 skipped because it requires TLS","network":"tcp","addr":":80"}
+web-1  | {"level":"warn","ts":1791195016.6983097,"logger":"http","msg":"HTTP/3 skipped because it requires TLS","network":"tcp","addr":":80"}
+web-1  | {"level":"info","ts":1791195016.698314,"logger":"http.log","msg":"server running","name":"remaining_auto_https_redirects","protocols":["h1","h2","h3"]}
+web-1  | {"level":"info","ts":1791195016.698367,"logger":"http","msg":"enabling HTTP/3 listener","addr":":443"}
+web-1  | {"level":"info","ts":1791195016.7055495,"logger":"http.log","msg":"server running","name":"srv0","protocols":["h1","h2","h3"]}
+web-1  | {"level":"warn","ts":1791195016.705728,"logger":"http","msg":"HTTP/2 skipped because it requires TLS","network":"tcp","addr":":8080"}
+web-1  | {"level":"warn","ts":1791195016.7057564,"logger":"http","msg":"HTTP/3 skipped because it requires TLS","network":"tcp","addr":":8080"}
+web-1  | {"level":"info","ts":1791195016.70576,"logger":"http.log","msg":"server running","name":"srv1","protocols":["h1","h2","h3"]}
+web-1  | {"level":"info","ts":1791195016.7057648,"logger":"http","msg":"enabling automatic TLS certificate management","domains":["<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>"]}
+web-1  | {"level":"info","ts":1791195016.7740715,"msg":"autosaved config (load with --resume flag)","file":"/config/caddy/autosave.json"}
+web-1  | {"level":"info","ts":1791195016.7741003,"msg":"serving initial configuration"}
+web-1  | {"level":"info","ts":1791195016.7834466,"logger":"tls.obtain","msg":"acquiring lock","identifier":"<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>"}
+web-1  | {"level":"info","ts":1791195016.7889833,"logger":"tls","msg":"storage cleaning happened too recently; skipping for now","storage":"FileStorage:/data/caddy","instance":"<NATIVE_ID_2928>","try_again":1791281416.7889805,"try_again_in":86399.9999995}
+web-1  | 1.791195016789134e+09	info	[FileStorage:/data/caddy] Lock for 'issue_cert_<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>' is stale (created: 2026-10-05 10:04:42.556299139 +0000 UTC, last update: 2026-10-05 10:09:32.787796475 +0000 UTC); removing then retrying: /data/caddy/locks/issue_cert_<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>.lock
+web-1  | {"level":"info","ts":1791195016.7892067,"logger":"tls","msg":"finished cleaning storage units"}
+web-1  | {"level":"info","ts":1791195016.7975183,"logger":"tls.obtain","msg":"lock acquired","identifier":"<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>"}
+web-1  | {"level":"info","ts":1791195016.797702,"logger":"tls.obtain","msg":"obtaining certificate","identifier":"<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>"}
+web-1  | {"level":"info","ts":1791195016.8309898,"logger":"tls.issuance.acme","msg":"waiting on internal rate limiter","identifiers":["<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>"],"ca":"https://acme-v02.api.letsencrypt.org/directory","account":"<ACCOUNT_EMAIL_011>"}
+web-1  | {"level":"info","ts":1791195016.8310206,"logger":"tls.issuance.acme","msg":"done waiting on internal rate limiter","identifiers":["<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>"],"ca":"https://acme-v02.api.letsencrypt.org/directory","account":"<ACCOUNT_EMAIL_011>"}
+web-1  | {"level":"info","ts":1791195016.831035,"logger":"tls.issuance.acme","msg":"using ACME account","account_id":"https://acme-v02.api.letsencrypt.org/acme/acct/3827724256","account_contact":["mailto:<ACCOUNT_EMAIL_011>"]}
+web-1  | {"level":"info","ts":1791195018.168493,"msg":"trying to solve challenge","identifier":"<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>","challenge_type":"tls-alpn-01","ca":"https://acme-v02.api.letsencrypt.org/directory"}
+web-1  | {"level":"error","ts":1791195018.8169546,"msg":"challenge failed","identifier":"<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>","challenge_type":"tls-alpn-01","problem":{"type":"urn:ietf:params:acme:error:dns","title":"","detail":"DNS problem: NXDOMAIN looking up A for <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> - check that a DNS record exists for this domain; DNS problem: NXDOMAIN looking up AAAA for <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> - check that a DNS record exists for this domain","instance":"","subproblems":null},"stacktrace":"github.com/mholt/acmez/v3.(*Client).pollAuthorization\n\tgithub.com/mholt/acmez/v3@v3.1.2/client.go:557\ngithub.com/mholt/acmez/v3.(*Client).solveChallenges\n\tgithub.com/mholt/acmez/v3@v3.1.2/client.go:378\ngithub.com/mholt/acmez/v3.(*Client).ObtainCertificate\n\tgithub.com/mholt/acmez/v3@v3.1.2/client.go:136\ngithub.com/caddyserver/certmagic.(*ACMEIssuer).doIssue\n\tgithub.com/caddyserver/certmagic@v0.24.0/acmeissuer.go:489\ngithub.com/caddyserver/certmagic.(*ACMEIssuer).Issue\n\tgithub.com/caddyserver/certmagic@v0.24.0/acmeissuer.go:382\ngithub.com/caddyserver/caddy/v2/modules/caddytls.(*ACMEIssuer).Issue\n\tgithub.com/caddyserver/caddy/v2@v2.10.2/modules/caddytls/acmeissuer.go:288\ngithub.com/caddyserver/certmagic.(*Config).obtainCert.func2\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:626\ngithub.com/caddyserver/certmagic.doWithRetry\n\tgithub.com/caddyserver/certmagic@v0.24.0/async.go:104\ngithub.com/caddyserver/certmagic.(*Config).obtainCert\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:700\ngithub.com/caddyserver/certmagic.(*Config).ObtainCertAsync\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:505\ngithub.com/caddyserver/certmagic.(*Config).manageOne.func1\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:415\ngithub.com/caddyserver/certmagic.(*jobManager).worker\n\tgithub.com/caddyserver/certmagic@v0.24.0/async.go:73"}
+web-1  | {"level":"error","ts":1791195018.817119,"msg":"validating authorization","identifier":"<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>","problem":{"type":"urn:ietf:params:acme:error:dns","title":"","detail":"DNS problem: NXDOMAIN looking up A for <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> - check that a DNS record exists for this domain; DNS problem: NXDOMAIN looking up AAAA for <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> - check that a DNS record exists for this domain","instance":"","subproblems":null},"order":"https://acme-v02.api.letsencrypt.org/acme/order/3827724256/565604511416","attempt":1,"max_attempts":3,"stacktrace":"github.com/mholt/acmez/v3.(*Client).ObtainCertificate\n\tgithub.com/mholt/acmez/v3@v3.1.2/client.go:152\ngithub.com/caddyserver/certmagic.(*ACMEIssuer).doIssue\n\tgithub.com/caddyserver/certmagic@v0.24.0/acmeissuer.go:489\ngithub.com/caddyserver/certmagic.(*ACMEIssuer).Issue\n\tgithub.com/caddyserver/certmagic@v0.24.0/acmeissuer.go:382\ngithub.com/caddyserver/caddy/v2/modules/caddytls.(*ACMEIssuer).Issue\n\tgithub.com/caddyserver/caddy/v2@v2.10.2/modules/caddytls/acmeissuer.go:288\ngithub.com/caddyserver/certmagic.(*Config).obtainCert.func2\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:626\ngithub.com/caddyserver/certmagic.doWithRetry\n\tgithub.com/caddyserver/certmagic@v0.24.0/async.go:104\ngithub.com/caddyserver/certmagic.(*Config).obtainCert\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:700\ngithub.com/caddyserver/certmagic.(*Config).ObtainCertAsync\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:505\ngithub.com/caddyserver/certmagic.(*Config).manageOne.func1\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:415\ngithub.com/caddyserver/certmagic.(*jobManager).worker\n\tgithub.com/caddyserver/certmagic@v0.24.0/async.go:73"}
+web-1  | {"level":"info","ts":1791195020.3094914,"msg":"trying to solve challenge","identifier":"<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>","challenge_type":"http-01","ca":"https://acme-v02.api.letsencrypt.org/directory"}
+web-1  | {"level":"error","ts":1791195020.9704187,"msg":"challenge failed","identifier":"<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>","challenge_type":"http-01","problem":{"type":"urn:ietf:params:acme:error:dns","title":"","detail":"DNS problem: NXDOMAIN looking up A for <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> - check that a DNS record exists for this domain; DNS problem: NXDOMAIN looking up AAAA for <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> - check that a DNS record exists for this domain","instance":"","subproblems":null},"stacktrace":"github.com/mholt/acmez/v3.(*Client).pollAuthorization\n\tgithub.com/mholt/acmez/v3@v3.1.2/client.go:557\ngithub.com/mholt/acmez/v3.(*Client).solveChallenges\n\tgithub.com/mholt/acmez/v3@v3.1.2/client.go:378\ngithub.com/mholt/acmez/v3.(*Client).ObtainCertificate\n\tgithub.com/mholt/acmez/v3@v3.1.2/client.go:136\ngithub.com/caddyserver/certmagic.(*ACMEIssuer).doIssue\n\tgithub.com/caddyserver/certmagic@v0.24.0/acmeissuer.go:489\ngithub.com/caddyserver/certmagic.(*ACMEIssuer).Issue\n\tgithub.com/caddyserver/certmagic@v0.24.0/acmeissuer.go:382\ngithub.com/caddyserver/caddy/v2/modules/caddytls.(*ACMEIssuer).Issue\n\tgithub.com/caddyserver/caddy/v2@v2.10.2/modules/caddytls/acmeissuer.go:288\ngithub.com/caddyserver/certmagic.(*Config).obtainCert.func2\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:626\ngithub.com/caddyserver/certmagic.doWithRetry\n\tgithub.com/caddyserver/certmagic@v0.24.0/async.go:104\ngithub.com/caddyserver/certmagic.(*Config).obtainCert\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:700\ngithub.com/caddyserver/certmagic.(*Config).ObtainCertAsync\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:505\ngithub.com/caddyserver/certmagic.(*Config).manageOne.func1\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:415\ngithub.com/caddyserver/certmagic.(*jobManager).worker\n\tgithub.com/caddyserver/certmagic@v0.24.0/async.go:73"}
+web-1  | {"level":"error","ts":1791195020.9705217,"msg":"validating authorization","identifier":"<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>","problem":{"type":"urn:ietf:params:acme:error:dns","title":"","detail":"DNS problem: NXDOMAIN looking up A for <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> - check that a DNS record exists for this domain; DNS problem: NXDOMAIN looking up AAAA for <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> - check that a DNS record exists for this domain","instance":"","subproblems":null},"order":"https://acme-v02.api.letsencrypt.org/acme/order/3827724256/565604522006","attempt":2,"max_attempts":3,"stacktrace":"github.com/mholt/acmez/v3.(*Client).ObtainCertificate\n\tgithub.com/mholt/acmez/v3@v3.1.2/client.go:152\ngithub.com/caddyserver/certmagic.(*ACMEIssuer).doIssue\n\tgithub.com/caddyserver/certmagic@v0.24.0/acmeissuer.go:489\ngithub.com/caddyserver/certmagic.(*ACMEIssuer).Issue\n\tgithub.com/caddyserver/certmagic@v0.24.0/acmeissuer.go:382\ngithub.com/caddyserver/caddy/v2/modules/caddytls.(*ACMEIssuer).Issue\n\tgithub.com/caddyserver/caddy/v2@v2.10.2/modules/caddytls/acmeissuer.go:288\ngithub.com/caddyserver/certmagic.(*Config).obtainCert.func2\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:626\ngithub.com/caddyserver/certmagic.doWithRetry\n\tgithub.com/caddyserver/certmagic@v0.24.0/async.go:104\ngithub.com/caddyserver/certmagic.(*Config).obtainCert\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:700\ngithub.com/caddyserver/certmagic.(*Config).ObtainCertAsync\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:505\ngithub.com/caddyserver/certmagic.(*Config).manageOne.func1\n\tgithub.com/caddyserver/certmagic@v0.24.0/config.go:415\ngithub.com/caddyserver/certmagic.(*jobManager).worker\n\tgithub.com/caddyserver/certmagic@v0.24.0/async.go:73"}
+web-1  | {"level":"error","ts":1791195020.9705853,"logger":"tls.obtain","msg":"could not get certificate from issuer","identifier":"<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>","issuer":"acme-v02.api.letsencrypt.org-directory","error":"HTTP 400 urn:ietf:params:acme:error:dns - DNS problem: NXDOMAIN looking up A for <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> - check that a DNS record exists for this domain; DNS problem: NXDOMAIN looking up AAAA for <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> - check that a DNS record exists for this domain"}
+web-1  | {"level":"info","ts":1791195020.9778907,"logger":"tls.issuance.acme","msg":"waiting on internal rate limiter","identifiers":["<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>"],"ca":"<PRIVATE_URL_0036>","account":"<ACCOUNT_EMAIL_011>"}
+web-1  | {"level":"info","ts":1791195020.9779077,"logger":"tls.issuance.acme","msg":"done waiting on internal rate limiter","identifiers":["<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>"],"ca":"<PRIVATE_URL_0036>","account":"<ACCOUNT_EMAIL_011>"}
+web-1  | {"level":"info","ts":1791195020.9779208,"logger":"tls.issuance.acme","msg":"using ACME account","account_id":"<PRIVATE_URL_0036>","account_contact":["mailto:<ACCOUNT_EMAIL_011>"]}
+web-1  | {"level":"info","ts":1791195024.2905233,"msg":"trying to solve challenge","identifier":"<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>","challenge_type":"http-01","ca":"<PRIVATE_URL_0036>"}
+WARNING: 
+
+To increase the performance of the tunnel, consider installing NumPy. For instructions,
+please see <PRIVATE_URL_0075>ogle.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:18080...
+* Connected to 127.0.0.1 (127.0.0.1) port 18080
+> GET /api/management/gtg HTTP/1.1
+> Host: 127.0.0.1:18080
+> User-Agent: curl/8.5.0
+> Accept: */*
+> 
+< HTTP/1.1 200 OK
+< Access-Control-Allow-Origin: <PRIVATE_URL_0233>
+< Content-Length: 2
+< Content-Type: text/html; charset=utf-8
+< Date: Mon, 05 Oct 2026 10:19:19 GMT
+< Referrer-Policy: strict-origin-when-cross-origin
+< Server: gunicorn
+< Vary: Accept-Encoding
+< Via: 1.1 Caddy
+< X-Content-Type-Options: nosniff
+< X-Frame-Options: SAMEORIGIN
+< X-Request-Id: <NATIVE_ID_2125>
+< 
+{ [2 bytes data]
+
+100     2  100     2    0     0    110      0 --:--:-- --:--:-- --:--:--   117
+* Connection #0 to host 127.0.0.1 left intact

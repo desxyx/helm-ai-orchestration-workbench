@@ -1,0 +1,36 @@
++(eval):1> node tools/watchover.mjs init my-project/watchover --project=<CLOUD_PROJECT> --environment 'local trial' --provider local --session session-a
+initialized my-project/watchover
++(eval):1> echo 'exit=0'
+exit=0
++(eval):1> echo '{"actor":{"role":"ai","name":"ai-deployer"},"session_id":"session-a","type":"intent","summary":"List the project files (read-only)","target":"my-project","action":"ls my-project","action_kinds":["read_only"]}'
++(eval):1> node tools/watchover.mjs append my-project/watchover
+appended evt-0002; workspace valid
++(eval):1> echo 'exit=0'
+exit=0
++(eval):1> node tools/watchover.mjs validate my-project/watchover
+valid: all checks passed; secret scan self-test passed (15 patterns), 0 findings
++(eval):1> echo 'exit=0'
+exit=0
++(eval):1> node tools/watchover.mjs brief my-project/watchover
++(eval):1> head -8
+WatchOver brief — demo-app (local trial) — at 2026-10-07T12:41:54.412Z
+Derived from a validated record. Read state.json and evidence before acting.
+Stage: recon · state updated just now by ai
+Activity: Workspace initialized; recon has not started yet · waiting on the AI
+Last progress: none recorded
+Pending decision: none
+Human action now: nothing needs the human right now
+Next: Start read-only recon: the app, its source, the target account and th… · owner: the AI
++(eval):1> echo 'exit=0'
+exit=0
++(eval):1> lsof -iTCP:7431 -sTCP:LISTEN
++(eval):1> echo 'port 7431 free'
+port 7431 free
++(eval):1> set +x
+serving my-project/watchover at http://127.0.0.1:7431/ (read-only, loopback only; press Ctrl-C to stop)
+GET / -> 200 704B
+GET /state.json project_alias -> demo-app
+GET /events.jsonl lines -> 2
+non-loopback bind check: 127.0.0.1:7431
+show exit after TERM=0
+after stop: 000

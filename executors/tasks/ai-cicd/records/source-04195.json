@@ -1,0 +1,58 @@
+{
+  "task": "WATCHOVER_FINAL_PATCH_2026-10-07",
+  "round": "r2",
+  "candidate_commit": "<PRIVATE_REF_03069>",
+  "candidate_tree": "<PRIVATE_REF_01459>",
+  "paths_relative_to": "output/",
+  "r1_artifacts_preserved": 16,
+  "files": {
+    "EXEC_ACK_r2.md": {
+      "bytes": 3380,
+      "sha256": "<PRIVATE_REF_01597>"
+    },
+    "SUBMISSION_r2.md": {
+      "bytes": 12013,
+      "sha256": "<PRIVATE_REF_03334>"
+    },
+    "CANDIDATE_LOCATOR_r2.txt": {
+      "bytes": 314,
+      "sha256": "<PRIVATE_REF_03583>"
+    },
+    "r2/affected-first.log": {
+      "bytes": 3900,
+      "sha256": "<PRIVATE_REF_03664>"
+    },
+    "r2/baseline-to-r2.patch": {
+      "bytes": 96613,
+      "sha256": "<PRIVATE_REF_01981>"
+    },
+    "r2/boundary.json": {
+      "bytes": 821,
+      "sha256": "<PRIVATE_REF_02031>"
+    },
+    "r2/check-boundary.py": {
+      "bytes": 2147,
+      "sha256": "<PRIVATE_REF_03368>"
+    },
+    "r2/freeze.log": {
+      "bytes": 1123,
+      "sha256": "<PRIVATE_REF_01947>"
+    },
+    "r2/performance-before.json": {
+      "bytes": 488,
+      "sha256": "<PRIVATE_REF_01385>"
+    },
+    "r2/r1-to-r2.patch": {
+      "bytes": 14420,
+      "sha256": "<PRIVATE_REF_03730>"
+    },
+    "r2/regression.log": {
+      "bytes": 28089,
+      "sha256": "<PRIVATE_REF_03183>"
+    },
+    "r2/reproduction-before.json": {
+      "bytes": 1295,
+      "sha256": "<PRIVATE_REF_03194>"
+    }
+  }
+}

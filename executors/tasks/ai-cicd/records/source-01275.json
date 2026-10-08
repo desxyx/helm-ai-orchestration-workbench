@@ -1,0 +1,32 @@
+{
+  "project": "<CLOUD_PROJECT>",
+  "verified_at": "2026-10-05T05:05:58.983585+00:00",
+  "remaining_deployment_resources": {
+    "instances": [],
+    "disks": [],
+    "addresses": [],
+    "firewall_rules": [],
+    "subnets": [],
+    "networks": [],
+    "routes": [],
+    "snapshots": [],
+    "custom_images": [],
+    "project_metadata": []
+  },
+  "status": "passed",
+  "dns": {
+    "deleted_record": {
+      "type": "A",
+      "name": "<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>",
+      "value": "<IP_ADDRESS_114>"
+    },
+    "authoritative_status": "NXDOMAIN",
+    "checked_authoritative_server_ips": [
+      "<IP_ADDRESS_098>",
+      "<IP_ADDRESS_105>"
+    ],
+    "confirmed_removed": true
+  },
+  "application_data_deleted": true,
+  "finished_at": "2026-10-05T05:06:32.299221+00:00"
+}

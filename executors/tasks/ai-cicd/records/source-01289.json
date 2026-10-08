@@ -1,0 +1,21 @@
+{
+  "attempt": 2,
+  "query": "R02_instances",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "compute",
+    "instances",
+    "list",
+    "--project=<CLOUD_PROJECT>",
+    "--quiet",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T16:09:10.641+11:00",
+  "end_utc": "2026-10-05T16:09:12.417+11:00",
+  "exit_code": 0,
+  "stdout": "R02_instances_attempt2.stdout",
+  "stdout_sha256": "<PRIVATE_REF_01383>",
+  "stderr": "R02_instances_attempt2.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

@@ -1,0 +1,13 @@
+{
+  "tool": "snapshot",
+  "stage": "DEPLOYMENT_TERMINAL",
+  "run_id": "DRYRUN",
+  "timestamp": "2026-09-26T12:58:45.418Z",
+  "terminal_declaration_locator": "FIXTURE:transcript_fixture.jsonl:line=999",
+  "outstanding_transcript_package_locator": "FIXTURE:package_increment/packets_cp2.json",
+  "full_project_metadata_export_locator": "FIXTURE:project_inventory/inventory_fixture.json",
+  "sealed_workspace_archive_locator": "snapshot/archive_stage/workspace_archive_DRYRUN_1790427525412.json",
+  "sealed_workspace_archive_sha256": "<PRIVATE_REF_01956>",
+  "sealed_workspace_archive_file_count": 2,
+  "archive_format": "Operations Coordinator-workspace-archive-v1"
+}

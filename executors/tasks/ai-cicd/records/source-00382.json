@@ -1,0 +1,43 @@
+{
+  "followup_manifest_entries": 15,
+  "matched": 15,
+  "jsonl_parse_results": [
+    {
+      "path": "sessions/observer/rollout-2026-10-07T11-35-44-<NATIVE_ID_0092>.jsonl",
+      "records": 228
+    },
+    {
+      "path": "sessions/Operations Coordinator/<NATIVE_ID_1463>.jsonl",
+      "records": 1633
+    },
+    {
+      "path": "sessions/Operations Coordinator/<NATIVE_ID_1463>/subagents/<CLIENT_RESOURCE_00001>.jsonl",
+      "records": 91
+    },
+    {
+      "path": "sessions/Operations Coordinator/<NATIVE_ID_1463>/subagents/<CLIENT_RESOURCE_00002>.jsonl",
+      "records": 164
+    }
+  ],
+  "observer_attestation": {
+    "session_meta": {
+      "id": "<NATIVE_ID_0092>",
+      "timestamp": "2026-10-07T00:35:44.336Z",
+      "cli_version": "0.160.1",
+      "originator": "codex-tui"
+    },
+    "<CLIENT_RESOURCE_01976>": [
+      {
+        "effort": "high",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": null
+      }
+    ]
+  },
+  "github_pat_pattern_hits": 0,
+  "snapshot_time_utc": "2026-10-07T02:54:06Z",
+  "raw_archives": "WINDOWS_CUSTODY_RECEIPT_ONLY_NOT_TRANSFERRED_TO_MAC",
+  "product_receipt": "NO_PRODUCT_CHANGES_0.1.1_5e101471",
+  "source_helm_commit": "c582abe",
+  "independent_review": "NOT_PERFORMED_BY_MAC_INTAKE"
+}

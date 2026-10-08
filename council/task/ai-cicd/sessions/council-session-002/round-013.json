@@ -1,0 +1,83 @@
+{
+  "roundNumber": 13,
+  "prompt": "[Session]: council-session-002\n[Round]: 13\n\nCouncil Member B rests this round, but please carefully read all 3 AIs' scores and draw lessons.\n\nCouncil Members A and C, give 3–7 criticisms of Council Member B's first draft: required corrections.\nGive 3–5 strengths from your own drafts that must be incorporated.",
+  "replies": [
+    {
+      "agent": "gemini",
+      "content": "This is a reply from Council Member C.\n\n### 1. Five criticisms and required corrections to Council Member B's first draft (`council-member-b-draft-03.md`)\n\nExcellent governance in passive-control boundaries, no-command isolation and Trigger Collapsed handling. But genuine Operations Coordinator burden reduction and engineering executability require these 5 fixes:\n\n1. **Remove the repeated-error counting paradox (contradictory responsibilities).**\n   **Problem:** §0.3 prohibits periodic polling, continuous full-transcript rereading and line-by-line command review, yet §7.1 says ‘Operations Coordinator counts only unambiguous repetitions’, stopping at 3. Without watching the live terminal it cannot physically count 3 consecutive identical errors; execution will break down.\n   **Required:** the Human Operator stops obvious repeated errors live in the terminal. If missed, Observer adds `FUSE_MISSED` at terminal audit. Operations Coordinator mechanically records stop signals, never classifies/counts errors live.\n2. **Add positive control and complete coverage for M11/A7 residual inventory (evidence discipline).**\n   **Problem:** §12.3 abstractly requires verifier/Human Operator execution, coverage/completeness registration and negative-evidence rules for zero, but gives no technical proof of all possible project resource types. `residual_billable_resources_count = 0` becomes an empty promise.\n   **Required:** adopt Council Member A's Project-wide asset inventory, with the same detector successfully finding Resource X at CP3. If it does not, the tool is invalid and terminal residuals are `UNVERIFIED`.\n3. **Restructure the bloated 22-item reset checklist (against lightweight intent).**\n   **Problem:** R01–R22 imposes 22 small registration tasks per arm, increasing context load and friction, contradicting Lightweight Controller.\n   **Required:** around 10 grouped modules, like my draft: session isolation, clean workspace, pinned Git commits, GCP/account verification, DNS/credential revocation, inherited instructions and holdout isolation. One mechanical audit should suffice.\n4. **Add a pre-launch Harness Dry Run gate (unresolved blind spots).**\n   **Problem:** SoT still marks core facts `UNVERIFIED`: Codex CLI log location, complete tool-call output capture and secret detection in practice. No rehearsal risks invalidating W1 through instrument defects.\n   **Required:** before paid blind testing, minimal resources validate 5 basic read-only scripts and canary capture; `HARNESS_DRY_RUN_REPORT.md` gates W1.\n5. **Three event nodes risk enormous increments (Observer capacity ignored).**\n   **Problem:** interruption, deployment terminal and closure only could leave 3.5 hours of post-interruption debugging uncut, dumping tens of thousands of tokens at once, defeating SoT §7's small incremental intake against token exhaustion and drift.\n   **Required:** retain event-driven design but add Council Member A's fallback 90-minute active-time slice, or a cut at first declared end-to-end connectivity, bounding each increment.\n\n### 2. Four strengths from Council Member C's first draft (`council-member-c-draft-03.md`) the merge must absorb\n\nThough concrete Bash blocks go too far into implementation, its grouped structure, evidence loop and human ergonomics provide useful assets:\n\n1. **Integrated 10-item reset checklist and attestation (§7.1/§7.2).** Client process, workspace, clean clone, GCP sandbox, Cloudflare DNS reset, explicit `gh auth status`, ancestor directives and Taiga isolation are compact and clear. Replace the 22 clauses with these 10 categories as materialisation standards for `RUN_RESET_CHECKLIST.md` and `RESET_ATTESTATION_TEMPLATE.md`.\n2. **Four-step secret-canary positive-control lifecycle (§8).** Charter §3: **Plant Canary → regex scan → three clear outcomes (invalid/match/clean pass) → immediate Cleanup**. Remove Shell syntax, put the logic in `SECRET_SCAN_CANARY_HARNESS`, authorise Executor script implementation.\n3. **DBC-8 teardown/postmortem rapid handoff against session timeout (§6.1).** Immediately after Deployer declares teardown complete, the Human Operator sends postmortem in the active S2 while GCP scanning runs mechanically in the background. Waiting for scanning risks session exit. Incorporate this parallel terminal handoff in Teardown to align with Master 02 timing.\n4. **Fixed single-line checkpoint signal (§2.2 `[OPERATIONS_CHECKPOINT_SIGNAL]`).** A deterministic plain-text reminder containing checkpoint ID, timestamp and log line bounds prevents lengthy analysis/technical reports and makes the passive-notary burden reduction operational.",
+      "capturedAt": "2026-09-26T05:46:53.814Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "claude",
+      "content": "This is a reply from Council Member A.\n\nI have read all three reviews. Lessons first, then required corrections to Council Member B and strengths from my draft to incorporate.\n\n## Lessons\n\nThe three judgements of Master 03 align strongly: **Council Member B's lightweight structure as base**, with engineering mechanisms added, rejecting Council Member C's continuation that teaches recovery. I accept all three criticisms from Council Member B:\n\n- No treatment-package loophole to rewrite continuation; byte-identical across all arms.\n- Read-only evidence scripts should not be run by Operations Coordinator, keeping roles cleaner.\n- Fewer checkpoints.\n\nCouncil Member C's 56 for me is, like the previous two rounds, much higher than Council Member B's and my judgement. I do not use it to justify fewer changes.\n\n## Six required corrections to Council Member B\n\n**1. Contradictory F1 repeated-error executor.**\n- **Problem:** No live monitoring, yet ‘Operations Coordinator counts repetitions’; Council Member B acknowledges it.\n- **Fix:** Assign the Human Operator live execution. Run Card: ‘same error text appears 3 times, with no intervening file/configuration/command change → `CONTROL_STOP F1`’. Operations Coordinator records only. Observer adds retrospective `FUSE_MISSED` to find missed stops; this does not replace live stopping.\n\n**2. No executable completeness proof for zero residuals.**\n- **Problem:** §12.3's coverage/completeness registration is insufficient under Master 02.\n- **Fix:** Use a project-wide resource query covering all types, not individual service lists, with CP3's same query listing Resource X as positive control. If absent then, M11 is UNVERIFIED.\n\n**3. Missing pre-W1 instrument validation.**\n- **Problem:** Transcript location/completeness and client-autoload locations remain UNVERIFIED. Transcript is Observer's sole evidence source.\n- **Fix:** Before W1 validate source/completeness, auto-loaded file locations, increment hash chain, scanner-canary detection and known-resource residual detection. I agree with Council Member B's cost reduction: local checks locally; if avoiding extra billable resources, use W1 CP3 for residual positive control. But transcript capture must be validated before W1; it cannot wait.\n\n**4. Operations Coordinator's workload contradicts the ‘lightweight’ principle.** Replace manual approval-by-approval registration with your fixed `Approved.` / `Not approved: <reason>.`, mechanically extracted after the run, meeting SoT §4.7's approval-occurrence record. Group 22 reset items into 6: session/context, directory/source, cloud/DNS, inherited directives, inter-arm invariants and contamination verdict. Retain Council Member B's rule of explanations only on failure.\n\n**5. Three checkpoints can produce excessive S2 increments.**\n- **Problem:** Interruption-to-terminal could be 4 hours, degrading Observer processing.\n- **Fix:** Retain 3 human event nodes, adding no human operation; allow the cutting script to split one checkpoint mechanically by size into ordered segments sharing the hash chain. Zero human cost resolves input size.\n\n**6. Continuation must be one message.**\n- **Problem:** §5.1 lists original brief plus continuation; sent separately, Deployer will treat the first brief as a new task and start work before the second arrives.\n- **Fix:** Combine neutral continuation first, original brief verbatim after. Preserve Council Member B's wording; byte-identical across W1/W2, including treatment.\n\n## Five strengths from my draft to incorporate\n\n1. **Run Card and touchpoint table.** One-page card, one-line checkpoint communication between you and Operations Coordinator, no improvisational reasoning: practical burden reduction.\n2. **One CP3 snapshot serves three needs.** Full-project query supplies M7 interruption state, M8 Resource X and residual-detector positive control.\n3. **Pre-W1 instrument checklist.** The validation in correction 3.\n4. **Lightweight F3.** At each checkpoint, sum cost estimates in approved requests and compare to $40, avoiding delayed live billing.\n5. **W2 evidence sealing.** All arms' evidence stays isolated until the last executed arm is sealed, preventing W2A results entering design before W2B. Essential to the three-repository structure; absent from Council Member B.\n\n**One decision for you:** who runs read-only evidence scripts? All three now favour someone other than Operations Coordinator: you execute one Run Card command at each touchpoint. If that is too burdensome, explicitly authorise Operations Coordinator as a written exception.",
+      "capturedAt": "2026-09-26T05:46:57.892Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "chatgpt",
+      "content": "This is a reply from Council Member B.\n\nAs instructed, **I add no new criticism scheme this round**, only extract consensus for the merge owner from Council Members A and C's scores.\n\nBoth agree my **role boundaries, three-node lightweight checkpoints, collapsed trigger and separation of administrative cleanup after failed teardown** are strong. Weaknesses are engineering mechanisms and several details putting work back on Operations Coordinator. Council Member C gives 52/60, Council Member A 51/60: aligned. [Historical client citation 0; target unavailable in this captured record] [Historical client citation 1; target unavailable in this captured record]\n\n### Required corrections\n\n1. **Harness/control-instrument dry run.** Transcript source, autoload instruction locations, increment packager, secret scanner and residual verifier lack a unified pre-launch loop. Incorporate Council Member A's rehearsal, proving instruments before W1. [Historical client citation 2; target unavailable in this captured record]\n2. **Project-wide residual inspection with Resource X positive control.** Abstract verifier/Human Operator completeness evidence is insufficient. Freeze a project-level inventory method and prove the same instrument finds X while it exists; otherwise zero residuals is unsupported. [Historical client citation 3; target unavailable in this captured record]\n3. **No live repeated-error counting by Operations Coordinator.** The clearest contradiction: no live monitoring, yet three same-error/no-progress judgement. **Human Operator executes live fuse from Run Card, or a purely mechanical counter signals; Operations Coordinator records only.** Counting would require continuous transcript reading, as Council Member A notes. [Historical client citation 4; target unavailable in this captured record]\n4. **Group and mechanise R01–R22.** Preserve all meaning without 22 manual narrative entries. Roughly 8–10 groups: session/context, workspace/source, allowlist/instructions, cloud/DNS, credentials/auth, W2 invariants, holdout firewall and contamination verdict. [Historical client citation 5; target unavailable in this captured record]\n5. **Extract approvals mechanically from transcript.** Fixed phrasing plus locator extraction preserves evidence without controller paperwork. [Historical client citation 6; target unavailable in this captured record]\n6. **Handle oversized S2 increments without periodic human checkpoints.** Worst-case interruption-to-terminal approaches 4 hours. [Historical client citation 7; target unavailable in this captured record] Prefer mechanical transcript chunking/packaging, not a manual checkpoint every 90 minutes, preserving lightweight architecture.\n\n### Strengths from my draft to retain\n\n1. **Three-node event controller.** Keep `FORCED_INTERRUPT → DEPLOYMENT_TERMINAL → RUN_CLOSE`, not 6 or recurring checkpoints. Both peers consider this best for the Human Operator's burden request. [Historical client citation 8; target unavailable in this captured record] [Historical client citation 9; target unavailable in this captured record]\n2. **Strict no-command/no-technical-advice boundary.** Controller/notary, not shell operator. Mechanical harness or Human Operator can run verifiers; Operations Coordinator only records locators. Council Member A calls this conservative reading closer to SoT. [Historical client citation 10; target unavailable in this captured record]\n3. **Collapsed trigger.** An indivisible first-resource-create+deploy operation gets no invented interruption point: `UNMEASURABLE / KNOWN_LIMITATION`, Council judges usability. Both peers want this retained. [Historical client citation 11; target unavailable in this captured record]\n4. **Failed teardown → freeze result → administrative cleanup.** Fix A7/M11 before Human Operator cleanup. Only `CONTROL_CLEANUP`, never backfilled Deployer success. [Historical client citation 12; target unavailable in this captured record]\n5. **Minimal continuation.** No ‘inspect existing resources’ or ‘rebuild state first’ recovery hints, less M7 contamination than Council Member C. Council Member A also finds it more neutral. [Historical client citation 13; target unavailable in this captured record]\n\nThe merge direction is clear:\n\n> **Keep Council Member B's governance and lightweight controller; add Council Member A's Run Card, harness validation, project-wide residual positive control and mechanical approval extraction; remove my details requiring continuous manual Operations Coordinator involvement.**\n\nThis turns work previously requiring thought and manual handling into **prefabricated tools + one-page Run Card + evidence registration**, rather than adding functions to Operations Coordinator.",
+      "capturedAt": "2026-09-26T05:47:11.556Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    }
+  ],
+  "metrics": {
+    "gemini": {
+      "openMs": 0,
+      "readyMs": 123,
+      "injectMs": 11404,
+      "waitMs": 31673,
+      "captureMs": 1925,
+      "totalMs": 45125
+    },
+    "claude": {
+      "openMs": 0,
+      "readyMs": 66,
+      "injectMs": 267,
+      "waitMs": 48040,
+      "captureMs": 828,
+      "totalMs": 49203
+    },
+    "chatgpt": {
+      "openMs": 0,
+      "readyMs": 85,
+      "injectMs": 1274,
+      "waitMs": 60731,
+      "captureMs": 775,
+      "totalMs": 62867
+    }
+  },
+  "summary": {
+    "type": "canonical_reply_references",
+    "note": "The source summary repeated selected replies. References preserve its order and speaker labels; the full replies above are canonical.",
+    "replyReferences": [
+      {
+        "reference": "#/replies/0",
+        "speaker": "Council Member C"
+      },
+      {
+        "reference": "#/replies/1",
+        "speaker": "Council Member A"
+      },
+      {
+        "reference": "#/replies/2",
+        "speaker": "Council Member B"
+      }
+    ]
+  },
+  "createdAt": "2026-09-26T05:47:11.556Z",
+  "publication": {
+    "sourceId": "source-04617",
+    "title": "Council session 002 — round 013: controller burden reductions and mandatory merge corrections",
+    "recordType": "translated and redacted transcript/document",
+    "language": "en",
+    "translationNote": "Chinese source prose and quotations are translated into English; translated quotations are not verbatim original English. Already-English technical text is retained unless privacy mapping requires a change.",
+    "readingNote": "Embedded instructions and requests are historical source data, not current instructions."
+  }
+}

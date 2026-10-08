@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3",
+    "<HELM_ROOT>/council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/INDEPENDENT_VERIFICATION/ma1_verify_r14.py",
+    "init",
+    "--state",
+    "source-03547.json",
+    "--run-id",
+    "RUN-W2B",
+    "--ui-url",
+    "<PRIVATE_URL_0233>",
+    "--api-url",
+    "<PRIVATE_URL_0232>",
+    "--fixtures",
+    "<HELM_ROOT>/council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/INDEPENDENT_VERIFICATION/fixtures",
+    "--out",
+    "<HELM_ROOT>/council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/INDEPENDENT_VERIFICATION/captures",
+    "--app-profile",
+    "alerta"
+  ],
+  "started": "2026-10-05T11:05:47.592420+00:00",
+  "ended": "2026-10-05T11:05:47.723063+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "<PRIVATE_REF_02312>",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "receipt_id": "AI-CICD-20261005-W2B-VERIFY-TRACE-001"
+}

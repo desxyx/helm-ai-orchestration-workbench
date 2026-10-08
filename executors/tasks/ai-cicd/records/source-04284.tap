@@ -1,0 +1,1654 @@
+TAP version 13
+# Subtest: CLI brief and the view classify the same facts the same way at a fixed time
+ok 1 - CLI brief and the view classify the same facts the same way at a fixed time
+  ---
+  duration_ms: 7.550125
+  type: 'test'
+  ...
+# Subtest: 200 facts: at most 30 lines, exact totals and an exact omitted count with its location
+ok 2 - 200 facts: at most 30 lines, exact totals and an exact omitted count with its location
+  ---
+  duration_ms: 1.25375
+  type: 'test'
+  ...
+# Subtest: pending, working, terminal and approved records: the human action matches the view banner
+ok 3 - pending, working, terminal and approved records: the human action matches the view banner
+  ---
+  duration_ms: 8.200083
+  type: 'test'
+  ...
+# Subtest: the CLI brief is read-only: workspace bytes and file set are unchanged
+ok 4 - the CLI brief is read-only: workspace bytes and file set are unchanged
+  ---
+  duration_ms: 219.43225
+  type: 'test'
+  ...
+# Subtest: an invalid record is refused with no summary, no secret, and nothing written
+ok 5 - an invalid record is refused with no summary, no secret, and nothing written
+  ---
+  duration_ms: 301.731542
+  type: 'test'
+  ...
+# Subtest: brief rejects an unparsable --now as a usage error
+ok 6 - brief rejects an unparsable --now as a usage error
+  ---
+  duration_ms: 40.530166
+  type: 'test'
+  ...
+# Subtest: every valid fixture answers the six questions in a real browser
+not ok 7 - every valid fixture answers the six questions in a real browser
+  ---
+  duration_ms: 12.958
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/browser.test.mjs:53:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: the seven statuses are visually distinct, and only fresh verified facts are green
+not ok 8 - the seven statuses are visually distinct, and only fresh verified facts are green
+  ---
+  duration_ms: 4.043041
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/browser.test.mjs:86:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: an old state shows "No recent update" in the browser
+not ok 9 - an old state shows "No recent update" in the browser
+  ---
+  duration_ms: 2.613917
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/browser.test.mjs:112:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: an on-disk state change appears without a reload, within the declared bound
+not ok 10 - an on-disk state change appears without a reload, within the declared bound
+  ---
+  duration_ms: 5.984167
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/browser.test.mjs:122:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: a malformed state.json replaces the view with a visible error
+not ok 11 - a malformed state.json replaces the view with a visible error
+  ---
+  duration_ms: 2.813667
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/browser.test.mjs:139:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: a missing events.jsonl shows a visible error
+not ok 12 - a missing events.jsonl shows a visible error
+  ---
+  duration_ms: 11.460209
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/browser.test.mjs:154:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: the catalog has 10 to 20 entries with every field
+ok 13 - the catalog has 10 to 20 entries with every field
+  ---
+  duration_ms: 2.441584
+  type: 'test'
+  ...
+# Subtest: entries name an official source, known stages, a kind and a risk level
+ok 14 - entries name an official source, known stages, a kind and a risk level
+  ---
+  duration_ms: 1.260416
+  type: 'test'
+  ...
+# Subtest: nothing is loaded by default, MCP is optional, and every entry has a CLI fallback
+ok 15 - nothing is loaded by default, MCP is optional, and every entry has a CLI fallback
+  ---
+  duration_ms: 2.560167
+  type: 'test'
+  ...
+# Subtest: no entry claims an online check that was not made, and no date is invented
+ok 16 - no entry claims an online check that was not made, and no date is invented
+  ---
+  duration_ms: 0.871333
+  type: 'test'
+  ...
+# Subtest: the catalog carries no secret-shaped text
+ok 17 - the catalog carries no secret-shaped text
+  ---
+  duration_ms: 1.392125
+  type: 'test'
+  ...
+# Subtest: without a command the CLI prints usage and exits 64
+ok 18 - without a command the CLI prints usage and exits 64
+  ---
+  duration_ms: 166.577875
+  type: 'test'
+  ...
+# Subtest: init then validate succeeds with exit 0
+ok 19 - init then validate succeeds with exit 0
+  ---
+  duration_ms: 131.76475
+  type: 'test'
+  ...
+# Subtest: validate --json prints the full result
+ok 20 - validate --json prints the full result
+  ---
+  duration_ms: 66.947167
+  type: 'test'
+  ...
+# Subtest: validate lists problems, exits 1 and never prints a secret
+ok 21 - validate lists problems, exits 1 and never prints a secret
+  ---
+  duration_ms: 60.849792
+  type: 'test'
+  ...
+# Subtest: append reads one event from stdin and prints its id
+ok 22 - append reads one event from stdin and prints its id
+  ---
+  duration_ms: 109.398208
+  type: 'test'
+  ...
+# Subtest: append exits 2 when the event is written but state.json still needs updating
+ok 23 - append exits 2 when the event is written but state.json still needs updating
+  ---
+  duration_ms: 91.386667
+  type: 'test'
+  ...
+# Subtest: a refused append exits 1, writes nothing and never prints a secret
+ok 24 - a refused append exits 1, writes nothing and never prints a secret
+  ---
+  duration_ms: 86.773667
+  type: 'test'
+  ...
+# Subtest: init with missing options exits 64 and names what is missing
+ok 25 - init with missing options exits 64 and names what is missing
+  ---
+  duration_ms: 36.881459
+  type: 'test'
+  ...
+# Subtest: append --file reads the event from a file
+ok 26 - append --file reads the event from a file
+  ---
+  duration_ms: 84.804917
+  type: 'test'
+  ...
+# Subtest: show serves the workspace on loopback until stopped
+not ok 27 - show serves the workspace on loopback until stopped
+  ---
+  duration_ms: 43.03375
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/cli.test.mjs:92:1'
+  failureType: 'testCodeFailure'
+  error: 'show exited early with 1'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    ChildProcess.<anonymous> (file:///private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/cli.test.mjs:98:43)
+    ChildProcess.wrapper (node:events:639:12)
+    ChildProcess.emit (node:events:514:20)
+    ChildProcess._handle.onexit (node:internal/child_process:294:12)
+  ...
+# Subtest: show refuses a folder that does not exist
+ok 28 - show refuses a folder that does not exist
+  ---
+  duration_ms: 36.792875
+  type: 'test'
+  ...
+# Subtest: a valid candidate is committed and the workspace still validates
+ok 29 - a valid candidate is committed and the workspace still validates
+  ---
+  duration_ms: 98.606708
+  type: 'test'
+  ...
+# Subtest: an object fact value is refused with its pointer, actual type and allowed types
+ok 30 - an object fact value is refused with its pointer, actual type and allowed types
+  ---
+  duration_ms: 29.931667
+  type: 'test'
+  ...
+# Subtest: a 301-character fact value is refused with the real 300 limit and the actual length
+ok 31 - a 301-character fact value is refused with the real 300 limit and the actual length
+  ---
+  duration_ms: 28.104416
+  type: 'test'
+  ...
+# Subtest: an invalid secrets availability is refused with the allowed values and no secret echo
+ok 32 - an invalid secrets availability is refused with the allowed values and no secret echo
+  ---
+  duration_ms: 35.354167
+  type: 'test'
+  ...
+# Subtest: a schema-valid but semantically inconsistent candidate is refused
+ok 33 - a schema-valid but semantically inconsistent candidate is refused
+  ---
+  duration_ms: 31.499625
+  type: 'test'
+  ...
+# Subtest: cited evidence must exist as a regular file reached without a link (positive control first)
+ok 34 - cited evidence must exist as a regular file reached without a link (positive control first)
+  ---
+  duration_ms: 102.122209
+  type: 'test'
+  ...
+# Subtest: evidence containing a synthetic secret blocks the commit and the value is never echoed
+ok 35 - evidence containing a synthetic secret blocks the commit and the value is never echoed
+  ---
+  duration_ms: 39.366625
+  type: 'test'
+  ...
+# Subtest: a failure writing the temporary file or renaming keeps the original state and leaves no temp
+ok 36 - a failure writing the temporary file or renaming keeps the original state and leaves no temp
+  ---
+  duration_ms: 62.857958
+  type: 'test'
+  ...
+# Subtest: a state or events change at either boundary is detected just before rename; the newer record is kept
+ok 37 - a state or events change at either boundary is detected just before rename; the newer record is kept
+  ---
+  duration_ms: 89.428042
+  type: 'test'
+  ...
+# Subtest: the CLI commits, refuses with exit 1 and never prints a secret
+ok 38 - the CLI commits, refuses with exit 1 and never prints a secret
+  ---
+  duration_ms: 162.786125
+  type: 'test'
+  ...
+# Subtest: design-decisions.md records every C1 default
+ok 39 - design-decisions.md records every C1 default
+  ---
+  duration_ms: 2.292709
+  type: 'test'
+  ...
+# Subtest: design-decisions.md records every C1 R1-batch default
+ok 40 - design-decisions.md records every C1 R1-batch default
+  ---
+  duration_ms: 0.781833
+  type: 'test'
+  ...
+# Subtest: no C1 default is still listed as undecided
+ok 41 - no C1 default is still listed as undecided
+  ---
+  duration_ms: 0.940584
+  type: 'test'
+  ...
+# Subtest: the documented keyword subset matches the validator
+ok 42 - the documented keyword subset matches the validator
+  ---
+  duration_ms: 1.553167
+  type: 'test'
+  ...
+# Subtest: the documented freshness caps match the validator
+ok 43 - the documented freshness caps match the validator
+  ---
+  duration_ms: 2.130833
+  type: 'test'
+  ...
+# Subtest: design-decisions.md records every C2 default and none is still undecided
+ok 44 - design-decisions.md records every C2 default and none is still undecided
+  ---
+  duration_ms: 0.926834
+  type: 'test'
+  ...
+# Subtest: D-04 names Framework Python 3.12 as the working default for browser checks
+ok 45 - D-04 names Framework Python 3.12 as the working default for browser checks
+  ---
+  duration_ms: 2.809125
+  type: 'test'
+  ...
+# Subtest: design-decisions.md records every C3 default, matching the code
+ok 46 - design-decisions.md records every C3 default, matching the code
+  ---
+  duration_ms: 13.389084
+  type: 'test'
+  ...
+# Subtest: design-decisions.md records every C4 default, matching the skills test budgets
+ok 47 - design-decisions.md records every C4 default, matching the skills test budgets
+  ---
+  duration_ms: 3.149459
+  type: 'test'
+  ...
+# Subtest: design-decisions.md records every C5 default and nothing for C5 is still undecided
+ok 48 - design-decisions.md records every C5 default and nothing for C5 is still undecided
+  ---
+  duration_ms: 1.185791
+  type: 'test'
+  ...
+# Subtest: design-decisions.md records every C6 default, and nothing is left undecided
+ok 49 - design-decisions.md records every C6 default, and nothing is left undecided
+  ---
+  duration_ms: 1.277292
+  type: 'test'
+  ...
+# Subtest: design-decisions.md records the R3 defaults
+ok 50 - design-decisions.md records the R3 defaults
+  ---
+  duration_ms: 0.479791
+  type: 'test'
+  ...
+# Subtest: the README defines the product and separates Validated from Roadmap
+ok 51 - the README defines the product and separates Validated from Roadmap
+  ---
+  duration_ms: 3.088334
+  type: 'test'
+  ...
+# Subtest: no document makes a benchmark or result claim
+ok 52 - no document makes a benchmark or result claim
+  ---
+  duration_ms: 4.854708
+  type: 'test'
+  ...
+# Subtest: documents are neutral: no experiment-arm labels, governance roles or real workload names
+ok 53 - documents are neutral: no experiment-arm labels, governance roles or real workload names
+  ---
+  duration_ms: 3.5095
+  type: 'test'
+  ...
+# Subtest: SECURITY.md covers secrets, the read-only local view, evidence and known limits
+ok 54 - SECURITY.md covers secrets, the read-only local view, evidence and known limits
+  ---
+  duration_ms: 1.091
+  type: 'test'
+  ...
+# Subtest: docs/architecture.md describes every component and trust boundary
+ok 55 - docs/architecture.md describes every component and trust boundary
+  ---
+  duration_ms: 0.678791
+  type: 'test'
+  ...
+# Subtest: the experiment and related-work documents are skeletons with no results
+ok 56 - the experiment and related-work documents are skeletons with no results
+  ---
+  duration_ms: 0.845666
+  type: 'test'
+  ...
+# Subtest: the v0.1b note says the writer is gated and not built
+ok 57 - the v0.1b note says the writer is gated and not built
+  ---
+  duration_ms: 0.872459
+  type: 'test'
+  ...
+# Subtest: the README quick start runs as written and leaves a valid workspace
+ok 58 - the README quick start runs as written and leaves a valid workspace
+  ---
+  duration_ms: 226.669917
+  type: 'test'
+  ...
+# Subtest: every product schema uses only the supported keyword subset
+ok 59 - every product schema uses only the supported keyword subset
+  ---
+  duration_ms: 5.637083
+  type: 'test'
+  ...
+# Subtest: both schemas use exactly the seven FT-7 status strings
+ok 60 - both schemas use exactly the seven FT-7 status strings
+  ---
+  duration_ms: 2.1255
+  type: 'test'
+  ...
+# Subtest: both schemas share the same stage values, covering every Annex E stage
+ok 61 - both schemas share the same stage values, covering every Annex E stage
+  ---
+  duration_ms: 1.09475
+  type: 'test'
+  ...
+# Subtest: every valid fixture state and event is schema-valid
+ok 62 - every valid fixture state and event is schema-valid
+  ---
+  duration_ms: 25.636125
+  type: 'test'
+  ...
+# Subtest: the lifecycle fixture covers the ten required steps in order
+ok 63 - the lifecycle fixture covers the ten required steps in order
+  ---
+  duration_ms: 6.141625
+  type: 'test'
+  ...
+# Subtest: lifecycle steps carry the situations the verification standard names
+ok 64 - lifecycle steps carry the situations the verification standard names
+  ---
+  duration_ms: 2.829917
+  type: 'test'
+  ...
+# Subtest: each lifecycle step only appends to the previous step's events
+ok 65 - each lifecycle step only appends to the previous step's events
+  ---
+  duration_ms: 5.720792
+  type: 'test'
+  ...
+# Subtest: there is one status fixture per FT-7 status, each holding a fact with that status
+ok 66 - there is one status fixture per FT-7 status, each holding a fact with that status
+  ---
+  duration_ms: 2.224166
+  type: 'test'
+  ...
+# Subtest: a verified fact is current only inside its freshness window
+ok 67 - a verified fact is current only inside its freshness window
+  ---
+  duration_ms: 1.50775
+  type: 'test'
+  ...
+# Subtest: only verified facts can ever be current
+ok 68 - only verified facts can ever be current
+  ---
+  duration_ms: 1.728416
+  type: 'test'
+  ...
+# Subtest: each status has its own display kind, label and symbol
+ok 69 - each status has its own display kind, label and symbol
+  ---
+  duration_ms: 1.186125
+  type: 'test'
+  ...
+# Subtest: display never upgrades a status
+ok 70 - display never upgrades a status
+  ---
+  duration_ms: 0.095958
+  type: 'test'
+  ...
+# Subtest: an expired verified fact says how it was verified and that it expired
+ok 71 - an expired verified fact says how it was verified and that it expired
+  ---
+  duration_ms: 0.120625
+  type: 'test'
+  ...
+# Subtest: ages read in plain words
+ok 72 - ages read in plain words
+  ---
+  duration_ms: 0.086417
+  type: 'test'
+  ...
+# Subtest: state recency uses the declared no-recent-update age
+ok 73 - state recency uses the declared no-recent-update age
+  ---
+  duration_ms: 0.076666
+  type: 'test'
+  ...
+# Subtest: a verified fact checked after the viewing clock is neither current nor fresh
+ok 74 - a verified fact checked after the viewing clock is neither current nor fresh
+  ---
+  duration_ms: 0.056625
+  type: 'test'
+  ...
+# Subtest: a future-dated state is not recent and flags the clock problem
+ok 75 - a future-dated state is not recent and flags the clock problem
+  ---
+  duration_ms: 0.068375
+  type: 'test'
+  ...
+# Subtest: any time after the viewing clock reads as a clock problem
+ok 76 - any time after the viewing clock reads as a clock problem
+  ---
+  duration_ms: 0.076333
+  type: 'test'
+  ...
+# fatal: not a git repository (or any of the parent directories): .git
+# Subtest: no real domain appears in any tracked file
+not ok 77 - no real domain appears in any tracked file
+  ---
+  duration_ms: 13.563541
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/neutral-domains.test.mjs:15:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Command failed: git ls-files
+    fatal: not a git repository (or any of the parent directories): .git
+    
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    genericNodeError (node:internal/errors:999:15)
+    wrappedFn (node:internal/errors:544:14)
+    checkExecSyncError (node:child_process:942:11)
+    execFileSync (node:child_process:978:15)
+    TestContext.<anonymous> (file:///private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/neutral-domains.test.mjs:16:17)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: a clean tree passes, and the planted control term is detected in the same pass
+ok 78 - a clean tree passes, and the planted control term is detected in the same pass
+  ---
+  duration_ms: 11.464959
+  type: 'test'
+  ...
+# Subtest: a hit is reported by location and term number, never by the term itself
+ok 79 - a hit is reported by location and term number, never by the term itself
+  ---
+  duration_ms: 5.601458
+  type: 'test'
+  ...
+# Subtest: .git and node_modules are skipped
+ok 80 - .git and node_modules are skipped
+  ---
+  duration_ms: 5.853875
+  type: 'test'
+  ...
+# Subtest: an empty denylist cannot prove anything and is refused
+ok 81 - an empty denylist cannot prove anything and is refused
+  ---
+  duration_ms: 2.444417
+  type: 'test'
+  ...
+# Subtest: the command prints only the verdict and locations, with exit codes 0, 1 and 2
+ok 82 - the command prints only the verdict and locations, with exit codes 0, 1 and 2
+  ---
+  duration_ms: 141.348917
+  type: 'test'
+  ...
+# Subtest: the repository itself scans clean for a term it cannot contain
+ok 83 - the repository itself scans clean for a term it cannot contain
+  ---
+  duration_ms: 29.228042
+  type: 'test'
+  ...
+# Subtest: a denylist kept inside the scanned folder is refused
+ok 84 - a denylist kept inside the scanned folder is refused
+  ---
+  duration_ms: 1.13025
+  type: 'test'
+  ...
+# Subtest: the kit has its procedure, templates and toy app
+ok 85 - the kit has its procedure, templates and toy app
+  ---
+  duration_ms: 6.950375
+  type: 'test'
+  ...
+# Subtest: the procedure covers every operational step, in the agreed order
+ok 86 - the procedure covers every operational step, in the agreed order
+  ---
+  duration_ms: 1.086791
+  type: 'test'
+  ...
+# Subtest: the activation line only points to the router, and says it is for local rehearsal only
+ok 87 - the activation line only points to the router, and says it is for local rehearsal only
+  ---
+  duration_ms: 0.934125
+  type: 'test'
+  ...
+# Subtest: the task and continuation texts are neutral and say nothing about the record
+ok 88 - the task and continuation texts are neutral and say nothing about the record
+  ---
+  duration_ms: 0.563458
+  type: 'test'
+  ...
+# Subtest: the handoff questions cover the ten handoff items without giving answers
+ok 89 - the handoff questions cover the ten handoff items without giving answers
+  ---
+  duration_ms: 0.198709
+  type: 'test'
+  ...
+# Subtest: every kit file is neutral
+ok 90 - every kit file is neutral
+  ---
+  duration_ms: 0.955625
+  type: 'test'
+  ...
+# Subtest: compose.yaml declares the same services, ports, environment, health paths and start order as the manifest
+ok 91 - compose.yaml declares the same services, ports, environment, health paths and start order as the manifest
+  ---
+  duration_ms: 0.694333
+  type: 'test'
+  ...
+# Subtest: up starts both services and reports ready only when the chain answers; down stops everything
+not ok 92 - up starts both services and reports ready only when the chain answers; down stops everything
+  ---
+  duration_ms: 13.255125
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/rehearsal.test.mjs:127:1'
+  failureType: 'uncaughtException'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: one healthy component is not a working chain
+not ok 93 - one healthy component is not a working chain
+  ---
+  duration_ms: 10.85725
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/rehearsal.test.mjs:152:1'
+  failureType: 'uncaughtException'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: up fails clearly within its timeout and leaves nothing running when a service cannot start
+not ok 94 - up fails clearly within its timeout and leaves nothing running when a service cannot start
+  ---
+  duration_ms: 6.009208
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/rehearsal.test.mjs:171:1'
+  failureType: 'uncaughtException'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: every valid fixture answers the six questions
+ok 95 - every valid fixture answers the six questions
+  ---
+  duration_ms: 20.701125
+  type: 'test'
+  ...
+# Subtest: a pending decision gets a prominent card saying what to reply and where
+ok 96 - a pending decision gets a prominent card saying what to reply and where
+  ---
+  duration_ms: 0.907042
+  type: 'test'
+  ...
+# Subtest: without a pending decision the view says so plainly
+ok 97 - without a pending decision the view says so plainly
+  ---
+  duration_ms: 0.917375
+  type: 'test'
+  ...
+# Subtest: all seven statuses appear with their own display kind
+ok 98 - all seven statuses appear with their own display kind
+  ---
+  duration_ms: 1.226541
+  type: 'test'
+  ...
+# Subtest: verified facts past their freshness window are never shown as fresh
+ok 99 - verified facts past their freshness window are never shown as fresh
+  ---
+  duration_ms: 1.109417
+  type: 'test'
+  ...
+# Subtest: state age is always visible
+ok 100 - state age is always visible
+  ---
+  duration_ms: 0.751167
+  type: 'test'
+  ...
+# Subtest: an old state shows "No recent update" instead of implying progress
+ok 101 - an old state shows "No recent update" instead of implying progress
+  ---
+  duration_ms: 1.537625
+  type: 'test'
+  ...
+# Subtest: a long operation past its expected range is called out without a progress bar
+ok 102 - a long operation past its expected range is called out without a progress bar
+  ---
+  duration_ms: 1.148042
+  type: 'test'
+  ...
+# Subtest: resources render as a tree with billable flags
+ok 103 - resources render as a tree with billable flags
+  ---
+  duration_ms: 1.448125
+  type: 'test'
+  ...
+# Subtest: a verified problem is marked in words
+ok 104 - a verified problem is marked in words
+  ---
+  duration_ms: 1.870084
+  type: 'test'
+  ...
+# Subtest: evidence locators are shown as text, never as links
+ok 105 - evidence locators are shown as text, never as links
+  ---
+  duration_ms: 1.335209
+  type: 'test'
+  ...
+# Subtest: handoff readiness and next step are shown
+ok 106 - handoff readiness and next step are shown
+  ---
+  duration_ms: 1.010959
+  type: 'test'
+  ...
+# Subtest: recent events are listed newest first
+ok 107 - recent events are listed newest first
+  ---
+  duration_ms: 0.600833
+  type: 'test'
+  ...
+# Subtest: every recorded value is escaped
+ok 108 - every recorded value is escaped
+  ---
+  duration_ms: 1.150208
+  type: 'test'
+  ...
+# Subtest: a state without the expected shape is refused rather than guessed at
+ok 109 - a state without the expected shape is refused rather than guessed at
+  ---
+  duration_ms: 0.876209
+  type: 'test'
+  ...
+# Subtest: a fact marked stale before its window ended is not described as having expired
+ok 110 - a fact marked stale before its window ended is not described as having expired
+  ---
+  duration_ms: 0.909167
+  type: 'test'
+  ...
+# Subtest: facts checked after the viewing clock are never shown as fresh
+ok 111 - facts checked after the viewing clock are never shown as fresh
+  ---
+  duration_ms: 0.847709
+  type: 'test'
+  ...
+# Subtest: a future-dated state shows a clock problem instead of implying progress
+ok 112 - a future-dated state shows a clock problem instead of implying progress
+  ---
+  duration_ms: 0.803916
+  type: 'test'
+  ...
+# Subtest: the initial stage event reads as a start, not an unrecognised stage
+ok 113 - the initial stage event reads as a start, not an unrecognised stage
+  ---
+  duration_ms: 1.270958
+  type: 'test'
+  ...
+# Subtest: facts with a future check time are listed after the fresh ones, never among them
+ok 114 - facts with a future check time are listed after the fresh ones, never among them
+  ---
+  duration_ms: 1.39525
+  type: 'test'
+  ...
+# Subtest: LICENSE is the MIT license with a neutral copyright holder
+ok 115 - LICENSE is the MIT license with a neutral copyright holder
+  ---
+  duration_ms: 2.103917
+  type: 'test'
+  ...
+# Subtest: package.json declares an MIT ES-module package with no dependencies
+ok 116 - package.json declares an MIT ES-module package with no dependencies
+  ---
+  duration_ms: 0.807792
+  type: 'test'
+  ...
+# Subtest: npm test runs the node:test suites under tests/
+ok 117 - npm test runs the node:test suites under tests/
+  ---
+  duration_ms: 0.576375
+  type: 'test'
+  ...
+# Subtest: .gitignore keeps dependencies and any evidence directory out of git
+ok 118 - .gitignore keeps dependencies and any evidence directory out of git
+  ---
+  duration_ms: 0.667083
+  type: 'test'
+  ...
+# Subtest: design-decisions.md records every C0 default with a choice and a reason
+ok 119 - design-decisions.md records every C0 default with a choice and a reason
+  ---
+  duration_ms: 1.337833
+  type: 'test'
+  ...
+# Subtest: every scenario fixture validates without any provider profile
+ok 120 - every scenario fixture validates without any provider profile
+  ---
+  duration_ms: 20.99075
+  type: 'test'
+  ...
+# Subtest: WO-P05: service rows come from health facts and host resources, with honest freshness
+ok 121 - WO-P05: service rows come from health facts and host resources, with honest freshness
+  ---
+  duration_ms: 7.029292
+  type: 'test'
+  ...
+# Subtest: WO-P06: logical ids and real names are both kept; a declaration is not a runtime observation
+ok 122 - WO-P06: logical ids and real names are both kept; a declaration is not a runtime observation
+  ---
+  duration_ms: 3.743667
+  type: 'test'
+  ...
+# Subtest: WO-P07: only this run's delta is reversed and the baseline hash is preserved
+ok 123 - WO-P07: only this run's delta is reversed and the baseline hash is preserved
+  ---
+  duration_ms: 11.047584
+  type: 'test'
+  ...
+# Subtest: WO-P08: an interruption names the pending intent and owner; brief and view agree
+ok 124 - WO-P08: an interruption names the pending intent and owner; brief and view agree
+  ---
+  duration_ms: 1.448333
+  type: 'test'
+  ...
+# Subtest: WO-P08: after deployment the owner and choice are explicit; deployed is not cleaned up
+ok 125 - WO-P08: after deployment the owner and choice are explicit; deployed is not cleaned up
+  ---
+  duration_ms: 18.654625
+  type: 'test'
+  ...
+# Subtest: generic core: router and stages need no particular cloud command
+ok 126 - generic core: router and stages need no particular cloud command
+  ---
+  duration_ms: 6.045292
+  type: 'test'
+  ...
+# Subtest: every instance string, array, number and object in the product schemas is bounded
+ok 127 - every instance string, array, number and object in the product schemas is bounded
+  ---
+  duration_ms: 2.227209
+  type: 'test'
+  ...
+# Subtest: the bounds check itself notices an unbounded string, array, number and object
+ok 128 - the bounds check itself notices an unbounded string, array, number and object
+  ---
+  duration_ms: 0.171791
+  type: 'test'
+  ...
+# Subtest: a timestamp with a 100,000-digit fraction is rejected by its length bound
+ok 129 - a timestamp with a 100,000-digit fraction is rejected by its length bound
+  ---
+  duration_ms: 17.903292
+  type: 'test'
+  ...
+# Subtest: a 100,000-digit event id is rejected by its length bound
+ok 130 - a 100,000-digit event id is rejected by its length bound
+  ---
+  duration_ms: 13.211416
+  type: 'test'
+  ...
+# Subtest: the supported keyword set is exactly the enumerated contract
+ok 131 - the supported keyword set is exactly the enumerated contract
+  ---
+  duration_ms: 3.101708
+  type: 'test'
+  ...
+# Subtest: a schema using every supported keyword is accepted
+ok 132 - a schema using every supported keyword is accepted
+  ---
+  duration_ms: 1.039458
+  type: 'test'
+  ...
+# Subtest: an unsupported keyword fails closed with keyword and pointer
+ok 133 - an unsupported keyword fails closed with keyword and pointer
+  ---
+  duration_ms: 0.26375
+  type: 'test'
+  ...
+# Subtest: unsupported keywords are found inside $defs and items
+ok 134 - unsupported keywords are found inside $defs and items
+  ---
+  duration_ms: 0.094
+  type: 'test'
+  ...
+# Subtest: a remote or non-local $ref fails closed
+ok 135 - a remote or non-local $ref fails closed
+  ---
+  duration_ms: 0.113166
+  type: 'test'
+  ...
+# Subtest: a local $ref that does not resolve fails closed
+ok 136 - a local $ref that does not resolve fails closed
+  ---
+  duration_ms: 0.074125
+  type: 'test'
+  ...
+# Subtest: a format other than date-time fails closed
+ok 137 - a format other than date-time fails closed
+  ---
+  duration_ms: 0.0695
+  type: 'test'
+  ...
+# Subtest: the root must declare the 2020-12 dialect
+ok 138 - the root must declare the 2020-12 dialect
+  ---
+  duration_ms: 0.060792
+  type: 'test'
+  ...
+# Subtest: malformed keyword values fail closed
+ok 139 - malformed keyword values fail closed
+  ---
+  duration_ms: 0.259709
+  type: 'test'
+  ...
+# Subtest: JSON pointer segments are escaped
+ok 140 - JSON pointer segments are escaped
+  ---
+  duration_ms: 0.108375
+  type: 'test'
+  ...
+# Subtest: compileSchema refuses an unsupported schema before validating anything
+ok 141 - compileSchema refuses an unsupported schema before validating anything
+  ---
+  duration_ms: 0.078083
+  type: 'test'
+  ...
+# Subtest: type mismatches are reported with the instance pointer
+ok 142 - type mismatches are reported with the instance pointer
+  ---
+  duration_ms: 0.208583
+  type: 'test'
+  ...
+# Subtest: required and additionalProperties are enforced
+ok 143 - required and additionalProperties are enforced
+  ---
+  duration_ms: 0.059958
+  type: 'test'
+  ...
+# Subtest: enum and const compare by value
+ok 144 - enum and const compare by value
+  ---
+  duration_ms: 0.0665
+  type: 'test'
+  ...
+# Subtest: array keywords validate items and bounds
+ok 145 - array keywords validate items and bounds
+  ---
+  duration_ms: 0.691792
+  type: 'test'
+  ...
+# Subtest: string keywords validate length, pattern and date-time
+ok 146 - string keywords validate length, pattern and date-time
+  ---
+  duration_ms: 1.335375
+  type: 'test'
+  ...
+# Subtest: numeric bounds are enforced
+ok 147 - numeric bounds are enforced
+  ---
+  duration_ms: 0.155625
+  type: 'test'
+  ...
+# Subtest: local $ref is resolved during validation
+ok 148 - local $ref is resolved during validation
+  ---
+  duration_ms: 0.1375
+  type: 'test'
+  ...
+# Subtest: every pattern detects its own built-in canary (the positive control)
+ok 149 - every pattern detects its own built-in canary (the positive control)
+  ---
+  duration_ms: 2.379875
+  type: 'test'
+  ...
+# Subtest: the self-test fails closed when a pattern stops detecting its canary
+ok 150 - the self-test fails closed when a pattern stops detecting its canary
+  ---
+  duration_ms: 0.759709
+  type: 'test'
+  ...
+# Subtest: findings name the pattern, file and line but never the value
+ok 151 - findings name the pattern, file and line but never the value
+  ---
+  duration_ms: 0.18025
+  type: 'test'
+  ...
+# Subtest: realistic credential shapes are detected
+ok 152 - realistic credential shapes are detected
+  ---
+  duration_ms: 0.084292
+  type: 'test'
+  ...
+# Subtest: sanitized and reference-only text is not flagged
+ok 153 - sanitized and reference-only text is not flagged
+  ---
+  duration_ms: 0.124917
+  type: 'test'
+  ...
+# Subtest: redact removes every secret-shaped span and names the pattern
+ok 154 - redact removes every secret-shaped span and names the pattern
+  ---
+  duration_ms: 0.568125
+  type: 'test'
+  ...
+# Subtest: redact leaves text without secrets unchanged
+ok 155 - redact leaves text without secrets unchanged
+  ---
+  duration_ms: 0.052958
+  type: 'test'
+  ...
+# Subtest: the named checks are the documented set
+ok 156 - the named checks are the documented set
+  ---
+  duration_ms: 0.844209
+  type: 'test'
+  ...
+# Subtest: freshness caps exist for every fact class and are finite
+ok 157 - freshness caps exist for every fact class and are finite
+  ---
+  duration_ms: 0.099708
+  type: 'test'
+  ...
+# Subtest: every valid fixture passes every named check
+ok 158 - every valid fixture passes every named check
+  ---
+  duration_ms: 12.072334
+  type: 'test'
+  ...
+# Subtest: unique-ids: duplicate fact keys or resource ids are rejected
+ok 159 - unique-ids: duplicate fact keys or resource ids are rejected
+  ---
+  duration_ms: 1.372709
+  type: 'test'
+  ...
+# Subtest: trust-by-source: a status must match where the fact came from
+ok 160 - trust-by-source: a status must match where the fact came from
+  ---
+  duration_ms: 1.33075
+  type: 'test'
+  ...
+# Subtest: verified-needs-evidence: a verified fact needs evidence, a check time and a freshness rule
+ok 161 - verified-needs-evidence: a verified fact needs evidence, a check time and a freshness rule
+  ---
+  duration_ms: 0.632042
+  type: 'test'
+  ...
+# Subtest: freshness-within-class-cap: a freshness rule cannot exceed its class cap
+ok 162 - freshness-within-class-cap: a freshness rule cannot exceed its class cap
+  ---
+  duration_ms: 1.16475
+  type: 'test'
+  ...
+# Subtest: stale-was-observed: a stale fact must have been checked once
+ok 163 - stale-was-observed: a stale fact must have been checked once
+  ---
+  duration_ms: 0.695833
+  type: 'test'
+  ...
+# Subtest: blocked-names-prerequisite: a blocked fact names what is unavailable
+ok 164 - blocked-names-prerequisite: a blocked fact names what is unavailable
+  ---
+  duration_ms: 0.313958
+  type: 'test'
+  ...
+# Subtest: assumed-holds-value: an assumed fact holds a value
+ok 165 - assumed-holds-value: an assumed fact holds a value
+  ---
+  duration_ms: 0.372416
+  type: 'test'
+  ...
+# Subtest: negative-result-needs-control: a verified "none found" states its control
+ok 166 - negative-result-needs-control: a verified "none found" states its control
+  ---
+  duration_ms: 0.501875
+  type: 'test'
+  ...
+# Subtest: resource-tree: parents must exist and must not form a cycle
+ok 167 - resource-tree: parents must exist and must not form a cycle
+  ---
+  duration_ms: 1.206875
+  type: 'test'
+  ...
+# Subtest: references-resolve: fact and tier references must exist
+ok 168 - references-resolve: fact and tier references must exist
+  ---
+  duration_ms: 2.066041
+  type: 'test'
+  ...
+# Subtest: ranges-ordered: duration and cost ranges run low to high
+ok 169 - ranges-ordered: duration and cost ranges run low to high
+  ---
+  duration_ms: 1.848834
+  type: 'test'
+  ...
+# Subtest: coalesced-plan-explanation: a plan-acceptance request carries the plan explanation
+ok 170 - coalesced-plan-explanation: a plan-acceptance request carries the plan explanation
+  ---
+  duration_ms: 1.092458
+  type: 'test'
+  ...
+# Subtest: event-sequence: ids strictly increase and time never runs backwards
+ok 171 - event-sequence: ids strictly increase and time never runs backwards
+  ---
+  duration_ms: 1.446458
+  type: 'test'
+  ...
+# Subtest: stage-chain: stages chain from the initial stage event
+ok 172 - stage-chain: stages chain from the initial stage event
+  ---
+  duration_ms: 1.254042
+  type: 'test'
+  ...
+# Subtest: event-type-fields: each event type carries its own fields
+ok 173 - event-type-fields: each event type carries its own fields
+  ---
+  duration_ms: 2.940375
+  type: 'test'
+  ...
+# Subtest: event-links: related events exist earlier; results follow intents; decisions answer requests
+ok 174 - event-links: related events exist earlier; results follow intents; decisions answer requests
+  ---
+  duration_ms: 1.971125
+  type: 'test'
+  ...
+# Subtest: state-stage-matches-events: the state stage equals the last recorded stage change
+ok 175 - state-stage-matches-events: the state stage equals the last recorded stage change
+  ---
+  duration_ms: 0.698334
+  type: 'test'
+  ...
+# Subtest: pending-decision-has-request: a pending decision was requested and is still unanswered
+ok 176 - pending-decision-has-request: a pending decision was requested and is still unanswered
+  ---
+  duration_ms: 2.749084
+  type: 'test'
+  ...
+# Subtest: pending-decision-has-request: category order alone is not a mismatch
+ok 177 - pending-decision-has-request: category order alone is not a mismatch
+  ---
+  duration_ms: 0.500625
+  type: 'test'
+  ...
+# Subtest: verified-facts-have-promotion-event: every verified fact has a promotion event
+ok 178 - verified-facts-have-promotion-event: every verified fact has a promotion event
+  ---
+  duration_ms: 0.527583
+  type: 'test'
+  ...
+# Subtest: verified-facts-have-promotion-event: a STALE fact needs the promotion event of its earlier observation
+ok 179 - verified-facts-have-promotion-event: a STALE fact needs the promotion event of its earlier observation
+  ---
+  duration_ms: 0.268625
+  type: 'test'
+  ...
+# Subtest: verified-facts-have-promotion-event: the earlier promotion must match the STALE fact's source
+ok 180 - verified-facts-have-promotion-event: the earlier promotion must match the STALE fact's source
+  ---
+  duration_ms: 0.58225
+  type: 'test'
+  ...
+# Subtest: first-billable-carries-plan: a pending first billable request must include plan acceptance
+ok 181 - first-billable-carries-plan: a pending first billable request must include plan acceptance
+  ---
+  duration_ms: 0.63425
+  type: 'test'
+  ...
+# Subtest: first-billable-carries-plan: the recorded history is checked after the decision is cleared
+ok 182 - first-billable-carries-plan: the recorded history is checked after the decision is cleared
+  ---
+  duration_ms: 1.0665
+  type: 'test'
+  ...
+# Subtest: first-billable-carries-plan: a later billable request after plan acceptance was approved is fine
+ok 183 - first-billable-carries-plan: a later billable request after plan acceptance was approved is fine
+  ---
+  duration_ms: 1.095583
+  type: 'test'
+  ...
+# Subtest: first-billable-carries-plan: plan acceptance must have been approved, not just requested
+ok 184 - first-billable-carries-plan: plan acceptance must have been approved, not just requested
+  ---
+  duration_ms: 1.462708
+  type: 'test'
+  ...
+# Subtest: requests-answered-or-pending: an unanswered request must be the pending decision
+ok 185 - requests-answered-or-pending: an unanswered request must be the pending decision
+  ---
+  duration_ms: 2.2775
+  type: 'test'
+  ...
+# Subtest: one-decision-per-request: request ids are unique
+ok 186 - one-decision-per-request: request ids are unique
+  ---
+  duration_ms: 0.762875
+  type: 'test'
+  ...
+# Subtest: one-decision-per-request: a request receives at most one decision
+ok 187 - one-decision-per-request: a request receives at most one decision
+  ---
+  duration_ms: 0.989875
+  type: 'test'
+  ...
+# Subtest: gated-intent-approved: a gated intent relates to an earlier approved decision
+ok 188 - gated-intent-approved: a gated intent relates to an earlier approved decision
+  ---
+  duration_ms: 2.090917
+  type: 'test'
+  ...
+# Subtest: pending-decision-has-request: the pending request time matches the recorded request
+ok 189 - pending-decision-has-request: the pending request time matches the recorded request
+  ---
+  duration_ms: 0.83375
+  type: 'test'
+  ...
+# Subtest: verified-facts-have-promotion-event: the latest promotion, not any promotion, must match
+ok 190 - verified-facts-have-promotion-event: the latest promotion, not any promotion, must match
+  ---
+  duration_ms: 1.655041
+  type: 'test'
+  ...
+# Subtest: verified-facts-have-promotion-event: check time and evidence must agree with the latest promotion
+ok 191 - verified-facts-have-promotion-event: check time and evidence must agree with the latest promotion
+  ---
+  duration_ms: 1.682291
+  type: 'test'
+  ...
+# Subtest: verified-facts-have-promotion-event: a STALE fact must match its latest promotion
+ok 192 - verified-facts-have-promotion-event: a STALE fact must match its latest promotion
+  ---
+  duration_ms: 0.489583
+  type: 'test'
+  ...
+# Subtest: trust-by-source: an ASSUMED fact comes from reasoning
+ok 193 - trust-by-source: an ASSUMED fact comes from reasoning
+  ---
+  duration_ms: 0.424541
+  type: 'test'
+  ...
+# Subtest: problem-is-observed: only a verified or previously verified observation can flag a problem
+ok 194 - problem-is-observed: only a verified or previously verified observation can flag a problem
+  ---
+  duration_ms: 4.088875
+  type: 'test'
+  ...
+# Subtest: the server listens on loopback only
+not ok 195 - the server listens on loopback only
+  ---
+  duration_ms: 22.693667
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/server.test.mjs:35:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: the view assets, state.json and events.jsonl are served, fresh on every request
+not ok 196 - the view assets, state.json and events.jsonl are served, fresh on every request
+  ---
+  duration_ms: 15.135166
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/server.test.mjs:43:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: every response forbids caching and any non-local resource
+not ok 197 - every response forbids caching and any non-local resource
+  ---
+  duration_ms: 6.618667
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/server.test.mjs:56:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: non-read requests are refused and change nothing
+not ok 198 - non-read requests are refused and change nothing
+  ---
+  duration_ms: 4.273625
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/server.test.mjs:70:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: HEAD returns headers without a body
+not ok 199 - HEAD returns headers without a body
+  ---
+  duration_ms: 3.91025
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/server.test.mjs:83:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: evidence, other files and traversal attempts are refused
+not ok 200 - evidence, other files and traversal attempts are refused
+  ---
+  duration_ms: 4.086125
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/server.test.mjs:92:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: requests addressed to another host name are refused
+not ok 201 - requests addressed to another host name are refused
+  ---
+  duration_ms: 2.896
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/server.test.mjs:108:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: a missing state.json is a 404, which the view shows as an error
+not ok 202 - a missing state.json is a 404, which the view shows as an error
+  ---
+  duration_ms: 0.779417
+  type: 'test'
+  location: '/private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/server.test.mjs:116:1'
+  failureType: 'testCodeFailure'
+  error: 'listen EPERM: operation not permitted 127.0.0.1'
+  code: 'EPERM'
+  stack: |-
+    Server.setupListenHandle [as _listen2] (node:net:2306:21)
+    listenInCluster (node:net:2437:12)
+    node:net:2666:7
+    process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+  ...
+# Subtest: the complete package has no dangling stage or provider reference
+ok 203 - the complete package has no dangling stage or provider reference
+  ---
+  duration_ms: 4.3385
+  type: 'test'
+  ...
+# Subtest: a deliberately reduced package is detected, and the router keeps its gates and rules
+ok 204 - a deliberately reduced package is detected, and the router keeps its gates and rules
+  ---
+  duration_ms: 20.787709
+  type: 'test'
+  ...
+# Subtest: the router opens with the minimal loop and keeps generic rules out of provider files
+ok 205 - the router opens with the minimal loop and keeps generic rules out of provider files
+  ---
+  duration_ms: 0.653083
+  type: 'test'
+  ...
+# Subtest: the plan skill tells a local target how to state its single tier honestly
+ok 206 - the plan skill tells a local target how to state its single tier honestly
+  ---
+  duration_ms: 2.644916
+  type: 'test'
+  ...
+# Subtest: verifying a fact as the router says produces a valid record
+ok 207 - verifying a fact as the router says produces a valid record
+  ---
+  duration_ms: 19.033708
+  type: 'test'
+  ...
+# Subtest: the plan-acceptance request for a local target, as the skills describe it, is valid
+ok 208 - the plan-acceptance request for a local target, as the skills describe it, is valid
+  ---
+  duration_ms: 34.449125
+  type: 'test'
+  ...
+# Subtest: manual-edit DNS follows the authority path: decision, gated intent, human edit, result, own verification
+ok 209 - manual-edit DNS follows the authority path: decision, gated intent, human edit, result, own verification
+  ---
+  duration_ms: 27.1605
+  type: 'test'
+  ...
+# Subtest: a gated DNS intent recorded before the approval is refused
+ok 210 - a gated DNS intent recorded before the approval is refused
+  ---
+  duration_ms: 9.472084
+  type: 'test'
+  ...
+# Subtest: the router lives at exactly skills/router.md, as the workspace pointer says
+ok 211 - the router lives at exactly skills/router.md, as the workspace pointer says
+  ---
+  duration_ms: 0.386625
+  type: 'test'
+  ...
+# Subtest: the router, stage and provider files exist, and nothing else is in skills/
+ok 212 - the router, stage and provider files exist, and nothing else is in skills/
+  ---
+  duration_ms: 4.365167
+  type: 'test'
+  ...
+# Subtest: every skill stays inside its length budget
+ok 213 - every skill stays inside its length budget
+  ---
+  duration_ms: 3.277833
+  type: 'test'
+  ...
+# Subtest: the router carries every always-on rule
+ok 214 - the router carries every always-on rule
+  ---
+  duration_ms: 1.372542
+  type: 'test'
+  ...
+# Subtest: every stage file restates the always-on rules
+ok 215 - every stage file restates the always-on rules
+  ---
+  duration_ms: 1.226459
+  type: 'test'
+  ...
+# Subtest: the router says what to read first, how to use the tools, and which one stage file to load
+ok 216 - the router says what to read first, how to use the tools, and which one stage file to load
+  ---
+  duration_ms: 0.236166
+  type: 'test'
+  ...
+# Subtest: each stage file carries its Annex J responsibility
+ok 217 - each stage file carries its Annex J responsibility
+  ---
+  duration_ms: 1.608417
+  type: 'test'
+  ...
+# Subtest: the handoff guidance covers all ten Annex K items
+ok 218 - the handoff guidance covers all ten Annex K items
+  ---
+  duration_ms: 0.489667
+  type: 'test'
+  ...
+# Subtest: GCP is the target with validation pending; every other provider is UNVALIDATED
+ok 219 - GCP is the target with validation pending; every other provider is UNVALIDATED
+  ---
+  duration_ms: 1.016084
+  type: 'test'
+  ...
+# Subtest: skills are neutral, client-neutral and free of governance or experiment wording
+ok 220 - skills are neutral, client-neutral and free of governance or experiment wording
+  ---
+  duration_ms: 3.068084
+  type: 'test'
+  ...
+# Subtest: every example event in the skills is schema-valid once append fills its defaults
+ok 221 - every example event in the skills is schema-valid once append fills its defaults
+  ---
+  duration_ms: 3.689166
+  type: 'test'
+  ...
+# Subtest: Cloudflare manual-edit mode records the approval and a gated intent before the human edits DNS
+ok 222 - Cloudflare manual-edit mode records the approval and a gated intent before the human edits DNS
+  ---
+  duration_ms: 0.753416
+  type: 'test'
+  ...
+# Subtest: every valid fixture validates, with the scanner self-test passing in the same call
+ok 223 - every valid fixture validates, with the scanner self-test passing in the same call
+  ---
+  duration_ms: 49.724416
+  type: 'test'
+  ...
+# Subtest: every invalid fixture is rejected for exactly its intended reason
+ok 224 - every invalid fixture is rejected for exactly its intended reason
+  ---
+  duration_ms: 8.314292
+  type: 'test'
+  ...
+# Subtest: the planted canary is caught in the same pass that clears the valid fixtures
+ok 225 - the planted canary is caught in the same pass that clears the valid fixtures
+  ---
+  duration_ms: 16.039166
+  type: 'test'
+  ...
+# Subtest: the secret scan still runs when the JSON is malformed, and errors never echo the input
+ok 226 - the secret scan still runs when the JSON is malformed, and errors never echo the input
+  ---
+  duration_ms: 12.33275
+  type: 'test'
+  ...
+# Subtest: a product schema with an unsupported keyword fails closed
+ok 227 - a product schema with an unsupported keyword fails closed
+  ---
+  duration_ms: 4.156291
+  type: 'test'
+  ...
+# Subtest: a product schema with a remote $ref fails closed
+ok 228 - a product schema with a remote $ref fails closed
+  ---
+  duration_ms: 3.3905
+  type: 'test'
+  ...
+# Subtest: a product schema with an unknown format fails closed
+ok 229 - a product schema with an unknown format fails closed
+  ---
+  duration_ms: 4.074959
+  type: 'test'
+  ...
+# Subtest: a schema file that is not valid JSON fails closed
+ok 230 - a schema file that is not valid JSON fails closed
+  ---
+  duration_ms: 3.068959
+  type: 'test'
+  ...
+# Subtest: a workspace without events.jsonl is rejected
+ok 231 - a workspace without events.jsonl is rejected
+  ---
+  duration_ms: 7.79575
+  type: 'test'
+  ...
+# Subtest: when one workspace file is missing, the remaining file is still secret-scanned
+ok 232 - when one workspace file is missing, the remaining file is still secret-scanned
+  ---
+  duration_ms: 4.921
+  type: 'test'
+  ...
+# Subtest: a blank line inside events.jsonl is rejected
+ok 233 - a blank line inside events.jsonl is rejected
+  ---
+  duration_ms: 3.151417
+  type: 'test'
+  ...
+# Subtest: schema errors on events name the line, keyword and pointer
+ok 234 - schema errors on events name the line, keyword and pointer
+  ---
+  duration_ms: 3.213125
+  type: 'test'
+  ...
+# Subtest: clean evidence files keep a valid workspace valid
+ok 235 - clean evidence files keep a valid workspace valid
+  ---
+  duration_ms: 9.83325
+  type: 'test'
+  ...
+# Subtest: every regular file under evidence/ is secret-scanned, recursively
+ok 236 - every regular file under evidence/ is secret-scanned, recursively
+  ---
+  duration_ms: 5.086208
+  type: 'test'
+  ...
+# Subtest: evidence is scanned even when state is malformed and events are missing
+ok 237 - evidence is scanned even when state is malformed and events are missing
+  ---
+  duration_ms: 2.863916
+  type: 'test'
+  ...
+# Subtest: evidence symbolic links are reported and never followed
+ok 238 - evidence symbolic links are reported and never followed
+  ---
+  duration_ms: 2.767333
+  type: 'test'
+  ...
+# Subtest: an evidence folder that is itself a symbolic link is reported and not followed
+ok 239 - an evidence folder that is itself a symbolic link is reported and not followed
+  ---
+  duration_ms: 3.326125
+  type: 'test'
+  ...
+# Subtest: schema errors on secret-shaped property names are redacted
+ok 240 - schema errors on secret-shaped property names are redacted
+  ---
+  duration_ms: 3.070542
+  type: 'test'
+  ...
+# Subtest: named-check errors quoting secret-shaped identifiers are redacted
+ok 241 - named-check errors quoting secret-shaped identifiers are redacted
+  ---
+  duration_ms: 6.987875
+  type: 'test'
+  ...
+# Subtest: an oversized events line is rejected even when its numbers are in range
+ok 242 - an oversized events line is rejected even when its numbers are in range
+  ---
+  duration_ms: 2.204667
+  type: 'test'
+  ...
+# Subtest: an oversized state.json is rejected by its size limit
+ok 243 - an oversized state.json is rejected by its size limit
+  ---
+  duration_ms: 12.402167
+  type: 'test'
+  ...
+# Subtest: an evidence file over the scan limit is reported and not scanned
+ok 244 - an evidence file over the scan limit is reported and not scanned
+  ---
+  duration_ms: 17.853958
+  type: 'test'
+  ...
+# Subtest: a special evidence file is reported without being opened
+ok 245 - a special evidence file is reported without being opened
+  ---
+  duration_ms: 7.930667
+  type: 'test'
+  ...
+# Interrupted while running: tests/view-handoff.test.mjs at /private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/view-handoff.test.mjs:1:1
+# Interrupted while running: tests/vocabulary.test.mjs at /private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/vocabulary.test.mjs:1:1
+# Interrupted while running: tests/workspace.test.mjs at /private/tmp/Reviewer Actor 02-watchover-mac-close-candidate-r2/repo/tests/workspace.test.mjs:1:1

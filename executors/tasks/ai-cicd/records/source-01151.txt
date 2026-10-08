@@ -1,0 +1,13 @@
+Deployed at **<PRIVATE_URL_0233> [Historical citation URL removed for privacy.]** using both requested commits.
+
+Verified:
+
+- HTTPS loads with a valid certificate.
+- Website signup, login, and logout work.
+- The same account and saved alert survive a full VM reboot.
+
+Administrator: `<ACCOUNT_EMAIL_011>`. Password is in the private credentials file [Referenced source unavailable in this derivative; original link retained privately.].
+
+Deployment notes [Referenced source unavailable in this derivative; original link retained privately.] include operations and verification details.
+
+Your router still cached the old DNS response at the last check; allow about 10 minutes if the site initially fails to open locally. Public DNS and HTTPS are working.

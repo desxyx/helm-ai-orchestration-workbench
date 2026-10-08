@@ -1,0 +1,17 @@
+{
+  "raw_lines": 108,
+  "delivered_lines": 108,
+  "known_pattern_matches_after": 0,
+  "candidate_patterns_after": 0,
+  "files_scanned": 45,
+  "scope": "Closure client transcript and explicitly permitted mechanical/acceptance/probe text only",
+  "full_final_secret_scan": "NOT_PERFORMED; scoped delivery redaction is not an M10 verdict",
+  "original_json_serialization": "Privately retained; redacted delivery normalized one record per original line",
+  "excluded": [
+    "HC answers/keys/scores",
+    "Council/control interpretation",
+    "Private credential values",
+    "Original image pixels",
+    "Other arm analysis"
+  ]
+}

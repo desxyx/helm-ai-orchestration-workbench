@@ -1,0 +1,309 @@
+{
+  "files": 136,
+  "hits": [
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "raw-minus-exact-url",
+      "term": "<PERSONAL_HANDLE>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "raw-minus-exact-url",
+      "term": "<OPERATIONS_COORDINATOR_ID>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "concat-joined",
+      "term": "<PERSONAL_HANDLE>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "concat-joined",
+      "term": "<OPERATIONS_COORDINATOR_ID>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "concat-joined",
+      "term": "<ACTOR_01_ID>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "concat-joined",
+      "term": "<ACTOR_02_ID>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "concat-joined",
+      "term": "<USER_HOME_ROOT>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "separators-removed",
+      "term": "<PERSONAL_HANDLE>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "separators-removed",
+      "term": "<OPERATIONS_COORDINATOR_ID>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "separators-removed",
+      "term": "<ACTOR_01_ID>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "separators-removed",
+      "term": "<ACTOR_02_ID>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "separators-removed",
+      "term": "<USER_HOME_ROOT>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "unescaped",
+      "term": "<PERSONAL_HANDLE>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "unescaped",
+      "term": "<OPERATIONS_COORDINATOR_ID>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "percent-decoded",
+      "term": "<PERSONAL_HANDLE>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "percent-decoded",
+      "term": "<OPERATIONS_COORDINATOR_ID>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "cjk",
+      "term": "<CHINESE_POSITIVE_CONTROL_STRING>"
+    },
+    {
+      "file": "tests/planted-controls.mjs",
+      "variant": "standalone-Human Operator",
+      "term": "someone/project'; // ask Human Operator first const f = 'https:/"
+    },
+    {
+      "file": "PATH:docs/<PERSONAL_NAME>-notes/a.md",
+      "variant": "raw-minus-exact-url",
+      "term": "<PERSONAL_NAME>"
+    },
+    {
+      "file": "PATH:docs/<PERSONAL_NAME>-notes/a.md",
+      "variant": "concat-joined",
+      "term": "<PERSONAL_NAME>"
+    },
+    {
+      "file": "PATH:docs/<PERSONAL_NAME>-notes/a.md",
+      "variant": "separators-removed",
+      "term": "<PERSONAL_NAME>"
+    },
+    {
+      "file": "PATH:docs/<PERSONAL_NAME>-notes/a.md",
+      "variant": "unescaped",
+      "term": "<PERSONAL_NAME>"
+    },
+    {
+      "file": "PATH:docs/<PERSONAL_NAME>-notes/a.md",
+      "variant": "percent-decoded",
+      "term": "<PERSONAL_NAME>"
+    },
+    {
+      "file": "skills/stages/execute.md",
+      "variant": "separators-removed",
+      "term": "<ACTOR_02_ID>"
+    }
+  ],
+  "urls": {
+    "http://127.0.0.1:7431/": {
+      "allowed": true,
+      "files": [
+        "README.md"
+      ]
+    },
+    "https://github.com/desxyx/helm-ai-orchestration-workbench": {
+      "allowed": true,
+      "files": [
+        "README.md",
+        "tests/helpers/vocabulary.mjs",
+        "docs/allowed-control.md",
+        "docs/provenance.md"
+      ]
+    },
+    "https://github.com/helmls-studio/agent-run-recorder": {
+      "allowed": true,
+      "files": [
+        "README.md",
+        "tests/helpers/vocabulary.mjs",
+        "docs/provenance.md"
+      ]
+    },
+    "https://json-schema.org/draft/2020-12/schema": {
+      "allowed": true,
+      "files": [
+        "tools/lib/schema-subset.mjs",
+        "tests/schema-subset.test.mjs",
+        "schema/state.schema.json",
+        "schema/event.schema.json"
+      ]
+    },
+    "http://127.0.0.1:${actualPort}/": {
+      "allowed": false,
+      "files": [
+        "tools/lib/server.mjs"
+      ]
+    },
+    "postgres://<CONNECTION_STRING_REMOVED>": {
+      "allowed": false,
+      "files": [
+        "tests/secret-scan.test.mjs"
+      ]
+    },
+    "https://example.com/other.json": {
+      "allowed": true,
+      "files": [
+        "tests/schema-subset.test.mjs"
+      ]
+    },
+    "http://json-schema.org/draft-07/schema#": {
+      "allowed": false,
+      "files": [
+        "tests/schema-subset.test.mjs"
+      ]
+    },
+    "postgres://<DATABASE_USERINFO_HOST_018>:5432/app": {
+      "allowed": false,
+      "files": [
+        "tests/secret-scan.test.mjs"
+      ]
+    },
+    "https://git.example.com/demo/demo-app.git": {
+      "allowed": true,
+      "files": [
+        "tests/secret-scan.test.mjs",
+        "fixtures/valid/lifecycle/07-verified/state.json",
+        "fixtures/valid/lifecycle/02-approval-pending/state.json",
+        "fixtures/valid/lifecycle/05-incident/state.json",
+        "fixtures/valid/lifecycle/08-handoff/state.json",
+        "fixtures/valid/lifecycle/06-recovered/state.json",
+        "fixtures/valid/lifecycle/03-long-operation/state.json",
+        "fixtures/valid/lifecycle/10-closed/state.json",
+        "fixtures/valid/lifecycle/04-verification-failed/state.json",
+        "fixtures/valid/lifecycle/01-recon/state.json",
+        "fixtures/valid/lifecycle/09-teardown/state.json",
+        "fixtures/invalid/malformed-events-line/state.json",
+        "fixtures/invalid/schema-invalid-secret-value-field/state.json",
+        "fixtures/invalid/planted-secret-canary/state.json",
+        "fixtures/invalid/malformed-state-json/state.json",
+        "fixtures/invalid/schema-invalid-status/state.json"
+      ]
+    },
+    "<PRIVATE_URL_1051>": {
+      "allowed": false,
+      "files": [
+        "tests/planted-controls.mjs"
+      ]
+    },
+    "https://github.com/helmls-studio/watchover-ai-devops/private": {
+      "allowed": false,
+      "files": [
+        "tests/planted-controls.mjs"
+      ]
+    },
+    "<PRIVATE_URL_0168>": {
+      "allowed": false,
+      "files": [
+        "tests/planted-controls.mjs"
+      ]
+    },
+    "http://127.0.0.1:${view.port}/": {
+      "allowed": false,
+      "files": [
+        "tests/server.test.mjs"
+      ]
+    },
+    "https://example.com/actor.json": {
+      "allowed": true,
+      "files": [
+        "tests/validate.test.mjs"
+      ]
+    },
+    "postgres://<DATABASE_USERINFO_HOST_066>/app": {
+      "allowed": false,
+      "files": [
+        "tests/validate.test.mjs"
+      ]
+    },
+    "https://github.com/helmls-studio/watchover-ai-devops": {
+      "allowed": true,
+      "files": [
+        "tests/helpers/vocabulary.mjs"
+      ]
+    }
+  },
+  "paths_checked": 136,
+  "disallowed_urls": {
+    "http://127.0.0.1:${actualPort}/": {
+      "allowed": false,
+      "files": [
+        "tools/lib/server.mjs"
+      ]
+    },
+    "postgres://<CONNECTION_STRING_REMOVED>": {
+      "allowed": false,
+      "files": [
+        "tests/secret-scan.test.mjs"
+      ]
+    },
+    "http://json-schema.org/draft-07/schema#": {
+      "allowed": false,
+      "files": [
+        "tests/schema-subset.test.mjs"
+      ]
+    },
+    "postgres://<DATABASE_USERINFO_HOST_018>:5432/app": {
+      "allowed": false,
+      "files": [
+        "tests/secret-scan.test.mjs"
+      ]
+    },
+    "<PRIVATE_URL_1051>": {
+      "allowed": false,
+      "files": [
+        "tests/planted-controls.mjs"
+      ]
+    },
+    "https://github.com/helmls-studio/watchover-ai-devops/private": {
+      "allowed": false,
+      "files": [
+        "tests/planted-controls.mjs"
+      ]
+    },
+    "<PRIVATE_URL_0168>": {
+      "allowed": false,
+      "files": [
+        "tests/planted-controls.mjs"
+      ]
+    },
+    "http://127.0.0.1:${view.port}/": {
+      "allowed": false,
+      "files": [
+        "tests/server.test.mjs"
+      ]
+    },
+    "postgres://<DATABASE_USERINFO_HOST_066>/app": {
+      "allowed": false,
+      "files": [
+        "tests/validate.test.mjs"
+      ]
+    }
+  }
+}

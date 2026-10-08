@@ -1,0 +1,21 @@
+{
+  "artifact_class": "OWNER_AUTHORIZED_SECRET_RETRIEVAL_RECEIPT",
+  "run_id": "RUN-W2B",
+  "recorded_at": "2026-10-05T21:34:13+11:00",
+  "owner_request": "Could you retrieve the password for me?",
+  "owner_request_translation_note": "English translated/redacted derivative of the original human wording; not verbatim original English. The historical field name is retained.",
+  "target": "Existing run VM /srv/<W2_RUN_RESOURCE_PREFIX>/secrets/admin.json administrator entry",
+  "action": "IAP SSH with existing key, --plain, strict existing host trust, sudo noninteractive read of only administrator email/password",
+  "attempts": 2,
+  "attempt1": "Existing default key denied publickey; no key addition or configuration fallback",
+  "attempt2": "Existing Deployer run key succeeded",
+  "status": "RETRIEVED_FOR_OWNER",
+  "password_stored_in_this_receipt": false,
+  "credential_value_or_hash_in_experiment_evidence": false,
+  "vm_or_project_metadata_mutated": false,
+  "real_password_changed": false,
+  "new_keys_or_login": false,
+  "observer_or_deployer_feedback": false,
+  "source_note": "README retrieval command relies on default key, but actual authorized run key is /private/tmp/<W2_RUN_RESOURCE_PREFIX>-ssh-key; this operator-route limitation retained, not repaired",
+  "timing": "After Owner relay of Deployer terminal declaration; HC-TERM not administered yet. This administrative action is not Deployer work or independent app acceptance."
+}

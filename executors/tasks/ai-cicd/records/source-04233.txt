@@ -1,0 +1,35 @@
+This is the r2 scope update for Executor Actor 01.
+
+Read the current exclusive entry:
+source-04237.md
+
+Then read and follow the sealed package's actual Executor prompt:
+../../../../userops/tasks/ai-cicd/records/source-04434.txt
+
+That prompt and the current r2 release replace the old narrow r1 instructions.
+Implement all WO-P01–WO-P08 using the product-only PATCH_PLAN, ACCEPTANCE_MATRIX and
+WINDOWS_HANDOFF inputs; do not load coordinator trace/evaluation or old experiment data.
+
+Human Operator explicitly directs you to continue your existing session; do not start over or reset.
+Read rounds/r3_CONTEXT_CONTINUATION_AMENDMENT.md as the narrow override of the package's
+fresh-context wording. Preserve existing product changes and completed work. Return actual
+EXEC_ACK, session/model/tools/permissions, HEAD/worktree, completed work/tests and remaining
+items. Submit or supplement the finite eight-item plan in the next unused role-owned file;
+independent acceptance of changed scope routes the authorized local implementation.
+Update current STATUS routing and preserve all previous role artifacts.
+
+Do not stop after merely editing the three earlier documents. Complete new commit-state,
+brief, service view and the remaining package requirements with necessary local tests.
+One final version freeze and publication readiness, no extra Mac AI rehearsal.
+Remote writes remain pending a concrete target/action release; Windows behavior unverified.
+
+Latest Owner product clarification: read rounds/r4_PROVIDER_NEUTRAL_CLARIFICATION.md.
+Keep generic core and shared rules independent of GCP. GCP-specific details stay in its
+profile; clarify generic product purpose versus provider validation coverage. Incorporate
+within the current eight-patch plan/rework and existing local checks; do not restart or
+expand to a multi-cloud implementation/validation project.
+
+Publication update: read rounds/r5_PRIVATE_FIRST_PUBLICATION.md. Current Mac deliverable
+is a private development/test release for Windows, not a public upload. Continue the current
+targeted product review; public sanitization follows Windows final changes as a separate
+export. Exact private remote/action still to be settled; no remote mutation from this note.

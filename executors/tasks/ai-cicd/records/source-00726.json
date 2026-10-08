@@ -1,0 +1,36 @@
+{
+  "artifact_class": "SEALED_COMPARISON_CUSTODY",
+  "sealed_at": "2026-10-05T23:06:57.516310+00:00",
+  "status": "SEALED_DESCRIPTIVE_COMPARISON",
+  "custodian": "Operations Coordinator",
+  "session_id": "<NATIVE_ID_2616>",
+  "actual_native_model_ids": [
+    "claude-sonnet-5-5"
+  ],
+  "analysis_scope": "New read-only session after both Observer seals; one narrow binding revision in the same session",
+  "report_sha256": "<PRIVATE_REF_02244>",
+  "report_materialization": "Native result text, trailing whitespace removed and one final newline added; no editorial or score changes",
+  "native_original_sha256": "<PRIVATE_REF_03114>",
+  "native_revision_sha256": "<PRIVATE_REF_00541>",
+  "input_manifests": {
+    "SHA256SUMS_INPUTS": "<PRIVATE_REF_03111>",
+    "SHA256SUMS_BINDING_SUPPLEMENT": "<PRIVATE_REF_01614>"
+  },
+  "input_files_copied_byte_identically": 28,
+  "original_manifest_rows_verified": 25,
+  "supplement_manifest_rows_verified": 1,
+  "known_private_identifiers_in_report": 0,
+  "artifact_scan_sha256": "<PRIVATE_REF_02140>",
+  "scan_scope": "Final report only; does not rescore M10 or certify historical corpus secrecy",
+  "arm_validity": {
+    "RUN-W2A": "INVALID",
+    "RUN-W2B": "INVALID"
+  },
+  "arm_assistance": "Both ASSISTED_DESCRIPTIVE_OBSERVATION",
+  "controlled_causal_effect_eligible": false,
+  "W2C": "NOT_EXECUTED",
+  "metrics_recomputed_or_rewritten": false,
+  "product_modified": false,
+  "cloud_or_DNS_actions": false,
+  "pending_council_record": "W2B §14.3 record-only return prepared; no Council adjudication claimed"
+}

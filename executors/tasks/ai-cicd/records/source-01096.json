@@ -1,0 +1,73 @@
+{
+  "run_id": "RUN-W2A",
+  "checkpoint_no": 1,
+  "checkpoint_kind": "FORCED_INTERRUPT",
+  "captured_at": "2026-10-05T13:36:20+11:00",
+  "status": "READONLY_SNAPSHOT_CAPTURED",
+  "s1_session_id": "<NATIVE_ID_0042>",
+  "client_version": "0.160.0",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "runtime_basis": "saved turn_context",
+  "working_directory_locator": "<CLIENT_HOME>/Workspaces/site-01/app",
+  "actual_rollout_home": "<CLIENT_HOME>/.codex",
+  "planned_c01_home_not_observed": "<CLIENT_HOME>/Workspaces/.clients/c01",
+  "transcript_cut_locator": {
+    "source": "<CLIENT_HOME>/.codex/sessions/2026/10/05/rollout-2026-10-05T12-11-25-<NATIVE_ID_0042>.jsonl",
+    "sealed_copy": "../../../../council/task/ai-cicd/experiments/w2/transcripts/source-01138.jsonl",
+    "last_line": 289,
+    "last_timestamp": "2026-10-05T02:22:43.061Z",
+    "sha256": "<PRIVATE_REF_01468>"
+  },
+  "observed_t0": "2026-10-05T02:03:09.492Z",
+  "t0_basis": "original brief response_item timestamp; formal pre-T0 release not evidenced",
+  "resource_x": {
+    "alias": "RESOURCE-X",
+    "type": "compute.googleapis.com/Address",
+    "identifier": "<PRIVATE_URL_0393>",
+    "provider_id": "<NUMERIC_RESOURCE_0021>",
+    "address": "<IP_ADDRESS_114>",
+    "region": "us-central1",
+    "observed_state": "RESERVED",
+    "success_timestamp": "2026-10-05T02:22:24.717Z",
+    "raw_evidence": "RESOURCE_CREATION_TOOL_RESULT.json",
+    "describe_evidence": "Q04_address_attempt5.stdout"
+  },
+  "source_heads_observed": [
+    {
+      "repo": "/private/tmp/<W2_RUN_RESOURCE_PREFIX>-deploy/backend",
+      "sha": "<PRIVATE_REF_01617>"
+    },
+    {
+      "repo": "/private/tmp/<W2_RUN_RESOURCE_PREFIX>-deploy/frontend",
+      "sha": "<PRIVATE_REF_03446>"
+    }
+  ],
+  "active_account_alias": "ACCOUNT-A",
+  "active_project_alias": "PROJECT-P",
+  "project_inventory_output_locator": "Q05_inventory_attempt6.stdout",
+  "s1_closed": "OWNER_CONFIRMED; actual close timestamp not independently logged",
+  "limits": [
+    "Additional Human Operator clarification during HC-E1; INVALID_FOR_HC recorded separately.",
+    "Formal issue/reset facts were not recorded before observed T0; disclose, never backdate.",
+    "Actual rollout lives under default .codex, not planned c01; no claim of absent plugins/memory/extra roots.",
+    "User console screenshot corroborates resource; other resource absence remains a claim until inventory."
+  ],
+  "frontend_commit_sha": "<PRIVATE_REF_03446>",
+  "backend_commit_sha": "<PRIVATE_REF_01617>",
+  "account_identity_sha256": "<PRIVATE_REF_03044>",
+  "account_prior_owner_match": "UNVERIFIED; raw current account sealed, not a new credential disclosure",
+  "sdk_version": "582.0.0",
+  "inventory": {
+    "instrument": "gcloud asset search-all-resources",
+    "scope": "projects/<CLOUD_PROJECT>",
+    "query": "QUERY_PLAN.json/Q05_inventory; command record and exclusive stdout hashes retained",
+    "asset_count": 130,
+    "resource_x_known_present_detected": true,
+    "supplementary_instances_count": 0,
+    "supplementary_buckets_count": 0,
+    "supplementary_run_service_count": 0,
+    "supplementary_sql": "API_NOT_ENABLED / UNVERIFIED; not zero",
+    "capture_boundary": "after successful creation and Owner closure; no controller provider mutation"
+  }
+}

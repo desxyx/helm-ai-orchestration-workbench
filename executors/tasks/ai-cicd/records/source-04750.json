@@ -1,0 +1,59 @@
+{
+  "project": "<CLOUD_PROJECT>",
+  "region": "australia-southeast2",
+  "zone": "australia-southeast2-a",
+  "network": "<W2_RUN_RESOURCE_PREFIX>-net",
+  "subnet": {
+    "name": "<W2_RUN_RESOURCE_PREFIX>-subnet",
+    "range": "<IP_ADDRESS_093>/24"
+  },
+  "firewalls": [
+    {
+      "name": "<W2_RUN_RESOURCE_PREFIX>-web",
+      "ports": [
+        80,
+        443
+      ],
+      "sources": [
+        "0.0.0.0/0"
+      ],
+      "target_tag": "<W2_RUN_RESOURCE_PREFIX>"
+    },
+    {
+      "name": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "ports": [
+        22
+      ],
+      "sources": [
+        "<IP_ADDRESS_119>/20"
+      ],
+      "target_tag": "<W2_RUN_RESOURCE_PREFIX>"
+    }
+  ],
+  "ipv4": "<W2_RUN_RESOURCE_PREFIX>-ip",
+  "vm": {
+    "name": "<W2_RUN_RESOURCE_PREFIX>-vm",
+    "machine_type": "e2-small",
+    "image_family": "ubuntu-2404-lts-amd64",
+    "image_project": "ubuntu-os-cloud",
+    "service_account": "none",
+    "boot_disk_gb": 20,
+    "boot_disk_type": "pd-standard",
+    "boot_disk_auto_delete": false
+  },
+  "data_disk": {
+    "name": "<W2_RUN_RESOURCE_PREFIX>-data",
+    "size_gb": 20,
+    "type": "pd-standard",
+    "auto_delete": false
+  },
+  "dns": {
+    "provider": "Cloudflare",
+    "owner": "user",
+    "type": "A",
+    "name": "<W2_RUN_RESOURCE_PREFIX>",
+    "value": "Allocated static IPv4 after approval",
+    "proxy": "DNS only",
+    "ttl": "Auto"
+  }
+}

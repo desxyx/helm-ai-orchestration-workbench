@@ -1,0 +1,240 @@
+{
+  "checked_at": "2026-10-07T23:23:36.513315+11:00",
+  "phase": "preinit",
+  "coverage": "all file paths and UTF-8 bytes, hidden files, decoded Unicode/hex and adjacent quoted fragments; .git inspected separately",
+  "limits": "finite denylist and shape controls, not universal DLP; no binary source files or images",
+  "external_controls": [
+    {
+      "case": "denylist-1",
+      "detected": true
+    },
+    {
+      "case": "denylist-2",
+      "detected": true
+    },
+    {
+      "case": "denylist-3",
+      "detected": true
+    },
+    {
+      "case": "denylist-4",
+      "detected": true
+    },
+    {
+      "case": "denylist-5",
+      "detected": true
+    },
+    {
+      "case": "denylist-6",
+      "detected": true
+    },
+    {
+      "case": "denylist-7",
+      "detected": true
+    },
+    {
+      "case": "denylist-8",
+      "detected": true
+    },
+    {
+      "case": "denylist-9",
+      "detected": true
+    },
+    {
+      "case": "denylist-10",
+      "detected": true
+    },
+    {
+      "case": "denylist-11",
+      "detected": true
+    },
+    {
+      "case": "denylist-12",
+      "detected": true
+    },
+    {
+      "case": "denylist-13",
+      "detected": true
+    },
+    {
+      "case": "denylist-14",
+      "detected": true
+    },
+    {
+      "case": "denylist-15",
+      "detected": true
+    },
+    {
+      "case": "denylist-16",
+      "detected": true
+    },
+    {
+      "case": "denylist-17",
+      "detected": true
+    },
+    {
+      "case": "denylist-18",
+      "detected": true
+    },
+    {
+      "case": "neutral-uppercase",
+      "detected": true
+    },
+    {
+      "case": "neutral-fragment-call",
+      "detected": true
+    },
+    {
+      "case": "neutral-concatenation",
+      "detected": true
+    },
+    {
+      "case": "neutral-unicode-escape",
+      "detected": true
+    },
+    {
+      "case": "neutral-hex-escape",
+      "detected": true
+    },
+    {
+      "case": "private-path-name",
+      "detected": true
+    },
+    {
+      "case": "standalone-oversight",
+      "detected": true
+    },
+    {
+      "case": "windows-home",
+      "detected": true
+    },
+    {
+      "case": "CJK-literal",
+      "detected": true
+    },
+    {
+      "case": "CJK-escape",
+      "detected": true
+    },
+    {
+      "case": "workbench-url-suffix",
+      "detected": true
+    },
+    {
+      "case": "workbench-query",
+      "detected": true
+    },
+    {
+      "case": "workbench-lookalike",
+      "detected": true
+    },
+    {
+      "case": "workbench-outside-docs",
+      "detected": true
+    },
+    {
+      "case": "approved-exact-public-URLs",
+      "accepted": true
+    },
+    {
+      "case": "neutral-product-words-and-loopback",
+      "accepted": true
+    }
+  ],
+  "unsanitized_source_positive_control": {
+    "files": 146,
+    "utf8_text_files": 146,
+    "binary_images": 0,
+    "hits": [
+      {
+        "file": "tests/view-handoff.test.mjs",
+        "line": 83,
+        "check": "CJK"
+      },
+      {
+        "file": "tests/view-handoff.test.mjs",
+        "line": 105,
+        "check": "CJK"
+      },
+      {
+        "file": "skills/stages/plan.md",
+        "line": 41,
+        "check": "CJK"
+      },
+      {
+        "file": "fixtures/valid/scenarios/view-handoff-exception/state.json",
+        "line": 120,
+        "check": "CJK"
+      },
+      {
+        "file": "fixtures/valid/scenarios/view-handoff-exception/events.jsonl",
+        "line": 4,
+        "check": "CJK"
+      },
+      {
+        "file": "tests/helpers/vocabulary.mjs",
+        "line": 14,
+        "check": "denylist",
+        "term": 7
+      },
+      {
+        "file": "tests/helpers/vocabulary.mjs",
+        "line": 14,
+        "check": "denylist",
+        "term": 8
+      },
+      {
+        "file": "tests/helpers/vocabulary.mjs",
+        "line": 14,
+        "check": "denylist",
+        "term": 10
+      },
+      {
+        "file": "tests/helpers/vocabulary.mjs",
+        "line": 14,
+        "check": "denylist",
+        "term": 9
+      },
+      {
+        "file": "tests/helpers/vocabulary.mjs",
+        "line": 17,
+        "check": "standalone-oversight"
+      },
+      {
+        "file": "tests/helpers/vocabulary.mjs",
+        "line": 22,
+        "check": "denylist",
+        "term": 7
+      },
+      {
+        "file": "tests/helpers/vocabulary.mjs",
+        "line": 22,
+        "check": "denylist",
+        "term": 8
+      },
+      {
+        "file": "tests/helpers/vocabulary.mjs",
+        "line": 22,
+        "check": "denylist",
+        "term": 10
+      },
+      {
+        "file": "tests/helpers/vocabulary.mjs",
+        "line": 22,
+        "check": "denylist",
+        "term": 9
+      },
+      {
+        "file": "tests/helpers/vocabulary.mjs",
+        "line": 23,
+        "check": "standalone-oversight"
+      }
+    ]
+  },
+  "public_scan": {
+    "files": 133,
+    "utf8_text_files": 133,
+    "binary_images": 0,
+    "hits": []
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-05T08:49:08.704Z",
+  "region": "Melbourne (australia-southeast2)",
+  "currency": "USD",
+  "monthly_hours": 730,
+  "e2_small_per_hour": 0.020204,
+  "e2_medium_per_hour": 0.040408,
+  "standard_disk_gib_month": 0.054,
+  "in_use_ipv4_per_hour": 0.005,
+  "base_small_monthly": 20.56,
+  "base_medium_monthly": 35.31,
+  "sources": [
+    "<PRIVATE_URL_0075>ogle.com/products/compute/pricing/general-purpose",
+    "<PRIVATE_URL_0075>ogle.com/compute/disks-image-pricing",
+    "<PRIVATE_URL_0075>ogle.com/vpc/network-pricing"
+  ],
+  "excluded": "Outbound traffic, tax, exchange rate and any additional services; no discounts assumed"
+}

@@ -1,0 +1,27 @@
+Captured 2026-10-06 ~12:13-12:18Z (UTC). Read of files in the pinned checkouts.
+
+taiga-back @ <PRIVATE_REF_01638>
+- docker/Dockerfile: python:3.11-slim, pip install requirements.txt + requirements-contribs.txt,
+  collectstatic, gunicorn taiga.wsgi on :8000. entrypoint.sh runs `migrate` and
+  `loaddata initial_project_templates` on every start.
+- requirements.txt: django==3.2.25, gunicorn==23.0.0, celery==5.5.3; Postgres via psycopg2.
+- docker/config.py reads env: POSTGRES_*, TAIGA_SECRET_KEY, TAIGA_SITES_SCHEME/DOMAIN,
+  PUBLIC_REGISTER_ENABLED (default False), EMAIL_BACKEND (default console), CELERY_ENABLED
+  (default True -> needs RabbitMQ), ENABLE_TELEMETRY (default True).
+- docker/config.py hard-codes EVENTS_PUSH_BACKEND = rabbitmq. taiga/events/backends/rabbitmq.py
+  catches only ConnectionRefusedError/AccessRefused on connect; an unresolvable host would raise.
+  settings/common.py default is taiga.events.backends.postgresql.EventsPushBackend (no RabbitMQ).
+- docker/config.py sets DEFAULT_FILE_STORAGE = taiga_contrib_protected ProtectedFileSystemStorage,
+  which expects the separate taiga-protected service (not one of the two given repos).
+  settings/common.py default is taiga.base.storage.FileSystemStorage, MEDIA_ROOT=<base>/media.
+- taiga/auth/services.py public_register(): creates user with verified_email=False, calls
+  send_register_email() and returns an auth token. Sign-up does not wait on email verification.
+
+taiga-front @ <PRIVATE_REF_03189>
+- docker/Dockerfile does NOT build the checked-out source: it downloads the prebuilt
+  taiga-front-dist 6.10.3 zip from GitHub. Using it would not deploy the pinned commit.
+- Build from source: `npx gulp deploy` writes dist/. .nvmrc = v16.19.1.
+- docker/conf.json.template: api URL, eventsUrl, publicRegisterEnabled etc.
+
+Local tooling: node v22.20.0; Docker CLI present but Docker Desktop engine not running
+("failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine").

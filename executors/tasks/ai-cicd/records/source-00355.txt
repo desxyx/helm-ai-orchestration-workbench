@@ -1,0 +1,5 @@
+$ gcloud compute resource-policies delete <RUN_SNAPSHOT_POLICY> --region australia-southeast1 --quiet --project <CLOUD_PROJECT>
+# started 2026-10-06T14:50:11.000Z  ended 2026-10-06T14:50:16.000Z  exit 0
+--- stdout
+--- stderr
+Deleted [<PRIVATE_URL_0343>].

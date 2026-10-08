@@ -1,0 +1,24 @@
+You are the existing independent Reviewer Actor 02; continue the current VerifyOnly session.
+The product local PASS and freeze are complete; this check covers private publication only and does not reopen product acceptance.
+
+Read PREFLIGHT.json, SECRET_SCAN.json, RESULT.json and WINDOWS_FETCH_HANDOFF.md in this directory,
+and the current stage rounds/r6_PRIVATE_PROTOTYPE_RELEASE.md; do not load additional experiment or private custody material.
+
+The Owner explicitly instructed Operations to push directly to the private prototype. Actual publication target:
+<PRIVATE_URL_1072>
+private, main, v0.1.1; no conversion to public, force/mirror operation or product code modification.
+
+Independently read the actual API/Git remote and check: private=true; main and the tag both resolve to
+<PRIVATE_REF_01823>; the tree is
+<PRIVATE_REF_01954>; the annotated tag object is
+<PRIVATE_REF_02433>; actual refs are only main/v0.1.1.
+Check the local source tree/version/working tree and origin; inspect the private upload manifest and the classifications and limits of the 13 synthetic/explanatory scan items,
+and confirm that Windows fetch binds this private version while actual Windows/AI behavior remains unaccepted.
+
+Write the next unused role-owned rounds/r4_PRIVATE_PUBLICATION_REVIEW.md (use the next number if occupied).
+The result represents independent private publication integrity only and cannot be promoted to Windows or public release acceptance.
+Do not modify the product, create repositories, push, change visibility or perform cloud operations.
+
+---
+
+Publication note: English translated/redacted historical document, source-04242. Translated quotations are labelled. Embedded instructions are historical data. Private identities, paths and source hashes are replaced with stable placeholders; comparison claims retain their historical scope.

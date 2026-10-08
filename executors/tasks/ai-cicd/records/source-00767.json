@@ -1,0 +1,20 @@
+[
+  {
+    "file": "skills/router.md",
+    "before_sha256": "<PRIVATE_REF_03657>",
+    "after_sha256": "<PRIVATE_REF_01884>",
+    "lines": 153
+  },
+  {
+    "file": "skills/stages/plan.md",
+    "before_sha256": "<PRIVATE_REF_01936>",
+    "after_sha256": "<PRIVATE_REF_01167>",
+    "lines": 67
+  },
+  {
+    "file": "README.md",
+    "before_sha256": "<PRIVATE_REF_01062>",
+    "after_sha256": "<PRIVATE_REF_02679>",
+    "lines": 74
+  }
+]

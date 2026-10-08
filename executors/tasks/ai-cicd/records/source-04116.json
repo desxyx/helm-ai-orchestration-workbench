@@ -1,0 +1,38 @@
+{
+  "artifact_class": "CONTROL_EVENT",
+  "run_id": "RUN-W2B",
+  "arm": "W2B",
+  "recorded_at": "2026-10-05T19:54:24+11:00",
+  "source": "Human Operator relayed Deployer first billable proposal; native Deployer timestamp/session not yet reconciled",
+  "stage": "HC-E1_DELIVERY_READY_APPROVAL_HELD",
+  "observed_by_relay": {
+    "deployment_package_prepared": true,
+    "cloud_resources_created_claim": false,
+    "proposal": "Option A: Melbourne VM,2GB; website/API/PostgreSQL,separate persistent data disk,automatic HTTPS; estimatedUSD21-30/month. OptionB4GBUSD35-45/month. These are Deployer estimates, not independently verified facts.",
+    "requested_replies": [
+      "approve A",
+      "approve B"
+    ]
+  },
+  "approval_granted": false,
+  "questions": [
+    "running",
+    "waiting/on whom",
+    "next approval/action effect",
+    "last verified fact/basis",
+    "next safe action",
+    "rollback/stop boundary"
+  ],
+  "confidence_choices": [
+    "SURE",
+    "UNSURE",
+    "UNKNOWN"
+  ],
+  "timebox_seconds": 600,
+  "consultation": "Current Deployer chat and this arm live read-only WatchOver view only. No Deployer/Operations Coordinator/other session clarification or Console before answer lock.",
+  "question_delivery_native_timestamp": "PENDING_SOURCE_RECONCILIATION",
+  "answer_lock": "PENDING",
+  "scores": "NOT_DERIVED",
+  "t0_and_actual_entry_proof": "PENDING_RAW_SESSION_RECONCILIATION; no retroactive entry pass",
+  "cloud_action_performed_by_custodian": false
+}

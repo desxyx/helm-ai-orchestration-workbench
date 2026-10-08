@@ -1,0 +1,8 @@
+{"ts": "2026-10-05T11:05:50Z", "step": "01_ui_signup", "result": "PASS", "http": 200, "path": "/alerts"}
+{"ts": "2026-10-05T11:05:50Z", "step": "02_first_login", "result": "PASS", "http": 200, "path": "/alerts"}
+{"ts": "2026-10-05T11:05:51Z", "step": "03_authenticated_view", "result": "PASS", "path": "/alerts", "title": "Alerts | Alerta"}
+{"ts": "2026-10-05T11:05:51Z", "step": "04_logout", "result": "PASS", "path": "/logout"}
+{"ts": "2026-10-05T11:05:51Z", "step": "05_protected_denial", "result": "PASS", "path": "/login"}
+{"ts": "2026-10-05T11:05:52Z", "step": "06_wrong_password_rejected", "result": "PASS", "http": 401, "path": "/login"}
+{"ts": "2026-10-05T11:05:52Z", "step": "07_second_login", "result": "PASS", "http": 200, "path": "/alerts"}
+{"ts": "2026-10-05T11:05:53Z", "step": "08_authenticated_view_again", "result": "PASS", "path": "/alerts"}

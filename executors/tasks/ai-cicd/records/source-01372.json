@@ -1,0 +1,23 @@
+{
+  "authorized_by": "Human Operator explicit direct-launch approval",
+  "requested_model": "claude-sonnet-5-5",
+  "client_version": "2.1.289",
+  "session_id_requested": "<NATIVE_ID_2154>",
+  "fresh_session": "New UUID; no resume/continue/fork on first query",
+  "cwd": "/private/tmp/records-18f7/work",
+  "questions": [
+    "M8",
+    "A6_RESOURCE",
+    "A6_COMMITS",
+    "A6_CONFIG"
+  ],
+  "started_at": "2026-10-05T04:43:16.235+00:00",
+  "timing_basis": "External monotonic clock from CLI query launch through process completion; includes startup, tool reads and request transport",
+  "tools": [
+    "Read",
+    "Glob",
+    "Grep"
+  ],
+  "runtime": "safe-mode, restricted, no slash commands, strict empty MCP, no setting sources, no fallback",
+  "consumption": "STARTED 1/1"
+}

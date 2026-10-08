@@ -1,0 +1,18 @@
+{
+  "scope": "Three revised internal handoff documents only; full Owner-requested local paths retained; no historical M10 change",
+  "revision": "r2",
+  "primary_verdict": "PASS_NO_REAL_SECRET_MATCHES",
+  "primary_scan": {
+    "canaryFound": true,
+    "matches": [],
+    "files_scanned": 4,
+    "skipped": []
+  },
+  "synthetic": {
+    "registered": [],
+    "candidates": [],
+    "files_scanned": 3,
+    "skipped": []
+  },
+  "canary_removed": true
+}

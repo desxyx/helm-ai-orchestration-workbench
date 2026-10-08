@@ -1,0 +1,624 @@
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: acorn-import-phases@1.0.4
+npm warn Found: acorn@6.4.2
+npm warn node_modules/acorn
+npm warn   acorn@"^6.1.1" from @alerta/vue-authenticate@1.5.0
+npm warn   node_modules/@alerta/vue-authenticate
+npm warn     @alerta/vue-authenticate@"github:alerta/vue-authenticate" from the root project
+npm warn   3 more (acorn-dynamic-import, acorn-jsx, vue-authenticate)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer acorn@"^8.14.0" from acorn-import-phases@1.0.4
+npm warn node_modules/acorn-import-phases
+npm warn   acorn-import-phases@"^1.0.3" from webpack@5.105.4
+npm warn   node_modules/webpack
+npm warn
+npm warn Conflicting peer dependency: acorn@8.18.0
+npm warn node_modules/acorn
+npm warn   peer acorn@"^8.14.0" from acorn-import-phases@1.0.4
+npm warn   node_modules/acorn-import-phases
+npm warn     acorn-import-phases@"^1.0.3" from webpack@5.105.4
+npm warn     node_modules/webpack
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: '@achrinza/node-ipc@9.2.10',
+npm warn EBADENGINE   required: {
+npm warn EBADENGINE     node: '8 || 9 || 10 || 11 || 12 || 13 || 14 || 15 || 16 || 17 || 18 || 19 || 20 || 21 || 22 || 23 || 24 || 25'
+npm warn EBADENGINE   },
+npm warn EBADENGINE   current: { node: 'v26.8.1', npm: '11.19.0' }
+npm warn EBADENGINE }
+npm warn deprecated whatwg-encoding@1.0.5: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+npm warn deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+npm warn deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated vue@2.7.16: Vue 2 has reached EOL and is no longer actively maintained. See https://v2.vuejs.org/eol/ for more details.
+npm warn deprecated domexception@2.0.1: Use your platform's native DOMException instead
+npm warn deprecated consolidate@0.15.1: Please upgrade to consolidate v1.0.0+ as it has been modernized with several long-awaited fixes implemented. Maintenance is supported by Forward Email at <PRIVATE_URL_0130> ; follow/watch https://github.com/ladjs/consolidate for updates and release changelog
+npm warn deprecated acorn-dynamic-import@4.0.0: This is probably built in to whatever tool you're using. If you still need it... idk
+npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see <PRIVATE_URL_0124> for other options.
+npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+npm warn deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting <ACCOUNT_EMAIL_019>
+
+added 1400 packages in 55s
+npm warn install-scripts 5 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   @parcel/watcher@2.5.6 (install: node scripts/build-from-source.js)
+npm warn install-scripts   core-js@3.49.0 (postinstall: node -e "try{require('./postinstall')}catch(e){}")
+npm warn install-scripts   cypress@15.13.0 (postinstall: node dist/index.js --exec install)
+npm warn install-scripts   fsevents@2.3.3 (install: (install scripts present))
+npm warn install-scripts   yorkie@2.0.0 (install: node bin/install.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+
+> alerta-webui@8.7.1 build
+> vue-cli-service build
+
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+-  Building legacy bundle for production...
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+ WARNING  Compiled with 4 warnings10:42:51 pm
+
+[eslint] 
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/App.vue
+  667:11  warning  'value' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/AlertActions.vue
+  195:12  warning  'status' is defined but never used  @typescript-eslint/no-unused-vars
+  227:32  warning  'action' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/AlertDetail.vue
+  582:31  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+  730:25  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/AlertList.vue
+  153:25  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+  162:25  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+  180:21  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+  479:8   warning  'get' is defined but never used            @typescript-eslint/no-unused-vars
+  494:9   warning  'vm' is defined but never used             @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/BlackoutList.vue
+  483:9   warning  'vm' is defined but never used  @typescript-eslint/no-unused-vars
+  686:19  warning  '_' is defined but never used   @typescript-eslint/no-unused-vars
+  688:25  warning  '_' is defined but never used   @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/GroupList.vue
+   53:46  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+   54:50  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+   84:36  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+   85:40  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+  291:9   warning  'vm' is defined but never used             @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/Preferences.vue
+  301:9  warning  'vm' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/auth/ProfileMe.vue
+  192:8  warning  'i18n' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/reports/TopFlapping.vue
+  87:15  warning  'val' is defined but never used  @typescript-eslint/no-unused-vars
+  92:17  warning  'val' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/reports/TopOffenders.vue
+  87:15  warning  'val' is defined but never used  @typescript-eslint/no-unused-vars
+  92:17  warning  'val' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/reports/TopStanding.vue
+  87:15  warning  'val' is defined but never used  @typescript-eslint/no-unused-vars
+  92:17  warning  'val' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/plugins/analytics.ts
+  19:24  warning  'args' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/plugins/vuetify.ts
+  3:8  warning  'colors' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/services/config.ts
+   1:16  warning  'AxiosResponse' is defined but never used  @typescript-eslint/no-unused-vars
+  26:13  warning  'response' is defined but never used       @typescript-eslint/no-unused-vars
+  34:9   warning  Unexpected console statement               no-console
+  40:34  warning  'reject' is defined but never used         @typescript-eslint/no-unused-vars
+  61:9   warning  Unexpected console statement               no-console
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/alerts.store.ts
+  185:15  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  185:23  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  190:17  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  190:25  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  195:15  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  195:23  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  202:13  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  202:21  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  205:15  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  205:23  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  209:12  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  212:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  219:15  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  222:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  224:15  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  225:55  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  228:16  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  228:24  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/auth.store.ts
+  71:16  warning  'commit' is defined but never used  @typescript-eslint/no-unused-vars
+  78:14  warning  'commit' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/blackouts.store.ts
+  31:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  32:55  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  36:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  37:65  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  41:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  42:57  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/customers.store.ts
+  31:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  32:55  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  36:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  37:65  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  41:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  42:57  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/groups.store.ts
+  58:26  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  59:46  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  63:26  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  64:56  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  68:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  70:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  79:34  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  81:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  90:26  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  91:48  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/heartbeats.store.ts
+  31:30  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  32:60  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/keys.store.ts
+  29:20  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  35:24  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  36:40  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  40:24  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  41:48  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  45:24  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  46:40  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/management.store.ts
+  37:24  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  40:27  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  43:22  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/perms.store.ts
+  36:25  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  37:43  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  41:25  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  42:53  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  46:25  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  47:45  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/preferences.store.ts
+   62:14  warning  'error' is defined but never used     @typescript-eslint/no-unused-vars
+   68:21  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+   70:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+   77:27  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+   79:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+   88:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  103:14  warning  'error' is defined but never used     @typescript-eslint/no-unused-vars
+  112:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  122:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  131:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/users.store.ts
+  40:25  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  41:43  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  45:25  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  46:53  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  50:28  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  52:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  61:31  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  63:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  68:25  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  69:45  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  73:18  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/views/Alerts.vue
+  162:8   warning  'moment' is defined but never used      @typescript-eslint/no-unused-vars
+  165:8   warning  'i18n' is defined but never used        @typescript-eslint/no-unused-vars
+  294:16  warning  'val' is defined but never used         @typescript-eslint/no-unused-vars
+  298:15  warning  'val' is defined but never used         @typescript-eslint/no-unused-vars
+  322:15  warning  'val' is defined but never used         @typescript-eslint/no-unused-vars
+  421:69  warning  'attributes' is defined but never used  @typescript-eslint/no-unused-vars
+  421:90  warning  'history' is defined but never used     @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/views/Profile.vue
+  276:8  warning  'i18n' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/views/Reports.vue
+  45:8  warning  'i18n' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 123 problems (0 errors, 123 warnings)
+
+
+You may use special comments to disable some warnings.
+Use // eslint-disable-next-line to ignore the next line.
+Use /* eslint-disable */ to ignore all warnings in a file.
+ warning  in ./src/views/Alerts.vue?vue&type=script&lang=js
+
+export 'ExportToCsv' (imported as 'ExportToCsv') was not found in 'export-to-csv' (possible exports: MediaType, asBlob, asString, download, generateCsv, mkConfig)
+
+ warning  
+
+asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  css/app.576c1cab.css (302 KiB)
+  js/chunk-vendors-legacy.5fe519ca.js (938 KiB)
+
+ warning  
+
+entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  app (1.56 MiB)
+      css/chunk-vendors.eb0bfb83.css
+      js/chunk-vendors-legacy.5fe519ca.js
+      css/app.576c1cab.css
+      js/app-legacy.0dee947a.js
+
+
+  File                                      Size             Gzipped
+
+  dist/js/chunk-vendors-legacy.5fe519ca.    938.01 KiB       261.84 KiB
+  js
+  dist/js/app-legacy.0dee947a.js            170.88 KiB       40.29 KiB
+  dist/js/user-legacy.2ce2b62f.js           83.27 KiB        18.79 KiB
+  dist/js/admin-legacy.e70b8e40.js          36.58 KiB        6.69 KiB
+  dist/js/943-legacy.f8ef12dd.js            25.25 KiB        6.41 KiB
+  dist/js/auth-legacy.8b5b5b91.js           17.39 KiB        3.04 KiB
+  dist/js/53-legacy.5f5c006f.js             10.82 KiB        2.68 KiB
+  dist/js/184-legacy.ae6ae1bf.js            9.62 KiB         2.58 KiB
+  dist/js/253-legacy.4f73bdf1.js            3.27 KiB         1.34 KiB
+  dist/css/app.576c1cab.css                 301.58 KiB       45.59 KiB
+  dist/css/chunk-vendors.eb0bfb83.css       181.90 KiB       24.47 KiB
+  dist/css/user.b7cb0b5f.css                15.45 KiB        2.77 KiB
+  dist/css/184.e519b58a.css                 5.70 KiB         1.29 KiB
+  dist/css/admin.ae651379.css               1.54 KiB         0.53 KiB
+  dist/css/253.17bc0860.css                 0.29 KiB         0.17 KiB
+
+  Images and other types of assets omitted.
+  Build at: 2026-10-04T11:42:51.815Z - Hash: a5e95c7cc166e1a2 - Time: 19223ms
+
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+-  Building module bundle for production...
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+ WARNING  Compiled with 4 warnings10:43:05 pm
+
+[eslint] 
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/App.vue
+  667:11  warning  'value' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/AlertActions.vue
+  195:12  warning  'status' is defined but never used  @typescript-eslint/no-unused-vars
+  227:32  warning  'action' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/AlertDetail.vue
+  582:31  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+  730:25  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/AlertList.vue
+  153:25  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+  162:25  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+  180:21  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+  479:8   warning  'get' is defined but never used            @typescript-eslint/no-unused-vars
+  494:9   warning  'vm' is defined but never used             @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/BlackoutList.vue
+  483:9   warning  'vm' is defined but never used  @typescript-eslint/no-unused-vars
+  686:19  warning  '_' is defined but never used   @typescript-eslint/no-unused-vars
+  688:25  warning  '_' is defined but never used   @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/GroupList.vue
+   53:46  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+   54:50  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+   84:36  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+   85:40  warning  'v-html' directive can lead to XSS attack  vue/no-v-html
+  291:9   warning  'vm' is defined but never used             @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/Preferences.vue
+  301:9  warning  'vm' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/auth/ProfileMe.vue
+  192:8  warning  'i18n' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/reports/TopFlapping.vue
+  87:15  warning  'val' is defined but never used  @typescript-eslint/no-unused-vars
+  92:17  warning  'val' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/reports/TopOffenders.vue
+  87:15  warning  'val' is defined but never used  @typescript-eslint/no-unused-vars
+  92:17  warning  'val' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/components/reports/TopStanding.vue
+  87:15  warning  'val' is defined but never used  @typescript-eslint/no-unused-vars
+  92:17  warning  'val' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/plugins/analytics.ts
+  19:24  warning  'args' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/plugins/vuetify.ts
+  3:8  warning  'colors' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/services/config.ts
+   1:16  warning  'AxiosResponse' is defined but never used  @typescript-eslint/no-unused-vars
+  26:13  warning  'response' is defined but never used       @typescript-eslint/no-unused-vars
+  34:9   warning  Unexpected console statement               no-console
+  40:34  warning  'reject' is defined but never used         @typescript-eslint/no-unused-vars
+  61:9   warning  Unexpected console statement               no-console
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/alerts.store.ts
+  185:15  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  185:23  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  190:17  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  190:25  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  195:15  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  195:23  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  202:13  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  202:21  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  205:15  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  205:23  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  209:12  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  212:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  219:15  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  222:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  224:15  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  225:55  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  228:16  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  228:24  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/auth.store.ts
+  71:16  warning  'commit' is defined but never used  @typescript-eslint/no-unused-vars
+  78:14  warning  'commit' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/blackouts.store.ts
+  31:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  32:55  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  36:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  37:65  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  41:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  42:57  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/customers.store.ts
+  31:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  32:55  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  36:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  37:65  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  41:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  42:57  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/groups.store.ts
+  58:26  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  59:46  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  63:26  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  64:56  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  68:29  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  70:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  79:34  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  81:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  90:26  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  91:48  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/heartbeats.store.ts
+  31:30  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  32:60  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/keys.store.ts
+  29:20  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  35:24  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  36:40  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  40:24  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  41:48  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  45:24  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  46:40  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/management.store.ts
+  37:24  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  40:27  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+  43:22  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/perms.store.ts
+  36:25  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  37:43  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  41:25  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  42:53  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  46:25  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  47:45  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/preferences.store.ts
+   62:14  warning  'error' is defined but never used     @typescript-eslint/no-unused-vars
+   68:21  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+   70:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+   77:27  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+   79:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+   88:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  103:14  warning  'error' is defined but never used     @typescript-eslint/no-unused-vars
+  112:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  122:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  131:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/store/modules/users.store.ts
+  40:25  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  41:43  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  45:25  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  46:53  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  50:28  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  52:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  61:31  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  63:13  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  68:25  warning  'commit' is defined but never used    @typescript-eslint/no-unused-vars
+  69:45  warning  'response' is defined but never used  @typescript-eslint/no-unused-vars
+  73:18  warning  'dispatch' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/views/Alerts.vue
+  162:8   warning  'moment' is defined but never used      @typescript-eslint/no-unused-vars
+  165:8   warning  'i18n' is defined but never used        @typescript-eslint/no-unused-vars
+  294:16  warning  'val' is defined but never used         @typescript-eslint/no-unused-vars
+  298:15  warning  'val' is defined but never used         @typescript-eslint/no-unused-vars
+  322:15  warning  'val' is defined but never used         @typescript-eslint/no-unused-vars
+  421:69  warning  'attributes' is defined but never used  @typescript-eslint/no-unused-vars
+  421:90  warning  'history' is defined but never used     @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/views/Profile.vue
+  276:8  warning  'i18n' is defined but never used  @typescript-eslint/no-unused-vars
+
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/webui/work/frontend/src/views/Reports.vue
+  45:8  warning  'i18n' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 123 problems (0 errors, 123 warnings)
+
+
+You may use special comments to disable some warnings.
+Use // eslint-disable-next-line to ignore the next line.
+Use /* eslint-disable */ to ignore all warnings in a file.
+ warning  in ./src/views/Alerts.vue?vue&type=script&lang=js
+
+export 'ExportToCsv' (imported as 'ExportToCsv') was not found in 'export-to-csv' (possible exports: MediaType, asBlob, asString, download, generateCsv, mkConfig)
+
+ warning  
+
+asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  css/app.576c1cab.css (302 KiB)
+  js/chunk-vendors.d123d772.js (873 KiB)
+
+ warning  
+
+entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  app (1.47 MiB)
+      css/chunk-vendors.eb0bfb83.css
+      js/chunk-vendors.d123d772.js
+      css/app.576c1cab.css
+      js/app.f997dd7d.js
+
+
+  File                                   Size              Gzipped
+
+  dist/js/chunk-vendors.d123d772.js      873.06 KiB        239.58 KiB
+  dist/js/app.f997dd7d.js                148.70 KiB        37.80 KiB
+  dist/js/user.e042e51f.js               75.09 KiB         16.25 KiB
+  dist/js/admin.070b954d.js              34.10 KiB         6.26 KiB
+  dist/js/943.bf7e742e.js                25.23 KiB         6.40 KiB
+  dist/js/auth.970c4fb6.js               16.09 KiB         2.89 KiB
+  dist/js/53.2789a9d6.js                 10.36 KiB         2.61 KiB
+  dist/js/184.c5c6803b.js                9.22 KiB          2.50 KiB
+  dist/js/253.2779e77f.js                2.91 KiB          1.23 KiB
+  dist/css/app.576c1cab.css              301.58 KiB        45.59 KiB
+  dist/css/chunk-vendors.eb0bfb83.css    181.90 KiB        24.47 KiB
+  dist/css/user.b7cb0b5f.css             15.45 KiB         2.77 KiB
+  dist/css/184.e519b58a.css              5.70 KiB          1.29 KiB
+  dist/css/admin.ae651379.css            1.54 KiB          0.53 KiB
+  dist/css/253.17bc0860.css              0.29 KiB          0.17 KiB
+
+  Images and other types of assets omitted.
+  Build at: 2026-10-04T11:43:05.984Z - Hash: 08aef65f436f2309 - Time: 13080ms
+
+ DONE  Build complete. The dist directory is ready to be deployed.
+ INFO  Check out deployment instructions at https://cli.vuejs.org/guide/deployment.html
+       

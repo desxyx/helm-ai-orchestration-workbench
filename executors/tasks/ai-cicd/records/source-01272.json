@@ -1,0 +1,168 @@
+{
+  "run_id": "RUN-W2A",
+  "recorded_at": "2026-10-05T16:13:38+11:00",
+  "primary_instrument": "gcloud asset search-all-resources, unfiltered project scope, exclusive raw stdout, same argv as known-present captures",
+  "sdk_version_evidence": "582.0.0 from terminal Q01 capture; executable path unchanged, no upgrade performed",
+  "primary_asset_count": 138,
+  "known_task_assets_from_pre_teardown_positive": [
+    {
+      "assetType": "compute.googleapis.com/Disk",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-a/disks/<W2_RUN_RESOURCE_PREFIX>-alerta"
+    },
+    {
+      "assetType": "compute.googleapis.com/Instance",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-a/instances/<W2_RUN_RESOURCE_PREFIX>-alerta"
+    },
+    {
+      "assetType": "compute.googleapis.com/Disk",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-a/disks/<W2_RUN_RESOURCE_PREFIX>-data"
+    },
+    {
+      "assetType": "compute.googleapis.com/Firewall",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/<W2_RUN_RESOURCE_PREFIX>-iap-ssh"
+    },
+    {
+      "assetType": "compute.googleapis.com/Firewall",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/<W2_RUN_RESOURCE_PREFIX>-web"
+    },
+    {
+      "assetType": "compute.googleapis.com/Subnetwork",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-central1/subnetworks/<W2_RUN_RESOURCE_PREFIX>-subnet"
+    },
+    {
+      "assetType": "compute.googleapis.com/Network",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/networks/<W2_RUN_RESOURCE_PREFIX>-network"
+    },
+    {
+      "assetType": "compute.googleapis.com/Address",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-central1/addresses/<W2_RUN_RESOURCE_PREFIX>-ip"
+    }
+  ],
+  "current_task_name_asset_matches": [],
+  "supplementary_lists": {
+    "R02_instances": {
+      "row_count": 0,
+      "task_named_count": 0
+    },
+    "R03_disks": {
+      "row_count": 0,
+      "task_named_count": 0
+    },
+    "R04_addresses": {
+      "row_count": 0,
+      "task_named_count": 0
+    },
+    "R05_networks": {
+      "row_count": 1,
+      "task_named_count": 0
+    },
+    "R06_firewalls": {
+      "row_count": 4,
+      "task_named_count": 0
+    },
+    "R07_run": {
+      "row_count": 0,
+      "task_named_count": 0
+    },
+    "R08_buckets": {
+      "row_count": 0,
+      "task_named_count": 0
+    }
+  },
+  "retained_default_network": [
+    "default"
+  ],
+  "new_vs_cp01_asset_type_counts": {
+    "compute.googleapis.com/InstanceSettings": 9
+  },
+  "new_vs_cp01_raw_assets": [
+    {
+      "assetType": "compute.googleapis.com/InstanceSettings",
+      "location": "us-central1-a",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-a/instanceSettings/InstanceSettings",
+      "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+      "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+      "project": "projects/<PROJECT_NUMBER>"
+    },
+    {
+      "assetType": "compute.googleapis.com/InstanceSettings",
+      "location": "australia-southeast1-c",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast1-c/instanceSettings/InstanceSettings",
+      "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+      "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+      "project": "projects/<PROJECT_NUMBER>"
+    },
+    {
+      "assetType": "compute.googleapis.com/InstanceSettings",
+      "location": "australia-southeast1-b",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast1-b/instanceSettings/InstanceSettings",
+      "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+      "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+      "project": "projects/<PROJECT_NUMBER>"
+    },
+    {
+      "assetType": "compute.googleapis.com/InstanceSettings",
+      "location": "us-central1-c",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-c/instanceSettings/InstanceSettings",
+      "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+      "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+      "project": "projects/<PROJECT_NUMBER>"
+    },
+    {
+      "assetType": "compute.googleapis.com/InstanceSettings",
+      "location": "us-central1-ai1a",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-ai1a/instanceSettings/InstanceSettings",
+      "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+      "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+      "project": "projects/<PROJECT_NUMBER>"
+    },
+    {
+      "assetType": "compute.googleapis.com/InstanceSettings",
+      "location": "us-central1-d",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-d/instanceSettings/InstanceSettings",
+      "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+      "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+      "project": "projects/<PROJECT_NUMBER>"
+    },
+    {
+      "assetType": "compute.googleapis.com/InstanceSettings",
+      "location": "us-central1-b",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-b/instanceSettings/InstanceSettings",
+      "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+      "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+      "project": "projects/<PROJECT_NUMBER>"
+    },
+    {
+      "assetType": "compute.googleapis.com/InstanceSettings",
+      "location": "us-central1-f",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-f/instanceSettings/InstanceSettings",
+      "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+      "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+      "project": "projects/<PROJECT_NUMBER>"
+    },
+    {
+      "assetType": "compute.googleapis.com/InstanceSettings",
+      "location": "australia-southeast1-a",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast1-a/instanceSettings/InstanceSettings",
+      "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+      "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+      "project": "projects/<PROJECT_NUMBER>"
+    }
+  ],
+  "registered_resource_x_positive": "Detected in CP01/terminal inventory before deletion; residual uses same primary query scope/instrument",
+  "dns": {
+    "authoritative_A": "NXDOMAIN at both named Cloudflare authoritative servers",
+    "authoritative_AAAA": "NXDOMAIN",
+    "authoritative_CNAME": "NXDOMAIN"
+  },
+  "coverage_exception": {
+    "query": "R09_sql",
+    "status": "UNVERIFIED_SUPPLEMENTARY_QUERY",
+    "cause": "Cloud SQL Admin API disabled/unavailable; no API enablement attempted"
+  },
+  "known_eight_task_resources_detected_remaining": 0,
+  "whole_project_billable_resource_count": null,
+  "whole_project_clean": "NOT_CLAIMED",
+  "formal_a7_m11_verdict": "OBSERVER_ASSIGNMENT_PENDING",
+  "no_cloud_mutation_by_Operations Coordinator": true
+}

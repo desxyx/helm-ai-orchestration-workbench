@@ -1,0 +1,21 @@
+Review WatchOver local rehearsal Attempt 2 under WATCHOVER_DESIGN_FREEZE.md Verification Standard item 5 and Annex K. This is a VerifyOnly review; do not edit the product repository or rehearsal workspace and do not coach either rehearsal session.
+
+Read:
+- source-00193.md
+- source-00197.md
+- source-00200.md
+- source-00201.md
+
+Independently inspect the current rehearsal workspace at:
+<CLIENT_HOME>/Desktop/Coding/WatchOver_AI_DevOps_Rehearsal_2026-09-30/attempt_02/workspace
+
+Tasks:
+1. Confirm Session 2 took a correct first next action without redoing completed work.
+2. Score all ten Annex K answers individually against state.json and cited evidence.
+3. Run the product validator and directly check the current local runtime where available.
+4. Complete or verify the required WatchOver view screenshot and browser network evidence, including zero non-local requests. Do not treat an Operations Coordinator sandbox inability as product failure.
+5. Return a pre-cleanup verdict stating whether the handoff score is 10/10 and whether cleanup may proceed. Name every finding in one pass. Do not issue the final complete rehearsal PASS until cleanup and port-release evidence are supplied.
+
+Session locators:
+- Session 1: <NATIVE_ID_0039>
+- Session 2: <NATIVE_ID_0040>

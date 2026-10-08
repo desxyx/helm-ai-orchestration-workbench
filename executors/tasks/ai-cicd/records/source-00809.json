@@ -1,0 +1,30 @@
+{
+  "stage": "probe",
+  "codex_home": "~/.codex",
+  "observed_runtime": {
+    "codex_cli_version": "codex-cli 0.160.0",
+    "model": "gpt-6.1-sol",
+    "model_reasoning_effort": "high",
+    "approval_policy": "on-request",
+    "sandbox_mode": "workspace-write",
+    "check_for_update_on_startup": null,
+    "enabled_plugins": [
+      "browser@openai-bundled",
+      "documents@openai-primary-runtime",
+      "github@openai-curated",
+      "pdf@openai-primary-runtime",
+      "presentations@openai-primary-runtime",
+      "spreadsheets@openai-primary-runtime",
+      "template-creator@openai-primary-runtime",
+      "warp@codex-warp"
+    ],
+    "mcp_servers": [
+      "node_repl",
+      "openaiDeveloperDocs"
+    ],
+    "features": {
+      "js_repl": "false"
+    }
+  },
+  "timestamp": "2026-10-04T09:48:55.405Z"
+}

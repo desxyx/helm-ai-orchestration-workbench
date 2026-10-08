@@ -1,0 +1,7 @@
+{
+  "source": "<HELM_ROOT>/council/task/AI_CICD/execution/w2_formal_entry_2026-10-05/evidence/CP-01_FORCED_INTERRUPT/capture_readonly.py",
+  "copy_byte_identical": true,
+  "sha256": "<PRIVATE_REF_01019>",
+  "route": "finalize only; PLAN0..2 disabled;8queries/cap10",
+  "cloud_mutation": false
+}

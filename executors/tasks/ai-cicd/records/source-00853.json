@@ -1,0 +1,77 @@
+[
+  {
+    "path": "tool/bin/experiment-control-tool.js",
+    "expected": "<PRIVATE_REF_01558>",
+    "actual": "<PRIVATE_REF_01558>"
+  },
+  {
+    "path": "tool/src/approvalExtract.js",
+    "expected": "<PRIVATE_REF_02224>",
+    "actual": "<PRIVATE_REF_02224>"
+  },
+  {
+    "path": "tool/src/entryCheck.js",
+    "expected": "<PRIVATE_REF_02923>",
+    "actual": "<PRIVATE_REF_02923>"
+  },
+  {
+    "path": "tool/src/evidenceRegistryCheck.js",
+    "expected": "<PRIVATE_REF_01261>",
+    "actual": "<PRIVATE_REF_01261>"
+  },
+  {
+    "path": "tool/src/packageIncrement.js",
+    "expected": "<PRIVATE_REF_03488>",
+    "actual": "<PRIVATE_REF_03488>"
+  },
+  {
+    "path": "tool/src/projectInventory.js",
+    "expected": "<PRIVATE_REF_00937>",
+    "actual": "<PRIVATE_REF_00937>"
+  },
+  {
+    "path": "tool/src/render.js",
+    "expected": "<PRIVATE_REF_00927>",
+    "actual": "<PRIVATE_REF_00927>"
+  },
+  {
+    "path": "tool/src/secretScan.js",
+    "expected": "<PRIVATE_REF_01518>",
+    "actual": "<PRIVATE_REF_01518>"
+  },
+  {
+    "path": "tool/src/snapshot.js",
+    "expected": "<PRIVATE_REF_03133>",
+    "actual": "<PRIVATE_REF_03133>"
+  },
+  {
+    "path": "tool/src/lib/chainVerify.js",
+    "expected": "<PRIVATE_REF_02580>",
+    "actual": "<PRIVATE_REF_02580>"
+  },
+  {
+    "path": "tool/src/lib/cli.js",
+    "expected": "<PRIVATE_REF_01744>",
+    "actual": "<PRIVATE_REF_01744>"
+  },
+  {
+    "path": "tool/src/lib/identity.js",
+    "expected": "<PRIVATE_REF_01566>",
+    "actual": "<PRIVATE_REF_01566>"
+  },
+  {
+    "path": "tool/src/lib/util.js",
+    "expected": "<PRIVATE_REF_02680>",
+    "actual": "<PRIVATE_REF_02680>"
+  },
+  {
+    "path": "tool/package.json",
+    "expected": "<PRIVATE_REF_01097>",
+    "actual": "<PRIVATE_REF_01097>"
+  },
+  {
+    "path": "tool/package-lock.json",
+    "expected": "<PRIVATE_REF_01010>",
+    "actual": "<PRIVATE_REF_01010>"
+  }
+]

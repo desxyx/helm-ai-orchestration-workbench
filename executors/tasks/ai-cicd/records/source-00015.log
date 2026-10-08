@@ -1,0 +1,227 @@
+=== forcing python 3.14 explicitly to genuinely reproduce the failure ===
+Using CPython 3.14.7 interpreter at: /opt/homebrew/opt/python@3.14/bin/python3.14
+Creating virtual environment at: .venv
+Resolved 35 packages in 2ms
+   Building psycopg2==2.9.6
+error: Failed to build `psycopg2==2.9.6`
+  cause: The build backend returned an error
+  cause: Call to `setuptools.build_meta:__legacy__.build_wheel` failed (exit status: 1)
+
+         [stdout]
+         running bdist_wheel
+         running build
+         running build_py
+         running build_ext
+         building 'psycopg2._psycopg' extension
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/adapter_asis.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/adapter_asis.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/adapter_binary.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/adapter_binary.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/adapter_datetime.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/adapter_datetime.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/adapter_list.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/adapter_list.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/adapter_pboolean.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/adapter_pboolean.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/adapter_pdecimal.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/adapter_pdecimal.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/adapter_pfloat.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/adapter_pfloat.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/adapter_pint.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/adapter_pint.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/adapter_qstring.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/adapter_qstring.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/aix_support.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/aix_support.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/bytes_format.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/bytes_format.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/column_type.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/column_type.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/connection_int.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/connection_int.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/connection_type.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/connection_type.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/conninfo_type.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/conninfo_type.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/cursor_int.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/cursor_int.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/cursor_type.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/cursor_type.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/diagnostics_type.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/diagnostics_type.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/error_type.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/error_type.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/green.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/green.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/libpq_support.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/libpq_support.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/lobject_int.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/lobject_int.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/lobject_type.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/lobject_type.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/microprotocols.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/microprotocols.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/microprotocols_proto.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/microprotocols_proto.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/notify_type.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/notify_type.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/pqpath.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/pqpath.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/psycopgmodule.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/psycopgmodule.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/replication_connection_type.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/replication_connection_type.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/replication_cursor_type.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/replication_cursor_type.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/replication_message_type.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/replication_message_type.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/solaris_support.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/solaris_support.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/typecast.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/typecast.o
+         clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include "-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)" -DPSYCOPG_DEBUG=1 -DPG_VERSION_NUM=160015 -DHAVE_LO64=1 -DPSYCOPG_DEBUG=1 -I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include -I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14 -I. -I/opt/homebrew/opt/postgresql@16/include -I/opt/homebrew/opt/postgresql@16/include/postgresql/server -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/krb5/include -I/opt/homebrew/opt/openssl@3/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/lz4/include -I/opt/homebrew/opt/zstd/include -I/opt/homebrew/opt/icu4c@78/include -c psycopg/utils.c -o build/temp.macosx-26.0-arm64-cpython-314/psycopg/utils.o
+
+         [stderr]
+         <home>/.cache/uv/builds-v0/.tmp3ZOg6l/lib/python3.14/site-packages/setuptools/dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+         !!
+
+                 ********************************************************************************
+                 Please consider removing the following classifiers in favor of a SPDX license expression:
+
+                 License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)
+
+                 See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+                 ********************************************************************************
+
+         !!
+           self._finalize_license_expression()
+         In file included from psycopg/aix_support.c:29:
+         In file included from ./psycopg/psycopg.h:38:
+         ./psycopg/config.h:69:13: warning: unused function 'Dprintf' [-Wunused-function]
+            69 | static void Dprintf(const char *fmt, ...)
+               |             ^~~~~~~
+         1 warning generated.
+         In file included from psycopg/bytes_format.c:82:
+         In file included from ./psycopg/psycopg.h:38:
+         ./psycopg/config.h:69:13: warning: unused function 'Dprintf' [-Wunused-function]
+            69 | static void Dprintf(const char *fmt, ...)
+               |             ^~~~~~~
+         1 warning generated.
+         In file included from psycopg/column_type.c:28:
+         In file included from ./psycopg/psycopg.h:38:
+         ./psycopg/config.h:69:13: warning: unused function 'Dprintf' [-Wunused-function]
+            69 | static void Dprintf(const char *fmt, ...)
+               |             ^~~~~~~
+         1 warning generated.
+         psycopg/connection_int.c:1050:21: warning: 'PyWeakref_GetObject' is deprecated [-Wdeprecated-declarations]
+          1050 |     if (!(py_curs = PyWeakref_GetObject(self->async_cursor))) {
+               |                     ^
+         /opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14/weakrefobject.h:30:1: note: 'PyWeakref_GetObject' has been explicitly marked deprecated here
+            30 | Py_DEPRECATED(3.13) PyAPI_FUNC(PyObject *) PyWeakref_GetObject(PyObject *ref);
+               | ^
+         /opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14/pyport.h:281:54: note: expanded from macro 'Py_DEPRECATED'
+           281 | #define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+               |                                                      ^
+         1 warning generated.
+         In file included from psycopg/conninfo_type.c:28:
+         In file included from ./psycopg/psycopg.h:38:
+         ./psycopg/config.h:69:13: warning: unused function 'Dprintf' [-Wunused-function]
+            69 | static void Dprintf(const char *fmt, ...)
+               |             ^~~~~~~
+         1 warning generated.
+         psycopg/cursor_int.c:77:20: warning: implicit truncation from 'int' to a one-bit wide bit-field changes value from 1 to -1 [-Wsingle-bit-bitfield-constant-conversion]
+            77 |     self->notuples = 1;
+               |                    ^ ~
+         1 warning generated.
+         psycopg/cursor_type.c:113:18: warning: implicit truncation from 'int' to a one-bit wide bit-field changes value from 1 to -1 [-Wsingle-bit-bitfield-constant-conversion]
+           113 |     self->closed = 1;
+               |                  ^ ~
+         psycopg/cursor_type.c:782:12: warning: 'PyWeakref_GetObject' is deprecated [-Wdeprecated-declarations]
+           782 |         && PyWeakref_GetObject(self->conn->async_cursor) == (PyObject*)self)
+               |            ^
+         /opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14/weakrefobject.h:30:1: note: 'PyWeakref_GetObject' has been explicitly marked deprecated here
+            30 | Py_DEPRECATED(3.13) PyAPI_FUNC(PyObject *) PyWeakref_GetObject(PyObject *ref);
+               | ^
+         /opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14/pyport.h:281:54: note: expanded from macro 'Py_DEPRECATED'
+           281 | #define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+               |                                                      ^
+         psycopg/cursor_type.c:829:12: warning: 'PyWeakref_GetObject' is deprecated [-Wdeprecated-declarations]
+           829 |         && PyWeakref_GetObject(self->conn->async_cursor) == (PyObject*)self)
+               |            ^
+         /opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14/weakrefobject.h:30:1: note: 'PyWeakref_GetObject' has been explicitly marked deprecated here
+            30 | Py_DEPRECATED(3.13) PyAPI_FUNC(PyObject *) PyWeakref_GetObject(PyObject *ref);
+               | ^
+         /opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14/pyport.h:281:54: note: expanded from macro 'Py_DEPRECATED'
+           281 | #define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+               |                                                      ^
+         psycopg/cursor_type.c:914:12: warning: 'PyWeakref_GetObject' is deprecated [-Wdeprecated-declarations]
+           914 |         && PyWeakref_GetObject(self->conn->async_cursor) == (PyObject*)self)
+               |            ^
+         /opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14/weakrefobject.h:30:1: note: 'PyWeakref_GetObject' has been explicitly marked deprecated here
+            30 | Py_DEPRECATED(3.13) PyAPI_FUNC(PyObject *) PyWeakref_GetObject(PyObject *ref);
+               | ^
+         /opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14/pyport.h:281:54: note: expanded from macro 'Py_DEPRECATED'
+           281 | #define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+               |                                                      ^
+         psycopg/cursor_type.c:983:12: warning: 'PyWeakref_GetObject' is deprecated [-Wdeprecated-declarations]
+           983 |         && PyWeakref_GetObject(self->conn->async_cursor) == (PyObject*)self)
+               |            ^
+         /opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14/weakrefobject.h:30:1: note: 'PyWeakref_GetObject' has been explicitly marked deprecated here
+            30 | Py_DEPRECATED(3.13) PyAPI_FUNC(PyObject *) PyWeakref_GetObject(PyObject *ref);
+               | ^
+         /opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14/pyport.h:281:54: note: expanded from macro 'Py_DEPRECATED'
+           281 | #define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+               |                                                      ^
+         psycopg/cursor_type.c:1943:20: warning: implicit truncation from 'int' to a one-bit wide bit-field changes value from 1 to -1 [-Wsingle-bit-bitfield-constant-conversion]
+          1943 |     self->notuples = 1;
+               |                    ^ ~
+         6 warnings generated.
+         In file included from psycopg/diagnostics_type.c:28:
+         In file included from ./psycopg/psycopg.h:38:
+         ./psycopg/config.h:69:13: warning: unused function 'Dprintf' [-Wunused-function]
+            69 | static void Dprintf(const char *fmt, ...)
+               |             ^~~~~~~
+         1 warning generated.
+         In file included from psycopg/error_type.c:28:
+         In file included from ./psycopg/psycopg.h:38:
+         ./psycopg/config.h:69:13: warning: unused function 'Dprintf' [-Wunused-function]
+            69 | static void Dprintf(const char *fmt, ...)
+               |             ^~~~~~~
+         1 warning generated.
+         In file included from psycopg/libpq_support.c:30:
+         In file included from ./psycopg/psycopg.h:38:
+         ./psycopg/config.h:69:13: warning: unused function 'Dprintf' [-Wunused-function]
+            69 | static void Dprintf(const char *fmt, ...)
+               |             ^~~~~~~
+         1 warning generated.
+         In file included from psycopg/microprotocols_proto.c:28:
+         In file included from ./psycopg/psycopg.h:38:
+         ./psycopg/config.h:69:13: warning: unused function 'Dprintf' [-Wunused-function]
+            69 | static void Dprintf(const char *fmt, ...)
+               |             ^~~~~~~
+         1 warning generated.
+         In file included from psycopg/notify_type.c:28:
+         In file included from ./psycopg/psycopg.h:38:
+         ./psycopg/config.h:69:13: warning: unused function 'Dprintf' [-Wunused-function]
+            69 | static void Dprintf(const char *fmt, ...)
+               |             ^~~~~~~
+         1 warning generated.
+         psycopg/pqpath.c:139:17: warning: implicit conversion from enumeration type 'ConnStatusType' to different enumeration type 'ExecStatusType' [-Wimplicit-enum-enum-cast]
+           138 |             PQresStatus(pgres == NULL ?
+               |             ~~~~~~~~~~~
+           139 |                 PQstatus(conn->pgconn) : PQresultStatus(*pgres)));
+               |                 ^~~~~~~~~~~~~~~~~~~~~~
+         psycopg/pqpath.c:1723:11: warning: code will never be executed [-Wunreachable-code]
+          1723 |     ret = 1;
+               |           ^
+         psycopg/pqpath.c:1828:17: warning: implicit conversion from enumeration type 'ConnStatusType' to different enumeration type 'ExecStatusType' [-Wimplicit-enum-enum-cast]
+          1827 |             PQresStatus(curs->pgres == NULL ?
+               |             ~~~~~~~~~~~
+          1828 |                 PQstatus(curs->conn->pgconn) : PQresultStatus(curs->pgres)));
+               |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         3 warnings generated.
+         In file included from psycopg/replication_connection_type.c:28:
+         In file included from ./psycopg/psycopg.h:38:
+         ./psycopg/config.h:69:13: warning: unused function 'Dprintf' [-Wunused-function]
+            69 | static void Dprintf(const char *fmt, ...)
+               |             ^~~~~~~
+         1 warning generated.
+         psycopg/replication_cursor_type.c:158:21: warning: implicit truncation from 'int' to a one-bit wide bit-field changes value from 1 to -1 [-Wsingle-bit-bitfield-constant-conversion]
+           158 |     self->consuming = 1;
+               |                     ^ ~
+         1 warning generated.
+         In file included from psycopg/replication_message_type.c:28:
+         In file included from ./psycopg/psycopg.h:38:
+         ./psycopg/config.h:69:13: warning: unused function 'Dprintf' [-Wunused-function]
+            69 | static void Dprintf(const char *fmt, ...)
+               |             ^~~~~~~
+         1 warning generated.
+         In file included from psycopg/solaris_support.c:29:
+         In file included from ./psycopg/psycopg.h:38:
+         ./psycopg/config.h:69:13: warning: unused function 'Dprintf' [-Wunused-function]
+            69 | static void Dprintf(const char *fmt, ...)
+               |             ^~~~~~~
+         1 warning generated.
+         psycopg/utils.c:397:12: error: call to undeclared function '_PyInterpreterState_Get'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+           397 |     return _PyInterpreterState_Get() == PyInterpreterState_Main();
+               |            ^
+         psycopg/utils.c:397:12: note: did you mean 'PyInterpreterState_Get'?
+         /opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14/pystate.h:26:34: note: 'PyInterpreterState_Get' declared here
+            26 | PyAPI_FUNC(PyInterpreterState *) PyInterpreterState_Get(void);
+               |                                  ^
+         psycopg/utils.c:397:38: warning: comparison between pointer and integer ('int' and 'PyInterpreterState *' (aka 'struct _is *')) [-Wpointer-integer-compare]
+           397 |     return _PyInterpreterState_Get() == PyInterpreterState_Main();
+               |            ~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~~~~~
+         1 warning and 1 error generated.
+         error: Command '['clang', '-fno-strict-overflow', '-Wsign-compare', '-Wunreachable-code', '-fno-common', '-dynamic', '-DNDEBUG', '-g', '-O3', '-Wall', '-I/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/include', '-DPSYCOPG_VERSION=2.9.6 (dt dec pq3 ext lo64)', '-DPSYCOPG_DEBUG=1', '-DPG_VERSION_NUM=160015', '-DHAVE_LO64=1', '-DPSYCOPG_DEBUG=1', '-I<home>/.cache/uv/builds-v0/.tmp3ZOg6l/include', '-I/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/include/python3.14', '-I.', '-I/opt/homebrew/opt/postgresql@16/include', '-I/opt/homebrew/opt/postgresql@16/include/postgresql/server', '-I/opt/homebrew/opt/gettext/include', '-I/opt/homebrew/opt/krb5/include', '-I/opt/homebrew/opt/openssl@3/include', '-I/opt/homebrew/opt/readline/include', '-I/opt/homebrew/opt/lz4/include', '-I/opt/homebrew/opt/zstd/include', '-I/opt/homebrew/opt/icu4c@78/include', '-c', 'psycopg/utils.c', '-o', 'build/temp.macosx-26.0-arm64-cpython-314/psycopg/utils.o']' returned non-zero exit status 1.
+
+hint: `psycopg2` (v2.9.6) was included because `realworld-django-ninja` (v0.1.0) depends on `psycopg2`
+
+hint: Build failures usually indicate a problem with the package or the build environment

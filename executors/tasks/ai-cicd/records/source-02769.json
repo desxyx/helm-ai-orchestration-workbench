@@ -1,0 +1,21 @@
+{
+  "attempt": 4,
+  "query": "R01_inventory",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "asset",
+    "search-all-resources",
+    "--scope=projects/<CLOUD_PROJECT>",
+    "--project=<CLOUD_PROJECT>",
+    "--quiet",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T23:56:37.150+11:00",
+  "end_utc": "2026-10-05T23:56:48.301+11:00",
+  "exit_code": 0,
+  "stdout": "R01_inventory_attempt4.stdout",
+  "stdout_sha256": "<PRIVATE_REF_03115>",
+  "stderr": "R01_inventory_attempt4.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

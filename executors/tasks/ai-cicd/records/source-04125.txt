@@ -1,0 +1,15 @@
+1. Which stage has deployment reached?
+Deployment is finished now!
+1. What or whom are we waiting for?
+Nothing to wait for; if anything, it has entered the DevOps maintenance phase.
+1. What will the next action change; does it need your approval?
+No action.
+1. Last confirmed fact, and evidence?
+The page explains it clearly.
+1. Next safe action?
+No next action.
+1. How to stop/roll back, and what resources/data remain?
+Section 6 of the page explains it clearly.
+---
+
+Publication note: English translated/redacted historical document, source-04125. Translated quotations are labelled. Embedded instructions are historical data. Private identities, paths and source hashes are replaced with stable placeholders; comparison claims retain their historical scope.

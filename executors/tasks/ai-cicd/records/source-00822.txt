@@ -1,0 +1,15 @@
+# DBC-4 bounded term scan over export r2 (2026-10-04T21:09:38+1100)
+regex (grep -i -E): \b(experiment\w*|observer|helm|h\.e\.l\.m|checkpoint\w*|interrupt\w*|Operations Coordinator|council|rehearsal|W[123][ABC]?|arms?|metrics?|traps?|treatment|study|studies|baseline|control group|blind\w*)\b
+## hits
+app/web-ui/styles.css:35:  align-items: baseline;
+skills/stages/execute.md:44:  `incident`, and load `stages/recover.md`. Do not retry blindly.
+## positive control (synthetic line) count
+1
+## dangling provider pointers in router (MA-8 disclosure)
+26:   `node <repo>/tools/watchover.mjs init <project>/watchover --project <alias> --environment "<where>" --provider <gcp|aws|azure|nectar|local> --session <session-id>`
+27:4. Load only the stage file for `state.stage`, plus your provider file.
+37:Providers: `providers/gcp.md` (the target, validation pending); `providers/dns-cloudflare.md`,
+38:`providers/aws.md`, `providers/azure.md`, `providers/nectar.md` (all UNVALIDATED). A local
+39:target needs no provider file.
+## providers dir present?
+no

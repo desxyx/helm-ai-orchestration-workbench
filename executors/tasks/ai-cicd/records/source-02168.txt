@@ -1,0 +1,5 @@
+$ gcloud projects describe <CLOUD_PROJECT> '--format=json(projectId,lifecycleState)' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+{
+  "lifecycleState": "ACTIVE",
+  "projectId": "<CLOUD_PROJECT>"
+}

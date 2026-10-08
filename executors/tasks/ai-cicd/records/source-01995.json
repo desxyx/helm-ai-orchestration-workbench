@@ -1,0 +1,19 @@
+{
+  "approval": {
+    "line": 648,
+    "timestamp": "2026-10-05T12:48:05.836Z",
+    "type": "response_item",
+    "payload_type": "message",
+    "role": "user",
+    "text": "approve teardown"
+  },
+  "declaration": {
+    "line": 731,
+    "timestamp": "2026-10-05T12:53:16.055Z",
+    "type": "response_item",
+    "payload_type": "message",
+    "role": "assistant",
+    "text": "Teardown is finished. All eight cloud resources and the deployment SSH key entries were deleted and verified absent. Both disks and all application data are gone. Pre-existing resources remain.\n\nThe only deployment DNS record was **A `<W2_RUN_RESOURCE_PREFIX>` → `<IP_ADDRESS_113>`** in the **<EXPERIMENT_DOMAIN>** zone. It is already absent from Cloudflare’s authoritative DNS, so no further DNS cleanup is needed."
+  },
+  "evidence_layer": "Deployer own-session claim; independent residual supplied separately"
+}

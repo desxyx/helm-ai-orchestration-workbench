@@ -1,0 +1,725 @@
+{
+  "source_commit": "<PRIVATE_REF_03069>",
+  "source_tree": "<PRIVATE_REF_01459>",
+  "source_hashes_verified": 146,
+  "public_files": 133,
+  "removed": [
+    "docs/experiment.md",
+    "docs/related-work.md",
+    "docs/roadmap-v0.1b.md",
+    "fixtures/rehearsal/README.md",
+    "fixtures/rehearsal/templates/activation-line.txt",
+    "fixtures/rehearsal/templates/continuation.md",
+    "fixtures/rehearsal/templates/handoff-questions.md",
+    "fixtures/rehearsal/templates/task.md",
+    "fixtures/rehearsal/toy-app/README.md",
+    "fixtures/rehearsal/toy-app/api.mjs",
+    "fixtures/rehearsal/toy-app/compose.yaml",
+    "fixtures/rehearsal/toy-app/run.mjs",
+    "fixtures/rehearsal/toy-app/services.json",
+    "fixtures/rehearsal/toy-app/web.mjs",
+    "tests/rehearsal.test.mjs"
+  ],
+  "new": [
+    "docs/provenance.md",
+    "docs/validation.md"
+  ],
+  "changed": [
+    ".gitignore",
+    "README.md",
+    "docs/architecture.md",
+    "docs/design-decisions.md",
+    "fixtures/valid/scenarios/view-handoff-exception/events.jsonl",
+    "fixtures/valid/scenarios/view-handoff-exception/state.json",
+    "skills/router.md",
+    "skills/stages/plan.md",
+    "tests/design-decisions.test.mjs",
+    "tests/docs.test.mjs",
+    "tests/helpers/vocabulary.mjs",
+    "tests/neutral-domains.test.mjs",
+    "tests/view-handoff.test.mjs",
+    "tests/vocabulary.test.mjs"
+  ],
+  "unchanged": [
+    "LICENSE",
+    "SECURITY.md",
+    "app/web-ui/app.js",
+    "app/web-ui/freshness.mjs",
+    "app/web-ui/index.html",
+    "app/web-ui/render.mjs",
+    "app/web-ui/styles.css",
+    "fixtures/invalid/malformed-events-line/events.jsonl",
+    "fixtures/invalid/malformed-events-line/expected.json",
+    "fixtures/invalid/malformed-events-line/state.json",
+    "fixtures/invalid/malformed-state-json/events.jsonl",
+    "fixtures/invalid/malformed-state-json/expected.json",
+    "fixtures/invalid/malformed-state-json/state.json",
+    "fixtures/invalid/planted-secret-canary/events.jsonl",
+    "fixtures/invalid/planted-secret-canary/expected.json",
+    "fixtures/invalid/planted-secret-canary/state.json",
+    "fixtures/invalid/schema-invalid-secret-value-field/events.jsonl",
+    "fixtures/invalid/schema-invalid-secret-value-field/expected.json",
+    "fixtures/invalid/schema-invalid-secret-value-field/state.json",
+    "fixtures/invalid/schema-invalid-status/events.jsonl",
+    "fixtures/invalid/schema-invalid-status/expected.json",
+    "fixtures/invalid/schema-invalid-status/state.json",
+    "fixtures/packages/reduced-no-dns/package-omissions.json",
+    "fixtures/valid/lifecycle/01-recon/events.jsonl",
+    "fixtures/valid/lifecycle/01-recon/state.json",
+    "fixtures/valid/lifecycle/02-approval-pending/events.jsonl",
+    "fixtures/valid/lifecycle/02-approval-pending/state.json",
+    "fixtures/valid/lifecycle/03-long-operation/events.jsonl",
+    "fixtures/valid/lifecycle/03-long-operation/state.json",
+    "fixtures/valid/lifecycle/04-verification-failed/events.jsonl",
+    "fixtures/valid/lifecycle/04-verification-failed/state.json",
+    "fixtures/valid/lifecycle/05-incident/events.jsonl",
+    "fixtures/valid/lifecycle/05-incident/state.json",
+    "fixtures/valid/lifecycle/06-recovered/events.jsonl",
+    "fixtures/valid/lifecycle/06-recovered/state.json",
+    "fixtures/valid/lifecycle/07-verified/events.jsonl",
+    "fixtures/valid/lifecycle/07-verified/state.json",
+    "fixtures/valid/lifecycle/08-handoff/events.jsonl",
+    "fixtures/valid/lifecycle/08-handoff/state.json",
+    "fixtures/valid/lifecycle/09-teardown/events.jsonl",
+    "fixtures/valid/lifecycle/09-teardown/state.json",
+    "fixtures/valid/lifecycle/10-closed/events.jsonl",
+    "fixtures/valid/lifecycle/10-closed/state.json",
+    "fixtures/valid/scenarios/awaiting-acceptance/events.jsonl",
+    "fixtures/valid/scenarios/awaiting-acceptance/state.json",
+    "fixtures/valid/scenarios/interrupted/events.jsonl",
+    "fixtures/valid/scenarios/interrupted/state.json",
+    "fixtures/valid/scenarios/package-gap/events.jsonl",
+    "fixtures/valid/scenarios/package-gap/state.json",
+    "fixtures/valid/scenarios/services-and-names/events.jsonl",
+    "fixtures/valid/scenarios/services-and-names/state.json",
+    "fixtures/valid/scenarios/shared-object-delta/events.jsonl",
+    "fixtures/valid/scenarios/shared-object-delta/state.json",
+    "fixtures/valid/scenarios/view-handoff-confirmed/events.jsonl",
+    "fixtures/valid/scenarios/view-handoff-confirmed/state.json",
+    "fixtures/valid/status/assumed/events.jsonl",
+    "fixtures/valid/status/assumed/state.json",
+    "fixtures/valid/status/blocked/events.jsonl",
+    "fixtures/valid/status/blocked/state.json",
+    "fixtures/valid/status/stale/events.jsonl",
+    "fixtures/valid/status/stale/state.json",
+    "fixtures/valid/status/unknown/events.jsonl",
+    "fixtures/valid/status/unknown/state.json",
+    "fixtures/valid/status/user_confirmed/events.jsonl",
+    "fixtures/valid/status/user_confirmed/state.json",
+    "fixtures/valid/status/verified_local/events.jsonl",
+    "fixtures/valid/status/verified_local/state.json",
+    "fixtures/valid/status/verified_remote/events.jsonl",
+    "fixtures/valid/status/verified_remote/state.json",
+    "integrations/catalog.json",
+    "package.json",
+    "schema/event.schema.json",
+    "schema/state.schema.json",
+    "skills/providers/aws.md",
+    "skills/providers/azure.md",
+    "skills/providers/dns-cloudflare.md",
+    "skills/providers/gcp.md",
+    "skills/providers/nectar.md",
+    "skills/stages/execute.md",
+    "skills/stages/recon.md",
+    "skills/stages/recover.md",
+    "skills/stages/verify-handoff.md",
+    "tests/brief.test.mjs",
+    "tests/browser.test.mjs",
+    "tests/browser/view_check.py",
+    "tests/catalog.test.mjs",
+    "tests/cli.test.mjs",
+    "tests/commit-state.test.mjs",
+    "tests/fixtures.test.mjs",
+    "tests/freshness.test.mjs",
+    "tests/helpers/fixtures.mjs",
+    "tests/helpers/python.mjs",
+    "tests/neutrality.test.mjs",
+    "tests/render.test.mjs",
+    "tests/scaffold.test.mjs",
+    "tests/scenarios.test.mjs",
+    "tests/schema-bounds.test.mjs",
+    "tests/schema-subset.test.mjs",
+    "tests/secret-scan.test.mjs",
+    "tests/semantic-checks.test.mjs",
+    "tests/server.test.mjs",
+    "tests/skill-package.test.mjs",
+    "tests/skills-workflow.test.mjs",
+    "tests/skills.test.mjs",
+    "tests/validate.test.mjs",
+    "tests/workspace.test.mjs",
+    "tools/lib/brief.mjs",
+    "tools/lib/commit.mjs",
+    "tools/lib/neutrality.mjs",
+    "tools/lib/schema-subset.mjs",
+    "tools/lib/secret-scan.mjs",
+    "tools/lib/semantic-checks.mjs",
+    "tools/lib/server.mjs",
+    "tools/lib/validate.mjs",
+    "tools/lib/workspace.mjs",
+    "tools/neutrality-scan.mjs",
+    "tools/watchover.mjs"
+  ],
+  "protected_byte_equal": [
+    "LICENSE",
+    "SECURITY.md",
+    "app/web-ui/app.js",
+    "app/web-ui/freshness.mjs",
+    "app/web-ui/index.html",
+    "app/web-ui/render.mjs",
+    "app/web-ui/styles.css",
+    "integrations/catalog.json",
+    "package.json",
+    "schema/event.schema.json",
+    "schema/state.schema.json",
+    "skills/providers/aws.md",
+    "skills/providers/azure.md",
+    "skills/providers/dns-cloudflare.md",
+    "skills/providers/gcp.md",
+    "skills/providers/nectar.md",
+    "tools/lib/brief.mjs",
+    "tools/lib/commit.mjs",
+    "tools/lib/neutrality.mjs",
+    "tools/lib/schema-subset.mjs",
+    "tools/lib/secret-scan.mjs",
+    "tools/lib/semantic-checks.mjs",
+    "tools/lib/server.mjs",
+    "tools/lib/validate.mjs",
+    "tools/lib/workspace.mjs",
+    "tools/neutrality-scan.mjs",
+    "tools/watchover.mjs"
+  ],
+  "all_public_files": {
+    ".gitignore": {
+      "bytes": 242,
+      "sha256": "<PRIVATE_REF_03610>"
+    },
+    "LICENSE": {
+      "bytes": 1089,
+      "sha256": "<PRIVATE_REF_01616>"
+    },
+    "README.md": {
+      "bytes": 10221,
+      "sha256": "<PRIVATE_REF_00891>"
+    },
+    "SECURITY.md": {
+      "bytes": 4017,
+      "sha256": "<PRIVATE_REF_01487>"
+    },
+    "app/web-ui/app.js": {
+      "bytes": 2241,
+      "sha256": "<PRIVATE_REF_02469>"
+    },
+    "app/web-ui/freshness.mjs": {
+      "bytes": 4734,
+      "sha256": "<PRIVATE_REF_02900>"
+    },
+    "app/web-ui/index.html": {
+      "bytes": 704,
+      "sha256": "<PRIVATE_REF_01020>"
+    },
+    "app/web-ui/render.mjs": {
+      "bytes": 17784,
+      "sha256": "<PRIVATE_REF_01934>"
+    },
+    "app/web-ui/styles.css": {
+      "bytes": 7792,
+      "sha256": "<PRIVATE_REF_01315>"
+    },
+    "docs/architecture.md": {
+      "bytes": 4629,
+      "sha256": "<PRIVATE_REF_01857>"
+    },
+    "docs/design-decisions.md": {
+      "bytes": 17898,
+      "sha256": "<PRIVATE_REF_02711>"
+    },
+    "docs/provenance.md": {
+      "bytes": 2103,
+      "sha256": "<PRIVATE_REF_02779>"
+    },
+    "docs/validation.md": {
+      "bytes": 4350,
+      "sha256": "<PRIVATE_REF_02758>"
+    },
+    "fixtures/invalid/malformed-events-line/events.jsonl": {
+      "bytes": 1338,
+      "sha256": "<PRIVATE_REF_02709>"
+    },
+    "fixtures/invalid/malformed-events-line/expected.json": {
+      "bytes": 149,
+      "sha256": "<PRIVATE_REF_02479>"
+    },
+    "fixtures/invalid/malformed-events-line/state.json": {
+      "bytes": 7044,
+      "sha256": "<PRIVATE_REF_03332>"
+    },
+    "fixtures/invalid/malformed-state-json/events.jsonl": {
+      "bytes": 1587,
+      "sha256": "<PRIVATE_REF_03307>"
+    },
+    "fixtures/invalid/malformed-state-json/expected.json": {
+      "bytes": 132,
+      "sha256": "<PRIVATE_REF_02155>"
+    },
+    "fixtures/invalid/malformed-state-json/state.json": {
+      "bytes": 7004,
+      "sha256": "<PRIVATE_REF_02905>"
+    },
+    "fixtures/invalid/planted-secret-canary/events.jsonl": {
+      "bytes": 6081,
+      "sha256": "<PRIVATE_REF_00533>"
+    },
+    "fixtures/invalid/planted-secret-canary/expected.json": {
+      "bytes": 225,
+      "sha256": "<PRIVATE_REF_02521>"
+    },
+    "fixtures/invalid/planted-secret-canary/state.json": {
+      "bytes": 12818,
+      "sha256": "<PRIVATE_REF_02578>"
+    },
+    "fixtures/invalid/schema-invalid-secret-value-field/events.jsonl": {
+      "bytes": 1587,
+      "sha256": "<PRIVATE_REF_03307>"
+    },
+    "fixtures/invalid/schema-invalid-secret-value-field/expected.json": {
+      "bytes": 255,
+      "sha256": "<PRIVATE_REF_03318>"
+    },
+    "fixtures/invalid/schema-invalid-secret-value-field/state.json": {
+      "bytes": 7074,
+      "sha256": "<PRIVATE_REF_00148>"
+    },
+    "fixtures/invalid/schema-invalid-status/events.jsonl": {
+      "bytes": 1587,
+      "sha256": "<PRIVATE_REF_03307>"
+    },
+    "fixtures/invalid/schema-invalid-status/expected.json": {
+      "bytes": 213,
+      "sha256": "<PRIVATE_REF_01731>"
+    },
+    "fixtures/invalid/schema-invalid-status/state.json": {
+      "bytes": 7037,
+      "sha256": "<PRIVATE_REF_01593>"
+    },
+    "fixtures/packages/reduced-no-dns/package-omissions.json": {
+      "bytes": 235,
+      "sha256": "<PRIVATE_REF_03591>"
+    },
+    "fixtures/valid/lifecycle/01-recon/events.jsonl": {
+      "bytes": 1587,
+      "sha256": "<PRIVATE_REF_03307>"
+    },
+    "fixtures/valid/lifecycle/01-recon/state.json": {
+      "bytes": 7044,
+      "sha256": "<PRIVATE_REF_03332>"
+    },
+    "fixtures/valid/lifecycle/02-approval-pending/events.jsonl": {
+      "bytes": 2776,
+      "sha256": "<PRIVATE_REF_01888>"
+    },
+    "fixtures/valid/lifecycle/02-approval-pending/state.json": {
+      "bytes": 10823,
+      "sha256": "<PRIVATE_REF_03727>"
+    },
+    "fixtures/valid/lifecycle/03-long-operation/events.jsonl": {
+      "bytes": 6038,
+      "sha256": "<PRIVATE_REF_01940>"
+    },
+    "fixtures/valid/lifecycle/03-long-operation/state.json": {
+      "bytes": 12818,
+      "sha256": "<PRIVATE_REF_02578>"
+    },
+    "fixtures/valid/lifecycle/04-verification-failed/events.jsonl": {
+      "bytes": 7257,
+      "sha256": "<PRIVATE_REF_02553>"
+    },
+    "fixtures/valid/lifecycle/04-verification-failed/state.json": {
+      "bytes": 13755,
+      "sha256": "<PRIVATE_REF_02234>"
+    },
+    "fixtures/valid/lifecycle/05-incident/events.jsonl": {
+      "bytes": 8344,
+      "sha256": "<PRIVATE_REF_02496>"
+    },
+    "fixtures/valid/lifecycle/05-incident/state.json": {
+      "bytes": 14141,
+      "sha256": "<PRIVATE_REF_02912>"
+    },
+    "fixtures/valid/lifecycle/06-recovered/events.jsonl": {
+      "bytes": 9212,
+      "sha256": "<PRIVATE_REF_03750>"
+    },
+    "fixtures/valid/lifecycle/06-recovered/state.json": {
+      "bytes": 13987,
+      "sha256": "<PRIVATE_REF_01423>"
+    },
+    "fixtures/valid/lifecycle/07-verified/events.jsonl": {
+      "bytes": 10398,
+      "sha256": "<PRIVATE_REF_01780>"
+    },
+    "fixtures/valid/lifecycle/07-verified/state.json": {
+      "bytes": 14650,
+      "sha256": "<PRIVATE_REF_02327>"
+    },
+    "fixtures/valid/lifecycle/08-handoff/events.jsonl": {
+      "bytes": 10964,
+      "sha256": "<PRIVATE_REF_01607>"
+    },
+    "fixtures/valid/lifecycle/08-handoff/state.json": {
+      "bytes": 16195,
+      "sha256": "<PRIVATE_REF_01239>"
+    },
+    "fixtures/valid/lifecycle/09-teardown/events.jsonl": {
+      "bytes": 12816,
+      "sha256": "<PRIVATE_REF_02232>"
+    },
+    "fixtures/valid/lifecycle/09-teardown/state.json": {
+      "bytes": 15115,
+      "sha256": "<PRIVATE_REF_02798>"
+    },
+    "fixtures/valid/lifecycle/10-closed/events.jsonl": {
+      "bytes": 14579,
+      "sha256": "<PRIVATE_REF_02392>"
+    },
+    "fixtures/valid/lifecycle/10-closed/state.json": {
+      "bytes": 15489,
+      "sha256": "<PRIVATE_REF_01907>"
+    },
+    "fixtures/valid/scenarios/awaiting-acceptance/events.jsonl": {
+      "bytes": 2395,
+      "sha256": "<PRIVATE_REF_02110>"
+    },
+    "fixtures/valid/scenarios/awaiting-acceptance/state.json": {
+      "bytes": 2660,
+      "sha256": "<PRIVATE_REF_02751>"
+    },
+    "fixtures/valid/scenarios/interrupted/events.jsonl": {
+      "bytes": 2484,
+      "sha256": "<PRIVATE_REF_02563>"
+    },
+    "fixtures/valid/scenarios/interrupted/state.json": {
+      "bytes": 2556,
+      "sha256": "<PRIVATE_REF_01765>"
+    },
+    "fixtures/valid/scenarios/package-gap/events.jsonl": {
+      "bytes": 497,
+      "sha256": "<PRIVATE_REF_03715>"
+    },
+    "fixtures/valid/scenarios/package-gap/state.json": {
+      "bytes": 2608,
+      "sha256": "<PRIVATE_REF_01728>"
+    },
+    "fixtures/valid/scenarios/services-and-names/events.jsonl": {
+      "bytes": 4580,
+      "sha256": "<PRIVATE_REF_00955>"
+    },
+    "fixtures/valid/scenarios/services-and-names/state.json": {
+      "bytes": 7788,
+      "sha256": "<PRIVATE_REF_03168>"
+    },
+    "fixtures/valid/scenarios/shared-object-delta/events.jsonl": {
+      "bytes": 4186,
+      "sha256": "<PRIVATE_REF_03031>"
+    },
+    "fixtures/valid/scenarios/shared-object-delta/state.json": {
+      "bytes": 3625,
+      "sha256": "<PRIVATE_REF_01994>"
+    },
+    "fixtures/valid/scenarios/view-handoff-confirmed/events.jsonl": {
+      "bytes": 1653,
+      "sha256": "<PRIVATE_REF_00140>"
+    },
+    "fixtures/valid/scenarios/view-handoff-confirmed/state.json": {
+      "bytes": 3634,
+      "sha256": "<PRIVATE_REF_03267>"
+    },
+    "fixtures/valid/scenarios/view-handoff-exception/events.jsonl": {
+      "bytes": 1737,
+      "sha256": "<PRIVATE_REF_01087>"
+    },
+    "fixtures/valid/scenarios/view-handoff-exception/state.json": {
+      "bytes": 4213,
+      "sha256": "<PRIVATE_REF_01570>"
+    },
+    "fixtures/valid/status/assumed/events.jsonl": {
+      "bytes": 254,
+      "sha256": "<PRIVATE_REF_01061>"
+    },
+    "fixtures/valid/status/assumed/state.json": {
+      "bytes": 1567,
+      "sha256": "<PRIVATE_REF_01472>"
+    },
+    "fixtures/valid/status/blocked/events.jsonl": {
+      "bytes": 254,
+      "sha256": "<PRIVATE_REF_01061>"
+    },
+    "fixtures/valid/status/blocked/state.json": {
+      "bytes": 1652,
+      "sha256": "<PRIVATE_REF_02285>"
+    },
+    "fixtures/valid/status/stale/events.jsonl": {
+      "bytes": 566,
+      "sha256": "<PRIVATE_REF_02101>"
+    },
+    "fixtures/valid/status/stale/state.json": {
+      "bytes": 1621,
+      "sha256": "<PRIVATE_REF_01745>"
+    },
+    "fixtures/valid/status/unknown/events.jsonl": {
+      "bytes": 254,
+      "sha256": "<PRIVATE_REF_01061>"
+    },
+    "fixtures/valid/status/unknown/state.json": {
+      "bytes": 1527,
+      "sha256": "<PRIVATE_REF_02080>"
+    },
+    "fixtures/valid/status/user_confirmed/events.jsonl": {
+      "bytes": 254,
+      "sha256": "<PRIVATE_REF_01061>"
+    },
+    "fixtures/valid/status/user_confirmed/state.json": {
+      "bytes": 1577,
+      "sha256": "<PRIVATE_REF_01831>"
+    },
+    "fixtures/valid/status/verified_local/events.jsonl": {
+      "bytes": 588,
+      "sha256": "<PRIVATE_REF_02984>"
+    },
+    "fixtures/valid/status/verified_local/state.json": {
+      "bytes": 1803,
+      "sha256": "<PRIVATE_REF_00970>"
+    },
+    "fixtures/valid/status/verified_remote/events.jsonl": {
+      "bytes": 559,
+      "sha256": "<PRIVATE_REF_03007>"
+    },
+    "fixtures/valid/status/verified_remote/state.json": {
+      "bytes": 1637,
+      "sha256": "<PRIVATE_REF_02326>"
+    },
+    "integrations/catalog.json": {
+      "bytes": 13406,
+      "sha256": "<PRIVATE_REF_01474>"
+    },
+    "package.json": {
+      "bytes": 361,
+      "sha256": "<PRIVATE_REF_03412>"
+    },
+    "schema/event.schema.json": {
+      "bytes": 4000,
+      "sha256": "<PRIVATE_REF_01999>"
+    },
+    "schema/state.schema.json": {
+      "bytes": 13055,
+      "sha256": "<PRIVATE_REF_01409>"
+    },
+    "skills/providers/aws.md": {
+      "bytes": 1147,
+      "sha256": "<PRIVATE_REF_02199>"
+    },
+    "skills/providers/azure.md": {
+      "bytes": 1063,
+      "sha256": "<PRIVATE_REF_02829>"
+    },
+    "skills/providers/dns-cloudflare.md": {
+      "bytes": 3252,
+      "sha256": "<PRIVATE_REF_01932>"
+    },
+    "skills/providers/gcp.md": {
+      "bytes": 4384,
+      "sha256": "<PRIVATE_REF_03682>"
+    },
+    "skills/providers/nectar.md": {
+      "bytes": 1226,
+      "sha256": "<PRIVATE_REF_01373>"
+    },
+    "skills/router.md": {
+      "bytes": 12483,
+      "sha256": "<PRIVATE_REF_01580>"
+    },
+    "skills/stages/execute.md": {
+      "bytes": 4717,
+      "sha256": "<PRIVATE_REF_01205>"
+    },
+    "skills/stages/plan.md": {
+      "bytes": 5550,
+      "sha256": "<PRIVATE_REF_01135>"
+    },
+    "skills/stages/recon.md": {
+      "bytes": 2378,
+      "sha256": "<PRIVATE_REF_02325>"
+    },
+    "skills/stages/recover.md": {
+      "bytes": 3445,
+      "sha256": "<PRIVATE_REF_02780>"
+    },
+    "skills/stages/verify-handoff.md": {
+      "bytes": 4546,
+      "sha256": "<PRIVATE_REF_02087>"
+    },
+    "tests/brief.test.mjs": {
+      "bytes": 8788,
+      "sha256": "<PRIVATE_REF_03253>"
+    },
+    "tests/browser.test.mjs": {
+      "bytes": 11080,
+      "sha256": "<PRIVATE_REF_02811>"
+    },
+    "tests/browser/view_check.py": {
+      "bytes": 6250,
+      "sha256": "<PRIVATE_REF_01495>"
+    },
+    "tests/catalog.test.mjs": {
+      "bytes": 2888,
+      "sha256": "<PRIVATE_REF_01357>"
+    },
+    "tests/cli.test.mjs": {
+      "bytes": 7172,
+      "sha256": "<PRIVATE_REF_01307>"
+    },
+    "tests/commit-state.test.mjs": {
+      "bytes": 12699,
+      "sha256": "<PRIVATE_REF_02030>"
+    },
+    "tests/design-decisions.test.mjs": {
+      "bytes": 5638,
+      "sha256": "<PRIVATE_REF_02526>"
+    },
+    "tests/docs.test.mjs": {
+      "bytes": 6133,
+      "sha256": "<PRIVATE_REF_02036>"
+    },
+    "tests/fixtures.test.mjs": {
+      "bytes": 5154,
+      "sha256": "<PRIVATE_REF_01751>"
+    },
+    "tests/freshness.test.mjs": {
+      "bytes": 4776,
+      "sha256": "<PRIVATE_REF_01860>"
+    },
+    "tests/helpers/fixtures.mjs": {
+      "bytes": 1891,
+      "sha256": "<PRIVATE_REF_02026>"
+    },
+    "tests/helpers/python.mjs": {
+      "bytes": 551,
+      "sha256": "<PRIVATE_REF_01420>"
+    },
+    "tests/helpers/vocabulary.mjs": {
+      "bytes": 4966,
+      "sha256": "<PRIVATE_REF_03239>"
+    },
+    "tests/neutral-domains.test.mjs": {
+      "bytes": 2166,
+      "sha256": "<PRIVATE_REF_01168>"
+    },
+    "tests/neutrality.test.mjs": {
+      "bytes": 3687,
+      "sha256": "<PRIVATE_REF_01210>"
+    },
+    "tests/render.test.mjs": {
+      "bytes": 9911,
+      "sha256": "<PRIVATE_REF_02267>"
+    },
+    "tests/scaffold.test.mjs": {
+      "bytes": 2347,
+      "sha256": "<PRIVATE_REF_00990>"
+    },
+    "tests/scenarios.test.mjs": {
+      "bytes": 10665,
+      "sha256": "<PRIVATE_REF_03580>"
+    },
+    "tests/schema-bounds.test.mjs": {
+      "bytes": 4196,
+      "sha256": "<PRIVATE_REF_01502>"
+    },
+    "tests/schema-subset.test.mjs": {
+      "bytes": 6564,
+      "sha256": "<PRIVATE_REF_02360>"
+    },
+    "tests/secret-scan.test.mjs": {
+      "bytes": 9153,
+      "sha256": "<PRIVATE_REF_02197>"
+    },
+    "tests/semantic-checks.test.mjs": {
+      "bytes": 19712,
+      "sha256": "<PRIVATE_REF_00129>"
+    },
+    "tests/server.test.mjs": {
+      "bytes": 5339,
+      "sha256": "<PRIVATE_REF_02119>"
+    },
+    "tests/skill-package.test.mjs": {
+      "bytes": 4715,
+      "sha256": "<PRIVATE_REF_01836>"
+    },
+    "tests/skills-workflow.test.mjs": {
+      "bytes": 15597,
+      "sha256": "<PRIVATE_REF_03699>"
+    },
+    "tests/skills.test.mjs": {
+      "bytes": 7483,
+      "sha256": "<PRIVATE_REF_00670>"
+    },
+    "tests/validate.test.mjs": {
+      "bytes": 15667,
+      "sha256": "<PRIVATE_REF_01997>"
+    },
+    "tests/view-handoff.test.mjs": {
+      "bytes": 6384,
+      "sha256": "<PRIVATE_REF_02071>"
+    },
+    "tests/vocabulary.test.mjs": {
+      "bytes": 5158,
+      "sha256": "<PRIVATE_REF_02292>"
+    },
+    "tests/workspace.test.mjs": {
+      "bytes": 11220,
+      "sha256": "<PRIVATE_REF_01509>"
+    },
+    "tools/lib/brief.mjs": {
+      "bytes": 5238,
+      "sha256": "<PRIVATE_REF_02854>"
+    },
+    "tools/lib/commit.mjs": {
+      "bytes": 4274,
+      "sha256": "<PRIVATE_REF_01692>"
+    },
+    "tools/lib/neutrality.mjs": {
+      "bytes": 2724,
+      "sha256": "<PRIVATE_REF_02098>"
+    },
+    "tools/lib/schema-subset.mjs": {
+      "bytes": 8900,
+      "sha256": "<PRIVATE_REF_01362>"
+    },
+    "tools/lib/secret-scan.mjs": {
+      "bytes": 5345,
+      "sha256": "<PRIVATE_REF_02402>"
+    },
+    "tools/lib/semantic-checks.mjs": {
+      "bytes": 16824,
+      "sha256": "<PRIVATE_REF_02960>"
+    },
+    "tools/lib/server.mjs": {
+      "bytes": 3562,
+      "sha256": "<PRIVATE_REF_01253>"
+    },
+    "tools/lib/validate.mjs": {
+      "bytes": 12123,
+      "sha256": "<PRIVATE_REF_03433>"
+    },
+    "tools/lib/workspace.mjs": {
+      "bytes": 6328,
+      "sha256": "<PRIVATE_REF_01063>"
+    },
+    "tools/neutrality-scan.mjs": {
+      "bytes": 1626,
+      "sha256": "<PRIVATE_REF_01304>"
+    },
+    "tools/watchover.mjs": {
+      "bytes": 7422,
+      "sha256": "<PRIVATE_REF_01187>"
+    }
+  }
+}

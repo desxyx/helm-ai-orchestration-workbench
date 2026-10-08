@@ -1,0 +1,32 @@
+{
+  "prepared_at": "2026-10-06T00:17:22.716004+11:00",
+  "status": "BOTH_ARMS_SEALED; FRESH_ANALYSIS_READY",
+  "workspace": "/private/tmp/w2-comparison-20261006/work",
+  "fresh_context": "Required; neither Observer nor current Operations Coordinator substitutes for comparison session",
+  "planned_model": "claude-sonnet-5-5, existing CLI; no runtime/model change",
+  "tools": "Read,Glob,Grep only; no cloud/network/shell/write tooling exposed to analyst",
+  "native_response_archive": "Custodian preserves original model response and materializes report verbatim, then mechanically verifies inputs/outputs and registers seal",
+  "allowed_inputs": [
+    "Both arms sealed artifacts and SHA manifests",
+    "Canonical mapping after both seals",
+    "Frozen comparison structure/rules and effective amendments",
+    "Declared custody/measurement limits"
+  ],
+  "excluded": [
+    "Unsealed Observer drafts",
+    "Private HC raw answers, correctness keys and scoring material",
+    "Deployer workspaces, raw transcript/provider/credential control folders",
+    "W3 workload identity/screening/brief",
+    "Product code or architecture changes"
+  ],
+  "A_manifest_verified": 6,
+  "B_manifest": "PENDING_FINAL_SEAL",
+  "remote_product_head": "<PRIVATE_REF_02752>",
+  "product_remote_configured": false,
+  "B_manifest_verified": 5,
+  "B_manifest_sha256": "<PRIVATE_REF_00929>",
+  "input_manifest_sha256": "<PRIVATE_REF_03111>",
+  "descriptive_only": true,
+  "inputs_released_at": "2026-10-06T02:27:45.875330+11:00",
+  "sealed_owner_supplement": "Explicit qualitative excerpts only; no HC raw answers/keys/scores"
+}

@@ -1,0 +1,361 @@
+{
+  "harness": "experiment-control-tool",
+  "version": "0.3.0",
+  "built_at": "2026-10-04T09:51:19.944Z",
+  "file_count": 49,
+  "files": [
+    {
+      "path": "PA4_CONTROLS.md",
+      "sha256": "<PRIVATE_REF_02290>"
+    },
+    {
+      "path": "fixtures/approval_fixture.jsonl",
+      "sha256": "<PRIVATE_REF_02408>"
+    },
+    {
+      "path": "fixtures/controller_fixture.json",
+      "sha256": "<PRIVATE_REF_03536>"
+    },
+    {
+      "path": "fixtures/project_inventory_fixture.json",
+      "sha256": "<PRIVATE_REF_01372>"
+    },
+    {
+      "path": "fixtures/reset_groups_fixture.json",
+      "sha256": "<PRIVATE_REF_01749>"
+    },
+    {
+      "path": "fixtures/run_card_fixture.json",
+      "sha256": "<PRIVATE_REF_01240>"
+    },
+    {
+      "path": "fixtures/snapshot_fixture.json",
+      "sha256": "<PRIVATE_REF_03691>"
+    },
+    {
+      "path": "fixtures/transcript_fixture.jsonl",
+      "sha256": "<PRIVATE_REF_01863>"
+    },
+    {
+      "path": "tests/approvalExtract.test.js",
+      "sha256": "<PRIVATE_REF_01935>"
+    },
+    {
+      "path": "tests/entryCheck.test.js",
+      "sha256": "<PRIVATE_REF_02021>"
+    },
+    {
+      "path": "tests/evidenceRegistryCheck.test.js",
+      "sha256": "<PRIVATE_REF_03420>"
+    },
+    {
+      "path": "tests/pa4.test.js",
+      "sha256": "<PRIVATE_REF_02554>"
+    },
+    {
+      "path": "tests/pa4_fixtures.js",
+      "sha256": "<PRIVATE_REF_02887>"
+    },
+    {
+      "path": "tests/packageIncrement.test.js",
+      "sha256": "<PRIVATE_REF_02855>"
+    },
+    {
+      "path": "tests/projectInventory.test.js",
+      "sha256": "<PRIVATE_REF_02165>"
+    },
+    {
+      "path": "tests/render.test.js",
+      "sha256": "<PRIVATE_REF_01461>"
+    },
+    {
+      "path": "tests/secretScan.test.js",
+      "sha256": "<PRIVATE_REF_02063>"
+    },
+    {
+      "path": "tests/snapshot.test.js",
+      "sha256": "<PRIVATE_REF_02452>"
+    },
+    {
+      "path": "tool/bin/experiment-control-tool.js",
+      "sha256": "<PRIVATE_REF_01211>"
+    },
+    {
+      "path": "tool/package-lock.json",
+      "sha256": "<PRIVATE_REF_01155>"
+    },
+    {
+      "path": "tool/package.json",
+      "sha256": "<PRIVATE_REF_01594>"
+    },
+    {
+      "path": "tool/src/approvalExtract.js",
+      "sha256": "<PRIVATE_REF_02224>"
+    },
+    {
+      "path": "tool/src/credDelivery.js",
+      "sha256": "<PRIVATE_REF_01802>"
+    },
+    {
+      "path": "tool/src/discoverability.js",
+      "sha256": "<PRIVATE_REF_01746>"
+    },
+    {
+      "path": "tool/src/entryCheck.js",
+      "sha256": "<PRIVATE_REF_02923>"
+    },
+    {
+      "path": "tool/src/entryPreflight.js",
+      "sha256": "<PRIVATE_REF_02919>"
+    },
+    {
+      "path": "tool/src/evidenceRegistryCheck.js",
+      "sha256": "<PRIVATE_REF_01261>"
+    },
+    {
+      "path": "tool/src/harnessManifest.js",
+      "sha256": "<PRIVATE_REF_03553>"
+    },
+    {
+      "path": "tool/src/hcLock.js",
+      "sha256": "<PRIVATE_REF_01645>"
+    },
+    {
+      "path": "tool/src/interruptDetect.js",
+      "sha256": "<PRIVATE_REF_03411>"
+    },
+    {
+      "path": "tool/src/lib/chainVerify.js",
+      "sha256": "<PRIVATE_REF_02580>"
+    },
+    {
+      "path": "tool/src/lib/cli.js",
+      "sha256": "<PRIVATE_REF_01744>"
+    },
+    {
+      "path": "tool/src/lib/identity.js",
+      "sha256": "<PRIVATE_REF_01566>"
+    },
+    {
+      "path": "tool/src/lib/rollout.js",
+      "sha256": "<PRIVATE_REF_01671>"
+    },
+    {
+      "path": "tool/src/lib/util.js",
+      "sha256": "<PRIVATE_REF_02680>"
+    },
+    {
+      "path": "tool/src/packageIncrement.js",
+      "sha256": "<PRIVATE_REF_03488>"
+    },
+    {
+      "path": "tool/src/packetComplete.js",
+      "sha256": "<PRIVATE_REF_02561>"
+    },
+    {
+      "path": "tool/src/projectInventory.js",
+      "sha256": "<PRIVATE_REF_00937>"
+    },
+    {
+      "path": "tool/src/render.js",
+      "sha256": "<PRIVATE_REF_00927>"
+    },
+    {
+      "path": "tool/src/resourceX.js",
+      "sha256": "<PRIVATE_REF_02299>"
+    },
+    {
+      "path": "tool/src/secretScan.js",
+      "sha256": "<PRIVATE_REF_03552>"
+    },
+    {
+      "path": "tool/src/slipCapture.js",
+      "sha256": "<PRIVATE_REF_00002>"
+    },
+    {
+      "path": "tool/src/snapshot.js",
+      "sha256": "<PRIVATE_REF_03133>"
+    },
+    {
+      "path": "tool/src/syntheticScan.js",
+      "sha256": "<PRIVATE_REF_01347>"
+    },
+    {
+      "path": "tool/support/billable_create_rules.json",
+      "sha256": "<PRIVATE_REF_02353>"
+    },
+    {
+      "path": "tool/support/codex_home_template/config.toml",
+      "sha256": "<PRIVATE_REF_03638>"
+    },
+    {
+      "path": "tool/support/packet_required_items.json",
+      "sha256": "<PRIVATE_REF_00570>"
+    },
+    {
+      "path": "tool/support/prohibited_labels.json",
+      "sha256": "<PRIVATE_REF_00665>"
+    },
+    {
+      "path": "tool/support/runtime_lock_w2.json",
+      "sha256": "<PRIVATE_REF_02231>"
+    }
+  ],
+  "references": [
+    {
+      "label": "R14:ma1_verify_r14.py",
+      "locator": "MA1_ROOT/executor/adapter_record_stage/ma1_verify_r14.py",
+      "expected_sha256": "<PRIVATE_REF_02821>",
+      "actual_sha256": "<PRIVATE_REF_02821>",
+      "match": true
+    },
+    {
+      "label": "R14:ma1_prov_scan_r14.py",
+      "locator": "MA1_ROOT/executor/adapter_record_stage/ma1_prov_scan_r14.py",
+      "expected_sha256": "<PRIVATE_REF_03208>",
+      "actual_sha256": "<PRIVATE_REF_03208>",
+      "match": true
+    },
+    {
+      "label": "R14:PROFILE_REGISTRY_R14.json",
+      "locator": "MA1_ROOT/evidence/adapter_record_stage/executor/PROFILE_REGISTRY_R14.json",
+      "expected_sha256": "<PRIVATE_REF_02152>",
+      "actual_sha256": "<PRIVATE_REF_02152>",
+      "match": true
+    },
+    {
+      "label": "R14:SHA256SUMS_ADAPTER_STAGE_R14",
+      "locator": "MA1_ROOT/evidence/adapter_record_stage/executor/SHA256SUMS_ADAPTER_STAGE_R14",
+      "expected_sha256": "<PRIVATE_REF_00132>",
+      "actual_sha256": "<PRIVATE_REF_00132>",
+      "match": true
+    },
+    {
+      "label": "R14:STATIC_CHECK_LOG_R14.md",
+      "locator": "MA1_ROOT/evidence/adapter_record_stage/executor/static_checks_r14/STATIC_CHECK_LOG_R14.md",
+      "expected_sha256": "<PRIVATE_REF_00961>",
+      "actual_sha256": "<PRIVATE_REF_00961>",
+      "match": true
+    },
+    {
+      "label": "R14:ma1_guest_capture_r13.sh",
+      "locator": "MA1_ROOT/executor/adapter_record_stage/ma1_guest_capture_r13.sh",
+      "expected_sha256": "<PRIVATE_REF_02133>",
+      "actual_sha256": "<PRIVATE_REF_02133>",
+      "match": true
+    },
+    {
+      "label": "R14:ma1_webui_build.sh",
+      "locator": "MA1_ROOT/executor/adapter_record_stage/ma1_webui_build.sh",
+      "expected_sha256": "<PRIVATE_REF_01351>",
+      "actual_sha256": "<PRIVATE_REF_01351>",
+      "match": true
+    },
+    {
+      "label": "R14:alerta_webui_fetch.py",
+      "locator": "MA1_ROOT/executor/adapter_record_stage/alerta_webui_fetch.py",
+      "expected_sha256": "<PRIVATE_REF_02962>",
+      "actual_sha256": "<PRIVATE_REF_02962>",
+      "match": true
+    },
+    {
+      "label": "R14:alerta_probe.py",
+      "locator": "MA1_ROOT/executor/adapter_record_stage/alerta_probe.py",
+      "expected_sha256": "<PRIVATE_REF_02248>",
+      "actual_sha256": "<PRIVATE_REF_02248>",
+      "match": true
+    },
+    {
+      "label": "R14:gw.sh",
+      "locator": "MA1_ROOT/evidence/adapter_record_stage/executor/capture_contract_r12/gw.sh",
+      "expected_sha256": "<PRIVATE_REF_02525>",
+      "actual_sha256": "<PRIVATE_REF_02525>",
+      "match": true
+    },
+    {
+      "label": "R14:redact_w2.pl",
+      "locator": "MA1_ROOT/evidence/adapter_record_stage/executor/capture_contract_r12/redact_w2.pl",
+      "expected_sha256": "<PRIVATE_REF_03716>",
+      "actual_sha256": "<PRIVATE_REF_03716>",
+      "match": true
+    },
+    {
+      "label": "R14:ADAPTER_RECORD_R14_ALERTA_SUBMISSION.md",
+      "locator": "MA1_ROOT/evidence/adapter_record_stage/executor/ADAPTER_RECORD_R14_ALERTA_SUBMISSION.md",
+      "expected_sha256": "<PRIVATE_REF_02800>",
+      "actual_sha256": "<PRIVATE_REF_02800>",
+      "match": true
+    },
+    {
+      "label": "R14:MA1_ADAPTER_RECORD_FINAL_R14_ALERTA.md",
+      "locator": "MA1_ROOT/evidence/adapter_record_stage/executor/MA1_ADAPTER_RECORD_FINAL_R14_ALERTA.md",
+      "expected_sha256": "<PRIVATE_REF_02057>",
+      "actual_sha256": "<PRIVATE_REF_02057>",
+      "match": true
+    },
+    {
+      "label": "R14:REVIEW_RETURN_ALERTA_R14.md",
+      "locator": "MA1_ROOT/evidence/adapter_record_stage/reviewer/alerta_finalization_2026-10-04/REVIEW_RETURN_ALERTA_R14.md",
+      "expected_sha256": "<PRIVATE_REF_02241>",
+      "actual_sha256": "<PRIVATE_REF_02241>",
+      "match": true
+    },
+    {
+      "label": "R14:FINAL_HANDOFF_TO_OPERATIONS_COORDINATOR_ALERTA_R14.md",
+      "locator": "MA1_ROOT/evidence/adapter_record_stage/reviewer/alerta_finalization_2026-10-04/FINAL_HANDOFF_TO_OPERATIONS_COORDINATOR_ALERTA_R14.md",
+      "expected_sha256": "<PRIVATE_REF_03594>",
+      "actual_sha256": "<PRIVATE_REF_03594>",
+      "match": true
+    },
+    {
+      "label": "PRE_W2 ratified body",
+      "locator": "HELM_ROOT/council/task/AI_CICD/01_baseline_and_design/04_pre_w2_freeze/council_round_04/PRE_W2_FREEZE_MERGED_FINAL_CANDIDATE.md",
+      "expected_sha256": "<PRIVATE_REF_01075>",
+      "actual_sha256": "<PRIVATE_REF_01075>",
+      "match": true
+    },
+    {
+      "label": "R14 Addendum ratified sidecar",
+      "locator": "HELM_ROOT/council/task/AI_CICD/01_baseline_and_design/04_pre_w2_freeze/council_round_04/W2_MEASUREMENT_ADDENDUM_MA1_R14_RATIFIED_2026-10-04.md",
+      "expected_sha256": "<PRIVATE_REF_03121>",
+      "actual_sha256": "<PRIVATE_REF_03121>",
+      "match": true
+    },
+    {
+      "label": "HC frozen material",
+      "locator": "HELM_ROOT/council/task/AI_CICD/execution/w2_entry_preparation/HC_MATERIALS_FROZEN_2026-10-04.md",
+      "expected_sha256": "<PRIVATE_REF_02212>",
+      "actual_sha256": "<PRIVATE_REF_02212>",
+      "match": true
+    },
+    {
+      "label": "Checkpoint protocol (W1-C4/W1-C9 source)",
+      "locator": "HELM_ROOT/council/task/AI_CICD/00_recon/04_execution_protocol_freeze/03_OPERATIONS_COORDINATOR_control_and_reset/CHECKPOINT_PROTOCOL.md",
+      "expected_sha256": "<PRIVATE_REF_01722>",
+      "actual_sha256": "<PRIVATE_REF_01722>",
+      "match": true
+    },
+    {
+      "label": "W1 next-round corrections (PA-1 source)",
+      "locator": "HELM_ROOT/council/task/AI_CICD/01_baseline_and_design/01_postmortem/W1_council_reentry_2026-09-28/attachments/RUN_W1_NEXT_ROUND_CORRECTIONS.md",
+      "expected_sha256": "<PRIVATE_REF_02102>",
+      "actual_sha256": "<PRIVATE_REF_02102>",
+      "match": true
+    },
+    {
+      "label": "Role/model registry (WF-5 source)",
+      "locator": "HELM_ROOT/council/task/AI_CICD/ROLE_MODEL_REGISTRY.md",
+      "expected_sha256": "<PRIVATE_REF_03161>",
+      "actual_sha256": "<PRIVATE_REF_03161>",
+      "match": true
+    },
+    {
+      "label": "Baseline experiment-control-tool 0.2.0 entry point (unchanged)",
+      "locator": "HELM_ROOT/council/task/AI_CICD/00_recon/05_control_harness_validation/tool/bin/experiment-control-tool.js",
+      "expected_sha256": "<PRIVATE_REF_01558>",
+      "actual_sha256": "<PRIVATE_REF_01558>",
+      "match": true
+    }
+  ],
+  "overall_sha256": "<PRIVATE_REF_02003>"
+}

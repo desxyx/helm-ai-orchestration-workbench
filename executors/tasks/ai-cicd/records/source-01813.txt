@@ -1,0 +1,15 @@
+$ curl -sS --max-time 20 -I <PRIVATE_URL_0229>
+HTTP/2 200 
+accept-ranges: bytes
+alt-svc: h3=":443"; ma=2592000
+content-type: text/html; charset=utf-8
+etag: "dlwrteakftms2a5"
+last-modified: Mon, 05 Oct 2026 08:44:29 GMT
+referrer-policy: strict-origin-when-cross-origin
+server: Caddy
+vary: Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+content-length: 2957
+date: Mon, 05 Oct 2026 10:24:13 GMT
+

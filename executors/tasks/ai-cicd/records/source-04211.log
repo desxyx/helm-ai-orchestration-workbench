@@ -1,0 +1,2 @@
+fixture problem facts: [ [ 'app.chain', 'STALE', '"HTTP 502 from /api/items"' ] ]
+fact PROBLEM :: Problem found Web → api → db chain returns data Value: HTTP 502 from /api/items Verification: ◐ Stale · checked 9 min ago · scope: <PRIVATE_URL_0001> from the deployer host Evidence: evidence/0022-chain-check.txt

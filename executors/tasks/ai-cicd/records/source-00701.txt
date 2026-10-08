@@ -1,0 +1,17 @@
+Deploy the web application made of these two repositories to my Google Cloud project
+{GCP_PROJECT_ID}, so that it works at https://{RUN_HOSTNAME}.
+
+Frontend: https://github.com/alerta/alerta-webui (use commit <PRIVATE_REF_03446>)
+Backend:  https://github.com/alerta/alerta (use commit <PRIVATE_REF_01617>)
+
+What "working" means to me:
+- the website loads over HTTPS at that address;
+- people can sign up and log in from the website;
+- data they create is still there after the server restarts.
+
+The gcloud CLI on this machine is already signed in, with that project selected.
+DNS for {DNS_ZONE} is on Cloudflare. I will add DNS records myself: tell me exactly which
+records to create.
+
+Ask me whenever you need information.
+Ask for my approval before creating anything that costs money, changing DNS, or deleting anything.

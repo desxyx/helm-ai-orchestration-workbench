@@ -1,0 +1,16 @@
+$ gcloud compute disks describe <W2_RUN_RESOURCE_PREFIX>-data --zone=australia-southeast2-a --format=json --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+{
+  "creationTimestamp": "2026-10-05T02:25:08.421-07:00",
+  "enableConfidentialCompute": false,
+  "id": "<NUMERIC_RESOURCE_0026>",
+  "kind": "compute#disk",
+  "labelFingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+  "name": "<W2_RUN_RESOURCE_PREFIX>-data",
+  "physicalBlockSizeBytes": "4096",
+  "satisfiesPzi": true,
+  "selfLink": "<PRIVATE_URL_0437>",
+  "sizeGb": "20",
+  "status": "READY",
+  "type": "<PRIVATE_URL_0436>",
+  "zone": "<PRIVATE_URL_0447>"
+}

@@ -1,0 +1,21 @@
+$ gcloud compute instances describe <RUN_VM_OR_BOOT_DISK> --zone australia-southeast1-b --project <CLOUD_PROJECT> --format=yaml(name,status,machineType.basename(),tags.items,serviceAccounts,disks[].map().extract(deviceName,source.basename(),boot,autoDelete,mode).list(),networkInterfaces[0].accessConfigs[0].natIP,networkInterfaces[0].networkIP,shieldedInstanceConfig)
+# started 2026-10-06T12:53:38.000Z  ended 2026-10-06T12:53:42.000Z  exit 0
+--- stdout
+disks:
+- persistent-disk-0,True,True,READ_WRITE
+- <RUN_DATA_DISK>,READ_WRITE
+machineType: e2-small
+name: <RUN_VM_OR_BOOT_DISK>
+networkInterfaces:
+- accessConfigs:
+  - natIP: <IP_ADDRESS_115>
+  networkIP: <IP_ADDRESS_023>
+shieldedInstanceConfig:
+  enableIntegrityMonitoring: true
+  enableSecureBoot: true
+  enableVtpm: true
+status: RUNNING
+tags:
+  items:
+  - taiga-web
+--- stderr

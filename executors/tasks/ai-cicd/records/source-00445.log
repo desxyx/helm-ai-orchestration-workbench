@@ -1,0 +1,430 @@
+Pre-commit staged set, scope and status inspected:
+A  .gitignore
+A  LICENSE
+A  README.md
+A  SECURITY.md
+A  app/web-ui/app.js
+A  app/web-ui/freshness.mjs
+A  app/web-ui/index.html
+A  app/web-ui/render.mjs
+A  app/web-ui/styles.css
+A  docs/architecture.md
+A  docs/design-decisions.md
+A  docs/provenance.md
+A  docs/validation.md
+A  fixtures/invalid/malformed-events-line/events.jsonl
+A  fixtures/invalid/malformed-events-line/expected.json
+A  fixtures/invalid/malformed-events-line/state.json
+A  fixtures/invalid/malformed-state-json/events.jsonl
+A  fixtures/invalid/malformed-state-json/expected.json
+A  fixtures/invalid/malformed-state-json/state.json
+A  fixtures/invalid/planted-secret-canary/events.jsonl
+A  fixtures/invalid/planted-secret-canary/expected.json
+A  fixtures/invalid/planted-secret-canary/state.json
+A  fixtures/invalid/schema-invalid-secret-value-field/events.jsonl
+A  fixtures/invalid/schema-invalid-secret-value-field/expected.json
+A  fixtures/invalid/schema-invalid-secret-value-field/state.json
+A  fixtures/invalid/schema-invalid-status/events.jsonl
+A  fixtures/invalid/schema-invalid-status/expected.json
+A  fixtures/invalid/schema-invalid-status/state.json
+A  fixtures/packages/reduced-no-dns/package-omissions.json
+A  fixtures/valid/lifecycle/01-recon/events.jsonl
+A  fixtures/valid/lifecycle/01-recon/state.json
+A  fixtures/valid/lifecycle/02-approval-pending/events.jsonl
+A  fixtures/valid/lifecycle/02-approval-pending/state.json
+A  fixtures/valid/lifecycle/03-long-operation/events.jsonl
+A  fixtures/valid/lifecycle/03-long-operation/state.json
+A  fixtures/valid/lifecycle/04-verification-failed/events.jsonl
+A  fixtures/valid/lifecycle/04-verification-failed/state.json
+A  fixtures/valid/lifecycle/05-incident/events.jsonl
+A  fixtures/valid/lifecycle/05-incident/state.json
+A  fixtures/valid/lifecycle/06-recovered/events.jsonl
+A  fixtures/valid/lifecycle/06-recovered/state.json
+A  fixtures/valid/lifecycle/07-verified/events.jsonl
+A  fixtures/valid/lifecycle/07-verified/state.json
+A  fixtures/valid/lifecycle/08-handoff/events.jsonl
+A  fixtures/valid/lifecycle/08-handoff/state.json
+A  fixtures/valid/lifecycle/09-teardown/events.jsonl
+A  fixtures/valid/lifecycle/09-teardown/state.json
+A  fixtures/valid/lifecycle/10-closed/events.jsonl
+A  fixtures/valid/lifecycle/10-closed/state.json
+A  fixtures/valid/scenarios/awaiting-acceptance/events.jsonl
+A  fixtures/valid/scenarios/awaiting-acceptance/state.json
+A  fixtures/valid/scenarios/interrupted/events.jsonl
+A  fixtures/valid/scenarios/interrupted/state.json
+A  fixtures/valid/scenarios/package-gap/events.jsonl
+A  fixtures/valid/scenarios/package-gap/state.json
+A  fixtures/valid/scenarios/services-and-names/events.jsonl
+A  fixtures/valid/scenarios/services-and-names/state.json
+A  fixtures/valid/scenarios/shared-object-delta/events.jsonl
+A  fixtures/valid/scenarios/shared-object-delta/state.json
+A  fixtures/valid/scenarios/view-handoff-confirmed/events.jsonl
+A  fixtures/valid/scenarios/view-handoff-confirmed/state.json
+A  fixtures/valid/scenarios/view-handoff-exception/events.jsonl
+A  fixtures/valid/scenarios/view-handoff-exception/state.json
+A  fixtures/valid/status/assumed/events.jsonl
+A  fixtures/valid/status/assumed/state.json
+A  fixtures/valid/status/blocked/events.jsonl
+A  fixtures/valid/status/blocked/state.json
+A  fixtures/valid/status/stale/events.jsonl
+A  fixtures/valid/status/stale/state.json
+A  fixtures/valid/status/unknown/events.jsonl
+A  fixtures/valid/status/unknown/state.json
+A  fixtures/valid/status/user_confirmed/events.jsonl
+A  fixtures/valid/status/user_confirmed/state.json
+A  fixtures/valid/status/verified_local/events.jsonl
+A  fixtures/valid/status/verified_local/state.json
+A  fixtures/valid/status/verified_remote/events.jsonl
+A  fixtures/valid/status/verified_remote/state.json
+A  integrations/catalog.json
+A  package.json
+A  schema/event.schema.json
+A  schema/state.schema.json
+A  skills/providers/aws.md
+A  skills/providers/azure.md
+A  skills/providers/dns-cloudflare.md
+A  skills/providers/gcp.md
+A  skills/providers/nectar.md
+A  skills/router.md
+A  skills/stages/execute.md
+A  skills/stages/plan.md
+A  skills/stages/recon.md
+A  skills/stages/recover.md
+A  skills/stages/verify-handoff.md
+A  tests/brief.test.mjs
+A  tests/browser.test.mjs
+A  tests/browser/view_check.py
+A  tests/catalog.test.mjs
+A  tests/cli.test.mjs
+A  tests/commit-state.test.mjs
+A  tests/design-decisions.test.mjs
+A  tests/docs.test.mjs
+A  tests/fixtures.test.mjs
+A  tests/freshness.test.mjs
+A  tests/helpers/fixtures.mjs
+A  tests/helpers/python.mjs
+A  tests/helpers/vocabulary.mjs
+A  tests/neutral-domains.test.mjs
+A  tests/neutrality.test.mjs
+A  tests/render.test.mjs
+A  tests/scaffold.test.mjs
+A  tests/scenarios.test.mjs
+A  tests/schema-bounds.test.mjs
+A  tests/schema-subset.test.mjs
+A  tests/secret-scan.test.mjs
+A  tests/semantic-checks.test.mjs
+A  tests/server.test.mjs
+A  tests/skill-package.test.mjs
+A  tests/skills-workflow.test.mjs
+A  tests/skills.test.mjs
+A  tests/validate.test.mjs
+A  tests/view-handoff.test.mjs
+A  tests/vocabulary.test.mjs
+A  tests/workspace.test.mjs
+A  tools/lib/brief.mjs
+A  tools/lib/commit.mjs
+A  tools/lib/neutrality.mjs
+A  tools/lib/schema-subset.mjs
+A  tools/lib/secret-scan.mjs
+A  tools/lib/semantic-checks.mjs
+A  tools/lib/server.mjs
+A  tools/lib/validate.mjs
+A  tools/lib/workspace.mjs
+A  tools/neutrality-scan.mjs
+A  tools/watchover.mjs
+ .gitignore                                         |  15 +
+ LICENSE                                            |  21 +
+ README.md                                          | 168 +++++++
+ SECURITY.md                                        |  67 +++
+ app/web-ui/app.js                                  |  76 ++++
+ app/web-ui/freshness.mjs                           | 104 +++++
+ app/web-ui/index.html                              |  19 +
+ app/web-ui/render.mjs                              | 285 ++++++++++++
+ app/web-ui/styles.css                              | 196 ++++++++
+ docs/architecture.md                               |  80 ++++
+ docs/design-decisions.md                           |  89 ++++
+ docs/provenance.md                                 |  37 ++
+ docs/validation.md                                 |  47 ++
+ .../invalid/malformed-events-line/events.jsonl     |   5 +
+ .../invalid/malformed-events-line/expected.json    |  10 +
+ fixtures/invalid/malformed-events-line/state.json  | 244 ++++++++++
+ fixtures/invalid/malformed-state-json/events.jsonl |   5 +
+ .../invalid/malformed-state-json/expected.json     |   9 +
+ fixtures/invalid/malformed-state-json/state.json   | 241 ++++++++++
+ .../invalid/planted-secret-canary/events.jsonl     |  18 +
+ .../invalid/planted-secret-canary/expected.json    |  11 +
+ fixtures/invalid/planted-secret-canary/state.json  | 413 +++++++++++++++++
+ .../schema-invalid-secret-value-field/events.jsonl |   5 +
+ .../expected.json                                  |  11 +
+ .../schema-invalid-secret-value-field/state.json   | 245 ++++++++++
+ .../invalid/schema-invalid-status/events.jsonl     |   5 +
+ .../invalid/schema-invalid-status/expected.json    |  11 +
+ fixtures/invalid/schema-invalid-status/state.json  | 244 ++++++++++
+ .../packages/reduced-no-dns/package-omissions.json |   5 +
+ fixtures/valid/lifecycle/01-recon/events.jsonl     |   5 +
+ fixtures/valid/lifecycle/01-recon/state.json       | 244 ++++++++++
+ .../lifecycle/02-approval-pending/events.jsonl     |   9 +
+ .../valid/lifecycle/02-approval-pending/state.json | 329 ++++++++++++++
+ .../valid/lifecycle/03-long-operation/events.jsonl |  18 +
+ .../valid/lifecycle/03-long-operation/state.json   | 413 +++++++++++++++++
+ .../lifecycle/04-verification-failed/events.jsonl  |  22 +
+ .../lifecycle/04-verification-failed/state.json    | 447 ++++++++++++++++++
+ fixtures/valid/lifecycle/05-incident/events.jsonl  |  25 +
+ fixtures/valid/lifecycle/05-incident/state.json    | 461 +++++++++++++++++++
+ fixtures/valid/lifecycle/06-recovered/events.jsonl |  28 ++
+ fixtures/valid/lifecycle/06-recovered/state.json   | 452 +++++++++++++++++++
+ fixtures/valid/lifecycle/07-verified/events.jsonl  |  32 ++
+ fixtures/valid/lifecycle/07-verified/state.json    | 468 +++++++++++++++++++
+ fixtures/valid/lifecycle/08-handoff/events.jsonl   |  34 ++
+ fixtures/valid/lifecycle/08-handoff/state.json     | 501 +++++++++++++++++++++
+ fixtures/valid/lifecycle/09-teardown/events.jsonl  |  39 ++
+ fixtures/valid/lifecycle/09-teardown/state.json    | 478 ++++++++++++++++++++
+ fixtures/valid/lifecycle/10-closed/events.jsonl    |  44 ++
+ fixtures/valid/lifecycle/10-closed/state.json      | 484 ++++++++++++++++++++
+ .../scenarios/awaiting-acceptance/events.jsonl     |   9 +
+ .../valid/scenarios/awaiting-acceptance/state.json | 103 +++++
+ fixtures/valid/scenarios/interrupted/events.jsonl  |   9 +
+ fixtures/valid/scenarios/interrupted/state.json    |  98 ++++
+ fixtures/valid/scenarios/package-gap/events.jsonl  |   2 +
+ fixtures/valid/scenarios/package-gap/state.json    |  97 ++++
+ .../scenarios/services-and-names/events.jsonl      |  16 +
+ .../valid/scenarios/services-and-names/state.json  | 279 ++++++++++++
+ .../scenarios/shared-object-delta/events.jsonl     |  14 +
+ .../valid/scenarios/shared-object-delta/state.json | 129 ++++++
+ .../scenarios/view-handoff-confirmed/events.jsonl  |   6 +
+ .../scenarios/view-handoff-confirmed/state.json    | 132 ++++++
+ .../scenarios/view-handoff-exception/events.jsonl  |   6 +
+ .../scenarios/view-handoff-exception/state.json    | 147 ++++++
+ fixtures/valid/status/assumed/events.jsonl         |   1 +
+ fixtures/valid/status/assumed/state.json           |  69 +++
+ fixtures/valid/status/blocked/events.jsonl         |   1 +
+ fixtures/valid/status/blocked/state.json           |  70 +++
+ fixtures/valid/status/stale/events.jsonl           |   2 +
+ fixtures/valid/status/stale/state.json             |  71 +++
+ fixtures/valid/status/unknown/events.jsonl         |   1 +
+ fixtures/valid/status/unknown/state.json           |  69 +++
+ fixtures/valid/status/user_confirmed/events.jsonl  |   1 +
+ fixtures/valid/status/user_confirmed/state.json    |  69 +++
+ fixtures/valid/status/verified_local/events.jsonl  |   2 +
+ fixtures/valid/status/verified_local/state.json    |  73 +++
+ fixtures/valid/status/verified_remote/events.jsonl |   2 +
+ fixtures/valid/status/verified_remote/state.json   |  71 +++
+ integrations/catalog.json                          | 278 ++++++++++++
+ package.json                                       |  14 +
+ schema/event.schema.json                           |  93 ++++
+ schema/state.schema.json                           | 304 +++++++++++++
+ skills/providers/aws.md                            |  20 +
+ skills/providers/azure.md                          |  20 +
+ skills/providers/dns-cloudflare.md                 |  62 +++
+ skills/providers/gcp.md                            |  78 ++++
+ skills/providers/nectar.md                         |  21 +
+ skills/router.md                                   | 165 +++++++
+ skills/stages/execute.md                           |  82 ++++
+ skills/stages/plan.md                              |  89 ++++
+ skills/stages/recon.md                             |  41 ++
+ skills/stages/recover.md                           |  54 +++
+ skills/stages/verify-handoff.md                    |  89 ++++
+ tests/brief.test.mjs                               | 154 +++++++
+ tests/browser.test.mjs                             | 201 +++++++++
+ tests/browser/view_check.py                        | 143 ++++++
+ tests/catalog.test.mjs                             |  55 +++
+ tests/cli.test.mjs                                 | 150 ++++++
+ tests/commit-state.test.mjs                        | 240 ++++++++++
+ tests/design-decisions.test.mjs                    | 106 +++++
+ tests/docs.test.mjs                                | 116 +++++
+ tests/fixtures.test.mjs                            | 111 +++++
+ tests/freshness.test.mjs                           |  94 ++++
+ tests/helpers/fixtures.mjs                         |  52 +++
+ tests/helpers/python.mjs                           |  11 +
+ tests/helpers/vocabulary.mjs                       |  30 ++
+ tests/neutral-domains.test.mjs                     |  39 ++
+ tests/neutrality.test.mjs                          |  76 ++++
+ tests/render.test.mjs                              | 190 ++++++++
+ tests/scaffold.test.mjs                            |  52 +++
+ tests/scenarios.test.mjs                           | 167 +++++++
+ tests/schema-bounds.test.mjs                       |  74 +++
+ tests/schema-subset.test.mjs                       | 139 ++++++
+ tests/secret-scan.test.mjs                         | 163 +++++++
+ tests/semantic-checks.test.mjs                     | 313 +++++++++++++
+ tests/server.test.mjs                              | 123 +++++
+ tests/skill-package.test.mjs                       |  84 ++++
+ tests/skills-workflow.test.mjs                     | 229 ++++++++++
+ tests/skills.test.mjs                              | 146 ++++++
+ tests/validate.test.mjs                            | 305 +++++++++++++
+ tests/view-handoff.test.mjs                        | 114 +++++
+ tests/vocabulary.test.mjs                          |  40 ++
+ tests/workspace.test.mjs                           | 224 +++++++++
+ tools/lib/brief.mjs                                |  63 +++
+ tools/lib/commit.mjs                               | 107 +++++
+ tools/lib/neutrality.mjs                           |  61 +++
+ tools/lib/schema-subset.mjs                        | 203 +++++++++
+ tools/lib/secret-scan.mjs                          | 111 +++++
+ tools/lib/semantic-checks.mjs                      | 343 ++++++++++++++
+ tools/lib/server.mjs                               |  89 ++++
+ tools/lib/validate.mjs                             | 296 ++++++++++++
+ tools/lib/workspace.mjs                            | 134 ++++++
+ tools/neutrality-scan.mjs                          |  37 ++
+ tools/watchover.mjs                                | 166 +++++++
+ 133 files changed, 15729 insertions(+)
+
+Commit output:
+[release/0.1.2 (root-commit) <PRIVATE_REF_02615>] Prepare WatchOver 0.1.2 public edition
+ 133 files changed, 15729 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 LICENSE
+ create mode 100644 README.md
+ create mode 100644 SECURITY.md
+ create mode 100644 app/web-ui/app.js
+ create mode 100644 app/web-ui/freshness.mjs
+ create mode 100644 app/web-ui/index.html
+ create mode 100644 app/web-ui/render.mjs
+ create mode 100644 app/web-ui/styles.css
+ create mode 100644 docs/architecture.md
+ create mode 100644 docs/design-decisions.md
+ create mode 100644 docs/provenance.md
+ create mode 100644 docs/validation.md
+ create mode 100644 fixtures/invalid/malformed-events-line/events.jsonl
+ create mode 100644 fixtures/invalid/malformed-events-line/expected.json
+ create mode 100644 fixtures/invalid/malformed-events-line/state.json
+ create mode 100644 fixtures/invalid/malformed-state-json/events.jsonl
+ create mode 100644 fixtures/invalid/malformed-state-json/expected.json
+ create mode 100644 fixtures/invalid/malformed-state-json/state.json
+ create mode 100644 fixtures/invalid/planted-secret-canary/events.jsonl
+ create mode 100644 fixtures/invalid/planted-secret-canary/expected.json
+ create mode 100644 fixtures/invalid/planted-secret-canary/state.json
+ create mode 100644 fixtures/invalid/schema-invalid-secret-value-field/events.jsonl
+ create mode 100644 fixtures/invalid/schema-invalid-secret-value-field/expected.json
+ create mode 100644 fixtures/invalid/schema-invalid-secret-value-field/state.json
+ create mode 100644 fixtures/invalid/schema-invalid-status/events.jsonl
+ create mode 100644 fixtures/invalid/schema-invalid-status/expected.json
+ create mode 100644 fixtures/invalid/schema-invalid-status/state.json
+ create mode 100644 fixtures/packages/reduced-no-dns/package-omissions.json
+ create mode 100644 fixtures/valid/lifecycle/01-recon/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/01-recon/state.json
+ create mode 100644 fixtures/valid/lifecycle/02-approval-pending/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/02-approval-pending/state.json
+ create mode 100644 fixtures/valid/lifecycle/03-long-operation/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/03-long-operation/state.json
+ create mode 100644 fixtures/valid/lifecycle/04-verification-failed/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/04-verification-failed/state.json
+ create mode 100644 fixtures/valid/lifecycle/05-incident/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/05-incident/state.json
+ create mode 100644 fixtures/valid/lifecycle/06-recovered/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/06-recovered/state.json
+ create mode 100644 fixtures/valid/lifecycle/07-verified/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/07-verified/state.json
+ create mode 100644 fixtures/valid/lifecycle/08-handoff/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/08-handoff/state.json
+ create mode 100644 fixtures/valid/lifecycle/09-teardown/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/09-teardown/state.json
+ create mode 100644 fixtures/valid/lifecycle/10-closed/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/10-closed/state.json
+ create mode 100644 fixtures/valid/scenarios/awaiting-acceptance/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/awaiting-acceptance/state.json
+ create mode 100644 fixtures/valid/scenarios/interrupted/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/interrupted/state.json
+ create mode 100644 fixtures/valid/scenarios/package-gap/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/package-gap/state.json
+ create mode 100644 fixtures/valid/scenarios/services-and-names/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/services-and-names/state.json
+ create mode 100644 fixtures/valid/scenarios/shared-object-delta/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/shared-object-delta/state.json
+ create mode 100644 fixtures/valid/scenarios/view-handoff-confirmed/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/view-handoff-confirmed/state.json
+ create mode 100644 fixtures/valid/scenarios/view-handoff-exception/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/view-handoff-exception/state.json
+ create mode 100644 fixtures/valid/status/assumed/events.jsonl
+ create mode 100644 fixtures/valid/status/assumed/state.json
+ create mode 100644 fixtures/valid/status/blocked/events.jsonl
+ create mode 100644 fixtures/valid/status/blocked/state.json
+ create mode 100644 fixtures/valid/status/stale/events.jsonl
+ create mode 100644 fixtures/valid/status/stale/state.json
+ create mode 100644 fixtures/valid/status/unknown/events.jsonl
+ create mode 100644 fixtures/valid/status/unknown/state.json
+ create mode 100644 fixtures/valid/status/user_confirmed/events.jsonl
+ create mode 100644 fixtures/valid/status/user_confirmed/state.json
+ create mode 100644 fixtures/valid/status/verified_local/events.jsonl
+ create mode 100644 fixtures/valid/status/verified_local/state.json
+ create mode 100644 fixtures/valid/status/verified_remote/events.jsonl
+ create mode 100644 fixtures/valid/status/verified_remote/state.json
+ create mode 100644 integrations/catalog.json
+ create mode 100644 package.json
+ create mode 100644 schema/event.schema.json
+ create mode 100644 schema/state.schema.json
+ create mode 100644 skills/providers/aws.md
+ create mode 100644 skills/providers/azure.md
+ create mode 100644 skills/providers/dns-cloudflare.md
+ create mode 100644 skills/providers/gcp.md
+ create mode 100644 skills/providers/nectar.md
+ create mode 100644 skills/router.md
+ create mode 100644 skills/stages/execute.md
+ create mode 100644 skills/stages/plan.md
+ create mode 100644 skills/stages/recon.md
+ create mode 100644 skills/stages/recover.md
+ create mode 100644 skills/stages/verify-handoff.md
+ create mode 100644 tests/brief.test.mjs
+ create mode 100644 tests/browser.test.mjs
+ create mode 100644 tests/browser/view_check.py
+ create mode 100644 tests/catalog.test.mjs
+ create mode 100644 tests/cli.test.mjs
+ create mode 100644 tests/commit-state.test.mjs
+ create mode 100644 tests/design-decisions.test.mjs
+ create mode 100644 tests/docs.test.mjs
+ create mode 100644 tests/fixtures.test.mjs
+ create mode 100644 tests/freshness.test.mjs
+ create mode 100644 tests/helpers/fixtures.mjs
+ create mode 100644 tests/helpers/python.mjs
+ create mode 100644 tests/helpers/vocabulary.mjs
+ create mode 100644 tests/neutral-domains.test.mjs
+ create mode 100644 tests/neutrality.test.mjs
+ create mode 100644 tests/render.test.mjs
+ create mode 100644 tests/scaffold.test.mjs
+ create mode 100644 tests/scenarios.test.mjs
+ create mode 100644 tests/schema-bounds.test.mjs
+ create mode 100644 tests/schema-subset.test.mjs
+ create mode 100644 tests/secret-scan.test.mjs
+ create mode 100644 tests/semantic-checks.test.mjs
+ create mode 100644 tests/server.test.mjs
+ create mode 100644 tests/skill-package.test.mjs
+ create mode 100644 tests/skills-workflow.test.mjs
+ create mode 100644 tests/skills.test.mjs
+ create mode 100644 tests/validate.test.mjs
+ create mode 100644 tests/view-handoff.test.mjs
+ create mode 100644 tests/vocabulary.test.mjs
+ create mode 100644 tests/workspace.test.mjs
+ create mode 100644 tools/lib/brief.mjs
+ create mode 100644 tools/lib/commit.mjs
+ create mode 100644 tools/lib/neutrality.mjs
+ create mode 100644 tools/lib/schema-subset.mjs
+ create mode 100644 tools/lib/secret-scan.mjs
+ create mode 100644 tools/lib/semantic-checks.mjs
+ create mode 100644 tools/lib/server.mjs
+ create mode 100644 tools/lib/validate.mjs
+ create mode 100644 tools/lib/workspace.mjs
+ create mode 100644 tools/neutrality-scan.mjs
+ create mode 100644 tools/watchover.mjs
+
+commit <PRIVATE_REF_02615>
+Author:     WatchOver contributors <ACCOUNT_EMAIL_067>
+AuthorDate: Wed Oct 7 23:33:06 2026 +1100
+Commit:     WatchOver contributors <ACCOUNT_EMAIL_067>
+CommitDate: Wed Oct 7 23:33:06 2026 +1100
+
+    Prepare WatchOver 0.1.2 public edition
+
+.git/config:
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logAllRefUpdates = false
+	ignorecase = true
+	precomposeunicode = true
+	hooksPath = /dev/null
+[user]
+	name = WatchOver contributors
+	email = <ACCOUNT_EMAIL_067>
+[commit]
+	gpgsign = false
+
+All 133 archive files hash-equal tested public files. First root, clean status, no remotes/tags checked.

@@ -1,0 +1,281 @@
+{
+  "node": "v26.8.1",
+  "repo": "<CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07/reviewer/product",
+  "temp_root": "<CLIENT_TEMP_ROOT>/T/wo-r1-NKaE39",
+  "passed": 38,
+  "failed": 2,
+  "report": [
+    {
+      "id": "F04-B help --help",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "id": "F04-B help -h",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "id": "F04-B malformed []",
+      "ok": true,
+      "exit": 64,
+      "stderr_first": "usage: node tools/watchover.mjs <init|append|commit-state|validate|brief|show> <workspace> [options]"
+    },
+    {
+      "id": "F04-B malformed [\"--help\",\"x\"]",
+      "ok": true,
+      "exit": 64,
+      "stderr_first": "unknown command \"--help\""
+    },
+    {
+      "id": "F04-B malformed [\"-h\",\"--help\"]",
+      "ok": true,
+      "exit": 64,
+      "stderr_first": "unknown command \"-h\""
+    },
+    {
+      "id": "F04-B malformed [\"help\"]",
+      "ok": true,
+      "exit": 64,
+      "stderr_first": "unknown command \"help\""
+    },
+    {
+      "id": "F04-B malformed [\"append\"]",
+      "ok": true,
+      "exit": 64,
+      "stderr_first": "give exactly one workspace folder"
+    },
+    {
+      "id": "F04-B malformed [\"validate\",\"a\",\"b\"]",
+      "ok": true,
+      "exit": 64,
+      "stderr_first": "give exactly one workspace folder"
+    },
+    {
+      "id": "F04-B malformed [\"brief\",\"ws\",\"--now\",\"nope\"]",
+      "ok": true,
+      "exit": 64,
+      "stderr_first": "--now must be an ISO date-time"
+    },
+    {
+      "id": "F04-B malformed [\"show\",\"ws\",\"--port\",\"70000\"]",
+      "ok": true,
+      "exit": 64,
+      "stderr_first": "--port must be a whole number from 0 to 65535"
+    },
+    {
+      "id": "F04-B malformed [\"init\",\"ws\"]",
+      "ok": true,
+      "exit": 64,
+      "stderr_first": "missing --project, --environment, --provider, --session"
+    },
+    {
+      "id": "F04-B malformed [\"validate\",\"--help\"]",
+      "ok": true,
+      "exit": 64,
+      "stderr_first": "Unknown option '--help'. To specify a positional argument starting with a '-', place it at the end of the command after '--', as in '-- \"--help\""
+    },
+    {
+      "id": "F04 init",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "id": "F04-A earlier explicit at refused, file unchanged, predecessor+location+advice",
+      "ok": true,
+      "exit": 1,
+      "before_sha256": "<PRIVATE_REF_03540>",
+      "after_sha256": "<PRIVATE_REF_03540>",
+      "output": "refused: 1 problem\n- [event-sequence] events.jsonl line 2: /at precedes previous event evt-0001 at 2026-10-07T11:20:20.640Z; omit at to use CLI time filling, or supply a time at or after the predecessor. Align checked_at with the recorded promotion time\nnothing was written"
+    },
+    {
+      "id": "F04-A 1ms-earlier explicit at refused",
+      "ok": true,
+      "exit": 1
+    },
+    {
+      "id": "F04-A equal explicit at accepted verbatim",
+      "ok": true,
+      "exit": 0,
+      "at": "2026-10-07T11:20:20.640Z",
+      "output": "appended evt-0002; workspace valid"
+    },
+    {
+      "id": "F04-A omitted at filled by CLI, not earlier than predecessor",
+      "ok": true,
+      "exit": 0,
+      "filled_at": "2026-10-07T11:20:20.841Z",
+      "predecessor_at": "2026-10-07T11:20:20.800Z"
+    },
+    {
+      "id": "F04-A default time = max(now, predecessor) without +1ms",
+      "ok": true,
+      "filled_at": "2026-10-07T11:22:20.848Z",
+      "future": "2026-10-07T11:22:20.848Z"
+    },
+    {
+      "id": "F04-B append exit 2 written + action-specific text",
+      "ok": true,
+      "exit": 2,
+      "output": "appended evt-0007; the workspace now needs attention (usually a state.json update): 1 problem\n- [state-stage-matches-events] state.json /stage: state stage \"recon\" differs from the last recorded stage change \"plan\""
+    },
+    {
+      "id": "F04-B commit-state exit 0 after state update",
+      "ok": true,
+      "exit": 0,
+      "output": "committed state.json; workspace valid (folder sync: synced)"
+    },
+    {
+      "id": "F04-B commit-state refusal exit 1, state unchanged",
+      "ok": true,
+      "exit": 1,
+      "output_head": "refused: 2 problems | - [terminal-intents-have-results] events.jsonl line 6: closed has unpaired intent evt-0006; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary | - [state-stage-matches-events] state.json /stage: state stage \"closed\" differs from the last recorded stage change \"plan\""
+    },
+    {
+      "id": "F04-C brief counts all open intents honestly with locator",
+      "ok": true,
+      "stage": "verifying",
+      "exit": 0,
+      "line": "Open intents: 5 (evt-0033, evt-0034, evt-0035; 2 more); complete listing: events.jsonl, every type=intent id with no type=result related reference.",
+      "lines": 30
+    },
+    {
+      "id": "F04-C locator rule retrieves exactly the open IDs",
+      "ok": true,
+      "listed": [
+        "evt-0033",
+        "evt-0034",
+        "evt-0035",
+        "evt-0036",
+        "evt-0037"
+      ],
+      "openIds": [
+        "evt-0033",
+        "evt-0034",
+        "evt-0035",
+        "evt-0036",
+        "evt-0037"
+      ]
+    },
+    {
+      "id": "F04-C incident with open intents valid",
+      "ok": true,
+      "exit": 0,
+      "output": "committed state.json; workspace valid (folder sync: synced)"
+    },
+    {
+      "id": "F04-C handoff with unpaired intents rejected naming every ID, state unchanged",
+      "ok": true,
+      "append_exit": 2,
+      "append_output": "appended evt-0041; the workspace now needs attention (usually a state.json update): 1 problem | - [state-stage-matches-events] state.json /stage: state stage \"verifying\" differs from the last recorded stage change \"handoff\"",
+      "exit": 1,
+      "output": "refused: 5 problems | - [terminal-intents-have-results] events.jsonl line 33: handoff has unpaired intent evt-0033; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary | - [terminal-intents-have-results] events.jsonl line 34: handoff has unpaired intent evt-0034; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary | - [terminal-intents-have-results] events.jsonl line 35: handoff has unpaired intent evt-0035; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary | - [terminal-intents-have-results] events.jsonl line 36: handoff has unpaired intent evt-0036; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary | - [terminal-intents-have-results] events.jsonl line 37: handoff has unpaired intent evt-0037; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary | state.json is unchanged"
+    },
+    {
+      "id": "F04-C validate names unpaired intents",
+      "ok": false,
+      "exit": 1
+    },
+    {
+      "id": "F04-C brief on invalid terminal record still exposes IDs via problems",
+      "ok": false,
+      "exit": 1,
+      "head": "refused: the record is not valid; no summary is shown"
+    },
+    {
+      "id": "F04-C truthful unknown results close the intents; handoff commits",
+      "ok": true,
+      "exit": 0,
+      "output": "committed state.json; workspace valid (folder sync: synced)"
+    },
+    {
+      "id": "F04-C brief shows 0 open intents after pairing",
+      "ok": true,
+      "line": "Open intents: 0; complete listing: events.jsonl, every type=intent id with no type=result related reference."
+    },
+    {
+      "id": "F04-C sealed fixture 08-handoff validates",
+      "ok": true,
+      "exit": 0,
+      "intents": 4,
+      "unpaired": 0
+    },
+    {
+      "id": "F04-C sealed fixture 10-closed validates",
+      "ok": true,
+      "exit": 0,
+      "intents": 7,
+      "unpaired": 0
+    },
+    {
+      "id": "F02-A historical approval w/o snapshot commits",
+      "ok": true,
+      "exit": 0,
+      "output": "committed state.json; workspace valid (folder sync: synced)"
+    },
+    {
+      "id": "F02-A brief discloses missing historical snapshot",
+      "ok": true,
+      "exit": 0,
+      "lines": [
+        "Recorded approvals (history, not new authority): evt-0010 dec-01 [plan_acceptance, billable] → evt-0009 → snapshot missing",
+        "Approval scope: all decisions in events.jsonl; follow related → decision_request.evidence; 1 approved request(s) without snapshot locators (scope unavailable; do not invent). Read linked files to establish contents."
+      ]
+    },
+    {
+      "id": "F02-A decision_request with evidence appended (exit 2 until pending set)",
+      "ok": true,
+      "exit": 2,
+      "output": "appended evt-0011; the workspace now needs attention (usually a state.json update): 1 problem | - [requests-answered-or-pending] events.jsonl line 11: request \"dec-02\" is unanswered but is not the pending decision"
+    },
+    {
+      "id": "F02-A pending_decision committed with requested_at = appended at",
+      "ok": true,
+      "exit": 0,
+      "output": "committed state.json; workspace valid (folder sync: synced)"
+    },
+    {
+      "id": "F02-A pending cleared and committed",
+      "ok": true,
+      "exit": 0,
+      "output": "committed state.json; workspace valid (folder sync: synced)"
+    },
+    {
+      "id": "F02-A validate ok after clear",
+      "ok": true,
+      "output": "valid: all checks passed; secret scan self-test passed (15 patterns), 0 findings"
+    },
+    {
+      "id": "F02-A full snapshot recovered via decision.related -> request.evidence; reply preserved",
+      "ok": true,
+      "recovered_fields": [
+        "action",
+        "targets",
+        "categories",
+        "why",
+        "cost_or_blast_radius",
+        "reversibility",
+        "rollback",
+        "success_check",
+        "reply_options",
+        "requested_at"
+      ],
+      "reply": "yes go ahead with the batch, my token is [REDACTED]"
+    },
+    {
+      "id": "F02-A brief points to request evidence locator",
+      "ok": true,
+      "lines": [
+        "Recorded approvals (history, not new authority): evt-0010 dec-01 [plan_acceptance, billable] → evt-0009 → snapshot missing; evt-0012 dec-02 [delete, destructive] → evt-0011 → evidence/dec-02-request.json",
+        "Approval scope: all decisions in events.jsonl; follow related → decision_request.evidence; 1 approved request(s) without snapshot locators (scope unavailable; do not invent). Read linked files to establish contents."
+      ],
+      "total_lines": 24
+    },
+    {
+      "id": "F02-A/F05 secret in a snapshot file is flagged without echo",
+      "ok": true,
+      "exit": 1,
+      "output": "invalid: 2 problems | - [secret] evidence/dec-03-request.json line 1 (secret-assignment): possible secret (secret-assignment); the value is not shown | - [secret] evidence/dec-03-request.json line 1 (named-key-secret-assignment): possible secret (named-key-secret-assignment); the value is not shown"
+    }
+  ]
+}

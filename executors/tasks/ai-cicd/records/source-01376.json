@@ -1,0 +1,24 @@
+{
+  "run_id": "RUN-W2A",
+  "probe_model": "claude-sonnet-5-5",
+  "client_version": "2.1.289",
+  "work_directory": "/private/tmp/records-18f7/work",
+  "source_workspace_sha256": "<PRIVATE_REF_03520>",
+  "entries_delivered": 660,
+  "regular_files": 661,
+  "sha256sums": "<PRIVATE_REF_03374>",
+  "source_data_only": true,
+  "known_pattern_matches_after": 0,
+  "candidate_patterns_after": 0,
+  "verification_image_pixels_withheld": 3,
+  "excluded": [
+    "Observer output",
+    "Operations Coordinator controller annotations",
+    "Council analysis",
+    "HC answers/keys/scores",
+    "Treatment mapping",
+    "Answer key"
+  ],
+  "authority": "Human Operator explicitly authorized direct fresh Sonnet 5.5 CLI read-only measurement",
+  "status": "READY_FOR_FRESH_PROBE"
+}

@@ -1,0 +1,21 @@
+{
+  "attempt": 8,
+  "query": "R05_networks",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "compute",
+    "networks",
+    "list",
+    "--project=<CLOUD_PROJECT>",
+    "--quiet",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T23:57:04.716+11:00",
+  "end_utc": "2026-10-05T23:57:05.968+11:00",
+  "exit_code": 0,
+  "stdout": "R05_networks_attempt8.stdout",
+  "stdout_sha256": "<PRIVATE_REF_03207>",
+  "stderr": "R05_networks_attempt8.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

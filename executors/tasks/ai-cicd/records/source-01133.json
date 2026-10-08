@@ -1,0 +1,19 @@
+{
+  "receipt_id": "AI-CICD-20261005-W2A-CP01-READONLY-001",
+  "actor": "Operations Coordinator",
+  "target": "<CLOUD_PROJECT>; us-central1/<W2_RUN_RESOURCE_PREFIX>-ip; existing local session/source metadata",
+  "action": "One existing frozen project-inventory bundle, supplementary read-only lists, address describe, SDK version and active account/project metadata; local checkpoint records and delivery only",
+  "started_at": "2026-10-05T13:31:45+11:00",
+  "ended_at": "2026-10-05T13:36:20+11:00",
+  "allowed_count_used": "1/1 bundle;10/10 query attempts; no further use",
+  "result": "COMPLETE_WITH_COVERAGE_LIMITATION; SQL supplementary unverified, raw preserved",
+  "stop_point": "snapshot/local custody complete; no cloud mutation",
+  "evidence_locator": "<HELM_ROOT>/council/task/AI_CICD/execution/w2_formal_entry_2026-10-05/evidence/CP-01_FORCED_INTERRUPT",
+  "provider_changes": "NONE; SDK auth/log cache writes are runtime effects, not cloud/API configuration changes",
+  "limits": [
+    "Attempt4 host sandbox blocked credential-cache/log writes; narrowly approved host retry succeeded on attempt5.",
+    "SDK account value retained privately; prior-owner identity matching not independently established in this snapshot.",
+    "Actual S1 client home is default .codex, not planned c01; do not silently change client home for S2.",
+    "Formal pre-T0 release/reset evidence remains missing; no backdated approval."
+  ]
+}

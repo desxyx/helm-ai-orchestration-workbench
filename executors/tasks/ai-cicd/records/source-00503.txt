@@ -1,0 +1,38 @@
+source 146 candidate 133 unchanged 117
+REMOVED
+  15
+  docs/experiment.md
+  docs/related-work.md
+  docs/roadmap-v0.1b.md
+  fixtures/rehearsal/README.md
+  fixtures/rehearsal/templates/activation-line.txt
+  fixtures/rehearsal/templates/continuation.md
+  fixtures/rehearsal/templates/handoff-questions.md
+  fixtures/rehearsal/templates/task.md
+  fixtures/rehearsal/toy-app/README.md
+  fixtures/rehearsal/toy-app/api.mjs
+  fixtures/rehearsal/toy-app/compose.yaml
+  fixtures/rehearsal/toy-app/run.mjs
+  fixtures/rehearsal/toy-app/services.json
+  fixtures/rehearsal/toy-app/web.mjs
+  tests/rehearsal.test.mjs
+NEW
+  2
+  docs/provenance.md
+  docs/validation.md
+CHANGED
+  14
+  .gitignore
+  README.md
+  docs/architecture.md
+  docs/design-decisions.md
+  fixtures/valid/scenarios/view-handoff-exception/events.jsonl
+  fixtures/valid/scenarios/view-handoff-exception/state.json
+  skills/router.md
+  skills/stages/plan.md
+  tests/design-decisions.test.mjs
+  tests/docs.test.mjs
+  tests/helpers/vocabulary.mjs
+  tests/neutral-domains.test.mjs
+  tests/view-handoff.test.mjs
+  tests/vocabulary.test.mjs

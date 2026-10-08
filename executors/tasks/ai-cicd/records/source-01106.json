@@ -1,0 +1,18 @@
+{
+  "attempt": 3,
+  "query": "Q03_account",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "config",
+    "get-value",
+    "account"
+  ],
+  "start_utc": "2026-10-05T13:32:32.107+11:00",
+  "end_utc": "2026-10-05T13:32:32.398+11:00",
+  "exit_code": 0,
+  "stdout": "Q03_account_attempt3.stdout",
+  "stdout_sha256": "<PRIVATE_REF_01530>",
+  "stderr": "Q03_account_attempt3.stderr",
+  "stderr_sha256": "<PRIVATE_REF_01844>",
+  "exclusive_stdout": true
+}

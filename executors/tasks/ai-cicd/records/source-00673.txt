@@ -1,0 +1,9 @@
+# DNS read-only via public resolver 1.1.1.1 (2026-10-04T22:24:25+1100); attempt 2 (attempt 1 invalid: shell did not split type/name)
+## dig +short NS <EXPERIMENT_DOMAIN>
+<DNS_RESOLVER_A>.
+<DNS_RESOLVER_B>.
+## dig +short SOA <EXPERIMENT_DOMAIN>
+<DNS_RESOLVER_A>. dns.cloudflare.com. 2416411322 10000 2400 604800 1800
+## dig +short A <W1_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>
+## dig +short CNAME <W1_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>
+## dig +short AAAA <W1_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>

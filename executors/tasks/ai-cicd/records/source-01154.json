@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-10-05T14:52:07+11:00",
+  "actor": "Human Operator/Owner",
+  "evidence_type": "OWNER_SELF_REPORT",
+  "account_alias": "OWNER-TEST-ACCOUNT-1",
+  "observed_steps": [
+    "Logout",
+    "Login again successfully"
+  ],
+  "signup": "NOT_EXPLICITLY_REPORTED",
+  "credentials": "Excluded from control artifact; no credentials used by Operations Coordinator",
+  "limitations": [
+    "No raw browser/API evidence captured by Operations Coordinator",
+    "Does not establish every frozen A4 positive/negative step",
+    "Does not establish restart persistence"
+  ],
+  "verdict": "OBSERVATION_ONLY; no independent full A4 PASS"
+}

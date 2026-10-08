@@ -1,0 +1,8 @@
+Resume the accepted WatchOver v0.1a Stage 0 plan as Executor_WatchOver_Stage0. Re-establish your identity, workspace lease, branch and HEAD before mutation. Product repository: <CLIENT_HOME>/Desktop/helmls-studio/watchover-ai-devops. Expected branch main, HEAD <PRIVATE_REF_02752>, clean worktree, no remote.
+
+The independent Reviewer has issued final PASS for local rehearsal Attempt 2 under WATCHOVER_DESIGN_FREEZE.md Verification Standard item 5 and Annex K, with handoff score 10/10 and cleanup PASS. C7 is authorized.
+
+Read the final rehearsal record:
+source-00195.md
+
+Then execute C7 exactly under your accepted split plan and governing contract: run the full integrated verification set, preserve existing scope and isolation boundaries, make no network or push action, and return the verification table, evidence locators, final changed-file/commit state, design-decision summary, deviations and open items. Do not claim terminal acceptance; independent R4 review remains required.

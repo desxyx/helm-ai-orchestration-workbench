@@ -1,0 +1,27 @@
+src/main.ts:39:
+39:  axios.defaults.baseURL = config.endpoint
+
+src/services/config.ts (relevant lines):
+25-      })
+26-      .then(response => {
+27:        const endpoint = this.config.endpoint ? this.config.endpoint : 'http://localhost:8080'
+28:        return this.getRemoteConfig(endpoint)
+29-      })
+30-      .then(response => {
+--
+41-      const envConfig = {}
+42-      if (process.env.VUE_APP_ALERTA_ENDPOINT) {
+43:        envConfig['endpoint'] = process.env.VUE_APP_ALERTA_ENDPOINT
+44-      }
+45-      if (process.env.VUE_APP_CLIENT_ID) {
+--
+63-  }
+64-
+65:  getRemoteConfig(endpoint: string) {
+66-    return this.$http
+67:      .get(`${endpoint}/config`)
+68-      .then(response => response.data)
+69-      .catch((error: any) => {
+
+src/store/modules/config.store.ts:4:
+4:  endpoint: 'http://local.alerta.io:8080',

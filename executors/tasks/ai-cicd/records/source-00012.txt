@@ -1,0 +1,16 @@
+W1 frontend (angular-realworld-example-app):
+  (none found)
+
+W1 backend (realworld-django-ninja):
+c4ffein/realworld-django-ninja/Dockerfile
+c4ffein/realworld-django-ninja/docker-compose.yml
+
+W2 frontend (alerta-webui):
+alerta/alerta-webui/Dockerfile
+alerta/alerta-webui/.dockerignore
+
+W2 backend (alerta):
+alerta/alerta/docker-compose.ci.yml
+alerta/alerta/Dockerfile
+alerta/alerta/.dockerignore
+alerta/alerta/docker-compose.yml

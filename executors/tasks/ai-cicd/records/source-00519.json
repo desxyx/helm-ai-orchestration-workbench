@@ -1,0 +1,462 @@
+{
+  "schema_version": "0.1",
+  "identity": {
+    "project_alias": "alerta-w2b-demo",
+    "target_environment": "Sanitized pre-approval reconstruction · Melbourne",
+    "provider_profile": "gcp",
+    "mode": "basic",
+    "updated_at": "2026-10-07T11:41:38.052Z",
+    "updated_by": {
+      "role": "ai",
+      "name": "demo-preparation"
+    },
+    "session_id": "w2b-preapproval-demo"
+  },
+  "stage": "awaiting_decision",
+  "activity": {
+    "summary": "Deployment plan prepared. Waiting for your approval before creating any cloud resources.",
+    "started_at": "2026-10-05T08:51:42.379Z",
+    "expected_duration": null,
+    "slow_reason": null,
+    "waiting_on": "human",
+    "last_progress": {
+      "at": "2026-10-05T08:51:42.379Z",
+      "summary": "Local build and cost comparison recorded; no resource creation approved in this preview."
+    }
+  },
+  "brief": {
+    "app_summary": "Deploy Alerta: a Vue dashboard, Python API and PostgreSQL storage. Sanitized reconstruction of the W2B plan before approval.",
+    "components": [
+      {
+        "name": "webui",
+        "role": "Vue static website built from the pinned frontend commit"
+      },
+      {
+        "name": "api",
+        "role": "Alerta Python API with authenticated signup and login"
+      },
+      {
+        "name": "postgres",
+        "role": "Durable account and alert storage"
+      },
+      {
+        "name": "caddy",
+        "role": "HTTPS certificates, static files, and same-origin API reverse proxy"
+      }
+    ],
+    "topology": "Dedicated VPC and subnet; one Melbourne VM runs Caddy, Alerta API and PostgreSQL in Compose. Only HTTP/HTTPS are public. SSH uses IAP. PostgreSQL data and secret files live on a separate persistent disk; services restart automatically.",
+    "resource_rationale": "Small single-server deployment suits assumed light traffic and requires few paid resources. Separate retained data disk meets restart durability; Caddy manages HTTPS without a paid load balancer.",
+    "heavier_alternatives": [
+      {
+        "alternative": "GKE cluster",
+        "why_unnecessary": "No multi-server scheduling or scaling requirement was supplied."
+      },
+      {
+        "alternative": "Cloud SQL",
+        "why_unnecessary": "PostgreSQL on retained storage meets restart persistence; managed database adds recurring cost."
+      },
+      {
+        "alternative": "Cloud Load Balancing",
+        "why_unnecessary": "Caddy on the VM terminates HTTPS for this single hostname."
+      }
+    ],
+    "assumptions": [
+      "Light initial traffic; a few concurrent users.",
+      "Melbourne region proposed; one server is sufficient for this workload.",
+      "Operator reserves the administrator account before the public release.",
+      "Prices are the historical W2B estimate from 05 Oct 2026; traffic, tax and currency conversion are extra."
+    ]
+  },
+  "plan": {
+    "tiers": [
+      {
+        "id": "a",
+        "name": "Small (recommended)",
+        "composition": "e2-small 2 GiB VM, 20 GiB standard boot disk, 20 GiB retained standard data disk, one static IPv4, dedicated VPC/subnet and web/IAP firewall rules",
+        "region": "australia-southeast2",
+        "cost_range": {
+          "low": 21,
+          "high": 30,
+          "currency": "USD",
+          "period": "month"
+        },
+        "price_checked_at": "2026-10-05T08:49:08.704Z",
+        "load_assumption": "Light traffic, a few concurrent users",
+        "uncertainty": "Fixed base about USD20.56/month at 730 hours; traffic, tax and currency conversion extra; estimated range is not a spending cap."
+      },
+      {
+        "id": "b",
+        "name": "More memory",
+        "composition": "Same resources with e2-medium 4 GiB VM",
+        "region": "australia-southeast2",
+        "cost_range": {
+          "low": 35,
+          "high": 45,
+          "currency": "USD",
+          "period": "month"
+        },
+        "price_checked_at": "2026-10-05T08:49:08.704Z",
+        "load_assumption": "More memory headroom for modest activity",
+        "uncertainty": "Fixed base about USD35.31/month at 730 hours; traffic, tax and currency conversion extra; estimated range is not a spending cap."
+      }
+    ],
+    "default_tier": "a",
+    "selected_tier": null
+  },
+  "pending_decision": {
+    "id": "dec-alerta-demo-01",
+    "categories": [
+      "plan_acceptance",
+      "billable",
+      "external_release"
+    ],
+    "action": "Approve a deployment tier, create its cloud resources, and release the app publicly only after verification.",
+    "targets": [
+      "Dedicated VPC and subnet in Melbourne",
+      "One VM: e2-small (A) or e2-medium (B)",
+      "20 GiB boot disk + 20 GiB retained data disk",
+      "One static IPv4; HTTP/HTTPS firewall rules; IAP-only SSH"
+    ],
+    "why": "One small server fits the expected traffic. Separate persistent storage protects account and alert data across restarts.",
+    "cost_or_blast_radius": "A: USD 21–30/month. B: USD 35–45/month. Historical W2B estimates; usage and tax extra. Scoped to the new app resources; no changes to existing workloads.",
+    "reversibility": "Resources can be removed. Elapsed usage charges cannot be refunded; releasing an IP or deleting data can be irreversible.",
+    "rollback": "Stop the app and remove only resources created for this deployment, with a scoped deletion approval. Retain the data disk unless its deletion is explicitly approved.",
+    "success_check": "Check HTTPS, signup/login, alert creation and persistence after restart. Record results before public handoff.",
+    "reply_options": [
+      {
+        "reply": "approve A",
+        "meaning": "Use the recommended small tier (USD 21–30/month)."
+      },
+      {
+        "reply": "approve B",
+        "meaning": "Use the larger-memory tier (USD 35–45/month)."
+      },
+      {
+        "reply": "revise",
+        "meaning": "Change the plan before any cloud resources are created."
+      },
+      {
+        "reply": "stop",
+        "meaning": "Do not deploy; do not create billable resources."
+      }
+    ],
+    "requested_at": "2026-10-05T08:51:42.379Z"
+  },
+  "resources": [
+    {
+      "id": "app-network",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "VPC",
+      "name": "Application network",
+      "purpose": "Planned only; not created or approved in this demo.",
+      "billable": false,
+      "lifecycle": "planned",
+      "origin": "created_this_run",
+      "evidence_fact": null
+    },
+    {
+      "id": "app-subnet",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "subnet",
+      "name": "Melbourne subnet",
+      "purpose": "Planned only; not created or approved in this demo.",
+      "billable": false,
+      "lifecycle": "planned",
+      "origin": "created_this_run",
+      "evidence_fact": null
+    },
+    {
+      "id": "app-vm",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "compute instance",
+      "name": "Application VM (pending tier selection)",
+      "purpose": "Planned only; not created or approved in this demo.",
+      "billable": true,
+      "lifecycle": "planned",
+      "origin": "created_this_run",
+      "evidence_fact": null
+    },
+    {
+      "id": "app-boot",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "persistent disk",
+      "name": "20 GiB boot disk",
+      "purpose": "Planned only; not created or approved in this demo.",
+      "billable": true,
+      "lifecycle": "planned",
+      "origin": "created_this_run",
+      "evidence_fact": null
+    },
+    {
+      "id": "app-data",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "persistent disk",
+      "name": "20 GiB retained data disk",
+      "purpose": "Planned only; not created or approved in this demo.",
+      "billable": true,
+      "lifecycle": "planned",
+      "origin": "created_this_run",
+      "evidence_fact": null
+    },
+    {
+      "id": "app-ip",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "static IPv4",
+      "name": "Public IPv4 address",
+      "purpose": "Planned only; not created or approved in this demo.",
+      "billable": true,
+      "lifecycle": "planned",
+      "origin": "created_this_run",
+      "evidence_fact": null
+    }
+  ],
+  "sources": [
+    {
+      "name": "alerta-webui",
+      "remote": "https://github.com/alerta/alerta-webui",
+      "pinned_ref": "<PRIVATE_REF_03446>",
+      "local_changes_fact": "source.alerta-webui.changes",
+      "local_changes_summary": "Clean; git status control passed",
+      "deployed_ref_fact": "source.alerta-webui.deployed"
+    },
+    {
+      "name": "alerta",
+      "remote": "https://github.com/alerta/alerta",
+      "pinned_ref": "<PRIVATE_REF_01617>",
+      "local_changes_fact": "source.alerta.changes",
+      "local_changes_summary": "Clean; git status control passed",
+      "deployed_ref_fact": "source.alerta.deployed"
+    }
+  ],
+  "facts": [
+    {
+      "key": "gcp.network",
+      "label": "Existing default VPC available",
+      "value": "default",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "gcloud compute networks list",
+      "checked_at": "2026-10-05T08:40:07.345Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/historical-source-notes.txt"
+      ]
+    },
+    {
+      "key": "load.expected",
+      "label": "Expected initial traffic",
+      "value": "Light traffic; a few concurrent users",
+      "status": "ASSUMED",
+      "source": "reasoning",
+      "class": "other",
+      "scope": "No traffic requirements supplied; single VM proposed",
+      "checked_at": null,
+      "fresh_for_minutes": 1440,
+      "evidence": []
+    },
+    {
+      "key": "source.alerta-webui.commit",
+      "label": "alerta-webui pinned commit confirmed",
+      "value": "<PRIVATE_REF_03446>",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "Local git rev-parse HEAD",
+      "checked_at": "2026-10-05T08:41:17.283Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/historical-source-notes.txt"
+      ]
+    },
+    {
+      "key": "source.alerta-webui.changes",
+      "label": "alerta-webui has no local changes",
+      "value": "clean",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "git status --porcelain=v1 --untracked-files=all",
+      "checked_at": "2026-10-05T08:41:17.375Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/historical-source-notes.txt"
+      ],
+      "negative_result": true,
+      "control": "Same git status command reports untracked-control.txt in scratch repository"
+    },
+    {
+      "key": "source.alerta-webui.deployed",
+      "label": "alerta-webui deployed commit pending",
+      "value": null,
+      "status": "UNKNOWN",
+      "source": "reasoning",
+      "class": "source",
+      "scope": "No deployment performed",
+      "checked_at": null,
+      "fresh_for_minutes": 1440,
+      "evidence": []
+    },
+    {
+      "key": "source.alerta.commit",
+      "label": "alerta pinned commit confirmed",
+      "value": "<PRIVATE_REF_01617>",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "Local git rev-parse HEAD",
+      "checked_at": "2026-10-05T08:41:17.546Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/historical-source-notes.txt"
+      ]
+    },
+    {
+      "key": "source.alerta.changes",
+      "label": "alerta has no local changes",
+      "value": "clean",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "git status --porcelain=v1 --untracked-files=all",
+      "checked_at": "2026-10-05T08:41:17.634Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/historical-source-notes.txt"
+      ],
+      "negative_result": true,
+      "control": "Same git status command reports untracked-control.txt in scratch repository"
+    },
+    {
+      "key": "source.alerta.deployed",
+      "label": "alerta deployed commit pending",
+      "value": null,
+      "status": "UNKNOWN",
+      "source": "reasoning",
+      "class": "source",
+      "scope": "No deployment performed",
+      "checked_at": null,
+      "fresh_for_minutes": 1440,
+      "evidence": []
+    },
+    {
+      "key": "choice.region",
+      "label": "Region selected under user delegation",
+      "value": "australia-southeast2 (Melbourne)",
+      "status": "ASSUMED",
+      "source": "reasoning",
+      "class": "identity",
+      "scope": "User replied your choice; AI chose Melbourne near the operator",
+      "checked_at": null,
+      "fresh_for_minutes": 1440,
+      "evidence": []
+    },
+    {
+      "key": "build.frontend",
+      "label": "Production frontend build passed",
+      "value": true,
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "npm run build at requested frontend commit",
+      "checked_at": "2026-10-05T08:47:39.474Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/historical-source-notes.txt"
+      ]
+    },
+    {
+      "key": "build.release",
+      "label": "Deployment archive prepared",
+      "value": true,
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "Backend git archive and built static frontend; shell/config syntax checked",
+      "checked_at": "2026-10-05T08:47:39.562Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/historical-source-notes.txt"
+      ]
+    },
+    {
+      "key": "price.fixed_small",
+      "label": "Small tier fixed monthly cost",
+      "value": 20.56,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "price",
+      "scope": "Official GCP Melbourne rates observed; 730 hours, 40 GiB standard disks, one in-use external IPv4",
+      "checked_at": "2026-10-05T08:49:08.705Z",
+      "fresh_for_minutes": 43200,
+      "evidence": [
+        "evidence/historical-source-notes.txt"
+      ]
+    },
+    {
+      "key": "price.fixed_medium",
+      "label": "Medium tier fixed monthly cost",
+      "value": 35.31,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "price",
+      "scope": "Official GCP Melbourne rates observed; 730 hours, 40 GiB standard disks, one in-use external IPv4",
+      "checked_at": "2026-10-05T08:49:08.798Z",
+      "fresh_for_minutes": 43200,
+      "evidence": [
+        "evidence/historical-source-notes.txt"
+      ]
+    },
+    {
+      "key": "gcp.machine",
+      "label": "e2-small has 2 GiB RAM",
+      "value": "e2-small: 2 GiB RAM, shared CPU",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Machine type describe in australia-southeast2-a",
+      "checked_at": "2026-10-05T08:49:08.980Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/historical-source-notes.txt"
+      ]
+    }
+  ],
+  "secrets": [],
+  "open_items": [
+    {
+      "text": "Select and approve a tier before creating cloud resources.",
+      "owner": "human",
+      "blocking": true
+    },
+    {
+      "text": "Operator adds the DNS record only after an address is allocated and the DNS change is approved.",
+      "owner": "human",
+      "blocking": false
+    }
+  ],
+  "next": {
+    "action": "Reply approve A, approve B, revise or stop in the AI session. No cloud resource creation before approval.",
+    "decision_owner": "human"
+  },
+  "handoff": {
+    "read_first": [
+      "state.json",
+      "events.jsonl"
+    ],
+    "last_safe_state": "Local build prepared; plan awaits approval; all cloud resources are planned only.",
+    "rollback_anchor": "No remote changes made in this demonstration.",
+    "known_unverified": [
+      "Deployment, public HTTPS, login and restart persistence have not happened at this pre-approval stage."
+    ],
+    "fragile": [
+      "This is a sanitized reconstruction for a screenshot, not the original W2B checkpoint."
+    ]
+  }
+}

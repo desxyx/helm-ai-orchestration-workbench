@@ -1,0 +1,14 @@
+{
+  "run_id": "RUN-W2B",
+  "recorded_at": "2026-10-05T12:26:28.443491+00:00",
+  "redaction_gap": "Bare local/cloud login identifiers remain in previously ingested inputs; category only in final report",
+  "historical_received_packets": "Immutable; never rewrite accepted hashes, re-ingest overlapping increments, or claim previous exposure erased",
+  "future_input_rule": "Apply expanded stable literal aliases using existing frozen redaction workflow",
+  "control_instruction_path": "Canonical arm token was present in handoff prompt path; no fully blinded Observer claim",
+  "out_of_packet_read": "Owner-directed custodian dispatch file was read; scope/path disclosure retained",
+  "A3_finalization": "Raw R14 A3-P FAIL immutable. Any effective UNVERIFIED judgment must cite Master02§0.2 incomplete-check rule and explain relation to R14§1 frozen pass condition/source separation. No PASS, new source waiver, rewrite or mandatory final status by custodian",
+  "assistance_record": "Original S2 line96 read command targets a prior records corpus verification script; file availability alone not analysis-delivery proof. Record raw read/use locators, do not assert that all prior analytic content was excluded by physical isolation",
+  "observer_analysis_quarantine": "No reply/analysis to execution chain",
+  "teardown": "Still awaiting exact Human Operator approval",
+  "early_provisional_analysis_relay": "Owner disclosed Observer judgments/flags to custodian before RUN_CLOSE; future outputs must disclose chronology, no analysis feedback to Deployer/probe/later arm"
+}

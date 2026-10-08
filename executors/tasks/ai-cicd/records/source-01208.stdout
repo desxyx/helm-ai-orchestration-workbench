@@ -1,0 +1,69 @@
+[
+  {
+    "architecture": "X86_64",
+    "creationTimestamp": "2026-10-04T19:59:43.276-07:00",
+    "enableConfidentialCompute": false,
+    "guestOsFeatures": [
+      {
+        "type": "UEFI_COMPATIBLE"
+      },
+      {
+        "type": "VIRTIO_SCSI_MULTIQUEUE"
+      },
+      {
+        "type": "GVNIC"
+      },
+      {
+        "type": "SEV_CAPABLE"
+      },
+      {
+        "type": "SEV_LIVE_MIGRATABLE_V2"
+      },
+      {
+        "type": "SUSPEND_SAFE_FPR"
+      }
+    ],
+    "id": "<NUMERIC_RESOURCE_0146>",
+    "kind": "compute#disk",
+    "labelFingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+    "lastAttachTimestamp": "2026-10-04T19:59:44.116-07:00",
+    "licenseCodes": [
+      "2147286739765738111"
+    ],
+    "licenses": [
+      "<PRIVATE_URL_0264>"
+    ],
+    "name": "<W2_RUN_RESOURCE_PREFIX>-alerta",
+    "physicalBlockSizeBytes": "4096",
+    "satisfiesPzi": true,
+    "selfLink": "<PRIVATE_URL_0452>",
+    "sizeGb": "20",
+    "sourceImage": "<PRIVATE_URL_0263>",
+    "sourceImageId": "7223571855961808895",
+    "status": "READY",
+    "type": "<PRIVATE_URL_0451>",
+    "users": [
+      "<PRIVATE_URL_0454>"
+    ],
+    "zone": "<PRIVATE_URL_0462>"
+  },
+  {
+    "creationTimestamp": "2026-10-04T19:59:36.852-07:00",
+    "enableConfidentialCompute": false,
+    "id": "<NUMERIC_RESOURCE_0116>",
+    "kind": "compute#disk",
+    "labelFingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+    "lastAttachTimestamp": "2026-10-04T19:59:44.181-07:00",
+    "name": "<W2_RUN_RESOURCE_PREFIX>-data",
+    "physicalBlockSizeBytes": "4096",
+    "satisfiesPzi": true,
+    "selfLink": "<PRIVATE_URL_0453>",
+    "sizeGb": "20",
+    "status": "READY",
+    "type": "<PRIVATE_URL_0451>",
+    "users": [
+      "<PRIVATE_URL_0454>"
+    ],
+    "zone": "<PRIVATE_URL_0462>"
+  }
+]

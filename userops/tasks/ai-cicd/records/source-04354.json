@@ -1,0 +1,29 @@
+{
+  "artifact_class": "FINAL_OPERATIONS_COORDINATOR_HANDOFF_ISSUE",
+  "issued_at": "2026-10-05T23:21:06.262845+00:00",
+  "status": "W2_COMPARISON_SEALED_AND_HANDOFF_ISSUED",
+  "owner_endpoint_fulfilled": "Current Operations Coordinator completes W2 comparison then hands off",
+  "handoff_manifest_sha256": "<PRIVATE_REF_01248>",
+  "manifest_scope": "Four final handoff artifacts; receipt digest recorded separately in task state",
+  "comparison_report_sha256": "<PRIVATE_REF_02244>",
+  "comparison_manifest_sha256": "<PRIVATE_REF_02349>",
+  "startup_prompt_sha256": "<PRIVATE_REF_03376>",
+  "product_baseline_head": "<PRIVATE_REF_02752>",
+  "product_changes_this_session": true,
+  "remote_configured": false,
+  "next_owner": "Fresh Operations Coordinator: bounded improvement, normal remote publication, Windows final-run coordination",
+  "future_mode_remote_runtime_facts_pending": true,
+  "W3_specific_material_in_handoff": false,
+  "no_cloud_or_DNS_action": true,
+  "drafts_preserved_and_superseded": [
+    "HANDOFF_DRAFT.md",
+    "NEXT_OPERATIONS_COORDINATOR_PROMPT_DRAFT.txt"
+  ],
+  "revision": "r2",
+  "prior_revision": "REVISIONS/r1",
+  "prior_issue_receipt_sha256": "<PRIVATE_REF_01870>",
+  "product_change_scope": "Post-seal Owner HTML-entry rule: router, plan stage and README only",
+  "product_working_tree": "Three uncommitted instruction/document files; HEAD unchanged; no commit or push",
+  "owner_followup_record_sha256": "<PRIVATE_REF_02892>",
+  "W2_comparison_changed": false
+}

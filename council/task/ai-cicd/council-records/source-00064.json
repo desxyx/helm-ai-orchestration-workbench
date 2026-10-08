@@ -1,0 +1,138 @@
+{
+  "$comment": "Copied verbatim from COUNCIL_MASTER_02_OBSERVER_AND_MEASUREMENT.md §4.2 (status: FROZEN v1.2, Human Operator-ratified 2026-09-26). See EVENT_TAXONOMY.md for the human-readable type/subtype table. The Executor may instantiate this syntax but may not change the enums' meaning (source Master, §4.2).",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WatchOverObserverEvent",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event_id",
+    "run_id",
+    "checkpoint_no",
+    "session",
+    "ts",
+    "actor",
+    "type",
+    "subtype",
+    "summary",
+    "locator",
+    "label"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9_-]+-E[0-9]{4,}$"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9_-]+$"
+    },
+    "checkpoint_no": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "session": {
+      "enum": [
+        "S1",
+        "S2",
+        "POSTMORTEM"
+      ]
+    },
+    "ts": {
+      "type": "string"
+    },
+    "actor": {
+      "enum": [
+        "DEPLOYER",
+        "Human Operator",
+        "TOOL_OUTPUT",
+        "REVIEWER",
+        "CONTROLLER_RECORD",
+        "VERIFIER_RECORD"
+      ]
+    },
+    "type": {
+      "enum": [
+        "QUESTION",
+        "OWNER_MESSAGE",
+        "ACTION",
+        "ERROR",
+        "SUCCESS_CLAIM",
+        "TERMINAL_DECLARATION",
+        "RESOURCE_CHANGE",
+        "CONTEXT_LOAD",
+        "EXTERNAL_DEPENDENCY",
+        "SECRET_EXPOSURE",
+        "INTERRUPTION",
+        "CONTROL",
+        "ACCEPTANCE_PROBE"
+      ]
+    },
+    "subtype": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "target": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "error_signature": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "claim_verdict": {
+      "enum": [
+        null,
+        "TRUE",
+        "FALSE",
+        "UNVERIFIED"
+      ]
+    },
+    "related_event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metric_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "locator": {
+      "type": "string"
+    },
+    "label": {
+      "enum": [
+        "DIRECT",
+        "INFERRED",
+        "UNMEASURABLE"
+      ]
+    },
+    "confidence": {
+      "enum": [
+        null,
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

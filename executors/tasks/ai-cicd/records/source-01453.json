@@ -1,0 +1,430 @@
+{
+  "run_id": "RUN-W2B",
+  "checkpoint_no": 1,
+  "method": "Frozen R14 and W2EP-r2 redaction on decoded JSON string tokens; JSON and line count validated; stable identifiers; private originals unchanged.",
+  "files": [
+    {
+      "file": "S1_TRANSCRIPT_REDACTED.jsonl",
+      "private_source_sha256": "<PRIVATE_REF_01141>",
+      "delivered_sha256": "<PRIVATE_REF_01674>"
+    },
+    {
+      "file": "RUNTIME/events.jsonl",
+      "private_source_sha256": "<PRIVATE_REF_01949>",
+      "delivered_sha256": "<PRIVATE_REF_02888>"
+    },
+    {
+      "file": "RUNTIME/evidence/0001-project.json",
+      "private_source_sha256": "<PRIVATE_REF_03375>",
+      "delivered_sha256": "<PRIVATE_REF_02557>"
+    },
+    {
+      "file": "RUNTIME/evidence/0002-billing.json",
+      "private_source_sha256": "<PRIVATE_REF_01683>",
+      "delivered_sha256": "<PRIVATE_REF_02665>"
+    },
+    {
+      "file": "RUNTIME/evidence/0003-services.txt",
+      "private_source_sha256": "<PRIVATE_REF_01883>",
+      "delivered_sha256": "<PRIVATE_REF_01883>"
+    },
+    {
+      "file": "RUNTIME/evidence/0004-addresses.json",
+      "private_source_sha256": "<PRIVATE_REF_01383>",
+      "delivered_sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "file": "RUNTIME/evidence/0005-networks.json",
+      "private_source_sha256": "<PRIVATE_REF_03207>",
+      "delivered_sha256": "<PRIVATE_REF_03227>"
+    },
+    {
+      "file": "RUNTIME/evidence/0006-roles.txt",
+      "private_source_sha256": "<PRIVATE_REF_02332>",
+      "delivered_sha256": "<PRIVATE_REF_02332>"
+    },
+    {
+      "file": "RUNTIME/evidence/0007-instances.json",
+      "private_source_sha256": "<PRIVATE_REF_01383>",
+      "delivered_sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "file": "RUNTIME/evidence/0008-source-alerta-webui.txt",
+      "private_source_sha256": "<PRIVATE_REF_03389>",
+      "delivered_sha256": "<PRIVATE_REF_03389>"
+    },
+    {
+      "file": "RUNTIME/evidence/0008-source-alerta.txt",
+      "private_source_sha256": "<PRIVATE_REF_01053>",
+      "delivered_sha256": "<PRIVATE_REF_01053>"
+    },
+    {
+      "file": "RUNTIME/evidence/0009-npm-install.txt",
+      "private_source_sha256": "<PRIVATE_REF_01451>",
+      "delivered_sha256": "<PRIVATE_REF_01451>"
+    },
+    {
+      "file": "RUNTIME/evidence/0010-npm-install-retry.txt",
+      "private_source_sha256": "<PRIVATE_REF_03649>",
+      "delivered_sha256": "<PRIVATE_REF_01849>"
+    },
+    {
+      "file": "RUNTIME/evidence/0011-frontend-build.txt",
+      "private_source_sha256": "<PRIVATE_REF_01051>",
+      "delivered_sha256": "<PRIVATE_REF_02394>"
+    },
+    {
+      "file": "RUNTIME/evidence/0012-region-quotas.json",
+      "private_source_sha256": "<PRIVATE_REF_02727>",
+      "delivered_sha256": "<PRIVATE_REF_02727>"
+    },
+    {
+      "file": "RUNTIME/evidence/0013-machine-type.json",
+      "private_source_sha256": "<PRIVATE_REF_01431>",
+      "delivered_sha256": "<PRIVATE_REF_01431>"
+    },
+    {
+      "file": "RUNTIME/evidence/0014-local-validation.txt",
+      "private_source_sha256": "<PRIVATE_REF_02467>",
+      "delivered_sha256": "<PRIVATE_REF_02467>"
+    },
+    {
+      "file": "RUNTIME/evidence/0015-official-pricing.json",
+      "private_source_sha256": "<PRIVATE_REF_01268>",
+      "delivered_sha256": "<PRIVATE_REF_01268>"
+    },
+    {
+      "file": "RUNTIME/evidence/0016-config-recheck.json",
+      "private_source_sha256": "<PRIVATE_REF_02287>",
+      "delivered_sha256": "<PRIVATE_REF_02814>"
+    },
+    {
+      "file": "RUNTIME/evidence/0017-project-recheck.json",
+      "private_source_sha256": "<PRIVATE_REF_03375>",
+      "delivered_sha256": "<PRIVATE_REF_02557>"
+    },
+    {
+      "file": "RUNTIME/evidence/0018-billing-recheck.json",
+      "private_source_sha256": "<PRIVATE_REF_01683>",
+      "delivered_sha256": "<PRIVATE_REF_02665>"
+    },
+    {
+      "file": "RUNTIME/evidence/0019-owner-recheck.txt",
+      "private_source_sha256": "<PRIVATE_REF_02332>",
+      "delivered_sha256": "<PRIVATE_REF_02332>"
+    },
+    {
+      "file": "RUNTIME/evidence/0020-region-recheck.json",
+      "private_source_sha256": "<PRIVATE_REF_01675>",
+      "delivered_sha256": "<PRIVATE_REF_02053>"
+    },
+    {
+      "file": "RUNTIME/evidence/0021-services-recheck.txt",
+      "private_source_sha256": "<PRIVATE_REF_01883>",
+      "delivered_sha256": "<PRIVATE_REF_01883>"
+    },
+    {
+      "file": "RUNTIME/evidence/0022-network-recheck.json",
+      "private_source_sha256": "<PRIVATE_REF_03207>",
+      "delivered_sha256": "<PRIVATE_REF_03227>"
+    },
+    {
+      "file": "RUNTIME/evidence/0023-disks-recheck.json",
+      "private_source_sha256": "<PRIVATE_REF_01383>",
+      "delivered_sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "file": "RUNTIME/evidence/0031-create-network-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0031-create-network-target.txt",
+      "private_source_sha256": "<PRIVATE_REF_02519>",
+      "delivered_sha256": "<PRIVATE_REF_01426>"
+    },
+    {
+      "file": "RUNTIME/evidence/0033-create-network.txt",
+      "private_source_sha256": "<PRIVATE_REF_02407>",
+      "delivered_sha256": "<PRIVATE_REF_02041>"
+    },
+    {
+      "file": "RUNTIME/evidence/0034-<W2_RUN_RESOURCE_PREFIX>-net-describe.txt",
+      "private_source_sha256": "<PRIVATE_REF_03369>",
+      "delivered_sha256": "<PRIVATE_REF_03690>"
+    },
+    {
+      "file": "RUNTIME/evidence/0035-create-subnet-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0035-create-subnet-target.txt",
+      "private_source_sha256": "<PRIVATE_REF_02519>",
+      "delivered_sha256": "<PRIVATE_REF_01426>"
+    },
+    {
+      "file": "RUNTIME/evidence/0036-create-subnet-network.txt",
+      "private_source_sha256": "<PRIVATE_REF_03369>",
+      "delivered_sha256": "<PRIVATE_REF_03690>"
+    },
+    {
+      "file": "RUNTIME/evidence/0037-create-subnet.txt",
+      "private_source_sha256": "<PRIVATE_REF_02261>",
+      "delivered_sha256": "<PRIVATE_REF_03148>"
+    },
+    {
+      "file": "RUNTIME/evidence/0038-<W2_RUN_RESOURCE_PREFIX>-subnet-describe.txt",
+      "private_source_sha256": "<PRIVATE_REF_00987>",
+      "delivered_sha256": "<PRIVATE_REF_01021>"
+    },
+    {
+      "file": "RUNTIME/evidence/0039-create-iap-firewall-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0039-create-iap-firewall-target.txt",
+      "private_source_sha256": "<PRIVATE_REF_02519>",
+      "delivered_sha256": "<PRIVATE_REF_01426>"
+    },
+    {
+      "file": "RUNTIME/evidence/0040-create-iap-firewall-network.txt",
+      "private_source_sha256": "<PRIVATE_REF_02934>",
+      "delivered_sha256": "<PRIVATE_REF_02256>"
+    },
+    {
+      "file": "RUNTIME/evidence/0041-create-iap-firewall.txt",
+      "private_source_sha256": "<PRIVATE_REF_02426>",
+      "delivered_sha256": "<PRIVATE_REF_02951>"
+    },
+    {
+      "file": "RUNTIME/evidence/0042-<W2_RUN_RESOURCE_PREFIX>-iap-ssh-describe.txt",
+      "private_source_sha256": "<PRIVATE_REF_00972>",
+      "delivered_sha256": "<PRIVATE_REF_03077>"
+    },
+    {
+      "file": "RUNTIME/evidence/0043-create-static-ip-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0043-create-static-ip-target.txt",
+      "private_source_sha256": "<PRIVATE_REF_02519>",
+      "delivered_sha256": "<PRIVATE_REF_01426>"
+    },
+    {
+      "file": "RUNTIME/evidence/0045-create-static-ip.txt",
+      "private_source_sha256": "<PRIVATE_REF_03668>",
+      "delivered_sha256": "<PRIVATE_REF_03483>"
+    },
+    {
+      "file": "RUNTIME/evidence/0046-<W2_RUN_RESOURCE_PREFIX>-ip-describe.txt",
+      "private_source_sha256": "<PRIVATE_REF_01159>",
+      "delivered_sha256": "<PRIVATE_REF_02134>"
+    },
+    {
+      "file": "RUNTIME/evidence/0047-create-data-disk-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0047-create-data-disk-target.txt",
+      "private_source_sha256": "<PRIVATE_REF_02519>",
+      "delivered_sha256": "<PRIVATE_REF_01426>"
+    },
+    {
+      "file": "RUNTIME/evidence/0049-create-data-disk.txt",
+      "private_source_sha256": "<PRIVATE_REF_03524>",
+      "delivered_sha256": "<PRIVATE_REF_01655>"
+    },
+    {
+      "file": "RUNTIME/evidence/0050-<W2_RUN_RESOURCE_PREFIX>-data-describe.txt",
+      "private_source_sha256": "<PRIVATE_REF_03745>",
+      "delivered_sha256": "<PRIVATE_REF_01512>"
+    },
+    {
+      "file": "RUNTIME/evidence/0051-create-vm-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0051-create-vm-target.txt",
+      "private_source_sha256": "<PRIVATE_REF_02519>",
+      "delivered_sha256": "<PRIVATE_REF_01426>"
+    },
+    {
+      "file": "RUNTIME/evidence/0052-create-vm-address.txt",
+      "private_source_sha256": "<PRIVATE_REF_01159>",
+      "delivered_sha256": "<PRIVATE_REF_02134>"
+    },
+    {
+      "file": "RUNTIME/evidence/0052-create-vm-data-disk.txt",
+      "private_source_sha256": "<PRIVATE_REF_03745>",
+      "delivered_sha256": "<PRIVATE_REF_01512>"
+    },
+    {
+      "file": "RUNTIME/evidence/0052-create-vm-subnet.txt",
+      "private_source_sha256": "<PRIVATE_REF_00987>",
+      "delivered_sha256": "<PRIVATE_REF_01021>"
+    },
+    {
+      "file": "RUNTIME/evidence/0053-create-vm.txt",
+      "private_source_sha256": "<PRIVATE_REF_01869>",
+      "delivered_sha256": "<PRIVATE_REF_01552>"
+    },
+    {
+      "file": "RUNTIME/evidence/0054-<W2_RUN_RESOURCE_PREFIX>-vm-describe.txt",
+      "private_source_sha256": "<PRIVATE_REF_00666>",
+      "delivered_sha256": "<PRIVATE_REF_02485>"
+    },
+    {
+      "file": "RUNTIME/evidence/0055-<W2_RUN_RESOURCE_PREFIX>-vm-boot-describe.txt",
+      "private_source_sha256": "<PRIVATE_REF_03435>",
+      "delivered_sha256": "<PRIVATE_REF_01919>"
+    },
+    {
+      "file": "RUNTIME/state.json",
+      "private_source_sha256": "<PRIVATE_REF_02623>",
+      "delivered_sha256": "<PRIVATE_REF_01816>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/QUERY_ATTEMPTS.jsonl",
+      "private_source_sha256": "<PRIVATE_REF_03469>",
+      "delivered_sha256": "<PRIVATE_REF_01069>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/address_inventory_attempt4.command.json",
+      "private_source_sha256": "<PRIVATE_REF_02641>",
+      "delivered_sha256": "<PRIVATE_REF_00146>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/address_inventory_attempt4.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/address_inventory_attempt4.stdout",
+      "private_source_sha256": "<PRIVATE_REF_02317>",
+      "delivered_sha256": "<PRIVATE_REF_01148>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/asset_inventory_attempt1.command.json",
+      "private_source_sha256": "<PRIVATE_REF_02570>",
+      "delivered_sha256": "<PRIVATE_REF_01520>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/asset_inventory_attempt1.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/asset_inventory_attempt1.stdout",
+      "private_source_sha256": "<PRIVATE_REF_03087>",
+      "delivered_sha256": "<PRIVATE_REF_01407>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/disk_inventory_attempt3.command.json",
+      "private_source_sha256": "<PRIVATE_REF_03104>",
+      "delivered_sha256": "<PRIVATE_REF_02904>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/disk_inventory_attempt3.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/disk_inventory_attempt3.stdout",
+      "private_source_sha256": "<PRIVATE_REF_02642>",
+      "delivered_sha256": "<PRIVATE_REF_01771>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/firewall_inventory_attempt7.command.json",
+      "private_source_sha256": "<PRIVATE_REF_01774>",
+      "delivered_sha256": "<PRIVATE_REF_02863>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/firewall_inventory_attempt7.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/firewall_inventory_attempt7.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01429>",
+      "delivered_sha256": "<PRIVATE_REF_01425>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/network_inventory_attempt5.command.json",
+      "private_source_sha256": "<PRIVATE_REF_03669>",
+      "delivered_sha256": "<PRIVATE_REF_02604>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/network_inventory_attempt5.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/network_inventory_attempt5.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01073>",
+      "delivered_sha256": "<PRIVATE_REF_02411>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/operation_inventory_attempt8.command.json",
+      "private_source_sha256": "<PRIVATE_REF_03093>",
+      "delivered_sha256": "<PRIVATE_REF_02275>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/operation_inventory_attempt8.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/operation_inventory_attempt8.stdout",
+      "private_source_sha256": "<PRIVATE_REF_03712>",
+      "delivered_sha256": "<PRIVATE_REF_02047>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/subnet_inventory_attempt6.command.json",
+      "private_source_sha256": "<PRIVATE_REF_02049>",
+      "delivered_sha256": "<PRIVATE_REF_02629>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/subnet_inventory_attempt6.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/subnet_inventory_attempt6.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01484>",
+      "delivered_sha256": "<PRIVATE_REF_01408>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/vm_describe_attempt2.command.json",
+      "private_source_sha256": "<PRIVATE_REF_03724>",
+      "delivered_sha256": "<PRIVATE_REF_03689>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/vm_describe_attempt2.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "CONTROL_SNAPSHOT/vm_describe_attempt2.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01040>",
+      "delivered_sha256": "<PRIVATE_REF_01576>"
+    }
+  ],
+  "scan": {
+    "canaryFound": false,
+    "matches": [],
+    "files_scanned": 82,
+    "skipped": []
+  },
+  "candidates": {
+    "registered": [],
+    "candidates": [],
+    "files_scanned": 82,
+    "skipped": []
+  },
+  "correction": "Pre-delivery generated source replaced after mechanical JSON validation detected alias matching an escaped newline/decorator. No packet had been delivered; no source evidence rewritten."
+}

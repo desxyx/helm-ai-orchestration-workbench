@@ -1,0 +1,95 @@
+{
+  "run_id": "RUN-W2B",
+  "text_files": 967,
+  "scan": {
+    "canaryFound": false,
+    "matches": [],
+    "files_scanned": 969,
+    "skipped": []
+  },
+  "candidates": {
+    "registered": [],
+    "candidates": [
+      {
+        "file": "S2_TRANSCRIPT_REDACTED.jsonl",
+        "pattern": "url_userinfo_password",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/auth-legacy.34d5c94a.js.map",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/auth.04107fd9.js.map",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/auth-legacy.34d5c94a.js.map",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/auth.04107fd9.js.map",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "EXPANDED_RELEASE/web-dist/js/auth-legacy.34d5c94a.js.map",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "EXPANDED_RELEASE/web-dist/js/auth.04107fd9.js.map",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      }
+    ],
+    "files_scanned": 969,
+    "skipped": []
+  },
+  "HC_Observer_or_previous_arm_material_supplied": false,
+  "limits": "Credentials/identities redacted, image pixels and large generated assets withheld, dependency/git/cache dirs withheld; full original workspace archive held privately. Release archive expanded.",
+  "custodian_candidate_classification": {
+    "native_url_userinfo": "Serialization false positive spanning JSON syntax; not present in any decoded JSON string",
+    "native_check": [
+      {
+        "line": 439,
+        "whole_serialized_matches": 1,
+        "decoded_string_matches": 0,
+        "crosses_json_structure": [
+          true
+        ]
+      }
+    ],
+    "generated_source_maps": "Withheld generated asset text; original archive retained"
+  },
+  "final_scan": {
+    "canaryFound": false,
+    "matches": [],
+    "files_scanned": 969,
+    "skipped": []
+  },
+  "final_candidates": {
+    "registered": [],
+    "candidates": [
+      {
+        "file": "S2_TRANSCRIPT_REDACTED.jsonl",
+        "pattern": "url_userinfo_password",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      }
+    ],
+    "files_scanned": 969,
+    "skipped": []
+  },
+  "delivery_allowed": true
+}

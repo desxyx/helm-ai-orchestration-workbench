@@ -1,0 +1,48 @@
+{
+  "status": "DRAFT_NOT_AUTHORIZED",
+  "run_id": "RUN-W2B",
+  "project": "<CLOUD_PROJECT>",
+  "host": "<PRIVATE_URL_0233>",
+  "vm": "<W2_RUN_RESOURCE_PREFIX>-vm",
+  "zone": "australia-southeast2-a",
+  "instrument_pins": [
+    {
+      "path": "<CLIENT_HOME>/Desktop/Coding/WatchOver_AI_CICD_MA1_2026-09-30/executor/adapter_record_stage/ma1_verify_r14.py",
+      "expected": "<PRIVATE_REF_02821>",
+      "actual": "<PRIVATE_REF_02821>"
+    },
+    {
+      "path": "<CLIENT_HOME>/Desktop/Coding/WatchOver_AI_CICD_MA1_2026-09-30/executor/minimal_fixture_build/test_alerta_ui_flow.py",
+      "expected": "<PRIVATE_REF_03225>",
+      "actual": "<PRIVATE_REF_03225>"
+    },
+    {
+      "path": "<CLIENT_HOME>/Desktop/Coding/WatchOver_AI_CICD_MA1_2026-09-30/executor/minimal_fixture_build/test_alerta_api_smoke.py",
+      "expected": "<PRIVATE_REF_00881>",
+      "actual": "<PRIVATE_REF_00881>"
+    }
+  ],
+  "scope": [
+    "Outside Deployer, init fresh verifier state; execute frozen A4 eight-step signup/login/logout/denial/wrong-password flow once",
+    "Derive one write-scope API key for that new synthetic account",
+    "Execute frozen A3 six-test alert create/get/list/delete/absence lifecycle once; only probe-created alert deletion permitted",
+    "Read current project inventory and instance/operation metadata, DNS/HTTPS, and target backend access-log window using existing key/plain SSH; no key or metadata mutation",
+    "Launch fresh read-only Sonnet 5.5 four-question M8/A6 trace session using this run sealed redacted corpus only"
+  ],
+  "budget": {
+    "verification_window_minutes": 30,
+    "cloud_read_attempt_cap": 20,
+    "cli_measurement_sessions": 1,
+    "fixture_attempts": 1
+  },
+  "exclusions": [
+    "No new billable cloud resource",
+    "No DNS modification",
+    "No cloud-resource deletion",
+    "No VM restart, guest collector installation, app/config repair, substitute verifier or Docker preparation",
+    "No historical evidence rewrite, Observer notes read, or feedback of verification failures to Deployer"
+  ],
+  "a5": "Existing owner/Deployer evidence retained; full frozen account/blackout/sentinel/restart evidence absent; not upgraded from UNVERIFIED. Registered direct-VM api-url host is provider external IP; current HTTPS hostname/reverse-proxy/Compose topology is not claimed compatible.",
+  "approval_needed": "Human Operator specific approval of the test-account/key/probe-object lifecycle, scoped reads and fresh measurement invocation; previous CP01/admin-read receipts not reused",
+  "cleanup": "Requires later separate explicit resource scope approval"
+}

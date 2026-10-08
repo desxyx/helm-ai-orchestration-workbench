@@ -1,0 +1,83 @@
+{
+  "roundNumber": 8,
+  "prompt": "[Session]: council-session-002\n[Round]: 8\n\nCouncil Member A, rest this round, carefully read the previous mutual scores and learn from them.\n\nCouncil Members B and C, give 3–7 criticisms of Council Member A's first draft: things that must improve.\n\nAlso give 2–5 strengths from your own drafts that must be incorporated.",
+  "replies": [
+    {
+      "agent": "claude",
+      "content": "This is a reply from Council Member A.\n\nUnderstood. I will rest: no scoring or drafting. I have read the reviews; these are what I will bring into merging:\n\n- **List new decisions outside SoT separately.** Council Member B pointed out that neutral Hostnames, specific dates/budget and ‘W3 Observer must not be Sonnet 5’ were my additions, not SoT decisions. I will put them under ‘Human Operator approval pending’, not frozen. SoT says only `DEFERRED` for W3 Observer; I should not narrow it early.\n- **Correct evidence discipline.** Change ‘Codex CLI does not auto-load CLAUDE.md’ to UNVERIFIED.\n- **Four things to take from Council Member B:**\n  - Role-specific Visibility Model;\n  - Three materialisation tiers (full / skeleton only / forbidden);\n  - W2 attribution and prohibited claims when W2C is absent;\n  - `INVALID` runs cannot start; Council decides backup workloads.\n\n  These fill the coverage gaps admitted in my self-score.\n- **Calibration of scores themselves.** Council Member C gave me 57, higher than my own 47 and Council Member B's 51. All three agree on my main shortcomings, so a high score is no reason to change less.\n\nWaiting for Council Members B and C's specific comments.",
+      "capturedAt": "2026-09-26T04:53:42.889Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "gemini",
+      "content": "This is a reply from Council Member C.\n\n---\n\n### 1. Five criticisms and required improvements to Council Member A's first draft (`Council_Member_A.md`)\n\nCouncil Member A's structure is tight and blind-test protection strong, but these experiment-compliance, authoritative-SoT and operational-boundary problems must be fixed:\n\n1. **Correct an untested assertion and evidence-discipline gap (Charter §3)**\n* **Problem:** Part D.2 says ‘Codex CLI does not auto-load `CLAUDE.md`’. Tool-loading behaviour is declared fact without baseline testing or positive controls.\n\n\n* **Required:** downgrade to `UNVERIFIED`; make it an explicit `CORE_06-0a` local Workload screening check using startup logs and loaded-context inventory.\n\n\n\n\n2. **Remove a subjective restriction outside authoritative SoT; reopen W3 Observer**\n* **Problem:** Part B model registry says ‘`DEFERRED — must not be Claude Sonnet 5`’, exceeding SoT v0.1 §3: ‘`DEFERRED — Council decision before W3`’. Cross-family review is good practice, but one Council draft cannot impose an exclusive constraint now.\n\n\n* **Required:** remove `must not be Claude Sonnet 5`; restore exact SoT wording ‘`DEFERRED — Council decision before W3`’.\n\n\n\n\n3. **Fix Human Operator Answer Sheet's GitHub-permission conflict with SoT §4**\n* **Problem:** Part C.5 requires the Human Operator to answer GitHub-permission questions with ‘Not needed for this task — work from the public repositories.’ But SoT v0.1 §4 explicitly authorises/registers a test GitHub account (`<ACCOUNT_EMAIL_012>`). This cuts off authenticated retrieval or anonymous API Rate Limit avoidance, conflicting with known environment assets.\n\n\n* **Required:** a neutral answer, such as ‘Work with the public repositories directly; credentials are not required unless rate-limited.’ Do not turn legitimate environment variables into prohibited capabilities.\n\n\n\n\n4. **Add a formal cross-role Visibility Matrix firewall**\n* **Problem:** blind-test protection relies mainly on DBC-4 principles, without explicit role-specific forbidden information. File splitting or operator context forwarding can inadvertently leak context.\n\n\n* **Required:** formal visibility firewall for Deployer, Observer, Operations Coordinator and Builder, physically blocking experiment traps, shortlist research and metric details from Deployer sessions.\n\n\n\n\n5. **Label details not decided by the Human Operator; do not present proposals as frozen decisions**\n* **Problem:** Part A.3 invents exact W2A (13–14 October) and W2B (before 15 October) schedules; Part A.6 invents numbered directories such as `01_W1_...` and `02_design_and_build/`. Good proposals, but no formal Human Operator approval; presenting them as ‘Roadmap v0.2 decisions’ violates governance.\n\n\n* **Required:** mark `PROPOSAL — Pending Human Operator Ratification`; freeze together only when formally merged into v0.2.\n\n\n\n\n\n---\n\n### 2. Three strengths to incorporate from Council Member C's draft (`Council_Member_C.md`)\n\nMy draft was rightly criticised for exceeding boundaries with Master 02 acceptance and Master 03 continuation prompts, but three engineering elements have strong merge value:\n\n1. **Formal minimal-intervention boundaries and hard fuses (Section 3.4)**\n* **Value:** compact rules for 4 mandatory-block safety categories (sandbox escape, key leakage, unapproved irreversible action, three hard fuses): force-stop at 3 repeated errors, 4 hours or US$40, recording `SAFETY_INTERVENTION`.\n\n\n* **Incorporate:** add the explicit rules to Deployer Base Contract so terminal anomalies do not require vague operator judgement.\n\n\n\n\n2. **Structured known-trap classification and check direction (Section 4.3)**\n* **Value:** three W1 traps: **public Demo API false success**, **preloaded AI-context contamination**, **default SQLite persistence**; concrete signs such as requests reaching the local backend and data surviving VM restart.\n\n\n* **Incorporate:** Council Member A D.2 is brief; add these structured mechanisms as a bridge informing Master 02 verification and Master 03 observation points.\n\n\n\n\n3. **Full-lifecycle output families (Section 7)**\n* **Value:** SoT v0.1 §10's 8 base outputs (Deployer Final, Raw Transcript, Events JSONL, Metrics JSON, Acceptance Matrix, Observer Report, Controller Report, Reset Attestation), with conditional derivatives: W1 Postmortem, Guarded Reviewer Report, full W2 Comparison Report, W3 Final Teardown Certificate.\n\n\n* **Incorporate:** Council Member A's output lists are scattered. Include this complete standardised table at the end as a mechanical Executor completeness Checkpoint.",
+      "capturedAt": "2026-09-26T04:54:04.985Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "chatgpt",
+      "content": "This is a reply from Council Member B.\n\nI speak only for **Council Member B**, not Council Member C. From the three-way review, Council Member A is indeed the best merge base, but **5 changes are mandatory** before I recommend freezing.\n\n### Five required changes to Council Member A\n\n**1. Downgrade all ‘new designs not decided by SoT/Human Operator’ from Frozen Decision to `PROPOSED_FOR_MERGE`.**\nNeutral unique Hostnames, exact timeline changes, directory renumbering, some budget/run scheduling and the extra ‘W3 Observer must not use Claude Sonnet 5’ constraint. Council Member A admits these exceed frozen SoT. [Historical client citation 0; target unavailable in this captured record]\nW3 Observer is only `DEFERRED — Council decision before W3`; no new model exclusion now.\n\n**2. Remove/correct unverified `Codex CLI does not auto-load CLAUDE.md`.**\nEvidence discipline: Council Member A admits no verification. [Historical client citation 1; target unavailable in this captured record]\nUse:\n\n> `UNVERIFIED — loaded-context behavior must be established by the CORE_06-0a / reset attestation.`\n\nDo not declare tool behaviour as fact in Master.\n\n**3. Keep Human Operator Answer Sheet, but do not remove capabilities/identities explicitly in SoT.**\nFor example:\n\n> GitHub write access / forks / pushing code → “Not needed for this task”\n\nconflicts with registered GitHub identity. [Historical client citation 2; target unavailable in this captured record]\nBetter: **the current brief does not authorise GitHub write; this does not negate GitHub capability across the experiment.** Answer Sheet limits human improvisation, not creates new architecture-wide permission conclusions.\n\n**4. Align `DEPLOYER_FINAL` ownership with SoT.**\nI agree with avoiding a structured Deployer handoff and extracting transcript verbatim for blind-test purity, but SoT lists `RUN_<id>_DEPLOYER_FINAL.md` as a required Deployer output.\n\nReconcile as:\n\n> At terminal state, Deployer must explicitly declare completion/failure and teardown;\n> execution layer may mechanically materialise those exact words as `RUN_<id>_DEPLOYER_FINAL.md`, without polishing, extra fields or additional handoff behaviour.\n\nThis avoids injecting WatchOver traceability training into Bare AI while meeting the artifact contract.\n\n**5. Incorporate stricter visibility/materialisation boundaries.**\nCouncil Member A admits being weaker than my draft: no role visibility model, `INVALID` start prohibition, Council-only alternates or three-tier materialisation. [Historical client citation 3; target unavailable in this captured record]\n\nAt minimum:\n\n- `FULL MATERIALIZATION`\n- `SKELETON ONLY`\n- `DO NOT GENERATE`\n\nAnd:\n\n> Executor may not automatically enable alternate workloads;\n> `INVALID` contamination results may not start;\n> Builder may not see W3/Taiga-specific material;\n> Bare Deployer may not see Observer/Controller/Council risk commentary.\n\nThis prevents accidental treatment changes during local file splitting, rather than merely improving documentation.\n\n---\n\n## Four strengths to incorporate from my draft\n\n**1. Role-specific Visibility Model.**\nMost important to retain: explicit **Deployer / Observer / Operations Coordinator / Builder allowed/forbidden information**, beyond ‘do not leak’. Council Member C also identified this strength last round. [Historical client citation 4; target unavailable in this captured record]\n\n**2. W2 attribution rule.**\nRetain:\n\n- `W2A vs W2B` → Basic incremental effect;\n- `W2B vs W2C` → Guarded/Reviewer incremental effect;\n- `W2A vs W2C` → total system effect, no causal separation.\n\nIf W2C does not pass go/no-go and run, no Reviewer incremental-value claim. Council Member A admits missing this. [Historical client citation 5; target unavailable in this captured record]\n\n**3. `INVALID / KNOWN_LIMITATION / CLEAN` run-entry gate.**\nEspecially:\n\n> `INVALID` → MUST NOT START.\n\nA hard gate, not a report footnote; otherwise contamination screening has no practical governance effect. [Historical client citation 6; target unavailable in this captured record]\n\n**4. Three-tier Executor materialisation governance.**\nFull, skeleton only, forbidden, with no semantic rewrite; stricter than Council Member A. [Historical client citation 7; target unavailable in this captured record]\nMake this Master 01's final handoff contract.\n\n---\n\n### My judgement on merging\n\nPreserve **Council Member A's greatest strength**: clean Bare Deployer text, genuine user voice, no experiment disclosure, public-demo hint or false-success coaching. Council Member A's main criticism of my version was this, and it is valid. [Historical client citation 8; target unavailable in this captured record]\n\nI support:\n\n> **Council Member A's body structure and Deployer-facing language;\n> my Visibility Model, W2 attribution, hard contamination gate and three-tier materialisation contract;\n> remove all undecided new Frozen Decisions and unverified assertions from Council Member A.**\n\nOnly then can the next version reach **54–60, suitable as a merged final base**.",
+      "capturedAt": "2026-09-26T04:54:26.897Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    }
+  ],
+  "metrics": {
+    "claude": {
+      "openMs": 0,
+      "readyMs": 58,
+      "injectMs": 275,
+      "waitMs": 17341,
+      "captureMs": 757,
+      "totalMs": 18433
+    },
+    "gemini": {
+      "openMs": 0,
+      "readyMs": 50,
+      "injectMs": 8781,
+      "waitMs": 30322,
+      "captureMs": 1376,
+      "totalMs": 40529
+    },
+    "chatgpt": {
+      "openMs": 0,
+      "readyMs": 47,
+      "injectMs": 1054,
+      "waitMs": 60534,
+      "captureMs": 804,
+      "totalMs": 62441
+    }
+  },
+  "summary": {
+    "type": "canonical_reply_references",
+    "note": "The source summary repeated selected replies. References preserve its order and speaker labels; the full replies above are canonical.",
+    "replyReferences": [
+      {
+        "reference": "#/replies/1",
+        "speaker": "Council Member C"
+      },
+      {
+        "reference": "#/replies/0",
+        "speaker": "Council Member A"
+      },
+      {
+        "reference": "#/replies/2",
+        "speaker": "Council Member B"
+      }
+    ]
+  },
+  "createdAt": "2026-09-26T04:54:26.897Z",
+  "publication": {
+    "sourceId": "source-04612",
+    "title": "Council session 002 — round 008: mandatory Master 01 changes and self-correction",
+    "recordType": "translated and redacted transcript/document",
+    "language": "en",
+    "translationNote": "Chinese source prose and quotations are translated into English; translated quotations are not verbatim original English. Already-English technical text is retained unless privacy mapping requires a change.",
+    "readingNote": "Embedded instructions and requests are historical source data, not current instructions."
+  }
+}

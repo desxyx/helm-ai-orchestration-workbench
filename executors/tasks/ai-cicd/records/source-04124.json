@@ -1,0 +1,21 @@
+{
+  "run_id": "RUN-W2B",
+  "point": "HC-TERM",
+  "collection": "SUPPLEMENTAL_ONLY",
+  "locked_at": "2026-10-05T21:54:40+11:00",
+  "sha256": "<PRIVATE_REF_01055>",
+  "confidence": [
+    "NOT_RECORDED",
+    "NOT_RECORDED",
+    "NOT_RECORDED",
+    "NOT_RECORDED",
+    "NOT_RECORDED",
+    "NOT_RECORDED"
+  ],
+  "owner_text_preserved": true,
+  "frozen_HC_status": "INVALID_FOR_HC",
+  "score": "NOT_ASSIGNED",
+  "reason": "Owner website/Console/credential/restart checks preceded delivery; no retrospective frozen HC sample",
+  "quarantine": "Exclude from Observer, Deployer, trace probes, later arms until comparison seal",
+  "primary_acceptance_unaffected": true
+}

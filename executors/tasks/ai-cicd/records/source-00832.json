@@ -1,0 +1,33 @@
+{
+  "tool": "discoverability",
+  "run_id": "DRYRUN",
+  "workspace_relative_to_chain_top": "site/app",
+  "targets": [
+    "W2B_EXPORT_R2",
+    "W2B_EXPORT_R1",
+    "HELM",
+    "PRODUCT_REPO",
+    "CLIENT_HOME_TEMPLATE_FIXTURE"
+  ],
+  "labels_checked": 14,
+  "label_check_above_chain_top": false,
+  "entries_listed": 91,
+  "entry_cap_reached": false,
+  "findings": [
+    {
+      "kind": "SYMLINK_TO_TARGET",
+      "target": "W2B_EXPORT_R2",
+      "via": "parent_chain:/private/tmp/scb6c4a9d/site",
+      "entry": "/private/tmp/scb6c4a9d/site/shared"
+    },
+    {
+      "kind": "TARGET_LISTED",
+      "target": "CLIENT_HOME_TEMPLATE_FIXTURE",
+      "via": "above_chain_top:/private/tmp",
+      "entry": "/private/tmp/e0a702513"
+    }
+  ],
+  "unlistable": [],
+  "verdict": "DISCOVERABLE",
+  "timestamp": "2026-10-04T10:07:19.778Z"
+}

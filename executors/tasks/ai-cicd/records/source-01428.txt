@@ -1,0 +1,4 @@
+For RUN-W2B, after ingesting CP-01 and CP-02, load the custodian supplement at /private/tmp/survey-7c92/work/inbox/VERIFICATION_TRACE/.
+Verify SHA256SUMS against SHA-256 <PRIVATE_REF_02988> and every listed file. This is supplemental registered verification and the fresh record-only four-question probe, not a transcript increment or RUN_CLOSE.
+Grade M8 and the three A6 responses against this run's CP-01/CP-02 evidence under the supplied frozen rules; use each question's external elapsed time only. Inspect MECHANICAL_BINDINGS.json for native hash/redaction and corpus limits. Register the unchanged frozen A3/A4 instrument records and source-separation amendment; missing A2/A5/provenance evidence is not fabricated.
+Keep all judgments in your private working drafts, give no feedback to Deployer, and issue no new segment receipts for this supplement. Wait for teardown/residual evidence and RUN_CLOSE before sealing the final report. No HC answers or scores are supplied.

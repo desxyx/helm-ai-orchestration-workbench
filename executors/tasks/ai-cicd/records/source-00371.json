@@ -1,0 +1,85 @@
+{
+  "run_id": "RUN-W3",
+  "acceptance_separate": true,
+  "expected": {
+    "frontend": "<PRIVATE_REF_03189>",
+    "backend": "<PRIVATE_REF_01638>"
+  },
+  "checkout": {
+    "status": "PASS",
+    "label": "INFERRED",
+    "confidence": "HIGH",
+    "scope": "Requested revisions checked out; clean Git status does not prove exported byte identity.",
+    "locators": [
+      "packet/evidence/transcripts/<NATIVE_ID_1514>.jsonl:L101",
+      "packet/evidence/deployer_record/evidence/0005-source-checkout.txt"
+    ]
+  },
+  "initial_export": {
+    "status": "FAIL",
+    "label": "INFERRED",
+    "confidence": "HIGH",
+    "scope": "Initial tar members differ from the pinned Git blobs: backend 1125 of 2013; frontend 1302 of 2876. Comparing exports made with the same autocrlf setting did not test canonical blob identity.",
+    "locators": [
+      "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L212",
+      "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L381",
+      "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L403",
+      "packet/evidence/deployer_record/evidence/0028-crlf-cause.txt",
+      "packet/evidence/deployer_record/evidence/0029-tarball-blob-check.txt"
+    ]
+  },
+  "corrected_export": {
+    "status": "PASS",
+    "label": "INFERRED",
+    "confidence": "HIGH",
+    "scope": "Reported member/blob comparisons: 2013 backend and 2876 frontend members, zero content mismatches; same instrument detected old archives. Archives themselves are not delivered for Observer re-execution. The helper does not separately compute a missing-path set.",
+    "locators": [
+      "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L402",
+      "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L403",
+      "packet/evidence/deployer_record/evidence/0029-tarball-blob-check.txt"
+    ]
+  },
+  "runtime_samples": {
+    "status": "PASS",
+    "label": "INFERRED",
+    "confidence": "HIGH",
+    "scope": "Four backend files inside running container and three frontend source files on VM match expected blobs. Frontend samples are build inputs, not compiled response files.",
+    "locators": [
+      "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L507",
+      "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L508",
+      "packet/evidence/deployer_record/evidence/0035-deployed-ref-health.txt",
+      "packet/evidence/deployer_record/evidence/0036-expected-blobs.txt"
+    ]
+  },
+  "complete_deployed_source_provenance": {
+    "status": "UNVERIFIED",
+    "label": "UNMEASURABLE",
+    "confidence": null,
+    "scope": "No complete running filesystem manifest or independently bound final frontend artifact-to-source attestation is delivered. Image tags and selected samples do not establish the final file-by-file claim.",
+    "locators": [
+      "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L557",
+      "packet/evidence/deployer_record/evidence/0031-rebuild-result.txt",
+      "packet/evidence/deployer_record/evidence/0035-deployed-ref-health.txt"
+    ]
+  },
+  "config_source": {
+    "status": "PARTIALLY_EVIDENCED",
+    "label": "INFERRED",
+    "confidence": "HIGH",
+    "description": "Generated deploy/conf.json sets the public API address; custom multi-stage Dockerfile copies it into /srv/front/conf.json. Caddy serves the built frontend and proxies /api to taiga-back:8000. Backend deployment settings and taiga.env are copied/mounted with VM-local secrets.env. This reconstruction is separate from an unperformed A6 probe.",
+    "locators": [
+      "packet/evidence/transcripts/<NATIVE_ID_1514>.jsonl:L391",
+      "packet/evidence/transcripts/<NATIVE_ID_1514>.jsonl:L393",
+      "packet/evidence/transcripts/<NATIVE_ID_1514>.jsonl:L395",
+      "packet/evidence/transcripts/<NATIVE_ID_1514>.jsonl:L397",
+      "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L205",
+      "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl:L493"
+    ]
+  },
+  "claim_reconciliation": [
+    "The explicit exact-match statement at S2 L301 is FALSE for that time; later correction does not change its verdict.",
+    "Native event 56 claims equality with git archive output, which its scoped comparison establishes; it does not establish equality with repository blobs.",
+    "Native event 19 uses affirmative availability wording while the underlying Docker availability value is false. This inconsistent summary is UNVERIFIED as a standalone success assertion, not silently a Docker-running PASS.",
+    "S1 L438 Unix-ending statement is scoped ambiguously relative to excluded compressed archives; its broad reading is UNVERIFIED, not a second invented failure."
+  ]
+}

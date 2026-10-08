@@ -1,0 +1,775 @@
+{
+  "recorded_at": "2026-10-05T15:47:54+11:00",
+  "status": "PRE_TEARDOWN_EXISTING_EVIDENCE_AND_LIMITS_ARCHIVED; NO_ALL_ITEMS_PASS",
+  "records": [
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/CP01_REDACTION_REPORT.json",
+      "sha256": "<PRIVATE_REF_03551>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/INTERRUPTION_SNAPSHOT_FINAL.json",
+      "sha256": "<PRIVATE_REF_01551>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/INTERRUPTION_SNAPSHOT_LOCAL.json",
+      "sha256": "<PRIVATE_REF_02608>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/OBSERVER_DELIVERY_RECORD.json",
+      "sha256": "<PRIVATE_REF_02497>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/OPENING_SOURCE_AND_T0_OBSERVATION.json",
+      "sha256": "<PRIVATE_REF_03262>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q01_sdk_attempt1.command.json",
+      "sha256": "<PRIVATE_REF_02859>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q01_sdk_attempt1.stderr",
+      "sha256": "<PRIVATE_REF_01750>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q01_sdk_attempt1.stdout",
+      "sha256": "<PRIVATE_REF_02674>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q02_project_attempt2.command.json",
+      "sha256": "<PRIVATE_REF_03629>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q02_project_attempt2.stderr",
+      "sha256": "<PRIVATE_REF_02618>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q02_project_attempt2.stdout",
+      "sha256": "<PRIVATE_REF_02941>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q03_account_attempt3.command.json",
+      "sha256": "<PRIVATE_REF_00563>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q03_account_attempt3.stderr",
+      "sha256": "<PRIVATE_REF_01844>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q03_account_attempt3.stdout",
+      "sha256": "<PRIVATE_REF_01530>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q04_address_attempt4.command.json",
+      "sha256": "<PRIVATE_REF_03072>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q04_address_attempt4.stderr",
+      "sha256": "<PRIVATE_REF_01497>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q04_address_attempt4.stdout",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q04_address_attempt5.command.json",
+      "sha256": "<PRIVATE_REF_02151>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q04_address_attempt5.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q04_address_attempt5.stdout",
+      "sha256": "<PRIVATE_REF_02998>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q05_inventory_attempt6.command.json",
+      "sha256": "<PRIVATE_REF_00151>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q05_inventory_attempt6.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q05_inventory_attempt6.stdout",
+      "sha256": "<PRIVATE_REF_02264>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q06_instances_attempt7.command.json",
+      "sha256": "<PRIVATE_REF_03523>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q06_instances_attempt7.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q06_instances_attempt7.stdout",
+      "sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q07_buckets_attempt8.command.json",
+      "sha256": "<PRIVATE_REF_01772>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q07_buckets_attempt8.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q07_buckets_attempt8.stdout",
+      "sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q08_sql_attempt9.command.json",
+      "sha256": "<PRIVATE_REF_02323>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q08_sql_attempt9.stderr",
+      "sha256": "<PRIVATE_REF_01466>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q08_sql_attempt9.stdout",
+      "sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q09_run_attempt10.command.json",
+      "sha256": "<PRIVATE_REF_02112>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q09_run_attempt10.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/Q09_run_attempt10.stdout",
+      "sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/QUERY_ATTEMPTS.jsonl",
+      "sha256": "<PRIVATE_REF_02816>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/QUERY_PLAN.json",
+      "sha256": "<PRIVATE_REF_02777>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/READONLY_SNAPSHOT_ACTION_RECEIPT.json",
+      "sha256": "<PRIVATE_REF_02066>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/READONLY_SNAPSHOT_ACTION_RECEIPT_RESULT.json",
+      "sha256": "<PRIVATE_REF_02400>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/RESOURCE_CREATION_RAW_OUTPUT.txt",
+      "sha256": "<PRIVATE_REF_01485>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/RESOURCE_CREATION_TOOL_RESULT.json",
+      "sha256": "<PRIVATE_REF_00133>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/RESOURCE_X_DESIGNATION.json",
+      "sha256": "<PRIVATE_REF_01359>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/RESOURCE_X_TRACE_PROBE_BINDING.json",
+      "sha256": "<PRIVATE_REF_02278>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/S1_ROLLOUT_PRIVATE.jsonl",
+      "sha256": "<PRIVATE_REF_01468>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/S2_CONTINUATION_MESSAGE.txt",
+      "sha256": "<PRIVATE_REF_00526>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/SHA256SUMS_CP01",
+      "sha256": "<PRIVATE_REF_01122>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/SHA256SUMS_LOCAL",
+      "sha256": "<PRIVATE_REF_02065>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/SOURCE_HEADS_LOCAL.json",
+      "sha256": "<PRIVATE_REF_02749>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/capture_readonly.py",
+      "sha256": "<PRIVATE_REF_01019>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/observer_redacted_source/CONTROL_SNAPSHOT_NEUTRAL.json",
+      "sha256": "<PRIVATE_REF_02200>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/observer_redacted_source/PROJECT_INVENTORY_REDACTED.json",
+      "sha256": "<PRIVATE_REF_03265>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/observer_redacted_source/RESOURCE_CREATION_REDACTED.txt",
+      "sha256": "<PRIVATE_REF_03417>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/observer_redacted_source/RESOURCE_X_TRACE_PROBE_BINDING.json",
+      "sha256": "<PRIVATE_REF_02278>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/observer_redacted_source/S1_TRANSCRIPT_REDACTED.jsonl",
+      "sha256": "<PRIVATE_REF_01579>"
+    },
+    {
+      "locator": "evidence/CP-01_FORCED_INTERRUPT/package_increment/packets_cp1_1791167921207.json",
+      "sha256": "<PRIVATE_REF_01659>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/CP02_REDACTION_REPORT.json",
+      "sha256": "<PRIVATE_REF_01291>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/DEPLOYMENT_DECLARATION_PRIVATE.txt",
+      "sha256": "<PRIVATE_REF_03721>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/OBSERVER_DELIVERY_RECORD.json",
+      "sha256": "<PRIVATE_REF_01898>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/OBSERVER_INGESTION_ACK_RELAY.json",
+      "sha256": "<PRIVATE_REF_00996>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_LOGIN_OBSERVATION.json",
+      "sha256": "<PRIVATE_REF_02977>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_POST_RESTART_ALERT_SCREENSHOT.json",
+      "sha256": "<PRIVATE_REF_01568>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_POST_RESTART_OBSERVATION.json",
+      "sha256": "<PRIVATE_REF_02764>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_SCREENSHOTS/alert_after_restart.png",
+      "sha256": "<PRIVATE_REF_02475>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_SCREENSHOTS/alert_before_restart.png",
+      "sha256": "<PRIVATE_REF_02775>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/DNS_local.command.json",
+      "sha256": "<PRIVATE_REF_01369>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/DNS_local.stderr",
+      "sha256": "<PRIVATE_REF_02339>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/DNS_local.stdout",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/DNS_local_retry.command.json",
+      "sha256": "<PRIVATE_REF_03371>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/DNS_local_retry.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/DNS_local_retry.stdout",
+      "sha256": "<PRIVATE_REF_03410>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/DNS_public.command.json",
+      "sha256": "<PRIVATE_REF_01458>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/DNS_public.stderr",
+      "sha256": "<PRIVATE_REF_02339>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/DNS_public.stdout",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/DNS_public_retry.command.json",
+      "sha256": "<PRIVATE_REF_02117>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/DNS_public_retry.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/DNS_public_retry.stdout",
+      "sha256": "<PRIVATE_REF_02009>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/HTTPS.command.json",
+      "sha256": "<PRIVATE_REF_02694>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/HTTPS.headers",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/HTTPS.stderr",
+      "sha256": "<PRIVATE_REF_02547>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/HTTPS.stdout",
+      "sha256": "<PRIVATE_REF_01795>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/HTTPS_retry.body",
+      "sha256": "<PRIVATE_REF_01469>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/HTTPS_retry.command.json",
+      "sha256": "<PRIVATE_REF_01824>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/HTTPS_retry.headers",
+      "sha256": "<PRIVATE_REF_01249>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/HTTPS_retry.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/HTTPS_retry.stdout",
+      "sha256": "<PRIVATE_REF_03163>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q01_sdk_attempt1.command.json",
+      "sha256": "<PRIVATE_REF_01969>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q01_sdk_attempt1.stderr",
+      "sha256": "<PRIVATE_REF_01120>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q01_sdk_attempt1.stdout",
+      "sha256": "<PRIVATE_REF_02674>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q02_project_attempt2.command.json",
+      "sha256": "<PRIVATE_REF_01787>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q02_project_attempt2.stderr",
+      "sha256": "<PRIVATE_REF_01169>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q02_project_attempt2.stdout",
+      "sha256": "<PRIVATE_REF_02941>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q03_account_attempt3.command.json",
+      "sha256": "<PRIVATE_REF_01418>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q03_account_attempt3.stderr",
+      "sha256": "<PRIVATE_REF_01471>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q03_account_attempt3.stdout",
+      "sha256": "<PRIVATE_REF_01530>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q04_address_attempt4.command.json",
+      "sha256": "<PRIVATE_REF_01145>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q04_address_attempt4.stderr",
+      "sha256": "<PRIVATE_REF_01574>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q04_address_attempt4.stdout",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q04_address_attempt5.command.json",
+      "sha256": "<PRIVATE_REF_01944>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q04_address_attempt5.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q04_address_attempt5.stdout",
+      "sha256": "<PRIVATE_REF_01734>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q05_inventory_attempt6.command.json",
+      "sha256": "<PRIVATE_REF_01620>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q05_inventory_attempt6.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q05_inventory_attempt6.stdout",
+      "sha256": "<PRIVATE_REF_02038>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q06_instances_attempt7.command.json",
+      "sha256": "<PRIVATE_REF_01013>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q06_instances_attempt7.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q06_instances_attempt7.stdout",
+      "sha256": "<PRIVATE_REF_00952>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q07_disks_attempt8.command.json",
+      "sha256": "<PRIVATE_REF_00669>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q07_disks_attempt8.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q07_disks_attempt8.stdout",
+      "sha256": "<PRIVATE_REF_02671>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q08_networks_attempt9.command.json",
+      "sha256": "<PRIVATE_REF_02978>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q08_networks_attempt9.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q08_networks_attempt9.stdout",
+      "sha256": "<PRIVATE_REF_02936>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q09_firewalls_attempt10.command.json",
+      "sha256": "<PRIVATE_REF_02348>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q09_firewalls_attempt10.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/Q09_firewalls_attempt10.stdout",
+      "sha256": "<PRIVATE_REF_02791>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/QUERY_ATTEMPTS.jsonl",
+      "sha256": "<PRIVATE_REF_01937>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/QUERY_PLAN.json",
+      "sha256": "<PRIVATE_REF_03700>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/READONLY_FINDINGS.json",
+      "sha256": "<PRIVATE_REF_03438>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/READONLY_SNAPSHOT_ACTION_RECEIPT.json",
+      "sha256": "<PRIVATE_REF_02975>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/READONLY_SNAPSHOT_ACTION_RECEIPT_RESULT.json",
+      "sha256": "<PRIVATE_REF_00965>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/SHA256SUMS_TERMINAL_READONLY",
+      "sha256": "<PRIVATE_REF_03310>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/capture_readonly.py",
+      "sha256": "<PRIVATE_REF_01019>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/S2_ROLLOUT_PRIVATE.jsonl",
+      "sha256": "<PRIVATE_REF_02443>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/TERMINAL_CONTROL_RECORD.json",
+      "sha256": "<PRIVATE_REF_02418>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/TERMINAL_READONLY_SCOPE_DRAFT.json",
+      "sha256": "<PRIVATE_REF_01696>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/WORKSPACE_ARCHIVE_CUSTODY.json",
+      "sha256": "<PRIVATE_REF_01504>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/WORKSPACE_ARCHIVE_PRIVATE.json",
+      "sha256": "<PRIVATE_REF_03520>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/OWNER_LOGIN_OBSERVATION.json",
+      "sha256": "<PRIVATE_REF_02313>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/OWNER_POST_RESTART_ALERT_SCREENSHOT.json",
+      "sha256": "<PRIVATE_REF_01276>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/OWNER_POST_RESTART_OBSERVATION.json",
+      "sha256": "<PRIVATE_REF_03581>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/OWNER_VISIBLE_ALERT_FIELDS.json",
+      "sha256": "<PRIVATE_REF_02449>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_DNS_local_retry.command.json",
+      "sha256": "<PRIVATE_REF_01628>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_DNS_local_retry.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_DNS_local_retry.stdout",
+      "sha256": "<PRIVATE_REF_01890>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_DNS_public_retry.command.json",
+      "sha256": "<PRIVATE_REF_02849>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_DNS_public_retry.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_DNS_public_retry.stdout",
+      "sha256": "<PRIVATE_REF_03704>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_HTTPS_retry.command.json",
+      "sha256": "<PRIVATE_REF_03624>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_HTTPS_retry.headers",
+      "sha256": "<PRIVATE_REF_01249>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_HTTPS_retry.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_HTTPS_retry.stdout",
+      "sha256": "<PRIVATE_REF_03163>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q01_sdk_attempt1.command.json",
+      "sha256": "<PRIVATE_REF_01969>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q01_sdk_attempt1.stderr",
+      "sha256": "<PRIVATE_REF_03177>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q01_sdk_attempt1.stdout",
+      "sha256": "<PRIVATE_REF_02674>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q02_project_attempt2.command.json",
+      "sha256": "<PRIVATE_REF_01787>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q02_project_attempt2.stderr",
+      "sha256": "<PRIVATE_REF_01341>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q02_project_attempt2.stdout",
+      "sha256": "<PRIVATE_REF_03049>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q03_account_attempt3.command.json",
+      "sha256": "<PRIVATE_REF_01418>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q03_account_attempt3.stderr",
+      "sha256": "<PRIVATE_REF_03447>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q03_account_attempt3.stdout",
+      "sha256": "<PRIVATE_REF_00252>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q04_address_attempt4.command.json",
+      "sha256": "<PRIVATE_REF_01589>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q04_address_attempt4.stderr",
+      "sha256": "<PRIVATE_REF_03515>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q04_address_attempt4.stdout",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q04_address_attempt5.command.json",
+      "sha256": "<PRIVATE_REF_02509>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q04_address_attempt5.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q04_address_attempt5.stdout",
+      "sha256": "<PRIVATE_REF_01450>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q05_inventory_attempt6.command.json",
+      "sha256": "<PRIVATE_REF_01913>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q05_inventory_attempt6.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q05_inventory_attempt6.stdout",
+      "sha256": "<PRIVATE_REF_01193>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q06_instances_attempt7.command.json",
+      "sha256": "<PRIVATE_REF_03513>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q06_instances_attempt7.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q06_instances_attempt7.stdout",
+      "sha256": "<PRIVATE_REF_03078>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q07_disks_attempt8.command.json",
+      "sha256": "<PRIVATE_REF_01725>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q07_disks_attempt8.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q07_disks_attempt8.stdout",
+      "sha256": "<PRIVATE_REF_02550>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q08_networks_attempt9.command.json",
+      "sha256": "<PRIVATE_REF_00571>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q08_networks_attempt9.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q08_networks_attempt9.stdout",
+      "sha256": "<PRIVATE_REF_02742>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q09_firewalls_attempt10.command.json",
+      "sha256": "<PRIVATE_REF_02546>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q09_firewalls_attempt10.stderr",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/RAW_Q09_firewalls_attempt10.stdout",
+      "sha256": "<PRIVATE_REF_02381>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/S2_TRANSCRIPT_REDACTED.jsonl",
+      "sha256": "<PRIVATE_REF_03501>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/observer_redacted_source/TERMINAL_MECHANICAL_RECORD.json",
+      "sha256": "<PRIVATE_REF_01006>"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/package_increment/packets_cp2_1791173231924.json",
+      "sha256": "<PRIVATE_REF_01361>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/A6_COMMITS.stderr.txt",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/A6_COMMITS.stdout.json",
+      "sha256": "<PRIVATE_REF_03587>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/A6_CONFIG.stderr.txt",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/A6_CONFIG.stdout.json",
+      "sha256": "<PRIVATE_REF_01237>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/A6_RESOURCE.stderr.txt",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/A6_RESOURCE.stdout.json",
+      "sha256": "<PRIVATE_REF_02453>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/ARCHIVE_MEMBERS_PRIVATE.json",
+      "sha256": "<PRIVATE_REF_02368>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/M8.stderr.txt",
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/M8.stdout.json",
+      "sha256": "<PRIVATE_REF_00985>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/MEASUREMENT_LAUNCH.json",
+      "sha256": "<PRIVATE_REF_01619>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/MEASUREMENT_RUN_STATUS.json",
+      "sha256": "<PRIVATE_REF_01229>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/MEASUREMENT_TIMING_AND_CUSTODY.json",
+      "sha256": "<PRIVATE_REF_00242>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/PROBE_CORPUS_CUSTODY.json",
+      "sha256": "<PRIVATE_REF_03323>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/PROBE_DELIVERY_RECORD.json",
+      "sha256": "<PRIVATE_REF_01380>"
+    },
+    {
+      "locator": "evidence/TRACE_PROBE/run_authorized_measurement.py",
+      "sha256": "<PRIVATE_REF_03509>"
+    },
+    {
+      "locator": "ACCEPTANCE_EVIDENCE_LIMITS_BEFORE_CLOSE.json",
+      "sha256": "<PRIVATE_REF_01199>"
+    },
+    {
+      "locator": "W2A_CLEANUP_SCOPE_DRAFT.json",
+      "sha256": "<PRIVATE_REF_02681>"
+    },
+    {
+      "locator": "W2A_FROZEN_TEARDOWN_MESSAGE.txt",
+      "sha256": "<PRIVATE_REF_02476>"
+    }
+  ],
+  "note": "Preserves existing evidence and omissions, including private originals. This is not a complete execution of missing frozen tests, not an independent reviewer verdict, and not teardown authority."
+}

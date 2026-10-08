@@ -1,0 +1,35 @@
+{
+  "artifact_class": "ACTION_SCOPE_DRAFT",
+  "status": "CONSUMED_COMPLETE",
+  "run_id": "RUN-W2B",
+  "receipt_id": "AI-CICD-20261005-W2B-RESIDUAL-001",
+  "prepared_at": "2026-10-05T23:54:56.546694+11:00",
+  "project": "<CLOUD_PROJECT>",
+  "actor": "Operations Coordinator control plane, outside Deployer",
+  "scope": "One independent whole-project unfiltered residual capture, all SDK queries fixed in QUERY_PLAN.json; public/authoritative DNS reads for deployment name and same-authority positive control; raw private output only",
+  "provider_command_attempt_cap": 14,
+  "dns_command_attempt_cap": 8,
+  "one_bundle_only": true,
+  "validity": "30 minutes from actual owner approval issue; no automatic extension or retries",
+  "query_plan_sha256": "<PRIVATE_REF_02545>",
+  "reused_capture_script_sha256": "<PRIVATE_REF_01019>",
+  "exclusions": [
+    "No mutation/deletion/restart",
+    "No API enablement",
+    "No credential read/login/SSH or key update",
+    "No billing query",
+    "No acceptance rerun or deployment repair"
+  ],
+  "failure_semantics": "Disabled API or missing coverage remains UNVERIFIED; failed list is not empty; owner/Deployer declaration not independent proof",
+  "source_authorization": "Current async question reply; literal owner approval received",
+  "issued_at": "2026-10-05T23:56:19.385942+11:00",
+  "valid_until": "2026-10-06T00:26:19.385942+11:00",
+  "owner_exact_approval": "Approve this round of independent read-only residual checks (recommended).",
+  "completed_at": "2026-10-06T00:01:26.610311+11:00",
+  "consumption": {
+    "bundles": 1,
+    "provider_command_attempts": 14,
+    "dns_command_attempts": 7
+  },
+  "unused_scope_not_reusable": true
+}

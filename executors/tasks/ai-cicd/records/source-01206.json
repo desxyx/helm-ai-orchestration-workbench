@@ -1,0 +1,21 @@
+{
+  "attempt": 8,
+  "query": "Q07_disks",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "compute",
+    "disks",
+    "list",
+    "--project=<CLOUD_PROJECT>",
+    "--quiet",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T14:41:12.072+11:00",
+  "end_utc": "2026-10-05T14:41:13.551+11:00",
+  "exit_code": 0,
+  "stdout": "Q07_disks_attempt8.stdout",
+  "stdout_sha256": "<PRIVATE_REF_02671>",
+  "stderr": "Q07_disks_attempt8.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

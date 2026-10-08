@@ -1,0 +1,46 @@
+{
+  "task_ref": "WATCHOVER_PUBLIC_RELEASE_2026-10-07",
+  "status": "OWNER_AUTHORIZED_LOCAL_RELEASE_ADAPTATION",
+  "files": [
+    {
+      "path": "ACCEPTANCE_MATRIX.md",
+      "sha256": "<PRIVATE_REF_02533>",
+      "bytes": 2399
+    },
+    {
+      "path": "BUILDER_STARTUP_PROMPT.txt",
+      "sha256": "<PRIVATE_REF_01149>",
+      "bytes": 2973
+    },
+    {
+      "path": "DENYLIST.txt",
+      "sha256": "<PRIVATE_REF_03039>",
+      "bytes": 399
+    },
+    {
+      "path": "EXECUTOR_CHARTER.md",
+      "sha256": "<PRIVATE_REF_02319>",
+      "bytes": 60135
+    },
+    {
+      "path": "RELEASE_SPEC.md",
+      "sha256": "<PRIVATE_REF_03592>",
+      "bytes": 7649
+    },
+    {
+      "path": "REVIEWER_STARTUP_PROMPT.txt",
+      "sha256": "<PRIVATE_REF_01825>",
+      "bytes": 2489
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "<PRIVATE_REF_02056>",
+      "bytes": 25201
+    },
+    {
+      "path": "agent.md",
+      "sha256": "<PRIVATE_REF_02243>",
+      "bytes": 3704
+    }
+  ]
+}

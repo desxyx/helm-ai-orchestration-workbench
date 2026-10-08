@@ -1,0 +1,6 @@
+A fixture workspace, target-only above chain-top
+ verdict DISCOVERABLE | target findings [('TARGET_LISTED', 'CLIENT_HOME_TEMPLATE_FIXTURE')] | label kinds [] | unlistable [] | listed 90
+B positive: planted symlink to r2 export in fixture
+ verdict DISCOVERABLE | target findings [('SYMLINK_TO_TARGET', 'W2B_EXPORT_R2'), ('TARGET_LISTED', 'CLIENT_HOME_TEMPLATE_FIXTURE')] | label kinds [] | unlistable [] | listed 91
+C read-only observation: Operations Coordinator-placed workspace ~/Workspaces/site-01/app, chain-top site-01, labels checked above top
+ verdict CLEAN | target findings [] | label kinds [] | unlistable [] | listed 114

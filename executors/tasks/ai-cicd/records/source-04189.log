@@ -1,0 +1,143 @@
+✔ every scenario fixture validates without any provider profile (15.192542ms)
+✔ WO-P05: service rows come from health facts and host resources, with honest freshness (2.890083ms)
+✔ WO-P06: logical ids and real names are both kept; a declaration is not a runtime observation (1.221083ms)
+✖ WO-P07: only this run's delta is reversed and the baseline hash is preserved (1.375666ms)
+✔ WO-P08: an interruption names the pending intent and owner; brief and view agree (0.743167ms)
+✔ WO-P08: after deployment the owner and choice are explicit; deployed is not cleaned up (0.609583ms)
+✔ generic core: router and stages need no particular cloud command (0.451625ms)
+✔ every pattern detects its own built-in canary (the positive control) (2.636959ms)
+✔ the self-test fails closed when a pattern stops detecting its canary (0.346875ms)
+✔ findings name the pattern, file and line but never the value (0.130541ms)
+✔ realistic credential shapes are detected (0.094625ms)
+✔ sanitized and reference-only text is not flagged (0.125458ms)
+✔ redact removes every secret-shaped span and names the pattern (0.325083ms)
+✔ redact leaves text without secrets unchanged (0.046958ms)
+✔ finite added shapes have synthetic positives, nearby negatives and value-free diagnostics (1.050708ms)
+✔ the plan skill tells a local target how to state its single tier honestly (1.719542ms)
+✔ verifying a fact as the router says produces a valid record (12.735625ms)
+✔ the plan-acceptance request for a local target, as the skills describe it, is valid (10.308333ms)
+✔ manual-edit DNS follows the authority path: decision, gated intent, human edit, result, own verification (7.206792ms)
+✔ a gated DNS intent recorded before the approval is refused (2.718208ms)
+✔ complete request scope survives approval and pending clear through filesystem evidence and brief (4.236084ms)
+✔ high-risk delegation and recovery scope scenarios are advisory guidance only (0.789625ms)
+✔ documented nonsecret baseline projection compares equal and changed fields without originals (5.773791ms)
+✔ human-created run resource uses existing fields and human cleanup has approval and verification (3.381959ms)
+✔ the router lives at exactly skills/router.md, as the workspace pointer says (0.39475ms)
+✔ the router, stage and provider files exist, and nothing else is in skills/ (4.111917ms)
+✔ every skill stays inside its length budget (1.4565ms)
+✔ the router carries every always-on rule (0.709084ms)
+✔ every stage file restates the always-on rules (0.732542ms)
+✔ the router says what to read first, how to use the tools, and which one stage file to load (0.2585ms)
+✔ each stage file carries its Annex J responsibility (1.026041ms)
+✔ the handoff guidance covers all ten Annex K items (0.423334ms)
+✔ GCP is the target with validation pending; every other provider is UNVALIDATED (0.452083ms)
+✔ skills are neutral, client-neutral and free of governance or experiment wording (1.761583ms)
+✔ every example event in the skills is schema-valid once append fills its defaults (3.15275ms)
+✔ Cloudflare manual-edit mode records the approval and a gated intent before the human edits DNS (0.355833ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 35
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 95.796666
+
+✖ failing tests:
+
+test at tests/scenarios.test.mjs:89:1
+✖ WO-P07: only this run's delta is reversed and the baseline hash is preserved (1.375666ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /that fact is UNKNOWN, not clean/. Input:
+  
+  '# Stage: executing\n' +
+    '\n' +
+    'Goal: carry out the approved plan while keeping the record current enough that anyone\n' +
+    'could take over at any moment.\n' +
+    '\n' +
+    '## Each step\n' +
+    '\n' +
+    '1. Re-verify the facts the step depends on: identity, target, the approval, and the\n' +
+    '   resources it touches.\n' +
+    '2. If it is remote-mutating, gated or long, append an `intent` with the sanitized command.\n' +
+    '   A gated intent relates to the approving decision event.\n' +
+    '\n' +
+    '```json\n' +
+    '{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "intent", "summary": "Create the tier B server", "target": "demo-target / region-1", "action": "<provider CLI> create server app-server --size medium", "action_kinds": ["remote_mutating", "gated"], "related": ["evt-0010"]}\n' +
+    '```\n' +
+    '\n' +
+    '3. Run it. Save the sanitized output under `evidence/`.\n' +
+    '4. Append a `result` related to the intent:\n' +
+    '\n' +
+    '```json\n' +
+    '{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "result", "summary": "Server created", "outcome": "succeeded", "state_change": "Added app-server with its implicit boot disk", "evidence": ["evidence/0013-server-create.txt"], "related": ["evt-0012"]}\n' +
+    '```\n' +
+    '\n' +
+    '5. Update `resources`, `facts`, `activity` and `next`, then validate.\n' +
+    '\n' +
+    '## Long operations\n' +
+    '\n' +
+    'An operation expected to take more than 3 minutes is long-running. Before starting it, set\n' +
+    '`activity.summary`, `started_at`, `expected_duration` (a range), `slow_reason` if you know\n' +
+    'one, and `waiting_on`; include `long_running` in `action_kinds`. Update `last_progress`\n' +
+    'only when something real happens. Never invent a percentage or a countdown.\n' +
+    '\n' +
+    '## Resources, names and services\n' +
+    '\n' +
+    'Record every resource with its provider, type, purpose, billable flag, lifecycle and\n' +
+    'origin. Include what the provider creates implicitly, such as boot disks, ephemeral\n' +
+    'addresses, default rules and service accounts (origin `created_implicitly`), and nest\n' +
+    'children under parents (containers and disks under their server). Things that already\n' +
+    'existed before this operation and that you rely on are `pre_existing`. Explicit objects\n' +
+    'created during this operation by either a human or AI are `created_this_run`; origin is\n' +
+    'creation lifecycle, not creator identity. Use existing event actor/summary and resource\n' +
+    'purpose to describe human steps, not new label/notes or created_by_human fields. Link each\n' +
+    'resource to the fact that verifies it; origin never grants deletion permission.\n' +
+    '\n' +
+    '- `id` is your stable logical id; `name` is the name the provider actually returned,\n' +
+    '  read from its output (implicit ones too). Never assume two names match.\n' +
+    '- A value copied from a manifest or config file is only *declared*: at most VERIFIED_LOCAL,\n' +
+    '  scoped "declared in <file>". Only an observation of the running thing that answers the\n' +
+    '  same question makes the runtime fact VERIFIED_REMOTE.\n' +
+    "- Each component's service status is one `health.<component>` fact (class `health`, window\n" +
+    '  at most 60 minutes) whose `scope` starts with its host resource id. Update the same key;\n' +
+    '  never add a second one. "Present" or "container running" is not "serving".\n' +
+    '- A resource you stop observing keeps its history; it is `deleted` only with evidence.\n' +
+    '\n' +
+    '## Shared objects\n' +
+    '\n' +
+    'Before changing something shared with other users (project metadata, access policy,\n' +
+    'enabled APIs, shared configuration), retain only necessary nonsecret fields/identifiers\n' +
+    'and normalized digests for the relevant baseline. Redact before saving; never persist secret\n' +
+    'originals. Digests are private material, not proof of complete sanitization. Apply the same\n' +
+    'selection/normalization before and after; keep enough nonsecret detail to verify the delta.\n' +
+    'Record exactly what you add/change. Undo only that delta, with approval. If preservation\n' +
+    'cannot be proved, it is UNKNOWN, not clean. Never reset a whole shared object to undo your part.\n' +
+    '\n' +
+    '## When things change course\n' +
+    '\n' +
+    '- A failure that changes the plan: append `plan_failure`, then a `stage_change` to\n' +
+    '  `incident`, and load `stages/recover.md`. Do not retry blindly.\n' +
+    '- Reaching a new gate (DNS or public release, deletion, something destructive, an\n' +
+    '  unplanned cost): stop and request a decision.\n' +
+    '- Done: append a `stage_change` to `verifying` and load `stages/verify-handoff.md`.\n' +
+    '\n' +
+    '## Always (from the router)\n' +
+    '\n' +
+    '- Never write a secret value into the record, evidence, logged commands or git.\n' +
+    '- Re-verify the facts an action depends on before any write.\n' +
+    '- Around every remote-mutating command, gated action or long operation: an `intent` event\n' +
+    '  before it and a `result` event after it.\n' +
+    '- Use only the seven statuses. Your own claim is never verified without evidence.\n' +
+    '- Gates sit at stage boundaries. Ask once when no action separates two gates;\n' +
+    '  the plan explanation travels with the first billable request.\n'
+  
+      at TestContext.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07/builder/product/tests/scenarios.test.mjs:119:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '# Stage: executing\n\nGoal: carry out the approved plan while keeping the record current enough that anyone\ncould take over at any moment.\n\n## Each step\n\n1. Re-verify the facts the step depends on: identity, target, the approval, and the\n   resources it touches.\n2. If it is remote-mutating, gated or long, append an `intent` with the sanitized command.\n   A gated intent relates to the approving decision event.\n\n```json\n{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "intent", "summary": "Create the tier B server", "target": "demo-target / region-1", "action": "<provider CLI> create server app-server --size medium", "action_kinds": ["remote_mutating", "gated"], "related": ["evt-0010"]}\n```\n\n3. Run it. Save the sanitized output under `evidence/`.\n4. Append a `result` related to the intent:\n\n```json\n{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "result", "summary": "Server created", "outcome": "succeeded", "state_change": "Added app-server with its implicit boot disk", "evidence": ["evidence/0013-server-create.txt"], "related": ["evt-0012"]}\n```\n\n5. Update `resources`, `facts`, `activity` and `next`, then validate.\n\n## Long operations\n\nAn operation expected to take more than 3 minutes is long-running. Before starting it, set\n`activity.summary`, `started_at`, `expected_duration` (a range), `slow_reason` if you know\none, and `waiting_on`; include `long_running` in `action_kinds`. Update `last_progress`\nonly when something real happens. Never invent a percentage or a countdown.\n\n## Resources, names and services\n\nRecord every resource with its provider, type, purpose, billable flag, lifecycle and\norigin. Include what the provider creates implicitly, such as boot disks, ephemeral\naddresses, default rules and service accounts (origin `created_implicitly`), and nest\nchildren under parents (containers and disks under their server). Things that already\nexisted before this operation and that you rely on are `pre_existing`. Explicit objects\ncreated during this operation by either a human or AI are `created_this_run`; origin is\ncreation lifecycle, not creator identity. Use existing event actor/summary and resource\npurpose to describe human steps, not new label/notes or created_by_human fields. Link each\nresource to the fact that verifies it; origin never grants deletion permission.\n\n- `id` is your stable logical id; `name` is the name the provider actually returned,\n  read from its output (implicit ones too). Never assume two names match.\n- A value copied from a manifest or config file is only *declared*: at most VERIFIED_LOCAL,\n  scoped "declared in <file>". Only an observation of the running thing that answers the\n  same question makes the runtime fact VERIFIED_REMOTE.\n- Each component\'s service status is one `health.<component>` fact (class `health`, window\n  at most 60 minutes) whose `scope` starts with its host resource id. Update the same key;\n  never add a second one. "Present" or "container running" is not "serving".\n- A resource you stop observing keeps its history; it is `deleted` only with evidence.\n\n## Shared objects\n\nBefore changing something shared with other users (project metadata, access policy,\nenabled APIs, shared configuration), retain only necessary nonsecret fields/identifiers\nand normalized digests for the relevant baseline. Redact before saving; never persist secret\noriginals. Digests are private material, not proof of complete sanitization. Apply the same\nselection/normalization before and after; keep enough nonsecret detail to verify the delta.\nRecord exactly what you add/change. Undo only that delta, with approval. If preservation\ncannot be proved, it is UNKNOWN, not clean. Never reset a whole shared object to undo your part.\n\n## When things change course\n\n- A failure that changes the plan: append `plan_failure`, then a `stage_change` to\n  `incident`, and load `stages/recover.md`. Do not retry blindly.\n- Reaching a new gate (DNS or public release, deletion, something destructive, an\n  unplanned cost): stop and request a decision.\n- Done: append a `stage_change` to `verifying` and load `stages/verify-handoff.md`.\n\n## Always (from the router)\n\n- Never write a secret value into the record, evidence, logged commands or git.\n- Re-verify the facts an action depends on before any write.\n- Around every remote-mutating command, gated action or long operation: an `intent` event\n  before it and a `result` event after it.\n- Use only the seven statuses. Your own claim is never verified without evidence.\n- Gates sit at stage boundaries. Ask once when no action separates two gates;\n  the plan explanation travels with the first billable request.\n',
+    expected: /that fact is UNKNOWN, not clean/,
+    operator: 'match',
+    diff: 'simple'
+  }

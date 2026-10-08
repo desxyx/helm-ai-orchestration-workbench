@@ -1,0 +1,24 @@
+$ gcloud compute ssh <ACCOUNT>@<W2_RUN_RESOURCE_PREFIX>-vm --zone=australia-southeast2-a --tunnel-through-iap --ssh-key-file=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-ssh-key --ssh-flag=-oUserKnownHostsFile=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-known-hosts '--command=sudo python3 -c '"'"'import json,os,stat,subprocess
+from pathlib import Path
+assert subprocess.run(['"'"'"'"'"'"'"'"'mountpoint'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'-q'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'/srv/<W2_RUN_RESOURCE_PREFIX>'"'"'"'"'"'"'"'"']).returncode==0
+device=os.path.realpath('"'"'"'"'"'"'"'"'/dev/disk/by-id/google-<W2_RUN_RESOURCE_PREFIX>-data'"'"'"'"'"'"'"'"')
+source=subprocess.check_output(['"'"'"'"'"'"'"'"'findmnt'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'-n'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'-o'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'SOURCE'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'--target'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'/srv/<W2_RUN_RESOURCE_PREFIX>'"'"'"'"'"'"'"'"'],text=True).strip()
+assert source==device
+services={}
+for service in ('"'"'"'"'"'"'"'"'db'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'api'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'web'"'"'"'"'"'"'"'"'):
+    state=json.loads(subprocess.check_output(['"'"'"'"'"'"'"'"'docker'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'inspect'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'<W2_RUN_RESOURCE_PREFIX>-'"'"'"'"'"'"'"'"'+service+'"'"'"'"'"'"'"'"'-1'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'--format'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'{{json .State}}'"'"'"'"'"'"'"'"'],text=True))
+    assert state['"'"'"'"'"'"'"'"'Running'"'"'"'"'"'"'"'"']
+    health=state.get('"'"'"'"'"'"'"'"'Health'"'"'"'"'"'"'"'"',{}).get('"'"'"'"'"'"'"'"'Status'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'running'"'"'"'"'"'"'"'"')
+    assert health in ('"'"'"'"'"'"'"'"'healthy'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'running'"'"'"'"'"'"'"'"')
+    services[service]=health
+for name in ('"'"'"'"'"'"'"'"'db.env'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'api.env'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'admin.json'"'"'"'"'"'"'"'"'):
+    assert stat.S_IMODE(Path('"'"'"'"'"'"'"'"'/srv/<W2_RUN_RESOURCE_PREFIX>/secrets'"'"'"'"'"'"'"'"',name).stat().st_mode)==0o600
+assert stat.S_IMODE(Path('"'"'"'"'"'"'"'"'/srv/<W2_RUN_RESOURCE_PREFIX>/secrets'"'"'"'"'"'"'"'"').stat().st_mode)==0o700
+print(json.dumps({'"'"'"'"'"'"'"'"'boot_id'"'"'"'"'"'"'"'"':Path('"'"'"'"'"'"'"'"'/proc/sys/kernel/random/boot_id'"'"'"'"'"'"'"'"').read_text().strip(),'"'"'"'"'"'"'"'"'data_mount'"'"'"'"'"'"'"'"':source,'"'"'"'"'"'"'"'"'filesystem'"'"'"'"'"'"'"'"':'"'"'"'"'"'"'"'"'ext4'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'services'"'"'"'"'"'"'"'"':services,'"'"'"'"'"'"'"'"'secret_permissions'"'"'"'"'"'"'"'"':'"'"'"'"'"'"'"'"'verified'"'"'"'"'"'"'"'"'}))
+'"'"'' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+{"boot_id": "<NATIVE_ID_2918>", "data_mount": "/dev/sdb", "filesystem": "ext4", "services": {"db": "healthy", "api": "healthy", "web": "running"}, "secret_permissions": "verified"}
+WARNING: 
+
+To increase the performance of the tunnel, consider installing NumPy. For instructions,
+please see <PRIVATE_URL_0075>ogle.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
+

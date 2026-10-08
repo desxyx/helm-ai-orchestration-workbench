@@ -1,0 +1,11 @@
+{
+  "stage": "evaluate",
+  "scan": {
+    "canaryFound": true,
+    "matches": [],
+    "files_scanned": 3,
+    "skipped": []
+  },
+  "verdict": "PASS_NO_REAL_SECRET_MATCHES",
+  "timestamp": "2026-09-28T13:32:45.963Z"
+}

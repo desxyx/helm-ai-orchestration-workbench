@@ -1,0 +1,11 @@
+workspace=<CLIENT_HOME>/Desktop/helmls-studio/watchover-public-release-2026-10-07/builder/product
+branch=release/0.1.2
+commit=5c662eac0449bd30eddd01c606d268f0aa510631
+tree=<PRIVATE_REF_00957>
+version=0.1.2
+working_tree=clean
+history=one sanitized root commit; no parents
+supersedes_candidate=<PRIVATE_REF_02615>
+r1_preserved=output/r2/r1-candidate.bundle
+tags=none
+remotes=none

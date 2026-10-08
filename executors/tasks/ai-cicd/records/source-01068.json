@@ -1,0 +1,19 @@
+{
+  "run_id": "RUN-W2A",
+  "recorded_at": "2026-10-05T15:44:38+11:00",
+  "objective_evidence_collected": [
+    "Read-only actual resource inventory and DNS/HTTPS response",
+    "Owner reports logout/relogin",
+    "Owner reports manual VM restart and login including administrator",
+    "Owner before/after alert screenshots with matching visible resource/event/time fields"
+  ],
+  "not_collected": [
+    "A2 acceptance-flow HAR plus backend object/access-log correlation",
+    "A3 complete registered six-case API suite with backend log corroboration",
+    "Complete registered A4 browser fixture evidence/new-account sequence",
+    "Complete registered A5 provider/guest/process bundle and P/N/S checks",
+    "Post-restart screenshot displaying exact prior Alert ID"
+  ],
+  "trace_probe": "Fresh same-model sub-session authorized and in progress; Observer grades, Operations Coordinator only times/custodies",
+  "policy": "No waiver or invented PASS. Observer assigns frozen statuses from available evidence; absent required proof remains UNVERIFIED. Missing source provenance is separately reported under the effective amendment. No automatic implementation/review loop."
+}

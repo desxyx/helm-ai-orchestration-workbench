@@ -1,0 +1,5 @@
+# Remote pin verification (2026-10-04T22:24:16+1100) via GitHub REST (read-only)
+alerta/alerta <PRIVATE_REF_01617> 2026-03-30T16:26:12Z
+alerta/alerta-webui <PRIVATE_REF_03446> 2026-04-13T10:48:23Z
+## positive/negative control: nonexistent sha must fail
+{"message":"No commit found for SHA: <PRIVATE_REF_00001>","documentation_url":"https://docs.github.com/rest/commits/commits#get-a-commit","status":"422"}gh: No commit found for SHA: <PRIVATE_REF_00001> (HTTP 422)

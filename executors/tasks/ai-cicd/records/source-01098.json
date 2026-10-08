@@ -1,0 +1,12 @@
+{
+  "run_id": "RUN-W2A",
+  "checkpoint": 1,
+  "segments": 48,
+  "lossless_reconstruction": true,
+  "sha256sums": "<PRIVATE_REF_02858>",
+  "observer_path": "/private/tmp/survey-18f7/work/checkpoints/CP-01",
+  "status": "MATERIALIZED; OBSERVER_WAKEUP_AND_RECEIPTS_PENDING",
+  "source_raw_hash": "<PRIVATE_REF_01468>",
+  "redacted_increment_hash": "<PRIVATE_REF_01579>",
+  "deployer_delivery": "NONE; snapshot must not be shown to S2"
+}

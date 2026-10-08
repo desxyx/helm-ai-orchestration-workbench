@@ -1,0 +1,39 @@
+Command: node --test tests/docs.test.mjs tests/design-decisions.test.mjs tests/scaffold.test.mjs
+Final documentation-only correction: D-19 stated 11 patterns; unchanged source scanner and actual CLI self-test report 15. Corrected count, no runtime change.
+✔ design-decisions.md records every C1 default (2.17975ms)
+✔ design-decisions.md records every C1 R1-batch default (0.346709ms)
+✔ no C1 default is still listed as undecided (0.558ms)
+✔ the documented keyword subset matches the validator (0.868584ms)
+✔ the documented freshness caps match the validator (0.582958ms)
+✔ design-decisions.md records every C2 default and none is still undecided (0.231875ms)
+✔ D-04 names Framework Python 3.12 as the working default for browser checks (0.476958ms)
+✔ design-decisions.md records every C3 default, matching the code (9.582334ms)
+✔ design-decisions.md records every C4 default, matching the skills test budgets (0.770084ms)
+✔ design-decisions.md records every C5 default and nothing for C5 is still undecided (0.265041ms)
+✔ public design rationale retains product docs and excludes evaluation-only decisions (0.250667ms)
+✔ design-decisions.md records the R3 defaults (0.190666ms)
+✔ the README defines the product and separates Validated from Roadmap (1.636334ms)
+✔ no document makes a benchmark or result claim (1.4355ms)
+✔ documents allow attribution and history while excluding arm labels and private canaries (0.720667ms)
+✔ SECURITY.md covers secrets, the read-only local view, evidence and known limits (0.313292ms)
+✔ docs/architecture.md describes every component and trust boundary (0.165625ms)
+✔ README, validation and provenance agree on evidence and archive limits (0.746458ms)
+✔ local Markdown documentation links resolve inside the product (0.933792ms)
+✔ the README quick start runs as written and leaves a valid workspace (169.755208ms)
+✔ LICENSE is the MIT license with a neutral copyright holder (1.891667ms)
+✔ package.json declares an MIT ES-module package with no dependencies (0.381875ms)
+✔ npm test runs the node:test suites under tests/ (0.288416ms)
+✔ .gitignore keeps dependencies and any evidence directory out of git (0.235708ms)
+✔ design-decisions.md records every C0 default with a choice and a reason (0.315875ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 214.483584
+
+STDERR:
+
+EXIT_CODE=0

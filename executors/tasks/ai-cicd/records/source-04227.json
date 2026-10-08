@@ -1,0 +1,842 @@
+{
+  "selfTest": {
+    "ok": true,
+    "patterns": 15,
+    "failed": []
+  },
+  "patterns": 15,
+  "baseline_patterns": 11,
+  "total": 68,
+  "not_as_expected": 5,
+  "rows": [
+    {
+      "group": "passphrase",
+      "label": "env",
+      "expect": "flag",
+      "candidate": [
+        "passphrase-assignment"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "passphrase",
+      "label": "yaml inline",
+      "expect": "flag",
+      "candidate": [
+        "passphrase-assignment"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "passphrase",
+      "label": "json",
+      "expect": "flag",
+      "candidate": [
+        "passphrase-assignment"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "named-key",
+      "label": "env",
+      "expect": "flag",
+      "candidate": [
+        "named-key-secret-assignment"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "named-key",
+      "label": "export",
+      "expect": "flag",
+      "candidate": [
+        "secret-assignment",
+        "named-key-secret-assignment"
+      ],
+      "baseline": [
+        "secret-assignment"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "named-key",
+      "label": "json",
+      "expect": "flag",
+      "candidate": [
+        "secret-assignment",
+        "named-key-secret-assignment"
+      ],
+      "baseline": [
+        "secret-assignment"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "docker-auth",
+      "label": "config.json",
+      "expect": "flag",
+      "candidate": [],
+      "baseline": [],
+      "ok": false,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "docker-auth",
+      "label": "pretty",
+      "expect": "flag",
+      "candidate": [],
+      "baseline": [],
+      "ok": false,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "plain",
+      "expect": "flag",
+      "candidate": [
+        "yaml-credential-next-line"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "block |",
+      "expect": "flag",
+      "candidate": [
+        "yaml-credential-next-line"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "folded >-",
+      "expect": "flag",
+      "candidate": [
+        "yaml-credential-next-line"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "quoted",
+      "expect": "flag",
+      "candidate": [
+        "yaml-credential-next-line"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "CRLF",
+      "expect": "flag",
+      "candidate": [
+        "yaml-credential-next-line"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "passphrase",
+      "label": "placeholder $",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "passphrase",
+      "label": "redacted",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "passphrase",
+      "label": "hint name",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "passphrase",
+      "label": "prose",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "named-key",
+      "label": "short",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "named-key",
+      "label": "ref",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "named-key",
+      "label": "template",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "named-key",
+      "label": "name only",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "named-key",
+      "label": "lowercase db column",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "named-key",
+      "label": "public key path",
+      "expect": "clean",
+      "candidate": [
+        "named-key-secret-assignment"
+      ],
+      "baseline": [],
+      "ok": false,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "docker-auth",
+      "label": "empty",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "docker-auth",
+      "label": "credsStore",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "docker-auth",
+      "label": "word value",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "docker-auth",
+      "label": "word value 2",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "placeholder",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "env ref",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "comment only",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "unrelated key",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "nested mapping",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "nested enabled",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "nested from_env",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "valueFrom",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "yaml-next-line",
+      "label": "list item",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "old-inline",
+      "label": "private-key-block",
+      "expect": "flag",
+      "candidate": [
+        "private-key-block"
+      ],
+      "baseline": [
+        "private-key-block"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "old-inline",
+      "label": "service-account-key-field",
+      "expect": "flag",
+      "candidate": [
+        "service-account-key-field"
+      ],
+      "baseline": [
+        "service-account-key-field"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "old-inline",
+      "label": "aws-access-key-id",
+      "expect": "flag",
+      "candidate": [
+        "aws-access-key-id"
+      ],
+      "baseline": [
+        "aws-access-key-id"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "old-inline",
+      "label": "google-api-key",
+      "expect": "flag",
+      "candidate": [
+        "google-api-key"
+      ],
+      "baseline": [
+        "google-api-key"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "old-inline",
+      "label": "google-oauth-token",
+      "expect": "flag",
+      "candidate": [
+        "google-oauth-token"
+      ],
+      "baseline": [
+        "google-oauth-token"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "old-inline",
+      "label": "github-token",
+      "expect": "flag",
+      "candidate": [
+        "github-token"
+      ],
+      "baseline": [
+        "github-token"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "old-inline",
+      "label": "slack-token",
+      "expect": "flag",
+      "candidate": [
+        "slack-token"
+      ],
+      "baseline": [
+        "slack-token"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "old-inline",
+      "label": "stripe-live-key",
+      "expect": "flag",
+      "candidate": [
+        "stripe-live-key"
+      ],
+      "baseline": [
+        "stripe-live-key"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "old-inline",
+      "label": "jwt",
+      "expect": "flag",
+      "candidate": [
+        "jwt"
+      ],
+      "baseline": [
+        "jwt"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "old-inline",
+      "label": "url-credentials",
+      "expect": "flag",
+      "candidate": [
+        "url-credentials"
+      ],
+      "baseline": [
+        "url-credentials"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "old-inline",
+      "label": "secret-assignment",
+      "expect": "flag",
+      "candidate": [
+        "secret-assignment"
+      ],
+      "baseline": [
+        "secret-assignment"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "r2-pos",
+      "label": "tab-indented value",
+      "expect": "flag",
+      "candidate": [
+        "yaml-credential-next-line"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "r2-pos",
+      "label": "nested key in mapping",
+      "expect": "flag",
+      "candidate": [
+        "yaml-credential-next-line"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "r2-pos",
+      "label": "single-quoted scalar",
+      "expect": "flag",
+      "candidate": [
+        "yaml-credential-next-line"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "r2-pos",
+      "label": "value with trailing comment",
+      "expect": "flag",
+      "candidate": [
+        "yaml-credential-next-line"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "r2-pos",
+      "label": "block keep +",
+      "expect": "flag",
+      "candidate": [
+        "yaml-credential-next-line"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "r2-pos",
+      "label": "docker auth no padding",
+      "expect": "flag",
+      "candidate": [
+        "docker-auth-field"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "r2-pos",
+      "label": "docker auth in pretty config",
+      "expect": "flag",
+      "candidate": [
+        "docker-auth-field"
+      ],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "r2-pos",
+      "label": "UPPER named key json",
+      "expect": "flag",
+      "candidate": [
+        "secret-assignment",
+        "named-key-secret-assignment"
+      ],
+      "baseline": [
+        "secret-assignment"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "r2-pos",
+      "label": "secret-assignment same line still",
+      "expect": "flag",
+      "candidate": [
+        "secret-assignment"
+      ],
+      "baseline": [
+        "secret-assignment"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "r2-pos",
+      "label": "service account key pretty json same line",
+      "expect": "flag",
+      "candidate": [
+        "service-account-key-field"
+      ],
+      "baseline": [
+        "service-account-key-field"
+      ],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": true
+    },
+    {
+      "group": "r2-neg",
+      "label": "existingSecret ref",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "r2-neg",
+      "label": "key: then sibling key",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "r2-neg",
+      "label": "blank next line",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "r2-neg",
+      "label": "docker auth non-base64 word len 12",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "r2-neg",
+      "label": "docker auth base64 w/o colon",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "r2-neg",
+      "label": "lower named key",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "r2-neg",
+      "label": "list under key",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "r2-doc",
+      "label": "colon value (documented miss)",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "r2-doc",
+      "label": "list-item key (documented miss)",
+      "expect": "clean",
+      "candidate": [],
+      "baseline": [],
+      "ok": true,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "r2-shape",
+      "label": "scalar reference under secret (shape match; documented may flag)",
+      "expect": "clean",
+      "candidate": [
+        "yaml-credential-next-line"
+      ],
+      "baseline": [],
+      "ok": false,
+      "no_echo": true,
+      "redacted_clean": null
+    },
+    {
+      "group": "r2-shape",
+      "label": "SSH_PUBLIC_KEY path (shape match; documented may flag)",
+      "expect": "clean",
+      "candidate": [
+        "named-key-secret-assignment"
+      ],
+      "baseline": [],
+      "ok": false,
+      "no_echo": true,
+      "redacted_clean": null
+    }
+  ],
+  "timing": [
+    {
+      "label": "password: + 1M spaces + x",
+      "chars": 1000010,
+      "candidate_ms": 4,
+      "baseline_ms": 4
+    },
+    {
+      "label": "password: |+ 1M spaces + newline + indented",
+      "chars": 2000015,
+      "candidate_ms": 4,
+      "baseline_ms": 2
+    },
+    {
+      "label": "200k lines key:/value pairs",
+      "chars": 2300000,
+      "candidate_ms": 755,
+      "baseline_ms": 37
+    },
+    {
+      "label": "password: + 80k spaces + x",
+      "chars": 80010,
+      "candidate_ms": 0,
+      "baseline_ms": 1
+    },
+    {
+      "label": "password: |+ 20k spaces",
+      "chars": 20013,
+      "candidate_ms": 0,
+      "baseline_ms": 0
+    },
+    {
+      "label": "A_ x 20k identifier",
+      "chars": 40001,
+      "candidate_ms": 0,
+      "baseline_ms": 0
+    },
+    {
+      "label": "1MB benign log",
+      "chars": 1026000,
+      "candidate_ms": 71,
+      "baseline_ms": 6
+    }
+  ]
+}

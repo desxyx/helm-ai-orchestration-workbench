@@ -1,0 +1,45 @@
+{
+  "tool": "project-inventory",
+  "project_alias": "WATCHOVER_SANDBOX",
+  "timestamp": "2026-09-26T12:57:59.936Z",
+  "instrument_version": "experiment-control-tool/0.2.0",
+  "mode": "LIVE_READONLY",
+  "status": "UNVERIFIED_PRIMARY_INSTRUMENT_UNAVAILABLE",
+  "query_coverage_description": "primary: Cloud Asset project-wide search; supplementary: selected service list calls for coverage diagnostics only",
+  "primary_project_wide_inventory": {
+    "instrument": "gcloud asset search-all-resources",
+    "status": "API_NOT_ENABLED",
+    "detected_count": null,
+    "detected_resources": [],
+    "note": "API [cloudasset.googleapis.com] not enabled on project \n[[ALIAS:WATCHOVER_SANDBOX]]. Would you like to enable and retry (this will take\n a few minutes)? (y/N)?  \nERROR: (gcloud.asset.search-all-resources) [[ALIAS:PERSONAL_GCP]] does not have permission to access projects instance [[ALIAS:WATCHOVER_SANDBOX]:searchAllResources] (or it may not exist): Cloud Asset API has not been used in project [ALIAS:WATCHOVER_SANDBOX] before or it is disabled. Enable it by visiting <PRIVATE_URL_0094>."
+  },
+  "supplementary_checks": [
+    {
+      "resource_class": "compute.googleapis.com/Instance",
+      "status": "API_NOT_ENABLED",
+      "detected_count": null,
+      "note": "API [compute.googleapis.com] not enabled on project \n[[ALIAS:WATCHOVER_SANDBOX]]. Would you like to enable and retry (this will take\n a few minutes)? (y/N)?  \nERROR: (gcloud.compute.instances.list) PERMISSION_DENIED: Compute Engine API has not been used in project [ALIAS:WATCHOVER_SANDBOX] before or it is disabled. Enable it by visiting <PRIVATE_URL_0094>.google.com/apis/api/compute.googleapis.com/overview?project=[ALIAS:WATCHOVER_SANDBOX] then retry. If you enabled this API recently,"
+    },
+    {
+      "resource_class": "storage.googleapis.com/Bucket",
+      "status": "COVERED_SUPPLEMENTARY",
+      "detected_count": 0
+    },
+    {
+      "resource_class": "sqladmin.googleapis.com/Instance",
+      "status": "API_NOT_ENABLED",
+      "detected_count": null,
+      "note": "API [sqladmin.googleapis.com] not enabled on project \n[[ALIAS:WATCHOVER_SANDBOX]]. Would you like to enable and retry (this will take\n a few minutes)? (y/N)?  \nERROR: (gcloud.sql.instances.list) [[ALIAS:PERSONAL_GCP]] does not have permission to access projects instance [[ALIAS:WATCHOVER_SANDBOX]] (or it may not exist): Cloud SQL Admin API has not been used in project [ALIAS:WATCHOVER_SANDBOX] before or it is disabled. Enable it by visiting <PRIVATE_URL_0094>.google.com/apis/api/sqlad"
+    },
+    {
+      "resource_class": "run.googleapis.com/Service",
+      "status": "API_NOT_ENABLED",
+      "detected_count": null,
+      "note": "API [run.googleapis.com] not enabled on project [[ALIAS:WATCHOVER_SANDBOX]]. \nWould you like to enable and retry (this will take a few minutes)? (y/N)?  \nERROR: (gcloud.run.services.list) PERMISSION_DENIED: Cloud Run Admin API has not been used in project [ALIAS:WATCHOVER_SANDBOX] before or it is disabled. Enable it by visiting <PRIVATE_URL_0094>.google.com/apis/api/run.googleapis.com/overview?project=[ALIAS:WATCHOVER_SANDBOX] then retry. If you enabled this API recently, wait a few m"
+    }
+  ],
+  "resource_classes_covered": [],
+  "detected_residuals": [],
+  "sanitisation_status": "SANITISED_ALIAS_ONLY",
+  "note": "Master 03 §10.3 known-present Resource X positive control is deferred to W1 FORCED_INTERRUPT. An empty result here is not a zero-residual claim."
+}

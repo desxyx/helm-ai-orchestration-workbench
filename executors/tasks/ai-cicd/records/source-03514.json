@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "/opt/homebrew/share/google-cloud-sdk/bin/gcloud",
+    "compute",
+    "ssh",
+    "<ACCOUNT>@<W2_RUN_RESOURCE_PREFIX>-vm",
+    "--project=<CLOUD_PROJECT>",
+    "--zone=australia-southeast2-a",
+    "--tunnel-through-iap",
+    "--plain",
+    "--ssh-flag=-i",
+    "--ssh-flag=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-ssh-key",
+    "--ssh-flag=-oBatchMode=yes",
+    "--ssh-flag=-oIdentitiesOnly=yes",
+    "--ssh-flag=-oStrictHostKeyChecking=yes",
+    "--ssh-flag=-oUserKnownHostsFile=<CLIENT_HOME>/.ssh/google_compute_known_hosts",
+    "--ssh-flag=-oHostKeyAlias=compute.<NUMERIC_RESOURCE_0150>",
+    "--ssh-flag=-oConnectTimeout=20",
+    "--command",
+    "sudo -n timeout 90 docker compose --project-directory /opt/<W2_RUN_RESOURCE_PREFIX> --file /opt/<W2_RUN_RESOURCE_PREFIX>/compose.yaml logs --no-color --timestamps --follow --since 2m api"
+  ],
+  "started": "2026-10-05T11:22:48.127845+00:00",
+  "ended": "2026-10-05T11:24:22.116414+00:00",
+  "exit_code": 124,
+  "sha256": "<PRIVATE_REF_03399>",
+  "correction": "Original read command used data directory; actual compose root /opt/<W2_RUN_RESOURCE_PREFIX> established from retained bootstrap; no app changes"
+}

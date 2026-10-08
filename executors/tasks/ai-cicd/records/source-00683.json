@@ -1,0 +1,16 @@
+{
+  "stage": "probe",
+  "codex_home": "~/Workspaces/.clients/c01",
+  "observed_runtime": {
+    "codex_cli_version": "codex-cli 0.160.0",
+    "model": "gpt-5.6-sol",
+    "model_reasoning_effort": "high",
+    "approval_policy": "on-request",
+    "sandbox_mode": "workspace-write",
+    "check_for_update_on_startup": "false",
+    "enabled_plugins": [],
+    "mcp_servers": [],
+    "features": {}
+  },
+  "timestamp": "2026-10-04T11:40:56.757Z"
+}

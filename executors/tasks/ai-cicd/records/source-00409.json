@@ -1,0 +1,1865 @@
+{
+  "status": "PLAN_AND_STATIC_INVENTORY_ONLY_NO_EXPORT",
+  "source_commit": "<PRIVATE_REF_03069>",
+  "source_tree": "<PRIVATE_REF_01459>",
+  "source_version": "0.1.2",
+  "recorded_utc": "2026-10-07T11:55:35.385231+00:00",
+  "files": [
+    {
+      "source_path": ".gitignore",
+      "source_sha256": "<PRIVATE_REF_01832>",
+      "bytes": 257,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "evaluation_reference": [
+          14
+        ]
+      }
+    },
+    {
+      "source_path": "LICENSE",
+      "source_sha256": "<PRIVATE_REF_01616>",
+      "bytes": 1089,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "README.md",
+      "source_sha256": "<PRIVATE_REF_00531>",
+      "bytes": 8066,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {
+        "gcp_reference": [
+          120
+        ],
+        "evaluation_reference": [
+          123
+        ]
+      }
+    },
+    {
+      "source_path": "SECURITY.md",
+      "source_sha256": "<PRIVATE_REF_01487>",
+      "bytes": 4017,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "app/web-ui/app.js",
+      "source_sha256": "<PRIVATE_REF_02469>",
+      "bytes": 2241,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "app/web-ui/freshness.mjs",
+      "source_sha256": "<PRIVATE_REF_02900>",
+      "bytes": 4734,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "app/web-ui/index.html",
+      "source_sha256": "<PRIVATE_REF_01020>",
+      "bytes": 704,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "app/web-ui/render.mjs",
+      "source_sha256": "<PRIVATE_REF_01934>",
+      "bytes": 17784,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "app/web-ui/styles.css",
+      "source_sha256": "<PRIVATE_REF_01315>",
+      "bytes": 7792,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "docs/architecture.md",
+      "source_sha256": "<PRIVATE_REF_02122>",
+      "bytes": 4525,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "docs/design-decisions.md",
+      "source_sha256": "<PRIVATE_REF_03514>",
+      "bytes": 19173,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {
+        "gcp_reference": [
+          59
+        ],
+        "evaluation_reference": [
+          65,
+          81
+        ]
+      }
+    },
+    {
+      "source_path": "docs/experiment.md",
+      "source_sha256": "<PRIVATE_REF_01695>",
+      "bytes": 707,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Empty evaluation/related-work skeleton or obsolete future-writer placeholder; retain original only in case history.",
+      "static_locations": {
+        "evaluation_reference": [
+          14
+        ]
+      }
+    },
+    {
+      "source_path": "docs/related-work.md",
+      "source_sha256": "<PRIVATE_REF_01553>",
+      "bytes": 835,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Empty evaluation/related-work skeleton or obsolete future-writer placeholder; retain original only in case history.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "docs/roadmap-v0.1b.md",
+      "source_sha256": "<PRIVATE_REF_02613>",
+      "bytes": 432,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Empty evaluation/related-work skeleton or obsolete future-writer placeholder; retain original only in case history.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/invalid/malformed-events-line/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_02709>",
+      "bytes": 1338,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          5
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/invalid/malformed-events-line/expected.json",
+      "source_sha256": "<PRIVATE_REF_02479>",
+      "bytes": 149,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/invalid/malformed-events-line/state.json",
+      "source_sha256": "<PRIVATE_REF_03332>",
+      "bytes": 7044,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          62,
+          66,
+          88,
+          90,
+          96,
+          102,
+          104,
+          110,
+          116,
+          146,
+          158,
+          170,
+          207
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/invalid/malformed-state-json/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_03307>",
+      "bytes": 1587,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/invalid/malformed-state-json/expected.json",
+      "source_sha256": "<PRIVATE_REF_02155>",
+      "bytes": 132,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/invalid/malformed-state-json/state.json",
+      "source_sha256": "<PRIVATE_REF_02905>",
+      "bytes": 7004,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          62,
+          66,
+          88,
+          90,
+          96,
+          102,
+          104,
+          110,
+          116,
+          146,
+          158,
+          170,
+          207
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/invalid/planted-secret-canary/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_00533>",
+      "bytes": 6081,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5,
+          6,
+          12,
+          15,
+          18
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/invalid/planted-secret-canary/expected.json",
+      "source_sha256": "<PRIVATE_REF_02521>",
+      "bytes": 225,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/invalid/planted-secret-canary/state.json",
+      "source_sha256": "<PRIVATE_REF_02578>",
+      "bytes": 12818,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          122,
+          126,
+          134,
+          146,
+          158,
+          170,
+          182,
+          194,
+          206,
+          232,
+          234,
+          240,
+          246,
+          248,
+          254,
+          260,
+          290,
+          304,
+          316,
+          381
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/invalid/schema-invalid-secret-value-field/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_03307>",
+      "bytes": 1587,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/invalid/schema-invalid-secret-value-field/expected.json",
+      "source_sha256": "<PRIVATE_REF_03318>",
+      "bytes": 255,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/invalid/schema-invalid-secret-value-field/state.json",
+      "source_sha256": "<PRIVATE_REF_00148>",
+      "bytes": 7074,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          62,
+          66,
+          88,
+          90,
+          96,
+          102,
+          104,
+          110,
+          116,
+          146,
+          158,
+          170,
+          207
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/invalid/schema-invalid-status/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_03307>",
+      "bytes": 1587,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/invalid/schema-invalid-status/expected.json",
+      "source_sha256": "<PRIVATE_REF_01731>",
+      "bytes": 213,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/invalid/schema-invalid-status/state.json",
+      "source_sha256": "<PRIVATE_REF_01593>",
+      "bytes": 7037,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          62,
+          66,
+          88,
+          90,
+          96,
+          102,
+          104,
+          110,
+          116,
+          146,
+          158,
+          170,
+          207
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/packages/reduced-no-dns/package-omissions.json",
+      "source_sha256": "<PRIVATE_REF_03591>",
+      "bytes": 235,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/rehearsal/README.md",
+      "source_sha256": "<PRIVATE_REF_01313>",
+      "bytes": 4607,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Legacy rehearsal runner, toy workload, prompts or its dedicated tests; not required by product runtime.",
+      "static_locations": {
+        "evaluation_reference": [
+          1,
+          5,
+          22,
+          24,
+          75
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/rehearsal/templates/activation-line.txt",
+      "source_sha256": "<PRIVATE_REF_02157>",
+      "bytes": 284,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Legacy rehearsal runner, toy workload, prompts or its dedicated tests; not required by product runtime.",
+      "static_locations": {
+        "evaluation_reference": [
+          1
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/rehearsal/templates/continuation.md",
+      "source_sha256": "<PRIVATE_REF_01609>",
+      "bytes": 235,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Legacy rehearsal runner, toy workload, prompts or its dedicated tests; not required by product runtime.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/rehearsal/templates/handoff-questions.md",
+      "source_sha256": "<PRIVATE_REF_01656>",
+      "bytes": 719,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Legacy rehearsal runner, toy workload, prompts or its dedicated tests; not required by product runtime.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/rehearsal/templates/task.md",
+      "source_sha256": "<PRIVATE_REF_02930>",
+      "bytes": 329,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Legacy rehearsal runner, toy workload, prompts or its dedicated tests; not required by product runtime.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/rehearsal/toy-app/README.md",
+      "source_sha256": "<PRIVATE_REF_03718>",
+      "bytes": 1045,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Legacy rehearsal runner, toy workload, prompts or its dedicated tests; not required by product runtime.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/rehearsal/toy-app/api.mjs",
+      "source_sha256": "<PRIVATE_REF_02542>",
+      "bytes": 815,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Legacy rehearsal runner, toy workload, prompts or its dedicated tests; not required by product runtime.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/rehearsal/toy-app/compose.yaml",
+      "source_sha256": "<PRIVATE_REF_01548>",
+      "bytes": 1119,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Legacy rehearsal runner, toy workload, prompts or its dedicated tests; not required by product runtime.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/rehearsal/toy-app/run.mjs",
+      "source_sha256": "<PRIVATE_REF_01467>",
+      "bytes": 5157,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Legacy rehearsal runner, toy workload, prompts or its dedicated tests; not required by product runtime.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/rehearsal/toy-app/services.json",
+      "source_sha256": "<PRIVATE_REF_03414>",
+      "bytes": 597,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Legacy rehearsal runner, toy workload, prompts or its dedicated tests; not required by product runtime.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/rehearsal/toy-app/web.mjs",
+      "source_sha256": "<PRIVATE_REF_02161>",
+      "bytes": 1913,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Legacy rehearsal runner, toy workload, prompts or its dedicated tests; not required by product runtime.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/01-recon/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_03307>",
+      "bytes": 1587,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/01-recon/state.json",
+      "source_sha256": "<PRIVATE_REF_03332>",
+      "bytes": 7044,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          62,
+          66,
+          88,
+          90,
+          96,
+          102,
+          104,
+          110,
+          116,
+          146,
+          158,
+          170,
+          207
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/02-approval-pending/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_01888>",
+      "bytes": 2776,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/02-approval-pending/state.json",
+      "source_sha256": "<PRIVATE_REF_03727>",
+      "bytes": 10823,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          150,
+          154,
+          176,
+          178,
+          184,
+          190,
+          192,
+          198,
+          204,
+          234,
+          248,
+          260,
+          297
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/03-long-operation/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_01940>",
+      "bytes": 6038,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5,
+          6,
+          12,
+          15,
+          18
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/03-long-operation/state.json",
+      "source_sha256": "<PRIVATE_REF_02578>",
+      "bytes": 12818,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          122,
+          126,
+          134,
+          146,
+          158,
+          170,
+          182,
+          194,
+          206,
+          232,
+          234,
+          240,
+          246,
+          248,
+          254,
+          260,
+          290,
+          304,
+          316,
+          381
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/04-verification-failed/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_02553>",
+      "bytes": 7257,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5,
+          6,
+          12,
+          15,
+          18
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/04-verification-failed/state.json",
+      "source_sha256": "<PRIVATE_REF_02234>",
+      "bytes": 13755,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          122,
+          126,
+          134,
+          146,
+          158,
+          170,
+          182,
+          194,
+          206,
+          232,
+          234,
+          240,
+          246,
+          248,
+          254,
+          260,
+          290,
+          304,
+          316,
+          410
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/05-incident/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_02496>",
+      "bytes": 8344,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5,
+          6,
+          12,
+          15,
+          18,
+          25
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/05-incident/state.json",
+      "source_sha256": "<PRIVATE_REF_02912>",
+      "bytes": 14141,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          122,
+          126,
+          134,
+          146,
+          158,
+          170,
+          182,
+          194,
+          206,
+          232,
+          234,
+          240,
+          246,
+          248,
+          254,
+          260,
+          290,
+          304,
+          316,
+          424
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/06-recovered/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_03750>",
+      "bytes": 9212,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5,
+          6,
+          12,
+          15,
+          18,
+          25
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/06-recovered/state.json",
+      "source_sha256": "<PRIVATE_REF_01423>",
+      "bytes": 13987,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          119,
+          123,
+          131,
+          143,
+          155,
+          167,
+          179,
+          191,
+          203,
+          229,
+          231,
+          237,
+          243,
+          245,
+          251,
+          257,
+          287,
+          301,
+          313,
+          420
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/07-verified/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_01780>",
+      "bytes": 10398,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5,
+          6,
+          12,
+          15,
+          18,
+          25
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/07-verified/state.json",
+      "source_sha256": "<PRIVATE_REF_02327>",
+      "bytes": 14650,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          119,
+          123,
+          131,
+          143,
+          155,
+          167,
+          179,
+          191,
+          203,
+          229,
+          231,
+          237,
+          243,
+          245,
+          251,
+          257,
+          287,
+          301,
+          313,
+          436
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/08-handoff/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_01607>",
+      "bytes": 10964,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5,
+          6,
+          12,
+          15,
+          18,
+          25
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/08-handoff/state.json",
+      "source_sha256": "<PRIVATE_REF_01239>",
+      "bytes": 16195,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          145,
+          149,
+          157,
+          169,
+          181,
+          193,
+          205,
+          217,
+          229,
+          255,
+          257,
+          263,
+          269,
+          271,
+          277,
+          283,
+          313,
+          327,
+          339,
+          462
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/09-teardown/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_02232>",
+      "bytes": 12816,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5,
+          6,
+          12,
+          15,
+          18,
+          25,
+          37,
+          39
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/09-teardown/state.json",
+      "source_sha256": "<PRIVATE_REF_02798>",
+      "bytes": 15115,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          122,
+          126,
+          134,
+          146,
+          158,
+          170,
+          182,
+          194,
+          206,
+          232,
+          234,
+          240,
+          246,
+          248,
+          254,
+          260,
+          290,
+          304,
+          316,
+          439
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/10-closed/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_02392>",
+      "bytes": 14579,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2,
+          3,
+          5,
+          6,
+          12,
+          15,
+          18,
+          25,
+          37,
+          39,
+          41
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/lifecycle/10-closed/state.json",
+      "source_sha256": "<PRIVATE_REF_01907>",
+      "bytes": 15489,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          119,
+          123,
+          131,
+          143,
+          155,
+          167,
+          179,
+          191,
+          203,
+          229,
+          231,
+          237,
+          243,
+          245,
+          251,
+          257,
+          287,
+          301,
+          313,
+          453
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/awaiting-acceptance/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_02110>",
+      "bytes": 2395,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/awaiting-acceptance/state.json",
+      "source_sha256": "<PRIVATE_REF_02751>",
+      "bytes": 2660,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/interrupted/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_02563>",
+      "bytes": 2484,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/interrupted/state.json",
+      "source_sha256": "<PRIVATE_REF_01765>",
+      "bytes": 2556,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/package-gap/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_03715>",
+      "bytes": 497,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/package-gap/state.json",
+      "source_sha256": "<PRIVATE_REF_01728>",
+      "bytes": 2608,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/services-and-names/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_00955>",
+      "bytes": 4580,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/services-and-names/state.json",
+      "source_sha256": "<PRIVATE_REF_03168>",
+      "bytes": 7788,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/shared-object-delta/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_03031>",
+      "bytes": 4186,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/shared-object-delta/state.json",
+      "source_sha256": "<PRIVATE_REF_01994>",
+      "bytes": 3625,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/view-handoff-confirmed/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_00140>",
+      "bytes": 1653,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/view-handoff-confirmed/state.json",
+      "source_sha256": "<PRIVATE_REF_03267>",
+      "bytes": 3634,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/view-handoff-exception/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_01252>",
+      "bytes": 1728,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {
+        "cjk": [
+          4
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/scenarios/view-handoff-exception/state.json",
+      "source_sha256": "<PRIVATE_REF_03598>",
+      "bytes": 4204,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {
+        "cjk": [
+          120
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/status/assumed/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_01061>",
+      "bytes": 254,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/status/assumed/state.json",
+      "source_sha256": "<PRIVATE_REF_01472>",
+      "bytes": 1567,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/status/blocked/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_01061>",
+      "bytes": 254,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/status/blocked/state.json",
+      "source_sha256": "<PRIVATE_REF_02285>",
+      "bytes": 1652,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          45
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/status/stale/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_02101>",
+      "bytes": 566,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/status/stale/state.json",
+      "source_sha256": "<PRIVATE_REF_01745>",
+      "bytes": 1621,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/status/unknown/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_01061>",
+      "bytes": 254,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/status/unknown/state.json",
+      "source_sha256": "<PRIVATE_REF_02080>",
+      "bytes": 1527,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/status/user_confirmed/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_01061>",
+      "bytes": 254,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/status/user_confirmed/state.json",
+      "source_sha256": "<PRIVATE_REF_01831>",
+      "bytes": 1577,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          45
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/status/verified_local/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_02984>",
+      "bytes": 588,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "fixtures/valid/status/verified_local/state.json",
+      "source_sha256": "<PRIVATE_REF_00970>",
+      "bytes": 1803,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/status/verified_remote/events.jsonl",
+      "source_sha256": "<PRIVATE_REF_03007>",
+      "bytes": 559,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          2
+        ]
+      }
+    },
+    {
+      "source_path": "fixtures/valid/status/verified_remote/state.json",
+      "source_sha256": "<PRIVATE_REF_02326>",
+      "bytes": 1637,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          5,
+          6,
+          45,
+          47,
+          53
+        ]
+      }
+    },
+    {
+      "source_path": "integrations/catalog.json",
+      "source_sha256": "<PRIVATE_REF_01474>",
+      "bytes": 13406,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {
+        "gcp_reference": [
+          6,
+          7,
+          9,
+          11,
+          12,
+          18,
+          22,
+          23,
+          25,
+          27,
+          34
+        ]
+      }
+    },
+    {
+      "source_path": "package.json",
+      "source_sha256": "<PRIVATE_REF_03412>",
+      "bytes": 361,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "schema/event.schema.json",
+      "source_sha256": "<PRIVATE_REF_01999>",
+      "bytes": 4000,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "schema/state.schema.json",
+      "source_sha256": "<PRIVATE_REF_01409>",
+      "bytes": 13055,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "skills/providers/aws.md",
+      "source_sha256": "<PRIVATE_REF_02199>",
+      "bytes": 1147,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "skills/providers/azure.md",
+      "source_sha256": "<PRIVATE_REF_02829>",
+      "bytes": 1063,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "skills/providers/dns-cloudflare.md",
+      "source_sha256": "<PRIVATE_REF_01932>",
+      "bytes": 3252,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "skills/providers/gcp.md",
+      "source_sha256": "<PRIVATE_REF_03682>",
+      "bytes": 4384,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {
+        "gcp_reference": [
+          1,
+          4,
+          5,
+          7,
+          11,
+          14,
+          16,
+          18,
+          19,
+          24,
+          25,
+          32,
+          36,
+          37,
+          42,
+          44,
+          45,
+          50,
+          51,
+          64,
+          71
+        ]
+      }
+    },
+    {
+      "source_path": "skills/providers/nectar.md",
+      "source_sha256": "<PRIVATE_REF_01373>",
+      "bytes": 1226,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "skills/router.md",
+      "source_sha256": "<PRIVATE_REF_01815>",
+      "bytes": 12458,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {
+        "gcp_reference": [
+          35,
+          55
+        ]
+      }
+    },
+    {
+      "source_path": "skills/stages/execute.md",
+      "source_sha256": "<PRIVATE_REF_01205>",
+      "bytes": 4717,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "skills/stages/plan.md",
+      "source_sha256": "<PRIVATE_REF_01708>",
+      "bytes": 5570,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {
+        "cjk": [
+          41
+        ]
+      }
+    },
+    {
+      "source_path": "skills/stages/recon.md",
+      "source_sha256": "<PRIVATE_REF_02325>",
+      "bytes": 2378,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "skills/stages/recover.md",
+      "source_sha256": "<PRIVATE_REF_02780>",
+      "bytes": 3445,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "skills/stages/verify-handoff.md",
+      "source_sha256": "<PRIVATE_REF_02087>",
+      "bytes": 4546,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/brief.test.mjs",
+      "source_sha256": "<PRIVATE_REF_03253>",
+      "bytes": 8788,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/browser.test.mjs",
+      "source_sha256": "<PRIVATE_REF_02811>",
+      "bytes": 11080,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/browser/view_check.py",
+      "source_sha256": "<PRIVATE_REF_01495>",
+      "bytes": 6250,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/catalog.test.mjs",
+      "source_sha256": "<PRIVATE_REF_01357>",
+      "bytes": 2888,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/cli.test.mjs",
+      "source_sha256": "<PRIVATE_REF_01307>",
+      "bytes": 7172,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          12,
+          13
+        ]
+      }
+    },
+    {
+      "source_path": "tests/commit-state.test.mjs",
+      "source_sha256": "<PRIVATE_REF_02030>",
+      "bytes": 12699,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/design-decisions.test.mjs",
+      "source_sha256": "<PRIVATE_REF_03001>",
+      "bytes": 6010,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {
+        "evaluation_reference": [
+          101
+        ]
+      }
+    },
+    {
+      "source_path": "tests/docs.test.mjs",
+      "source_sha256": "<PRIVATE_REF_02282>",
+      "bytes": 4498,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {
+        "gcp_reference": [
+          25,
+          28
+        ]
+      }
+    },
+    {
+      "source_path": "tests/fixtures.test.mjs",
+      "source_sha256": "<PRIVATE_REF_01751>",
+      "bytes": 5154,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/freshness.test.mjs",
+      "source_sha256": "<PRIVATE_REF_01860>",
+      "bytes": 4776,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/helpers/fixtures.mjs",
+      "source_sha256": "<PRIVATE_REF_02026>",
+      "bytes": 1891,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/helpers/python.mjs",
+      "source_sha256": "<PRIVATE_REF_01420>",
+      "bytes": 551,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/helpers/vocabulary.mjs",
+      "source_sha256": "<PRIVATE_REF_03084>",
+      "bytes": 1179,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/neutral-domains.test.mjs",
+      "source_sha256": "<PRIVATE_REF_01108>",
+      "bytes": 1405,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/neutrality.test.mjs",
+      "source_sha256": "<PRIVATE_REF_01210>",
+      "bytes": 3687,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/rehearsal.test.mjs",
+      "source_sha256": "<PRIVATE_REF_02105>",
+      "bytes": 8881,
+      "planned_action": "EXCLUDE_PRODUCT_ARCHIVE_CASE",
+      "reason": "Legacy rehearsal runner, toy workload, prompts or its dedicated tests; not required by product runtime.",
+      "static_locations": {
+        "evaluation_reference": [
+          10,
+          35,
+          40
+        ]
+      }
+    },
+    {
+      "source_path": "tests/render.test.mjs",
+      "source_sha256": "<PRIVATE_REF_02267>",
+      "bytes": 9911,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/scaffold.test.mjs",
+      "source_sha256": "<PRIVATE_REF_00990>",
+      "bytes": 2347,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/scenarios.test.mjs",
+      "source_sha256": "<PRIVATE_REF_03580>",
+      "bytes": 10665,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          83,
+          84,
+          85,
+          86
+        ]
+      }
+    },
+    {
+      "source_path": "tests/schema-bounds.test.mjs",
+      "source_sha256": "<PRIVATE_REF_01502>",
+      "bytes": 4196,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/schema-subset.test.mjs",
+      "source_sha256": "<PRIVATE_REF_02360>",
+      "bytes": 6564,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/secret-scan.test.mjs",
+      "source_sha256": "<PRIVATE_REF_02197>",
+      "bytes": 9153,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          118,
+          119,
+          138
+        ]
+      }
+    },
+    {
+      "source_path": "tests/semantic-checks.test.mjs",
+      "source_sha256": "<PRIVATE_REF_00129>",
+      "bytes": 19712,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          85,
+          86,
+          92,
+          94,
+          107,
+          312
+        ]
+      }
+    },
+    {
+      "source_path": "tests/server.test.mjs",
+      "source_sha256": "<PRIVATE_REF_02119>",
+      "bytes": 5339,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/skill-package.test.mjs",
+      "source_sha256": "<PRIVATE_REF_01836>",
+      "bytes": 4715,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/skills-workflow.test.mjs",
+      "source_sha256": "<PRIVATE_REF_03699>",
+      "bytes": 15597,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/skills.test.mjs",
+      "source_sha256": "<PRIVATE_REF_00670>",
+      "bytes": 7483,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {
+        "gcp_reference": [
+          12,
+          98,
+          99,
+          100,
+          101
+        ]
+      }
+    },
+    {
+      "source_path": "tests/validate.test.mjs",
+      "source_sha256": "<PRIVATE_REF_01997>",
+      "bytes": 15667,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          199,
+          204
+        ]
+      }
+    },
+    {
+      "source_path": "tests/view-handoff.test.mjs",
+      "source_sha256": "<PRIVATE_REF_00951>",
+      "bytes": 6366,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {
+        "cjk": [
+          83,
+          105
+        ]
+      }
+    },
+    {
+      "source_path": "tests/vocabulary.test.mjs",
+      "source_sha256": "<PRIVATE_REF_00915>",
+      "bytes": 1804,
+      "planned_action": "ADAPT_PUBLIC_COPY",
+      "reason": "Owner-approved English/public documentation, attribution/link policy, provider wording or dependencies on removed evaluation files; retain meaningful product checks.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tests/workspace.test.mjs",
+      "source_sha256": "<PRIVATE_REF_01509>",
+      "bytes": 11220,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {
+        "gcp_reference": [
+          11,
+          45,
+          185
+        ]
+      }
+    },
+    {
+      "source_path": "tools/lib/brief.mjs",
+      "source_sha256": "<PRIVATE_REF_02854>",
+      "bytes": 5238,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tools/lib/commit.mjs",
+      "source_sha256": "<PRIVATE_REF_01692>",
+      "bytes": 4274,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tools/lib/neutrality.mjs",
+      "source_sha256": "<PRIVATE_REF_02098>",
+      "bytes": 2724,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tools/lib/schema-subset.mjs",
+      "source_sha256": "<PRIVATE_REF_01362>",
+      "bytes": 8900,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tools/lib/secret-scan.mjs",
+      "source_sha256": "<PRIVATE_REF_02402>",
+      "bytes": 5345,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tools/lib/semantic-checks.mjs",
+      "source_sha256": "<PRIVATE_REF_02960>",
+      "bytes": 16824,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tools/lib/server.mjs",
+      "source_sha256": "<PRIVATE_REF_01253>",
+      "bytes": 3562,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tools/lib/validate.mjs",
+      "source_sha256": "<PRIVATE_REF_03433>",
+      "bytes": 12123,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tools/lib/workspace.mjs",
+      "source_sha256": "<PRIVATE_REF_01063>",
+      "bytes": 6328,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tools/neutrality-scan.mjs",
+      "source_sha256": "<PRIVATE_REF_01304>",
+      "bytes": 1626,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    },
+    {
+      "source_path": "tools/watchover.mjs",
+      "source_sha256": "<PRIVATE_REF_01187>",
+      "bytes": 7422,
+      "planned_action": "KEEP_PRODUCT_REVIEW_CONTENT",
+      "reason": "Product functionality, optional provider example, developer utility or generic synthetic regression data; still subject to full public-copy inspection.",
+      "static_locations": {}
+    }
+  ],
+  "counts": {
+    "KEEP_PRODUCT_REVIEW_CONTENT": 116,
+    "ADAPT_PUBLIC_COPY": 15,
+    "EXCLUDE_PRODUCT_ARCHIVE_CASE": 15
+  },
+  "top_level_product_directories": [
+    "app",
+    "tools",
+    "schema",
+    "skills",
+    "integrations",
+    "fixtures",
+    "tests",
+    "docs"
+  ],
+  "static_scan_limits": "Literal text and path checks only, no universal sanitization verdict; split identifiers in test helpers require explicit manual disposition. No product tests or code execution performed.",
+  "prototype_visibility_observed": "private via GitHub API; no visibility change",
+  "source_worktree_unchanged": true
+}

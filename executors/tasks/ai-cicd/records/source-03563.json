@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 116404,
+  "stop_reason": "end_turn",
+  "session_id": "<NATIVE_ID_0314>",
+  "total_cost_usd": 0.614655,
+  "usage": {
+    "input_tokens": 10,
+    "cache_creation_input_tokens": 20236,
+    "cache_read_input_tokens": 383928,
+    "output_tokens": 4691,
+    "output_tokens_details": {
+      "thinking_tokens": 413
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 20236,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2017,
+        "cache_read_input_tokens": 87076,
+        "cache_creation_input_tokens": 1132,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1132
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 34,
+      "outputTokens": 10979,
+      "thinkingTokens": 793,
+      "cacheReadInputTokens": 820105,
+      "cacheCreationInputTokens": 85194,
+      "webSearchRequests": 0,
+      "costUSD": 0.614655,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 20,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The frontend gets its API address from a `config.json` file served next to `index.html`, whose content is `{\"endpoint\": \"/api\"}`. The server-side settings come from `alertad.conf`, `api.env`, `db.env` and `compose.yaml`.\n\n**Where the frontend's API address comes from**\n- **Config order:** `source/alerta-webui/src/services/config.ts:15-37` builds the config in three layers. First it reads the build-time variable `VUE_APP_ALERTA_ENDPOINT` (lines 39-53). Then it fetches `${BASE_URL}config.json` (lines 55-63). Then it calls `${endpoint}/config` on the API (lines 65-78). The merge at lines 80-86 lets the build-time variable override `config.json`, which overrides the API's own `/config`.\n- **`config.json` in the release:** `deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/config.json:1` and `EXPANDED_RELEASE/web-dist/config.json:1` both contain `{\"endpoint\": \"/api\"}`. The frontend's `main.ts:39` then sets `axios.defaults.baseURL = config.endpoint`. The API address is therefore the relative path `/api` on whatever host served the page.\n- **Caddy routing:** `Caddyfile:13-15` strips `/api` and proxies to `api:8080`. Lines 16-21 serve `/srv/www` with `try_files {path} /index.html`. `config.json` is sent with `Cache-Control: no-store` (lines 18-19). The site address is `HOST-H` (line 25). `compose.yaml:47-48` mounts `./Caddyfile` and `./web-dist` read-only into the `web` container.\n- **Build-time variable:** The only `.env*` file in the frontend source is `.env.development`, which sets `VUE_APP_ALERTA_ENDPOINT=http://api.local.alerta.io:8080`. The build ran `vue-cli-service build` (`evidence/0011-frontend-build.txt:3`). I found no production env file and no `VUE_APP_ALERTA_ENDPOINT` set in the build records. So that value should not override `/api`.\n- **Not proven:** I didn't confirm that the compiled bundle carries no baked-in endpoint. The string `VUE_APP_ALERTA_ENDPOINT` appears in `app.d371eacf.js`, but I only grepped for the name, not the substituted value.\n\n**Server-side configuration**\n- **`alertad.conf`:** `compose.yaml:26-28` points `ALERTA_SVR_CONF_FILE` at `/etc/alertad.conf`, mounted read-only from `deployment-<W2_RUN_RESOURCE_PREFIX>/alertad.conf`.\n  - Authentication: `AUTH_REQUIRED = True` and `AUTH_PROVIDER = 'basic'`.\n  - Sign-up: `SIGNUP_ENABLED = True`, `ALLOWED_EMAIL_DOMAINS = ['*']` and `EMAIL_VERIFICATION = False`.\n  - Origin and proxy: `CORS_ORIGINS = ['<PRIVATE_URL_0022>']` and `USE_PROXYFIX = True`.\n  - Plugins and environments: plugins `remote_ip`, `reject`, `heartbeat`, `blackout`; allowed environments `Production` and `Development`.\n- **Secrets:** `alertad.conf:13` says `DATABASE_URL` and `SECRET_KEY` come from private files on the data disk. `compose.yaml:24` loads `/srv/<W2_RUN_RESOURCE_PREFIX>/secrets/api.env` and `compose.yaml:6` loads `/srv/<W2_RUN_RESOURCE_PREFIX>/secrets/db.env`. `bootstrap.sh:28-44` generates them on first run, and their values are redacted in the corpus. `DATABASE_URL` points at host `db:5432`, database `alerta`.\n- **Database:** `compose.yaml:3-16` runs `postgres:17-bookworm` with data at `/srv/<W2_RUN_RESOURCE_PREFIX>/postgres`.\n- **Backend commit:** `SOURCE_COMMIT` is set in `compose.yaml:22`, as covered in the previous answer.\n- **Admin credentials:** The bootstrap writes them to `/srv/<W2_RUN_RESOURCE_PREFIX>/secrets/admin.json`. The password is redacted.\n- **Public host and ports:** The public hostname is `HOST-H` (`Caddyfile:25`, `alertad.conf:9`). Ports 80 and 443 are published, and `127.0.0.1:18080` is loopback-only for VM-local checks (`compose.yaml:42-45`).\n\n**Limits**\n- These are the deployment archive's files plus the Deployer's records. I did not see the files as they sit on the VM, apart from the acceptance output and the `index.html` hash check.\n- That hash check covers only `index.html`. I have no direct check of the on-VM `config.json` or `alertad.conf`.\n- Any difference introduced after the archive was prepared would not show here. The README says the pinned sources and runtime configuration were unchanged (`README.md:37-38`), but that is the Deployer's own statement.",
+  "ttft_ms": 2571,
+  "type": "result",
+  "duration_ms": 40251,
+  "uuid": "<NATIVE_ID_1128>",
+  "ttft_stream_ms": 1715,
+  "time_to_request_ms": 21,
+  "first_content_frame_ms": 1715,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

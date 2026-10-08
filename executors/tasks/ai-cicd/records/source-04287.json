@@ -1,0 +1,101 @@
+{
+  "candidate": {
+    "commit": "<PRIVATE_REF_02324>",
+    "tree": "<PRIVATE_REF_01897>",
+    "version": "0.1.1"
+  },
+  "observed_at": "2026-10-06T06:20:13.562Z",
+  "reduced_package": {
+    "complete_references": [
+      "stages/recon.md",
+      "stages/plan.md",
+      "stages/execute.md",
+      "stages/verify-handoff.md",
+      "stages/recover.md",
+      "providers/gcp.md",
+      "providers/dns-cloudflare.md",
+      "providers/aws.md",
+      "providers/azure.md",
+      "providers/nectar.md"
+    ],
+    "complete_missing": [],
+    "reduced_missing": [
+      "providers/gcp.md",
+      "providers/dns-cloudflare.md",
+      "providers/aws.md",
+      "providers/azure.md",
+      "providers/nectar.md"
+    ],
+    "declared_reduced_manifest_candidates": [],
+    "scenario_names": [
+      "awaiting-acceptance",
+      "interrupted",
+      "services-and-names",
+      "shared-object-delta",
+      "view-handoff-confirmed",
+      "view-handoff-exception"
+    ],
+    "recorded_package_gap_items": [],
+    "existing_test": "tests/skill-package.test.mjs:22–33 detects absence and regex-checks instructions; writes no declared inventory or gap record"
+  },
+  "service_test_clock": {
+    "fixture_checked_at": "2026-10-06T06:05:31Z",
+    "fixture_window_minutes": 60,
+    "test_source_clock": "tests/scenarios.test.mjs:14 Date.now()",
+    "before": "2026-10-06T06:10:31.000Z",
+    "after": "2026-10-06T07:06:31.000Z",
+    "row_before": "<li class=\"service\" data-service=\"api\"><span class=\"badge\" data-kind=\"verified-local\"><span class=\"sym\" aria-hidden=\"true\">✓</span> Verified locally, fresh</span> <strong>api</strong> on <strong>demo-app-api-1</strong> <span class=\"type\">(api-container, present)</span>\n      <div class=\"fact-meta\">200 on /health · checked 5 min ago · fresh for 55 more min · Evidence: <code>evidence/0020-api-health.txt</code></div></li>",
+    "row_after": "<li class=\"service\" data-service=\"api\"><span class=\"badge\" data-kind=\"verified-expired\"><span class=\"sym\" aria-hidden=\"true\">◌</span> Verified locally, expired</span> <strong>api</strong> on <strong>demo-app-api-1</strong> <span class=\"type\">(api-container, present)</span>\n      <div class=\"fact-meta\">200 on /health · checked 1 h 1 min ago · freshness window ended · Evidence: <code>evidence/0020-api-health.txt</code></div></li>",
+    "clock_preload_file": "clock_after_api_expiry.mjs",
+    "raw_negative": "services_after_expiry.tap",
+    "observed_negative_exit": 1,
+    "interpretation": "display expires honestly; test assumes fresh forever and fails after one hour"
+  },
+  "shared_undo_record": {
+    "workspace_validation": {
+      "ok": true,
+      "errors": [],
+      "secret_scan": {
+        "self_test": "passed",
+        "patterns": 11,
+        "findings": 0
+      }
+    },
+    "intent": {
+      "schema_version": "0.1",
+      "id": "evt-0010",
+      "at": "2026-10-06T00:25:31Z",
+      "actor": {
+        "role": "ai",
+        "name": "ai-deployer"
+      },
+      "session_id": "session-a",
+      "type": "intent",
+      "summary": "Remove exactly this run's 8 keys",
+      "target": "shared metadata",
+      "action": "remove keys run-key-1..run-key-8 only",
+      "action_kinds": [
+        "local"
+      ],
+      "related": [
+        "evt-0005"
+      ]
+    },
+    "related_approvals": [
+      {
+        "event": "evt-0005",
+        "summary": "Human accepted the plan",
+        "reply": "approve",
+        "request": {
+          "id": "dec-01",
+          "categories": [
+            "plan_acceptance"
+          ]
+        }
+      }
+    ],
+    "deletion_requests": [],
+    "interpretation": "fixture removal relates only to plan_acceptance; no scoped deletion approval is recorded; docs require approval for undo and a deletion gate"
+  },
+  "product_mutations": "none; all probes run against candidate archive and private synthetic copy"
+}

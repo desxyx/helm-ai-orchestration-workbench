@@ -1,0 +1,41 @@
+{
+  "tool": "controlled-transcript-source-probe",
+  "timestamp": "2026-09-26T13:30:54Z",
+  "client": "codex-cli 0.155.0-alpha.16.3",
+  "mode": "interactive TUI, read-only sandbox, approvals never",
+  "status": "PASS",
+  "canonical_source": "client-native saved rollout JSONL",
+  "raw_source_locator": "transcript_source/native_tui_rollout_session.jsonl",
+  "raw_source_sha256": "<PRIVATE_REF_01923>",
+  "raw_source_lines": 22,
+  "expected_sequence": [
+    {
+      "line": 9,
+      "event": "user message",
+      "marker": "WATCHOVER_TUI_USER_MARKER_20260926"
+    },
+    {
+      "line": 13,
+      "event": "custom tool call",
+      "marker": "WATCHOVER_TUI_STDOUT_MARKER_20260926 and WATCHOVER_TUI_STDERR_MARKER_20260926"
+    },
+    {
+      "line": 16,
+      "event": "custom tool call output",
+      "marker": "both stdout and stderr markers"
+    },
+    {
+      "line": 19,
+      "event": "assistant message",
+      "marker": "WATCHOVER_TUI_ASSISTANT_MARKER_20260926"
+    },
+    {
+      "line": 22,
+      "event": "task complete",
+      "marker": "completion event"
+    }
+  ],
+  "completeness_result": "All expected user, assistant, tool-call, stdout, stderr and completion markers were present in correct order.",
+  "sanitisation_status": "SANITISED_ALIAS_ONLY",
+  "raw_source_sanitisation_status": "SEALED_RAW_UNSANITISED"
+}

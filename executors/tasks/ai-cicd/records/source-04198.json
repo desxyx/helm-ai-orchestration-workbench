@@ -1,0 +1,20 @@
+{
+  "r1_commit": "<PRIVATE_REF_01925>",
+  "exact_rework_paths": [
+    "SECURITY.md",
+    "fixtures/valid/scenarios/view-handoff-confirmed/state.json",
+    "fixtures/valid/scenarios/view-handoff-exception/state.json",
+    "tests/secret-scan.test.mjs",
+    "tests/view-handoff.test.mjs",
+    "tools/lib/secret-scan.mjs"
+  ],
+  "all_other_tracked_files_byte_equal_to_r1": 140,
+  "fixture_edits_only_pending_decision_reversibility": true,
+  "schemas_byte_equal_to_original_baseline": {
+    "schema/state.schema.json": "<PRIVATE_REF_01409>",
+    "schema/event.schema.json": "<PRIVATE_REF_01999>"
+  },
+  "dependencies_and_record_architecture_unchanged": true,
+  "version": "0.1.2",
+  "r1_artifacts_hash_equal": 16
+}

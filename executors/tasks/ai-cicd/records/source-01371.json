@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 19124,
+  "stop_reason": "end_turn",
+  "session_id": "<NATIVE_ID_2154>",
+  "total_cost_usd": 0.1087088,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 19333,
+    "cache_read_input_tokens": 45614,
+    "output_tokens": 2223,
+    "output_tokens_details": {
+      "thinking_tokens": 111
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 19333,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 915,
+        "cache_read_input_tokens": 12229,
+        "cache_creation_input_tokens": 10118,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 10118
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 2223,
+      "cacheReadInputTokens": 45614,
+      "cacheCreationInputTokens": 19333,
+      "webSearchRequests": 0,
+      "costUSD": 0.1087088,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 111,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 10,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**When:** `<W2_RUN_RESOURCE_PREFIX>-ip` was created on 2026-10-04 at 19:22:22.117 in UTC-7. That is 2026-10-05 02:22:22Z. Three records agree:\n- The `gcloud compute addresses create` output in `corpus/transcripts/S1.jsonl:278` (event `2026-10-05T02:22:24.211Z`) gives `creationTimestamp` `2026-10-04T19:22:22.117-07:00`, resource id `<NUMERIC_RESOURCE_0021>`, and status `RESERVED`.\n- `corpus/cloud/RAW_Q04_address_attempt5.stdout:4` shows the same `creationTimestamp` and id.\n- `corpus/cloud/RAW_Q05_inventory_attempt6.stdout:277` shows an asset inventory `createTime` of `2026-10-05T02:22:22Z`.\n\n**What was created:** a regional external IPv4 address, `<IP_ADDRESS_114>`, in PROJECT-P, us-central1, PREMIUM network tier. It was created by this command (`S1.jsonl:272`, call at `2026-10-05T02:22:19.416Z`):\n`gcloud compute addresses create <W2_RUN_RESOURCE_PREFIX>-ip --project=<CLOUD_PROJECT> --region=us-central1 --network-tier=PREMIUM --format=json`\n\n**Why:**\n- The user's approval message at `S1.jsonl:268` (`2026-10-05T02:22:12.570Z`) was \"Approved.\" plus an instruction to pause after the first paid resource was created.\n- The agent replied at `S1.jsonl:270` (`02:22:17.656Z`). In translation: \"Approval received. I'll first create the fixed public IP; this is the first paid resource. After the create command finishes I'll pause immediately…\"\n- `corpus/workspace/deployment-<W2_RUN_RESOURCE_PREFIX>/README.txt:8` describes it as the \"reserved regional external IPv4\". Lines 11 and 42–44 say the IP serves the public ingress (TCP 80/443) and the Cloudflare A record for `<W2_RUN_RESOURCE_PREFIX>`.\n- I did not check the earlier turns of the S1 transcript, so I can't say whether the user's approval of this resource was stated more fully elsewhere.\n\n**Later state:** by `RAW_Q04_address_attempt5.stdout:13-16`, the address was `IN_USE`, attached to instance `<W2_RUN_RESOURCE_PREFIX>-alerta` in us-central1-a.\n\n**Caveat on the README:** `README.txt:9` says \"Existing address confirmed on 2026-10-05… reuse it.\" That fits `provision.sh:8`, which only describes `<W2_RUN_RESOURCE_PREFIX>-ip` and doesn't create it. The README, `provision.sh` and the transcript are all records of what was built or deployed. None of them proves what source is running.",
+  "ttft_ms": 1738,
+  "type": "result",
+  "duration_ms": 19768,
+  "uuid": "<NATIVE_ID_0680>",
+  "ttft_stream_ms": 1180,
+  "time_to_request_ms": 119,
+  "first_content_frame_ms": 1180,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

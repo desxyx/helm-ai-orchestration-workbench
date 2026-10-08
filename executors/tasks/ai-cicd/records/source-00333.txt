@@ -1,0 +1,5 @@
+$ gcloud compute instances add-metadata <RUN_VM_OR_BOOT_DISK> --zone australia-southeast1-b --metadata-from-file ssh-keys=C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/ssh-keys.txt --project <CLOUD_PROJECT>
+# started 2026-10-06T12:55:06.000Z  ended 2026-10-06T12:55:17.000Z  exit 0
+--- stdout
+--- stderr
+Updated [<PRIVATE_URL_0433>].

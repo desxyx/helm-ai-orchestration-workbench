@@ -1,0 +1,2 @@
+$ gcloud compute networks delete <W2_RUN_RESOURCE_PREFIX>-net --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+Deleted [<PRIVATE_URL_0282>].

@@ -1,0 +1,170 @@
+﻿Captured 2026-10-06T14:52:50Z read-only, identity <ACCOUNT>, project <CLOUD_PROJECT>
+## addresses
+Listed 0 items.
+## instances
+Listed 0 items.
+## disks
+Listed 0 items.
+## snapshots
+Listed 0 items.
+## images
+Listed 0 items.
+## firewall
+default-allow-icmp
+default-allow-internal
+default-allow-rdp
+default-allow-ssh
+## resource-policies
+Listed 0 items.
+## forwarding-rules
+Listed 0 items.
+## instance-groups
+Listed 0 items.
+## run
+Listed 0 items.
+## buckets
+## artifact-repos
+Listing items under project <CLOUD_PROJECT>, across all locations.
+System.Management.Automation.RemoteException
+## cloud asset search (all resource types)
+serviceusage.googleapis.com/Service	bigqueryconnection.googleapis.com
+serviceusage.googleapis.com/Service	datastore.googleapis.com
+serviceusage.googleapis.com/Service	cloudtrace.googleapis.com
+compute.googleapis.com/InstanceSettings	
+compute.googleapis.com/InstanceSettings	
+compute.googleapis.com/InstanceSettings	
+compute.googleapis.com/InstanceSettings	
+compute.googleapis.com/InstanceSettings	
+compute.googleapis.com/InstanceSettings	
+compute.googleapis.com/InstanceSettings	
+compute.googleapis.com/InstanceSettings	
+compute.googleapis.com/InstanceSettings	
+compute.googleapis.com/InstanceSettings	
+compute.googleapis.com/InstanceSettings	
+compute.googleapis.com/InstanceSettings	
+compute.googleapis.com/Firewall	default-allow-ssh
+compute.googleapis.com/Firewall	default-allow-internal
+compute.googleapis.com/Firewall	default-allow-rdp
+compute.googleapis.com/Firewall	default-allow-icmp
+compute.googleapis.com/Route	default-route-r-fd0a3dcbdd77a5e1
+compute.googleapis.com/Route	default-route-r-08afdb119e58851d
+compute.googleapis.com/Route	default-route-r-72e85f5a4344fac7
+compute.googleapis.com/Route	default-route-r-5b3525456957a2a4
+compute.googleapis.com/Route	default-route-r-4f56f79a206c6d61
+compute.googleapis.com/Route	default-route-r-652337358b87066c
+compute.googleapis.com/Route	default-route-r-d8e099d7beb47ad7
+compute.googleapis.com/Route	default-route-r-d115567d5a7e9960
+compute.googleapis.com/Route	default-route-r-ebf74dea0ecca4c4
+compute.googleapis.com/Route	default-route-r-3281cc5338784261
+compute.googleapis.com/Route	default-route-r-ef54a44c321896ba
+compute.googleapis.com/Route	default-route-r-392edddde8575506
+compute.googleapis.com/Route	default-route-r-9e93ea27dc58e8cb
+compute.googleapis.com/Route	default-route-r-aa8793972556640e
+compute.googleapis.com/Route	default-route-r-697884d0455b03c7
+compute.googleapis.com/Route	default-route-r-12bd2cc6b47161c6
+compute.googleapis.com/Route	default-route-r-ae6bf3dc12365cf3
+compute.googleapis.com/Route	default-route-r-b4754674155d6072
+compute.googleapis.com/Route	default-route-r-07769da34a88a113
+compute.googleapis.com/Route	default-route-r-825e5fa65ef9818b
+compute.googleapis.com/Route	default-route-r-a015083363c97dda
+compute.googleapis.com/Route	default-route-r-111e37d279b0acfb
+compute.googleapis.com/Route	default-route-r-0879960bb11dd637
+compute.googleapis.com/Route	default-route-r-9fe60665d942e3d8
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Route	default-route-r-e456bb71211ce6a0
+compute.googleapis.com/Route	default-route-r-78a5d4078c43b1b6
+compute.googleapis.com/Route	default-route-r-e76eef126367bf51
+compute.googleapis.com/Route	default-route-r-c90e0d30402ca451
+compute.googleapis.com/Route	default-route-r-628de5eadd63def3
+compute.googleapis.com/Route	default-route-r-fb5ad1895b3772af
+compute.googleapis.com/Route	default-route-r-4f62f144ee431513
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Route	default-route-r-1a2d9b710e4a30b6
+compute.googleapis.com/Route	default-route-r-27891267a62ba6c3
+compute.googleapis.com/Route	default-route-r-ec3628f32ac50041
+compute.googleapis.com/Route	default-route-r-c24e9b904a491500
+compute.googleapis.com/Route	default-route-r-b14959b6ce122dfd
+compute.googleapis.com/Route	default-route-r-ca2b900824a2ec61
+compute.googleapis.com/Route	default-route-r-53d46e6d3cdc9756
+compute.googleapis.com/Route	default-route-r-0faabd2ddf8a7780
+compute.googleapis.com/Route	default-route-r-6ac014ace3bc137d
+compute.googleapis.com/Route	default-route-r-c890a92bf4db7fdb
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Route	default-route-r-0848246e394f579a
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Subnetwork	default
+compute.googleapis.com/Route	default-route-43d14511ef5a4294
+compute.googleapis.com/Network	default
+compute.googleapis.com/Project	<CLOUD_PROJECT>
+cloudbilling.googleapis.com/ProjectBillingInfo	projects/<CLOUD_PROJECT>/billingInfo
+cloudresourcemanager.googleapis.com/Project	WatchOver AI DevOps
+serviceusage.googleapis.com/Service	storage-component.googleapis.com
+serviceusage.googleapis.com/Service	bigqueryreservation.googleapis.com
+logging.googleapis.com/LogSink	_Required
+serviceusage.googleapis.com/Service	billingbudgets.googleapis.com
+serviceusage.googleapis.com/Service	servicemanagement.googleapis.com
+serviceusage.googleapis.com/Service	dataplex.googleapis.com
+serviceusage.googleapis.com/Service	logging.googleapis.com
+serviceusage.googleapis.com/Service	analyticshub.googleapis.com
+serviceusage.googleapis.com/Service	bigquery.googleapis.com
+serviceusage.googleapis.com/Service	pubsub.googleapis.com
+logging.googleapis.com/LogBucket	_Default
+serviceusage.googleapis.com/Service	artifactregistry.googleapis.com
+serviceusage.googleapis.com/Service	apptopology.googleapis.com
+serviceusage.googleapis.com/Service	oslogin.googleapis.com
+serviceusage.googleapis.com/Service	monitoring.googleapis.com
+serviceusage.googleapis.com/Service	bigquerymigration.googleapis.com
+serviceusage.googleapis.com/Service	bigquerystorage.googleapis.com
+serviceusage.googleapis.com/Service	telemetry.googleapis.com
+serviceusage.googleapis.com/Service	bigquerydatapolicy.googleapis.com
+serviceusage.googleapis.com/Service	compute.googleapis.com
+logging.googleapis.com/LogSink	_Default
+serviceusage.googleapis.com/Service	bigquerydatatransfer.googleapis.com
+serviceusage.googleapis.com/Service	sql-component.googleapis.com
+serviceusage.googleapis.com/Service	run.googleapis.com
+serviceusage.googleapis.com/Service	storage.googleapis.com
+serviceusage.googleapis.com/Service	cloudapis.googleapis.com
+serviceusage.googleapis.com/Service	containerregistry.googleapis.com
+serviceusage.googleapis.com/Service	iap.googleapis.com
+serviceusage.googleapis.com/Service	dataform.googleapis.com
+serviceusage.googleapis.com/Service	cloudasset.googleapis.com
+serviceusage.googleapis.com/Service	storage-api.googleapis.com
+serviceusage.googleapis.com/Service	serviceusage.googleapis.com
+logging.googleapis.com/LogBucket	_Required

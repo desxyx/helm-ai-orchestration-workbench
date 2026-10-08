@@ -1,0 +1,2 @@
+$ gcloud compute disks list '--format=json(name,id,zone,users)' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+[]

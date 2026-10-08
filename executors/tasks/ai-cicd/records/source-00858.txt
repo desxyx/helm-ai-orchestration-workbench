@@ -1,0 +1,148 @@
+TAP version 13
+# Subtest: W1-C1 positive: planted synthetic credential detected and redacted
+ok 1 - W1-C1 positive: planted synthetic credential detected and redacted
+  ---
+  duration_ms: 3.332375
+  type: 'test'
+  ...
+# Subtest: W1-C1 negative: clean fixture has no match
+ok 2 - W1-C1 negative: clean fixture has no match
+  ---
+  duration_ms: 0.775333
+  type: 'test'
+  ...
+# Subtest: W1-C2 positive: copy matches source hash
+ok 3 - W1-C2 positive: copy matches source hash
+  ---
+  duration_ms: 0.7585
+  type: 'test'
+  ...
+# Subtest: W1-C2 negative: source mismatch detected
+ok 4 - W1-C2 negative: source mismatch detected
+  ---
+  duration_ms: 0.746292
+  type: 'test'
+  ...
+# Subtest: W1-C4 positive: fires on staged interruption trigger, controller channel only
+ok 5 - W1-C4 positive: fires on staged interruption trigger, controller channel only
+  ---
+  duration_ms: 2.161208
+  type: 'test'
+  ...
+# Subtest: W1-C4 negative: silent through normal long wait including HC hold
+ok 6 - W1-C4 negative: silent through normal long wait including HC hold
+  ---
+  duration_ms: 0.454709
+  type: 'test'
+  ...
+# Subtest: W1-C5I positive: detects planted discoverable target
+ok 7 - W1-C5I positive: detects planted discoverable target
+  ---
+  duration_ms: 1.421792
+  type: 'test'
+  ...
+# Subtest: W1-C5I negative: clean layout reports clean
+ok 8 - W1-C5I negative: clean layout reports clean
+  ---
+  duration_ms: 1.228459
+  type: 'test'
+  ...
+# Subtest: W1-C5I positive (label): labelled sibling and symlink into target are reported
+ok 9 - W1-C5I positive (label): labelled sibling and symlink into target are reported
+  ---
+  duration_ms: 1.437
+  type: 'test'
+  ...
+# Subtest: W1-C9 positive: complete packet passes
+ok 10 - W1-C9 positive: complete packet passes
+  ---
+  duration_ms: 1.141792
+  type: 'test'
+  ...
+# Subtest: W1-C9 negative: removed required item is flagged
+ok 11 - W1-C9 negative: removed required item is flagged
+  ---
+  duration_ms: 0.7175
+  type: 'test'
+  ...
+# Subtest: CRED positive: provenance matches delivered set
+ok 12 - CRED positive: provenance matches delivered set
+  ---
+  duration_ms: 1.169417
+  type: 'test'
+  ...
+# Subtest: CRED negative: mismatched delivery detected
+ok 13 - CRED negative: mismatched delivery detected
+  ---
+  duration_ms: 0.745542
+  type: 'test'
+  ...
+# Subtest: SLIP-I positive: captures planted pre-T0 output/tool action
+ok 14 - SLIP-I positive: captures planted pre-T0 output/tool action
+  ---
+  duration_ms: 0.580042
+  type: 'test'
+  ...
+# Subtest: SLIP-I negative: empty pre-T0 session yields none
+ok 15 - SLIP-I negative: empty pre-T0 session yields none
+  ---
+  duration_ms: 0.402333
+  type: 'test'
+  ...
+# Subtest: SLIP-I completeness: an unparsed line makes the capture incomplete
+ok 16 - SLIP-I completeness: an unparsed line makes the capture incomplete
+  ---
+  duration_ms: 0.414
+  type: 'test'
+  ...
+# Subtest: EP-I positive: clean layout passes
+ok 17 - EP-I positive: clean layout passes
+  ---
+  duration_ms: 5.428875
+  type: 'test'
+  ...
+# Subtest: EP-I negative: planted prohibited auto-load canary fails
+ok 18 - EP-I negative: planted prohibited auto-load canary fails
+  ---
+  duration_ms: 2.143625
+  type: 'test'
+  ...
+# Subtest: EP-I negative: runtime mismatch fails
+ok 19 - EP-I negative: runtime mismatch fails
+  ---
+  duration_ms: 1.791
+  type: 'test'
+  ...
+# Subtest: EP-I negative: client config exposing a prohibited writable root fails
+ok 20 - EP-I negative: client config exposing a prohibited writable root fails
+  ---
+  duration_ms: 1.605958
+  type: 'test'
+  ...
+# Subtest: HC-I positive: unaltered lock verifies
+ok 21 - HC-I positive: unaltered lock verifies
+  ---
+  duration_ms: 1.008958
+  type: 'test'
+  ...
+# Subtest: HC-I negative: altered locked answer detected
+ok 22 - HC-I negative: altered locked answer detected
+  ---
+  duration_ms: 0.744583
+  type: 'test'
+  ...
+# Subtest: HC-I negative (custody chain): edited custody entry detected; wrong material refused
+ok 23 - HC-I negative (custody chain): edited custody entry detected; wrong material refused
+  ---
+  duration_ms: 1.059834
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 76.616709

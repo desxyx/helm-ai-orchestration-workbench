@@ -1,0 +1,1016 @@
+{
+  "schema_version": "0.1",
+  "identity": {
+    "project_alias": "<W2_RUN_RESOURCE_PREFIX>",
+    "target_environment": "Google Cloud <CLOUD_PROJECT>; <PRIVATE_URL_0233>",
+    "provider_profile": "gcp",
+    "mode": "basic",
+    "updated_at": "2026-10-05T12:53:01.354Z",
+    "updated_by": {
+      "role": "ai",
+      "name": "ai-deployer"
+    },
+    "session_id": "<W2_RUN_RESOURCE_PREFIX>-20261005-01"
+  },
+  "stage": "closed",
+  "activity": {
+    "summary": "Teardown complete; cloud resources and deployment DNS record verified absent",
+    "started_at": "2026-10-05T12:51:49.672Z",
+    "expected_duration": null,
+    "slow_reason": null,
+    "waiting_on": "none",
+    "last_progress": {
+      "at": "2026-10-05T12:53:01.354Z",
+      "summary": "All deployment cloud resources and SSH entries absent; authoritative DNS confirms A record removed"
+    }
+  },
+  "brief": {
+    "app_summary": "Alerta monitoring application with a Vue frontend, Python API, and PostgreSQL storage. Users register and log in with email/password.",
+    "components": [
+      {
+        "name": "webui",
+        "role": "Vue static website built from the pinned frontend commit"
+      },
+      {
+        "name": "api",
+        "role": "Alerta Python API with authenticated signup and login"
+      },
+      {
+        "name": "postgres",
+        "role": "Durable account and alert storage"
+      },
+      {
+        "name": "caddy",
+        "role": "HTTPS certificates, static files, and same-origin API reverse proxy"
+      }
+    ],
+    "topology": "Dedicated VPC and subnet; one Melbourne VM runs Caddy, Alerta API and PostgreSQL in Compose. Only HTTP/HTTPS are public. SSH uses IAP. PostgreSQL data and secret files live on a separate persistent disk; services restart automatically.",
+    "resource_rationale": "Small single-server deployment suits assumed light traffic and requires few paid resources. Separate retained data disk meets restart durability; Caddy manages HTTPS without a paid load balancer.",
+    "heavier_alternatives": [
+      {
+        "alternative": "GKE cluster",
+        "why_unnecessary": "No multi-server scheduling or scaling requirement was supplied."
+      },
+      {
+        "alternative": "Cloud SQL",
+        "why_unnecessary": "PostgreSQL on retained storage meets restart persistence; managed database adds recurring cost."
+      },
+      {
+        "alternative": "Cloud Load Balancing",
+        "why_unnecessary": "Caddy on the VM terminates HTTPS for this single hostname."
+      }
+    ],
+    "assumptions": [
+      "Initial traffic is light; single VM availability is sufficient.",
+      "User delegated region choice; Melbourne chosen near <LOCAL_INSTITUTION>.",
+      "User delegated admin choice; reserve admin role for active gcloud account email.",
+      "Open email/password signup without email verification; reserve admin account before DNS release; no SMTP setup requested."
+    ]
+  },
+  "plan": {
+    "tiers": [
+      {
+        "id": "a",
+        "name": "Small (recommended)",
+        "composition": "e2-small 2 GiB VM, 20 GiB standard boot disk, 20 GiB retained standard data disk, one static IPv4, dedicated VPC/subnet and web/IAP firewall rules",
+        "region": "australia-southeast2",
+        "cost_range": {
+          "low": 21,
+          "high": 30,
+          "currency": "USD",
+          "period": "month"
+        },
+        "price_checked_at": "2026-10-05T08:49:08.704Z",
+        "load_assumption": "Light traffic, a few concurrent users",
+        "uncertainty": "Fixed base about USD20.56/month at 730 hours; traffic, tax and currency conversion extra; estimated range is not a spending cap."
+      },
+      {
+        "id": "b",
+        "name": "More memory",
+        "composition": "Same resources with e2-medium 4 GiB VM",
+        "region": "australia-southeast2",
+        "cost_range": {
+          "low": 35,
+          "high": 45,
+          "currency": "USD",
+          "period": "month"
+        },
+        "price_checked_at": "2026-10-05T08:49:08.704Z",
+        "load_assumption": "More memory headroom for modest activity",
+        "uncertainty": "Fixed base about USD35.31/month at 730 hours; traffic, tax and currency conversion extra; estimated range is not a spending cap."
+      }
+    ],
+    "default_tier": "a",
+    "selected_tier": "a"
+  },
+  "pending_decision": null,
+  "resources": [
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-net",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "compute.network",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-net",
+      "purpose": "Dedicated application network",
+      "billable": false,
+      "lifecycle": "deleted",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-net"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-subnet",
+      "parent_id": "<W2_RUN_RESOURCE_PREFIX>-net",
+      "provider": "gcp",
+      "type": "compute.subnetwork",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-subnet",
+      "purpose": "Private VM subnet",
+      "billable": false,
+      "lifecycle": "deleted",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-subnet"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "parent_id": "<W2_RUN_RESOURCE_PREFIX>-net",
+      "provider": "gcp",
+      "type": "compute.firewall",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "purpose": "SSH restricted to Google IAP",
+      "billable": false,
+      "lifecycle": "deleted",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-iap-ssh"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-ip",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "compute.address",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-ip",
+      "purpose": "Static public IPv4 for user-managed DNS",
+      "billable": true,
+      "lifecycle": "deleted",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-ip"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-data",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "compute.disk",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-data",
+      "purpose": "Retained PostgreSQL data, secrets and certificate storage",
+      "billable": true,
+      "lifecycle": "deleted",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-data"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-vm",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "compute.instance",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-vm",
+      "purpose": "Approved option A application VM",
+      "billable": true,
+      "lifecycle": "deleted",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-vm"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-vm-boot",
+      "parent_id": "<W2_RUN_RESOURCE_PREFIX>-vm",
+      "provider": "gcp",
+      "type": "compute.disk",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-vm",
+      "purpose": "Retained 20 GiB boot disk created with VM",
+      "billable": true,
+      "lifecycle": "deleted",
+      "origin": "created_implicitly",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-vm-boot"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-web",
+      "parent_id": "<W2_RUN_RESOURCE_PREFIX>-net",
+      "provider": "gcp",
+      "type": "compute.firewall",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-web",
+      "purpose": "Public HTTP/HTTPS for approved website",
+      "billable": false,
+      "lifecycle": "deleted",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-web"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-deployment-ssh-key",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "compute.projectMetadata.sshKey",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-deploy",
+      "purpose": "Deployment SSH key entries added to project metadata",
+      "billable": false,
+      "lifecycle": "deleted",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-deployment-ssh-key"
+    }
+  ],
+  "sources": [
+    {
+      "name": "alerta-webui",
+      "remote": "https://github.com/alerta/alerta-webui",
+      "pinned_ref": "<PRIVATE_REF_03446>",
+      "local_changes_fact": "source.alerta-webui.changes",
+      "local_changes_summary": "Clean; git status control passed",
+      "deployed_ref_fact": "source.alerta-webui.deployed"
+    },
+    {
+      "name": "alerta",
+      "remote": "https://github.com/alerta/alerta",
+      "pinned_ref": "<PRIVATE_REF_01617>",
+      "local_changes_fact": "source.alerta.changes",
+      "local_changes_summary": "Clean; git status control passed",
+      "deployed_ref_fact": "source.alerta.deployed"
+    }
+  ],
+  "facts": [
+    {
+      "key": "gcp.network",
+      "label": "Existing default VPC available",
+      "value": "default",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "gcloud compute networks list",
+      "checked_at": "2026-10-05T08:40:07.345Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0005-networks.json"
+      ]
+    },
+    {
+      "key": "load.expected",
+      "label": "Expected initial traffic",
+      "value": "Light traffic; a few concurrent users",
+      "status": "ASSUMED",
+      "source": "reasoning",
+      "class": "other",
+      "scope": "No traffic requirements supplied; single VM proposed",
+      "checked_at": null,
+      "fresh_for_minutes": 1440,
+      "evidence": []
+    },
+    {
+      "key": "source.alerta-webui.commit",
+      "label": "alerta-webui pinned commit confirmed",
+      "value": "<PRIVATE_REF_03446>",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "Local git rev-parse HEAD",
+      "checked_at": "2026-10-05T08:41:17.283Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0008-source-alerta-webui.txt"
+      ]
+    },
+    {
+      "key": "source.alerta-webui.changes",
+      "label": "alerta-webui has no local changes",
+      "value": "clean",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "git status --porcelain=v1 --untracked-files=all",
+      "checked_at": "2026-10-05T08:41:17.375Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0008-source-alerta-webui.txt"
+      ],
+      "negative_result": true,
+      "control": "Same git status command reports untracked-control.txt in scratch repository"
+    },
+    {
+      "key": "source.alerta.commit",
+      "label": "alerta pinned commit confirmed",
+      "value": "<PRIVATE_REF_01617>",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "Local git rev-parse HEAD",
+      "checked_at": "2026-10-05T08:41:17.546Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0008-source-alerta.txt"
+      ]
+    },
+    {
+      "key": "source.alerta.changes",
+      "label": "alerta has no local changes",
+      "value": "clean",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "git status --porcelain=v1 --untracked-files=all",
+      "checked_at": "2026-10-05T08:41:17.634Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0008-source-alerta.txt"
+      ],
+      "negative_result": true,
+      "control": "Same git status command reports untracked-control.txt in scratch repository"
+    },
+    {
+      "key": "choice.region",
+      "label": "Region selected under user delegation",
+      "value": "australia-southeast2 (Melbourne)",
+      "status": "ASSUMED",
+      "source": "reasoning",
+      "class": "identity",
+      "scope": "User replied your choice; AI chose Melbourne near <LOCAL_INSTITUTION>",
+      "checked_at": null,
+      "fresh_for_minutes": 1440,
+      "evidence": []
+    },
+    {
+      "key": "choice.admin_email",
+      "label": "Administrator email selected under user delegation",
+      "value": "<ACCOUNT_EMAIL_011>",
+      "status": "ASSUMED",
+      "source": "reasoning",
+      "class": "other",
+      "scope": "User delegated choice; selected active gcloud account email; account will be created by user through signup",
+      "checked_at": null,
+      "fresh_for_minutes": 1440,
+      "evidence": []
+    },
+    {
+      "key": "build.frontend",
+      "label": "Production frontend build passed",
+      "value": true,
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "npm run build at requested frontend commit",
+      "checked_at": "2026-10-05T08:47:39.474Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0011-frontend-build.txt"
+      ]
+    },
+    {
+      "key": "build.release",
+      "label": "Deployment archive prepared",
+      "value": true,
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "Backend git archive and built static frontend; shell/config syntax checked",
+      "checked_at": "2026-10-05T08:47:39.562Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0014-local-validation.txt"
+      ]
+    },
+    {
+      "key": "price.fixed_small",
+      "label": "Small tier fixed monthly cost",
+      "value": 20.56,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "price",
+      "scope": "Official GCP Melbourne rates observed; 730 hours, 40 GiB standard disks, one in-use external IPv4",
+      "checked_at": "2026-10-05T08:49:08.705Z",
+      "fresh_for_minutes": 43200,
+      "evidence": [
+        "evidence/0015-official-pricing.json"
+      ]
+    },
+    {
+      "key": "price.fixed_medium",
+      "label": "Medium tier fixed monthly cost",
+      "value": 35.31,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "price",
+      "scope": "Official GCP Melbourne rates observed; 730 hours, 40 GiB standard disks, one in-use external IPv4",
+      "checked_at": "2026-10-05T08:49:08.798Z",
+      "fresh_for_minutes": 43200,
+      "evidence": [
+        "evidence/0015-official-pricing.json"
+      ]
+    },
+    {
+      "key": "gcp.machine",
+      "label": "e2-small has 2 GiB RAM",
+      "value": "e2-small: 2 GiB RAM, shared CPU",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Machine type describe in australia-southeast2-a",
+      "checked_at": "2026-10-05T08:49:08.980Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0013-machine-type.json"
+      ]
+    },
+    {
+      "key": "gcp.billing",
+      "label": "Billing enabled rechecked",
+      "value": true,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "permission",
+      "scope": "Pre-provision live gcloud check",
+      "checked_at": "2026-10-05T09:23:39.416Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0018-billing-recheck.json"
+      ]
+    },
+    {
+      "key": "gcp.owner",
+      "label": "Owner permission rechecked",
+      "value": "<ACCOUNT_EMAIL_011>: roles/owner",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "permission",
+      "scope": "Pre-provision live gcloud check",
+      "checked_at": "2026-10-05T09:23:39.511Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0019-owner-recheck.txt"
+      ]
+    },
+    {
+      "key": "gcp.compute_api",
+      "label": "Compute API rechecked",
+      "value": true,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "permission",
+      "scope": "Pre-provision live gcloud check",
+      "checked_at": "2026-10-05T09:23:39.616Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0021-services-recheck.txt"
+      ]
+    },
+    {
+      "key": "gcp.region",
+      "label": "Melbourne status and quotas rechecked",
+      "value": "UP; approved tier quotas available",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Pre-provision live gcloud check",
+      "checked_at": "2026-10-05T09:23:39.733Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0020-region-recheck.json"
+      ]
+    },
+    {
+      "key": "health.acceptance.before",
+      "label": "VM-local account and alert checks passed before reboot",
+      "value": "signup/login, ordinary/admin scopes, alert readback passed; boot_id=<NATIVE_ID_1421>",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "Loopback entry point through Caddy, API and PostgreSQL",
+      "checked_at": "2026-10-05T10:07:43.816Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0077-acceptance-before.txt"
+      ]
+    },
+    {
+      "key": "source.alerta-webui.deployed",
+      "label": "alerta-webui deployed pinned source",
+      "value": "<PRIVATE_REF_03446>",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "source",
+      "scope": "Manifest, static index checksum and API image revision",
+      "checked_at": "2026-10-05T10:08:46.483Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0077-acceptance-before.txt"
+      ]
+    },
+    {
+      "key": "source.alerta.deployed",
+      "label": "alerta deployed pinned source",
+      "value": "<PRIVATE_REF_01617>",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "source",
+      "scope": "Manifest, static index checksum and API image revision",
+      "checked_at": "2026-10-05T10:08:46.596Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0077-acceptance-before.txt"
+      ]
+    },
+    {
+      "key": "health.ui-local",
+      "label": "Browser signup/login and alert display passed",
+      "value": "signup, fresh browser login, saved alert displayed; URL=http://127.0.0.1:18080",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "Installed browser test through http://127.0.0.1:18080",
+      "checked_at": "2026-10-05T10:11:16.600Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0099-ui-local.txt"
+      ]
+    },
+    {
+      "key": "network.public_http",
+      "label": "Public HTTP redirects to HTTPS",
+      "value": "HTTP 308",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "network",
+      "scope": "External HTTP request to static IP with intended hostname",
+      "checked_at": "2026-10-05T10:16:10.720Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0102-public-http.txt"
+      ]
+    },
+    {
+      "key": "network.dns_user_added",
+      "label": "User reports DNS record added",
+      "value": "DNS added",
+      "status": "USER_CONFIRMED",
+      "source": "human",
+      "class": "network",
+      "scope": "User reply in current session",
+      "checked_at": null,
+      "fresh_for_minutes": 240,
+      "evidence": []
+    },
+    {
+      "key": "health.ui-before",
+      "label": "Browser signup/login and alert display passed",
+      "value": "signup, fresh browser login, saved alert displayed; URL=<PRIVATE_URL_0233>",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "Installed browser test through <PRIVATE_URL_0233>",
+      "checked_at": "2026-10-05T10:20:20.771Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0110-ui-before.txt"
+      ]
+    },
+    {
+      "key": "health.ui-after",
+      "label": "Browser signup/login and alert display passed",
+      "value": "signup, fresh browser login, saved alert displayed; URL=<PRIVATE_URL_0233>",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "Installed browser test through <PRIVATE_URL_0233>",
+      "checked_at": "2026-10-05T10:22:10.282Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0121-ui-after.txt"
+      ]
+    },
+    {
+      "key": "health.db",
+      "label": "db is healthy after final reboot",
+      "value": "healthy",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "Docker state after final reboot",
+      "checked_at": "2026-10-05T10:23:05.570Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0123-final-runtime.txt"
+      ]
+    },
+    {
+      "key": "health.api",
+      "label": "api is healthy after final reboot",
+      "value": "healthy",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "Docker state after final reboot",
+      "checked_at": "2026-10-05T10:23:05.693Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0123-final-runtime.txt"
+      ]
+    },
+    {
+      "key": "health.web",
+      "label": "web is healthy after final reboot",
+      "value": "running",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "Docker state after final reboot",
+      "checked_at": "2026-10-05T10:23:05.811Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0123-final-runtime.txt"
+      ]
+    },
+    {
+      "key": "health.data_mount",
+      "label": "Retained data disk mounted after final reboot",
+      "value": "/dev/sdb",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "mountpoint and by-id disk identity match; private secret permissions verified",
+      "checked_at": "2026-10-05T10:23:05.933Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0123-final-runtime.txt"
+      ]
+    },
+    {
+      "key": "health.final_restart",
+      "label": "Final VM restart confirmed",
+      "value": "<NATIVE_ID_2918>",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "Kernel boot ID differs from previous restart",
+      "checked_at": "2026-10-05T10:23:06.052Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0123-final-runtime.txt"
+      ]
+    },
+    {
+      "key": "health.acceptance.after",
+      "label": "VM-local account and alert checks passed after reboot",
+      "value": "signup/login, ordinary/admin scopes, alert readback passed; boot_id=<NATIVE_ID_2918>",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "Loopback entry point through Caddy, API and PostgreSQL",
+      "checked_at": "2026-10-05T10:23:26.412Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0133-acceptance-after.txt"
+      ]
+    },
+    {
+      "key": "network.dns.public",
+      "label": "DNS points to allocated static IP",
+      "value": "<IP_ADDRESS_113>",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "network",
+      "scope": "A lookup at 1.1.1.1",
+      "checked_at": "2026-10-05T10:24:12.931Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0135-public-dns-1.1.1.1.txt"
+      ]
+    },
+    {
+      "key": "network.dns.authoritative",
+      "label": "DNS points to allocated static IP",
+      "value": "<IP_ADDRESS_113>",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "network",
+      "scope": "A lookup at <DNS_RESOLVER_A>",
+      "checked_at": "2026-10-05T10:24:13.091Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0136-public-dns-<DNS_RESOLVER_A>.txt"
+      ]
+    },
+    {
+      "key": "health.public_https",
+      "label": "Public website has trusted HTTPS",
+      "value": "HTTP 200; trusted certificate matches <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "External curl plus TLS verification using Python system CA roots",
+      "checked_at": "2026-10-05T10:24:13.318Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0137-trusted-https.txt",
+        "evidence/0137-tls-certificate.txt"
+      ]
+    },
+    {
+      "key": "health.public_browser",
+      "label": "Public HTTPS browser acceptance passed",
+      "value": "Signup, fresh browser login, saved alert display passed before and after full VM restart",
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "Public HTTPS URL with normal certificate verification; separate ordinary-user account",
+      "checked_at": "2026-10-05T10:24:50.218Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0110-ui-before.txt",
+        "evidence/0121-ui-after.txt"
+      ]
+    },
+    {
+      "key": "health.persistence",
+      "label": "Account and alert persist after full VM restart",
+      "value": true,
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "Changed kernel boot ID; fresh website login and identical saved alert after reboot",
+      "checked_at": "2026-10-05T10:24:50.353Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0123-final-runtime.txt",
+        "evidence/0121-ui-after.txt",
+        "evidence/0133-acceptance-after.txt"
+      ]
+    },
+    {
+      "key": "health.admin",
+      "label": "Administrator reserved and login verified after final reboot",
+      "value": true,
+      "status": "STALE",
+      "source": "remote_observation",
+      "class": "health",
+      "scope": "Root-only administrator credentials used privately; admin scope verified",
+      "checked_at": "2026-10-05T10:24:50.480Z",
+      "fresh_for_minutes": 60,
+      "evidence": [
+        "evidence/0133-acceptance-after.txt"
+      ]
+    },
+    {
+      "key": "teardown.ssh_key",
+      "label": "Deployment SSH key entries removed",
+      "value": 0,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Exact deployment public-key blob filtered from live project metadata",
+      "checked_at": "2026-10-05T12:51:28.643Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0143-teardown-before.json",
+        "evidence/0183-ssh-key-removal.txt"
+      ],
+      "negative_result": true,
+      "control": "Before inventory observed eight matching deployment key entries"
+    },
+    {
+      "key": "gcp.project",
+      "label": "Target project verified for teardown",
+      "value": "<CLOUD_PROJECT>",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "identity",
+      "scope": "Explicit account/project and live project describe",
+      "checked_at": "2026-10-05T12:51:39.113Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0184-teardown-project.txt"
+      ]
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-vm",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-vm deletion verified",
+      "value": "absent",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Same unfiltered project list as before deletion",
+      "checked_at": "2026-10-05T12:51:40.665Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0143-teardown-before.json",
+        "evidence/0185-teardown-after-instances.txt"
+      ],
+      "negative_result": true,
+      "control": "Before inventory found exact name and provider ID <NUMERIC_RESOURCE_0150>"
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-vm-boot",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-vm deletion verified",
+      "value": "absent",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Same unfiltered project list as before deletion",
+      "checked_at": "2026-10-05T12:51:42.187Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0143-teardown-before.json",
+        "evidence/0186-teardown-after-disks.txt"
+      ],
+      "negative_result": true,
+      "control": "Before inventory found exact name and provider ID <NUMERIC_RESOURCE_0005>"
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-data",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-data deletion verified",
+      "value": "absent",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Same unfiltered project list as before deletion",
+      "checked_at": "2026-10-05T12:51:42.323Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0143-teardown-before.json",
+        "evidence/0186-teardown-after-disks.txt"
+      ],
+      "negative_result": true,
+      "control": "Before inventory found exact name and provider ID <NUMERIC_RESOURCE_0026>"
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-ip",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-ip deletion verified",
+      "value": "absent",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Same unfiltered project list as before deletion",
+      "checked_at": "2026-10-05T12:51:43.803Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0143-teardown-before.json",
+        "evidence/0188-teardown-after-addresses.txt"
+      ],
+      "negative_result": true,
+      "control": "Before inventory found exact name and provider ID <NUMERIC_RESOURCE_0095>"
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-web",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-web deletion verified",
+      "value": "absent",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Same unfiltered project list as before deletion",
+      "checked_at": "2026-10-05T12:51:45.086Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0143-teardown-before.json",
+        "evidence/0189-teardown-after-firewalls.txt"
+      ],
+      "negative_result": true,
+      "control": "Before inventory found exact name and provider ID <NUMERIC_RESOURCE_0045>"
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh deletion verified",
+      "value": "absent",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Same unfiltered project list as before deletion",
+      "checked_at": "2026-10-05T12:51:45.221Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0143-teardown-before.json",
+        "evidence/0189-teardown-after-firewalls.txt"
+      ],
+      "negative_result": true,
+      "control": "Before inventory found exact name and provider ID <NUMERIC_RESOURCE_0176>"
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-subnet",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-subnet deletion verified",
+      "value": "absent",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Same unfiltered project list as before deletion",
+      "checked_at": "2026-10-05T12:51:46.832Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0143-teardown-before.json",
+        "evidence/0191-teardown-after-subnets.txt"
+      ],
+      "negative_result": true,
+      "control": "Before inventory found exact name and provider ID <NUMERIC_RESOURCE_0043>"
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-net",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-net deletion verified",
+      "value": "absent",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Same unfiltered project list as before deletion",
+      "checked_at": "2026-10-05T12:51:48.118Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0143-teardown-before.json",
+        "evidence/0192-teardown-after-networks.txt"
+      ],
+      "negative_result": true,
+      "control": "Before inventory found exact name and provider ID <NUMERIC_RESOURCE_0085>"
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-deployment-ssh-key",
+      "label": "Deployment SSH key entries deletion verified",
+      "value": "absent",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Exact public-key match in live project metadata",
+      "checked_at": "2026-10-05T12:51:49.401Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0143-teardown-before.json",
+        "evidence/0193-teardown-final-key-check.txt"
+      ],
+      "negative_result": true,
+      "control": "Before inventory found eight matching deployment entries"
+    },
+    {
+      "key": "teardown.cloud_resources",
+      "label": "All deployment cloud resources removed",
+      "value": 0,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Unfiltered project inventory repeated; pre-existing resource identities preserved",
+      "checked_at": "2026-10-05T12:51:49.536Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0143-teardown-before.json",
+        "evidence/0185-teardown-after-instances.txt",
+        "evidence/0186-teardown-after-disks.txt",
+        "evidence/0188-teardown-after-addresses.txt",
+        "evidence/0189-teardown-after-firewalls.txt",
+        "evidence/0191-teardown-after-subnets.txt",
+        "evidence/0192-teardown-after-networks.txt",
+        "evidence/0193-teardown-final-key-check.txt"
+      ],
+      "negative_result": true,
+      "control": "Before inventory detected all eight deployment resources and matching SSH entries"
+    },
+    {
+      "key": "network.public_dns",
+      "label": "Deployment DNS A record removal verified",
+      "value": "absent",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "network",
+      "scope": "Cloudflare authoritative A lookup returns NXDOMAIN; zone A lookup control succeeds",
+      "checked_at": "2026-10-05T12:53:01.215Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0136-public-dns-<DNS_RESOLVER_A>.txt",
+        "evidence/teardown-dns-removed.txt",
+        "evidence/teardown-dns-control.txt"
+      ],
+      "negative_result": true,
+      "control": "Earlier authoritative lookup found the exact deployment A record; current zone A lookup returns two addresses"
+    }
+  ],
+  "secrets": [
+    {
+      "name": "SECRET_KEY",
+      "location": "/srv/<W2_RUN_RESOURCE_PREFIX>/secrets/api.env on data disk",
+      "last_verified_at": "2026-10-05T10:24:50.603Z",
+      "availability": "missing"
+    },
+    {
+      "name": "POSTGRES_PASSWORD",
+      "location": "/srv/<W2_RUN_RESOURCE_PREFIX>/secrets/db.env on data disk",
+      "last_verified_at": "2026-10-05T10:24:50.603Z",
+      "availability": "missing"
+    },
+    {
+      "name": "ADMIN_INITIAL_PASSWORD",
+      "location": "root-only /srv/<W2_RUN_RESOURCE_PREFIX>/secrets/admin.json",
+      "last_verified_at": "2026-10-05T10:24:50.603Z",
+      "availability": "missing"
+    }
+  ],
+  "open_items": [],
+  "next": {
+    "action": "No cloud deployment resources or DNS cleanup remain",
+    "decision_owner": "none"
+  },
+  "handoff": {
+    "read_first": [
+      "/private/tmp/qefdb2bab/d1020f3ce00567b7/skills/router.md",
+      "state.json",
+      "events.jsonl (recent events only)"
+    ],
+    "last_safe_state": "All eight deployment cloud resources and deployment SSH key entries removed; pre-existing cloud resources preserved. Cloudflare authoritative DNS confirms <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> is absent. Application data was permanently deleted with both disks.",
+    "rollback_anchor": null,
+    "known_unverified": [],
+    "fragile": []
+  }
+}

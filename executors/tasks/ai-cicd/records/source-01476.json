@@ -1,0 +1,20 @@
+{
+  "attempt": 7,
+  "query": "firewall_inventory",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "compute",
+    "firewall-rules",
+    "list",
+    "--project=<CLOUD_PROJECT>",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T20:35:07.624+11:00",
+  "end_utc": "2026-10-05T20:35:08.960+11:00",
+  "exit_code": 0,
+  "stdout": "firewall_inventory_attempt7.stdout",
+  "stdout_sha256": "<PRIVATE_REF_01429>",
+  "stderr": "firewall_inventory_attempt7.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

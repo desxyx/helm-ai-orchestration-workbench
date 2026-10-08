@@ -1,0 +1,102 @@
+{
+  "spec": "W1-C9 checkpoint packet-set completeness spec v1",
+  "authority": [
+    "Master 03 §4.1 checkpoint kinds and RUN_CLOSE registration list (CHECKPOINT_PROTOCOL.md §4.1)",
+    "Master 03 §4.4 packet fields (CHECKPOINT_PROTOCOL.md §4.4)",
+    "Master 03 §5.3 interruption snapshot; §17 deployment-terminal captures",
+    "RUN_W1_NEXT_ROUND_CORRECTIONS items 2, 3, 6, 7, 8 and 9"
+  ],
+  "note": "Instrument spec only. It names artifacts already required by frozen text; it adds no measurement requirement. Each attachment is {kind, locator, sha256}.",
+  "packet_fields": [
+    "run_id",
+    "checkpoint_no",
+    "checkpoint_kind",
+    "sequence_no",
+    "segment_no",
+    "segment_count",
+    "time_range",
+    "source_locator",
+    "prev_segment_hash",
+    "segment_hash",
+    "content",
+    "attachments"
+  ],
+  "kind_order": [
+    "FORCED_INTERRUPT",
+    "DEPLOYMENT_TERMINAL",
+    "RUN_CLOSE"
+  ],
+  "forced_interrupt_absence_requires": "forced_interruption_status = NOT_TRIGGERED_NO_BILLABLE_RESOURCE",
+  "attachments_by_kind": {
+    "FORCED_INTERRUPT": [
+      {
+        "kind": "interruption_snapshot",
+        "source": "Master 03 §5.3"
+      },
+      {
+        "kind": "resource_x_probe_packet",
+        "source": "W1 #2 / W1-C2"
+      }
+    ],
+    "DEPLOYMENT_TERMINAL": [
+      {
+        "kind": "terminal_declaration",
+        "source": "Master 03 §17 step 1"
+      },
+      {
+        "kind": "cloud_inventory_export",
+        "source": "Master 03 §17 step 4"
+      },
+      {
+        "kind": "workspace_archive",
+        "source": "Master 03 §17 step 5"
+      }
+    ],
+    "RUN_CLOSE": [
+      {
+        "kind": "acceptance_evidence",
+        "source": "Master 03 §4.1 RUN_CLOSE"
+      },
+      {
+        "kind": "a7_first_pass_timestamp",
+        "source": "W1 #7"
+      },
+      {
+        "kind": "a6_raw_redacted_answer",
+        "source": "W1 #8"
+      },
+      {
+        "kind": "teardown_attempt",
+        "source": "Master 03 §4.1 RUN_CLOSE"
+      },
+      {
+        "kind": "residual_inspection",
+        "source": "Master 03 §4.1 RUN_CLOSE"
+      },
+      {
+        "kind": "m10_secret_scan_plant",
+        "source": "W1 #6"
+      },
+      {
+        "kind": "m10_secret_scan_scan",
+        "source": "W1 #6"
+      },
+      {
+        "kind": "m10_secret_scan_evaluate",
+        "source": "W1 #6"
+      },
+      {
+        "kind": "m10_secret_scan_cleanup",
+        "source": "W1 #6"
+      },
+      {
+        "kind": "m8_timer_start_stop",
+        "source": "W1 #3"
+      },
+      {
+        "kind": "postmortem_or_unavailable",
+        "source": "Master 03 §4.1 RUN_CLOSE"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "phase": "after",
+  "url": "<PRIVATE_URL_0233>",
+  "tested_at": "2026-10-05T10:22:10.101Z",
+  "website_signup": true,
+  "website_login_fresh_browser": true,
+  "alert_displayed": true,
+  "alert_id": "<NATIVE_ID_1482>",
+  "javascript_errors": []
+}

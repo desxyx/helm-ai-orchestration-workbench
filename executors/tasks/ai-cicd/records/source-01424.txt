@@ -1,0 +1,4 @@
+For RUN-W2B, load the custodian checkpoint packets from /private/tmp/survey-7c92/work/inbox/.
+Verify SHA256SUMS_CP01_CP02 against expected SHA-256 <PRIVATE_REF_01067>, then verify every listed file, each attachment hash, and the continuous increment chain across CP-01 and CP-02.
+Read CP-01_PACKETS.json followed by CP-02_PACKETS.json, including all mechanically bound attachments. Source coverage is S1 records 1–352 and S2 records 1–528; the redacted native JSONL preserves every line in order. The originals remain in private custody. Personal identifiers and credential values are redacted; screenshot pixels are withheld.
+These are FORCED_INTERRUPT and DEPLOYMENT_TERMINAL packets. Keep analysis private, do not give feedback to the execution chain, and reply only CHECKPOINT_<N>_SEGMENT_<k>_INGESTED for each segment. This is not RUN_CLOSE. Verification, trace and teardown evidence will follow under the protocol.

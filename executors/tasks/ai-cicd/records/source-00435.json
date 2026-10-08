@@ -1,0 +1,118 @@
+{
+  "removed": [
+    "docs/experiment.md",
+    "docs/related-work.md",
+    "docs/roadmap-v0.1b.md",
+    "fixtures/rehearsal/README.md",
+    "fixtures/rehearsal/templates/activation-line.txt",
+    "fixtures/rehearsal/templates/continuation.md",
+    "fixtures/rehearsal/templates/handoff-questions.md",
+    "fixtures/rehearsal/templates/task.md",
+    "fixtures/rehearsal/toy-app/README.md",
+    "fixtures/rehearsal/toy-app/api.mjs",
+    "fixtures/rehearsal/toy-app/compose.yaml",
+    "fixtures/rehearsal/toy-app/run.mjs",
+    "fixtures/rehearsal/toy-app/services.json",
+    "fixtures/rehearsal/toy-app/web.mjs",
+    "tests/rehearsal.test.mjs"
+  ],
+  "changed_or_new": [
+    {
+      "path": ".gitignore",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_03610>",
+      "bytes": 242
+    },
+    {
+      "path": "README.md",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_00891>",
+      "bytes": 10221
+    },
+    {
+      "path": "docs/architecture.md",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_03404>",
+      "bytes": 4602
+    },
+    {
+      "path": "docs/design-decisions.md",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_03589>",
+      "bytes": 17890
+    },
+    {
+      "path": "docs/provenance.md",
+      "status": "new",
+      "sha256": "<PRIVATE_REF_02779>",
+      "bytes": 2103
+    },
+    {
+      "path": "docs/validation.md",
+      "status": "new",
+      "sha256": "<PRIVATE_REF_02869>",
+      "bytes": 2988
+    },
+    {
+      "path": "fixtures/valid/scenarios/view-handoff-exception/events.jsonl",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_01087>",
+      "bytes": 1737
+    },
+    {
+      "path": "fixtures/valid/scenarios/view-handoff-exception/state.json",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_01570>",
+      "bytes": 4213
+    },
+    {
+      "path": "skills/router.md",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_01580>",
+      "bytes": 12483
+    },
+    {
+      "path": "skills/stages/plan.md",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_01135>",
+      "bytes": 5550
+    },
+    {
+      "path": "tests/design-decisions.test.mjs",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_02526>",
+      "bytes": 5638
+    },
+    {
+      "path": "tests/docs.test.mjs",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_02753>",
+      "bytes": 5962
+    },
+    {
+      "path": "tests/helpers/vocabulary.mjs",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_01637>",
+      "bytes": 1641
+    },
+    {
+      "path": "tests/neutral-domains.test.mjs",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_01168>",
+      "bytes": 2166
+    },
+    {
+      "path": "tests/view-handoff.test.mjs",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_02071>",
+      "bytes": 6384
+    },
+    {
+      "path": "tests/vocabulary.test.mjs",
+      "status": "changed",
+      "sha256": "<PRIVATE_REF_01157>",
+      "bytes": 1881
+    }
+  ],
+  "public_files": 133
+}

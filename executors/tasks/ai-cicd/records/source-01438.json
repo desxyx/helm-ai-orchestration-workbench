@@ -1,0 +1,18 @@
+{
+  "run_id": "RUN-W2B",
+  "recorded_at": "2026-10-05T12:42:49.153735+00:00",
+  "source": "Owner relays Deployer approval request; no approval yet",
+  "resource_count": 8,
+  "listed_resources_match_saved_scope": true,
+  "project_key_blob_matches_bound_deployment_key": true,
+  "project_key_matching_entries_claimed_by_deployer": 8,
+  "project_ssh_evidence": "Deployer-local retained inventory, not independently captured by custodian",
+  "approval_reply_requested": "approve teardown",
+  "approval_received": false,
+  "DNS_owner_record": {
+    "type": "A",
+    "name": "<W2_RUN_RESOURCE_PREFIX>",
+    "content": "<IP_ADDRESS_113>"
+  },
+  "preservation": "Only this run resources and this deployment SSH entries; preserve pre-existing/shared access; project key entire set never authorized"
+}

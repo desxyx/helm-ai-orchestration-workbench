@@ -1,0 +1,18 @@
+{
+  "attempt": 2,
+  "query": "Q02_project",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "config",
+    "get-value",
+    "project"
+  ],
+  "start_utc": "2026-10-05T14:39:47.640+11:00",
+  "end_utc": "2026-10-05T14:39:47.968+11:00",
+  "exit_code": 0,
+  "stdout": "Q02_project_attempt2.stdout",
+  "stdout_sha256": "<PRIVATE_REF_02941>",
+  "stderr": "Q02_project_attempt2.stderr",
+  "stderr_sha256": "<PRIVATE_REF_01169>",
+  "exclusive_stdout": true
+}

@@ -1,0 +1,28 @@
+[
+ {
+  "problem": true,
+  "text": "Problem found Rv health endpoint response Value: false Verification: ✓✓ Verified remotely, fresh · checked 2 min ago · fresh for 58 more min",
+  "kind": "verified-remote"
+ },
+ {
+  "problem": false,
+  "text": "Rv TLS certificate present Value: yes Verification: ✓✓ Verified remotely, fresh · checked 2 min ago · fresh for 58 more min (until 11:20 UTC",
+  "kind": "verified-remote"
+ },
+ {
+  "problem": false,
+  "text": "Rv public bucket access Value: false Verification: ✓✓ Verified remotely, fresh · checked 2 min ago · fresh for 58 more min (until 11:20 UTC)",
+  "kind": "verified-remote"
+ },
+ {
+  "problem": false,
+  "text": "Rv disk usage Value: 40% Verification: ◐ Stale · checked 2 min ago · scope: Active gcloud configuration on the deployer host Evidence: evide",
+  "kind": "stale"
+ },
+ {
+  "problem": false,
+  "text": "Rv backup schedule Value: no value Verification: ? Unknown · never checked · scope: Active gcloud configuration on the deployer host",
+  "kind": "unknown"
+ }
+]
+order first is problem: true | problem count: 1

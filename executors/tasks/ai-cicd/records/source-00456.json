@@ -1,0 +1,47 @@
+{
+  "existing_public_root_links": [
+    {
+      "url": "https://github.com/helmls-studio/agent-run-recorder",
+      "command": [
+        "curl",
+        "-sS",
+        "-I",
+        "-L",
+        "--max-time",
+        "25",
+        "-o",
+        "/dev/null",
+        "-w",
+        "%{http_code}",
+        "https://github.com/helmls-studio/agent-run-recorder"
+      ],
+      "exit": 0,
+      "http_status": "200",
+      "stderr": "",
+      "checked_at": "2026-10-07T23:35:55.037372+11:00"
+    },
+    {
+      "url": "https://github.com/desxyx/helm-ai-orchestration-workbench",
+      "command": [
+        "curl",
+        "-sS",
+        "-I",
+        "-L",
+        "--max-time",
+        "25",
+        "-o",
+        "/dev/null",
+        "-w",
+        "%{http_code}",
+        "https://github.com/desxyx/helm-ai-orchestration-workbench"
+      ],
+      "exit": 0,
+      "http_status": "200",
+      "stderr": "",
+      "checked_at": "2026-10-07T23:35:55.690354+11:00"
+    }
+  ],
+  "planned_product_url": "not linked as a published product",
+  "deep_case_routes": "pending, not fetched or claimed published",
+  "scope": "HEAD requests only; no private repo or historical case content"
+}

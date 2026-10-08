@@ -1,0 +1,255 @@
+{
+  "actual_guard_command": "node --test tests/vocabulary.test.mjs",
+  "private_input": "outside product, actual 18 denylist terms plus standalone oversight word",
+  "controls": [
+    {
+      "case": "neutral-text",
+      "exit": 0,
+      "expected": "accept",
+      "actual": "accepted"
+    },
+    {
+      "case": "private-term-1",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-2",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-3",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-4",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-5",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-6",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-7",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-8",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-9",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-10",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-11",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-12",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-13",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-14",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-15",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-16",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-17",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "private-term-18",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "oversight-word",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "linux-path",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "windows-path",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "unicode-identity",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "split-identity",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "stage-in-skills-W1",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "stage-in-approved-doc-W1-README.md",
+      "exit": 0,
+      "expected": "accept",
+      "actual": "accepted"
+    },
+    {
+      "case": "stage-in-approved-doc-W1-docs/validation.md",
+      "exit": 0,
+      "expected": "accept",
+      "actual": "accepted"
+    },
+    {
+      "case": "stage-in-approved-doc-W1-docs/provenance.md",
+      "exit": 0,
+      "expected": "accept",
+      "actual": "accepted"
+    },
+    {
+      "case": "stage-in-skills-W2",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "stage-in-approved-doc-W2-README.md",
+      "exit": 0,
+      "expected": "accept",
+      "actual": "accepted"
+    },
+    {
+      "case": "stage-in-approved-doc-W2-docs/validation.md",
+      "exit": 0,
+      "expected": "accept",
+      "actual": "accepted"
+    },
+    {
+      "case": "stage-in-approved-doc-W2-docs/provenance.md",
+      "exit": 0,
+      "expected": "accept",
+      "actual": "accepted"
+    },
+    {
+      "case": "approved-exact-url",
+      "exit": 0,
+      "expected": "accept",
+      "actual": "accepted"
+    },
+    {
+      "case": "url-prefix-is-not-allowance",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "url-outside-docs",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "inside-denylist-rejected",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "missing-denylist-rejected",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "empty-denylist-rejected",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "optional-unconfigured-neutral",
+      "exit": 0,
+      "expected": "accept",
+      "actual": "accepted"
+    },
+    {
+      "case": "optional-unconfigured-personal-path",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    },
+    {
+      "case": "optional-unconfigured-stage-in-skills",
+      "exit": 1,
+      "expected": "reject",
+      "actual": "rejected"
+    }
+  ],
+  "isolated_copy_removed": true,
+  "private_content_never_in_candidate": true,
+  "checked_at": "2026-10-07T23:54:52.564641+11:00"
+}

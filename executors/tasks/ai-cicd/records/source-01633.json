@@ -1,0 +1,79 @@
+{
+  "tool": "slip-capture",
+  "run_id": "RUN-W2B",
+  "t0": "2026-10-05T08:36:19.485Z",
+  "rollout_locator": "S1_ROLLOUT_PRIVATE.jsonl",
+  "rollout_sha256": "<PRIVATE_REF_01141>",
+  "capture_locator": "SLIP_I_PRE_T0_PRIVATE.jsonl",
+  "capture_sha256": "<PRIVATE_REF_01387>",
+  "tool_logs": [],
+  "line_count": 352,
+  "pre_t0_records": [
+    {
+      "line": 1,
+      "timestamp": "2026-10-05T08:36:18.976Z",
+      "category": "META",
+      "payload_type": null,
+      "line_sha256": "<PRIVATE_REF_01720>"
+    },
+    {
+      "line": 2,
+      "timestamp": "2026-10-05T08:36:18.978Z",
+      "category": "META",
+      "payload_type": "task_started",
+      "line_sha256": "<PRIVATE_REF_01805>"
+    },
+    {
+      "line": 3,
+      "timestamp": "2026-10-05T08:36:19.362Z",
+      "category": "USER",
+      "payload_type": "message",
+      "line_sha256": "<PRIVATE_REF_01046>"
+    },
+    {
+      "line": 4,
+      "timestamp": "2026-10-05T08:36:19.362Z",
+      "category": "USER",
+      "payload_type": "message",
+      "line_sha256": "<PRIVATE_REF_02913>"
+    },
+    {
+      "line": 5,
+      "timestamp": "2026-10-05T08:36:19.362Z",
+      "category": "USER",
+      "payload_type": "message",
+      "line_sha256": "<PRIVATE_REF_02033>"
+    },
+    {
+      "line": 6,
+      "timestamp": "2026-10-05T08:36:19.362Z",
+      "category": "USER",
+      "payload_type": "message",
+      "line_sha256": "<PRIVATE_REF_01598>"
+    },
+    {
+      "line": 7,
+      "timestamp": "2026-10-05T08:36:19.364Z",
+      "category": "UNKNOWN",
+      "payload_type": null,
+      "line_sha256": "<PRIVATE_REF_02968>"
+    },
+    {
+      "line": 8,
+      "timestamp": "2026-10-05T08:36:19.365Z",
+      "category": "META",
+      "payload_type": null,
+      "line_sha256": "<PRIVATE_REF_01088>"
+    }
+  ],
+  "pre_t0_counts": {
+    "META": 3,
+    "USER": 4,
+    "UNKNOWN": 1
+  },
+  "pre_t0_tool_action_present": false,
+  "completeness_problems": [],
+  "verdict": "PRE_T0_ACTIVITY_CAPTURED",
+  "classification": "PENDING_AMD_DK5_CLASSIFICATION",
+  "timestamp": "2026-10-05T10:58:15.964Z"
+}

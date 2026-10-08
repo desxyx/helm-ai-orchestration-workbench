@@ -1,0 +1,8 @@
+{
+  "agentType": "claude-code-guide",
+  "description": "Claude Code isolation flags research",
+  "toolUseId": "<CLIENT_RESOURCE_01674>",
+  "spawnDepth": 1,
+  "requestShape": "background",
+  "requestNonInteractive": true
+}

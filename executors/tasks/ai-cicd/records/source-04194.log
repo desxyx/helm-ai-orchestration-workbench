@@ -1,0 +1,15 @@
+✔ every scenario fixture validates without any provider profile (11.745125ms)
+✔ WO-P05: service rows come from health facts and host resources, with honest freshness (2.687209ms)
+✔ WO-P06: logical ids and real names are both kept; a declaration is not a runtime observation (0.877167ms)
+✔ WO-P07: only this run's delta is reversed and the baseline hash is preserved (0.936167ms)
+✔ WO-P08: an interruption names the pending intent and owner; brief and view agree (0.443167ms)
+✔ WO-P08: after deployment the owner and choice are explicit; deployed is not cleaned up (0.458792ms)
+✔ generic core: router and stages need no particular cloud command (0.411708ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 57.561417

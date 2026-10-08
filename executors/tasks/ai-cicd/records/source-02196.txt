@@ -1,0 +1,2 @@
+$ gcloud compute addresses delete <W2_RUN_RESOURCE_PREFIX>-ip --region=australia-southeast2 --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+Deleted [<PRIVATE_URL_0346>].

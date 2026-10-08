@@ -1,0 +1,1137 @@
+{
+  "run_id": "RUN-W2A",
+  "observer_session": "<NATIVE_ID_0913>",
+  "checkpoints": [
+    {
+      "checkpoint_no": 1,
+      "kind": "FORCED_INTERRUPT",
+      "packet_file": "CP-01/PACKETS_CP01.json",
+      "packet_file_sha256": "<PRIVATE_REF_01235>",
+      "segment_count": 48,
+      "all_verified": true,
+      "segments": [
+        {
+          "sequence_no": 1,
+          "segment_no": 1,
+          "segment_hash": "<PRIVATE_REF_03261>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_1_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=0-32767"
+        },
+        {
+          "sequence_no": 2,
+          "segment_no": 2,
+          "segment_hash": "<PRIVATE_REF_02784>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_2_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=32768-65535"
+        },
+        {
+          "sequence_no": 3,
+          "segment_no": 3,
+          "segment_hash": "<PRIVATE_REF_02210>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_3_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=65536-98303"
+        },
+        {
+          "sequence_no": 4,
+          "segment_no": 4,
+          "segment_hash": "<PRIVATE_REF_03141>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_4_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=98304-131071"
+        },
+        {
+          "sequence_no": 5,
+          "segment_no": 5,
+          "segment_hash": "<PRIVATE_REF_03199>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_5_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=131072-163839"
+        },
+        {
+          "sequence_no": 6,
+          "segment_no": 6,
+          "segment_hash": "<PRIVATE_REF_01219>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_6_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=163840-196607"
+        },
+        {
+          "sequence_no": 7,
+          "segment_no": 7,
+          "segment_hash": "<PRIVATE_REF_02531>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_7_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=196608-229375"
+        },
+        {
+          "sequence_no": 8,
+          "segment_no": 8,
+          "segment_hash": "<PRIVATE_REF_00134>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_8_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=229376-262143"
+        },
+        {
+          "sequence_no": 9,
+          "segment_no": 9,
+          "segment_hash": "<PRIVATE_REF_02722>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_9_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=262144-294911"
+        },
+        {
+          "sequence_no": 10,
+          "segment_no": 10,
+          "segment_hash": "<PRIVATE_REF_02239>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_10_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=294912-327679"
+        },
+        {
+          "sequence_no": 11,
+          "segment_no": 11,
+          "segment_hash": "<PRIVATE_REF_02149>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_11_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=327680-360447"
+        },
+        {
+          "sequence_no": 12,
+          "segment_no": 12,
+          "segment_hash": "<PRIVATE_REF_00904>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_12_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=360448-393215"
+        },
+        {
+          "sequence_no": 13,
+          "segment_no": 13,
+          "segment_hash": "<PRIVATE_REF_03158>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_13_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=393216-425983"
+        },
+        {
+          "sequence_no": 14,
+          "segment_no": 14,
+          "segment_hash": "<PRIVATE_REF_03036>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_14_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=425984-458751"
+        },
+        {
+          "sequence_no": 15,
+          "segment_no": 15,
+          "segment_hash": "<PRIVATE_REF_01327>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_15_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=458752-491519"
+        },
+        {
+          "sequence_no": 16,
+          "segment_no": 16,
+          "segment_hash": "<PRIVATE_REF_02853>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_16_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=491520-524287"
+        },
+        {
+          "sequence_no": 17,
+          "segment_no": 17,
+          "segment_hash": "<PRIVATE_REF_03409>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_17_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=524288-557055"
+        },
+        {
+          "sequence_no": 18,
+          "segment_no": 18,
+          "segment_hash": "<PRIVATE_REF_02397>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_18_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=557056-589823"
+        },
+        {
+          "sequence_no": 19,
+          "segment_no": 19,
+          "segment_hash": "<PRIVATE_REF_03251>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_19_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=589824-622591"
+        },
+        {
+          "sequence_no": 20,
+          "segment_no": 20,
+          "segment_hash": "<PRIVATE_REF_01475>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_20_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=622592-655359"
+        },
+        {
+          "sequence_no": 21,
+          "segment_no": 21,
+          "segment_hash": "<PRIVATE_REF_02731>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_21_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=655360-688127"
+        },
+        {
+          "sequence_no": 22,
+          "segment_no": 22,
+          "segment_hash": "<PRIVATE_REF_02170>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_22_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=688128-720895"
+        },
+        {
+          "sequence_no": 23,
+          "segment_no": 23,
+          "segment_hash": "<PRIVATE_REF_02100>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_23_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=720896-753663"
+        },
+        {
+          "sequence_no": 24,
+          "segment_no": 24,
+          "segment_hash": "<PRIVATE_REF_01029>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_24_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=753664-786431"
+        },
+        {
+          "sequence_no": 25,
+          "segment_no": 25,
+          "segment_hash": "<PRIVATE_REF_03641>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_25_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=786432-819199"
+        },
+        {
+          "sequence_no": 26,
+          "segment_no": 26,
+          "segment_hash": "<PRIVATE_REF_02083>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_26_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=819200-851967"
+        },
+        {
+          "sequence_no": 27,
+          "segment_no": 27,
+          "segment_hash": "<PRIVATE_REF_03248>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_27_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=851968-884735"
+        },
+        {
+          "sequence_no": 28,
+          "segment_no": 28,
+          "segment_hash": "<PRIVATE_REF_01850>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_28_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=884736-917503"
+        },
+        {
+          "sequence_no": 29,
+          "segment_no": 29,
+          "segment_hash": "<PRIVATE_REF_02991>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_29_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=917504-950271"
+        },
+        {
+          "sequence_no": 30,
+          "segment_no": 30,
+          "segment_hash": "<PRIVATE_REF_03282>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_30_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=950272-983039"
+        },
+        {
+          "sequence_no": 31,
+          "segment_no": 31,
+          "segment_hash": "<PRIVATE_REF_03348>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_31_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=983040-1015807"
+        },
+        {
+          "sequence_no": 32,
+          "segment_no": 32,
+          "segment_hash": "<PRIVATE_REF_02616>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_32_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1015808-1048575"
+        },
+        {
+          "sequence_no": 33,
+          "segment_no": 33,
+          "segment_hash": "<PRIVATE_REF_01022>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_33_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1048576-1081343"
+        },
+        {
+          "sequence_no": 34,
+          "segment_no": 34,
+          "segment_hash": "<PRIVATE_REF_00896>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_34_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1081344-1114111"
+        },
+        {
+          "sequence_no": 35,
+          "segment_no": 35,
+          "segment_hash": "<PRIVATE_REF_01422>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_35_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1114112-1146879"
+        },
+        {
+          "sequence_no": 36,
+          "segment_no": 36,
+          "segment_hash": "<PRIVATE_REF_01670>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_36_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1146880-1179647"
+        },
+        {
+          "sequence_no": 37,
+          "segment_no": 37,
+          "segment_hash": "<PRIVATE_REF_03214>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_37_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1179648-1212415"
+        },
+        {
+          "sequence_no": 38,
+          "segment_no": 38,
+          "segment_hash": "<PRIVATE_REF_03577>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_38_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1212416-1245183"
+        },
+        {
+          "sequence_no": 39,
+          "segment_no": 39,
+          "segment_hash": "<PRIVATE_REF_02246>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_39_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1245184-1277951"
+        },
+        {
+          "sequence_no": 40,
+          "segment_no": 40,
+          "segment_hash": "<PRIVATE_REF_01878>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_40_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1277952-1310719"
+        },
+        {
+          "sequence_no": 41,
+          "segment_no": 41,
+          "segment_hash": "<PRIVATE_REF_01511>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_41_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1310720-1343487"
+        },
+        {
+          "sequence_no": 42,
+          "segment_no": 42,
+          "segment_hash": "<PRIVATE_REF_00575>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_42_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1343488-1376255"
+        },
+        {
+          "sequence_no": 43,
+          "segment_no": 43,
+          "segment_hash": "<PRIVATE_REF_01260>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_43_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1376256-1409023"
+        },
+        {
+          "sequence_no": 44,
+          "segment_no": 44,
+          "segment_hash": "<PRIVATE_REF_02664>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_44_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1409024-1441791"
+        },
+        {
+          "sequence_no": 45,
+          "segment_no": 45,
+          "segment_hash": "<PRIVATE_REF_03623>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_45_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1441792-1474559"
+        },
+        {
+          "sequence_no": 46,
+          "segment_no": 46,
+          "segment_hash": "<PRIVATE_REF_01186>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_46_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1474560-1507327"
+        },
+        {
+          "sequence_no": 47,
+          "segment_no": 47,
+          "segment_hash": "<PRIVATE_REF_02964>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_47_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1507328-1540095"
+        },
+        {
+          "sequence_no": 48,
+          "segment_no": 48,
+          "segment_hash": "<PRIVATE_REF_02125>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_1_SEGMENT_48_INGESTED",
+          "source_locator": "S1_TRANSCRIPT_REDACTED.jsonl:bytes=1540096-1558075"
+        }
+      ]
+    },
+    {
+      "checkpoint_no": 2,
+      "kind": "DEPLOYMENT_TERMINAL",
+      "packet_file": "CP-02/PACKETS_CP02.json",
+      "packet_file_sha256": "<PRIVATE_REF_01434>",
+      "segment_count": 72,
+      "all_verified": true,
+      "segments": [
+        {
+          "sequence_no": 49,
+          "segment_no": 1,
+          "segment_hash": "<PRIVATE_REF_00248>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_1_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=0-32767"
+        },
+        {
+          "sequence_no": 50,
+          "segment_no": 2,
+          "segment_hash": "<PRIVATE_REF_03752>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_2_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=32768-65535"
+        },
+        {
+          "sequence_no": 51,
+          "segment_no": 3,
+          "segment_hash": "<PRIVATE_REF_02927>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_3_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=65536-98303"
+        },
+        {
+          "sequence_no": 52,
+          "segment_no": 4,
+          "segment_hash": "<PRIVATE_REF_02263>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_4_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=98304-131071"
+        },
+        {
+          "sequence_no": 53,
+          "segment_no": 5,
+          "segment_hash": "<PRIVATE_REF_03599>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_5_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=131072-163839"
+        },
+        {
+          "sequence_no": 54,
+          "segment_no": 6,
+          "segment_hash": "<PRIVATE_REF_01700>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_6_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=163840-196607"
+        },
+        {
+          "sequence_no": 55,
+          "segment_no": 7,
+          "segment_hash": "<PRIVATE_REF_01766>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_7_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=196608-229375"
+        },
+        {
+          "sequence_no": 56,
+          "segment_no": 8,
+          "segment_hash": "<PRIVATE_REF_00536>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_8_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=229376-262143"
+        },
+        {
+          "sequence_no": 57,
+          "segment_no": 9,
+          "segment_hash": "<PRIVATE_REF_03606>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_9_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=262144-294911"
+        },
+        {
+          "sequence_no": 58,
+          "segment_no": 10,
+          "segment_hash": "<PRIVATE_REF_00149>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_10_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=294912-327679"
+        },
+        {
+          "sequence_no": 59,
+          "segment_no": 11,
+          "segment_hash": "<PRIVATE_REF_02132>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_11_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=327680-360447"
+        },
+        {
+          "sequence_no": 60,
+          "segment_no": 12,
+          "segment_hash": "<PRIVATE_REF_02163>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_12_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=360448-393215"
+        },
+        {
+          "sequence_no": 61,
+          "segment_no": 13,
+          "segment_hash": "<PRIVATE_REF_03479>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_13_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=393216-425983"
+        },
+        {
+          "sequence_no": 62,
+          "segment_no": 14,
+          "segment_hash": "<PRIVATE_REF_03686>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_14_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=425984-458751"
+        },
+        {
+          "sequence_no": 63,
+          "segment_no": 15,
+          "segment_hash": "<PRIVATE_REF_02738>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_15_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=458752-491519"
+        },
+        {
+          "sequence_no": 64,
+          "segment_no": 16,
+          "segment_hash": "<PRIVATE_REF_01861>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_16_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=491520-524287"
+        },
+        {
+          "sequence_no": 65,
+          "segment_no": 17,
+          "segment_hash": "<PRIVATE_REF_01462>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_17_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=524288-557055"
+        },
+        {
+          "sequence_no": 66,
+          "segment_no": 18,
+          "segment_hash": "<PRIVATE_REF_00902>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_18_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=557056-589823"
+        },
+        {
+          "sequence_no": 67,
+          "segment_no": 19,
+          "segment_hash": "<PRIVATE_REF_02744>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_19_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=589824-622591"
+        },
+        {
+          "sequence_no": 68,
+          "segment_no": 20,
+          "segment_hash": "<PRIVATE_REF_02879>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_20_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=622592-655359"
+        },
+        {
+          "sequence_no": 69,
+          "segment_no": 21,
+          "segment_hash": "<PRIVATE_REF_01798>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_21_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=655360-688127"
+        },
+        {
+          "sequence_no": 70,
+          "segment_no": 22,
+          "segment_hash": "<PRIVATE_REF_01591>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_22_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=688128-720895"
+        },
+        {
+          "sequence_no": 71,
+          "segment_no": 23,
+          "segment_hash": "<PRIVATE_REF_02369>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_23_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=720896-753663"
+        },
+        {
+          "sequence_no": 72,
+          "segment_no": 24,
+          "segment_hash": "<PRIVATE_REF_02600>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_24_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=753664-786431"
+        },
+        {
+          "sequence_no": 73,
+          "segment_no": 25,
+          "segment_hash": "<PRIVATE_REF_02676>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_25_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=786432-819199"
+        },
+        {
+          "sequence_no": 74,
+          "segment_no": 26,
+          "segment_hash": "<PRIVATE_REF_03489>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_26_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=819200-851967"
+        },
+        {
+          "sequence_no": 75,
+          "segment_no": 27,
+          "segment_hash": "<PRIVATE_REF_03132>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_27_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=851968-884735"
+        },
+        {
+          "sequence_no": 76,
+          "segment_no": 28,
+          "segment_hash": "<PRIVATE_REF_02806>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_28_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=884736-917503"
+        },
+        {
+          "sequence_no": 77,
+          "segment_no": 29,
+          "segment_hash": "<PRIVATE_REF_03127>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_29_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=917504-950271"
+        },
+        {
+          "sequence_no": 78,
+          "segment_no": 30,
+          "segment_hash": "<PRIVATE_REF_01653>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_30_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=950272-983039"
+        },
+        {
+          "sequence_no": 79,
+          "segment_no": 31,
+          "segment_hash": "<PRIVATE_REF_01555>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_31_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=983040-1015807"
+        },
+        {
+          "sequence_no": 80,
+          "segment_no": 32,
+          "segment_hash": "<PRIVATE_REF_01178>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_32_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1015808-1048575"
+        },
+        {
+          "sequence_no": 81,
+          "segment_no": 33,
+          "segment_hash": "<PRIVATE_REF_03729>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_33_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1048576-1081343"
+        },
+        {
+          "sequence_no": 82,
+          "segment_no": 34,
+          "segment_hash": "<PRIVATE_REF_03102>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_34_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1081344-1114111"
+        },
+        {
+          "sequence_no": 83,
+          "segment_no": 35,
+          "segment_hash": "<PRIVATE_REF_01151>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_35_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1114112-1146879"
+        },
+        {
+          "sequence_no": 84,
+          "segment_no": 36,
+          "segment_hash": "<PRIVATE_REF_02166>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_36_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1146880-1179647"
+        },
+        {
+          "sequence_no": 85,
+          "segment_no": 37,
+          "segment_hash": "<PRIVATE_REF_03714>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_37_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1179648-1212415"
+        },
+        {
+          "sequence_no": 86,
+          "segment_no": 38,
+          "segment_hash": "<PRIVATE_REF_02794>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_38_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1212416-1245183"
+        },
+        {
+          "sequence_no": 87,
+          "segment_no": 39,
+          "segment_hash": "<PRIVATE_REF_01544>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_39_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1245184-1277951"
+        },
+        {
+          "sequence_no": 88,
+          "segment_no": 40,
+          "segment_hash": "<PRIVATE_REF_03494>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_40_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1277952-1310719"
+        },
+        {
+          "sequence_no": 89,
+          "segment_no": 41,
+          "segment_hash": "<PRIVATE_REF_03143>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_41_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1310720-1343487"
+        },
+        {
+          "sequence_no": 90,
+          "segment_no": 42,
+          "segment_hash": "<PRIVATE_REF_01608>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_42_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1343488-1376255"
+        },
+        {
+          "sequence_no": 91,
+          "segment_no": 43,
+          "segment_hash": "<PRIVATE_REF_02374>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_43_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1376256-1409023"
+        },
+        {
+          "sequence_no": 92,
+          "segment_no": 44,
+          "segment_hash": "<PRIVATE_REF_01852>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_44_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1409024-1441791"
+        },
+        {
+          "sequence_no": 93,
+          "segment_no": 45,
+          "segment_hash": "<PRIVATE_REF_01312>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_45_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1441792-1474559"
+        },
+        {
+          "sequence_no": 94,
+          "segment_no": 46,
+          "segment_hash": "<PRIVATE_REF_02425>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_46_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1474560-1507327"
+        },
+        {
+          "sequence_no": 95,
+          "segment_no": 47,
+          "segment_hash": "<PRIVATE_REF_01326>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_47_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1507328-1540095"
+        },
+        {
+          "sequence_no": 96,
+          "segment_no": 48,
+          "segment_hash": "<PRIVATE_REF_03418>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_48_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1540096-1572863"
+        },
+        {
+          "sequence_no": 97,
+          "segment_no": 49,
+          "segment_hash": "<PRIVATE_REF_02156>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_49_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1572864-1605631"
+        },
+        {
+          "sequence_no": 98,
+          "segment_no": 50,
+          "segment_hash": "<PRIVATE_REF_02279>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_50_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1605632-1638399"
+        },
+        {
+          "sequence_no": 99,
+          "segment_no": 51,
+          "segment_hash": "<PRIVATE_REF_02490>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_51_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1638400-1671167"
+        },
+        {
+          "sequence_no": 100,
+          "segment_no": 52,
+          "segment_hash": "<PRIVATE_REF_02002>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_52_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1671168-1703935"
+        },
+        {
+          "sequence_no": 101,
+          "segment_no": 53,
+          "segment_hash": "<PRIVATE_REF_01522>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_53_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1703936-1736703"
+        },
+        {
+          "sequence_no": 102,
+          "segment_no": 54,
+          "segment_hash": "<PRIVATE_REF_03711>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_54_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1736704-1769471"
+        },
+        {
+          "sequence_no": 103,
+          "segment_no": 55,
+          "segment_hash": "<PRIVATE_REF_02703>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_55_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1769472-1802239"
+        },
+        {
+          "sequence_no": 104,
+          "segment_no": 56,
+          "segment_hash": "<PRIVATE_REF_00131>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_56_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1802240-1835007"
+        },
+        {
+          "sequence_no": 105,
+          "segment_no": 57,
+          "segment_hash": "<PRIVATE_REF_01301>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_57_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1835008-1867775"
+        },
+        {
+          "sequence_no": 106,
+          "segment_no": 58,
+          "segment_hash": "<PRIVATE_REF_01414>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_58_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1867776-1900543"
+        },
+        {
+          "sequence_no": 107,
+          "segment_no": 59,
+          "segment_hash": "<PRIVATE_REF_01130>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_59_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1900544-1933311"
+        },
+        {
+          "sequence_no": 108,
+          "segment_no": 60,
+          "segment_hash": "<PRIVATE_REF_01370>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_60_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1933312-1966079"
+        },
+        {
+          "sequence_no": 109,
+          "segment_no": 61,
+          "segment_hash": "<PRIVATE_REF_03211>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_61_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1966080-1998847"
+        },
+        {
+          "sequence_no": 110,
+          "segment_no": 62,
+          "segment_hash": "<PRIVATE_REF_03660>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_62_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=1998848-2031615"
+        },
+        {
+          "sequence_no": 111,
+          "segment_no": 63,
+          "segment_hash": "<PRIVATE_REF_03475>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_63_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=2031616-2064383"
+        },
+        {
+          "sequence_no": 112,
+          "segment_no": 64,
+          "segment_hash": "<PRIVATE_REF_02343>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_64_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=2064384-2097151"
+        },
+        {
+          "sequence_no": 113,
+          "segment_no": 65,
+          "segment_hash": "<PRIVATE_REF_03510>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_65_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=2097152-2129919"
+        },
+        {
+          "sequence_no": 114,
+          "segment_no": 66,
+          "segment_hash": "<PRIVATE_REF_03201>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_66_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=2129920-2162687"
+        },
+        {
+          "sequence_no": 115,
+          "segment_no": 67,
+          "segment_hash": "<PRIVATE_REF_00925>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_67_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=2162688-2195455"
+        },
+        {
+          "sequence_no": 116,
+          "segment_no": 68,
+          "segment_hash": "<PRIVATE_REF_03742>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_68_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=2195456-2228223"
+        },
+        {
+          "sequence_no": 117,
+          "segment_no": 69,
+          "segment_hash": "<PRIVATE_REF_02387>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_69_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=2228224-2260991"
+        },
+        {
+          "sequence_no": 118,
+          "segment_no": 70,
+          "segment_hash": "<PRIVATE_REF_01339>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_70_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=2260992-2293759"
+        },
+        {
+          "sequence_no": 119,
+          "segment_no": 71,
+          "segment_hash": "<PRIVATE_REF_00557>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_71_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=2293760-2326527"
+        },
+        {
+          "sequence_no": 120,
+          "segment_no": 72,
+          "segment_hash": "<PRIVATE_REF_03145>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_2_SEGMENT_72_INGESTED",
+          "source_locator": "S2_TRANSCRIPT_REDACTED.jsonl:bytes=2326528-2348165"
+        }
+      ]
+    },
+    {
+      "checkpoint_no": 3,
+      "kind": "RUN_CLOSE",
+      "packet_file": "CP-03/PACKETS_CP03.json",
+      "packet_file_sha256": "<PRIVATE_REF_01538>",
+      "segment_count": 15,
+      "all_verified": true,
+      "segments": [
+        {
+          "sequence_no": 121,
+          "segment_no": 1,
+          "segment_hash": "<PRIVATE_REF_00668>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_1_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=0-32767"
+        },
+        {
+          "sequence_no": 122,
+          "segment_no": 2,
+          "segment_hash": "<PRIVATE_REF_03240>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_2_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=32768-65535"
+        },
+        {
+          "sequence_no": 123,
+          "segment_no": 3,
+          "segment_hash": "<PRIVATE_REF_02416>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_3_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=65536-98303"
+        },
+        {
+          "sequence_no": 124,
+          "segment_no": 4,
+          "segment_hash": "<PRIVATE_REF_02388>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_4_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=98304-131071"
+        },
+        {
+          "sequence_no": 125,
+          "segment_no": 5,
+          "segment_hash": "<PRIVATE_REF_02094>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_5_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=131072-163839"
+        },
+        {
+          "sequence_no": 126,
+          "segment_no": 6,
+          "segment_hash": "<PRIVATE_REF_02062>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_6_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=163840-196607"
+        },
+        {
+          "sequence_no": 127,
+          "segment_no": 7,
+          "segment_hash": "<PRIVATE_REF_03617>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_7_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=196608-229375"
+        },
+        {
+          "sequence_no": 128,
+          "segment_no": 8,
+          "segment_hash": "<PRIVATE_REF_02697>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_8_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=229376-262143"
+        },
+        {
+          "sequence_no": 129,
+          "segment_no": 9,
+          "segment_hash": "<PRIVATE_REF_01270>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_9_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=262144-294911"
+        },
+        {
+          "sequence_no": 130,
+          "segment_no": 10,
+          "segment_hash": "<PRIVATE_REF_01212>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_10_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=294912-327679"
+        },
+        {
+          "sequence_no": 131,
+          "segment_no": 11,
+          "segment_hash": "<PRIVATE_REF_01328>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_11_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=327680-360447"
+        },
+        {
+          "sequence_no": 132,
+          "segment_no": 12,
+          "segment_hash": "<PRIVATE_REF_01726>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_12_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=360448-393215"
+        },
+        {
+          "sequence_no": 133,
+          "segment_no": 13,
+          "segment_hash": "<PRIVATE_REF_02552>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_13_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=393216-425983"
+        },
+        {
+          "sequence_no": 134,
+          "segment_no": 14,
+          "segment_hash": "<PRIVATE_REF_02218>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_14_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=425984-458751"
+        },
+        {
+          "sequence_no": 135,
+          "segment_no": 15,
+          "segment_hash": "<PRIVATE_REF_03692>",
+          "hash_and_chain_verified": true,
+          "receipt": "CHECKPOINT_3_SEGMENT_15_INGESTED",
+          "source_locator": "S2_CLOSE_INCREMENT_REDACTED.jsonl:bytes=458752-489625"
+        }
+      ]
+    }
+  ],
+  "chain_continuous_cp1_cp2_cp3": true,
+  "transcript_coverage": {
+    "S1": "records 1-289, bytes 0-1558075",
+    "S2": "records 1-432 (CP-02) + 433-540 (CP-03); ordinals 0-539 contiguous, timestamps monotonic",
+    "transcript_gaps": []
+  },
+  "sha256sums_directories": {
+    "packet": "<PRIVATE_REF_03198>",
+    "CP-01": "<PRIVATE_REF_02858>",
+    "CP-02": "<PRIVATE_REF_02419>",
+    "TRACE_PROBE": "<PRIVATE_REF_02305>",
+    "CP-03": "<PRIVATE_REF_00979>"
+  },
+  "limitations": [
+    "S1 source_cut_sha256 in the control snapshot does not match the delivered redacted bytes (raw not delivered): UNVERIFIED",
+    "5 S1 lines are not strictly valid JSON (L72,93,95,153,162); byte-faithful per hash chain",
+    "private raw S2 hashes (prefix <PRIVATE_REF_02443>..., final <PRIVATE_REF_06345>...) cannot be re-derived from redacted deliveries; prefix hash equals the CP-02 raw_source hash (consistency only)",
+    "probe raw_response_sha256 values cannot be verified (native originals not delivered)"
+  ],
+  "total_segments": 135,
+  "receipts_issued_total": 135
+}

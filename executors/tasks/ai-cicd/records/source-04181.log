@@ -1,0 +1,13 @@
+✔ continuation stops and restores the same synthetic workspace using the real show command (108.317333ms)
+✔ show --port 0 binds a real port and serves this workspace (6.488708ms)
+✔ the CLI prints the actual URL it serves (41.126542ms)
+✔ the handoff fixtures validate and keep page confirmation, the exception and approval apart (3.135625ms)
+✔ the skills and README require the early handoff and the narrow exception, consistently (0.978459ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 211.143083

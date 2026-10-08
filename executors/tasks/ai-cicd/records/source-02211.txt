@@ -1,0 +1,2 @@
+$ gcloud compute project-info add-metadata --metadata-from-file=ssh-keys=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-teardown-preserved-sshkeys.txt --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+Updated [<PRIVATE_URL_0469>].

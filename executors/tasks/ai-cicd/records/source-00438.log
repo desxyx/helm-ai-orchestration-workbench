@@ -1,0 +1,145 @@
+Command: ["node", "--test", "tests/docs.test.mjs", "tests/design-decisions.test.mjs", "tests/vocabulary.test.mjs", "tests/neutral-domains.test.mjs", "tests/view-handoff.test.mjs", "tests/skills.test.mjs", "tests/skill-package.test.mjs", "tests/fixtures.test.mjs"]
+CWD: product/
+Started local check; no installs or real deployments.
+✔ design-decisions.md records every C1 default (2.795958ms)
+✔ design-decisions.md records every C1 R1-batch default (1.368333ms)
+✔ no C1 default is still listed as undecided (1.759ms)
+✔ the documented keyword subset matches the validator (1.259625ms)
+✔ the documented freshness caps match the validator (1.151208ms)
+✔ design-decisions.md records every C2 default and none is still undecided (1.140083ms)
+✔ D-04 names Framework Python 3.12 as the working default for browser checks (1.85825ms)
+✔ design-decisions.md records every C3 default, matching the code (13.450125ms)
+✔ design-decisions.md records every C4 default, matching the skills test budgets (1.374917ms)
+✔ design-decisions.md records every C5 default and nothing for C5 is still undecided (0.426208ms)
+✔ public design rationale retains product docs and excludes evaluation-only decisions (0.502959ms)
+✔ design-decisions.md records the R3 defaults (0.22925ms)
+✔ the README defines the product and separates Validated from Roadmap (1.907625ms)
+✔ no document makes a benchmark or result claim (3.222167ms)
+✔ documents allow attribution and history while excluding arm labels and private canaries (2.712ms)
+✔ SECURITY.md covers secrets, the read-only local view, evidence and known limits (1.04075ms)
+✔ docs/architecture.md describes every component and trust boundary (0.286291ms)
+✖ README, validation and provenance agree on evidence and archive limits (1.580292ms)
+✔ local Markdown documentation links resolve inside the product (3.116459ms)
+✔ the README quick start runs as written and leaves a valid workspace (191.46775ms)
+✔ every product schema uses only the supported keyword subset (4.73425ms)
+✔ both schemas use exactly the seven FT-7 status strings (0.674917ms)
+✔ both schemas share the same stage values, covering every Annex E stage (1.418209ms)
+✔ every valid fixture state and event is schema-valid (18.986583ms)
+✔ the lifecycle fixture covers the ten required steps in order (4.574791ms)
+✔ lifecycle steps carry the situations the verification standard names (3.829541ms)
+✔ each lifecycle step only appends to the previous step's events (3.134042ms)
+✔ there is one status fixture per FT-7 status, each holding a fact with that status (1.988416ms)
+✔ tracked domains stay generic except scoped dialect and exact public links (42.619208ms)
+✔ public URL exceptions reject suffixes, lookalikes and use outside documentation (0.184708ms)
+✔ the complete package has no dangling stage or provider reference (5.202042ms)
+✔ a deliberately reduced package is detected, and the router keeps its gates and rules (18.422416ms)
+✔ the router opens with the minimal loop and keeps generic rules out of provider files (0.343458ms)
+✔ a declared reduced package: actual omissions match the declaration and the record discloses each gap once (19.5765ms)
+✔ the router lives at exactly skills/router.md, as the workspace pointer says (0.374708ms)
+✔ the router, stage and provider files exist, and nothing else is in skills/ (2.639583ms)
+✔ every skill stays inside its length budget (2.209958ms)
+✔ the router carries every always-on rule (1.449042ms)
+✔ every stage file restates the always-on rules (0.947625ms)
+✔ the router says what to read first, how to use the tools, and which one stage file to load (0.212167ms)
+✔ each stage file carries its Annex J responsibility (1.496292ms)
+✔ the handoff guidance covers all ten Annex K items (0.494083ms)
+✔ GCP is the target with validation pending; every other provider is UNVALIDATED (1.053125ms)
+✔ skills are neutral, client-neutral and free of governance or experiment wording (2.893584ms)
+✔ every example event in the skills is schema-valid once append fills its defaults (5.987625ms)
+✔ Cloudflare manual-edit mode records the approval and a gated intent before the human edits DNS (0.278125ms)
+{"case":"same-workspace-view-restoration","workspace":"<CLIENT_TEMP_ROOT>/T/watchover-test-2Nc6eW/watchover","project":"continuation-control","first_url":"http://127.0.0.1:63944/","restored_url":"http://127.0.0.1:63944/","stopped_urls_unreachable":true,"restored_state_and_events_equal":true}
+✔ continuation stops and restores the same synthetic workspace using the real show command (123.5825ms)
+✔ show --port 0 binds a real port and serves this workspace (5.86925ms)
+✔ the CLI prints the actual URL it serves (43.57925ms)
+✔ the handoff fixtures validate and keep page confirmation, the exception and approval apart (5.216958ms)
+✔ the skills and README require the early handoff and the narrow exception, consistently (0.622416ms)
+✖ each experiment-wording guard catches its own class (0.632708ms)
+✖ the private-seat guard catches neutral canaries, whole words only (0.096542ms)
+✖ the coordinator guard catches its neutral canary, whole words only (0.104167ms)
+✔ the guards leave neutral product wording alone (0.119042ms)
+✔ tracked files exclude arm labels and neutral private-identity canaries (35.860125ms)
+ℹ tests 56
+ℹ suites 0
+ℹ pass 52
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 257.412084
+
+✖ failing tests:
+
+test at tests/docs.test.mjs:65:1
+✖ README, validation and provenance agree on evidence and archive limits (1.580292ms)
+  AssertionError [ERR_ASSERTION]: docs/provenance.md
+      at TestContext.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-public-release-2026-10-07/builder/product/tests/docs.test.mjs:70:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: "# Provenance and public records\n\nWatchOver was built entirely through HELM's council, executor and operations workflow.\nAI roles handled design, implementation and independent review. A human set the goals,\nmanually routed messages and approved actions. HELM describes the process; it is not a\nruntime dependency. This workflow does not claim automatic inter-agent communication or\nunattended governance.\n\n## Public process workbench\n\nThe HELM process workbench [Referenced source unavailable in this derivative; original link retained privately.]\nis the public entry point. The detailed WatchOver case is in preparation. Planned routes\nunder `council/task/ai-cicd/` in that workbench are:\n\n- Council conversations: `sessions/`, with decisions linked from `council-records/`.\n- Executor and Reviewer records: `execution-records/`.\n- Operations and handoffs: `operations-records/`.\n\nThese are pending routes, not claims that deep links are already published. Public case\nrecords will be translated, redacted derivatives, not original unedited transcripts.\nPrivate identities, local paths, accounts and raw operational artifacts are excluded.\n\n## Product and evidence\n\nThis edition preserves the provider-independent local recorder, schema, read-only view,\ngeneric skills and useful synthetic fixtures/tests from accepted source version 0.1.2.\nLegacy evaluation procedures and placeholder documents are excluded. Its public Git\nhistory starts from the sanitized edition; private source ancestry is not included.\n\nDevelopment used three experimental stages W1-W3 on GCP. W2 had two runs and both formal\narm verdicts were INVALID. The final stage was one Basic-mode observation with unresolved\nevidence limits, not a controlled causal proof. These records do not establish current\n0.1.2 cloud validation, universal support, AI obedience or measured causal/performance\nbenefit. Validation [Referenced source unavailable in this derivative; original link retained privately.] states the local contract and its limitations.\n\nAgent Run Recorder [Referenced source unavailable in this derivative; original link retained privately.] is a separate\nrelated tool. It is not a dependency of WatchOver or a validation result for this edition.\n",
+    expected: /both formal(?: arm)?\s+verdicts were INVALID/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/vocabulary.test.mjs:9:1
+✖ each experiment-wording guard catches its own class (0.632708ms)
+  AssertionError [ERR_ASSERTION]: guard 0
+      at file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-public-release-2026-10-07/builder/product/tests/vocabulary.test.mjs:11:12
+      at Array.forEach (<anonymous>)
+      at TestContext.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-public-release-2026-10-07/builder/product/tests/vocabulary.test.mjs:10:22)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'some text W2B here',
+    expected: /W[12][ABC]/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/vocabulary.test.mjs:15:1
+✖ the private-seat guard catches neutral canaries, whole words only (0.096542ms)
+  AssertionError [ERR_ASSERTION]: private-seat-alpha
+      at TestContext.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-public-release-2026-10-07/builder/product/tests/vocabulary.test.mjs:16:49)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'as private-seat-alpha said',
+    expected: /(private-seat-alpha|private-seat-beta)/i,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/vocabulary.test.mjs:20:1
+✖ the coordinator guard catches its neutral canary, whole words only (0.104167ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /private-coordinator-417/i. Input:
+  
+  'ask private-coordinator-417 first'
+  
+      at TestContext.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-public-release-2026-10-07/builder/product/tests/vocabulary.test.mjs:21:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'ask private-coordinator-417 first',
+    expected: /private-coordinator-417/i,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+STDERR:
+
+EXIT_CODE=1

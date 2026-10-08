@@ -1,0 +1,5 @@
+$ gcloud compute addresses delete <RUN_STATIC_IP> --region australia-southeast1 --quiet --project <CLOUD_PROJECT>
+# started 2026-10-06T14:50:45.000Z  ended 2026-10-06T14:50:50.000Z  exit 0
+--- stdout
+--- stderr
+Deleted [<PRIVATE_URL_0338>].

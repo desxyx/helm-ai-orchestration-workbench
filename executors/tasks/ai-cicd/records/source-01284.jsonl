@@ -1,0 +1,9 @@
+{"attempt": 1, "query": "R01_inventory", "argv": ["/opt/homebrew/bin/gcloud", "asset", "search-all-resources", "--scope=projects/<CLOUD_PROJECT>", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T16:09:01.173+11:00"}
+{"attempt": 2, "query": "R02_instances", "argv": ["/opt/homebrew/bin/gcloud", "compute", "instances", "list", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T16:09:10.641+11:00"}
+{"attempt": 3, "query": "R03_disks", "argv": ["/opt/homebrew/bin/gcloud", "compute", "disks", "list", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T16:09:10.643+11:00"}
+{"attempt": 4, "query": "R04_addresses", "argv": ["/opt/homebrew/bin/gcloud", "compute", "addresses", "list", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T16:09:10.643+11:00"}
+{"attempt": 5, "query": "R05_networks", "argv": ["/opt/homebrew/bin/gcloud", "compute", "networks", "list", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T16:09:10.645+11:00"}
+{"attempt": 6, "query": "R06_firewalls", "argv": ["/opt/homebrew/bin/gcloud", "compute", "firewall-rules", "list", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T16:09:10.645+11:00"}
+{"attempt": 7, "query": "R07_run", "argv": ["/opt/homebrew/bin/gcloud", "run", "services", "list", "--platform=managed", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T16:09:12.036+11:00"}
+{"attempt": 8, "query": "R08_buckets", "argv": ["/opt/homebrew/bin/gcloud", "storage", "buckets", "list", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T16:09:12.075+11:00"}
+{"attempt": 9, "query": "R09_sql", "argv": ["/opt/homebrew/bin/gcloud", "sql", "instances", "list", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T16:09:12.314+11:00"}

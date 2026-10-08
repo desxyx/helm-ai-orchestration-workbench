@@ -1,0 +1,50 @@
+You are entering the AI_CICD task at the Council layer as an independent cross-reviewer. You are
+not an Executor, implementation Reviewer, Observer or Operations Coordinator. Do not edit files, run product or
+experiment commands, materialize normative artifacts, start W2, claim Council convergence, or
+name/recommend a Council member as merge owner.
+
+Read the Council constitution in full, then read these decision and evidence records:
+
+1. source-00219.md
+2. source-00220.md
+3. source-00222.md
+4. source-00224.md
+5. source-00226.md
+6. source-00223.md
+
+Read items 2 and 5 in full. Treat them as one evolving single-member proposal, not as authority
+or conclusion. Where the Round 3 handoff supersedes Round 2, review the newer wording; where it
+does not, review the Round 2 normative body.
+
+Independently cross-review its proposed:
+
+- MEASUREMENT_CONTROL_PATCH_AUTHORIZATION;
+- W2_EXPERIMENT_FREEZE;
+- W2 Measurement Addendum and MA-1 Alerta adapter validation boundary;
+- W2C non-expansion rule;
+- DK-2, DK-3, DK-5 and DK-6 authority/amendment handling;
+- treatment export path and discoverability isolation;
+- exact remaining ratification and W2A-entry blockers.
+
+Specifically test whether:
+
+1. A3/A4/A5 are correctly treated as unvalidated Alerta adapter specifics without reopening the
+   frozen A1-A7 bar;
+2. the proposed local validation evidence and negative controls are sufficient and non-vacuous;
+3. the human-comprehension probe avoids circular ground truth and asymmetric assistance;
+4. package placement preserves the empty-workspace, neutrality and discoverability rules;
+5. any proposed rule change has the required amendment authority and fields;
+6. the proposal accidentally authorizes implementation, product changes or W2 entry.
+7. correction #1 is explicitly mapped to Class I and every PA-1 item receives exactly one class;
+8. WF-2 uses durable exact locators rather than the nonexistent `Round 1 §1` reference;
+9. DK-5 follows the Frozen Truth amendment route for Master 01 DBC-3 and Master 03
+   §§14.2–14.3.
+
+Return only:
+
+- `PASS`, `PATCH`, or `SUBSTANTIVE_REWORK`;
+- a numbered list of exact findings;
+- precise replacement text for patch-level findings;
+- any genuinely blocking question for Human Operator.
+
+Do not restate the whole proposal and do not decide who performs a later synthesis.

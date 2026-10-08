@@ -1,0 +1,28 @@
+$ ssh -F C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/sshcfg taiga echo '== blob ids inside running taiga-back container (/taiga-back)'; for f in docker/entrypoint.sh taiga/auth/services.py taiga/base/storage.py manage.py; do printf '%s ' $f; sudo docker exec taiga-taiga-back-1 sh -c "python -c 'import hashlib,sys;d=open(sys.argv[1],\"rb\").read();print(hashlib.sha1(b\"blob %d\0\"%len(d)+d).hexdigest())' $f"; done; echo '== blob ids of front sources the caddy image was built from (/opt/taiga/src/taiga-front)'; for f in package.json app/coffee/app.coffee gulpfile.js; do printf '%s ' $f; git hash-object /opt/taiga/src/taiga-front/$f; done; echo '== containers'; sudo docker compose -f /srv/taiga/app/docker-compose.yml ps --format '{{.Name}} | {{.Image}} | {{.Status}}'; echo '== postgres'; sudo docker exec taiga-postgres-1 sh -c 'psql -U taiga -d taiga -tAc "select count(*) as users from users_user" ; psql -U taiga -d taiga -tAc "select count(*) from projects_project"'; echo '== back via internal port'; sudo docker exec taiga-caddy-1 wget -qO- -S http://taiga-back:8000/api/v1/ 2>&1 | head -1; echo '== mounts'; findmnt /srv/taiga; sudo du -sh /srv/taiga/postgres /srv/taiga/caddy /srv/taiga/static
+# started 2026-10-06T14:20:15.000Z  ended 2026-10-06T14:20:17.000Z  exit 0
+--- stdout
+== blob ids inside running taiga-back container (/taiga-back)
+docker/entrypoint.sh <PRIVATE_REF_02559>
+taiga/auth/services.py <PRIVATE_REF_02568>
+taiga/base/storage.py <PRIVATE_REF_02549>
+manage.py <PRIVATE_REF_03178>
+== blob ids of front sources the caddy image was built from (/opt/taiga/src/taiga-front)
+package.json <PRIVATE_REF_01085>
+app/coffee/app.coffee <PRIVATE_REF_03331>
+gulpfile.js <PRIVATE_REF_01571>
+== containers
+taiga-caddy-1 | taiga-front-caddy:<PRIVATE_REF_03189> | Up 2 minutes
+taiga-postgres-1 | postgres:16-alpine | Up 2 minutes (healthy)
+taiga-taiga-back-1 | taiga-back:<PRIVATE_REF_01638> | Up 2 minutes
+== postgres
+5
+1
+== back via internal port
+  HTTP/1.1 200 OK
+== mounts
+TARGET     SOURCE   FSTYPE OPTIONS
+/srv/taiga /dev/sdb ext4   rw,relatime,discard
+54M	/srv/taiga/postgres
+92K	/srv/taiga/caddy
+5.5M	/srv/taiga/static
+--- stderr

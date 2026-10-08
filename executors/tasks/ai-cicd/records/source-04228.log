@@ -1,0 +1,12 @@
+appended evt-0033; workspace valid
+appended evt-0034; workspace valid
+appended evt-0035; the workspace now needs attention (usually a state.json update): 1 problem
+invalid: 2 problems
+- [terminal-intents-have-results] events.jsonl line 33: handoff has unpaired intent evt-0033; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary
+- [terminal-intents-have-results] events.jsonl line 34: handoff has unpaired intent evt-0034; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary
+secret scan self-test passed (15 patterns), 0 findings
+validate exit=1
+refused: the record is not valid; no summary is shown
+2 problems
+- [terminal-intents-have-results] events.jsonl line 33: handoff has unpaired intent evt-0033; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary
+brief exit=1

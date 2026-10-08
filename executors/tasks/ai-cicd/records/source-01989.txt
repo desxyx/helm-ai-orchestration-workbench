@@ -1,0 +1,7 @@
+For RUN-W2B, this is the final RUN_CLOSE checkpoint. All following input paths are relative to /private/tmp/survey-7c92/work/inbox/.
+
+First verify SHA256SUMS_CP03 (expected SHA-256 <PRIVATE_REF_01812>) and its 131 listed files. Then ingest CP-03_PACKETS.json (expected SHA-256 <PRIVATE_REF_03474>) with CP-03_FILES/ attachments. This supplies 45 segments, sequences 180–224, continuing the existing 179-segment chain; S2 original records529–734 follow1–528 exactly. No earlier transcript increment is replayed.
+
+Read CP-03_FILES/CLOSURE_CUSTODY_DISCLOSURES.json, the original CUSTODY_NOTICE_BEFORE_CLOSE.txt, CP-03_FILES/RUN_CLOSE_MECHANICAL_RECORD.json, CP-03_FILES/RESIDUAL_MECHANICAL_RECORD.json, CP-03_FILES/RAW_READONLY_RESIDUAL/ and CP-03_FILES/FINAL_SELECTED_TEXT_SECRET_SCAN_RECORD.json. Preserve the immutable prior packets and private analysis. Retain raw instrument results and distinguish them from any rule-cited effective verdict. SQL supplementary coverage is unavailable; failed query is not an empty list. Keep source provenance separate; no missing behavioral evidence is upgraded.
+
+Issue the frozen segment receipts, reconcile terminal acceptance/metrics/events and ingestion ledger under effective rules, and seal final artifacts with SHA256SUMS_FINAL. Include all custody/entry/assistance/coverage/redaction/blinding/early-analysis-relay limitations. No new cloud action, fixture, model probe, repair or feedback to Deployer is requested. Provide final handoff with sealed directory and complete hashes after sealing.

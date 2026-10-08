@@ -1,0 +1,16 @@
+# Effective acceptance rules
+
+The copied R14 Record retains its historical candidate header and original source-dependent overlay. The exact Record was subsequently ratified; effective judgments apply the following recorded replacement. Original Record bytes and raw reports remain unchanged.
+
+Recorded replacement authority SHA-256: <PRIVATE_REF_00538>
+
+For the alerta profile, A3, A4 and behavioral A5 are aggregated from their own frozen evidence. A5 PASS still requires every frozen A5 prerequisite, an ELIGIBLE restart under Master 02 §6.4 as already amended by AMD-A5-CR, and all three post-restart checks. Deployment source provenance is not an input to that behavioral verdict.
+
+Deployment source provenance is reported separately as ELIGIBLE, FAIL or UNVERIFIED. Complete matching evidence yields ELIGIBLE. Affirmative foreign or mismatching evidence yields FAIL and retains the existing wrong-source consequence. Any missing or unreachable provenance evidence yields UNVERIFIED, never PASS. This applies to all source-provenance inputs, including Cloud Run image archives and their dependent launch/configuration checks, GCE guest source-provenance checks, and frontend source/build/content binding evidence. It does not exempt any evidence that is independently required by behavioral A3/A4/A5, restart inventory, account/object binding, or the existing source-entry checks.
+
+The report is generated and displays the separate provenance status, reason and limits alongside the actual behavioral results. It must not call an UNVERIFIED deployment source-verified or frozen-source-conformant. Unknown provenance is not a deployment fault and is not asserted to establish correct source. M1/M9 remain computed from the frozen A1–A7 definitions; causal comparison eligibility and provenance limits are disclosed separately, not converted into those metrics silently.
+
+Control-plane Docker is needed only for the existing Cloud Run source-provenance method. Docker preparation stays paused. Its missing image archive and image-derived launch/configuration evidence remain source-provenance UNVERIFIED and do not block deployment, independently evidenced behavioral A5, or report generation. GCE's existing provenance method remains available under its separately authorized guest route; absent source evidence is similarly disclosed, while missing restart/boot/process/inventory evidence still prevents an ELIGIBLE restart.
+
+Preserve R14 script/scanner/registry/support and original raw reports. No R15, substitute verifier or new infrastructure is ordered. Where the unchanged R14 report overlays otherwise supported behavioral results to UNVERIFIED solely because provenance is not ELIGIBLE, the effective reported behavioral judgment follows this amendment and the original per-step/component/restart evidence. Preserve and cite the original report/state and record the effective judgment and this amendment in existing Observer acceptance/report records. Never manufacture a component PASS, raw evidence, a launch identity, or a restart transition. New revision alone, HTTP recovery alone or a container/process restart is not sufficient; the already-ratified §6.4/AMD-A5-CR rule remains controlling.
+

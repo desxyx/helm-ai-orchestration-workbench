@@ -1,0 +1,30 @@
+Captured 2026-10-06 ~12:11Z (UTC). Read-only gcloud commands. Sanitized: no secrets present.
+
+$ gcloud config list   (CLOUDSDK_CONFIG=<WORKSPACE>\.cfg\gcloud, configuration "sandbox")
+[core]
+account = <ACCOUNT_EMAIL_011>
+project = <CLOUD_PROJECT>
+
+$ gcloud auth list
+ACTIVE  ACCOUNT
+*       <ACCOUNT_EMAIL_011>
+
+$ gcloud projects describe <CLOUD_PROJECT>
+lifecycleState: ACTIVE
+name: WatchOver AI DevOps
+projectId: <CLOUD_PROJECT>
+projectNumber: '<NUMERIC_RESOURCE_0071>'
+parent: (none - project is not under an organization, so no org policies apply)
+
+$ gcloud billing projects describe <CLOUD_PROJECT>
+billingEnabled: true
+
+$ gcloud projects get-iam-policy ... --filter=bindings.members:user:<ACCOUNT_EMAIL_011>
+roles/owner
+
+$ gcloud services list --enabled
+(includes) compute.googleapis.com, run.googleapis.com, artifactregistry.googleapis.com,
+storage.googleapis.com, logging.googleapis.com, monitoring.googleapis.com, oslogin.googleapis.com,
+iap.googleapis.com, sql-component.googleapis.com
+(not enabled) sqladmin.googleapis.com, secretmanager.googleapis.com, cloudbuild.googleapis.com,
+cloudbilling.googleapis.com

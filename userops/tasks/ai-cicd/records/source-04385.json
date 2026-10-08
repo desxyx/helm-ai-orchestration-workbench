@@ -1,0 +1,31 @@
+{
+  "status": "PREPARED_CANDIDATE_NOT_FORMAL_RUN_RELEASE",
+  "source_commit": "<PRIVATE_REF_01823>",
+  "source_version": "0.1.1",
+  "source_files": 22,
+  "added_runtime_dependencies": [
+    "tools/lib/brief.mjs",
+    "tools/lib/commit.mjs"
+  ],
+  "generated_metadata": [
+    "skills/package-omissions.json"
+  ],
+  "payload_files": 23,
+  "static_import_missing": [],
+  "zip_sha256": "<PRIVATE_REF_00559>",
+  "payload_manifest_sha256": "<PRIVATE_REF_01648>",
+  "excluded": [
+    ".git",
+    "README",
+    "docs",
+    "tests",
+    "fixtures",
+    "integrations",
+    "provider profiles",
+    "non-runtime tools",
+    "package.json"
+  ],
+  "source_bytes_rewritten": false,
+  "windows_execution_verified": false,
+  "independent_export_review": "NOT_RECEIVED"
+}

@@ -1,0 +1,738 @@
+{
+  "source_commit": "<PRIVATE_REF_03069>",
+  "source_tree": "<PRIVATE_REF_01459>",
+  "version": "0.1.2",
+  "paths_relative_to": "../source from each role folder",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "<PRIVATE_REF_01832>",
+      "bytes": 257
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "<PRIVATE_REF_01616>",
+      "bytes": 1089
+    },
+    {
+      "path": "README.md",
+      "sha256": "<PRIVATE_REF_00531>",
+      "bytes": 8066
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "<PRIVATE_REF_01487>",
+      "bytes": 4017
+    },
+    {
+      "path": "app/web-ui/app.js",
+      "sha256": "<PRIVATE_REF_02469>",
+      "bytes": 2241
+    },
+    {
+      "path": "app/web-ui/freshness.mjs",
+      "sha256": "<PRIVATE_REF_02900>",
+      "bytes": 4734
+    },
+    {
+      "path": "app/web-ui/index.html",
+      "sha256": "<PRIVATE_REF_01020>",
+      "bytes": 704
+    },
+    {
+      "path": "app/web-ui/render.mjs",
+      "sha256": "<PRIVATE_REF_01934>",
+      "bytes": 17784
+    },
+    {
+      "path": "app/web-ui/styles.css",
+      "sha256": "<PRIVATE_REF_01315>",
+      "bytes": 7792
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "<PRIVATE_REF_02122>",
+      "bytes": 4525
+    },
+    {
+      "path": "docs/design-decisions.md",
+      "sha256": "<PRIVATE_REF_03514>",
+      "bytes": 19173
+    },
+    {
+      "path": "docs/experiment.md",
+      "sha256": "<PRIVATE_REF_01695>",
+      "bytes": 707
+    },
+    {
+      "path": "docs/related-work.md",
+      "sha256": "<PRIVATE_REF_01553>",
+      "bytes": 835
+    },
+    {
+      "path": "docs/roadmap-v0.1b.md",
+      "sha256": "<PRIVATE_REF_02613>",
+      "bytes": 432
+    },
+    {
+      "path": "fixtures/invalid/malformed-events-line/events.jsonl",
+      "sha256": "<PRIVATE_REF_02709>",
+      "bytes": 1338
+    },
+    {
+      "path": "fixtures/invalid/malformed-events-line/expected.json",
+      "sha256": "<PRIVATE_REF_02479>",
+      "bytes": 149
+    },
+    {
+      "path": "fixtures/invalid/malformed-events-line/state.json",
+      "sha256": "<PRIVATE_REF_03332>",
+      "bytes": 7044
+    },
+    {
+      "path": "fixtures/invalid/malformed-state-json/events.jsonl",
+      "sha256": "<PRIVATE_REF_03307>",
+      "bytes": 1587
+    },
+    {
+      "path": "fixtures/invalid/malformed-state-json/expected.json",
+      "sha256": "<PRIVATE_REF_02155>",
+      "bytes": 132
+    },
+    {
+      "path": "fixtures/invalid/malformed-state-json/state.json",
+      "sha256": "<PRIVATE_REF_02905>",
+      "bytes": 7004
+    },
+    {
+      "path": "fixtures/invalid/planted-secret-canary/events.jsonl",
+      "sha256": "<PRIVATE_REF_00533>",
+      "bytes": 6081
+    },
+    {
+      "path": "fixtures/invalid/planted-secret-canary/expected.json",
+      "sha256": "<PRIVATE_REF_02521>",
+      "bytes": 225
+    },
+    {
+      "path": "fixtures/invalid/planted-secret-canary/state.json",
+      "sha256": "<PRIVATE_REF_02578>",
+      "bytes": 12818
+    },
+    {
+      "path": "fixtures/invalid/schema-invalid-secret-value-field/events.jsonl",
+      "sha256": "<PRIVATE_REF_03307>",
+      "bytes": 1587
+    },
+    {
+      "path": "fixtures/invalid/schema-invalid-secret-value-field/expected.json",
+      "sha256": "<PRIVATE_REF_03318>",
+      "bytes": 255
+    },
+    {
+      "path": "fixtures/invalid/schema-invalid-secret-value-field/state.json",
+      "sha256": "<PRIVATE_REF_00148>",
+      "bytes": 7074
+    },
+    {
+      "path": "fixtures/invalid/schema-invalid-status/events.jsonl",
+      "sha256": "<PRIVATE_REF_03307>",
+      "bytes": 1587
+    },
+    {
+      "path": "fixtures/invalid/schema-invalid-status/expected.json",
+      "sha256": "<PRIVATE_REF_01731>",
+      "bytes": 213
+    },
+    {
+      "path": "fixtures/invalid/schema-invalid-status/state.json",
+      "sha256": "<PRIVATE_REF_01593>",
+      "bytes": 7037
+    },
+    {
+      "path": "fixtures/packages/reduced-no-dns/package-omissions.json",
+      "sha256": "<PRIVATE_REF_03591>",
+      "bytes": 235
+    },
+    {
+      "path": "fixtures/rehearsal/README.md",
+      "sha256": "<PRIVATE_REF_01313>",
+      "bytes": 4607
+    },
+    {
+      "path": "fixtures/rehearsal/templates/activation-line.txt",
+      "sha256": "<PRIVATE_REF_02157>",
+      "bytes": 284
+    },
+    {
+      "path": "fixtures/rehearsal/templates/continuation.md",
+      "sha256": "<PRIVATE_REF_01609>",
+      "bytes": 235
+    },
+    {
+      "path": "fixtures/rehearsal/templates/handoff-questions.md",
+      "sha256": "<PRIVATE_REF_01656>",
+      "bytes": 719
+    },
+    {
+      "path": "fixtures/rehearsal/templates/task.md",
+      "sha256": "<PRIVATE_REF_02930>",
+      "bytes": 329
+    },
+    {
+      "path": "fixtures/rehearsal/toy-app/README.md",
+      "sha256": "<PRIVATE_REF_03718>",
+      "bytes": 1045
+    },
+    {
+      "path": "fixtures/rehearsal/toy-app/api.mjs",
+      "sha256": "<PRIVATE_REF_02542>",
+      "bytes": 815
+    },
+    {
+      "path": "fixtures/rehearsal/toy-app/compose.yaml",
+      "sha256": "<PRIVATE_REF_01548>",
+      "bytes": 1119
+    },
+    {
+      "path": "fixtures/rehearsal/toy-app/run.mjs",
+      "sha256": "<PRIVATE_REF_01467>",
+      "bytes": 5157
+    },
+    {
+      "path": "fixtures/rehearsal/toy-app/services.json",
+      "sha256": "<PRIVATE_REF_03414>",
+      "bytes": 597
+    },
+    {
+      "path": "fixtures/rehearsal/toy-app/web.mjs",
+      "sha256": "<PRIVATE_REF_02161>",
+      "bytes": 1913
+    },
+    {
+      "path": "fixtures/valid/lifecycle/01-recon/events.jsonl",
+      "sha256": "<PRIVATE_REF_03307>",
+      "bytes": 1587
+    },
+    {
+      "path": "fixtures/valid/lifecycle/01-recon/state.json",
+      "sha256": "<PRIVATE_REF_03332>",
+      "bytes": 7044
+    },
+    {
+      "path": "fixtures/valid/lifecycle/02-approval-pending/events.jsonl",
+      "sha256": "<PRIVATE_REF_01888>",
+      "bytes": 2776
+    },
+    {
+      "path": "fixtures/valid/lifecycle/02-approval-pending/state.json",
+      "sha256": "<PRIVATE_REF_03727>",
+      "bytes": 10823
+    },
+    {
+      "path": "fixtures/valid/lifecycle/03-long-operation/events.jsonl",
+      "sha256": "<PRIVATE_REF_01940>",
+      "bytes": 6038
+    },
+    {
+      "path": "fixtures/valid/lifecycle/03-long-operation/state.json",
+      "sha256": "<PRIVATE_REF_02578>",
+      "bytes": 12818
+    },
+    {
+      "path": "fixtures/valid/lifecycle/04-verification-failed/events.jsonl",
+      "sha256": "<PRIVATE_REF_02553>",
+      "bytes": 7257
+    },
+    {
+      "path": "fixtures/valid/lifecycle/04-verification-failed/state.json",
+      "sha256": "<PRIVATE_REF_02234>",
+      "bytes": 13755
+    },
+    {
+      "path": "fixtures/valid/lifecycle/05-incident/events.jsonl",
+      "sha256": "<PRIVATE_REF_02496>",
+      "bytes": 8344
+    },
+    {
+      "path": "fixtures/valid/lifecycle/05-incident/state.json",
+      "sha256": "<PRIVATE_REF_02912>",
+      "bytes": 14141
+    },
+    {
+      "path": "fixtures/valid/lifecycle/06-recovered/events.jsonl",
+      "sha256": "<PRIVATE_REF_03750>",
+      "bytes": 9212
+    },
+    {
+      "path": "fixtures/valid/lifecycle/06-recovered/state.json",
+      "sha256": "<PRIVATE_REF_01423>",
+      "bytes": 13987
+    },
+    {
+      "path": "fixtures/valid/lifecycle/07-verified/events.jsonl",
+      "sha256": "<PRIVATE_REF_01780>",
+      "bytes": 10398
+    },
+    {
+      "path": "fixtures/valid/lifecycle/07-verified/state.json",
+      "sha256": "<PRIVATE_REF_02327>",
+      "bytes": 14650
+    },
+    {
+      "path": "fixtures/valid/lifecycle/08-handoff/events.jsonl",
+      "sha256": "<PRIVATE_REF_01607>",
+      "bytes": 10964
+    },
+    {
+      "path": "fixtures/valid/lifecycle/08-handoff/state.json",
+      "sha256": "<PRIVATE_REF_01239>",
+      "bytes": 16195
+    },
+    {
+      "path": "fixtures/valid/lifecycle/09-teardown/events.jsonl",
+      "sha256": "<PRIVATE_REF_02232>",
+      "bytes": 12816
+    },
+    {
+      "path": "fixtures/valid/lifecycle/09-teardown/state.json",
+      "sha256": "<PRIVATE_REF_02798>",
+      "bytes": 15115
+    },
+    {
+      "path": "fixtures/valid/lifecycle/10-closed/events.jsonl",
+      "sha256": "<PRIVATE_REF_02392>",
+      "bytes": 14579
+    },
+    {
+      "path": "fixtures/valid/lifecycle/10-closed/state.json",
+      "sha256": "<PRIVATE_REF_01907>",
+      "bytes": 15489
+    },
+    {
+      "path": "fixtures/valid/scenarios/awaiting-acceptance/events.jsonl",
+      "sha256": "<PRIVATE_REF_02110>",
+      "bytes": 2395
+    },
+    {
+      "path": "fixtures/valid/scenarios/awaiting-acceptance/state.json",
+      "sha256": "<PRIVATE_REF_02751>",
+      "bytes": 2660
+    },
+    {
+      "path": "fixtures/valid/scenarios/interrupted/events.jsonl",
+      "sha256": "<PRIVATE_REF_02563>",
+      "bytes": 2484
+    },
+    {
+      "path": "fixtures/valid/scenarios/interrupted/state.json",
+      "sha256": "<PRIVATE_REF_01765>",
+      "bytes": 2556
+    },
+    {
+      "path": "fixtures/valid/scenarios/package-gap/events.jsonl",
+      "sha256": "<PRIVATE_REF_03715>",
+      "bytes": 497
+    },
+    {
+      "path": "fixtures/valid/scenarios/package-gap/state.json",
+      "sha256": "<PRIVATE_REF_01728>",
+      "bytes": 2608
+    },
+    {
+      "path": "fixtures/valid/scenarios/services-and-names/events.jsonl",
+      "sha256": "<PRIVATE_REF_00955>",
+      "bytes": 4580
+    },
+    {
+      "path": "fixtures/valid/scenarios/services-and-names/state.json",
+      "sha256": "<PRIVATE_REF_03168>",
+      "bytes": 7788
+    },
+    {
+      "path": "fixtures/valid/scenarios/shared-object-delta/events.jsonl",
+      "sha256": "<PRIVATE_REF_03031>",
+      "bytes": 4186
+    },
+    {
+      "path": "fixtures/valid/scenarios/shared-object-delta/state.json",
+      "sha256": "<PRIVATE_REF_01994>",
+      "bytes": 3625
+    },
+    {
+      "path": "fixtures/valid/scenarios/view-handoff-confirmed/events.jsonl",
+      "sha256": "<PRIVATE_REF_00140>",
+      "bytes": 1653
+    },
+    {
+      "path": "fixtures/valid/scenarios/view-handoff-confirmed/state.json",
+      "sha256": "<PRIVATE_REF_03267>",
+      "bytes": 3634
+    },
+    {
+      "path": "fixtures/valid/scenarios/view-handoff-exception/events.jsonl",
+      "sha256": "<PRIVATE_REF_01252>",
+      "bytes": 1728
+    },
+    {
+      "path": "fixtures/valid/scenarios/view-handoff-exception/state.json",
+      "sha256": "<PRIVATE_REF_03598>",
+      "bytes": 4204
+    },
+    {
+      "path": "fixtures/valid/status/assumed/events.jsonl",
+      "sha256": "<PRIVATE_REF_01061>",
+      "bytes": 254
+    },
+    {
+      "path": "fixtures/valid/status/assumed/state.json",
+      "sha256": "<PRIVATE_REF_01472>",
+      "bytes": 1567
+    },
+    {
+      "path": "fixtures/valid/status/blocked/events.jsonl",
+      "sha256": "<PRIVATE_REF_01061>",
+      "bytes": 254
+    },
+    {
+      "path": "fixtures/valid/status/blocked/state.json",
+      "sha256": "<PRIVATE_REF_02285>",
+      "bytes": 1652
+    },
+    {
+      "path": "fixtures/valid/status/stale/events.jsonl",
+      "sha256": "<PRIVATE_REF_02101>",
+      "bytes": 566
+    },
+    {
+      "path": "fixtures/valid/status/stale/state.json",
+      "sha256": "<PRIVATE_REF_01745>",
+      "bytes": 1621
+    },
+    {
+      "path": "fixtures/valid/status/unknown/events.jsonl",
+      "sha256": "<PRIVATE_REF_01061>",
+      "bytes": 254
+    },
+    {
+      "path": "fixtures/valid/status/unknown/state.json",
+      "sha256": "<PRIVATE_REF_02080>",
+      "bytes": 1527
+    },
+    {
+      "path": "fixtures/valid/status/user_confirmed/events.jsonl",
+      "sha256": "<PRIVATE_REF_01061>",
+      "bytes": 254
+    },
+    {
+      "path": "fixtures/valid/status/user_confirmed/state.json",
+      "sha256": "<PRIVATE_REF_01831>",
+      "bytes": 1577
+    },
+    {
+      "path": "fixtures/valid/status/verified_local/events.jsonl",
+      "sha256": "<PRIVATE_REF_02984>",
+      "bytes": 588
+    },
+    {
+      "path": "fixtures/valid/status/verified_local/state.json",
+      "sha256": "<PRIVATE_REF_00970>",
+      "bytes": 1803
+    },
+    {
+      "path": "fixtures/valid/status/verified_remote/events.jsonl",
+      "sha256": "<PRIVATE_REF_03007>",
+      "bytes": 559
+    },
+    {
+      "path": "fixtures/valid/status/verified_remote/state.json",
+      "sha256": "<PRIVATE_REF_02326>",
+      "bytes": 1637
+    },
+    {
+      "path": "integrations/catalog.json",
+      "sha256": "<PRIVATE_REF_01474>",
+      "bytes": 13406
+    },
+    {
+      "path": "package.json",
+      "sha256": "<PRIVATE_REF_03412>",
+      "bytes": 361
+    },
+    {
+      "path": "schema/event.schema.json",
+      "sha256": "<PRIVATE_REF_01999>",
+      "bytes": 4000
+    },
+    {
+      "path": "schema/state.schema.json",
+      "sha256": "<PRIVATE_REF_01409>",
+      "bytes": 13055
+    },
+    {
+      "path": "skills/providers/aws.md",
+      "sha256": "<PRIVATE_REF_02199>",
+      "bytes": 1147
+    },
+    {
+      "path": "skills/providers/azure.md",
+      "sha256": "<PRIVATE_REF_02829>",
+      "bytes": 1063
+    },
+    {
+      "path": "skills/providers/dns-cloudflare.md",
+      "sha256": "<PRIVATE_REF_01932>",
+      "bytes": 3252
+    },
+    {
+      "path": "skills/providers/gcp.md",
+      "sha256": "<PRIVATE_REF_03682>",
+      "bytes": 4384
+    },
+    {
+      "path": "skills/providers/nectar.md",
+      "sha256": "<PRIVATE_REF_01373>",
+      "bytes": 1226
+    },
+    {
+      "path": "skills/router.md",
+      "sha256": "<PRIVATE_REF_01815>",
+      "bytes": 12458
+    },
+    {
+      "path": "skills/stages/execute.md",
+      "sha256": "<PRIVATE_REF_01205>",
+      "bytes": 4717
+    },
+    {
+      "path": "skills/stages/plan.md",
+      "sha256": "<PRIVATE_REF_01708>",
+      "bytes": 5570
+    },
+    {
+      "path": "skills/stages/recon.md",
+      "sha256": "<PRIVATE_REF_02325>",
+      "bytes": 2378
+    },
+    {
+      "path": "skills/stages/recover.md",
+      "sha256": "<PRIVATE_REF_02780>",
+      "bytes": 3445
+    },
+    {
+      "path": "skills/stages/verify-handoff.md",
+      "sha256": "<PRIVATE_REF_02087>",
+      "bytes": 4546
+    },
+    {
+      "path": "tests/brief.test.mjs",
+      "sha256": "<PRIVATE_REF_03253>",
+      "bytes": 8788
+    },
+    {
+      "path": "tests/browser.test.mjs",
+      "sha256": "<PRIVATE_REF_02811>",
+      "bytes": 11080
+    },
+    {
+      "path": "tests/browser/view_check.py",
+      "sha256": "<PRIVATE_REF_01495>",
+      "bytes": 6250
+    },
+    {
+      "path": "tests/catalog.test.mjs",
+      "sha256": "<PRIVATE_REF_01357>",
+      "bytes": 2888
+    },
+    {
+      "path": "tests/cli.test.mjs",
+      "sha256": "<PRIVATE_REF_01307>",
+      "bytes": 7172
+    },
+    {
+      "path": "tests/commit-state.test.mjs",
+      "sha256": "<PRIVATE_REF_02030>",
+      "bytes": 12699
+    },
+    {
+      "path": "tests/design-decisions.test.mjs",
+      "sha256": "<PRIVATE_REF_03001>",
+      "bytes": 6010
+    },
+    {
+      "path": "tests/docs.test.mjs",
+      "sha256": "<PRIVATE_REF_02282>",
+      "bytes": 4498
+    },
+    {
+      "path": "tests/fixtures.test.mjs",
+      "sha256": "<PRIVATE_REF_01751>",
+      "bytes": 5154
+    },
+    {
+      "path": "tests/freshness.test.mjs",
+      "sha256": "<PRIVATE_REF_01860>",
+      "bytes": 4776
+    },
+    {
+      "path": "tests/helpers/fixtures.mjs",
+      "sha256": "<PRIVATE_REF_02026>",
+      "bytes": 1891
+    },
+    {
+      "path": "tests/helpers/python.mjs",
+      "sha256": "<PRIVATE_REF_01420>",
+      "bytes": 551
+    },
+    {
+      "path": "tests/helpers/vocabulary.mjs",
+      "sha256": "<PRIVATE_REF_03084>",
+      "bytes": 1179
+    },
+    {
+      "path": "tests/neutral-domains.test.mjs",
+      "sha256": "<PRIVATE_REF_01108>",
+      "bytes": 1405
+    },
+    {
+      "path": "tests/neutrality.test.mjs",
+      "sha256": "<PRIVATE_REF_01210>",
+      "bytes": 3687
+    },
+    {
+      "path": "tests/rehearsal.test.mjs",
+      "sha256": "<PRIVATE_REF_02105>",
+      "bytes": 8881
+    },
+    {
+      "path": "tests/render.test.mjs",
+      "sha256": "<PRIVATE_REF_02267>",
+      "bytes": 9911
+    },
+    {
+      "path": "tests/scaffold.test.mjs",
+      "sha256": "<PRIVATE_REF_00990>",
+      "bytes": 2347
+    },
+    {
+      "path": "tests/scenarios.test.mjs",
+      "sha256": "<PRIVATE_REF_03580>",
+      "bytes": 10665
+    },
+    {
+      "path": "tests/schema-bounds.test.mjs",
+      "sha256": "<PRIVATE_REF_01502>",
+      "bytes": 4196
+    },
+    {
+      "path": "tests/schema-subset.test.mjs",
+      "sha256": "<PRIVATE_REF_02360>",
+      "bytes": 6564
+    },
+    {
+      "path": "tests/secret-scan.test.mjs",
+      "sha256": "<PRIVATE_REF_02197>",
+      "bytes": 9153
+    },
+    {
+      "path": "tests/semantic-checks.test.mjs",
+      "sha256": "<PRIVATE_REF_00129>",
+      "bytes": 19712
+    },
+    {
+      "path": "tests/server.test.mjs",
+      "sha256": "<PRIVATE_REF_02119>",
+      "bytes": 5339
+    },
+    {
+      "path": "tests/skill-package.test.mjs",
+      "sha256": "<PRIVATE_REF_01836>",
+      "bytes": 4715
+    },
+    {
+      "path": "tests/skills-workflow.test.mjs",
+      "sha256": "<PRIVATE_REF_03699>",
+      "bytes": 15597
+    },
+    {
+      "path": "tests/skills.test.mjs",
+      "sha256": "<PRIVATE_REF_00670>",
+      "bytes": 7483
+    },
+    {
+      "path": "tests/validate.test.mjs",
+      "sha256": "<PRIVATE_REF_01997>",
+      "bytes": 15667
+    },
+    {
+      "path": "tests/view-handoff.test.mjs",
+      "sha256": "<PRIVATE_REF_00951>",
+      "bytes": 6366
+    },
+    {
+      "path": "tests/vocabulary.test.mjs",
+      "sha256": "<PRIVATE_REF_00915>",
+      "bytes": 1804
+    },
+    {
+      "path": "tests/workspace.test.mjs",
+      "sha256": "<PRIVATE_REF_01509>",
+      "bytes": 11220
+    },
+    {
+      "path": "tools/lib/brief.mjs",
+      "sha256": "<PRIVATE_REF_02854>",
+      "bytes": 5238
+    },
+    {
+      "path": "tools/lib/commit.mjs",
+      "sha256": "<PRIVATE_REF_01692>",
+      "bytes": 4274
+    },
+    {
+      "path": "tools/lib/neutrality.mjs",
+      "sha256": "<PRIVATE_REF_02098>",
+      "bytes": 2724
+    },
+    {
+      "path": "tools/lib/schema-subset.mjs",
+      "sha256": "<PRIVATE_REF_01362>",
+      "bytes": 8900
+    },
+    {
+      "path": "tools/lib/secret-scan.mjs",
+      "sha256": "<PRIVATE_REF_02402>",
+      "bytes": 5345
+    },
+    {
+      "path": "tools/lib/semantic-checks.mjs",
+      "sha256": "<PRIVATE_REF_02960>",
+      "bytes": 16824
+    },
+    {
+      "path": "tools/lib/server.mjs",
+      "sha256": "<PRIVATE_REF_01253>",
+      "bytes": 3562
+    },
+    {
+      "path": "tools/lib/validate.mjs",
+      "sha256": "<PRIVATE_REF_03433>",
+      "bytes": 12123
+    },
+    {
+      "path": "tools/lib/workspace.mjs",
+      "sha256": "<PRIVATE_REF_01063>",
+      "bytes": 6328
+    },
+    {
+      "path": "tools/neutrality-scan.mjs",
+      "sha256": "<PRIVATE_REF_01304>",
+      "bytes": 1626
+    },
+    {
+      "path": "tools/watchover.mjs",
+      "sha256": "<PRIVATE_REF_01187>",
+      "bytes": 7422
+    }
+  ]
+}

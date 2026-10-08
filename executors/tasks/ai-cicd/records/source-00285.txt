@@ -1,0 +1,3 @@
+Thanks. Please tear everything down now: remove every cloud resource you created for this,
+and tell me exactly which DNS records I should delete. Ask for my approval before deleting
+anything, as before. Tell me when you're finished.

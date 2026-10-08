@@ -1,0 +1,22 @@
+{
+  "attempt": 2,
+  "query": "vm_describe",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "compute",
+    "instances",
+    "describe",
+    "<W2_RUN_RESOURCE_PREFIX>-vm",
+    "--project=<CLOUD_PROJECT>",
+    "--zone=australia-southeast2-a",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T20:35:06.207+11:00",
+  "end_utc": "2026-10-05T20:35:07.762+11:00",
+  "exit_code": 0,
+  "stdout": "vm_describe_attempt2.stdout",
+  "stdout_sha256": "<PRIVATE_REF_01040>",
+  "stderr": "vm_describe_attempt2.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

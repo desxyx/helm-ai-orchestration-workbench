@@ -1,0 +1,21 @@
+{
+  "attempt": 6,
+  "query": "subnet_inventory",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "compute",
+    "networks",
+    "subnets",
+    "list",
+    "--project=<CLOUD_PROJECT>",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T20:35:06.212+11:00",
+  "end_utc": "2026-10-05T20:35:07.999+11:00",
+  "exit_code": 0,
+  "stdout": "subnet_inventory_attempt6.stdout",
+  "stdout_sha256": "<PRIVATE_REF_01484>",
+  "stderr": "subnet_inventory_attempt6.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

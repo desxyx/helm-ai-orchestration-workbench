@@ -1,0 +1,81 @@
+[
+  {
+    "creationTimestamp": "2026-10-05T02:25:08.421-07:00",
+    "enableConfidentialCompute": false,
+    "id": "<NUMERIC_RESOURCE_0026>",
+    "kind": "compute#disk",
+    "labelFingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+    "lastAttachTimestamp": "2026-10-05T02:25:21.227-07:00",
+    "name": "<W2_RUN_RESOURCE_PREFIX>-data",
+    "physicalBlockSizeBytes": "4096",
+    "satisfiesPzi": true,
+    "selfLink": "<PRIVATE_URL_0437>",
+    "sizeGb": "20",
+    "status": "READY",
+    "type": "<PRIVATE_URL_0436>",
+    "users": [
+      "<PRIVATE_URL_0439>"
+    ],
+    "zone": "<PRIVATE_URL_0447>"
+  },
+  {
+    "architecture": "X86_64",
+    "creationTimestamp": "2026-10-05T02:25:19.564-07:00",
+    "enableConfidentialCompute": false,
+    "guestOsFeatures": [
+      {
+        "type": "VIRTIO_SCSI_MULTIQUEUE"
+      },
+      {
+        "type": "SEV_CAPABLE"
+      },
+      {
+        "type": "SEV_SNP_CAPABLE"
+      },
+      {
+        "type": "SEV_LIVE_MIGRATABLE"
+      },
+      {
+        "type": "SEV_LIVE_MIGRATABLE_V2"
+      },
+      {
+        "type": "SNP_SVSM_CAPABLE"
+      },
+      {
+        "type": "IDPF"
+      },
+      {
+        "type": "TDX_CAPABLE"
+      },
+      {
+        "type": "UEFI_COMPATIBLE"
+      },
+      {
+        "type": "GVNIC"
+      }
+    ],
+    "id": "<NUMERIC_RESOURCE_0005>",
+    "kind": "compute#disk",
+    "labelFingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+    "lastAttachTimestamp": "2026-10-05T02:25:21.185-07:00",
+    "licenseCodes": [
+      "3242930272766215801"
+    ],
+    "licenses": [
+      "<PRIVATE_URL_0266>"
+    ],
+    "name": "<W2_RUN_RESOURCE_PREFIX>-vm",
+    "physicalBlockSizeBytes": "4096",
+    "satisfiesPzi": true,
+    "selfLink": "<PRIVATE_URL_0438>",
+    "sizeGb": "20",
+    "sourceImage": "<PRIVATE_URL_0265>",
+    "sourceImageId": "763874002631433611",
+    "status": "READY",
+    "type": "<PRIVATE_URL_0436>",
+    "users": [
+      "<PRIVATE_URL_0439>"
+    ],
+    "zone": "<PRIVATE_URL_0447>"
+  }
+]

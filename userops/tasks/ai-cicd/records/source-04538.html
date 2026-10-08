@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="source-derivative" content="source-04538: complete translated and redacted historical HTML; role identifiers renamed consistently; not a current task instruction.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H.E.L.M Task Handoff Board</title>
+<style>
+  :root {
+    --c-progress: #2563eb;
+    --c-done: #16a34a;
+    --c-cancel: #dc2626;
+    --c-hold: #d97706;
+    --bg: #f5f6f8;
+    --surface: #ffffff;
+    --surface-2: #fafbfc;
+    --border: #dde1e7;
+    --text: #1f2430;
+    --muted: #6b7280;
+    --accent: #334155;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14171c;
+      --surface: #1c2028;
+      --surface-2: #20242c;
+      --border: #333844;
+      --text: #e6e8eb;
+      --muted: #9aa1ac;
+      --accent: #c7ccd6;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 1.5rem;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  input, select, textarea, button {
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 0.55rem;
+  }
+  textarea { resize: vertical; width: 100%; }
+  input:disabled, textarea:disabled, select:disabled {
+    background: var(--surface-2);
+    color: var(--muted);
+    cursor: not-allowed;
+  }
+  button {
+    cursor: pointer;
+    background: var(--surface-2);
+    transition: all 0.15s ease;
+  }
+  button:hover:not(:disabled) { background: var(--border); }
+  button.primary { background: var(--c-progress); color: #fff; border-color: var(--c-progress); font-weight: 600; }
+  button.primary:hover:not(:disabled) { filter: brightness(1.08); }
+  button.btn-mini { padding: 0.2rem 0.5rem; font-size: 0.78rem; }
+  button.btn-action { padding: 0.35rem 0.65rem; font-size: 0.82rem; }
+  button.danger { color: var(--c-cancel); border-color: rgba(220,38,38,0.3); }
+  button.danger:hover:not(:disabled) { background: rgba(220,38,38,0.1); }
+  
+  .topbar {
+    display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;
+    margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border);
+  }
+  .topbar .grow { flex: 1 1 auto; }
+  .btn-group { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+  
+  .pill {
+    display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.7rem;
+    border-radius: 999px; font-size: 0.78rem; font-weight: 600; white-space: nowrap;
+  }
+  .pill-ok { background: rgba(22,163,74,0.15); color: var(--c-done); }
+  .pill-warn { background: rgba(217,119,6,0.15); color: var(--c-hold); }
+  .pill-saving { background: rgba(37,99,235,0.15); color: var(--c-progress); }
+  .last-updated { color: var(--muted); font-size: 0.82rem; margin-top: 0.2rem; }
+  
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.1rem; margin-bottom: 1.1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  }
+  .card h2 { font-size: 0.95rem; margin: 0 0 0.8rem; color: var(--accent); display: flex; align-items: center; justify-content: space-between; }
+  
+  .role-row {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem;
+    padding: 0.5rem 0; border-bottom: 1px dashed var(--border);
+  }
+  .role-row:last-child { border-bottom: none; }
+  .role-label { width: 90px; flex-shrink: 0; font-weight: 600; }
+  .role-name { width: 120px; flex-shrink: 0; }
+  .role-status { flex: 1 1 180px; min-width: 130px; }
+  .role-meta { font-size: 0.78rem; color: var(--muted); flex-shrink: 0; }
+  
+  .task-card { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.75rem; overflow: hidden; }
+  .task-head {
+    display: flex; align-items: center; gap: 0.6rem; padding: 0.65rem 0.85rem;
+    cursor: pointer; background: var(--surface-2); user-select: none;
+  }
+  .task-head:hover { background: rgba(0,0,0,0.03); }
+  .task-head .chev { transition: transform 0.15s; color: var(--muted); font-size: 0.8rem; }
+  .task-head.expanded .chev { transform: rotate(90deg); }
+  .status-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .task-seq { font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; flex-shrink: 0; font-weight: 700; }
+  .task-title { font-weight: 600; flex: 1 1 auto; }
+  .task-body { padding: 0.9rem; border-top: 1px solid var(--border); display: none; background: var(--surface); }
+  .task-body.open { display: block; }
+  
+  .field-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.6rem; align-items: center; }
+  .field-row label { font-size: 0.8rem; color: var(--muted); margin-right: 0.2rem; }
+  
+  .progress-list { list-style: none; margin: 0.5rem 0; padding: 0; }
+  .progress-list li {
+    padding: 0.45rem 0.65rem; border-left: 3px solid var(--c-progress); margin-bottom: 0.4rem;
+    font-size: 0.85rem; background: var(--surface-2); border-radius: 0 4px 4px 0;
+  }
+  .progress-list .ptime { color: var(--muted); font-size: 0.78rem; margin-right: 0.4rem; font-weight: 600; }
+  .confirm-row { font-size: 0.82rem; display: inline-flex; align-items: center; gap: 0.35rem; margin-left: 0.4rem; }
+  
+  .memo-row { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0; border-bottom: 1px dashed var(--border); }
+  .memo-row:last-child { border-bottom: none; }
+  .memo-label { width: 120px; flex-shrink: 0; font-weight: 600; font-size: 0.85rem; }
+  .memo-text { flex: 1 1 auto; }
+  
+  footer { text-align: center; color: var(--muted); font-size: 0.78rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <input id="task-name" type="text" placeholder="Task name"
+         style="font-size:1.3rem; font-weight:700; width:100%; border:none; background:transparent; padding:0.2rem 0; border-bottom: 1px solid var(--border);">
+  <div class="last-updated">Latest Status: <span id="last-updated-val">—</span></div>
+
+  <div class="topbar" style="margin-top:0.9rem;">
+    <label style="font-size:0.88rem; font-weight:600; display:inline-flex; align-items:center; gap:0.4rem;">
+      You are:
+      <select id="whoami-select" style="min-width: 190px; padding: 0.35rem 0.5rem; font-weight: 500;"></select>
+    </label>
+    <span class="grow"></span>
+    <span id="link-pill" class="pill pill-warn">💾 Checking…</span>
+    <div class="btn-group">
+      <button id="link-btn" type="button" class="btn-action primary">🔗 Link TASK_HANDOFF_DATA.json</button>
+      <button id="reload-btn" type="button" class="btn-action" title="Reload the latest JSON data from disk">🔄 Refresh data</button>
+      <button id="export-btn" type="button" class="btn-action" title="Download/export the current JSON data">📥 Export JSON</button>
+      <button id="import-btn" type="button" class="btn-action" title="Load an external JSON file">📂 Import JSON</button>
+      <input type="file" id="file-input" accept=".json" style="display:none;">
+      <button id="relink-btn" type="button" class="btn-mini" style="display:none;">Choose another file</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Role Status <span class="role-meta">Coordination status across sessions</span></h2>
+    <div id="role-board"></div>
+  </div>
+
+  <div class="card">
+    <h2>Tasks <span id="task-gate-note" class="role-meta"></span></h2>
+    <div id="task-board"></div>
+    <button id="add-task-btn" type="button" class="primary" style="margin-top:0.7rem;">+ New task</button>
+  </div>
+
+  <div class="card">
+    <h2>AI Memo <span class="role-meta">Keep key points concise; reminders across sessions/collaborators; leave empty when there is nothing to add</span></h2>
+    <div id="memo-board"></div>
+  </div>
+
+  <footer>
+    H.E.L.M Task Handoff Board & Data Architecture: AI reads/writes <code>TASK_HANDOFF_DATA.json</code>; humans use <code>TASK_HANDOFF_BOARD.html</code>.
+  </footer>
+</div>
+
+<!-- Embedded Fallback Data Template -->
+<script type="application/json" id="fallback-board-data">
+{
+  "taskName": "",
+  "lastUpdated": "",
+  "taskSeqCounter": 0,
+  "roles": {
+    "operationsCoordinator": { "label": "Operations Coordinator", "status": "Standby", "statusUpdated": "" },
+    "reviewer": { "label": "Reviewer", "name": "", "status": "Standby", "statusUpdated": "" },
+    "executors": [
+      { "id": "exec-1", "label": "Executor", "name": "", "status": "Standby", "statusUpdated": "" }
+    ],
+    "humanOperator": { "label": "Human Operator", "status": "", "statusUpdated": "" }
+  },
+  "tasks": [],
+  "memos": {
+    "operationsCoordinator": { "text": "", "updated": "" },
+    "reviewer": { "text": "", "updated": "" },
+    "executors": {
+      "exec-1": { "text": "", "updated": "" }
+    },
+    "humanOperator": { "text": "", "updated": "" }
+  }
+}
+</script>
+
+<script>
+(function () {
+  "use strict";
+
+  var STORAGE_KEY = "helm_task_handoff_board_v2";
+  var WHOAMI_KEY = "helm_task_handoff_whoami_v2";
+  var JSON_DEFAULT_FILENAME = "TASK_HANDOFF_DATA.json";
+
+  var STATUSES = [
+    { id: "in_progress", label: "In progress", color: "var(--c-progress)" },
+    { id: "completed", label: "Completed", color: "var(--c-done)" },
+    { id: "cancelled", label: "Cancelled", color: "var(--c-cancel)" },
+    { id: "on_hold", label: "On hold", color: "var(--c-hold)" }
+  ];
+
+  var IDB_NAME = "helm_task_handoff_json_handles";
+  var IDB_STORE = "handles";
+  var IDB_KEY = "jsonFileHandle";
+
+  var state = null;
+  var fileHandle = null;
+  var restoredHandle = null;
+  var writeTimer = null;
+  var lastWriteOk = null;
+  var manualToggle = {};
+
+  function statusInfo(id) {
+    for (var i = 0; i < STATUSES.length; i++) {
+      if (STATUSES[i].id === id) return STATUSES[i];
+    }
+    return STATUSES[0];
+  }
+
+  function uid(prefix) {
+    return prefix + "-" + Math.random().toString(36).slice(2, 9);
+  }
+
+  function formatNow(d) {
+    d = d || new Date();
+    var h = d.getHours();
+    var ampm = h >= 12 ? "pm" : "am";
+    h = h % 12;
+    if (h === 0) h = 12;
+    var m = String(d.getMinutes()).padStart(2, "0");
+    return h + ":" + m + " " + ampm + " " + (d.getMonth() + 1) + "/" + d.getDate();
+  }
+
+  function esc(s) {
+    if (s === undefined || s === null) return "";
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  // ---------- IndexedDB File Handle Persistence ----------
+  function idbOpen() {
+    return new Promise(function (resolve, reject) {
+      if (!window.indexedDB) { reject(new Error("no indexedDB")); return; }
+      var req = indexedDB.open(IDB_NAME, 1);
+      req.onupgradeneeded = function () { req.result.createObjectStore(IDB_STORE); };
+      req.onsuccess = function () { resolve(req.result); };
+      req.onerror = function () { reject(req.error); };
+    });
+  }
+
+  function idbSetHandle(handle) {
+    return idbOpen().then(function (db) {
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction(IDB_STORE, "readwrite");
+        tx.objectStore(IDB_STORE).put(handle, IDB_KEY);
+        tx.oncomplete = function () { resolve(); };
+        tx.onerror = function () { reject(tx.error); };
+      });
+    }).catch(function (e) { console.warn("could not remember json handle:", e.message); });
+  }
+
+  function idbGetHandle() {
+    return idbOpen().then(function (db) {
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction(IDB_STORE, "readonly");
+        var req = tx.objectStore(IDB_STORE).get(IDB_KEY);
+        req.onsuccess = function () { resolve(req.result || null); };
+        req.onerror = function () { reject(req.error); };
+      });
+    }).catch(function () { return null; });
+  }
+
+  function tryRestoreHandle() {
+    if (!window.showOpenFilePicker || !window.indexedDB) return;
+    idbGetHandle().then(function (handle) {
+      if (!handle) return;
+      return handle.queryPermission({ mode: "readwrite" }).then(function (perm) {
+        if (perm === "granted") {
+          fileHandle = handle;
+          lastWriteOk = null;
+          readFromLinkedHandle();
+        } else {
+          restoredHandle = handle;
+        }
+        updateLinkPill();
+      });
+    }).catch(function () {});
+  }
+
+  function readFromLinkedHandle() {
+    if (!fileHandle) return;
+    fileHandle.getFile().then(function (file) {
+      return file.text();
+    }).then(function (text) {
+      if (!text || !text.trim()) return;
+      var data = JSON.parse(text);
+      if (data && typeof data === "object") {
+        state = data;
+        migrateTaskSeq(state);
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+        render();
+        updateLinkPill();
+      }
+    }).catch(function (err) {
+      console.warn("Auto-read from JSON file failed:", err);
+    });
+  }
+
+  function loadDefaultState() {
+    var el = document.getElementById("fallback-board-data");
+    try {
+      return JSON.parse(el.textContent);
+    } catch (e) {
+      return {
+        taskName: "",
+        lastUpdated: "",
+        taskSeqCounter: 0,
+        roles: {
+          operationsCoordinator: { label: "Operations Coordinator", status: "Standby", statusUpdated: "" },
+          reviewer: { label: "Reviewer", name: "", status: "Standby", statusUpdated: "" },
+          executors: [{ id: "exec-1", label: "Executor", name: "", status: "Standby", statusUpdated: "" }],
+          humanOperator: { label: "Human Operator", status: "", statusUpdated: "" }
+        },
+        tasks: [],
+        memos: { operationsCoordinator: { text: "", updated: "" }, reviewer: { text: "", updated: "" }, executors: { "exec-1": { text: "", updated: "" } }, humanOperator: { text: "", updated: "" } }
+      };
+    }
+  }
+
+  function migrateTaskSeq(s) {
+    if (!s) return;
+    if (typeof s.taskSeqCounter !== "number") s.taskSeqCounter = 0;
+    if (!s.roles) s.roles = { operationsCoordinator: { label: "Operations Coordinator", status: "Standby" }, reviewer: { label: "Reviewer", status: "Standby" }, executors: [], humanOperator: { label: "Human Operator", status: "" } };
+    if (!s.roles.operationsCoordinator) s.roles.operationsCoordinator = { label: "Operations Coordinator", status: "Standby" };
+    if (!s.roles.reviewer) s.roles.reviewer = { label: "Reviewer", status: "Standby" };
+    if (!s.roles.executors) s.roles.executors = [{ id: "exec-1", label: "Executor", name: "", status: "Standby" }];
+    if (!s.roles.humanOperator) s.roles.humanOperator = { label: "Human Operator", status: "" };
+    if (!s.memos) s.memos = {};
+    (s.tasks || []).forEach(function (t) {
+      if (typeof t.seq !== "number") {
+        s.taskSeqCounter += 1;
+        t.seq = s.taskSeqCounter;
+      } else if (t.seq > s.taskSeqCounter) {
+        s.taskSeqCounter = t.seq;
+      }
+    });
+  }
+
+  function loadInitialState() {
+    // 1. Try localStorage
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        state = JSON.parse(raw);
+        migrateTaskSeq(state);
+        return;
+      }
+    } catch (e) {}
+
+    // 2. Default fallback
+    state = loadDefaultState();
+    migrateTaskSeq(state);
+
+    // 3. Try Fetching local TASK_HANDOFF_DATA.json if served over HTTP
+    if (window.location.protocol.indexOf("http") === 0) {
+      fetch("./" + JSON_DEFAULT_FILENAME + "?t=" + Date.now()).then(function (res) {
+        if (res.ok) return res.json();
+        throw new Error("not found");
+      }).then(function (data) {
+        if (data && typeof data === "object") {
+          state = data;
+          migrateTaskSeq(state);
+          try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+          render();
+        }
+      }).catch(function () {});
+    }
+  }
+
+  // ---------- Auto-Save Engine ----------
+  function saveStateQuiet() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+    scheduleWriteBack();
+  }
+
+  function commitSave() {
+    state.lastUpdated = formatNow();
+    saveStateQuiet();
+    render();
+  }
+
+  function scheduleWriteBack() {
+    if (!fileHandle) { updateLinkPill(); return; }
+    updateLinkPill("saving");
+    clearTimeout(writeTimer);
+    writeTimer = setTimeout(writeBackToFile, 600);
+  }
+
+  function writeBackToFile() {
+    if (!fileHandle) return Promise.resolve();
+    return fileHandle.queryPermission({ mode: "readwrite" }).then(function (perm) {
+      if (perm !== "granted") {
+        return fileHandle.requestPermission({ mode: "readwrite" }).then(function (req) {
+          if (req !== "granted") throw new Error("write permission not granted");
+        });
+      }
+    }).then(function () {
+      var jsonText = JSON.stringify(state, null, 2) + "\n";
+      return fileHandle.createWritable().then(function (writable) {
+        return writable.write(jsonText).then(function () { return writable.close(); });
+      });
+    }).then(function () {
+      lastWriteOk = true;
+      updateLinkPill();
+    }).catch(function (err) {
+      console.error("auto-save to JSON file failed", err);
+      lastWriteOk = false;
+      updateLinkPill(err.message);
+    });
+  }
+
+  window.addEventListener("beforeunload", function () {
+    if (fileHandle && writeTimer) {
+      clearTimeout(writeTimer);
+      writeBackToFile();
+    }
+  });
+
+  // ---------- Linking JSON File ----------
+  function linkFile() {
+    if (!window.showOpenFilePicker) {
+      alert("This browser does not support the File System Access API (Chrome / Edge recommended). Data will still save automatically in localStorage; use Export JSON to download a copy.");
+      return;
+    }
+    if (restoredHandle) {
+      var handle = restoredHandle;
+      handle.requestPermission({ mode: "readwrite" }).then(function (perm) {
+        if (perm !== "granted") {
+          alert("Write permission was not granted. Click Choose another file to select again.");
+          return;
+        }
+        fileHandle = handle;
+        restoredHandle = null;
+        lastWriteOk = null;
+        readFromLinkedHandle();
+        updateLinkPill();
+      }).catch(function (err) {
+        alert("Reconnection failed: " + err.message + ". Click Choose another file to select again.");
+      });
+      return;
+    }
+    openFilePickerAndLink();
+  }
+
+  function openFilePickerAndLink() {
+    window.showOpenFilePicker({
+      suggestedName: JSON_DEFAULT_FILENAME,
+      types: [{ description: "JSON Data File", accept: { "application/json": [".json"] } }]
+    }).then(function (handles) {
+      var handle = handles[0];
+      return handle.requestPermission({ mode: "readwrite" }).then(function (perm) {
+        if (perm !== "granted") { alert("Write permission was not granted."); return; }
+        return handle.getFile().then(function (file) { return file.text(); }).then(function (text) {
+          fileHandle = handle;
+          restoredHandle = null;
+          lastWriteOk = null;
+          idbSetHandle(handle);
+          if (text && text.trim()) {
+            try {
+              var parsed = JSON.parse(text);
+              if (parsed && typeof parsed === "object") {
+                state = parsed;
+                migrateTaskSeq(state);
+                render();
+              }
+            } catch (e) {}
+          }
+          updateLinkPill();
+          writeBackToFile();
+        });
+      });
+    }).catch(function (err) {
+      if (err && err.name !== "AbortError") alert("Connection failed: " + err.message);
+    });
+  }
+
+  function updateLinkPill(statusOverride) {
+    var pill = document.getElementById("link-pill");
+    var btn = document.getElementById("link-btn");
+    var rebtn = document.getElementById("relink-btn");
+    if (!pill) return;
+
+    if (statusOverride === "saving") {
+      pill.textContent = "⏳ Saving to disk…";
+      pill.className = "pill pill-saving";
+      return;
+    }
+
+    if (!window.showOpenFilePicker) {
+      pill.textContent = "💾 In browser storage (localStorage)";
+      pill.className = "pill pill-warn";
+    } else if (fileHandle && lastWriteOk !== false) {
+      pill.textContent = "🟢 Linked " + fileHandle.name + " (live autosave)";
+      pill.className = "pill pill-ok";
+    } else if (fileHandle && lastWriteOk === false) {
+      pill.textContent = "⚠️ Save error" + (statusOverride ? " (" + statusOverride + ")" : "");
+      pill.className = "pill pill-warn";
+    } else if (restoredHandle) {
+      pill.textContent = "💡 File remembered — click to reconnect";
+      pill.className = "pill pill-warn";
+    } else {
+      pill.textContent = "💾 No disk JSON linked — browser storage only";
+      pill.className = "pill pill-warn";
+    }
+
+    if (btn) btn.textContent = restoredHandle ? "🔗 Reconnect " + restoredHandle.name : "🔗 Link " + JSON_DEFAULT_FILENAME;
+    if (rebtn) rebtn.style.display = (fileHandle || restoredHandle) ? "inline-block" : "none";
+  }
+
+  // ---------- Export / Import Features ----------
+  function exportJson() {
+    var jsonText = JSON.stringify(state, null, 2);
+    var blob = new Blob([jsonText], { type: "application/json" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = (state.taskName ? state.taskName.replace(/[\/\\?%*:|"<>]/g, "_") + "_" : "") + JSON_DEFAULT_FILENAME;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function triggerImport() {
+    var input = document.getElementById("file-input");
+    if (input) input.click();
+  }
+
+  function handleImportFile(e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (evt) {
+      try {
+        var parsed = JSON.parse(evt.target.result);
+        if (parsed && typeof parsed === "object") {
+          state = parsed;
+          migrateTaskSeq(state);
+          commitSave();
+          alert("Data loaded successfully!");
+        } else {
+          alert("Invalid JSON format.");
+        }
+      } catch (err) {
+        alert("Failed to parse JSON: " + err.message);
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = "";
+  }
+
+  function reloadFromDisk() {
+    if (fileHandle) {
+      readFromLinkedHandle();
+      alert("Refreshed from disk!");
+    } else {
+      triggerImport();
+    }
+  }
+
+  // ---------- Permissions & Identity ----------
+  function getWhoAmI() { return localStorage.getItem(WHOAMI_KEY) || "humanOperator"; }
+  function setWhoAmI(v) { localStorage.setItem(WHOAMI_KEY, v); render(); }
+  function isHumanOperator() { return getWhoAmI() === "humanOperator"; }
+  function canEditMeta() { return isHumanOperator() || getWhoAmI() === "operationsCoordinator"; }
+  function canEdit(roleId) { return isHumanOperator() || getWhoAmI() === roleId; }
+
+  // ---------- Rendering Logic ----------
+  function render() {
+    if (!state) return;
+
+    // Task Name
+    var tn = document.getElementById("task-name");
+    if (tn && document.activeElement !== tn) {
+      tn.value = state.taskName || "";
+      tn.disabled = !canEditMeta();
+    }
+
+    // Last Updated
+    var luv = document.getElementById("last-updated-val");
+    if (luv) luv.textContent = state.lastUpdated || "—";
+
+    // WhoAmI Select
+    renderWhoAmI();
+
+    // Roles Board
+    renderRoles();
+
+    // Tasks Board
+    renderTasks();
+
+    // Memo Board
+    renderMemos();
+
+    // Link Pill
+    updateLinkPill();
+  }
+
+  function renderWhoAmI() {
+    var sel = document.getElementById("whoami-select");
+    if (!sel) return;
+    var cur = getWhoAmI();
+    var r = state.roles || {};
+    var revName = (r.reviewer && r.reviewer.name) ? r.reviewer.name : "Unassigned";
+    var opts = [
+      { id: "humanOperator", label: "Human Operator (coordination / observer)" },
+      { id: "operationsCoordinator", label: "Operations Coordinator (UserOps coordinator)" },
+      { id: "reviewer", label: "Reviewer (" + revName + ")" }
+    ];
+    ((r && r.executors) || []).forEach(function (ex, i) {
+      opts.push({ id: ex.id, label: (ex.label || "Executor") + " " + (i + 1) + " (" + (ex.name || "Unassigned") + ")" });
+    });
+
+    var html = "";
+    opts.forEach(function (o) {
+      html += '<option value="' + esc(o.id) + '"' + (cur === o.id ? " selected" : "") + ">" + esc(o.label) + "</option>";
+    });
+    sel.innerHTML = html;
+  }
+
+  function renderRoles() {
+    var board = document.getElementById("role-board");
+    if (!board) return;
+    var r = state.roles || {};
+    var html = "";
+
+    // Operations Coordinator
+    var an = r.operationsCoordinator || { label: "Operations Coordinator", status: "Standby", statusUpdated: "" };
+    html += roleRow("operationsCoordinator", an.label, "", an.status, an.statusUpdated, false);
+
+    // Reviewer
+    var rev = r.reviewer || { label: "Reviewer", name: "", status: "Standby", statusUpdated: "" };
+    html += roleRow("reviewer", rev.label, rev.name, rev.status, rev.statusUpdated, true);
+
+    // Executors
+    (r.executors || []).forEach(function (ex) {
+      html += roleRow(ex.id, ex.label, ex.name, ex.status, ex.statusUpdated, true, true);
+    });
+
+    // Human Operator
+    var d = r.humanOperator || { label: "Human Operator", status: "", statusUpdated: "" };
+    html += roleRow("humanOperator", d.label, "", d.status, d.statusUpdated, false);
+
+    if (canEditMeta()) {
+      html += '<div style="margin-top:0.6rem;"><button id="add-exec-btn" type="button" class="btn-mini">+ Add Executor</button></div>';
+    }
+
+    board.innerHTML = html;
+    bindRoleEvents();
+  }
+
+  function roleRow(id, label, name, status, updated, hasName, isExec) {
+    var editable = canEdit(id);
+    var metaEditable = canEditMeta();
+    var h = '<div class="role-row" data-role-id="' + esc(id) + '">';
+    h += '<div class="role-label">' + esc(label) + '</div>';
+    
+    if (hasName) {
+      h += '<input class="role-name" type="text" placeholder="Name" value="' + esc(name) + '"' + (metaEditable ? "" : " disabled") + '>';
+    } else {
+      h += '<div class="role-name" style="color:var(--muted); font-size:0.85rem;">—</div>';
+    }
+
+    h += '<input class="role-status" type="text" placeholder="Status (e.g. standby/in development)" value="' + esc(status) + '"' + (editable ? "" : " disabled") + '>';
+    h += '<div class="role-meta">' + (updated ? esc(updated) : "—") + '</div>';
+
+    if (isExec && metaEditable) {
+      h += '<button class="del-exec-btn btn-mini danger" type="button" data-exec-id="' + esc(id) + '">Delete</button>';
+    }
+    h += '</div>';
+    return h;
+  }
+
+  function bindRoleEvents() {
+    var board = document.getElementById("role-board");
+    if (!board) return;
+
+    var rows = board.querySelectorAll(".role-row");
+    rows.forEach(function (row) {
+      var id = row.getAttribute("data-role-id");
+      var nameInp = row.querySelector(".role-name");
+      var statusInp = row.querySelector(".role-status");
+
+      if (nameInp && nameInp.tagName === "INPUT") {
+        nameInp.oninput = function () {
+          if (id === "reviewer") {
+            if (!state.roles.reviewer) state.roles.reviewer = { label: "Reviewer" };
+            state.roles.reviewer.name = nameInp.value;
+          } else {
+            var ex = (state.roles.executors || []).find(function (e) { return e.id === id; });
+            if (ex) ex.name = nameInp.value;
+          }
+          saveStateQuiet();
+        };
+        nameInp.onblur = commitSave;
+      }
+
+      if (statusInp) {
+        statusInp.oninput = function () {
+          var target;
+          if (id === "operationsCoordinator" || id === "reviewer" || id === "humanOperator") {
+            if (!state.roles[id]) state.roles[id] = { label: id };
+            target = state.roles[id];
+          } else {
+            target = (state.roles.executors || []).find(function (e) { return e.id === id; });
+          }
+          if (target) {
+            target.status = statusInp.value;
+            target.statusUpdated = formatNow();
+          }
+          saveStateQuiet();
+        };
+        statusInp.onblur = commitSave;
+      }
+    });
+
+    var addBtn = document.getElementById("add-exec-btn");
+    if (addBtn) {
+      addBtn.onclick = function () {
+        if (!state.roles.executors) state.roles.executors = [];
+        state.roles.executors.push({ id: uid("exec"), label: "Executor", name: "", status: "Standby", statusUpdated: formatNow() });
+        commitSave();
+      };
+    }
+
+    var delBtns = board.querySelectorAll(".del-exec-btn");
+    delBtns.forEach(function (btn) {
+      btn.onclick = function () {
+        var exId = btn.getAttribute("data-exec-id");
+        state.roles.executors = (state.roles.executors || []).filter(function (e) { return e.id !== exId; });
+        commitSave();
+      };
+    });
+  }
+
+  function renderTasks() {
+    var board = document.getElementById("task-board");
+    if (!board) return;
+    var tasks = state.tasks || [];
+    var html = "";
+
+    if (tasks.length === 0) {
+      html = '<div style="color:var(--muted); font-size:0.88rem; padding:0.6rem 0;">No tasks yet. Click + New task below to begin.</div>';
+    } else {
+      tasks.forEach(function (t) {
+        var sInfo = statusInfo(t.status);
+        var isExpanded = manualToggle[t.id] !== undefined ? manualToggle[t.id] : (t.status === "in_progress");
+
+        html += '<div class="task-card" data-task-id="' + esc(t.id) + '">';
+        html += '<div class="task-head' + (isExpanded ? " expanded" : "") + '">';
+        html += '<span class="chev">▶</span>';
+        html += '<span class="status-dot" style="background:' + sInfo.color + '"></span>';
+        html += '<span class="task-seq">#' + t.seq + '</span>';
+        html += '<span class="task-title">' + esc(t.name || "Unnamed task") + '</span>';
+        html += '<span class="role-meta">' + esc(t.date || "") + '</span>';
+        html += '</div>';
+
+        html += '<div class="task-body' + (isExpanded ? " open" : "") + '">';
+        
+        // Fields
+        html += '<div class="field-row">';
+        html += '<label>Task name:</label><input class="t-name" type="text" style="flex:1 1 220px;" value="' + esc(t.name) + '"' + (canEditMeta() ? "" : " disabled") + '>';
+        html += '<label>Status:</label><select class="t-status" style="width:120px;">';
+        STATUSES.forEach(function (st) {
+          html += '<option value="' + esc(st.id) + '"' + (t.status === st.id ? " selected" : "") + ">" + esc(st.label) + "</option>";
+        });
+        html += '</select>';
+        html += '</div>';
+
+        // Checkbox confirmation
+        html += '<div class="field-row">';
+        html += '<label class="confirm-row"><input class="t-req-confirm" type="checkbox"' + (t.requireConfirmation ? " checked" : "") + (canEditMeta() ? "" : " disabled") + '> Requires final Human Operator confirmation</label>';
+        if (t.requireConfirmation) {
+          html += '<label class="confirm-row"><input class="t-humanOperator-confirmed" type="checkbox"' + (t.humanOperatorConfirmed ? " checked" : "") + (isHumanOperator() ? "" : " disabled") + '> Human Operator confirmed completion</label>';
+        }
+        html += '</div>';
+
+        // Content
+        html += '<div style="margin-bottom:0.6rem;">';
+        html += '<label style="font-size:0.8rem; color:var(--muted); display:block; margin-bottom:0.2rem;">Task description and context:</label>';
+        html += '<textarea class="t-content" rows="2" placeholder="Task background/scope/boundaries…"' + (canEditMeta() ? "" : " disabled") + '>' + esc(t.content || "") + '</textarea>';
+        html += '</div>';
+
+        // Progress Updates
+        html += '<div style="margin-bottom:0.6rem;">';
+        html += '<label style="font-size:0.8rem; color:var(--muted); font-weight:600;">Progress Updates:</label>';
+        html += '<ul class="progress-list">';
+        (t.progress || []).forEach(function (p, pIdx) {
+          html += '<li><span class="ptime">[' + esc(p.time) + ']</span>' + esc(p.text);
+          if (canEditMeta()) {
+            html += ' <button class="del-prog-btn btn-mini danger" style="padding:0 0.35rem; margin-left:0.4rem;" data-p-idx="' + pIdx + '">×</button>';
+          }
+          html += '</li>';
+        });
+        html += '</ul>';
+
+        html += '<div style="display:flex; gap:0.5rem; margin-top:0.4rem;">';
+        html += '<input class="new-prog-text" type="text" placeholder="Add a progress update…" style="flex:1;">';
+        html += '<button class="add-prog-btn btn-mini primary" type="button">+ Record progress</button>';
+        html += '</div>';
+        html += '</div>';
+
+        if (canEditMeta()) {
+          html += '<div style="text-align:right; margin-top:0.6rem;"><button class="del-task-btn btn-mini danger" type="button">Delete this task</button></div>';
+        }
+
+        html += '</div></div>';
+      });
+    }
+
+    board.innerHTML = html;
+    bindTaskEvents();
+  }
+
+  function bindTaskEvents() {
+    var board = document.getElementById("task-board");
+    if (!board) return;
+
+    var cards = board.querySelectorAll(".task-card");
+    cards.forEach(function (card) {
+      var tId = card.getAttribute("data-task-id");
+      var t = (state.tasks || []).find(function (x) { return x.id === tId; });
+      if (!t) return;
+
+      var head = card.querySelector(".task-head");
+      head.onclick = function () {
+        var isExpanded = manualToggle[t.id] !== undefined ? manualToggle[t.id] : (t.status === "in_progress");
+        manualToggle[t.id] = !isExpanded;
+        renderTasks();
+      };
+
+      var nameInp = card.querySelector(".t-name");
+      if (nameInp) {
+        nameInp.oninput = function () { t.name = nameInp.value; saveStateQuiet(); };
+        nameInp.onblur = commitSave;
+      }
+
+      var statusSel = card.querySelector(".t-status");
+      if (statusSel) {
+        statusSel.onchange = function () {
+          t.status = statusSel.value;
+          t.date = formatNow();
+          commitSave();
+        };
+      }
+
+      var reqConf = card.querySelector(".t-req-confirm");
+      if (reqConf) {
+        reqConf.onchange = function () {
+          t.requireConfirmation = reqConf.checked;
+          if (!t.requireConfirmation) t.humanOperatorConfirmed = false;
+          commitSave();
+        };
+      }
+
+      var humanOperatorConf = card.querySelector(".t-humanOperator-confirmed");
+      if (humanOperatorConf) {
+        humanOperatorConf.onchange = function () {
+          t.humanOperatorConfirmed = humanOperatorConf.checked;
+          commitSave();
+        };
+      }
+
+      var contentInp = card.querySelector(".t-content");
+      if (contentInp) {
+        contentInp.oninput = function () { t.content = contentInp.value; saveStateQuiet(); };
+        contentInp.onblur = commitSave;
+      }
+
+      var addProgBtn = card.querySelector(".add-prog-btn");
+      var progInp = card.querySelector(".new-prog-text");
+      if (addProgBtn && progInp) {
+        var addP = function () {
+          var val = progInp.value.trim();
+          if (!val) return;
+          if (!t.progress) t.progress = [];
+          t.progress.push({ time: formatNow(), text: val });
+          progInp.value = "";
+          commitSave();
+        };
+        addProgBtn.onclick = addP;
+        progInp.onkeydown = function (e) { if (e.key === "Enter") addP(); };
+      }
+
+      var delProgBtns = card.querySelectorAll(".del-prog-btn");
+      delProgBtns.forEach(function (b) {
+        b.onclick = function () {
+          var idx = parseInt(b.getAttribute("data-p-idx"), 10);
+          t.progress.splice(idx, 1);
+          commitSave();
+        };
+      });
+
+      var delTaskBtn = card.querySelector(".del-task-btn");
+      if (delTaskBtn) {
+        delTaskBtn.onclick = function () {
+          if (confirm("Delete task #" + t.seq + " [" + (t.name || "") + "]?")) {
+            state.tasks = state.tasks.filter(function (x) { return x.id !== tId; });
+            commitSave();
+          }
+        };
+      }
+    });
+
+    var addTBtn = document.getElementById("add-task-btn");
+    if (addTBtn) {
+      addTBtn.onclick = function () {
+        if (typeof state.taskSeqCounter !== "number") state.taskSeqCounter = 0;
+        state.taskSeqCounter += 1;
+        var newT = {
+          id: uid("task"),
+          seq: state.taskSeqCounter,
+          name: "New task #" + state.taskSeqCounter,
+          content: "",
+          date: formatNow(),
+          status: "in_progress",
+          requireConfirmation: false,
+          humanOperatorConfirmed: false,
+          progress: []
+        };
+        if (!state.tasks) state.tasks = [];
+        state.tasks.push(newT);
+        manualToggle[newT.id] = true;
+        commitSave();
+      };
+    }
+  }
+
+  function renderMemos() {
+    var board = document.getElementById("memo-board");
+    if (!board) return;
+    var m = state.memos || {};
+    var r = state.roles || {};
+    var html = "";
+
+    // Operations Coordinator
+    html += memoRow("operationsCoordinator", "Operations Coordinator Memo", m.operationsCoordinator ? m.operationsCoordinator.text : "", m.operationsCoordinator ? m.operationsCoordinator.updated : "");
+    // Reviewer
+    html += memoRow("reviewer", "Reviewer Memo", m.reviewer ? m.reviewer.text : "", m.reviewer ? m.reviewer.updated : "");
+    // Executors
+    ((r && r.executors) || []).forEach(function (ex) {
+      var item = (m.executors && m.executors[ex.id]) ? m.executors[ex.id] : { text: "", updated: "" };
+      html += memoRow(ex.id, (ex.name || ex.label) + " Memo", item.text, item.updated);
+    });
+    // Human Operator
+    html += memoRow("humanOperator", "Human Operator Memo", m.humanOperator ? m.humanOperator.text : "", m.humanOperator ? m.humanOperator.updated : "");
+
+    board.innerHTML = html;
+    bindMemoEvents();
+  }
+
+  function memoRow(id, label, text, updated) {
+    var editable = canEdit(id);
+    var h = '<div class="memo-row" data-memo-id="' + esc(id) + '">';
+    h += '<div class="memo-label">' + esc(label) + '</div>';
+    h += '<input class="memo-text" type="text" placeholder="None" value="' + esc(text) + '"' + (editable ? "" : " disabled") + '>';
+    h += '<div class="role-meta">' + (updated ? esc(updated) : "—") + '</div>';
+    h += '</div>';
+    return h;
+  }
+
+  function bindMemoEvents() {
+    var board = document.getElementById("memo-board");
+    if (!board) return;
+    var rows = board.querySelectorAll(".memo-row");
+    rows.forEach(function (row) {
+      var id = row.getAttribute("data-memo-id");
+      var textInp = row.querySelector(".memo-text");
+      if (textInp) {
+        textInp.oninput = function () {
+          if (!state.memos) state.memos = {};
+          var target;
+          if (id === "operationsCoordinator" || id === "reviewer" || id === "humanOperator") {
+            if (!state.memos[id]) state.memos[id] = { text: "", updated: "" };
+            target = state.memos[id];
+          } else {
+            if (!state.memos.executors) state.memos.executors = {};
+            if (!state.memos.executors[id]) state.memos.executors[id] = { text: "", updated: "" };
+            target = state.memos.executors[id];
+          }
+          target.text = textInp.value;
+          target.updated = formatNow();
+          saveStateQuiet();
+        };
+        textInp.onblur = commitSave;
+      }
+    });
+  }
+
+  // ---------- Global Init ----------
+  document.addEventListener("DOMContentLoaded", function () {
+    // 1. Task Name Input
+    var tn = document.getElementById("task-name");
+    if (tn) {
+      tn.oninput = function () {
+        if (state) {
+          state.taskName = tn.value;
+          saveStateQuiet();
+        }
+      };
+      tn.onblur = commitSave;
+    }
+
+    // 2. WhoAmI Select
+    var whoSelect = document.getElementById("whoami-select");
+    if (whoSelect) {
+      whoSelect.onchange = function () {
+        setWhoAmI(whoSelect.value);
+      };
+    }
+
+    // 3. Link Buttons
+    var linkBtn = document.getElementById("link-btn");
+    if (linkBtn) linkBtn.onclick = linkFile;
+
+    var relinkBtn = document.getElementById("relink-btn");
+    if (relinkBtn) relinkBtn.onclick = openFilePickerAndLink;
+
+    var reloadBtn = document.getElementById("reload-btn");
+    if (reloadBtn) reloadBtn.onclick = reloadFromDisk;
+
+    var exportBtn = document.getElementById("export-btn");
+    if (exportBtn) exportBtn.onclick = exportJson;
+
+    var importBtn = document.getElementById("import-btn");
+    if (importBtn) importBtn.onclick = triggerImport;
+
+    var fileInput = document.getElementById("file-input");
+    if (fileInput) fileInput.onchange = handleImportFile;
+
+    // 4. Load State & Attempt Handle Restore
+    loadInitialState();
+    tryRestoreHandle();
+    render();
+  });
+})();
+</script>
+</body>
+</html>

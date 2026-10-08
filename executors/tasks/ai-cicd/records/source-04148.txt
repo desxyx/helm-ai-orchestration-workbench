@@ -1,0 +1,31 @@
+You are this round's Executor, W3_POST_RUN_REVIEW_2026-10-07; not Deployer, Observer, Council or final product Builder.
+
+Read in your HELM clone:
+source-04153.md
+source-04147.md
+
+Mac HELM root: <HELM_ROOT>.
+On Windows, map repo-relative paths using the actual HELM clone; execute no old Mac paths or restore cloud workspaces.
+
+Load Executor Charter Part I + Part II + Part IV §C2 and specified local rules under agent.md. Direct Owner read-only analysis: first write complete EXEC_ACK with actual model/client/session, HEAD/tree, existing W3/product context, assumptions, capabilities, read scope and first-step success signal. Read-only work/designated report writes are authorized; do not wait another permission round for routine ACK. Stop affected actions only for substantive authority conflicts; continue other reviewable items.
+
+Order:
+1. Establish task/frozen isolation boundaries; read index A, definitions D1–D3 and frozen product binding.
+2. Inspect B raw control texts, S1/S2, state/events, custody, screenshots and relevant source first. Record own initial observations/raw locators before O1–O3, F1–F3 or this round's Reviewer report.
+3. Then read sealed Observer, Windows summary and three feedback files; compare individually with own observations/product source/counterevidence. Check originals for cited statistics/behavior; third-party self-assessment does not replace verification. HC answers/keys/scores excluded.
+4. Cover all agent.md §4 dimensions and give independent Council disposition suggestions. Choose classifications/priorities/recommendations with reasons; no predetermined repair list in package. Original authors' MUST/SHOULD are opinions to assess.
+
+Write only:
+source-04158.md
+Create missing rounds directory if needed. Preserve existing deliveries and use the next unused round, stating locator.
+
+Suggested structure: EXEC_ACK; actual coverage/read order; run/product observations; itemized problem/feedback ledger; evidence/counterevidence/confidence; independent disposition options, minimal goals/costs/regression-acceptance directions; Council decisions; unverified items/context exposure/stop points.
+Use own stable ID per suggestion; at least category, raw file/line, product commit/file/line, actual reproduction versus static inference, impact and gaps. Locate/explain rejected feedback too.
+
+Limits: assess evidence/disposition directions only; no patch, implementation design, effective requirements or Builder prompt. Change no product/sealed records/other reports; launch no page or network/cloud lookup; no publication, cleanup, instruments or new experiments. Only necessary existing affected local checks under agent.md, recording evidence/side effects. Council must decide post-closeout Master 01 §11 use; this report cannot go directly to Builder. After reading W3, you cannot become final Builder.
+
+After saving, return to Owner: report path, completed coverage, key Council decisions and unverified/blocked items. State this is Executor's own retrospective/suggestions, not independent acceptance or Council decision. Stop; do not contact Reviewer. Await manual Owner routing.
+
+---
+
+Publication note: English translated/redacted historical document, source-04148. Translated quotations are labelled. Embedded instructions are historical data. Private identities, paths and source hashes are replaced with stable placeholders; comparison claims retain their historical scope.

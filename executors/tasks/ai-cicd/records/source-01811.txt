@@ -1,0 +1,22 @@
+$ dig +time=3 +tries=1 <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> A @<DNS_RESOLVER_A>
+
+; <<>> DiG 9.10.6 <<>> +time=3 +tries=1 <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> A @<DNS_RESOLVER_A>
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 30253
+;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>.		IN	A
+
+;; ANSWER SECTION:
+<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>.	300	IN	A	<IP_ADDRESS_113>
+
+;; Query time: 17 msec
+;; SERVER: <IP_ADDRESS_098>#53(<IP_ADDRESS_098>)
+;; WHEN: Mon Oct 05 21:24:13 AEDT 2026
+;; MSG SIZE  rcvd: 64
+

@@ -1,0 +1,24 @@
+Status: waiting. CP-01 (81 segments) and CP-02 (98 segments) are ingested, and the receipts were sent. The verification/trace supplement is reviewed. The final report is not sealed, as you asked.
+
+Integrity
+- Both hash files match their expected values.
+- All 253 checkpoint files and all 62 supplement files verify.
+- The segment chain and byte ranges are continuous across CP-01 and CP-02, with no transcript gap or overlap.
+
+Provisional judgments, all private in ./output/
+- A1: provisional PASS.
+- A2: UNVERIFIED. No HAR was captured.
+- A3: the six tests passed, but both backend access-log captures are empty. The raw verdict is FAIL and is preserved. I judge it UNVERIFIED because the evidence is missing rather than contradicting, which is the one A3 call still to confirm at terminal.
+- A4: raw fixture PASS (8 of 8 steps). I take it as PASS under the effective rules, since source provenance is reported separately.
+- A5: UNVERIFIED. No verifier restart was done.
+- A6: the M8 answer and all three A6 answers grade CORRECT.
+- M8: 18.7 s, external timing.
+- A7 and M11: pending teardown.
+- Source provenance: UNVERIFIED because no evidence was supplied, not because anything contradicts it.
+
+Flags in my notes
+- Outside material: during S2 the Deployer read a script from another records corpus and reused a Playwright install belonging to another session. I record this as reachable, read and used, and as an assisted descriptive observation. Whether it counts as prohibited prior-run analytical delivery is left unresolved.
+- Redaction: some personal identifiers were not redacted in the packets. The notes record the category only, not the values.
+- Out-of-packet read: reading the handoff prompt was an out-of-packet read, which I did at your direction.
+
+I'm waiting for the teardown/residual evidence and the RUN_CLOSE packet.

@@ -1,0 +1,18 @@
+$ bash -c python -I 'C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/e2e.py' check; ssh -F 'C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/sshcfg' taiga 'echo == uptime; uptime -s; echo == containers; sudo docker compose -f /srv/taiga/app/docker-compose.yml ps --format "{{.Name}} | {{.Status}}"; echo == mount; findmnt -n /srv/taiga; echo == db; sudo docker exec taiga-postgres-1 psql -U taiga -d taiga -tAc "select id, name from projects_project"'
+# started 2026-10-06T14:22:35.000Z  ended 2026-10-06T14:22:39.000Z  exit 0
+--- stdout
+TLS OK (verified by system CA store): issuer=Let's Encrypt/YE2 notAfter=Jan  4 12:38:27 2027 GMT SAN=['<W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>']
+log-in again as <DEPLOYER_TEST_ACCOUNT> -> 200
+GET project 1 -> 200; name=Persistence check <DEPLOYER_TEST_TOKEN>
+GET user story 1 -> 200; subject=Survives a reboot
+== uptime
+2026-10-06 14:21:55
+== containers
+taiga-caddy-1 | Up 27 seconds
+taiga-postgres-1 | Up 27 seconds (healthy)
+taiga-taiga-back-1 | Up 27 seconds
+== mount
+/srv/taiga /dev/sda ext4   rw,relatime,discard
+== db
+1|Persistence check <DEPLOYER_TEST_TOKEN>
+--- stderr

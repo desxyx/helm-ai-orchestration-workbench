@@ -1,0 +1,9 @@
+You are the independent Observer for run RUN-W3, using Codex CLI with gpt-6.1-sol in a fresh session. The run is already complete; you receive the full record once, for post-hoc measurement.
+
+Load ./packet/RUN_MANIFEST.md, ./packet/ALIASES.json, ./packet/CONTROL_FACTS.md, ./packet/W3_MEASUREMENT_SCOPE.md and the protocol, metric definitions, taxonomy, integrity rules, acceptance matrix/procedure, restart equivalence, traceability probe and schemas listed in ./packet/SHA256SUMS. Verify every hash in ./packet/SHA256SUMS locally first and record any mismatch.
+
+The raw evidence is under ./packet/evidence/: the Deployer's two client-native session transcripts (S1, S2) with their sibling folders, the Deployer's own WatchOver record, the custodian's control files and inventories, and the Owner's acceptance screenshots. Apply OBSERVER_PROTOCOL.md to the whole record as if every checkpoint had been delivered; there are no further deliveries.
+
+Record your actual model/client/session identity and any packet-integrity issue in ./output/. Produce the run artifacts the protocol defines for a completed run (events, metrics, acceptance matrix with per-item evidence locators, observer report), sealed in ./output/ with their own SHA256SUMS. Unknown values stay null/UNMEASURABLE; missing evidence stays UNVERIFIED; an affirmative failure is reported as such. Report source provenance separately. Use aliases from ALIASES.json instead of personal identifiers in your outputs.
+
+You have no feedback path to the deployment. Do not contact other sessions, perform cloud/network/credential actions, modify ./packet/, or read anything outside ./packet/ and ./output/. You do not receive prior-run analysis, product rationale, third-party reviews or HC answers/keys/scores; do not infer causation beyond what the evidence records. When finished, reply only with the paths of your sealed output files and their SHA256SUMS hash.

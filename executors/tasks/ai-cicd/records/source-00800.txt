@@ -1,0 +1,13 @@
+# Console output of /private/tmp/w2prep_exec_tmp/epi_run.sh (copied verbatim from the session; the
+# script's own tee target did not yet exist when the pipe opened). Raw JSON per step: raw/ep_i/.
+P1 positive: clean neutral layout + isolated client home from template
+ verdict PASS | failures [] | pin mismatches [] | config exposure [] | prohibited autoload [] | C5I CLEAN | crosscheck NOT_RUN
+N1 negative: planted prohibited auto-load canary (workspace AGENTS.md)
+ verdict FAIL | failures ['PROHIBITED_AUTOLOAD'] | pin mismatches [] | config exposure [] | prohibited autoload [('project_project_root', 1)] | C5I CLEAN | crosscheck NOT_RUN
+N2 negative: runtime mismatch (observed model differs)
+ verdict FAIL | failures ['RUNTIME_PIN_MISMATCH'] | pin mismatches ['model'] | config exposure [] | prohibited autoload [] | C5I CLEAN | crosscheck NOT_RUN
+P1-repeat after negatives removed
+ verdict PASS | failures [] | pin mismatches [] | config exposure [] | prohibited autoload [] | C5I CLEAN | crosscheck NOT_RUN
+R1 observation (read-only): operator's current global client home vs lock, same neutral fixture workspace; real codex --version
+ observed {'codex_cli_version': 'codex-cli 0.160.0', 'model': 'gpt-6.1-sol', 'model_reasoning_effort': 'high', 'approval_policy': 'on-request', 'sandbox_mode': 'workspace-write', 'check_for_update_on_startup': None, 'enabled_plugins': 8, 'mcp_servers': 2, 'features': {'js_repl': 'false'}}
+ verdict FAIL | failures ['RUNTIME_PIN_MISMATCH', 'CONFIG_EXPOSES_PROHIBITED', 'PROHIBITED_AUTOLOAD'] | pin mismatches ['model', 'check_for_update_on_startup', 'enabled_plugins', 'mcp_servers'] | config exposure ['writable_root', 'writable_root', 'trusted_project', 'trusted_project', 'trusted_project', 'trusted_project', 'trusted_project', 'trusted_project', 'trusted_project', 'trusted_project', 'trusted_project', 'trusted_project', 'trusted_project', 'trusted_project', 'rules'] | prohibited autoload [('global_memory', 2), ('global_skill', 1)] | C5I CLEAN | crosscheck NOT_RUN

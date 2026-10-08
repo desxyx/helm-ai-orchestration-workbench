@@ -1,0 +1,23 @@
+{
+  "artifact_class": "HC_POINT_DELIVERY",
+  "run_id": "RUN-W2B",
+  "point": "HC-INT",
+  "prepared_at": "2026-10-05T20:37:42+11:00",
+  "native_delivery_timestamp": "PENDING_SOURCE_RECONCILIATION",
+  "s1_close": "OWNER_CONFIRMED",
+  "snapshot_status": "COMPLETE",
+  "source": "Same frozen MA6 questions and10min timebox; original answer and confidence required",
+  "fields": [
+    "running",
+    "waiting/on whom",
+    "next approval/action effect",
+    "last verified fact/basis",
+    "next safe action",
+    "rollback/stop boundary"
+  ],
+  "consultation": "Previous S1 chat + existing live WatchOver view only; no Console/control/Operations Coordinator/other actor consultation until lock",
+  "answers": "PENDING",
+  "score": "NOT_DERIVED",
+  "s2": "NOT_STARTED",
+  "key_material_delivered": false
+}

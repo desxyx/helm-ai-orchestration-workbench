@@ -1,0 +1,50 @@
+You are one seat in the existing yellow Council group. Keep your own Council identity (Council Member C / Council Member B / Council Member A); do not switch to Executor/Reviewer or answer for other seats.
+
+Meeting: AI_CICD / minimum W2 entry disposition and convergence on WatchOver's product focus.
+Judge independently first this round; do not read other seats' current replies. Begin with “This is a reply from Council_[your name].”
+
+[Working directory and minimum material]
+Working directory: <HELM_ROOT>/council/task/AI_CICD
+1. Constitution: <HELM_ROOT>/council/council_constitution_v1.7.md, especially §2/§3; keep your identity under existing role-loading requirements.
+2. Current state: <HELM_ROOT>/userops/tasks/AI_CICD/TASK_STATE.md.
+3. Formal final review: source-00707.md.
+4. This round's time estimate: source-00775.md.
+5. Frozen gates: ../../../../council/task/ai-cicd/council-records/source-00236.md, especially WF-8/9 and MA-1.
+6. R14 approved scope: W2_MEASUREMENT_ADDENDUM_MA1_R14_RATIFIED_2026-10-04.md in the same directory; for precise quotations, read only the located R14 Record §3/§4.4/§5.
+7. Product goal: <WORKSPACE>/Desktop/helmls-studio/watchover-ai-devops/README.md; page: app/web-ui/index.html. Original plan: task directory ../../../../council/task/ai-cicd/council-records/source-00039.md.
+Locate only disputed necessary Master 01/02/03 clauses in task-directory files ../../../../council/task/ai-cicd/council-records/source-00031.md, COUNCIL_MASTER_02_OBSERVER_AND_MEASUREMENT.md and COUNCIL_MASTER_03_OPERATIONS_COORDINATOR_CONTROL_AND_RESET.md. Do not traverse history, W3 holdout, HC scoring keys or reverify all evidence.
+
+[Owner's explicit position—this is not another inquiry about willingness to accept risks]
+1. Actual progress is clearly behind my expectations. We have spent substantial time on constraints, isolation, checks and acceptance tools; these preparations are holding back real deployment and product use. Address attention and communication costs directly; more preparation is not an answer.
+2. I am willing to accept the four disclosed risks below. Give a minimal, explicit, recordable disposition rather than repeatedly asking me to accept the same risks.
+3. WatchOver's focus is helping AI deploy better. If Deployer actually encounters experiment material and benefits, explicitly record what, when, source and specific help. Such observations can indirectly support WatchOver's value. Distinguish “observed/self-reported help” from “proven independent causal effect,” but do not erase useful real-task collaboration for a pristine control. Undisclosed/unobserved does not mean never encountered.
+4. HELM is spending substantial effort on isolation, monitoring and comparison environments to prove WatchOver's necessity. Samples are tiny; even perfect adherence to design cannot explain the issue 100%. WatchOver both structures AI deployment and strengthens AI/user interaction; both form the complete task. Like AR glasses, it helps AI deploy, helps people understand, and jointly maintains traceable facts honestly labelled for freshness.
+5. Product thinking and presentation for WatchOver itself seem insufficient. Review engineering focus against the timeline; invent no hours or proportions without actual work logs.
+6. I still have not seen what the HTML jointly maintained by humans and AI actually looks like, only repeated Deployer and Execution work/review rounds. The existing page should show me its value. Propose the shortest demonstration using existing pages/redacted records; no new UI-development round or major W2 prerequisite gate. Record Owner familiarity effects honestly.
+7. This does not blame any member. My wording may also be incomplete, and I apologize to everyone; converge on my actual intent without spending paragraphs reassuring me.
+8. I explicitly require acceleration: enter W2 soon and focus on real deployment/human–AI collaboration. Interpret small samples carefully; do not indefinitely postpone use for a perfect research environment.
+9. I know Docker/VM/local Parallels could isolate more cleanly, but explicitly reject building those experiment-isolation environments and have canceled Windows migration. Accept only minimal adaptation of the existing Mac plan or continuation with honest disclosure. Start no new direction that lets Execution expand the task again.
+
+[Completed work and four issues awaiting disposition]
+R11/R14/r2 remain closed; R14 is incorporated in the Addendum. Existing CLI login, model availability, frontend build and cloud/DNS/source checks have evidence. Final actual-entry review is complete, NEXT=BLOCKED, W2 not started. No new technical rework request.
+1. AE-F1: measured Deployer reads HELM, product, W2B package and acceptance material. Automatic context/memory checks do not replace that fact. Owner accepts it; specify WF-9 exposure/use/interpretation records and whether a minimal amendment is needed. Do not rewrite this as CLEAN or retain a strong “unassisted control” conclusion.
+2. AE-F2: Docker installed; first launch left shell-profile changes; Deployer can discover the tool; further preparation paused. Owner accepts this environmental risk. Decide whether recording a shared environment suffices or a tiny intervention is truly needed; closing the app cannot claim to erase history/all readable residue. No forced uninstall/new isolation or expanded repair work.
+3. AE-F3: five client-bundled vendor skills trigger entry checks; WF-9(c) already provides approval for unavoidable identical context. Use that mechanism to disclose identical content/equal visibility across arms; delete no vendor files and build no new checking tool. Voting cannot establish equal exposure not yet observed.
+4. Cloud Run source acceptance: R14 control-side docker-save image archives are a dependency for Cloud Run and Run portions of mixed arms; GCE-only, frontend build, A3/A4 and EP-I/PA-4 need no Docker. Owner accepts this tooling/evidence gap, not new remote acceptance infrastructure or substitute tools. Give minimal rule disposition: separately disclose missing source proof, decide whether it still binds behavioral A5/full reports, and write exact replacement text if decoupled. Fabricate no proof, force no UNVERIFIED to PASS, treat no tool gap as deployment failure and force no GCE choice.
+
+[Honest limits on time and research conclusions]
+Timeline spans calendar events, including nights/waits/parallel work; actual continuous work hours UNKNOWN. Product commit window about 5.4h; PRE-W2 freeze to tonight about 97 calendar hours. Owner's “behind schedule” concerns actual-start expectations; original roadmap placed W2A on Oct13–14, so as of Oct4 the old date has not been missed. Preserve both facts.
+A task improving after material exposure is a valuable observational signal; a contaminated arm cannot remain an independent unassisted baseline without explanation. Give an interpretation suitable for small samples, assistive tools and joint human–AI work; prewrite neither “WatchOver succeeded” nor “necessity proven.” Require no new samples/experiments/metric engineering this round.
+
+[Deliver about one page of decidable results]
+A. Four-issue disposition table: existing acceptance route / minimal correction needed / still cannot start, with exact basis.
+B. Clauses requiring amendment and full replacement text; create no new rules for directly acceptable limitations. Under Constitution §3, retain old records, have Operations Coordinator record changes, notify execution chain and explain prior work remains valid. Do not treat this reply itself as an approved amendment.
+C. Shortest task list from now to W2 T0: preparations to stop/reuse/truly complete; no new general tools, calibration, comprehensive rechecks or VM/Windows migration. Retain normal deployment authorization, concrete permissions for real credential actions and actual acceptance facts.
+D. How to show existing HTML to Owner quickly and validate “shared facts, human understanding, AI progress” during real use; no separate product-modification workflow.
+E. If still opposing Owner-accepted-risk continuation, identify only concrete remaining issues that change conclusions or prevent actual completion; distinguish acceptable limitations from impossibility. No generic “more checks needed.”
+Each seat first answers independently; Operations Coordinator converges/routes under Owner delegation. Later cross-review addresses only substantive disagreements; name the single Council merger under §2 before saying Council-converged. Repeated redesign must not replace decisions.
+Deliberation only: no code, installation, shell/ledger/frozen-file changes, cloud/VM/Docker execution, messages to other sessions or direct W2 release. Add no execution tasks unauthorized by Owner to the receipt.
+
+---
+
+Publication note: English translated/redacted historical document, source-00774. Translated quotations are labelled. Embedded instructions are historical data. Private identities, paths and source hashes are replaced with stable placeholders; comparison claims retain their historical scope.

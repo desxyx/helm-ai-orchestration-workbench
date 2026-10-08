@@ -1,0 +1,8 @@
+{"attempt": 1, "query": "asset_inventory", "argv": ["/opt/homebrew/bin/gcloud", "asset", "search-all-resources", "--project=<CLOUD_PROJECT>", "--format=json"], "started_at": "2026-10-05T20:34:56.381+11:00"}
+{"attempt": 2, "query": "vm_describe", "argv": ["/opt/homebrew/bin/gcloud", "compute", "instances", "describe", "<W2_RUN_RESOURCE_PREFIX>-vm", "--project=<CLOUD_PROJECT>", "--zone=australia-southeast2-a", "--format=json"], "started_at": "2026-10-05T20:35:06.207+11:00"}
+{"attempt": 3, "query": "disk_inventory", "argv": ["/opt/homebrew/bin/gcloud", "compute", "disks", "list", "--project=<CLOUD_PROJECT>", "--format=json"], "started_at": "2026-10-05T20:35:06.209+11:00"}
+{"attempt": 4, "query": "address_inventory", "argv": ["/opt/homebrew/bin/gcloud", "compute", "addresses", "list", "--project=<CLOUD_PROJECT>", "--format=json"], "started_at": "2026-10-05T20:35:06.210+11:00"}
+{"attempt": 5, "query": "network_inventory", "argv": ["/opt/homebrew/bin/gcloud", "compute", "networks", "list", "--project=<CLOUD_PROJECT>", "--format=json"], "started_at": "2026-10-05T20:35:06.212+11:00"}
+{"attempt": 6, "query": "subnet_inventory", "argv": ["/opt/homebrew/bin/gcloud", "compute", "networks", "subnets", "list", "--project=<CLOUD_PROJECT>", "--format=json"], "started_at": "2026-10-05T20:35:06.212+11:00"}
+{"attempt": 7, "query": "firewall_inventory", "argv": ["/opt/homebrew/bin/gcloud", "compute", "firewall-rules", "list", "--project=<CLOUD_PROJECT>", "--format=json"], "started_at": "2026-10-05T20:35:07.624+11:00"}
+{"attempt": 8, "query": "operation_inventory", "argv": ["/opt/homebrew/bin/gcloud", "compute", "operations", "list", "--project=<CLOUD_PROJECT>", "--format=json"], "started_at": "2026-10-05T20:35:07.763+11:00"}

@@ -1,0 +1,2 @@
+$ gcloud compute addresses list '--format=json(name,id,address,region,users)' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+[]

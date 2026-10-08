@@ -1,0 +1,24 @@
+{
+  "attempt": 4,
+  "query": "DNS_A_AUTH_2",
+  "executable": "/usr/bin/dig",
+  "argv": [
+    "+time=3",
+    "+tries=1",
+    "+noall",
+    "+answer",
+    "+authority",
+    "+comments",
+    "@<DNS_RESOLVER_B>",
+    "<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>",
+    "A"
+  ],
+  "start_utc": "2026-10-05T23:58:45.961+11:00",
+  "end_utc": "2026-10-05T23:58:46.004+11:00",
+  "exit_code": 0,
+  "stdout": "DNS_A_AUTH_2_attempt4.stdout",
+  "stdout_sha256": "<PRIVATE_REF_00980>",
+  "stderr": "DNS_A_AUTH_2_attempt4.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

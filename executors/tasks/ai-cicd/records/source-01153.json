@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-10-05T15:29:57+11:00",
+  "source": "Owner relay of existing Observer response",
+  "observed_tail_receipts": [
+    "CHECKPOINT_2_SEGMENT_70_INGESTED",
+    "CHECKPOINT_2_SEGMENT_71_INGESTED",
+    "CHECKPOINT_2_SEGMENT_72_INGESTED"
+  ],
+  "observer_self_report": "Both CP-01 and CP-02 ingested; analysis private under output; waiting RUN_CLOSE with teardown and probe evidence",
+  "status": "INGESTION_REPORTED_COMPLETE; WAIT_RUN_CLOSE",
+  "limits": "Full private ingestion ledger not inspected; no analytical output or final metrics/verdict received",
+  "no_cloud_action": true
+}

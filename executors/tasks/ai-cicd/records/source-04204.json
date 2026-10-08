@@ -1,0 +1,70 @@
+{
+  "candidate": "<PRIVATE_REF_01925>",
+  "cases": [
+    {
+      "id": "R1_01",
+      "findings": [
+        {
+          "pattern": "secret-assignment",
+          "file": "synthetic.yaml",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "id": "R1_02",
+      "findings": [
+        {
+          "pattern": "secret-assignment",
+          "file": "synthetic.yaml",
+          "line": 1
+        },
+        {
+          "pattern": "yaml-credential-next-line",
+          "file": "synthetic.yaml",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "id": "R1_03_auth",
+      "findings": [
+        {
+          "pattern": "docker-auth-field",
+          "file": "synthetic.yaml",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "id": "R1_03_key",
+      "findings": [
+        {
+          "pattern": "named-key-secret-assignment",
+          "file": "synthetic.yaml",
+          "line": 1
+        }
+      ]
+    }
+  ],
+  "whitespace": [
+    {
+      "spaces": 4096,
+      "exit": 0,
+      "error": null,
+      "scan_ms": 0.9017920000000004
+    },
+    {
+      "spaces": 8192,
+      "exit": 0,
+      "error": null,
+      "scan_ms": 0.9335830000000005
+    },
+    {
+      "spaces": 16384,
+      "exit": 0,
+      "error": null,
+      "scan_ms": 0.9174170000000004
+    }
+  ]
+}

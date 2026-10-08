@@ -1,0 +1,184 @@
+✔ CLI brief and the view classify the same facts the same way at a fixed time (6.176792ms)
+✔ 200 facts: at most 30 lines, exact totals and an exact omitted count with its location (2.401959ms)
+✔ pending, working, terminal and approved records: the human action matches the view banner (10.396084ms)
+✔ the CLI brief is read-only: workspace bytes and file set are unchanged (185.530292ms)
+✔ an invalid record is refused with no summary, no secret, and nothing written (234.732208ms)
+✔ brief rejects an unparsable --now as a usage error (39.159041ms)
+✔ brief honestly counts many open intents and points to the complete retrievable log listing (1.1955ms)
+✔ without a command the CLI prints usage and exits 64 (123.928416ms)
+✔ root help exits 0 while malformed invocations remain usage errors (243.923542ms)
+{"case":"earlier-explicit-time","exit":1,"before_sha256":"<PRIVATE_REF_03609>","after_sha256":"<PRIVATE_REF_03609>","output":"refused: 1 problem\n- [event-sequence] events.jsonl line 2: /at precedes previous event evt-0001 at 2026-10-07T10:44:44.811Z; omit at to use CLI time filling, or supply a time at or after the predecessor. Align checked_at with the recorded promotion time\nnothing was written"}
+✔ earlier explicit at refuses before append; equal and omitted times work without rewriting (229.31425ms)
+✔ init then validate succeeds with exit 0 (84.446ms)
+✔ validate --json prints the full result (42.969ms)
+✔ validate lists problems, exits 1 and never prints a secret (43.194041ms)
+✔ append reads one event from stdin and prints its id (86.203417ms)
+✔ append exits 2 when the event is written but state.json still needs updating (86.756167ms)
+✔ a refused append exits 1, writes nothing and never prints a secret (82.579458ms)
+✔ init with missing options exits 64 and names what is missing (38.917458ms)
+✔ append --file reads the event from a file (87.402416ms)
+✖ show serves the workspace on loopback until stopped (40.575625ms)
+✔ show refuses a folder that does not exist (37.11275ms)
+✔ fact values, problem priority and verification are separate for five generic cases (11.548042ms)
+✔ every valid fixture answers the six questions (21.974ms)
+✔ a pending decision gets a prominent card saying what to reply and where (0.603125ms)
+✔ without a pending decision the view says so plainly (1.296125ms)
+✔ all seven statuses appear with their own display kind (1.728292ms)
+✔ verified facts past their freshness window are never shown as fresh (1.738ms)
+✔ state age is always visible (1.207083ms)
+✔ an old state shows "No recent update" instead of implying progress (1.301166ms)
+✔ a long operation past its expected range is called out without a progress bar (0.762458ms)
+✔ resources render as a tree with billable flags (1.681625ms)
+✔ a verified problem is marked in words (1.330791ms)
+✔ evidence locators are shown as text, never as links (1.047958ms)
+✔ handoff readiness and next step are shown (0.814458ms)
+✔ recent events are listed newest first (1.238209ms)
+✔ every recorded value is escaped (1.302583ms)
+✔ a state without the expected shape is refused rather than guessed at (0.651291ms)
+✔ a fact marked stale before its window ended is not described as having expired (1.09875ms)
+✔ facts checked after the viewing clock are never shown as fresh (1.13175ms)
+✔ a future-dated state shows a clock problem instead of implying progress (1.888708ms)
+✔ the initial stage event reads as a start, not an unrecognised stage (0.60225ms)
+✔ facts with a future check time are listed after the fresh ones, never among them (0.703333ms)
+✖ every pattern detects its own built-in canary (the positive control) (3.22375ms)
+✔ the self-test fails closed when a pattern stops detecting its canary (0.380459ms)
+✔ findings name the pattern, file and line but never the value (0.136208ms)
+✔ realistic credential shapes are detected (0.103917ms)
+✔ sanitized and reference-only text is not flagged (0.111208ms)
+✔ redact removes every secret-shaped span and names the pattern (0.264667ms)
+✔ redact leaves text without secrets unchanged (0.053833ms)
+✔ finite added shapes have synthetic positives, nearby negatives and value-free diagnostics (1.250709ms)
+✔ the named checks are the documented set (0.834417ms)
+✔ freshness caps exist for every fact class and are finite (0.103959ms)
+✔ open intents are valid in execution/interruption; terminal states require actual related results (12.044875ms)
+✔ every valid fixture passes every named check (10.323958ms)
+✔ unique-ids: duplicate fact keys or resource ids are rejected (1.963541ms)
+✔ trust-by-source: a status must match where the fact came from (2.749417ms)
+✔ verified-needs-evidence: a verified fact needs evidence, a check time and a freshness rule (2.313041ms)
+✔ freshness-within-class-cap: a freshness rule cannot exceed its class cap (1.062792ms)
+✔ stale-was-observed: a stale fact must have been checked once (0.977417ms)
+✔ blocked-names-prerequisite: a blocked fact names what is unavailable (0.634167ms)
+✔ assumed-holds-value: an assumed fact holds a value (0.384ms)
+✔ negative-result-needs-control: a verified "none found" states its control (0.935458ms)
+✔ resource-tree: parents must exist and must not form a cycle (1.103208ms)
+✔ references-resolve: fact and tier references must exist (2.307792ms)
+✔ ranges-ordered: duration and cost ranges run low to high (1.393834ms)
+✔ coalesced-plan-explanation: a plan-acceptance request carries the plan explanation (0.723416ms)
+✔ event-sequence: ids strictly increase and time never runs backwards (1.154041ms)
+✔ stage-chain: stages chain from the initial stage event (1.237458ms)
+✔ event-type-fields: each event type carries its own fields (4.123916ms)
+✔ event-links: related events exist earlier; results follow intents; decisions answer requests (1.530209ms)
+✔ state-stage-matches-events: the state stage equals the last recorded stage change (0.513125ms)
+✔ pending-decision-has-request: a pending decision was requested and is still unanswered (1.783875ms)
+✔ pending-decision-has-request: category order alone is not a mismatch (0.887292ms)
+✔ verified-facts-have-promotion-event: every verified fact has a promotion event (0.595334ms)
+✔ verified-facts-have-promotion-event: a STALE fact needs the promotion event of its earlier observation (0.481541ms)
+✔ verified-facts-have-promotion-event: the earlier promotion must match the STALE fact's source (0.52475ms)
+✔ first-billable-carries-plan: a pending first billable request must include plan acceptance (0.600083ms)
+✔ first-billable-carries-plan: the recorded history is checked after the decision is cleared (0.860833ms)
+✔ first-billable-carries-plan: a later billable request after plan acceptance was approved is fine (0.911584ms)
+✔ first-billable-carries-plan: plan acceptance must have been approved, not just requested (0.583958ms)
+✔ requests-answered-or-pending: an unanswered request must be the pending decision (2.39025ms)
+✔ one-decision-per-request: request ids are unique (0.761125ms)
+✔ one-decision-per-request: a request receives at most one decision (0.959583ms)
+✔ gated-intent-approved: a gated intent relates to an earlier approved decision (1.222667ms)
+✔ pending-decision-has-request: the pending request time matches the recorded request (0.395583ms)
+✔ verified-facts-have-promotion-event: the latest promotion, not any promotion, must match (0.609292ms)
+✔ verified-facts-have-promotion-event: check time and evidence must agree with the latest promotion (1.165083ms)
+✔ verified-facts-have-promotion-event: a STALE fact must match its latest promotion (0.379416ms)
+✔ trust-by-source: an ASSUMED fact comes from reasoning (0.272958ms)
+✔ problem-is-observed: only a verified or previously verified observation can flag a problem (0.664834ms)
+✔ the plan skill tells a local target how to state its single tier honestly (4.097958ms)
+✔ verifying a fact as the router says produces a valid record (25.345334ms)
+✔ the plan-acceptance request for a local target, as the skills describe it, is valid (24.285625ms)
+✔ manual-edit DNS follows the authority path: decision, gated intent, human edit, result, own verification (19.592459ms)
+✔ a gated DNS intent recorded before the approval is refused (5.295125ms)
+✔ complete request scope survives approval and pending clear through filesystem evidence and brief (11.65975ms)
+✔ high-risk delegation and recovery scope scenarios are advisory guidance only (0.761167ms)
+✔ documented nonsecret baseline projection compares equal and changed fields without originals (9.00925ms)
+✔ human-created run resource uses existing fields and human cleanup has approval and verification (9.076958ms)
+✔ the router lives at exactly skills/router.md, as the workspace pointer says (1.011958ms)
+✔ the router, stage and provider files exist, and nothing else is in skills/ (5.028459ms)
+✖ every skill stays inside its length budget (0.688875ms)
+✔ the router carries every always-on rule (0.706416ms)
+✔ every stage file restates the always-on rules (1.681458ms)
+✔ the router says what to read first, how to use the tools, and which one stage file to load (0.303167ms)
+✔ each stage file carries its Annex J responsibility (1.477542ms)
+✔ the handoff guidance covers all ten Annex K items (1.243167ms)
+✔ GCP is the target with validation pending; every other provider is UNVALIDATED (1.27375ms)
+✔ skills are neutral, client-neutral and free of governance or experiment wording (6.62675ms)
+✔ every example event in the skills is schema-valid once append fills its defaults (4.775666ms)
+✔ Cloudflare manual-edit mode records the approval and a gated intent before the human edits DNS (0.60725ms)
+✔ init creates a valid workspace with state, one stage event, evidence/ and a pointer file (22.18ms)
+✔ init records the first stage change and a recon state built from the options (7.028375ms)
+✔ the pointer file tells a fresh AI where to start, without relying on auto-loading (6.594875ms)
+✔ init refuses a folder that already has content and changes nothing (3.568375ms)
+✔ init refuses options that would make an invalid state, before writing anything (1.687792ms)
+✔ init refuses a secret in its options and never repeats it (1.268166ms)
+✔ init requires the identity options (0.780125ms)
+✔ new workspace ignore guard excludes actual runtime files from normal containing-repo staging (73.13425ms)
+✔ append adds exactly one line and never rewrites earlier bytes (5.850666ms)
+✔ an appended stage change needs a matching state write before the workspace is consistent (5.787458ms)
+✔ append keeps an explicit id and time when they are valid (3.711041ms)
+✔ append refuses a schema-invalid event (3.363792ms)
+✔ append refuses an event that breaks an event rule (4.658458ms)
+✔ append refuses an event carrying a secret and never repeats it (3.710042ms)
+✔ append takes exactly one JSON object (2.398375ms)
+✔ append refuses when the existing log is damaged (4.284333ms)
+✔ append refuses a folder that is not a workspace (0.333084ms)
+✔ a filled-in time never runs earlier than the last recorded event (3.314875ms)
+ℹ tests 128
+ℹ suites 0
+ℹ pass 125
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1288.19575
+
+✖ failing tests:
+
+test at tests/cli.test.mjs:129:1
+✖ show serves the workspace on loopback until stopped (40.575625ms)
+  Error: show exited early with 1
+      at ChildProcess.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07/builder/product/tests/cli.test.mjs:135:43)
+      at ChildProcess.wrapper (node:events:639:12)
+      at ChildProcess.emit (node:events:514:20)
+      at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+
+test at tests/secret-scan.test.mjs:5:1
+✖ every pattern detects its own built-in canary (the positive control) (3.22375ms)
+  AssertionError [ERR_ASSERTION]: service-account-key-field
+  + actual - expected
+  
+    [
+      'service-account-key-field',
+  +   'named-key-secret-assignment'
+    ]
+  
+      at TestContext.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07/builder/product/tests/secret-scan.test.mjs:11:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'service-account-key-field', 'named-key-secret-assignment' ],
+    expected: [ 'service-account-key-field' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/skills.test.mjs:44:1
+✖ every skill stays inside its length budget (0.688875ms)
+  AssertionError [ERR_ASSERTION]: router
+      at TestContext.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07/builder/product/tests/skills.test.mjs:45:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

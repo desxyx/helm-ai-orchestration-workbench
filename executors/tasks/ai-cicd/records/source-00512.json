@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-07T13:09:28.971813+00:00",
+  "method": "git clone --no-local --single-branch --branch release/0.1.2; temporary local origin removed",
+  "path": "<CLIENT_HOME>/Desktop/helmls-studio/watchover-ai-devops-public",
+  "commit": "5c662eac0449bd30eddd01c606d268f0aa510631",
+  "tree": "<PRIVATE_REF_00957>",
+  "all_reachable_commit_count": 1,
+  "status": "clean",
+  "tags": [],
+  "remotes": []
+}

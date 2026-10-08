@@ -1,0 +1,21 @@
+$ ssh -F C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/sshcfg taiga sudo grep -a -E "BUILD_EXIT|Built|DONE [0-9.]+s$" /var/log/taiga-build.log | tail -12; sudo docker images --format "{{.Repository}}:{{.Tag}} {{.ID}} {{.CreatedAt}}"; df -h / /srv/taiga
+# started 2026-10-06T13:36:32.000Z  ended 2026-10-06T13:36:33.000Z  exit 0
+--- stdout
+#6 DONE 91.0s
+#9 DONE 0.5s
+#10 DONE 0.1s
+#11 DONE 773.3s
+#12 DONE 19.3s
+#13 DONE 816.7s
+#14 DONE 2.0s
+#15 DONE 0.1s
+#16 DONE 9.9s
+#17 DONE 0.2s
+ Image taiga-front-caddy:<PRIVATE_REF_03189> Built 
+BUILD_EXIT=0
+taiga-front-caddy:<PRIVATE_REF_03189> <PRIVATE_REF_01721> 2026-10-06 13:36:05 +0000 UTC
+taiga-back:<PRIVATE_REF_01638> 126a5c204628 2026-10-06 13:04:11 +0000 UTC
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        20G  8.6G   11G  46% /
+/dev/sdb        9.8G   72K  9.8G   1% /srv/taiga
+--- stderr

@@ -1,0 +1,46 @@
+{
+  "run_id": "RUN-W2A",
+  "checkpoint_no": 1,
+  "checkpoint_kind": "FORCED_INTERRUPT",
+  "captured_at": "2026-10-05T13:29:24+11:00",
+  "status": "LOCAL_EVIDENCE_CAPTURED; PROVIDER_INVENTORY_AND_S1_CLOSE_PENDING",
+  "s1_session_id": "<NATIVE_ID_0042>",
+  "client_version": "0.160.0",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "runtime_basis": "saved turn_context",
+  "working_directory_locator": "<CLIENT_HOME>/Workspaces/site-01/app",
+  "actual_rollout_home": "<CLIENT_HOME>/.codex",
+  "planned_c01_home_not_observed": "<CLIENT_HOME>/Workspaces/.clients/c01",
+  "transcript_cut_locator": {
+    "source": "<CLIENT_HOME>/.codex/sessions/2026/10/05/rollout-2026-10-05T12-11-25-<NATIVE_ID_0042>.jsonl",
+    "sealed_copy": "../../../../council/task/ai-cicd/experiments/w2/transcripts/source-01138.jsonl",
+    "last_line": 289,
+    "last_timestamp": "2026-10-05T02:22:43.061Z",
+    "sha256": "<PRIVATE_REF_01468>"
+  },
+  "observed_t0": "2026-10-05T02:03:09.492Z",
+  "t0_basis": "original brief response_item timestamp; formal pre-T0 release not evidenced",
+  "resource_x": {
+    "alias": "RESOURCE-X",
+    "type": "compute.googleapis.com/Address",
+    "identifier": "<PRIVATE_URL_0393>",
+    "provider_id": "<NUMERIC_RESOURCE_0021>",
+    "address": "<IP_ADDRESS_114>",
+    "region": "us-central1",
+    "observed_state": "RESERVED",
+    "success_timestamp": "2026-10-05T02:22:24.717Z",
+    "raw_evidence": "RESOURCE_CREATION_TOOL_RESULT.json"
+  },
+  "source_heads_observed": [],
+  "active_account_alias": "PENDING_CURRENT_READONLY_SNAPSHOT",
+  "active_project_alias": "PENDING_CURRENT_READONLY_SNAPSHOT",
+  "project_inventory_output_locator": "PENDING_FROZEN_READONLY_INSTRUMENT",
+  "s1_closed": "PENDING_OWNER_CONFIRMATION",
+  "limits": [
+    "Additional Human Operator clarification during HC-E1; INVALID_FOR_HC recorded separately.",
+    "Formal issue/reset facts were not recorded before observed T0; disclose, never backdate.",
+    "Actual rollout lives under default .codex, not planned c01; no claim of absent plugins/memory/extra roots.",
+    "User console screenshot corroborates resource; other resource absence remains a claim until inventory."
+  ]
+}

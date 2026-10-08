@@ -227,3 +227,7 @@ This public repository includes substantial contribution from the following AI c
 - Gemini
 - ChatGPT
 
+
+## WatchOver / AI_CICD process archive
+
+The [complete available translated/redacted process](council/task/ai-cicd/README.md) links the [Council](council/task/ai-cicd/council-records/README.md), [Executor / Reviewer](executors/tasks/ai-cicd/README.md) and [UserOps](userops/tasks/ai-cicd/README.md) layers, including experiments, failures, manual routing and evidence limits.

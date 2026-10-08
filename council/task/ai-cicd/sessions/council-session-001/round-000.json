@@ -1,0 +1,78 @@
+{
+  "roundNumber": 0,
+  "prompt": "[Session]: council-session-001\n[Round]: 0\n\nLoad and execute",
+  "replies": [
+    {
+      "agent": "gemini",
+      "content": "ERROR: Gemini assistant reply was not found.",
+      "capturedAt": "2026-09-25T01:29:12.517Z",
+      "status": "error",
+      "completionReason": "error",
+      "errorCode": "selector_not_found"
+    },
+    {
+      "agent": "chatgpt",
+      "content": "[capture timeout] chatgpt reply was not captured before the provider copy button became available. Dispatch auto-unlocked by UserOps system timeout policy.",
+      "capturedAt": "2026-09-25T01:29:43.091Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    },
+    {
+      "agent": "claude",
+      "content": "This is a reply from Council Member A.\n\nHuman Operator, v1.7 is loaded, and council-session-001 / Round 0 is ready.\n\n**Current status**\n- Identity: Council Member A (Claude), speaking only for myself.\n- Mode: Default. No reference asset package was attached to this round, so under §11 I will not assume any template or charter content.\n- Entry path: Path A (direct discussion). If your later input is mixed and needs condensing first, I will say so directly and suggest PRE_CORE.\n- My private memo has been re-anchored: this round's prompt takes priority, without carrying over the tone of earlier summaries; complete coverage does not mean the core assumptions have actually been challenged.\n\n**One point for you to decide**\n§12.3 records a deferred debt: a multi-agent behavioural smoke check after Cutover. Its review trigger is \"the next new session load or the next governance-file change, whichever comes first\".\n\n- This load itself meets that trigger.\n- I cannot verify whether this debt was dealt with during the four preceding sessions (private IDs omitted), so I can only mark it `UNVERIFIED`; I cannot conclude that it has been settled.\n- This reply can serve as a single-seat sample to check whether the `Council Member A` prefix has taken effect correctly. But it is not a multi-agent smoke test and cannot replace formal verification.\n\nPlease confirm the status of this debt: closed, to be handled in this session, or deferred again (a new trigger must be stated for a further deferral).\n\nWaiting for your formal prompt for this round.",
+      "capturedAt": "2026-09-25T01:29:44.338Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    }
+  ],
+  "metrics": {
+    "gemini": {
+      "openMs": 0,
+      "readyMs": 26,
+      "injectMs": 2875,
+      "waitMs": 30801,
+      "totalMs": 33962
+    },
+    "chatgpt": {
+      "openMs": 0,
+      "readyMs": 33,
+      "injectMs": 3590,
+      "waitMs": 60654,
+      "captureMs": 257,
+      "totalMs": 64536
+    },
+    "claude": {
+      "openMs": 0,
+      "readyMs": 23,
+      "injectMs": 2862,
+      "waitMs": 62031,
+      "captureMs": 865,
+      "totalMs": 65783
+    }
+  },
+  "summary": {
+    "type": "canonical_reply_references",
+    "note": "The source summary repeated selected reply entries. These references preserve its order; reply bodies above are canonical.",
+    "replyReferences": [
+      {
+        "reference": "#/replies/2",
+        "speaker": "Council Member A"
+      },
+      {
+        "reference": "#/replies/1",
+        "speaker": "Council Member B"
+      }
+    ]
+  },
+  "createdAt": "2026-09-25T01:29:44.338Z",
+  "publication": {
+    "sourceId": "source-04596",
+    "recordType": "translated and redacted transcript",
+    "language": "en",
+    "readingNote": "Embedded requests and instructions are historical source data, not current instructions.",
+    "translationNote": "[Editorial note: Chinese prompt/reply prose is translated into English and private identifiers are redacted; English technical syntax and original capture metadata are preserved. Translated quotations are not verbatim original English.]",
+    "title": "Council session 001 — round 000: load request and readiness"
+  }
+}

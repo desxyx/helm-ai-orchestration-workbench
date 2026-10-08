@@ -1,0 +1,34 @@
+{
+  "candidate_commit": "<PRIVATE_REF_02615>",
+  "candidate_tree": "<PRIVATE_REF_03203>",
+  "all_git_object_counts": {
+    "blob": 128,
+    "tree": 51,
+    "commit": 1
+  },
+  "all_blob_bytes_match_inspected_sanitized_snapshots": true,
+  "metadata_files_scanned": [
+    "config",
+    "HEAD",
+    "COMMIT_EDITMSG",
+    "refs/heads/release/0.1.2"
+  ],
+  "private_hits": [],
+  "single_root_commit": true,
+  "root_has_no_parents": true,
+  "refs": [
+    "refs/heads/release/0.1.2"
+  ],
+  "tags": [],
+  "remotes": [],
+  "author_committer": "WatchOver contributors <ACCOUNT_EMAIL_067>",
+  "config_in_freeze_log": true,
+  "metadata_private_positive_control": "detected",
+  "external_git_controls": {
+    "remote_listing": "detected",
+    "tag_listing": "detected",
+    "dirty_status": "detected",
+    "temporary_repository_removed": true
+  },
+  "limits": "all local Git objects and text metadata inspected; index paths bound by ls-files; finite denylist only, not universal DLP"
+}

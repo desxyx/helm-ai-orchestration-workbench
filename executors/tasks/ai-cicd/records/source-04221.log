@@ -1,0 +1,22 @@
+appended evt-0033; workspace valid
+appended evt-0034; workspace valid
+appended evt-0035; the workspace now needs attention (usually a state.json update): 1 problem
+- [state-stage-matches-events] state.json /stage: state stage "verifying" differs from the last recorded stage change "handoff"
+append exit=2
+--- validate (in-place handoff edit)
+invalid: 2 problems
+- [terminal-intents-have-results] events.jsonl line 33: handoff has unpaired intent evt-0033; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary
+- [terminal-intents-have-results] events.jsonl line 34: handoff has unpaired intent evt-0034; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary
+secret scan self-test passed (15 patterns), 0 findings
+exit=1
+--- brief
+refused: the record is not valid; no summary is shown
+2 problems
+- [terminal-intents-have-results] events.jsonl line 33: handoff has unpaired intent evt-0033; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary
+- [terminal-intents-have-results] events.jsonl line 34: handoff has unpaired intent evt-0034; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary
+exit=1
+--- closed variant
+invalid: 3 problems
+- [terminal-intents-have-results] events.jsonl line 33: closed has unpaired intent evt-0033; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary
+- [terminal-intents-have-results] events.jsonl line 34: closed has unpaired intent evt-0034; record a related actual result. If unknown or not executed/cancelled, use outcome unknown with a truthful summary
+- [state-stage-matches-events] state.json /stage: state stage "closed" differs from the last recorded stage change "handoff"

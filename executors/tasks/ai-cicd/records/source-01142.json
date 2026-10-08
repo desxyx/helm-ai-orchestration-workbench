@@ -1,0 +1,10 @@
+[
+  {
+    "repo": "/private/tmp/<W2_RUN_RESOURCE_PREFIX>-deploy/backend",
+    "sha": "<PRIVATE_REF_01617>"
+  },
+  {
+    "repo": "/private/tmp/<W2_RUN_RESOURCE_PREFIX>-deploy/frontend",
+    "sha": "<PRIVATE_REF_03446>"
+  }
+]

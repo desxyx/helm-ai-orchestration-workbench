@@ -1,0 +1,10 @@
+{"attempt": 1, "query": "Q01_sdk", "argv": ["/opt/homebrew/bin/gcloud", "version", "--format=json"], "started_at": "2026-10-05T13:32:31.474+11:00"}
+{"attempt": 2, "query": "Q02_project", "argv": ["/opt/homebrew/bin/gcloud", "config", "get-value", "project"], "started_at": "2026-10-05T13:32:31.820+11:00"}
+{"attempt": 3, "query": "Q03_account", "argv": ["/opt/homebrew/bin/gcloud", "config", "get-value", "account"], "started_at": "2026-10-05T13:32:32.107+11:00"}
+{"attempt": 4, "query": "Q04_address", "argv": ["/opt/homebrew/bin/gcloud", "compute", "addresses", "describe", "<W2_RUN_RESOURCE_PREFIX>-ip", "--region=us-central1", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T13:32:32.400+11:00"}
+{"attempt": 5, "query": "Q04_address", "argv": ["/opt/homebrew/bin/gcloud", "compute", "addresses", "describe", "<W2_RUN_RESOURCE_PREFIX>-ip", "--region=us-central1", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T13:34:09.528+11:00"}
+{"attempt": 6, "query": "Q05_inventory", "argv": ["/opt/homebrew/bin/gcloud", "asset", "search-all-resources", "--scope=projects/<CLOUD_PROJECT>", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T13:34:11.490+11:00"}
+{"attempt": 7, "query": "Q06_instances", "argv": ["/opt/homebrew/bin/gcloud", "compute", "instances", "list", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T13:34:11.490+11:00"}
+{"attempt": 8, "query": "Q07_buckets", "argv": ["/opt/homebrew/bin/gcloud", "storage", "buckets", "list", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T13:34:11.492+11:00"}
+{"attempt": 9, "query": "Q08_sql", "argv": ["/opt/homebrew/bin/gcloud", "sql", "instances", "list", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T13:34:11.493+11:00"}
+{"attempt": 10, "query": "Q09_run", "argv": ["/opt/homebrew/bin/gcloud", "run", "services", "list", "--platform=managed", "--project=<CLOUD_PROJECT>", "--quiet", "--format=json"], "started_at": "2026-10-05T13:34:11.493+11:00"}

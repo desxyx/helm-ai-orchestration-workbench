@@ -1,0 +1,19 @@
+{
+  "format": "Operations Coordinator-workspace-archive-v1",
+  "entries": [
+    {
+      "path": "config.json",
+      "type": "file",
+      "mode": 420,
+      "sha256": "<PRIVATE_REF_03209>",
+      "content_base64": "eyJmaXh0dXJlIjp0cnVlLCJwdXJwb3NlIjoid29ya3NwYWNlIGFyY2hpdmUgdmFsaWRhdGlvbiJ9Cg=="
+    },
+    {
+      "path": "state.txt",
+      "type": "file",
+      "mode": 420,
+      "sha256": "<PRIVATE_REF_00553>",
+      "content_base64": "U3ludGhldGljIGRyeS1ydW4gd29ya3NwYWNlIHN0YXRlLiBObyBkZXBsb3ltZW50IGRhdGEuCg=="
+    }
+  ]
+}

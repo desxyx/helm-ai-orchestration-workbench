@@ -1,0 +1,18 @@
+{
+  "receipt_id": "AI-CICD-20261005-W2A-RESIDUAL-READONLY-001",
+  "actor": "Operations Coordinator",
+  "lane": "post-teardown residual custody",
+  "target": "<CLOUD_PROJECT>; hostname <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>",
+  "action": "One unfiltered frozen Cloud Asset inventory plus VM/disks/addresses/networks/firewall/Run/bucket/SQL read-only lists and authoritative DNS reads",
+  "allowed_count": 1,
+  "provider_command_attempt_cap": 12,
+  "valid_from": "2026-10-05T16:08:47.469721+11:00",
+  "valid_until": "2026-10-05T16:18:47.469721+11:00",
+  "source_authorization": "Human Operator approved current-evidence closure, exact task cleanup and subsequent read-only residual check",
+  "signed_by": "Human Operator explicit prior message, matched to actual teardown declaration",
+  "consumption": "STARTED 1/1; no reuse",
+  "stop_point": "Capture complete,12 provider attempts/10minutes, or any query needs mutation; whichever first",
+  "mutation_class": "Local evidence; provider read-only, no API enablement/login/resource/DNS changes",
+  "actual_declaration_timestamp": "2026-10-05T05:06:37.686Z",
+  "result": "PENDING"
+}

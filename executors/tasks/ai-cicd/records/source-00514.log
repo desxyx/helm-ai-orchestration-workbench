@@ -1,0 +1,535 @@
+
+> watchover-ai-devops@0.1.2 test
+> node --test "tests/**/*.test.mjs"
+
+✔ CLI brief and the view classify the same facts the same way at a fixed time (8.513875ms)
+✔ 200 facts: at most 30 lines, exact totals and an exact omitted count with its location (2.442792ms)
+✔ pending, working, terminal and approved records: the human action matches the view banner (8.03075ms)
+✔ the CLI brief is read-only: workspace bytes and file set are unchanged (297.932667ms)
+✔ an invalid record is refused with no summary, no secret, and nothing written (377.85ms)
+✔ brief rejects an unparsable --now as a usage error (46.540333ms)
+✔ brief honestly counts many open intents and points to the complete retrievable log listing (0.697333ms)
+✖ every valid fixture answers the six questions in a real browser (8.773417ms)
+✖ the seven statuses are visually distinct, and only fresh verified facts are green (2.412917ms)
+✖ an old state shows "No recent update" in the browser (1.047375ms)
+✖ five generic facts show actual values and a primary non-green problem in the browser (7.431041ms)
+✖ an on-disk state change appears without a reload, within the declared bound (3.29475ms)
+✖ a malformed state.json replaces the view with a visible error (6.163375ms)
+✖ a missing events.jsonl shows a visible error (8.536209ms)
+✔ the catalog has 10 to 20 entries with every field (3.990083ms)
+✔ entries name an official source, known stages, a kind and a risk level (3.19575ms)
+✔ nothing is loaded by default, MCP is optional, and every entry has a CLI fallback (1.299084ms)
+✔ no entry claims an online check that was not made, and no date is invented (0.91425ms)
+✔ the catalog carries no secret-shaped text (4.607792ms)
+✔ without a command the CLI prints usage and exits 64 (120.243417ms)
+✔ root help exits 0 while malformed invocations remain usage errors (350.34775ms)
+{"case":"earlier-explicit-time","exit":1,"before_sha256":"<PRIVATE_REF_02189>","after_sha256":"<PRIVATE_REF_02189>","output":"refused: 1 problem\n- [event-sequence] events.jsonl line 2: /at precedes previous event evt-0001 at 2026-10-07T13:09:34.958Z; omit at to use CLI time filling, or supply a time at or after the predecessor. Align checked_at with the recorded promotion time\nnothing was written"}
+✔ earlier explicit at refuses before append; equal and omitted times work without rewriting (309.260291ms)
+✔ init then validate succeeds with exit 0 (88.158583ms)
+✔ validate --json prints the full result (48.348458ms)
+✔ validate lists problems, exits 1 and never prints a secret (46.754667ms)
+✔ append reads one event from stdin and prints its id (92.169625ms)
+✔ append exits 2 when the event is written but state.json still needs updating (86.933375ms)
+✔ a refused append exits 1, writes nothing and never prints a secret (83.736709ms)
+✔ init with missing options exits 64 and names what is missing (35.442958ms)
+✔ append --file reads the event from a file (89.914833ms)
+✖ show serves the workspace on loopback until stopped (45.996666ms)
+✔ show refuses a folder that does not exist (37.797667ms)
+✔ a valid candidate is committed and the workspace still validates (127.254667ms)
+✔ an object fact value is refused with its pointer, actual type and allowed types (30.952667ms)
+✔ a 301-character fact value is refused with the real 300 limit and the actual length (35.507292ms)
+✔ an invalid secrets availability is refused with the allowed values and no secret echo (60.960625ms)
+✔ a schema-valid but semantically inconsistent candidate is refused (69.718541ms)
+✔ cited evidence must exist as a regular file reached without a link (positive control first) (114.22025ms)
+✔ evidence containing a synthetic secret blocks the commit and the value is never echoed (40.290334ms)
+✔ a failure writing the temporary file or renaming keeps the original state and leaves no temp (112.519792ms)
+✔ a state or events change at either boundary is detected just before rename; the newer record is kept (136.092416ms)
+✔ the CLI commits, refuses with exit 1 and never prints a secret (175.052875ms)
+{"case":"commit-state-post-check","injection":"test-only evidence symlink after rename","exit":2,"output":"state.json was replaced, but the post-check found problems (folder sync: synced): 1 problem\n- [evidence] evidence/post-check-link: is a symbolic link; links are not followed, so its target was not scanned","before_sha256":"<PRIVATE_REF_02327>","after_sha256":"<PRIVATE_REF_03233>"}
+✔ real commit-state CLI returns 2 after replacement when a deterministic post-check fails (77.390042ms)
+✔ design-decisions.md records every C1 default (4.216209ms)
+✔ design-decisions.md records every C1 R1-batch default (0.53375ms)
+✔ no C1 default is still listed as undecided (0.945792ms)
+✔ the documented keyword subset matches the validator (2.261333ms)
+✔ the documented freshness caps match the validator (2.243542ms)
+✔ design-decisions.md records every C2 default and none is still undecided (0.551875ms)
+✔ D-04 names Framework Python 3.12 as the working default for browser checks (1.50525ms)
+✔ design-decisions.md records every C3 default, matching the code (15.179375ms)
+✔ design-decisions.md records every C4 default, matching the skills test budgets (1.668667ms)
+✔ design-decisions.md records every C5 default and nothing for C5 is still undecided (0.309125ms)
+✔ public design rationale retains product docs and excludes evaluation-only decisions (0.519791ms)
+✔ design-decisions.md records the R3 defaults (0.431417ms)
+✔ the README defines the product and separates Validated from Roadmap (3.476833ms)
+✔ no document makes a benchmark or result claim (2.739291ms)
+✔ documents allow attribution and history while excluding arm labels and private canaries (1.919167ms)
+✔ SECURITY.md covers secrets, the read-only local view, evidence and known limits (0.772709ms)
+✔ docs/architecture.md describes every component and trust boundary (0.460083ms)
+✔ README, validation and provenance agree on evidence and archive limits (1.687584ms)
+✔ local Markdown documentation links resolve inside the product (2.894708ms)
+✔ the README quick start runs as written and leaves a valid workspace (329.356458ms)
+✔ every product schema uses only the supported keyword subset (7.352625ms)
+✔ both schemas use exactly the seven FT-7 status strings (1.082708ms)
+✔ both schemas share the same stage values, covering every Annex E stage (1.133417ms)
+✔ every valid fixture state and event is schema-valid (23.067083ms)
+✔ the lifecycle fixture covers the ten required steps in order (6.159ms)
+✔ lifecycle steps carry the situations the verification standard names (4.809292ms)
+✔ each lifecycle step only appends to the previous step's events (6.824708ms)
+✔ there is one status fixture per FT-7 status, each holding a fact with that status (4.515625ms)
+✔ a verified fact is current only inside its freshness window (2.165459ms)
+✔ only verified facts can ever be current (0.974417ms)
+✔ each status has its own display kind, label and symbol (0.452541ms)
+✔ display never upgrades a status (0.072375ms)
+✔ an expired verified fact says how it was verified and that it expired (0.108792ms)
+✔ ages read in plain words (0.079959ms)
+✔ state recency uses the declared no-recent-update age (0.075625ms)
+✔ a verified fact checked after the viewing clock is neither current nor fresh (0.051125ms)
+✔ a future-dated state is not recent and flags the clock problem (0.069042ms)
+✔ any time after the viewing clock reads as a clock problem (0.080417ms)
+✔ tracked domains stay generic except scoped dialect and exact public links (65.298667ms)
+✔ public URL exceptions reject suffixes, lookalikes and use outside documentation (0.182667ms)
+✔ a clean tree passes, and the planted control term is detected in the same pass (13.897792ms)
+✔ a hit is reported by location and term number, never by the term itself (23.141167ms)
+✔ .git and node_modules are skipped (12.4435ms)
+✔ an empty denylist cannot prove anything and is refused (2.697167ms)
+✔ the command prints only the verdict and locations, with exit codes 0, 1 and 2 (142.744625ms)
+✔ the repository itself scans clean for a term it cannot contain (26.999667ms)
+✔ a denylist kept inside the scanned folder is refused (1.135ms)
+✔ fact values, problem priority and verification are separate for five generic cases (8.451333ms)
+✔ every valid fixture answers the six questions (15.707542ms)
+✔ a pending decision gets a prominent card saying what to reply and where (2.320791ms)
+✔ without a pending decision the view says so plainly (1.821333ms)
+✔ all seven statuses appear with their own display kind (1.204583ms)
+✔ verified facts past their freshness window are never shown as fresh (1.222167ms)
+✔ state age is always visible (1.221833ms)
+✔ an old state shows "No recent update" instead of implying progress (6.37675ms)
+✔ a long operation past its expected range is called out without a progress bar (1.941417ms)
+✔ resources render as a tree with billable flags (1.071542ms)
+✔ a verified problem is marked in words (0.988792ms)
+✔ evidence locators are shown as text, never as links (0.932083ms)
+✔ handoff readiness and next step are shown (0.473875ms)
+✔ recent events are listed newest first (0.523333ms)
+✔ every recorded value is escaped (1.280834ms)
+✔ a state without the expected shape is refused rather than guessed at (0.744083ms)
+✔ a fact marked stale before its window ended is not described as having expired (1.198542ms)
+✔ facts checked after the viewing clock are never shown as fresh (1.042625ms)
+✔ a future-dated state shows a clock problem instead of implying progress (1.003125ms)
+✔ the initial stage event reads as a start, not an unrecognised stage (0.965416ms)
+✔ facts with a future check time are listed after the fresh ones, never among them (1.39475ms)
+✔ LICENSE is the MIT license with a neutral copyright holder (4.63225ms)
+✔ package.json declares an MIT ES-module package with no dependencies (2.729709ms)
+✔ npm test runs the node:test suites under tests/ (0.71125ms)
+✔ .gitignore keeps dependencies and any evidence directory out of git (0.597167ms)
+✔ design-decisions.md records every C0 default with a choice and a reason (0.940875ms)
+✔ every scenario fixture validates without any provider profile (82.905875ms)
+✔ WO-P05: service rows come from health facts and host resources, with honest freshness (8.570833ms)
+✔ WO-P06: logical ids and real names are both kept; a declaration is not a runtime observation (2.869917ms)
+✔ WO-P07: only this run's delta is reversed and the baseline hash is preserved (2.785084ms)
+✔ WO-P08: an interruption names the pending intent and owner; brief and view agree (1.615542ms)
+✔ WO-P08: after deployment the owner and choice are explicit; deployed is not cleaned up (1.390541ms)
+✔ generic core: router and stages need no particular cloud command (1.025042ms)
+✔ every instance string, array, number and object in the product schemas is bounded (4.828584ms)
+✔ the bounds check itself notices an unbounded string, array, number and object (0.215291ms)
+✔ a timestamp with a 100,000-digit fraction is rejected by its length bound (27.110125ms)
+✔ a 100,000-digit event id is rejected by its length bound (19.052708ms)
+✔ the supported keyword set is exactly the enumerated contract (1.729334ms)
+✔ a schema using every supported keyword is accepted (0.344375ms)
+✔ an unsupported keyword fails closed with keyword and pointer (0.243292ms)
+✔ unsupported keywords are found inside $defs and items (0.091416ms)
+✔ a remote or non-local $ref fails closed (0.310292ms)
+✔ a local $ref that does not resolve fails closed (0.275459ms)
+✔ a format other than date-time fails closed (0.239041ms)
+✔ the root must declare the 2020-12 dialect (0.1465ms)
+✔ malformed keyword values fail closed (0.3865ms)
+✔ JSON pointer segments are escaped (0.24775ms)
+✔ compileSchema refuses an unsupported schema before validating anything (0.16625ms)
+✔ type mismatches are reported with the instance pointer (0.471666ms)
+✔ required and additionalProperties are enforced (0.153541ms)
+✔ enum and const compare by value (0.170666ms)
+✔ array keywords validate items and bounds (0.741292ms)
+✔ string keywords validate length, pattern and date-time (1.309542ms)
+✔ numeric bounds are enforced (0.1595ms)
+✔ local $ref is resolved during validation (0.148292ms)
+✔ every pattern detects its own built-in canary (the positive control) (4.713875ms)
+✔ single-line assignments and YAML scalars exclude benign nested mappings and auth modes (1.610917ms)
+{"case":"r2-benign-evidence-cli","validate_exit":0,"brief_exit":0,"credential_control_exits":[1,1],"value_echo":false}
+{"case":"r2-whitespace-performance","samples":[{"spaces":65536,"scan_and_redact_ms":2.007791000000001},{"spaces":262144,"scan_and_redact_ms":4.209416000000001},{"spaces":1048576,"scan_and_redact_ms":14.725083000000001}],"positive_control":true}
+✔ benign evidence still permits real CLI validate and brief, while a nearby credential is refused (314.462208ms)
+✔ long whitespace and empty YAML values scan and redact within a bounded subprocess (69.796625ms)
+✔ the self-test fails closed when a pattern stops detecting its canary (0.192958ms)
+✔ findings name the pattern, file and line but never the value (0.180709ms)
+✔ realistic credential shapes are detected (0.106084ms)
+✔ sanitized and reference-only text is not flagged (0.100917ms)
+✔ redact removes every secret-shaped span and names the pattern (0.632459ms)
+✔ redact leaves text without secrets unchanged (0.082583ms)
+✔ finite added shapes have synthetic positives, nearby negatives and value-free diagnostics (0.695917ms)
+✔ the named checks are the documented set (1.834834ms)
+✔ freshness caps exist for every fact class and are finite (0.244917ms)
+✔ open intents are valid in execution/interruption; terminal states require actual related results (33.421125ms)
+✔ every valid fixture passes every named check (9.114084ms)
+✔ unique-ids: duplicate fact keys or resource ids are rejected (1.649209ms)
+✔ trust-by-source: a status must match where the fact came from (1.392291ms)
+✔ verified-needs-evidence: a verified fact needs evidence, a check time and a freshness rule (1.012166ms)
+✔ freshness-within-class-cap: a freshness rule cannot exceed its class cap (0.692209ms)
+✔ stale-was-observed: a stale fact must have been checked once (0.624833ms)
+✔ blocked-names-prerequisite: a blocked fact names what is unavailable (0.810833ms)
+✔ assumed-holds-value: an assumed fact holds a value (0.340709ms)
+✔ negative-result-needs-control: a verified "none found" states its control (0.524708ms)
+✔ resource-tree: parents must exist and must not form a cycle (1.227292ms)
+✔ references-resolve: fact and tier references must exist (1.840541ms)
+✔ ranges-ordered: duration and cost ranges run low to high (1.791833ms)
+✔ coalesced-plan-explanation: a plan-acceptance request carries the plan explanation (1.573875ms)
+✔ event-sequence: ids strictly increase and time never runs backwards (1.558792ms)
+✔ stage-chain: stages chain from the initial stage event (1.795333ms)
+✔ event-type-fields: each event type carries its own fields (2.46725ms)
+✔ event-links: related events exist earlier; results follow intents; decisions answer requests (1.979458ms)
+✔ state-stage-matches-events: the state stage equals the last recorded stage change (1.301542ms)
+✔ pending-decision-has-request: a pending decision was requested and is still unanswered (2.948125ms)
+✔ pending-decision-has-request: category order alone is not a mismatch (0.850667ms)
+✔ verified-facts-have-promotion-event: every verified fact has a promotion event (0.558834ms)
+✔ verified-facts-have-promotion-event: a STALE fact needs the promotion event of its earlier observation (0.409792ms)
+✔ verified-facts-have-promotion-event: the earlier promotion must match the STALE fact's source (2.886083ms)
+✔ first-billable-carries-plan: a pending first billable request must include plan acceptance (2.317166ms)
+✔ first-billable-carries-plan: the recorded history is checked after the decision is cleared (0.502167ms)
+✔ first-billable-carries-plan: a later billable request after plan acceptance was approved is fine (4.167042ms)
+✔ first-billable-carries-plan: plan acceptance must have been approved, not just requested (2.494541ms)
+✔ requests-answered-or-pending: an unanswered request must be the pending decision (6.998791ms)
+✔ one-decision-per-request: request ids are unique (0.3855ms)
+✔ one-decision-per-request: a request receives at most one decision (1.463042ms)
+✔ gated-intent-approved: a gated intent relates to an earlier approved decision (3.39025ms)
+✔ pending-decision-has-request: the pending request time matches the recorded request (0.647333ms)
+✔ verified-facts-have-promotion-event: the latest promotion, not any promotion, must match (2.72125ms)
+✔ verified-facts-have-promotion-event: check time and evidence must agree with the latest promotion (5.500291ms)
+✔ verified-facts-have-promotion-event: a STALE fact must match its latest promotion (0.916042ms)
+✔ trust-by-source: an ASSUMED fact comes from reasoning (0.40325ms)
+✔ problem-is-observed: only a verified or previously verified observation can flag a problem (0.858917ms)
+✖ the server listens on loopback only (13.335292ms)
+✖ the view assets, state.json and events.jsonl are served, fresh on every request (5.7665ms)
+✖ every response forbids caching and any non-local resource (6.158208ms)
+✖ non-read requests are refused and change nothing (3.891791ms)
+✖ HEAD returns headers without a body (6.42425ms)
+✖ evidence, other files and traversal attempts are refused (12.485667ms)
+✖ requests addressed to another host name are refused (6.521625ms)
+✖ a missing state.json is a 404, which the view shows as an error (0.606459ms)
+✔ the complete package has no dangling stage or provider reference (4.065416ms)
+✔ a deliberately reduced package is detected, and the router keeps its gates and rules (18.117875ms)
+✔ the router opens with the minimal loop and keeps generic rules out of provider files (0.317542ms)
+✔ a declared reduced package: actual omissions match the declaration and the record discloses each gap once (30.609833ms)
+✔ the plan skill tells a local target how to state its single tier honestly (2.504709ms)
+✔ verifying a fact as the router says produces a valid record (21.993667ms)
+✔ the plan-acceptance request for a local target, as the skills describe it, is valid (34.152625ms)
+✔ manual-edit DNS follows the authority path: decision, gated intent, human edit, result, own verification (37.292167ms)
+✔ a gated DNS intent recorded before the approval is refused (15.7735ms)
+✔ complete request scope survives approval and pending clear through filesystem evidence and brief (30.328417ms)
+✔ high-risk delegation and recovery scope scenarios are advisory guidance only (4.841584ms)
+✔ documented nonsecret baseline projection compares equal and changed fields without originals (8.135583ms)
+✔ human-created run resource uses existing fields and human cleanup has approval and verification (43.630709ms)
+✔ the router lives at exactly skills/router.md, as the workspace pointer says (0.407375ms)
+✔ the router, stage and provider files exist, and nothing else is in skills/ (5.099375ms)
+✔ every skill stays inside its length budget (2.606541ms)
+✔ the router carries every always-on rule (0.726625ms)
+✔ every stage file restates the always-on rules (1.24725ms)
+✔ the router says what to read first, how to use the tools, and which one stage file to load (0.27475ms)
+✔ each stage file carries its Annex J responsibility (1.806ms)
+✔ the handoff guidance covers all ten Annex K items (0.602667ms)
+✔ GCP is the target with validation pending; every other provider is UNVALIDATED (0.936708ms)
+✔ skills are neutral, client-neutral and free of governance or experiment wording (4.148625ms)
+✔ every example event in the skills is schema-valid once append fills its defaults (8.502042ms)
+✔ Cloudflare manual-edit mode records the approval and a gated intent before the human edits DNS (0.606125ms)
+✔ every valid fixture validates, with the scanner self-test passing in the same call (87.459042ms)
+✔ every invalid fixture is rejected for exactly its intended reason (31.173792ms)
+✔ the planted canary is caught in the same pass that clears the valid fixtures (56.6855ms)
+✔ the secret scan still runs when the JSON is malformed, and errors never echo the input (13.509917ms)
+✔ a product schema with an unsupported keyword fails closed (7.441792ms)
+✔ a product schema with a remote $ref fails closed (7.701834ms)
+✔ a product schema with an unknown format fails closed (5.998208ms)
+✔ a schema file that is not valid JSON fails closed (12.77325ms)
+✔ a workspace without events.jsonl is rejected (5.093083ms)
+✔ when one workspace file is missing, the remaining file is still secret-scanned (8.161333ms)
+✔ a blank line inside events.jsonl is rejected (13.053ms)
+✔ schema errors on events name the line, keyword and pointer (5.881084ms)
+✔ clean evidence files keep a valid workspace valid (7.659042ms)
+✔ every regular file under evidence/ is secret-scanned, recursively (7.814959ms)
+✔ evidence is scanned even when state is malformed and events are missing (3.703541ms)
+✔ evidence symbolic links are reported and never followed (7.413084ms)
+✔ an evidence folder that is itself a symbolic link is reported and not followed (9.597125ms)
+✔ schema errors on secret-shaped property names are redacted (7.040833ms)
+✔ named-check errors quoting secret-shaped identifiers are redacted (7.635916ms)
+✔ an oversized events line is rejected even when its numbers are in range (7.22425ms)
+✔ an oversized state.json is rejected by its size limit (22.103833ms)
+✔ an evidence file over the scan limit is reported and not scanned (13.037625ms)
+✔ a special evidence file is reported without being opened (10.791708ms)
+
+Interrupted while running:
+
+⚠ tests/view-handoff.test.mjs (tests/view-handoff.test.mjs:1:1)
+⚠ tests/vocabulary.test.mjs (tests/vocabulary.test.mjs:1:1)
+⚠ tests/workspace.test.mjs (tests/workspace.test.mjs:1:1)
+✖ continuation stops and restores the same synthetic workspace using the real show command (75.518667ms)
+✖ show --port 0 binds a real port and serves this workspace (5.837458ms)
+✖ tests/view-handoff.test.mjs (69663.791458ms)
+✔ each experiment-wording guard catches its own class (0.4285ms)
+✔ the private-seat guard catches neutral canaries, whole words only (0.108583ms)
+✔ the coordinator guard catches its neutral canary, whole words only (0.065958ms)
+✔ the guards leave neutral product wording alone (0.073ms)
+External privacy denylist: configured
+✔ tracked paths and content pass always-on guards and any configured private denylist (320.516959ms)
+✔ personal-path guards reject neutral account paths and allow ordinary local usage (0.190666ms)
+✔ bare historical stage labels are scoped to exactly three documents (0.087792ms)
+✔ external private terms detect neutral literal, escaped and split forms with exact URL exceptions (1.261625ms)
+✔ the optional private input fails closed when configured incorrectly (1.138416ms)
+✔ init creates a valid workspace with state, one stage event, evidence/ and a pointer file (18.105ms)
+✔ init records the first stage change and a recon state built from the options (5.066167ms)
+✔ the pointer file tells a fresh AI where to start, without relying on auto-loading (8.364ms)
+✔ init refuses a folder that already has content and changes nothing (2.048125ms)
+✔ init refuses options that would make an invalid state, before writing anything (2.212459ms)
+✔ init refuses a secret in its options and never repeats it (2.320167ms)
+✔ init requires the identity options (0.978833ms)
+✔ new workspace ignore guard excludes actual runtime files from normal containing-repo staging (102.43ms)
+✔ append adds exactly one line and never rewrites earlier bytes (7.455625ms)
+✔ an appended stage change needs a matching state write before the workspace is consistent (11.786125ms)
+✔ append keeps an explicit id and time when they are valid (5.93825ms)
+✔ append refuses a schema-invalid event (5.119542ms)
+✔ append refuses an event that breaks an event rule (5.576375ms)
+✔ append refuses an event carrying a secret and never repeats it (11.470042ms)
+✔ append takes exactly one JSON object (4.719792ms)
+✔ append refuses when the existing log is damaged (12.190541ms)
+✔ append refuses a folder that is not a workspace (0.678125ms)
+✔ a filled-in time never runs earlier than the last recorded event (9.449541ms)
+ℹ tests 282
+ℹ suites 0
+ℹ pass 263
+ℹ fail 18
+ℹ cancelled 1
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 70090.094125
+
+✖ failing tests:
+
+test at tests/browser.test.mjs:53:1
+✖ every valid fixture answers the six questions in a real browser (8.773417ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/browser.test.mjs:86:1
+✖ the seven statuses are visually distinct, and only fresh verified facts are green (2.412917ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/browser.test.mjs:112:1
+✖ an old state shows "No recent update" in the browser (1.047375ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/browser.test.mjs:122:1
+✖ five generic facts show actual values and a primary non-green problem in the browser (7.431041ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/browser.test.mjs:157:1
+✖ an on-disk state change appears without a reload, within the declared bound (3.29475ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/browser.test.mjs:174:1
+✖ a malformed state.json replaces the view with a visible error (6.163375ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/browser.test.mjs:189:1
+✖ a missing events.jsonl shows a visible error (8.536209ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/cli.test.mjs:129:1
+✖ show serves the workspace on loopback until stopped (45.996666ms)
+  Error: show exited early with 1
+      at ChildProcess.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-ai-devops-public/tests/cli.test.mjs:135:43)
+      at ChildProcess.wrapper (node:events:639:12)
+      at ChildProcess.emit (node:events:514:20)
+      at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+
+test at tests/server.test.mjs:35:1
+✖ the server listens on loopback only (13.335292ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/server.test.mjs:43:1
+✖ the view assets, state.json and events.jsonl are served, fresh on every request (5.7665ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/server.test.mjs:56:1
+✖ every response forbids caching and any non-local resource (6.158208ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/server.test.mjs:70:1
+✖ non-read requests are refused and change nothing (3.891791ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/server.test.mjs:83:1
+✖ HEAD returns headers without a body (6.42425ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/server.test.mjs:92:1
+✖ evidence, other files and traversal attempts are refused (12.485667ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/server.test.mjs:108:1
+✖ requests addressed to another host name are refused (6.521625ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/server.test.mjs:116:1
+✖ a missing state.json is a 404, which the view shows as an error (0.606459ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/view-handoff.test.mjs:14:1
+✖ continuation stops and restores the same synthetic workspace using the real show command (75.518667ms)
+  Error: show exited 1
+      at ChildProcess.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-ai-devops-public/tests/view-handoff.test.mjs:22:43)
+      at ChildProcess.wrapper (node:events:639:12)
+      at ChildProcess.emit (node:events:514:20)
+      at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+
+test at tests/view-handoff.test.mjs:44:1
+✖ show --port 0 binds a real port and serves this workspace (5.837458ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/view-handoff.test.mjs:1:1
+✖ tests/view-handoff.test.mjs (69663.791458ms)
+  'Promise resolution is still pending but the event loop has already resolved'

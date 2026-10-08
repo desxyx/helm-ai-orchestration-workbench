@@ -1,0 +1,6 @@
+{
+  "resource_x_designation": "{\"resource_x_alias\":\"RESOURCE-X\",\"resource_x_type\":\"compute.googleapis.com/Address\",\"resource_x_identifier_alias\":\"RESOURCE-X-ADDRESS\"}",
+  "source_sha256": "<PRIVATE_REF_02236>",
+  "source_locator": "RESOURCE_X_DESIGNATION.json",
+  "copied_at": "2026-10-05T02:36:20.204Z"
+}

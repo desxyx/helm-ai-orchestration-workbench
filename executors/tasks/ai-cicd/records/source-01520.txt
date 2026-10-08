@@ -1,0 +1,8 @@
+$ gcloud projects describe <CLOUD_PROJECT> --format=json --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+{
+  "createTime": "2026-09-25T06:33:14.433Z",
+  "lifecycleState": "ACTIVE",
+  "name": "WatchOver AI DevOps",
+  "projectId": "<CLOUD_PROJECT>",
+  "projectNumber": "<NUMERIC_RESOURCE_0071>"
+}

@@ -1,0 +1,69 @@
+{
+  "recorded_at": "2026-10-05T00:11:39+11:00",
+  "profiles": [
+    {
+      "path": "<CLIENT_HOME>/.zshrc",
+      "status": "EXACT_DOCKER_BLOCK_REMOVED",
+      "before_sha256": "<PRIVATE_REF_02127>",
+      "after_sha256": "<PRIVATE_REF_01989>",
+      "removed_block": "# The following lines have been added by Docker Desktop to enable Docker CLI completions.\nfpath=(<CLIENT_HOME>/.docker/completions $fpath)\nautoload -Uz compinit\n(( ${+_comps[docker]} )) || compinit\n# End of Docker CLI completions\n"
+    },
+    {
+      "path": "<CLIENT_HOME>/.zprofile",
+      "status": "ALREADY_CLEAR",
+      "sha256": "<PRIVATE_REF_03534>"
+    },
+    {
+      "path": "<CLIENT_HOME>/.bash_profile",
+      "status": "ALREADY_CLEAR",
+      "sha256": "<PRIVATE_REF_02898>"
+    },
+    {
+      "path": "<CLIENT_HOME>/.profile",
+      "status": "ALREADY_CLEAR",
+      "sha256": "<PRIVATE_REF_01741>"
+    }
+  ],
+  "paths": [
+    {
+      "path": "/Applications/Docker.app",
+      "status": "REMOVED"
+    },
+    {
+      "path": "<CLIENT_HOME>/.docker",
+      "status": "REMOVED"
+    },
+    {
+      "path": "<CLIENT_HOME>/Library/Group Containers/group.com.docker",
+      "status": "REMOVED"
+    },
+    {
+      "path": "<CLIENT_HOME>/Library/Application Support/Docker Desktop",
+      "status": "ABSENT"
+    },
+    {
+      "path": "<CLIENT_HOME>/Library/Preferences/com.docker.docker.plist",
+      "status": "ABSENT"
+    },
+    {
+      "path": "<CLIENT_HOME>/Library/Caches/com.docker.docker",
+      "status": "ABSENT"
+    },
+    {
+      "path": "<CLIENT_HOME>/Library/Logs/Docker Desktop",
+      "status": "ABSENT"
+    },
+    {
+      "path": "<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/docker/Docker-4.93.0-240920.dmg",
+      "status": "REMOVED"
+    }
+  ],
+  "protected_container": {
+    "path": "<CLIENT_HOME>/Library/Containers/com.docker.docker",
+    "exists": true,
+    "handling": "No retry or permission widening; official uninstaller left macOS-protected metadata.",
+    "direct_children": [
+      ".com.apple.containermanagerd.metadata.plist"
+    ]
+  }
+}

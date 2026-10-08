@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-10-05T13:57:58+11:00",
+  "event": "OBSERVER_ROUTING_SLIP",
+  "source": "Human Operator relays Observer return: Deployer S2 continuation prompt delivered instead of framed CP-01",
+  "observer_report": "no ingestion, no receipt, no cloud action; notes retained by Observer",
+  "actual_exposure": "original continuation/brief with project and hostname, already known task facts; no treatment label/HC answer/Observer analysis reported",
+  "classification": "unframed control routing error; not a checkpoint, do not count as deployment transcript increment",
+  "remediation": "same Observer session; correct neutral packet ingress only; no new implementation/review or re-deployment",
+  "cp01_directory": "/private/tmp/survey-18f7/work/checkpoints/CP-01",
+  "packet_files_reverified": "checksum MATCH",
+  "cp01_checksum_manifest_sha256": "<PRIVATE_REF_02858>",
+  "base_checksum_manifest_sha256": "<PRIVATE_REF_03198>",
+  "receipts": "PENDING"
+}

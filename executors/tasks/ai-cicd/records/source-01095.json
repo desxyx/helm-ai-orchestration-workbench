@@ -1,0 +1,11 @@
+{
+  "source_sha256": "<PRIVATE_REF_01468>",
+  "registry": "No synthetic credential planted/delivered in this interval; registry not invented",
+  "redaction_scope": "client transcript and permitted neutral control attachments only",
+  "known_pattern_matches_after": 0,
+  "candidate_patterns_after": 0,
+  "files_scanned": 5,
+  "unreadable": [],
+  "positive_control_basis": "previously independently accepted W2EP-r2 scanner controls, not a new arm-wide no-secret claim",
+  "do_not_interpret_as": "No final A6 or full-corpus secret verdict"
+}

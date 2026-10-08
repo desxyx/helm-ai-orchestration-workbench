@@ -1,0 +1,58 @@
+$ ssh -F C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/sshcfg taiga sudo docker compose -f /srv/taiga/app/docker-compose.yml up -d 2>&1 | grep -v Pull; sleep 60; sudo docker compose -f /srv/taiga/app/docker-compose.yml ps --format "{{.Name}} | {{.Image}} | {{.Status}}"; echo "--- back logs"; sudo docker logs --tail 25 taiga-taiga-back-1 2>&1; echo "--- caddy logs"; sudo docker logs taiga-caddy-1 2>&1 | grep -iE "certificate|error|obtain|tls" | tail -10
+# started 2026-10-06T14:17:23.000Z  ended 2026-10-06T14:18:32.000Z  exit 0
+--- stdout
+ Network taiga_default Creating 
+ Network taiga_default Creating 
+ Network taiga_default Created 
+ Network taiga_default Created 
+ Container taiga-postgres-1 Creating 
+ Container taiga-postgres-1 Created 
+ Container taiga-taiga-back-1 Creating 
+ Container taiga-taiga-back-1 Created 
+ Container taiga-caddy-1 Creating 
+ Container taiga-caddy-1 Created 
+ Container taiga-postgres-1 Starting 
+ Container taiga-postgres-1 Started 
+ Container taiga-postgres-1 Waiting 
+ Container taiga-postgres-1 Healthy 
+ Container taiga-taiga-back-1 Starting 
+ Container taiga-taiga-back-1 Started 
+ Container taiga-caddy-1 Starting 
+ Container taiga-caddy-1 Started 
+taiga-caddy-1 | taiga-front-caddy:<PRIVATE_REF_03189> | Up About a minute
+taiga-postgres-1 | postgres:16-alpine | Up About a minute (healthy)
+taiga-taiga-back-1 | taiga-back:<PRIVATE_REF_01638> | Up About a minute
+--- back logs
+  Applying users.0032_user_date_cancelled... OK
+  Applying users.0033_auto_20211110_1526... OK
+  Applying userstorage.0001_initial... OK
+  Applying userstorage.0002_fix_json_field_not_null... OK
+  Applying userstorage.0003_json_to_jsonb... OK
+  Applying userstories.0013_auto_20160722_1018... OK
+  Applying userstories.0014_auto_20160928_0540... OK
+  Applying userstories.0015_add_due_date... OK
+  Applying userstories.0016_userstory_assigned_users... OK
+  Applying userstories.0017_userstory_generated_from_task... OK
+  Applying userstories.0018_auto_20200615_0811... OK
+  Applying userstories.0019_userstory_from_task_ref... OK
+  Applying userstories.0020_userstory_swimlane... OK
+  Applying userstories.0021_auto_20201202_0850... OK
+  Applying votes.0001_initial... OK
+  Applying votes.0002_auto_20150805_1600... OK
+  Applying webhooks.0001_initial... OK
+  Applying webhooks.0002_webhook_name... OK
+  Applying webhooks.0003_auto_20150122_1021... OK
+  Applying webhooks.0004_auto_20150202_0834... OK
+  Applying webhooks.0005_auto_20150505_1639... OK
+  Applying webhooks.0006_json_to_jsonb... OK
+  Applying wiki.0004_auto_20160928_0540... OK
+  Applying wiki.0005_auto_20161201_1628... OK
+Load default templates
+--- caddy logs
+{"level":"info","ts":1791296252.259109,"logger":"http.auto_https","msg":"server is listening only on the HTTPS port but has no TLS connection policies; adding one to enable TLS","server_name":"srv0","https_port":443}
+{"level":"info","ts":1791296252.2603,"logger":"tls.cache.maintenance","msg":"started background certificate maintenance","cache":"0xc0002c9d80"}
+{"level":"info","ts":1791296252.2709758,"logger":"http","msg":"enabling automatic TLS certificate management","domains":["<W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>"]}
+{"level":"info","ts":1791296252.2810235,"logger":"tls","msg":"storage cleaning happened too recently; skipping for now","storage":"FileStorage:/data/caddy","instance":"<NATIVE_ID_1899>","try_again":1791382652.281019,"try_again_in":86399.999999018}
+{"level":"info","ts":1791296252.2817416,"logger":"tls","msg":"finished cleaning storage units"}
+{"level":"warn","ts":1791296252.2831507,"logger":"tls","msg":"stapling OCSP","error":"no OCSP stapling for [<W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>]: no OCSP server specified in certificate","identifiers":["<W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>"]}
+--- stderr

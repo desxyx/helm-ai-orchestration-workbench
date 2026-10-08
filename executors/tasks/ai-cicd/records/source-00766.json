@@ -1,0 +1,31 @@
+{
+  "artifact_class": "OWNER_POST_COMPARISON_PRODUCT_RULE_FOLLOWUP",
+  "recorded_at": "2026-10-05T23:20:22.948377+00:00",
+  "owner_direction": "Deployer starts and introduces HTML after basic facts and initial plan; explicit page-visible confirmation required before continuing",
+  "phase": "Post W2 comparison seal; future product behavior only",
+  "changed_product_files": [
+    {
+      "file": "skills/router.md",
+      "before_sha256": "<PRIVATE_REF_03657>",
+      "after_sha256": "<PRIVATE_REF_01884>",
+      "lines": 153
+    },
+    {
+      "file": "skills/stages/plan.md",
+      "before_sha256": "<PRIVATE_REF_01936>",
+      "after_sha256": "<PRIVATE_REF_01167>",
+      "lines": 67
+    },
+    {
+      "file": "README.md",
+      "before_sha256": "<PRIVATE_REF_01062>",
+      "after_sha256": "<PRIVATE_REF_02679>",
+      "lines": 74
+    }
+  ],
+  "product_runtime_or_schema_changed": false,
+  "W2_report_or_metrics_changed": false,
+  "handoff_revision": "r2",
+  "prior_handoff_preserved": "REVISIONS/r1/",
+  "cloud_or_DNS_actions": false
+}

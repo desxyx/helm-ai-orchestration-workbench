@@ -1,0 +1,12 @@
+$ ssh -F C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/sshcfg taiga sudo grep -a -E "BUILD_EXIT|Built" /var/log/taiga-build2.log; sudo docker images --format "{{.Repository}}:{{.Tag}} {{.ID}} {{.CreatedAt}}"; sudo docker run --rm --entrypoint sh taiga-back:<PRIVATE_REF_01638> -c "head -1 docker/entrypoint.sh | od -c | head -2"
+# started 2026-10-06T14:17:20.000Z  ended 2026-10-06T14:17:22.000Z  exit 0
+--- stdout
+ Image taiga-back:<PRIVATE_REF_01638> Built 
+ Image taiga-front-caddy:<PRIVATE_REF_03189> Built 
+BUILD_EXIT=0
+taiga-front-caddy:<PRIVATE_REF_03189> <PRIVATE_REF_01711> 2026-10-06 14:16:45 +0000 UTC
+taiga-back:<PRIVATE_REF_01638> faad4e1c26b1 2026-10-06 13:46:19 +0000 UTC
+postgres:16-alpine <PRIVATE_REF_04804> 2026-09-17 21:31:24 +0000 UTC
+0000000   #   !   /   u   s   r   /   b   i   n   /   e   n   v       b
+0000020   a   s   h  \n
+--- stderr

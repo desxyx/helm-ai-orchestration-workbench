@@ -1,0 +1,9 @@
+
+
+## W2B Observer intake acknowledgment and provisional limitations — 2026-10-05T12:26:28.443491+00:00
+
+Owner relays aggregate Observer acknowledgment:CP01(81segments),CP02(98),253checkpoint files/62supplement files hash-verified, chain/byte ranges continuous; supplement reviewed, no final seal. Individual native receipt ledger still pending. Relay preserved in evidence/OBSERVER_RELAY_QUARANTINED, never forwarded to Deployer/probe/later arms; private Observer notes not read. Deployer owner-relayed idle/complete statement is a repeated success claim, not new independent verification.
+
+Custody flags retained:bare personal login identifiers remain in already ingested inputs; future aliases expanded, historical packet/hash inputs immutable and no claim to erase prior exposure. Canonical arm token in control handoff path makes fully blinded Observer claim unavailable; dispatch read scope disclosed. Neutral custody notice prepared in Observer inbox. No new detection tool, test/review or deployment repair. Raw A3-P FAIL preserved; Observer provisional UNVERIFIED remains terminal rule-reconciliation point, not custodian replacement or PASS. Outside prior corpus verification-script read/use recorded from S2 tool events; assisted descriptive/comparison limitations retained; path alone does not establish prohibited prior-run analytical delivery.
+
+Eight-resource teardown and scoped residual draft remain UNAUTHORIZED. No cloud, DNS, restart, key/config or deletion action taken in this turn.

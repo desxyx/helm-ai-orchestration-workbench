@@ -1,0 +1,13 @@
+{
+  "artifact_class": "OWNER_QUALITATIVE_FEEDBACK",
+  "run_id": "RUN-W2B",
+  "recorded_at": "2026-10-05T20:06:55+11:00",
+  "point": "First billable approval / HC-E1",
+  "owner_quote": "Brother, I suggest recording my impressions too. At first glance, I’m very satisfied!",
+  "owner_quote_translation_note": "English translated/redacted derivative of the original human wording; not verbatim original English. The historical field name is retained.",
+  "status": "OWNER_SELF_REPORT",
+  "interpretation": "Positive first impression of the arm-native presentation, not HC confidence/score, factual verification or causal proof of WatchOver effectiveness.",
+  "contains_hc_answer_text": false,
+  "to_deployer_feedback": false,
+  "observer_delivery": "No delivery now; retain separately from HC answers/keys/scores."
+}

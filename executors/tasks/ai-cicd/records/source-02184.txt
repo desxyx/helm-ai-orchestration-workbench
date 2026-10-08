@@ -1,0 +1,2 @@
+$ gcloud compute instances delete <W2_RUN_RESOURCE_PREFIX>-vm --zone=australia-southeast2-a --keep-disks=all --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+Deleted [<PRIVATE_URL_0439>].

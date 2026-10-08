@@ -1,0 +1,32 @@
+{
+  "task_ref": "WATCHOVER_PUBLIC_RELEASE_2026-10-07",
+  "checked_at": "2026-10-07T12:11:14.953848+00:00",
+  "checks": {
+    "canonical_manifest_matches": true,
+    "builder_control_9_of_9": true,
+    "builder_output_empty": true,
+    "reviewer_control_9_of_9": true,
+    "reviewer_output_empty": true,
+    "source_146_exact": true,
+    "source_no_git_history": true,
+    "builder/product_146_exact": true,
+    "builder/product_no_git_history": true,
+    "reviewer_product_not_created": true,
+    "charter_exact_copy": true
+  },
+  "package_manifest_sha256": "<PRIVATE_REF_01694>",
+  "source_commit": "<PRIVATE_REF_03069>",
+  "source_tree": "<PRIVATE_REF_01459>",
+  "agent_run_recorder_public_display": {
+    "source": "<PRIVATE_URL_0144>",
+    "target": "https://github.com/helmls-studio/agent-run-recorder",
+    "visibility": "public",
+    "commit": "<PRIVATE_REF_02579>",
+    "tree": "<PRIVATE_REF_02215>",
+    "original_retained": true,
+    "code_modified": false
+  },
+  "role_ack_entry_candidate_pass": "NOT_RECEIVED",
+  "public_watchover_implementation": "NOT_STARTED",
+  "new_product_tests": "NOT_RUN"
+}

@@ -1,0 +1,19 @@
+{
+  "receipt_id": "AI-CICD-20261005-W2A-CP01-READONLY-001",
+  "actor": "Operations Coordinator",
+  "lane": "ordinary control-plane checkpoint custody",
+  "target": "<EXPERIMENT_PROJECT>; us-central1/<W2_RUN_RESOURCE_PREFIX>-ip; existing local session/source metadata",
+  "action": "One existing frozen project-inventory bundle, supplementary read-only lists, address describe, SDK version and active account/project metadata; local checkpoint records and delivery only",
+  "mutation_class": "local control/evidence writes; cloud READ_ONLY; no resource/API/credential/DNS mutation",
+  "allowed_count": 1,
+  "provider_command_attempt_cap": 10,
+  "valid_from": "2026-10-05T13:31:45+11:00",
+  "valid_until": "2026-10-05T13:41:45+11:00",
+  "stop_point": "CP-01 snapshot/raw query custody complete or 10 attempts/10 minutes/error requiring mutation, whichever first",
+  "source_authorization": "Human Operator current message: closure confirmation + read-only snapshot authorization; preceding exact bounded request",
+  "source_authorization_translation_note": "The human message wording in source_authorization is an English translated/redacted derivative of the original Chinese; not verbatim original English. The existing authorization field and value are retained.",
+  "signed_by": "Human Operator via explicit current-message approval",
+  "consumption": "STARTED 1/1 before queries; no reuse",
+  "s1_closed_confirmation": "Human Operator current message confirms closure; actual process termination not independently attested",
+  "result": "PENDING"
+}

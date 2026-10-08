@@ -1,0 +1,8 @@
+$ gcloud compute ssh <ACCOUNT>@<W2_RUN_RESOURCE_PREFIX>-vm --zone=australia-southeast2-a --tunnel-through-iap --ssh-key-file=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-ssh-key --ssh-flag=-oUserKnownHostsFile=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-known-hosts '--command=sudo docker compose -f /opt/<W2_RUN_RESOURCE_PREFIX>/compose.yaml restart web' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+WARNING: 
+
+To increase the performance of the tunnel, consider installing NumPy. For instructions,
+please see <PRIVATE_URL_0075>ogle.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
+
+ Container <W2_RUN_RESOURCE_PREFIX>-web-1  Restarting
+ Container <W2_RUN_RESOURCE_PREFIX>-web-1  Started

@@ -1,0 +1,26 @@
+{
+  "platform": "macOS",
+  "scope": "minimum export synthetic local init/validate/brief; no workload/browser/cloud",
+  "tests": [
+    {
+      "command": "init",
+      "exit_code": 0,
+      "stdout_lines": 1,
+      "stderr": ""
+    },
+    {
+      "command": "validate",
+      "exit_code": 0,
+      "stdout_lines": 1,
+      "stderr": ""
+    },
+    {
+      "command": "brief",
+      "exit_code": 0,
+      "stdout_lines": 13,
+      "stderr": ""
+    }
+  ],
+  "passed": true,
+  "windows_verified": false
+}

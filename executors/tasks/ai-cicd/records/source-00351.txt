@@ -1,0 +1,30 @@
+$ bash -c echo '--- instances'; gcloud compute instances list --project <CLOUD_PROJECT> --format='table(name,zone.basename(),status,disks[].source.basename().list())'; echo '--- disks'; gcloud compute disks list --project <CLOUD_PROJECT> --format='table(name,zone.basename(),sizeGb,users.basename().list(),resourcePolicies.basename().list())'; echo '--- snapshots'; gcloud compute snapshots list --project <CLOUD_PROJECT> --format='table(name,sourceDisk.basename(),diskSizeGb,creationTimestamp)'; echo '--- resource-policies'; gcloud compute resource-policies list --project <CLOUD_PROJECT> --format='table(name,region.basename(),status)'; echo '--- addresses'; gcloud compute addresses list --project <CLOUD_PROJECT> --format='table(name,address,region.basename(),status,users.basename().list())'; echo '--- firewall-rules'; gcloud compute firewall-rules list --project <CLOUD_PROJECT> --format='table(name,targetTags.list(),allowed[].map().firewall_rule().list())'; echo '--- images (custom)'; gcloud compute images list --no-standard-images --project <CLOUD_PROJECT>; echo '--- project metadata keys'; gcloud compute project-info describe --project <CLOUD_PROJECT> --format='value(commonInstanceMetadata.items[].key,commonInstanceMetadata.fingerprint)'; echo '--- dns'; curl -s '<PRIVATE_URL_0108>'
+# started 2026-10-06T14:45:16.000Z  ended 2026-10-06T14:45:46.000Z  exit 0
+--- stdout
+--- instances
+NAME      ZONE                    STATUS   SOURCE
+<RUN_VM_OR_BOOT_DISK>  australia-southeast1-b  RUNNING  <RUN_VM_OR_BOOT_DISK>,<RUN_DATA_DISK>
+--- disks
+NAME        ZONE                    SIZE_GB  USERS     RESOURCE_POLICIES
+<RUN_DATA_DISK>  australia-southeast1-b  10       <RUN_VM_OR_BOOT_DISK>  <RUN_SNAPSHOT_POLICY>
+<RUN_VM_OR_BOOT_DISK>    australia-southeast1-b  20       <RUN_VM_OR_BOOT_DISK>
+--- snapshots
+--- resource-policies
+NAME         REGION                STATUS
+<RUN_SNAPSHOT_POLICY>  australia-southeast1  READY
+--- addresses
+NAME      ADDRESS        REGION                STATUS  USERS
+<RUN_STATIC_IP>  <IP_ADDRESS_115>  australia-southeast1  IN_USE  <RUN_VM_OR_BOOT_DISK>
+--- firewall-rules
+NAME                    TARGET_TAGS  ALLOW
+default-allow-icmp                   icmp
+default-allow-internal               tcp:0-65535,udp:0-65535,icmp
+default-allow-rdp                    tcp:3389
+default-allow-ssh                    tcp:22
+<RUN_FIREWALL>         taiga-web    tcp:80,tcp:443,udp:443
+--- images (custom)
+--- project metadata keys
+ssh-keys	Q6_OW8P-QA8=
+--- dns
+{"Status":0,"TC":false,"RD":true,"RA":true,"AD":false,"CD":false,"Question":[{"name":"<W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>.","type":1}],"Answer":[{"name":"<W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>.","type":1,"TTL":300,"data":"<IP_ADDRESS_115>"}],"Comment":"Response from <IP_ADDRESS_098>."}--- stderr
+Listed 0 items.

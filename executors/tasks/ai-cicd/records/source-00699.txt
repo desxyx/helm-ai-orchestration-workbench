@@ -1,0 +1,11 @@
+# R3a / R6 entry layout + hostname checks (2026-10-04T22:41:58+1100)
+## Deployer cwd entries (expect 0):
+       0
+## arm root entries:
+app
+## positive control - same instrument lists a known-present file in the sibling client tree:
+1
+## proposed hostname (Operations Coordinator to confirm) DNS A/AAAA/CNAME via 1.1.1.1 (expect empty):
+A: 
+AAAA: 
+CNAME: 

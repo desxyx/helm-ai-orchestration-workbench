@@ -1,0 +1,130 @@
+[
+  {
+    "canIpForward": false,
+    "cpuPlatform": "AMD Rome",
+    "creationTimestamp": "2026-10-04T19:59:43.244-07:00",
+    "deletionProtection": false,
+    "disks": [
+      {
+        "architecture": "X86_64",
+        "autoDelete": false,
+        "boot": true,
+        "deviceName": "persistent-disk-0",
+        "diskSizeGb": "20",
+        "guestOsFeatures": [
+          {
+            "type": "UEFI_COMPATIBLE"
+          },
+          {
+            "type": "VIRTIO_SCSI_MULTIQUEUE"
+          },
+          {
+            "type": "GVNIC"
+          },
+          {
+            "type": "SEV_CAPABLE"
+          },
+          {
+            "type": "SEV_LIVE_MIGRATABLE_V2"
+          },
+          {
+            "type": "SUSPEND_SAFE_FPR"
+          }
+        ],
+        "index": 0,
+        "interface": "SCSI",
+        "kind": "compute#attachedDisk",
+        "licenses": [
+          "<PRIVATE_URL_0264>"
+        ],
+        "mode": "READ_WRITE",
+        "source": "<PRIVATE_URL_0452>",
+        "type": "PERSISTENT"
+      },
+      {
+        "autoDelete": false,
+        "boot": false,
+        "deviceName": "<W2_RUN_RESOURCE_PREFIX>-data",
+        "diskSizeGb": "20",
+        "index": 1,
+        "interface": "SCSI",
+        "kind": "compute#attachedDisk",
+        "mode": "READ_WRITE",
+        "source": "<PRIVATE_URL_0453>",
+        "type": "PERSISTENT"
+      }
+    ],
+    "fingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+    "id": "<NUMERIC_RESOURCE_0107>",
+    "kind": "compute#instance",
+    "labelFingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+    "labels": {
+      "app": "alerta",
+      "hostname": "<W2_RUN_RESOURCE_PREFIX>",
+      "managed-by": "codex"
+    },
+    "lastStartTimestamp": "2026-10-04T19:59:54.636-07:00",
+    "machineType": "<PRIVATE_URL_0455>",
+    "metadata": {
+      "fingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+      "items": [
+        {
+          "key": "startup-script",
+          "value": "#!/bin/bash\nset -euo pipefail\nexport DEBIAN_FRONTEND=noninteractive\nif ! command -v docker >/dev/null 2>&1; then\n    apt-get update\n    apt-get install -y ca-certificates curl git\n    install -m 0755 -d /etc/apt/keyrings\n    curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc\n    chmod a+r /etc/apt/keyrings/docker.asc\n    cat > /etc/apt/sources.list.d/docker.sources <<'EOF'\nTypes: deb\nURIs: https://download.docker.com/linux/debian\nSuites: bookworm\nComponents: stable\nArchitectures: amd64\nSigned-By: /etc/apt/keyrings/docker.asc\nEOF\n    apt-get update\n    apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin\nfi\nsystemctl enable --now docker\ndata_device=/dev/disk/by-id/google-<W2_RUN_RESOURCE_PREFIX>-data\nif ! blkid \"$data_device\" >/dev/null 2>&1; then\n    mkfs.ext4 -L <W2_RUN_RESOURCE_PREFIX>-data \"$data_device\"\nfi\nmkdir -p /srv/alerta /opt/<W2_RUN_RESOURCE_PREFIX>\nif ! grep -q '^LABEL=<W2_RUN_RESOURCE_PREFIX>-data ' /etc/fstab; then\n    printf 'LABEL=<W2_RUN_RESOURCE_PREFIX>-data /srv/alerta ext4 defaults 0 2\\n' >> /etc/fstab\nfi\nmountpoint -q /srv/alerta || mount /srv/alerta\nmkdir -p /srv/alerta/postgres /srv/alerta/caddy/data /srv/alerta/caddy/config\nmkdir -p /etc/systemd/system/docker.service.d\ncat > /etc/systemd/system/docker.service.d/<W2_RUN_RESOURCE_PREFIX>-storage.conf <<'EOF'\n[Unit]\nRequiresMountsFor=/srv/alerta\nEOF\ncat > /etc/systemd/system/<W2_RUN_RESOURCE_PREFIX>.service <<'EOF'\n[Unit]\nDescription=Alerta website, API, and persistent PostgreSQL\nRequires=docker.service\nAfter=docker.service network-online.target\nWants=network-online.target\nRequiresMountsFor=/srv/alerta\n\n[Service]\nType=oneshot\nRemainAfterExit=yes\nWorkingDirectory=/opt/<W2_RUN_RESOURCE_PREFIX>\nExecStartPre=/usr/bin/mountpoint -q /srv/alerta\nExecStart=/usr/bin/docker compose up -d --wait --wait-timeout 240\nExecStop=/usr/bin/docker compose stop\nTimeoutStartSec=300\nTimeoutStopSec=120\n\n[Install]\nWantedBy=multi-user.target\nEOF\nsystemctl daemon-reload\nprintf 'Host prepared; upload the deployment bundle to /opt/<W2_RUN_RESOURCE_PREFIX> before starting <W2_RUN_RESOURCE_PREFIX>.service.\\n'\n"
+        }
+      ],
+      "kind": "compute#metadata"
+    },
+    "name": "<W2_RUN_RESOURCE_PREFIX>-alerta",
+    "networkInterfaces": [
+      {
+        "accessConfigs": [
+          {
+            "kind": "compute#accessConfig",
+            "name": "external-nat",
+            "natIP": "<IP_ADDRESS_114>",
+            "networkTier": "PREMIUM",
+            "type": "ONE_TO_ONE_NAT"
+          }
+        ],
+        "fingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+        "kind": "compute#networkInterface",
+        "name": "nic0",
+        "network": "<PRIVATE_URL_0283>",
+        "networkIP": "<IP_ADDRESS_092>",
+        "stackType": "IPV4_ONLY",
+        "subnetwork": "<PRIVATE_URL_0399>"
+      }
+    ],
+    "resourceStatus": {
+      "effectiveInstanceMetadata": {
+        "vmDnsSettingMetadataValue": "ZonalOnly"
+      }
+    },
+    "satisfiesPzi": true,
+    "scheduling": {
+      "automaticRestart": true,
+      "onHostMaintenance": "MIGRATE",
+      "preemptible": false,
+      "provisioningModel": "STANDARD"
+    },
+    "selfLink": "<PRIVATE_URL_0454>",
+    "shieldedInstanceConfig": {
+      "enableIntegrityMonitoring": true,
+      "enableSecureBoot": true,
+      "enableVtpm": true
+    },
+    "shieldedInstanceIntegrityPolicy": {
+      "updateAutoLearnPolicy": true
+    },
+    "startRestricted": false,
+    "status": "RUNNING",
+    "tags": {
+      "fingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+      "items": [
+        "<W2_RUN_RESOURCE_PREFIX>"
+      ]
+    },
+    "zone": "<PRIVATE_URL_0462>"
+  }
+]

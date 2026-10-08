@@ -1,0 +1,334 @@
+{
+  "artifact_class": "INTERRUPTION_CUSTODY",
+  "run_id": "RUN-W2B",
+  "arm": "W2B",
+  "recorded_at": "2026-10-05T20:30:04+11:00",
+  "deployer_session_id": "<NATIVE_ID_0070>",
+  "source_locator": "<CLIENT_HOME>/.codex/sessions/2026/10/05/rollout-2026-10-05T19-35-10-<NATIVE_ID_0070>.jsonl",
+  "raw_sha256": "<PRIVATE_REF_01141>",
+  "raw_line_count": 352,
+  "<CLIENT_RESOURCE_01974>": "2026-10-05T09:25:26.702Z",
+  "owner_message": "Owner reports manually interrupting Deployer while VM console entry appeared but boot was not yet visibly complete.",
+  "process_observation": {
+    "checked": true,
+    "ps_exit_code": 0,
+    "matching_provision_or_task_gcloud_processes": [],
+    "sandbox_attempt": "Python-spawned ps denied; approved read-only retry succeeded"
+  },
+  "owner_cloud_observation": {
+    "vm": "<W2_RUN_RESOURCE_PREFIX>-vm",
+    "zone": "australia-southeast2-a",
+    "external_ipv4": "<IP_ADDRESS_113>",
+    "console_status": "in-progress icon; not independent current provider status"
+  },
+  "local_provision_script_scope": "Network, subnet, IAP firewall, static IP, data disk, VM and local evidence; no application upload/deployment command in this script. A single script can create several resources before returning.",
+  "first_billable_resource_identity": "PENDING_RAW_RESULT_RECONCILIATION; script orders static IP before disk/VM, do not redefine trigger as VM visibility",
+  "source_process_completion_vs_provider_completion": "No local process found does not independently establish every cloud operation finished. Current provider status needs authorized read-only snapshot.",
+  "formal_interruption_classification": "PENDING_OBJECTIVE_TRIGGER_AND_SAFE_BOUNDARY_RECONCILIATION",
+  "old_session_closed": "NOT_CONFIRMED",
+  "s2_started": false,
+  "cloud_action_by_custodian": false,
+  "local_files": [
+    {
+      "path": "watchover/state.json",
+      "sha256": "<PRIVATE_REF_02623>",
+      "bytes": 20742
+    },
+    {
+      "path": "watchover/events.jsonl",
+      "sha256": "<PRIVATE_REF_01949>",
+      "bytes": 19331
+    },
+    {
+      "path": "deployment-<W2_RUN_RESOURCE_PREFIX>/provision.py",
+      "sha256": "<PRIVATE_REF_02748>",
+      "bytes": 3465
+    },
+    {
+      "path": "deployment-<W2_RUN_RESOURCE_PREFIX>/allocated-ip.txt",
+      "sha256": "<PRIVATE_REF_03241>",
+      "bytes": 15
+    },
+    {
+      "path": "watchover/evidence/0001-project.json",
+      "sha256": "<PRIVATE_REF_03375>",
+      "bytes": 190
+    },
+    {
+      "path": "watchover/evidence/0002-billing.json",
+      "sha256": "<PRIVATE_REF_01683>",
+      "bytes": 199
+    },
+    {
+      "path": "watchover/evidence/0003-services.txt",
+      "sha256": "<PRIVATE_REF_01883>",
+      "bytes": 880
+    },
+    {
+      "path": "watchover/evidence/0004-addresses.json",
+      "sha256": "<PRIVATE_REF_01383>",
+      "bytes": 3
+    },
+    {
+      "path": "watchover/evidence/0005-networks.json",
+      "sha256": "<PRIVATE_REF_03207>",
+      "bytes": 6035
+    },
+    {
+      "path": "watchover/evidence/0006-roles.txt",
+      "sha256": "<PRIVATE_REF_02332>",
+      "bytes": 12
+    },
+    {
+      "path": "watchover/evidence/0007-instances.json",
+      "sha256": "<PRIVATE_REF_01383>",
+      "bytes": 3
+    },
+    {
+      "path": "watchover/evidence/0008-source-alerta-webui.txt",
+      "sha256": "<PRIVATE_REF_03389>",
+      "bytes": 123
+    },
+    {
+      "path": "watchover/evidence/0008-source-alerta.txt",
+      "sha256": "<PRIVATE_REF_01053>",
+      "bytes": 117
+    },
+    {
+      "path": "watchover/evidence/0009-npm-install.txt",
+      "sha256": "<PRIVATE_REF_01451>",
+      "bytes": 1750
+    },
+    {
+      "path": "watchover/evidence/0010-npm-install-retry.txt",
+      "sha256": "<PRIVATE_REF_03649>",
+      "bytes": 4226
+    },
+    {
+      "path": "watchover/evidence/0011-frontend-build.txt",
+      "sha256": "<PRIVATE_REF_01051>",
+      "bytes": 38722
+    },
+    {
+      "path": "watchover/evidence/0012-region-quotas.json",
+      "sha256": "<PRIVATE_REF_02727>",
+      "bytes": 10795
+    },
+    {
+      "path": "watchover/evidence/0013-machine-type.json",
+      "sha256": "<PRIVATE_REF_01431>",
+      "bytes": 63
+    },
+    {
+      "path": "watchover/evidence/0014-local-validation.txt",
+      "sha256": "<PRIVATE_REF_02467>",
+      "bytes": 472
+    },
+    {
+      "path": "watchover/evidence/0015-official-pricing.json",
+      "sha256": "<PRIVATE_REF_01268>",
+      "bytes": 647
+    },
+    {
+      "path": "watchover/evidence/0016-config-recheck.json",
+      "sha256": "<PRIVATE_REF_02287>",
+      "bytes": 142
+    },
+    {
+      "path": "watchover/evidence/0017-project-recheck.json",
+      "sha256": "<PRIVATE_REF_03375>",
+      "bytes": 190
+    },
+    {
+      "path": "watchover/evidence/0018-billing-recheck.json",
+      "sha256": "<PRIVATE_REF_01683>",
+      "bytes": 199
+    },
+    {
+      "path": "watchover/evidence/0019-owner-recheck.txt",
+      "sha256": "<PRIVATE_REF_02332>",
+      "bytes": 12
+    },
+    {
+      "path": "watchover/evidence/0020-region-recheck.json",
+      "sha256": "<PRIVATE_REF_01675>",
+      "bytes": 11426
+    },
+    {
+      "path": "watchover/evidence/0021-services-recheck.txt",
+      "sha256": "<PRIVATE_REF_01883>",
+      "bytes": 880
+    },
+    {
+      "path": "watchover/evidence/0022-network-recheck.json",
+      "sha256": "<PRIVATE_REF_03207>",
+      "bytes": 6035
+    },
+    {
+      "path": "watchover/evidence/0023-disks-recheck.json",
+      "sha256": "<PRIVATE_REF_01383>",
+      "bytes": 3
+    },
+    {
+      "path": "watchover/evidence/0031-create-network-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0031-create-network-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0033-create-network.txt",
+      "sha256": "<PRIVATE_REF_02407>",
+      "bytes": 977
+    },
+    {
+      "path": "watchover/evidence/0034-<W2_RUN_RESOURCE_PREFIX>-net-describe.txt",
+      "sha256": "<PRIVATE_REF_03369>",
+      "bytes": 810
+    },
+    {
+      "path": "watchover/evidence/0035-create-subnet-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0035-create-subnet-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0036-create-subnet-network.txt",
+      "sha256": "<PRIVATE_REF_03369>",
+      "bytes": 810
+    },
+    {
+      "path": "watchover/evidence/0037-create-subnet.txt",
+      "sha256": "<PRIVATE_REF_02261>",
+      "bytes": 1205
+    },
+    {
+      "path": "watchover/evidence/0038-<W2_RUN_RESOURCE_PREFIX>-subnet-describe.txt",
+      "sha256": "<PRIVATE_REF_00987>",
+      "bytes": 987
+    },
+    {
+      "path": "watchover/evidence/0039-create-iap-firewall-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0039-create-iap-firewall-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0040-create-iap-firewall-network.txt",
+      "sha256": "<PRIVATE_REF_02934>",
+      "bytes": 969
+    },
+    {
+      "path": "watchover/evidence/0041-create-iap-firewall.txt",
+      "sha256": "<PRIVATE_REF_02426>",
+      "bytes": 1158
+    },
+    {
+      "path": "watchover/evidence/0042-<W2_RUN_RESOURCE_PREFIX>-iap-ssh-describe.txt",
+      "sha256": "<PRIVATE_REF_00972>",
+      "bytes": 843
+    },
+    {
+      "path": "watchover/evidence/0043-create-static-ip-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0043-create-static-ip-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0045-create-static-ip.txt",
+      "sha256": "<PRIVATE_REF_03668>",
+      "bytes": 924
+    },
+    {
+      "path": "watchover/evidence/0046-<W2_RUN_RESOURCE_PREFIX>-ip-describe.txt",
+      "sha256": "<PRIVATE_REF_01159>",
+      "bytes": 737
+    },
+    {
+      "path": "watchover/evidence/0047-create-data-disk-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0047-create-data-disk-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0049-create-data-disk.txt",
+      "sha256": "<PRIVATE_REF_03524>",
+      "bytes": 1254
+    },
+    {
+      "path": "watchover/evidence/0050-<W2_RUN_RESOURCE_PREFIX>-data-describe.txt",
+      "sha256": "<PRIVATE_REF_03745>",
+      "bytes": 872
+    },
+    {
+      "path": "watchover/evidence/0051-create-vm-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0051-create-vm-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0052-create-vm-address.txt",
+      "sha256": "<PRIVATE_REF_01159>",
+      "bytes": 737
+    },
+    {
+      "path": "watchover/evidence/0052-create-vm-data-disk.txt",
+      "sha256": "<PRIVATE_REF_03745>",
+      "bytes": 872
+    },
+    {
+      "path": "watchover/evidence/0052-create-vm-subnet.txt",
+      "sha256": "<PRIVATE_REF_00987>",
+      "bytes": 987
+    },
+    {
+      "path": "watchover/evidence/0053-create-vm.txt",
+      "sha256": "<PRIVATE_REF_01869>",
+      "bytes": 33624
+    },
+    {
+      "path": "watchover/evidence/0054-<W2_RUN_RESOURCE_PREFIX>-vm-describe.txt",
+      "sha256": "<PRIVATE_REF_00666>",
+      "bytes": 32327
+    },
+    {
+      "path": "watchover/evidence/0055-<W2_RUN_RESOURCE_PREFIX>-vm-boot-describe.txt",
+      "sha256": "<PRIVATE_REF_03435>",
+      "bytes": 1911
+    }
+  ],
+  "owner_screenshots": [
+    {
+      "file": "OWNER_VM_SCREENSHOT_1.png",
+      "sha256": "<PRIVATE_REF_01521>"
+    },
+    {
+      "file": "OWNER_VM_SCREENSHOT_2.png",
+      "sha256": "<PRIVATE_REF_01521>"
+    }
+  ],
+  "private_capture_rule": "Local captures may contain credentials in VM metadata; machine/private custody only, do not deliver unredacted to Observer or S2."
+}

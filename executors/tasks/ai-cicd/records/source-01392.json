@@ -1,0 +1,39 @@
+{
+  "entry": {
+    "seq": 4,
+    "prev_entry_hash": "<PRIVATE_REF_02103>",
+    "event": "LOCKED",
+    "key": "RUN-W2A_HC-TERM",
+    "answer_sha256": "<PRIVATE_REF_02176>",
+    "quarantine_locator": "quarantine/RUN-W2A_HC-TERM.locked",
+    "locked_at": "2026-10-05T03:34:26.646Z",
+    "elapsed_seconds_from_delivery": 1164,
+    "time_box_seconds": 600,
+    "time_box_exceeded": true,
+    "entry_hash": "<PRIVATE_REF_02051>"
+  },
+  "custody_verification": {
+    "entries": 4,
+    "locks": [
+      {
+        "key": "RUN-W2A_HC-INT",
+        "status": "VERIFIED"
+      },
+      {
+        "key": "RUN-W2A_HC-TERM",
+        "status": "VERIFIED"
+      }
+    ],
+    "problems": [],
+    "verdict": "VERIFIED"
+  },
+  "measurement_status": "INVALID_FOR_HC",
+  "use": "SUPPLEMENTARY_OBSERVATION_ONLY",
+  "confidence": "NOT_RECORDED",
+  "reasons": [
+    "Operations Coordinator consultation and live website/DNS inspection after original form delivery",
+    "Question wording re-presented as supplemental observation; original delivery clock not restarted"
+  ],
+  "score": null,
+  "disclosure": "Owner requested administrator credential retrieval; credential value is excluded from this HC answer and metadata. No acceptance or deletion authority inferred."
+}

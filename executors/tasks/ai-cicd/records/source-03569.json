@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 17537,
+  "stop_reason": "end_turn",
+  "session_id": "<NATIVE_ID_0314>",
+  "total_cost_usd": 0.07460939999999999,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 13308,
+    "cache_read_input_tokens": 15677,
+    "output_tokens": 1823,
+    "output_tokens_details": {
+      "thinking_tokens": 213
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 13308,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1187,
+        "cache_read_input_tokens": 8006,
+        "cache_creation_input_tokens": 8316,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 8316
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1823,
+      "cacheReadInputTokens": 15677,
+      "cacheCreationInputTokens": 13308,
+      "webSearchRequests": 0,
+      "costUSD": 0.07460939999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 213,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 6,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The `<W2_RUN_RESOURCE_PREFIX>-ip` resource in `australia-southeast2` was created on 2026-10-05 at 02:25:00 PDT (09:25:00 UTC). It was reserved as a static public IPv4 address for DNS that the user manages.\n\n**When**\n- The `gcloud compute addresses create` output records `creationTimestamp` `2026-10-05T02:25:00.645-07:00`, address `<IP_ADDRESS_113>`, id `<NUMERIC_RESOURCE_0095>`, status `RESERVED` (`corpus/WORKSPACE/app/watchover/evidence/0045-create-static-ip.txt:6`).\n- Deployer events `evt-0044` (intent, 09:24:55.569Z) and `evt-0045` (result \"succeeded\", 09:25:04.300Z) cover the create (`corpus/WORKSPACE/app/watchover/events.jsonl:44-45`). Both are in session `<W2_RUN_RESOURCE_PREFIX>-20261005-01`, run as `ADMIN-ACCOUNT-A`.\n- The provider operations log has an `insert` on `.../australia-southeast2/addresses/<W2_RUN_RESOURCE_PREFIX>-ip` with the same `targetId`. It was inserted at 02:25:00.667-07:00 and finished at 02:25:03.247-07:00, status `DONE`, user `ADMIN-ACCOUNT-A` (`corpus/PROVIDER_operations.json:571-586`).\n- The asset inventory gives `createTime` `2026-10-05T09:25:00Z` and the same id (`corpus/PROVIDER_asset_inventory.json:147-159`). It lists the state as `IN_USE`.\n- `evt-0046` (09:25:05.548Z) verified the address remotely with a describe call (`events.jsonl:46`, `evidence/0046-<W2_RUN_RESOURCE_PREFIX>-ip-describe.txt`).\n\n**Why**\n- The provisioning script creates it with `--network-tier=PREMIUM`. It labels the resource \"Static public IPv4 for user-managed DNS\" (`corpus/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/provision.py:14-16`).\n- It is one step in the Deployer's `<W2_RUN_RESOURCE_PREFIX>` provisioning sequence. That sequence also created `<W2_RUN_RESOURCE_PREFIX>-subnet` at 02:24 and the `<W2_RUN_RESOURCE_PREFIX>-iap-ssh` firewall at 09:24:45Z. Both `evt-0044` and `evt-0040` reference `evt-0024`, which I did not open.\n- I did not read the transcripts for a more detailed stated rationale.\n\n**An earlier resource with the same name**\n- The operations log also shows a different `<W2_RUN_RESOURCE_PREFIX>-ip` in `us-central1` with `targetId` `<NUMERIC_RESOURCE_0021>`. It was inserted on 2026-10-04 at 19:22:22 PDT and deleted at 22:01:03 PDT (`corpus/PROVIDER_operations.json:427-442` and `459-474`).\n- That is a separate resource from the `australia-southeast2` one.\n\nThese records show that the address was created and reserved. They don't show what source code is running behind it.",
+  "ttft_ms": 2169,
+  "type": "result",
+  "duration_ms": 17631,
+  "uuid": "<NATIVE_ID_2293>",
+  "ttft_stream_ms": 1482,
+  "time_to_request_ms": 30,
+  "first_content_frame_ms": 1482,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

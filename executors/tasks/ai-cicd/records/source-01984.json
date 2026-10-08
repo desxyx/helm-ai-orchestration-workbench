@@ -1,0 +1,661 @@
+{
+  "run_id": "RUN-W2B",
+  "method": "Reuse frozen W2EP synthetic/redactText and frozen R14 Perl on decoded JSON string tokens; expanded existing aliases; JSON/line counts validated; private originals unchanged",
+  "files": [
+    {
+      "file": "S2_CLOSE_INCREMENT_REDACTED.jsonl",
+      "private_source_sha256": "<PRIVATE_REF_03350>",
+      "delivered_sha256": "<PRIVATE_REF_03382>"
+    },
+    {
+      "file": "RUN_CLOSE_MECHANICAL_RECORD.json",
+      "private_source_sha256": "<PRIVATE_REF_01050>",
+      "delivered_sha256": "<PRIVATE_REF_02666>"
+    },
+    {
+      "file": "RESIDUAL_MECHANICAL_RECORD.json",
+      "private_source_sha256": "<PRIVATE_REF_00916>",
+      "delivered_sha256": "<PRIVATE_REF_00916>"
+    },
+    {
+      "file": "TEARDOWN_REPORT_REDACTED.json",
+      "private_source_sha256": "<PRIVATE_REF_01065>",
+      "delivered_sha256": "<PRIVATE_REF_03595>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_AAAA_AUTH_attempt6.command.json",
+      "private_source_sha256": "<PRIVATE_REF_02574>",
+      "delivered_sha256": "<PRIVATE_REF_02085>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_AAAA_AUTH_attempt6.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_AAAA_AUTH_attempt6.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01703>",
+      "delivered_sha256": "<PRIVATE_REF_01703>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_A_AUTH_1_attempt2.command.json",
+      "private_source_sha256": "<PRIVATE_REF_01748>",
+      "delivered_sha256": "<PRIVATE_REF_01873>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_A_AUTH_1_attempt2.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_A_AUTH_1_attempt2.stdout",
+      "private_source_sha256": "<PRIVATE_REF_02371>",
+      "delivered_sha256": "<PRIVATE_REF_02371>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_A_AUTH_2_attempt4.command.json",
+      "private_source_sha256": "<PRIVATE_REF_01322>",
+      "delivered_sha256": "<PRIVATE_REF_02980>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_A_AUTH_2_attempt4.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_A_AUTH_2_attempt4.stdout",
+      "private_source_sha256": "<PRIVATE_REF_00980>",
+      "delivered_sha256": "<PRIVATE_REF_00980>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_CNAME_AUTH_attempt7.command.json",
+      "private_source_sha256": "<PRIVATE_REF_03708>",
+      "delivered_sha256": "<PRIVATE_REF_01986>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_CNAME_AUTH_attempt7.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_CNAME_AUTH_attempt7.stdout",
+      "private_source_sha256": "<PRIVATE_REF_02592>",
+      "delivered_sha256": "<PRIVATE_REF_02592>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_NS_attempt1.command.json",
+      "private_source_sha256": "<PRIVATE_REF_01975>",
+      "delivered_sha256": "<PRIVATE_REF_01975>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_NS_attempt1.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_NS_attempt1.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01581>",
+      "delivered_sha256": "<PRIVATE_REF_01581>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_SOA_POSITIVE_1_attempt3.command.json",
+      "private_source_sha256": "<PRIVATE_REF_00561>",
+      "delivered_sha256": "<PRIVATE_REF_00561>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_SOA_POSITIVE_1_attempt3.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_SOA_POSITIVE_1_attempt3.stdout",
+      "private_source_sha256": "<PRIVATE_REF_03601>",
+      "delivered_sha256": "<PRIVATE_REF_03601>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_SOA_POSITIVE_2_attempt5.command.json",
+      "private_source_sha256": "<PRIVATE_REF_02442>",
+      "delivered_sha256": "<PRIVATE_REF_02442>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_SOA_POSITIVE_2_attempt5.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/DNS/DNS_SOA_POSITIVE_2_attempt5.stdout",
+      "private_source_sha256": "<PRIVATE_REF_03065>",
+      "delivered_sha256": "<PRIVATE_REF_03065>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/Q01_sdk_attempt1.command.json",
+      "private_source_sha256": "<PRIVATE_REF_02096>",
+      "delivered_sha256": "<PRIVATE_REF_02096>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/Q01_sdk_attempt1.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/Q01_sdk_attempt1.stdout",
+      "private_source_sha256": "<PRIVATE_REF_02674>",
+      "delivered_sha256": "<PRIVATE_REF_02674>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/Q02_project_attempt2.command.json",
+      "private_source_sha256": "<PRIVATE_REF_03428>",
+      "delivered_sha256": "<PRIVATE_REF_03428>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/Q02_project_attempt2.stderr",
+      "private_source_sha256": "<PRIVATE_REF_01319>",
+      "delivered_sha256": "<PRIVATE_REF_01319>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/Q02_project_attempt2.stdout",
+      "private_source_sha256": "<PRIVATE_REF_02941>",
+      "delivered_sha256": "<PRIVATE_REF_01903>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/Q03_account_attempt3.command.json",
+      "private_source_sha256": "<PRIVATE_REF_01400>",
+      "delivered_sha256": "<PRIVATE_REF_01400>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/Q03_account_attempt3.stderr",
+      "private_source_sha256": "<PRIVATE_REF_01319>",
+      "delivered_sha256": "<PRIVATE_REF_01319>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/Q03_account_attempt3.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01530>",
+      "delivered_sha256": "<PRIVATE_REF_01488>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R01_inventory_attempt4.command.json",
+      "private_source_sha256": "<PRIVATE_REF_01160>",
+      "delivered_sha256": "<PRIVATE_REF_01161>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R01_inventory_attempt4.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R01_inventory_attempt4.stdout",
+      "private_source_sha256": "<PRIVATE_REF_03115>",
+      "delivered_sha256": "<PRIVATE_REF_03196>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R02_instances_attempt5.command.json",
+      "private_source_sha256": "<PRIVATE_REF_01761>",
+      "delivered_sha256": "<PRIVATE_REF_01323>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R02_instances_attempt5.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R02_instances_attempt5.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01383>",
+      "delivered_sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R03_disks_attempt6.command.json",
+      "private_source_sha256": "<PRIVATE_REF_01690>",
+      "delivered_sha256": "<PRIVATE_REF_03485>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R03_disks_attempt6.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R03_disks_attempt6.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01383>",
+      "delivered_sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R04_addresses_attempt7.command.json",
+      "private_source_sha256": "<PRIVATE_REF_00573>",
+      "delivered_sha256": "<PRIVATE_REF_01375>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R04_addresses_attempt7.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R04_addresses_attempt7.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01383>",
+      "delivered_sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R05_networks_attempt8.command.json",
+      "private_source_sha256": "<PRIVATE_REF_02403>",
+      "delivered_sha256": "<PRIVATE_REF_02950>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R05_networks_attempt8.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R05_networks_attempt8.stdout",
+      "private_source_sha256": "<PRIVATE_REF_03207>",
+      "delivered_sha256": "<PRIVATE_REF_03227>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R06_firewalls_attempt9.command.json",
+      "private_source_sha256": "<PRIVATE_REF_00245>",
+      "delivered_sha256": "<PRIVATE_REF_01236>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R06_firewalls_attempt9.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R06_firewalls_attempt9.stdout",
+      "private_source_sha256": "<PRIVATE_REF_03458>",
+      "delivered_sha256": "<PRIVATE_REF_00958>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R07_run_attempt10.command.json",
+      "private_source_sha256": "<PRIVATE_REF_02470>",
+      "delivered_sha256": "<PRIVATE_REF_00547>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R07_run_attempt10.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R07_run_attempt10.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01383>",
+      "delivered_sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R08_buckets_attempt11.command.json",
+      "private_source_sha256": "<PRIVATE_REF_02947>",
+      "delivered_sha256": "<PRIVATE_REF_00569>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R08_buckets_attempt11.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R08_buckets_attempt11.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01383>",
+      "delivered_sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R09_sql_attempt12.command.json",
+      "private_source_sha256": "<PRIVATE_REF_02513>",
+      "delivered_sha256": "<PRIVATE_REF_02504>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R09_sql_attempt12.stderr",
+      "private_source_sha256": "<PRIVATE_REF_01466>",
+      "delivered_sha256": "<PRIVATE_REF_01100>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R09_sql_attempt12.stdout",
+      "private_source_sha256": "<PRIVATE_REF_01383>",
+      "delivered_sha256": "<PRIVATE_REF_01383>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R10_subnets_attempt13.command.json",
+      "private_source_sha256": "<PRIVATE_REF_03130>",
+      "delivered_sha256": "<PRIVATE_REF_03574>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R10_subnets_attempt13.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R10_subnets_attempt13.stdout",
+      "private_source_sha256": "<PRIVATE_REF_02736>",
+      "delivered_sha256": "<PRIVATE_REF_03330>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R11_project_ssh_attempt14.command.json",
+      "private_source_sha256": "<PRIVATE_REF_02302>",
+      "delivered_sha256": "<PRIVATE_REF_01264>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R11_project_ssh_attempt14.stderr",
+      "private_source_sha256": "<PRIVATE_REF_03399>",
+      "delivered_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "file": "RAW_READONLY_RESIDUAL/R11_project_ssh_attempt14.stdout",
+      "private_source_sha256": "<PRIVATE_REF_02506>",
+      "delivered_sha256": "<PRIVATE_REF_02974>"
+    },
+    {
+      "file": "RUNTIME/events_full_at_close.jsonl",
+      "private_source_sha256": "<PRIVATE_REF_02454>",
+      "delivered_sha256": "<PRIVATE_REF_00890>"
+    },
+    {
+      "file": "RUNTIME/state_at_close.json",
+      "private_source_sha256": "<PRIVATE_REF_02826>",
+      "delivered_sha256": "<PRIVATE_REF_01536>"
+    },
+    {
+      "file": "RUNTIME/evidence/0143-teardown-before.json",
+      "private_source_sha256": "<PRIVATE_REF_02510>",
+      "delivered_sha256": "<PRIVATE_REF_02728>"
+    },
+    {
+      "file": "RUNTIME/evidence/0143-teardown-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0143-teardown-project.txt",
+      "private_source_sha256": "<PRIVATE_REF_03314>",
+      "delivered_sha256": "<PRIVATE_REF_02713>"
+    },
+    {
+      "file": "RUNTIME/evidence/0144-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-vm.txt",
+      "private_source_sha256": "<PRIVATE_REF_01300>",
+      "delivered_sha256": "<PRIVATE_REF_03213>"
+    },
+    {
+      "file": "RUNTIME/evidence/0145-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-vm-boot.txt",
+      "private_source_sha256": "<PRIVATE_REF_02824>",
+      "delivered_sha256": "<PRIVATE_REF_01232>"
+    },
+    {
+      "file": "RUNTIME/evidence/0146-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-data.txt",
+      "private_source_sha256": "<PRIVATE_REF_00924>",
+      "delivered_sha256": "<PRIVATE_REF_02689>"
+    },
+    {
+      "file": "RUNTIME/evidence/0147-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-ip.txt",
+      "private_source_sha256": "<PRIVATE_REF_02667>",
+      "delivered_sha256": "<PRIVATE_REF_03276>"
+    },
+    {
+      "file": "RUNTIME/evidence/0148-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-web.txt",
+      "private_source_sha256": "<PRIVATE_REF_02011>",
+      "delivered_sha256": "<PRIVATE_REF_03063>"
+    },
+    {
+      "file": "RUNTIME/evidence/0149-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-iap-ssh.txt",
+      "private_source_sha256": "<PRIVATE_REF_02882>",
+      "delivered_sha256": "<PRIVATE_REF_01403>"
+    },
+    {
+      "file": "RUNTIME/evidence/0150-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-subnet.txt",
+      "private_source_sha256": "<PRIVATE_REF_02423>",
+      "delivered_sha256": "<PRIVATE_REF_02406>"
+    },
+    {
+      "file": "RUNTIME/evidence/0151-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-net.txt",
+      "private_source_sha256": "<PRIVATE_REF_01413>",
+      "delivered_sha256": "<PRIVATE_REF_01979>"
+    },
+    {
+      "file": "RUNTIME/evidence/0156-teardown-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0156-teardown-project.txt",
+      "private_source_sha256": "<PRIVATE_REF_03314>",
+      "delivered_sha256": "<PRIVATE_REF_02713>"
+    },
+    {
+      "file": "RUNTIME/evidence/0157-before-delete-<W2_RUN_RESOURCE_PREFIX>-web.txt",
+      "private_source_sha256": "<PRIVATE_REF_02011>",
+      "delivered_sha256": "<PRIVATE_REF_03063>"
+    },
+    {
+      "file": "RUNTIME/evidence/0158-delete-<W2_RUN_RESOURCE_PREFIX>-web.txt",
+      "private_source_sha256": "<PRIVATE_REF_01150>",
+      "delivered_sha256": "<PRIVATE_REF_01839>"
+    },
+    {
+      "file": "RUNTIME/evidence/0159-teardown-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0159-teardown-project.txt",
+      "private_source_sha256": "<PRIVATE_REF_03314>",
+      "delivered_sha256": "<PRIVATE_REF_02713>"
+    },
+    {
+      "file": "RUNTIME/evidence/0160-before-delete-<W2_RUN_RESOURCE_PREFIX>-vm.txt",
+      "private_source_sha256": "<PRIVATE_REF_01300>",
+      "delivered_sha256": "<PRIVATE_REF_03213>"
+    },
+    {
+      "file": "RUNTIME/evidence/0161-delete-<W2_RUN_RESOURCE_PREFIX>-vm.txt",
+      "private_source_sha256": "<PRIVATE_REF_02448>",
+      "delivered_sha256": "<PRIVATE_REF_03236>"
+    },
+    {
+      "file": "RUNTIME/evidence/0162-teardown-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0162-teardown-project.txt",
+      "private_source_sha256": "<PRIVATE_REF_03314>",
+      "delivered_sha256": "<PRIVATE_REF_02713>"
+    },
+    {
+      "file": "RUNTIME/evidence/0163-before-delete-<W2_RUN_RESOURCE_PREFIX>-vm-boot.txt",
+      "private_source_sha256": "<PRIVATE_REF_02872>",
+      "delivered_sha256": "<PRIVATE_REF_01486>"
+    },
+    {
+      "file": "RUNTIME/evidence/0164-delete-<W2_RUN_RESOURCE_PREFIX>-vm-boot.txt",
+      "private_source_sha256": "<PRIVATE_REF_01265>",
+      "delivered_sha256": "<PRIVATE_REF_01082>"
+    },
+    {
+      "file": "RUNTIME/evidence/0165-teardown-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0165-teardown-project.txt",
+      "private_source_sha256": "<PRIVATE_REF_03314>",
+      "delivered_sha256": "<PRIVATE_REF_02713>"
+    },
+    {
+      "file": "RUNTIME/evidence/0166-before-delete-<W2_RUN_RESOURCE_PREFIX>-data.txt",
+      "private_source_sha256": "<PRIVATE_REF_02548>",
+      "delivered_sha256": "<PRIVATE_REF_03665>"
+    },
+    {
+      "file": "RUNTIME/evidence/0167-delete-<W2_RUN_RESOURCE_PREFIX>-data.txt",
+      "private_source_sha256": "<PRIVATE_REF_02562>",
+      "delivered_sha256": "<PRIVATE_REF_03559>"
+    },
+    {
+      "file": "RUNTIME/evidence/0168-teardown-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0168-teardown-project.txt",
+      "private_source_sha256": "<PRIVATE_REF_03314>",
+      "delivered_sha256": "<PRIVATE_REF_02713>"
+    },
+    {
+      "file": "RUNTIME/evidence/0169-before-delete-<W2_RUN_RESOURCE_PREFIX>-ip.txt",
+      "private_source_sha256": "<PRIVATE_REF_03193>",
+      "delivered_sha256": "<PRIVATE_REF_01202>"
+    },
+    {
+      "file": "RUNTIME/evidence/0170-delete-<W2_RUN_RESOURCE_PREFIX>-ip.txt",
+      "private_source_sha256": "<PRIVATE_REF_01760>",
+      "delivered_sha256": "<PRIVATE_REF_02414>"
+    },
+    {
+      "file": "RUNTIME/evidence/0171-teardown-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0171-teardown-project.txt",
+      "private_source_sha256": "<PRIVATE_REF_03314>",
+      "delivered_sha256": "<PRIVATE_REF_02713>"
+    },
+    {
+      "file": "RUNTIME/evidence/0172-before-delete-<W2_RUN_RESOURCE_PREFIX>-iap-ssh.txt",
+      "private_source_sha256": "<PRIVATE_REF_02882>",
+      "delivered_sha256": "<PRIVATE_REF_01403>"
+    },
+    {
+      "file": "RUNTIME/evidence/0173-delete-<W2_RUN_RESOURCE_PREFIX>-iap-ssh.txt",
+      "private_source_sha256": "<PRIVATE_REF_01494>",
+      "delivered_sha256": "<PRIVATE_REF_03259>"
+    },
+    {
+      "file": "RUNTIME/evidence/0174-teardown-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0174-teardown-project.txt",
+      "private_source_sha256": "<PRIVATE_REF_03314>",
+      "delivered_sha256": "<PRIVATE_REF_02713>"
+    },
+    {
+      "file": "RUNTIME/evidence/0175-before-delete-<W2_RUN_RESOURCE_PREFIX>-subnet.txt",
+      "private_source_sha256": "<PRIVATE_REF_02423>",
+      "delivered_sha256": "<PRIVATE_REF_02406>"
+    },
+    {
+      "file": "RUNTIME/evidence/0176-delete-<W2_RUN_RESOURCE_PREFIX>-subnet.txt",
+      "private_source_sha256": "<PRIVATE_REF_01153>",
+      "delivered_sha256": "<PRIVATE_REF_00981>"
+    },
+    {
+      "file": "RUNTIME/evidence/0177-teardown-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0177-teardown-project.txt",
+      "private_source_sha256": "<PRIVATE_REF_03314>",
+      "delivered_sha256": "<PRIVATE_REF_02713>"
+    },
+    {
+      "file": "RUNTIME/evidence/0178-before-delete-<W2_RUN_RESOURCE_PREFIX>-net.txt",
+      "private_source_sha256": "<PRIVATE_REF_02614>",
+      "delivered_sha256": "<PRIVATE_REF_01717>"
+    },
+    {
+      "file": "RUNTIME/evidence/0179-delete-<W2_RUN_RESOURCE_PREFIX>-net.txt",
+      "private_source_sha256": "<PRIVATE_REF_01376>",
+      "delivered_sha256": "<PRIVATE_REF_02428>"
+    },
+    {
+      "file": "RUNTIME/evidence/0180-teardown-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0180-teardown-project.txt",
+      "private_source_sha256": "<PRIVATE_REF_03314>",
+      "delivered_sha256": "<PRIVATE_REF_02713>"
+    },
+    {
+      "file": "RUNTIME/evidence/0182-remove-deployment-project-ssh-key.txt",
+      "private_source_sha256": "<PRIVATE_REF_02034>",
+      "delivered_sha256": "<PRIVATE_REF_02948>"
+    },
+    {
+      "file": "RUNTIME/evidence/0183-ssh-key-removal.txt",
+      "private_source_sha256": "<PRIVATE_REF_03473>",
+      "delivered_sha256": "<PRIVATE_REF_03473>"
+    },
+    {
+      "file": "RUNTIME/evidence/0184-teardown-identity.txt",
+      "private_source_sha256": "<PRIVATE_REF_01941>",
+      "delivered_sha256": "<PRIVATE_REF_00919>"
+    },
+    {
+      "file": "RUNTIME/evidence/0184-teardown-project.txt",
+      "private_source_sha256": "<PRIVATE_REF_03314>",
+      "delivered_sha256": "<PRIVATE_REF_02713>"
+    },
+    {
+      "file": "RUNTIME/evidence/0185-teardown-after-instances.txt",
+      "private_source_sha256": "<PRIVATE_REF_01723>",
+      "delivered_sha256": "<PRIVATE_REF_03603>"
+    },
+    {
+      "file": "RUNTIME/evidence/0186-teardown-after-disks.txt",
+      "private_source_sha256": "<PRIVATE_REF_01103>",
+      "delivered_sha256": "<PRIVATE_REF_01152>"
+    },
+    {
+      "file": "RUNTIME/evidence/0188-teardown-after-addresses.txt",
+      "private_source_sha256": "<PRIVATE_REF_01014>",
+      "delivered_sha256": "<PRIVATE_REF_01543>"
+    },
+    {
+      "file": "RUNTIME/evidence/0189-teardown-after-firewalls.txt",
+      "private_source_sha256": "<PRIVATE_REF_01681>",
+      "delivered_sha256": "<PRIVATE_REF_01991>"
+    },
+    {
+      "file": "RUNTIME/evidence/0191-teardown-after-subnets.txt",
+      "private_source_sha256": "<PRIVATE_REF_02201>",
+      "delivered_sha256": "<PRIVATE_REF_02644>"
+    },
+    {
+      "file": "RUNTIME/evidence/0192-teardown-after-networks.txt",
+      "private_source_sha256": "<PRIVATE_REF_02074>",
+      "delivered_sha256": "<PRIVATE_REF_03646>"
+    },
+    {
+      "file": "RUNTIME/evidence/0193-teardown-final-key-check.txt",
+      "private_source_sha256": "<PRIVATE_REF_02538>",
+      "delivered_sha256": "<PRIVATE_REF_02538>"
+    },
+    {
+      "file": "RUNTIME/evidence/teardown-dns-control.txt",
+      "private_source_sha256": "<PRIVATE_REF_02953>",
+      "delivered_sha256": "<PRIVATE_REF_02953>"
+    },
+    {
+      "file": "RUNTIME/evidence/teardown-dns-removed.txt",
+      "private_source_sha256": "<PRIVATE_REF_02673>",
+      "delivered_sha256": "<PRIVATE_REF_01203>"
+    },
+    {
+      "file": "CUSTODY_LIMITATIONS_AT_PRIOR_NOTICE.json",
+      "private_source_sha256": "<PRIVATE_REF_01427>",
+      "delivered_sha256": "<PRIVATE_REF_01846>"
+    }
+  ],
+  "scan": {
+    "canaryFound": false,
+    "matches": [],
+    "files_scanned": 128,
+    "skipped": []
+  },
+  "candidates": {
+    "registered": [],
+    "candidates": [],
+    "files_scanned": 128,
+    "skipped": []
+  },
+  "perl_stderr": "redaction_lines=12\n",
+  "previous_received_inputs_unchanged": true,
+  "full_runtime_attachments": "Cumulative context at close; transcript increment only original S2 lines529–734, no prior transcript replay"
+}

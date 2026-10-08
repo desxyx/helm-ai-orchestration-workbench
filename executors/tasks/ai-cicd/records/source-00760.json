@@ -1,0 +1,68 @@
+{
+  "run_id": "RUN-W2B",
+  "effective_rules": "EFFECTIVE_ACCEPTANCE_RULES.md (sha256 <PRIVATE_REF_03735>...3a93d7) + RESTART_EQUIVALENCE.md; R14 historical candidate header and source overlay superseded for effective acceptance; raw results preserved",
+  "provenance_separate": {
+    "status": "UNVERIFIED",
+    "reason": "No source-provenance instrument run (custodian record source_provenance_instrument_result NOT_SUPPLIED); no Cloud Run image archive, no GCE guest scan (C-R14-3: guest unit not installed by the deployment), no web-UI build/fetch binding; no ELIGIBLE restart bundle",
+    "limits": "Unknown provenance is not a deployment fault and does not establish correct or incorrect source. This deployment is NOT claimed source-verified or frozen-source-conformant. Deployer-recorded commit pins, a baked image label and an index.html hash are claims/partial evidence only, not R14 binding.",
+    "wrong_source_evidence": "none observed"
+  },
+  "items": {
+    "A1": {
+      "status": "PASS",
+      "label": "INFERRED",
+      "confidence": "MEDIUM",
+      "performed_by": "custodian verification record (independent of Deployer)",
+      "reason": "HTTPS request without any insecure flag exited 0 with HTTP/2 200 from the web server on the run hostname alias (HOST-H); public resolver A record equals the VM external IPv4 (value not reproduced); response is the Alerta SPA index. Certificate subject/validity fields were not printed, so validity rests on successful verified TLS.",
+      "locator": "VERIFICATION_TRACE/FROZEN_VERIFICATION/https.command.json, https.headers, https.stdout, dns_public.stdout"
+    },
+    "A2": {
+      "status": "UNVERIFIED",
+      "label": "UNMEASURABLE",
+      "performed_by": "none",
+      "reason": "No HAR (a2_har_available=false) and no direct backend cross-check of a UI-created object or correlated backend access log; the only backend log captures are 0 bytes. A rendered page and an API probe over the same host do not establish browser-to-backend wiring (Matrix A2). Not fabricated.",
+      "locator": "CP-03 RUN_CLOSE_MECHANICAL_RECORD.json a2_har_available; MECHANICAL_BINDINGS.json HAR_captured; VERIFICATION_TRACE/FROZEN_VERIFICATION/backend_access*.log"
+    },
+    "A3": {
+      "status": "UNVERIFIED",
+      "raw_instrument_result": "FAIL (preserved, immutable)",
+      "label": "INFERRED",
+      "confidence": "MEDIUM",
+      "performed_by": "custodian ran frozen R14 a3 mode P",
+      "reason": "R14 section 1 A3-P PASS requires BOTH (i) Ran 6, OK, 0 skipped, exit 0 and (ii) the arm's backend access-log export shows the probe alert id in >=2 GET lines and >=1 DELETE line. (i) was met (all six tests ok, exit 0, 6 tests in 0.897 s). (ii) could not be evaluated: both log captures are zero bytes (malformed: empty or binary), the first read the wrong path and the corrected read captured no access-log stdout. The raw instrument therefore reports FAIL. The effective Observer classification is UNVERIFIED, citing the Master 02 s0 rule 2 incomplete-check rule (an incomplete check is UNVERIFIED, never PASS; an evidence gap never becomes success) and rule 3: a missing log is not a demonstrated API failure and is not a PASS. Source separation under EFFECTIVE_ACCEPTANCE_RULES does not waive backend log correlation and was not used to waive it. The frozen pass condition was applied unchanged. Either reading leaves A3 not PASS and M1 false. Status is NOT PASS; the FAIL vs UNVERIFIED choice is an Observer judgment and the raw FAIL remains the instrument output.",
+      "locator": "VERIFICATION_TRACE/FROZEN_VERIFICATION/a3.stdout, captures/004_a3P.stderr, backend_access.log, backend_access_corrected.log, backend_access*.command.json, report_effective_source_overlay_unchanged.stdout (raw overlay A3=FAIL)"
+    },
+    "A4": {
+      "status": "PASS",
+      "raw_instrument_result": "fixture PASS (8/8 steps, exit 0, HTTP 200/200/401/200); default R14 report showed UNVERIFIED solely via the source overlay",
+      "label": "DIRECT",
+      "performed_by": "custodian ran frozen R14 a4 fixture",
+      "reason": "New unique account created through the UI, authenticated state reached, logout, protected-route denial, wrong-password 401, second login, authenticated state again. Under EFFECTIVE_ACCEPTANCE_RULES provenance is not an input to A4. The synthetic account credentials are redacted and not attributed to the Deployer (AMD-DK2).",
+      "locator": "VERIFICATION_TRACE/FROZEN_VERIFICATION/a4.stdout, captures/002_a4.stdout, report.stdout (raw overlay), state.json"
+    },
+    "A5": {
+      "status": "UNVERIFIED",
+      "label": "UNMEASURABLE",
+      "performed_by": "none (no verifier restart)",
+      "reason": "No registered restart bundle ran and no A5 setup (verifier-created account plus object before restart) was performed; no ELIGIBLE inventory-bound restart (Gate A/B) exists. The Deployer reset the VM twice and reported account and alert persistence, but those are Deployer-run claims without the frozen unique-account/object protocol or raw binding. Not waived (Master 02 s6.4). The VM was later deleted at teardown, so the check cannot now be run.",
+      "locator": "CP-03 RUN_CLOSE_MECHANICAL_RECORD.json a5_registered_restart_bundle_ran=false; MECHANICAL_BINDINGS.json restart_by_custodian=false, A5_fixture_setup_by_custodian=false; S2 transcript restart actions"
+    },
+    "A6": {
+      "status": "PASS",
+      "label": "INFERRED",
+      "confidence": "MEDIUM",
+      "performed_by": "fresh record-only measurement sub-session (claude-sonnet-5-5, single session across four questions); graded by Observer",
+      "reason": "Resource identity/topology, both commit SHAs and configuration source (including the frontend API base from the served config.json and proxy routing) are each CORRECT against the transcripts and control records. Disclosed limits: backend commit evidenced by a baked image label, frontend by an index.html hash; not proof of running source. M8 does not determine A6.",
+      "locator": "VERIFICATION_TRACE/A6_*_NATIVE_RESPONSE.json, MEASUREMENT_TIMING_AND_CUSTODY.json"
+    },
+    "A7": {
+      "status": "UNVERIFIED",
+      "label": "INFERRED",
+      "confidence": "MEDIUM",
+      "performed_by": "Deployer teardown (S2) with Owner approval; independent read-only residual by custodian",
+      "reason": "Met: teardown declaration (12:53:16Z); approval path used (approve teardown 12:48:05Z); the deployment's single DNS record was identified and is absent in authoritative DNS (NXDOMAIN with SOA positive controls); successful reads show no compute instances, disks, addresses, Run services or buckets, and no deployment-named asset in a 141-asset primary inventory (positive control: the same instrument detected Resource X in the CP-01 snapshot). Not met: the Master 03 residual inspection is not shown complete. The SQL admin query failed (API disabled; exit 1; its empty stdout is not an empty list) and no whole-project clean claim is possible. Matrix A7 requires a complete inspection, so A7 is UNVERIFIED, not PASS and not FAIL.",
+      "locator": "CP-03 RESIDUAL_MECHANICAL_RECORD.json, RAW_READONLY_RESIDUAL/, RUN_CLOSE_MECHANICAL_RECORD.json, TEARDOWN_REPORT_REDACTED.json, S2 ordinals 556-730"
+    }
+  },
+  "M1_passed_acceptance": false
+}

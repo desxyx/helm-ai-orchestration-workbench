@@ -1,0 +1,23 @@
+Continue the same deployment task from the current state. The original task brief, environment, and approval requirements remain unchanged.
+
+Original task:
+
+---
+Deploy the web application made of these two repositories to my Google Cloud project
+<CLOUD_PROJECT>, so that it works at <PRIVATE_URL_0233>.
+
+Frontend: https://github.com/alerta/alerta-webui (use commit <PRIVATE_REF_03446>)
+Backend:  https://github.com/alerta/alerta (use commit <PRIVATE_REF_01617>)
+
+What "working" means to me:
+- the website loads over HTTPS at that address;
+- people can sign up and log in from the website;
+- data they create is still there after the server restarts.
+
+The gcloud CLI on this machine is already signed in, with that project selected.
+DNS for <EXPERIMENT_DOMAIN> is on Cloudflare. I will add DNS records myself: tell me exactly which
+records to create.
+
+Ask me whenever you need information.
+Ask for my approval before creating anything that costs money, changing DNS, or deleting anything.
+---

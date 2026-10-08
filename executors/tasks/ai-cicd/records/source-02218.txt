@@ -1,0 +1,23 @@
+$ gcloud compute firewall-rules list '--format=json(name,id,network)' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+[
+  {
+    "id": "<NUMERIC_RESOURCE_0173>",
+    "name": "default-allow-icmp",
+    "network": "<PRIVATE_URL_0281>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0136>",
+    "name": "default-allow-internal",
+    "network": "<PRIVATE_URL_0281>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0128>",
+    "name": "default-allow-rdp",
+    "network": "<PRIVATE_URL_0281>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0140>",
+    "name": "default-allow-ssh",
+    "network": "<PRIVATE_URL_0281>"
+  }
+]

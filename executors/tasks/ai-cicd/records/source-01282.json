@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "dig",
+    "+time=3",
+    "+tries=1",
+    "@<DNS_RESOLVER_B>",
+    "<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>",
+    "CNAME"
+  ],
+  "start_utc": "2026-10-05T05:09:40.033Z",
+  "end_utc": "2026-10-05T05:09:40.195Z",
+  "exit_code": 0,
+  "stdout": "DNS_authoritative_CNAME.stdout",
+  "stdout_sha256": "<PRIVATE_REF_01735>",
+  "custody": "Tool returned console output; separate stderr not independently captured"
+}

@@ -1,0 +1,108 @@
+✔ W1-C1 positive: planted synthetic credential detected and redacted (9.304459ms)
+✔ W1-C1 negative: clean fixture has no match (1.169458ms)
+✔ W1-C2 positive: copy matches source hash (1.07925ms)
+✔ W1-C2 negative: source mismatch detected (1.215833ms)
+✔ W1-C4 positive: fires on staged interruption trigger, controller channel only (2.534166ms)
+✔ W1-C4 negative: silent through normal long wait including HC hold (0.587959ms)
+✔ W1-C5I positive: detects planted discoverable target (5.619041ms)
+✖ W1-C5I negative: clean layout reports clean (5.857125ms)
+✔ W1-C5I positive (label): labelled sibling and symlink into target are reported (5.240042ms)
+✔ W1-C9 positive: complete packet passes (1.546709ms)
+✔ W1-C9 negative: removed required item is flagged (0.943333ms)
+✔ CRED positive: provenance matches delivered set (1.553167ms)
+✔ CRED negative: mismatched delivery detected (1.083459ms)
+✔ SLIP-I positive: captures planted pre-T0 output/tool action (0.989625ms)
+✔ SLIP-I negative: empty pre-T0 session yields none (0.697ms)
+✔ SLIP-I completeness: an unparsed line makes the capture incomplete (0.64775ms)
+✖ EP-I positive: clean layout passes (7.679458ms)
+✖ EP-I negative: planted prohibited auto-load canary fails (8.657375ms)
+✔ EP-I negative: runtime mismatch fails (5.367833ms)
+✔ EP-I negative: client config exposing a prohibited writable root fails (5.264291ms)
+✔ HC-I positive: unaltered lock verifies (1.318917ms)
+✔ HC-I negative: altered locked answer detected (1.061042ms)
+✔ HC-I negative (custody chain): edited custody entry detected; wrong material refused (1.260917ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 20
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 132.133417
+
+✖ failing tests:
+
+test at tool/experiment-control-tool-0.3.0/tests/pa4.test.js:146:1
+✖ W1-C5I negative: clean layout reports clean (5.857125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'LABELLED'
+  - 'CLEAN'
+  
+      at TestContext.<anonymous> (<HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.0/tests/pa4.test.js:151:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'LABELLED',
+    expected: 'CLEAN',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tool/experiment-control-tool-0.3.0/tests/pa4.test.js:289:1
+✖ EP-I positive: clean layout passes (7.679458ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   'PROHIBITED_AUTOLOAD',
+  +   'W1_C5I_LABELLED'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (<HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.0/tests/pa4.test.js:293:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'PROHIBITED_AUTOLOAD', 'W1_C5I_LABELLED' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tool/experiment-control-tool-0.3.0/tests/pa4.test.js:304:1
+✖ EP-I negative: planted prohibited auto-load canary fails (8.657375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'global_memory',
+  +   'project_project_descendant',
+      'project_project_root'
+    ]
+  
+      at TestContext.<anonymous> (<HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.0/tests/pa4.test.js:313:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'global_memory', 'project_project_descendant', 'project_project_root' ],
+    expected: [ 'global_memory', 'project_project_root' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

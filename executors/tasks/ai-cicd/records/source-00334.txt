@@ -1,0 +1,76 @@
+$ ssh -F C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/sshcfg taiga sudo bash /tmp/taiga-stage/setup-vm.sh /tmp/taiga-stage 2>&1 | grep -v "^\(Get\|Hit\|Selecting\|Preparing\|Unpacking\|Setting up\|Processing\|(Reading\)"
+# started 2026-10-06T12:55:40.000Z  ended 2026-10-06T12:56:16.000Z  exit 0
+--- stdout
+== swap
+NAME      TYPE SIZE USED PRIO
+/swapfile file   2G   0B   -2
+== data disk
+formatting empty data disk
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdb        9.8G   52K  9.8G   1% /srv/taiga
+== docker
+Fetched 2440 kB in 5s (458 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20250419~deb12u1).
+curl is already the newest version (7.88.1-10+deb12u15).
+0 upgraded, 0 newly installed, 0 to remove and 12 not upgraded.
+Fetched 129 kB in 1s (168 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  dbus-user-session docker-ce-rootless-extras git git-man liberror-perl
+  libgdbm-compat4 libjansson4 libnftables1 libperl5.36 nftables patch perl
+  perl-base perl-modules-5.36 pigz
+Suggested packages:
+  cgroupfs-mount | cgroup-lite docker-model-plugin git-daemon-run
+  | git-daemon-sysvinit git-doc git-email git-gui gitk gitweb git-cvs
+  git-mediawiki git-svn firewalld ed diffutils-doc perl-doc
+  libterm-readline-gnu-perl | libterm-readline-perl-perl make
+  libtap-harness-archive-perl
+The following NEW packages will be installed:
+  containerd.io dbus-user-session docker-buildx-plugin docker-ce docker-ce-cli
+  docker-ce-rootless-extras docker-compose-plugin git git-man liberror-perl
+  libgdbm-compat4 libjansson4 libnftables1 libperl5.36 nftables patch perl
+  perl-modules-5.36 pigz
+The following packages will be upgraded:
+  perl-base
+1 upgraded, 19 newly installed, 0 to remove and 11 not upgraded.
+Need to get 120 MB of archives.
+After this operation, 482 MB of additional disk space will be used.
+apt-listchanges: Reading changelogs...
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.36.0 /usr/local/share/perl/5.36.0 /usr/lib/x86_64-linux-gnu/perl5/5.36 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.36 /usr/share/perl/5.36 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7, <> line 20.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Fetched 120 MB in 1s (82.4 MB/s)
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.
+
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.
+
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+
+Synchronizing state of docker.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable docker
+Docker version 29.8.2, build 7fc2dff
+Docker Compose version v5.6.0
+== config
+generated /srv/taiga/app/secrets.env (values not shown)
+total 20
+-rw-r--r-- 1 root root  377 Oct  6 12:56 Caddyfile
+-rw-r--r-- 1 root root  658 Oct  6 12:56 deploy_settings.py
+-rw-r--r-- 1 root root 2056 Oct  6 12:56 docker-compose.yml
+-rw------- 1 root root  181 Oct  6 12:56 secrets.env
+-rw-r--r-- 1 root root  507 Oct  6 12:56 taiga.env
+== sources
+taiga-back <PRIVATE_REF_01638>
+taiga-front <PRIVATE_REF_03189>
+setup done
+--- stderr

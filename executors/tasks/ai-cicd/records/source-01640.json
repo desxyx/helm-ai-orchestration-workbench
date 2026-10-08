@@ -1,0 +1,22 @@
+{
+  "run_id": "RUN-W2B",
+  "session_id": "<NATIVE_ID_0078>",
+  "source_sha256": "<PRIVATE_REF_02969>",
+  "line_range": [
+    1,
+    528
+  ],
+  "session_first_timestamp": "2026-10-05T09:57:29.089Z",
+  "session_last_timestamp": "2026-10-05T10:25:01.311Z",
+  "continuation_line": 9,
+  "continuation_timestamp": "2026-10-05T09:57:29.523Z",
+  "continuation_matches_frozen_after_strip_final_newline": true,
+  "terminal_declaration": {
+    "line": 525,
+    "timestamp": "2026-10-05T10:25:01.199Z",
+    "text": "Deployed at <PRIVATE_URL_0233> [Historical citation URL removed for privacy.] using both requested commits.\n\nVerified:\n\n- Trusted HTTPS loads successfully.\n- Website signup and login work.\n- Accounts and saved alerts survive a full VM restart.\n\nAdministrator: `<ACCOUNT_EMAIL_011>`. Private password retrieval instructions are in the deployment notes [Referenced source unavailable in this derivative; original link retained privately.]."
+  },
+  "registered_acceptance_instrument_runs": "NOT_YET_CAPTURED",
+  "cloud_metadata_terminal_snapshot": "PENDING_NEW_SPECIFIC_AUTHORITY; CP01 snapshot not contemporaneous terminal snapshot",
+  "observer_identity_ack": "NOT_RECEIVED_BY_CUSTODIAN"
+}

@@ -1,0 +1,8 @@
+# expected git blob ids from git ls-tree of the pinned commits
+100644 blob <PRIVATE_REF_02559>	docker/entrypoint.sh
+100644 blob <PRIVATE_REF_02568>	taiga/auth/services.py
+100644 blob <PRIVATE_REF_02549>	taiga/base/storage.py
+100755 blob <PRIVATE_REF_03178>	manage.py
+100644 blob <PRIVATE_REF_01085>	package.json
+100644 blob <PRIVATE_REF_03331>	app/coffee/app.coffee
+100644 blob <PRIVATE_REF_01571>	gulpfile.js

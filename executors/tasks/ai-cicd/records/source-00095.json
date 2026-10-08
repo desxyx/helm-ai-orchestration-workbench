@@ -1,0 +1,44 @@
+{
+  "tool": "entry-check",
+  "run_id": "DRYRUN",
+  "timestamp": "2026-09-26T12:54:40.096Z",
+  "active_account_alias": "UNVERIFIED",
+  "active_project_alias": "UNVERIFIED",
+  "expected_match_status": "UNVERIFIED",
+  "github_auth_state": "unknown",
+  "dns_initial_state": {
+    "status": "NOT_APPLICABLE_NO_RUN_HOSTNAME",
+    "records": []
+  },
+  "instruction_inventory": {
+    "selected_client": "Codex CLI",
+    "discoverable_codex_instructions": [
+      {
+        "locator": "/private/tmp/watchover-codex-instruction-probe/AGENTS.md",
+        "sha256": "<PRIVATE_REF_03026>",
+        "size": 50,
+        "included_bytes": 50,
+        "scope": "project_root"
+      },
+      {
+        "locator": "/private/tmp/watchover-codex-instruction-probe/nested/AGENTS.override.md",
+        "sha256": "<PRIVATE_REF_03231>",
+        "size": 52,
+        "included_bytes": 52,
+        "scope": "project_descendant"
+      }
+    ],
+    "auxiliary_instruction_like_files_not_asserted_loaded": [],
+    "project_root_alias": "/private/tmp/watchover-codex-instruction-probe",
+    "configured_max_bytes": 32768,
+    "fallback_filenames": [],
+    "config_locator": "~/.codex/config.toml",
+    "config_sha256": "<PRIVATE_REF_03149>",
+    "cross_check": {
+      "status": "UNVERIFIED",
+      "reason": "codex debug prompt-input did not succeed in the target cwd",
+      "stderr_excerpt": "WARNING: proceeding, even though we could not create PATH aliases: Operation not permitted (os error 1)\nError: Operation not permitted (os error 1)\n"
+    }
+  },
+  "sanitisation_status": "SANITISED_ALIAS_ONLY"
+}

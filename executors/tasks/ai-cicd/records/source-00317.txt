@@ -1,0 +1,19 @@
+Captured 2026-10-06 ~12:11-12:15Z (UTC). Local git commands. Checkouts in <WORKSPACE>\app\src\.
+
+$ git clone https://github.com/taigaio/taiga-back.git ; git checkout <PRIVATE_REF_01638>
+$ git -C taiga-back log -1 --format="%H %cd %s"
+<PRIVATE_REF_01638> Wed Sep 23 16:06:06 2026 +0200 Merge pull request #260 from taigaio/seralot/20260923/maximum-password-length
+
+$ git clone https://github.com/taigaio/taiga-front.git ; git checkout <PRIVATE_REF_03189>
+$ git -C taiga-front log -1 --format="%H %cd %s"
+<PRIVATE_REF_03189> Fri Sep 4 12:23:01 2026 +0200 Merge pull request #278 from henlein/fix-notifications-middle-click
+
+$ git -C taiga-back  status --porcelain --untracked-files=all | count  -> 0
+$ git -C taiga-front status --porcelain --untracked-files=all | count  -> 0
+
+CONTROL: scratch clone of taiga-front at the same commit, with a planted untracked file:
+$ git clone --no-hardlinks <src>/taiga-front <scratch>/front-copy ; checkout <PRIVATE_REF_03189>...
+$ echo x > <scratch>/front-copy/planted-control.txt
+$ git -C <scratch>/front-copy status --porcelain --untracked-files=all | count  -> 1
+?? planted-control.txt
+(the same command does report local changes when they exist)

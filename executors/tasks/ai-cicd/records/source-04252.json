@@ -1,0 +1,46 @@
+{
+  "clock": "2026-10-06T16:45:44+11:00",
+  "plan": {
+    "path": "rounds/r2_PLAN.md",
+    "sha256": "<PRIVATE_REF_03074>"
+  },
+  "baseline": {
+    "HEAD": "<PRIVATE_REF_02752>",
+    "tree": "<PRIVATE_REF_02761>",
+    "version": "0.1.0-a",
+    "worktree_status": " M README.md\n M skills/router.md\n M skills/stages/plan.md\n",
+    "retained_three_hashes_unchanged": true
+  },
+  "entry_observation": "rounds/r2_REVIEW_ENTRY_OBSERVATION.json",
+  "missing_locator_probe": {
+    "purpose": "Plan premise check only; no candidate implementation or product mutation",
+    "workspace": "/private/tmp/Reviewer Actor 02-plan-p01-j5TtIp",
+    "locator": "evidence/0002-gcloud-config.txt",
+    "positive_control_regular_file_was_present": true,
+    "all_locators_present_validation": {
+      "ok": true,
+      "errors": [],
+      "secret_scan": {
+        "self_test": "passed",
+        "patterns": 11,
+        "findings": 0
+      }
+    },
+    "referenced_locator_removed_validation": {
+      "ok": true,
+      "errors": [],
+      "secret_scan": {
+        "self_test": "passed",
+        "patterns": 11,
+        "findings": 0
+      }
+    },
+    "state_sha256": "<PRIVATE_REF_02327>",
+    "conclusion": "Existing validateWorkspace accepts an absent referenced evidence file; candidate locator-existence enforcement must be explicit rather than assumed from checkContent/readEvidence reuse."
+  },
+  "independent_test_scope": "One necessary validator premise probe in private synthetic workspace; no product write/full baseline regression/candidate acceptance",
+  "planned_flow_reproduction": {
+    "RPL-2": "r2_PLAN lines 67–68: final state/events rehash precedes temp write/fsync; inject an events append or state update during temp write/fsync and the described flow has no subsequent comparison before rename. This is a plan-sequence analysis, not a claim that unimplemented commit-state ran.",
+    "RPL-3": "r2_PLAN WO-P03 Where/Output/Tests names summary construction and read-only tests but no fail-closed record gate or invalid-record negative. This is a plan coverage omission, not an implemented brief defect."
+  }
+}

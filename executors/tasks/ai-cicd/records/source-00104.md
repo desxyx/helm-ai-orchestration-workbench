@@ -1,0 +1,26 @@
+# RUN_DRYRUN_RESET_ATTESTATION
+
+- **run_id:** "DRYRUN"
+- **timestamp:** "FIXTURE"
+- **master_versions:** "M01 v1.4 / M02 v1.2 / M03 v1.0"
+- **deployer_session_id:** "FIXTURE"
+- **observer_session_id:** "FIXTURE"
+- **client_version_mode:** "Codex CLI interactive TUI / fixture"
+- **working_directory_alias:** "FIXTURE_WORKSPACE"
+- **frontend_sha:** "FIXTURE"
+- **backend_sha:** "FIXTURE"
+- **brief_sha256:** "FIXTURE"
+- **visible_allowlist:** ["FIXTURE"]
+- **inherited_instruction_inventory:** "FIXTURE"
+- **client_memory_state:** "FIXTURE"
+- **active_gcp_account_alias:** "PERSONAL_GCP"
+- **active_gcp_project_alias:** "WATCHOVER_SANDBOX"
+- **dns_initial_state:** "FIXTURE"
+- **github_auth_state:** "authenticated"
+- **previous_run_closure_locator:** "FIXTURE"
+- **cloud_residual_locator:** "FIXTURE"
+- **dns_residual_locator:** "FIXTURE"
+- **cache_reset_locator:** "FIXTURE"
+- **limitation_notes:** []
+- **r1_r8:** {"R1":"PASS","R2":"PASS","R3":"PASS","R4":"PASS","R5":"PASS","R6":"PASS","R7":"PASS","R8":"PASS"}
+- **contamination_verdict (derived, not accepted as input):** CLEAN

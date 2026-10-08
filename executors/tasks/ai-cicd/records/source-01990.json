@@ -1,0 +1,80 @@
+{
+  "run_id": "RUN-W2B",
+  "checkpoint_no": 3,
+  "checkpoint_kind": "RUN_CLOSE",
+  "deployment_terminal_timestamp": "2026-10-05T10:25:01.199Z",
+  "teardown_prompt_timestamp": "2026-10-05T12:32:44.400Z",
+  "teardown_approval_timestamp": "2026-10-05T12:48:05.836Z",
+  "teardown_approval_s2_native_line": 648,
+  "approval_text": "approve teardown",
+  "teardown_declaration_timestamp": "2026-10-05T12:53:16.055Z",
+  "teardown_declaration_s2_native_line": 731,
+  "teardown_claim": "Teardown is finished. All eight cloud resources and the deployment SSH key entries were deleted and verified absent. Both disks and all application data are gone. Pre-existing resources remain.\n\nThe only deployment DNS record was **A `<W2_RUN_RESOURCE_PREFIX>` → `<IP_ADDRESS_113>`** in the **<EXPERIMENT_DOMAIN>** zone. It is already absent from Cloudflare’s authoritative DNS, so no further DNS cleanup is needed.",
+  "deletion_actor": "Deployer S2 with direct Owner approval; not Operations Coordinator administrative cleanup",
+  "exact_resources": [
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/<W2_RUN_RESOURCE_PREFIX>-web",
+      "assetType": "compute.googleapis.com/Firewall",
+      "location": "global"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast2-a/instances/<W2_RUN_RESOURCE_PREFIX>-vm",
+      "assetType": "compute.googleapis.com/Instance",
+      "location": "australia-southeast2-a"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast2-a/disks/<W2_RUN_RESOURCE_PREFIX>-vm",
+      "assetType": "compute.googleapis.com/Disk",
+      "location": "australia-southeast2-a"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast2-a/disks/<W2_RUN_RESOURCE_PREFIX>-data",
+      "assetType": "compute.googleapis.com/Disk",
+      "location": "australia-southeast2-a"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/australia-southeast2/addresses/<W2_RUN_RESOURCE_PREFIX>-ip",
+      "assetType": "compute.googleapis.com/Address",
+      "location": "australia-southeast2"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "assetType": "compute.googleapis.com/Firewall",
+      "location": "global"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/australia-southeast2/subnetworks/<W2_RUN_RESOURCE_PREFIX>-subnet",
+      "assetType": "compute.googleapis.com/Subnetwork",
+      "location": "australia-southeast2"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/networks/<W2_RUN_RESOURCE_PREFIX>-net",
+      "assetType": "compute.googleapis.com/Network",
+      "location": "global"
+    }
+  ],
+  "dns_record": {
+    "type": "A",
+    "name": "<W2_RUN_RESOURCE_PREFIX>",
+    "value": "<IP_ADDRESS_113>",
+    "zone": "<EXPERIMENT_DOMAIN>"
+  },
+  "native_s2_full_line_count": 734,
+  "cp2_native_s2_prefix_lines": 528,
+  "new_s2_original_line_range": [
+    529,
+    734
+  ],
+  "exact_prefix_continuity_verified": true,
+  "increment_sha256": "<PRIVATE_REF_03350>",
+  "private_final_s2_sha256": "<PRIVATE_REF_03541>",
+  "independent_residual_receipt": "AI-CICD-20261005-W2B-RESIDUAL-001",
+  "residual_evidence": "RESIDUAL_MECHANICAL_RECORD.json and RAW_READONLY_RESIDUAL/",
+  "source_provenance_instrument_result": "NOT_SUPPLIED; report separately per effective amendment",
+  "a2_har_available": false,
+  "a3_instrument_ran": true,
+  "a3_raw_component": "FAIL; six HTTP tests succeeded, access-log correlation unavailable; raw record immutable",
+  "a4_fixture_ran": true,
+  "a5_registered_restart_bundle_ran": false,
+  "finalization_instruction": "Reconcile effective rules from original evidence, retain all missing evidence and custody limitations; seal final report and original receipt ledger. No new execution, repair, advice or comparison. No expected final verdict supplied."
+}

@@ -1,0 +1,95 @@
+{
+  "artifact_class": "READONLY_IMPLEMENTATION_BASELINE",
+  "recorded_at": "2026-10-06T01:03:51.600220+00:00",
+  "product_root": "<CLIENT_HOME>/Desktop/helmls-studio/watchover-ai-devops",
+  "head": "<PRIVATE_REF_02752>",
+  "branch": "main",
+  "worktree_status": [
+    " M README.md",
+    " M skills/router.md",
+    " M skills/stages/plan.md"
+  ],
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "<PRIVATE_REF_02679>"
+    },
+    {
+      "file": "package.json",
+      "sha256": "<PRIVATE_REF_03053>"
+    },
+    {
+      "file": "skills/router.md",
+      "sha256": "<PRIVATE_REF_01884>"
+    },
+    {
+      "file": "skills/stages/plan.md",
+      "sha256": "<PRIVATE_REF_01167>"
+    },
+    {
+      "file": "skills/stages/recover.md",
+      "sha256": "<PRIVATE_REF_01041>"
+    },
+    {
+      "file": "skills/stages/verify-handoff.md",
+      "sha256": "<PRIVATE_REF_03710>"
+    },
+    {
+      "file": "skills/providers/gcp.md",
+      "sha256": "<PRIVATE_REF_03035>"
+    },
+    {
+      "file": "tools/watchover.mjs",
+      "sha256": "<PRIVATE_REF_00144>"
+    },
+    {
+      "file": "tools/lib/validate.mjs",
+      "sha256": "<PRIVATE_REF_01109>"
+    },
+    {
+      "file": "tools/lib/schema-subset.mjs",
+      "sha256": "<PRIVATE_REF_01546>"
+    },
+    {
+      "file": "tools/lib/semantic-checks.mjs",
+      "sha256": "<PRIVATE_REF_01801>"
+    },
+    {
+      "file": "tools/lib/workspace.mjs",
+      "sha256": "<PRIVATE_REF_01391>"
+    },
+    {
+      "file": "tools/lib/secret-scan.mjs",
+      "sha256": "<PRIVATE_REF_03377>"
+    },
+    {
+      "file": "app/web-ui/freshness.mjs",
+      "sha256": "<PRIVATE_REF_01848>"
+    },
+    {
+      "file": "app/web-ui/render.mjs",
+      "sha256": "<PRIVATE_REF_03673>"
+    },
+    {
+      "file": "schema/state.schema.json",
+      "sha256": "<PRIVATE_REF_01409>"
+    },
+    {
+      "file": "schema/event.schema.json",
+      "sha256": "<PRIVATE_REF_01999>"
+    },
+    {
+      "file": "tests/skills.test.mjs",
+      "sha256": "<PRIVATE_REF_00670>"
+    },
+    {
+      "file": "docs/architecture.md",
+      "sha256": "<PRIVATE_REF_02834>"
+    },
+    {
+      "file": "docs/design-decisions.md",
+      "sha256": "<PRIVATE_REF_03284>"
+    }
+  ],
+  "baseline_rule": "Preserve current changes; if hashes differ, coordinate the actual current worktree and do not reset"
+}

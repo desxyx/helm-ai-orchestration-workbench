@@ -1,0 +1,40 @@
+{
+  "stage": "check",
+  "run_id": "DRYRUN",
+  "runtime_lock_sha256": "<PRIVATE_REF_02231>",
+  "observed_runtime": {
+    "codex_cli_version": "codex-cli 0.160.0",
+    "model": "gpt-5.6-sol",
+    "model_reasoning_effort": "high",
+    "approval_policy": "on-request",
+    "sandbox_mode": "workspace-write",
+    "check_for_update_on_startup": "false",
+    "enabled_plugins": [],
+    "mcp_servers": []
+  },
+  "pin_mismatches": [],
+  "config_exposure": [],
+  "autoload_inventory": [],
+  "prohibited_autoload": [],
+  "discoverability": {
+    "workspace_relative_to_chain_top": "site/app",
+    "targets": [
+      "W2B_EXPORT",
+      "HELM",
+      "PRODUCT_REPO"
+    ],
+    "labels_checked": 14,
+    "label_check_above_chain_top": false,
+    "entries_listed": 89,
+    "entry_cap_reached": false,
+    "findings": [],
+    "unlistable": [],
+    "verdict": "CLEAN"
+  },
+  "prompt_input_crosscheck": {
+    "status": "NOT_RUN"
+  },
+  "failures": [],
+  "verdict": "PASS",
+  "timestamp": "2026-10-04T09:48:55.328Z"
+}

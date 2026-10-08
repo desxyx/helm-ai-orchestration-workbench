@@ -1,0 +1,9 @@
+{
+  "received_at": "2026-10-05T12:26:28.443491+00:00",
+  "sha256": "<PRIVATE_REF_01296>",
+  "source": "Owner relays Observer message; not direct native receipt ledger",
+  "quarantine": "Never forward to Deployer, measurement probe, later arm or builder",
+  "private_notes_read_by_custodian": false,
+  "final_seal": false,
+  "ingestion_ack": "Owner-relayed aggregate acknowledgment for all179 segments; individual receipt ledger not yet archived"
+}

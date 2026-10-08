@@ -1,0 +1,56 @@
+Command: ["node", "--test", "tests/vocabulary.test.mjs", "tests/docs.test.mjs", "tests/skills.test.mjs", "tests/neutral-domains.test.mjs"]
+CWD: verified product/
+WATCHOVER_PRIVACY_DENYLIST: external temporary input derived from private control file plus standalone oversight word, no private terms copied into product.
+✔ the README defines the product and separates Validated from Roadmap (1.765875ms)
+✔ no document makes a benchmark or result claim (2.133209ms)
+✖ documents allow attribution and history while excluding arm labels and private canaries (0.295ms)
+✔ SECURITY.md covers secrets, the read-only local view, evidence and known limits (0.594459ms)
+✔ docs/architecture.md describes every component and trust boundary (0.47175ms)
+✔ README, validation and provenance agree on evidence and archive limits (0.991917ms)
+✔ local Markdown documentation links resolve inside the product (1.144875ms)
+✔ the README quick start runs as written and leaves a valid workspace (182.5175ms)
+✔ tracked domains stay generic except scoped dialect and exact public links (30.725792ms)
+✔ public URL exceptions reject suffixes, lookalikes and use outside documentation (0.178833ms)
+✔ the router lives at exactly skills/router.md, as the workspace pointer says (0.414875ms)
+✔ the router, stage and provider files exist, and nothing else is in skills/ (2.562667ms)
+✔ every skill stays inside its length budget (3.151208ms)
+✔ the router carries every always-on rule (0.485375ms)
+✔ every stage file restates the always-on rules (0.728833ms)
+✔ the router says what to read first, how to use the tools, and which one stage file to load (0.244417ms)
+✔ each stage file carries its Annex J responsibility (0.99925ms)
+✔ the handoff guidance covers all ten Annex K items (0.493542ms)
+✔ GCP is the target with validation pending; every other provider is UNVALIDATED (0.585375ms)
+✔ skills are neutral, client-neutral and free of governance or experiment wording (1.672625ms)
+✔ every example event in the skills is schema-valid once append fills its defaults (2.322208ms)
+✔ Cloudflare manual-edit mode records the approval and a gated intent before the human edits DNS (0.205583ms)
+✔ each experiment-wording guard catches its own class (0.4655ms)
+✔ the private-seat guard catches neutral canaries, whole words only (0.124208ms)
+✔ the coordinator guard catches its neutral canary, whole words only (0.069542ms)
+✔ the guards leave neutral product wording alone (0.076ms)
+External privacy denylist: configured
+✔ tracked paths and content pass always-on guards and any configured private denylist (215.720041ms)
+✔ personal-path guards reject neutral account paths and allow ordinary local usage (0.184167ms)
+✔ bare historical stage labels are scoped to exactly three documents (0.099334ms)
+✔ external private terms detect neutral literal, escaped and split forms with exact URL exceptions (1.10775ms)
+✔ the optional private input fails closed when configured incorrectly (0.737917ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 30
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 258.215041
+
+✖ failing tests:
+
+test at tests/docs.test.mjs:42:1
+✖ documents allow attribution and history while excluding arm labels and private canaries (0.295ms)
+  TypeError: experimentGuards is not iterable
+      at TestContext.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-public-release-2026-10-07/builder/product/tests/docs.test.mjs:45:30)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+STDERR:
+
+EXIT_CODE=1

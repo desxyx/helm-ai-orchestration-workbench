@@ -1,0 +1,23 @@
+{
+  "query": "HTTPS_retry",
+  "argv": [
+    "/usr/bin/curl",
+    "-sS",
+    "--connect-timeout",
+    "5",
+    "--max-time",
+    "15",
+    "--dump-header",
+    "execution/w2_formal_entry_2026-10-05/evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/HTTPS_retry.headers",
+    "--output",
+    "execution/w2_formal_entry_2026-10-05/evidence/CP-02_DEPLOYMENT_TERMINAL/READONLY_ACCEPTANCE/HTTPS_retry.body",
+    "--write-out",
+    "%{http_code} %{ssl_verify_result} %{remote_ip}\n",
+    "<PRIVATE_URL_0229>"
+  ],
+  "started_at": "2026-10-05T03:47:49.455979+00:00",
+  "ended_at": "2026-10-05T03:47:50.319281+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "<PRIVATE_REF_03163>",
+  "stderr_sha256": "<PRIVATE_REF_03399>"
+}

@@ -1,0 +1,69 @@
+{
+  "observations": [
+    {
+      "command": "init",
+      "exit": 0,
+      "stdout": "initialized <CLIENT_TEMP_ROOT>/T/watchover-public-smoke-5j5cetzy/watchover\n",
+      "stderr": ""
+    },
+    {
+      "command": "append",
+      "exit": 0,
+      "stdout": "appended evt-0002; workspace valid\n",
+      "stderr": ""
+    },
+    {
+      "command": "validate",
+      "exit": 0,
+      "stdout": "valid: all checks passed; secret scan self-test passed (15 patterns), 0 findings\n",
+      "stderr": ""
+    },
+    {
+      "command": "brief",
+      "exit": 0,
+      "stdout": "WatchOver brief — public-smoke-demo (local synthetic trial) — at 2026-10-07T12:29:28.650Z\nDerived from a validated record. Read state.json and evidence before acting.\nStage: recon · state updated just now by ai\nActivity: Workspace initialized; recon has not started yet · waiting on the AI\nLast progress: none recorded\nPending decision: none\nHuman action now: nothing needs the human right now\nNext: Start read-only recon: the app, its source, the target account and th… · owner: the AI\nLast safe state: not recorded\nRecorded approvals (history, not new authority): none\nApproval scope: all decisions in events.jsonl; follow related → decision_request.evidence; 0 approved request(s) without snapshot locators (scope unavailable; do not invent). Read linked files to establish contents.\nOpen intents: 1 (evt-0002); complete listing: events.jsonl, every type=intent id with no type=result related reference.\nBlocking open items: 0\nFacts: 0 total · current 0 · expired 0 · stale 0 · unknown 0 · blocked 0 · assumed 0 · human-confirmed 0 · future-dated 0 · problems 0\nAll facts are listed above.\n",
+      "stderr": ""
+    },
+    {
+      "command": "show --port 0",
+      "readiness": "serving <CLIENT_TEMP_ROOT>/T/watchover-public-smoke-5j5cetzy/watchover at http://127.0.0.1:64066/ (read-only, loopback only; press Ctrl-C to stop)",
+      "actual_url": "http://127.0.0.1:64066/",
+      "http": [
+        {
+          "path": "/",
+          "status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 704
+        },
+        {
+          "path": "state.json",
+          "status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "bytes": 1475
+        },
+        {
+          "path": "events.jsonl",
+          "status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "bytes": 562
+        },
+        {
+          "path": "evidence/not-served.txt",
+          "status": 404,
+          "content_type": "text/plain",
+          "bytes": 10
+        }
+      ],
+      "workspace_state_and_events_exact": true
+    },
+    {
+      "show_process_exit": 0,
+      "process_cleanup": "observed"
+    },
+    {
+      "stopped_url_unreachable": true
+    }
+  ],
+  "temporary_workspace_removed": true,
+  "verified_at": "2026-10-07T23:29:28.733603+11:00"
+}

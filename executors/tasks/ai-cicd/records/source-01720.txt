@@ -1,0 +1,1072 @@
+$ gcloud compute ssh <ACCOUNT>@<W2_RUN_RESOURCE_PREFIX>-vm --zone=australia-southeast2-a --tunnel-through-iap --ssh-key-file=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-ssh-key --ssh-key-expire-after=2h --ssh-flag=-oUserKnownHostsFile=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-known-hosts '--command=sudo install -d /opt/<W2_RUN_RESOURCE_PREFIX> && sudo tar -xzf /tmp/<W2_RUN_RESOURCE_PREFIX>-release.tar.gz -C /opt/<W2_RUN_RESOURCE_PREFIX> && sudo bash /opt/<W2_RUN_RESOURCE_PREFIX>/bootstrap.sh' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Hit:2 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble InRelease
+Get:3 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1069 kB]
+Get:5 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [221 kB]
+Get:7 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [46.4 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1216 kB]
+Get:9 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [244 kB]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.4 kB]
+Get:11 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [24.2 kB]
+Get:12 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1566 kB]
+Get:13 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble/universe amd64 Packages [15.0 MB]
+Get:14 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [361 kB]
+Get:15 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [40.3 kB]
+Get:16 http://security.ubuntu.com/ubuntu noble-security/multiverse Translation-en [11.3 kB]
+Get:17 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+Get:18 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 c-n-f Metadata [468 B]
+Get:19 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble/universe Translation-en [5982 kB]
+Get:20 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble/universe amd64 Components [3871 kB]
+Get:21 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble/universe amd64 c-n-f Metadata [301 kB]
+Get:22 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [269 kB]
+Get:23 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble/multiverse Translation-en [118 kB]
+Get:24 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble/multiverse amd64 Components [35.0 kB]
+Get:25 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble/multiverse amd64 c-n-f Metadata [8328 B]
+Get:26 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1364 kB]
+Get:27 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [304 kB]
+Get:28 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+Get:29 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1699 kB]
+Get:30 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [341 kB]
+Get:31 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+Get:32 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [34.9 kB]
+Get:33 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1720 kB]
+Get:34 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [394 kB]
+Get:35 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [45.7 kB]
+Get:36 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [13.1 kB]
+Get:37 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:38 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 c-n-f Metadata [656 B]
+Get:39 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [40.6 kB]
+Get:40 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/main Translation-en [9172 B]
+Get:41 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5776 B]
+Get:42 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [368 B]
+Get:43 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [31.0 kB]
+Get:44 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [18.6 kB]
+Get:45 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [12.6 kB]
+Get:46 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1588 B]
+Get:47 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [212 B]
+Get:48 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:49 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Packages [748 B]
+Get:50 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/multiverse Translation-en [340 B]
+Get:51 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Get:52 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 c-n-f Metadata [116 B]
+Fetched 37.5 MB in 8s (4438 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+python3 is already the newest version (3.12.3-0ubuntu2.1).
+python3 set to manually installed.
+The following additional packages will be installed:
+  bridge-utils containerd dns-root-data dnsmasq-base pigz runc ubuntu-fan
+Suggested packages:
+  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-buildx
+  docker-doc rinse zfs-fuse | zfsutils
+The following NEW packages will be installed:
+  bridge-utils containerd dns-root-data dnsmasq-base docker-compose-v2
+  docker.io pigz runc ubuntu-fan
+0 upgraded, 9 newly installed, 0 to remove and 29 not upgraded.
+Need to get 88.6 MB of archives.
+After this operation, 345 MB of additional disk space will be used.
+Get:1 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble/universe amd64 pigz amd64 2.8-1 [65.6 kB]
+Get:2 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble/main amd64 bridge-utils amd64 1.7.1-1ubuntu2 [33.9 kB]
+Get:3 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/main amd64 runc amd64 1.3.4-0ubuntu1~24.04.1 [9574 kB]
+Get:4 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/main amd64 containerd amd64 2.2.1-0ubuntu1~24.04.3 [28.1 MB]
+Get:5 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/main amd64 dns-root-data all 2024071801~ubuntu0.24.04.1 [5918 B]
+Get:6 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/main amd64 dnsmasq-base amd64 2.91-0ubuntu0.24.04.1 [381 kB]
+Get:7 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/universe amd64 docker-compose-v2 amd64 2.40.3+ds1-0ubuntu1~24.04.1 [14.8 MB]
+Get:8 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/universe amd64 docker.io amd64 29.1.3-0ubuntu3~24.04.2 [35.6 MB]
+Get:9 http://australia-southeast2-a.gce.clouds.archive.ubuntu.com/ubuntu noble-updates/universe amd64 ubuntu-fan all 0.12.16+24.04.1 [34.2 kB]
+Preconfiguring packages ...
+Fetched 88.6 MB in 7s (13.1 MB/s)
+Selecting previously unselected package pigz.
+(Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 80283 files and directories currently installed.)
+Preparing to unpack .../0-pigz_2.8-1_amd64.deb ...
+Unpacking pigz (2.8-1) ...
+Selecting previously unselected package bridge-utils.
+Preparing to unpack .../1-bridge-utils_1.7.1-1ubuntu2_amd64.deb ...
+Unpacking bridge-utils (1.7.1-1ubuntu2) ...
+Selecting previously unselected package runc.
+Preparing to unpack .../2-runc_1.3.4-0ubuntu1~24.04.1_amd64.deb ...
+Unpacking runc (1.3.4-0ubuntu1~24.04.1) ...
+Selecting previously unselected package containerd.
+Preparing to unpack .../3-containerd_2.2.1-0ubuntu1~24.04.3_amd64.deb ...
+Unpacking containerd (2.2.1-0ubuntu1~24.04.3) ...
+Selecting previously unselected package dns-root-data.
+Preparing to unpack .../4-dns-root-data_2024071801~ubuntu0.24.04.1_all.deb ...
+Unpacking dns-root-data (2024071801~ubuntu0.24.04.1) ...
+Selecting previously unselected package dnsmasq-base.
+Preparing to unpack .../5-dnsmasq-base_2.91-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking dnsmasq-base (2.91-0ubuntu0.24.04.1) ...
+Selecting previously unselected package docker-compose-v2.
+Preparing to unpack .../6-docker-compose-v2_2.40.3+ds1-0ubuntu1~24.04.1_amd64.deb ...
+Unpacking docker-compose-v2 (2.40.3+ds1-0ubuntu1~24.04.1) ...
+Selecting previously unselected package docker.io.
+Preparing to unpack .../7-docker.io_29.1.3-0ubuntu3~24.04.2_amd64.deb ...
+Unpacking docker.io (29.1.3-0ubuntu3~24.04.2) ...
+Selecting previously unselected package ubuntu-fan.
+Preparing to unpack .../8-ubuntu-fan_0.12.16+24.04.1_all.deb ...
+Unpacking ubuntu-fan (0.12.16+24.04.1) ...
+Setting up docker-compose-v2 (2.40.3+ds1-0ubuntu1~24.04.1) ...
+Setting up dnsmasq-base (2.91-0ubuntu0.24.04.1) ...
+Setting up runc (1.3.4-0ubuntu1~24.04.1) ...
+Setting up dns-root-data (2024071801~ubuntu0.24.04.1) ...
+Setting up bridge-utils (1.7.1-1ubuntu2) ...
+Setting up pigz (2.8-1) ...
+Setting up containerd (2.2.1-0ubuntu1~24.04.3) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /usr/lib/systemd/system/containerd.service.
+
+Setting up ubuntu-fan (0.12.16+24.04.1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /usr/lib/systemd/system/ubuntu-fan.service.
+
+Setting up docker.io (29.1.3-0ubuntu3~24.04.2) ...
+info: Selecting GID from range 100 to 999 ...
+info: Adding group `docker' (GID 113) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /usr/lib/systemd/system/docker.service.
+
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+
+Processing triggers for dbus (1.14.10-4ubuntu4.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Discarding device blocks:       0/5242880               done                            
+Creating filesystem with 5242880 4k blocks and 1310720 inodes
+Filesystem UUID: <NATIVE_ID_2696>
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000
+
+Allocating group tables:   0/160       done                            
+Writing inode tables:   0/160       done                            
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information:   0/160       done
+
+Private application and database secret files are present; values not printed.
+#0 building with "default" instance using docker driver
+
+#1 [api internal] load build definition from Dockerfile.api
+#1 transferring dockerfile: 799B done
+#1 DONE 0.0s
+
+#2 [api internal] load metadata for docker.io/library/python:3.12-slim-bookworm
+#2 DONE 2.1s
+
+#3 [api internal] load .dockerignore
+#3 transferring context: 120B done
+#3 DONE 0.0s
+
+#4 [api 1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:<PRIVATE_REF_01739>
+#4 resolve docker.io/library/python:3.12-slim-bookworm@sha256:<PRIVATE_REF_01739> 0.0s done
+#4 ...
+
+#5 [api internal] load build context
+#5 transferring context: 3.57MB 0.2s done
+#5 DONE 0.3s
+
+#4 [api 1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:<PRIVATE_REF_01739>
+#4 sha256:<PRIVATE_REF_01783> 249B / 249B 0.3s done
+#4 sha256:<PRIVATE_REF_03697> 0B / 13.68MB 0.2s
+#4 sha256:<PRIVATE_REF_03304> 0B / 3.98MB 0.2s
+#4 sha256:<PRIVATE_REF_03697> 10.49MB / 13.68MB 0.6s
+#4 sha256:<PRIVATE_REF_03697> 13.68MB / 13.68MB 0.8s
+#4 sha256:<PRIVATE_REF_03697> 13.68MB / 13.68MB 0.9s done
+#4 sha256:<PRIVATE_REF_03304> 3.98MB / 3.98MB 0.8s
+#4 sha256:<PRIVATE_REF_03304> 3.98MB / 3.98MB 0.9s done
+#4 extracting sha256:<PRIVATE_REF_03304>
+#4 extracting sha256:<PRIVATE_REF_03304> 0.3s done
+#4 DONE 1.4s
+
+#4 [api 1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:<PRIVATE_REF_01739>
+#4 extracting sha256:<PRIVATE_REF_03697>
+#4 extracting sha256:<PRIVATE_REF_03697> 0.5s done
+#4 DONE 1.9s
+
+#4 [api 1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:<PRIVATE_REF_01739>
+#4 extracting sha256:<PRIVATE_REF_01783> 0.0s done
+#4 DONE 1.9s
+
+#6 [api 2/5] RUN apt-get update && apt-get install -y --no-install-recommends build-essential libpq-dev
+#6 1.122 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#6 1.180 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#6 1.343 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+#6 1.468 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+#6 1.679 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+#6 1.811 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [349 kB]
+#6 2.469 Fetched 9387 kB in 2s (6034 kB/s)
+#6 2.469 Reading package lists...
+#6 2.993 Reading package lists...
+#6 3.516 Building dependency tree...
+#6 3.670 Reading state information...
+#6 3.793 The following additional packages will be installed:
+#6 3.794   binutils binutils-common binutils-x86-64-linux-gnu bzip2 cpp cpp-12 dpkg-dev
+#6 3.794   g++ g++-12 gcc gcc-12 libasan8 libatomic1 libbinutils libc-dev-bin libc6-dev
+#6 3.794   libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libdpkg-perl libgcc-12-dev
+#6 3.794   libgdbm-compat4 libgomp1 libgprofng0 libisl23 libitm1 libjansson4
+#6 3.794   libldap-2.5-0 liblsan0 libmpc3 libmpfr6 libnsl-dev libperl5.36 libpq5
+#6 3.794   libquadmath0 libsasl2-2 libsasl2-modules-db libssl-dev libstdc++-12-dev
+#6 3.794   libtirpc-dev libtsan2 libubsan1 linux-libc-dev make patch perl perl-base
+#6 3.795   perl-modules-5.36 rpcsvc-proto xz-utils
+#6 3.796 Suggested packages:
+#6 3.796   binutils-doc bzip2-doc cpp-doc gcc-12-locales cpp-12-doc debian-keyring
+#6 3.796   g++-multilib g++-12-multilib gcc-12-doc gcc-multilib manpages-dev autoconf
+#6 3.796   automake libtool flex bison gdb gcc-doc gcc-12-multilib glibc-doc gnupg | sq
+#6 3.796   | sqop | pgpainless-cli sensible-utils git bzr postgresql-doc-15 libssl-doc
+#6 3.796   libstdc++-12-doc make-doc ed diffutils-doc perl-doc
+#6 3.796   libterm-readline-gnu-perl | libterm-readline-perl-perl
+#6 3.796   libtap-harness-archive-perl
+#6 3.796 Recommended packages:
+#6 3.796   fakeroot gnupg | sq | sqop | pgpainless-cli libalgorithm-merge-perl manpages
+#6 3.796   manpages-dev libc-devtools libfile-fcntllock-perl liblocale-gettext-perl
+#6 3.796   libldap-common libsasl2-modules
+#6 3.957 The following NEW packages will be installed:
+#6 3.958   binutils binutils-common binutils-x86-64-linux-gnu build-essential bzip2 cpp
+#6 3.958   cpp-12 dpkg-dev g++ g++-12 gcc gcc-12 libasan8 libatomic1 libbinutils
+#6 3.958   libc-dev-bin libc6-dev libcc1-0 libcrypt-dev libctf-nobfd0 libctf0
+#6 3.958   libdpkg-perl libgcc-12-dev libgdbm-compat4 libgomp1 libgprofng0 libisl23
+#6 3.958   libitm1 libjansson4 libldap-2.5-0 liblsan0 libmpc3 libmpfr6 libnsl-dev
+#6 3.958   libperl5.36 libpq-dev libpq5 libquadmath0 libsasl2-2 libsasl2-modules-db
+#6 3.958   libssl-dev libstdc++-12-dev libtirpc-dev libtsan2 libubsan1 linux-libc-dev
+#6 3.959   make patch perl perl-modules-5.36 rpcsvc-proto xz-utils
+#6 3.960 The following packages will be upgraded:
+#6 3.961   perl-base
+#6 4.014 1 upgraded, 52 newly installed, 0 to remove and 1 not upgraded.
+#6 4.014 Need to get 78.5 MB of archives.
+#6 4.014 After this operation, 329 MB of additional disk space will be used.
+#6 4.014 Get:1 http://deb.debian.org/debian-security bookworm-security/main amd64 perl-base amd64 5.36.0-7+deb12u4 [1610 kB]
+#6 4.117 Get:2 http://deb.debian.org/debian-security bookworm-security/main amd64 perl-modules-5.36 all 5.36.0-7+deb12u4 [2817 kB]
+#6 4.141 Get:3 http://deb.debian.org/debian bookworm/main amd64 libgdbm-compat4 amd64 1.23-3 [48.2 kB]
+#6 4.142 Get:4 http://deb.debian.org/debian-security bookworm-security/main amd64 libperl5.36 amd64 5.36.0-7+deb12u4 [4208 kB]
+#6 4.204 Get:5 http://deb.debian.org/debian-security bookworm-security/main amd64 perl amd64 5.36.0-7+deb12u4 [239 kB]
+#6 4.205 Get:6 http://deb.debian.org/debian bookworm/main amd64 bzip2 amd64 1.0.8-5+b1 [49.8 kB]
+#6 4.220 Get:7 http://deb.debian.org/debian-security bookworm-security/main amd64 xz-utils amd64 5.4.1-1+deb12u2 [471 kB]
+#6 4.237 Get:8 http://deb.debian.org/debian bookworm/main amd64 binutils-common amd64 2.40-2 [2487 kB]
+#6 4.307 Get:9 http://deb.debian.org/debian bookworm/main amd64 libbinutils amd64 2.40-2 [572 kB]
+#6 4.311 Get:10 http://deb.debian.org/debian bookworm/main amd64 libctf-nobfd0 amd64 2.40-2 [153 kB]
+#6 4.312 Get:11 http://deb.debian.org/debian bookworm/main amd64 libctf0 amd64 2.40-2 [89.8 kB]
+#6 4.312 Get:12 http://deb.debian.org/debian bookworm/main amd64 libgprofng0 amd64 2.40-2 [812 kB]
+#6 4.316 Get:13 http://deb.debian.org/debian bookworm/main amd64 libjansson4 amd64 2.14-2 [40.8 kB]
+#6 4.317 Get:14 http://deb.debian.org/debian bookworm/main amd64 binutils-x86-64-linux-gnu amd64 2.40-2 [2246 kB]
+#6 4.325 Get:15 http://deb.debian.org/debian bookworm/main amd64 binutils amd64 2.40-2 [65.0 kB]
+#6 4.325 Get:16 http://deb.debian.org/debian bookworm/main amd64 libc-dev-bin amd64 2.36-9+deb12u14 [48.1 kB]
+#6 4.325 Get:17 http://deb.debian.org/debian-security bookworm-security/main amd64 linux-libc-dev amd64 6.1.187-1 [2357 kB]
+#6 4.412 Get:18 http://deb.debian.org/debian bookworm/main amd64 libcrypt-dev amd64 1:4.4.33-2 [118 kB]
+#6 4.413 Get:19 http://deb.debian.org/debian bookworm/main amd64 libtirpc-dev amd64 1.3.3+ds-1 [191 kB]
+#6 4.414 Get:20 http://deb.debian.org/debian bookworm/main amd64 libnsl-dev amd64 1.3.0-2 [66.4 kB]
+#6 4.414 Get:21 http://deb.debian.org/debian bookworm/main amd64 rpcsvc-proto amd64 1.4.3-1 [63.3 kB]
+#6 4.415 Get:22 http://deb.debian.org/debian bookworm/main amd64 libc6-dev amd64 2.36-9+deb12u14 [1904 kB]
+#6 4.422 Get:23 http://deb.debian.org/debian bookworm/main amd64 libisl23 amd64 0.25-1.1 [683 kB]
+#6 4.425 Get:24 http://deb.debian.org/debian bookworm/main amd64 libmpfr6 amd64 4.2.0-1 [701 kB]
+#6 4.428 Get:25 http://deb.debian.org/debian bookworm/main amd64 libmpc3 amd64 1.3.1-1 [51.5 kB]
+#6 4.434 Get:26 http://deb.debian.org/debian bookworm/main amd64 cpp-12 amd64 12.2.0-14+deb12u1 [9768 kB]
+#6 4.483 Get:27 http://deb.debian.org/debian bookworm/main amd64 cpp amd64 4:12.2.0-3 [6836 B]
+#6 4.483 Get:28 http://deb.debian.org/debian bookworm/main amd64 libcc1-0 amd64 12.2.0-14+deb12u1 [41.7 kB]
+#6 4.483 Get:29 http://deb.debian.org/debian bookworm/main amd64 libgomp1 amd64 12.2.0-14+deb12u1 [116 kB]
+#6 4.483 Get:30 http://deb.debian.org/debian bookworm/main amd64 libitm1 amd64 12.2.0-14+deb12u1 [26.1 kB]
+#6 4.485 Get:31 http://deb.debian.org/debian bookworm/main amd64 libatomic1 amd64 12.2.0-14+deb12u1 [9376 B]
+#6 4.486 Get:32 http://deb.debian.org/debian bookworm/main amd64 libasan8 amd64 12.2.0-14+deb12u1 [2193 kB]
+#6 4.492 Get:33 http://deb.debian.org/debian bookworm/main amd64 liblsan0 amd64 12.2.0-14+deb12u1 [969 kB]
+#6 4.498 Get:34 http://deb.debian.org/debian bookworm/main amd64 libtsan2 amd64 12.2.0-14+deb12u1 [2197 kB]
+#6 4.515 Get:35 http://deb.debian.org/debian bookworm/main amd64 libubsan1 amd64 12.2.0-14+deb12u1 [883 kB]
+#6 4.521 Get:36 http://deb.debian.org/debian bookworm/main amd64 libquadmath0 amd64 12.2.0-14+deb12u1 [145 kB]
+#6 4.522 Get:37 http://deb.debian.org/debian bookworm/main amd64 libgcc-12-dev amd64 12.2.0-14+deb12u1 [2437 kB]
+#6 4.533 Get:38 http://deb.debian.org/debian bookworm/main amd64 gcc-12 amd64 12.2.0-14+deb12u1 [19.3 MB]
+#6 4.832 Get:39 http://deb.debian.org/debian bookworm/main amd64 gcc amd64 4:12.2.0-3 [5216 B]
+#6 4.832 Get:40 http://deb.debian.org/debian bookworm/main amd64 libstdc++-12-dev amd64 12.2.0-14+deb12u1 [2047 kB]
+#6 4.840 Get:41 http://deb.debian.org/debian bookworm/main amd64 g++-12 amd64 12.2.0-14+deb12u1 [10.7 MB]
+#6 4.878 Get:42 http://deb.debian.org/debian bookworm/main amd64 g++ amd64 4:12.2.0-3 [1356 B]
+#6 4.878 Get:43 http://deb.debian.org/debian bookworm/main amd64 make amd64 4.3-4.1 [396 kB]
+#6 4.879 Get:44 http://deb.debian.org/debian bookworm/main amd64 libdpkg-perl all 1.21.23 [604 kB]
+#6 4.882 Get:45 http://deb.debian.org/debian bookworm/main amd64 patch amd64 2.7.6-7 [128 kB]
+#6 4.883 Get:46 http://deb.debian.org/debian bookworm/main amd64 dpkg-dev all 1.21.23 [1354 kB]
+#6 4.887 Get:47 http://deb.debian.org/debian bookworm/main amd64 build-essential amd64 12.9 [7704 B]
+#6 4.888 Get:48 http://deb.debian.org/debian bookworm/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg-10 [20.3 kB]
+#6 4.888 Get:49 http://deb.debian.org/debian bookworm/main amd64 libsasl2-2 amd64 2.1.28+dfsg-10 [59.7 kB]
+#6 4.888 Get:50 http://deb.debian.org/debian bookworm/main amd64 libldap-2.5-0 amd64 2.5.13+dfsg-5 [183 kB]
+#6 4.895 Get:51 http://deb.debian.org/debian-security bookworm-security/main amd64 libpq5 amd64 15.19-0+deb12u1 [203 kB]
+#6 4.911 Get:52 http://deb.debian.org/debian-security bookworm-security/main amd64 libssl-dev amd64 3.0.22-1~deb12u1 [2450 kB]
+#6 4.932 Get:53 http://deb.debian.org/debian-security bookworm-security/main amd64 libpq-dev amd64 15.19-0+deb12u1 [156 kB]
+#6 5.235 debconf: delaying package configuration, since apt-utils is not installed
+#6 5.274 Fetched 78.5 MB in 1s (81.3 MB/s)
+#6 5.321 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 6703 files and directories currently installed.)
+#6 5.381 Preparing to unpack .../perl-base_5.36.0-7+deb12u4_amd64.deb ...
+#6 5.408 Unpacking perl-base (5.36.0-7+deb12u4) over (5.36.0-7+deb12u3) ...
+#6 7.934 Setting up perl-base (5.36.0-7+deb12u4) ...
+#6 7.982 Selecting previously unselected package perl-modules-5.36.
+#6 7.982 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 6704 files and directories currently installed.)
+#6 7.990 Preparing to unpack .../00-perl-modules-5.36_5.36.0-7+deb12u4_all.deb ...
+#6 7.995 Unpacking perl-modules-5.36 (5.36.0-7+deb12u4) ...
+#6 8.369 Selecting previously unselected package libgdbm-compat4:amd64.
+#6 8.372 Preparing to unpack .../01-libgdbm-compat4_1.23-3_amd64.deb ...
+#6 8.381 Unpacking libgdbm-compat4:amd64 (1.23-3) ...
+#6 8.421 Selecting previously unselected package libperl5.36:amd64.
+#6 8.424 Preparing to unpack .../02-libperl5.36_5.36.0-7+deb12u4_amd64.deb ...
+#6 8.428 Unpacking libperl5.36:amd64 (5.36.0-7+deb12u4) ...
+#6 8.813 Selecting previously unselected package perl.
+#6 8.816 Preparing to unpack .../03-perl_5.36.0-7+deb12u4_amd64.deb ...
+#6 8.825 Unpacking perl (5.36.0-7+deb12u4) ...
+#6 8.873 Selecting previously unselected package bzip2.
+#6 8.876 Preparing to unpack .../04-bzip2_1.0.8-5+b1_amd64.deb ...
+#6 8.880 Unpacking bzip2 (1.0.8-5+b1) ...
+#6 8.918 Selecting previously unselected package xz-utils.
+#6 8.920 Preparing to unpack .../05-xz-utils_5.4.1-1+deb12u2_amd64.deb ...
+#6 8.924 Unpacking xz-utils (5.4.1-1+deb12u2) ...
+#6 8.993 Selecting previously unselected package binutils-common:amd64.
+#6 8.996 Preparing to unpack .../06-binutils-common_2.40-2_amd64.deb ...
+#6 8.999 Unpacking binutils-common:amd64 (2.40-2) ...
+#6 9.205 Selecting previously unselected package libbinutils:amd64.
+#6 9.207 Preparing to unpack .../07-libbinutils_2.40-2_amd64.deb ...
+#6 9.211 Unpacking libbinutils:amd64 (2.40-2) ...
+#6 9.285 Selecting previously unselected package libctf-nobfd0:amd64.
+#6 9.288 Preparing to unpack .../08-libctf-nobfd0_2.40-2_amd64.deb ...
+#6 9.292 Unpacking libctf-nobfd0:amd64 (2.40-2) ...
+#6 9.340 Selecting previously unselected package libctf0:amd64.
+#6 9.341 Preparing to unpack .../09-libctf0_2.40-2_amd64.deb ...
+#6 9.346 Unpacking libctf0:amd64 (2.40-2) ...
+#6 9.393 Selecting previously unselected package libgprofng0:amd64.
+#6 9.395 Preparing to unpack .../10-libgprofng0_2.40-2_amd64.deb ...
+#6 9.398 Unpacking libgprofng0:amd64 (2.40-2) ...
+#6 9.492 Selecting previously unselected package libjansson4:amd64.
+#6 9.493 Preparing to unpack .../11-libjansson4_2.14-2_amd64.deb ...
+#6 9.497 Unpacking libjansson4:amd64 (2.14-2) ...
+#6 9.839 Selecting previously unselected package binutils-x86-64-linux-gnu.
+#6 9.840 Preparing to unpack .../12-binutils-x86-64-linux-gnu_2.40-2_amd64.deb ...
+#6 9.845 Unpacking binutils-x86-64-linux-gnu (2.40-2) ...
+#6 10.06 Selecting previously unselected package binutils.
+#6 10.06 Preparing to unpack .../13-binutils_2.40-2_amd64.deb ...
+#6 10.06 Unpacking binutils (2.40-2) ...
+#6 10.10 Selecting previously unselected package libc-dev-bin.
+#6 10.10 Preparing to unpack .../14-libc-dev-bin_2.36-9+deb12u14_amd64.deb ...
+#6 10.11 Unpacking libc-dev-bin (2.36-9+deb12u14) ...
+#6 10.14 Selecting previously unselected package linux-libc-dev:amd64.
+#6 10.14 Preparing to unpack .../15-linux-libc-dev_6.1.187-1_amd64.deb ...
+#6 10.15 Unpacking linux-libc-dev:amd64 (6.1.187-1) ...
+#6 10.39 Selecting previously unselected package libcrypt-dev:amd64.
+#6 10.40 Preparing to unpack .../16-libcrypt-dev_1%3a4.4.33-2_amd64.deb ...
+#6 10.41 Unpacking libcrypt-dev:amd64 (1:4.4.33-2) ...
+#6 10.45 Selecting previously unselected package libtirpc-dev:amd64.
+#6 10.45 Preparing to unpack .../17-libtirpc-dev_1.3.3+ds-1_amd64.deb ...
+#6 10.45 Unpacking libtirpc-dev:amd64 (1.3.3+ds-1) ...
+#6 10.50 Selecting previously unselected package libnsl-dev:amd64.
+#6 10.50 Preparing to unpack .../18-libnsl-dev_1.3.0-2_amd64.deb ...
+#6 10.50 Unpacking libnsl-dev:amd64 (1.3.0-2) ...
+#6 10.54 Selecting previously unselected package rpcsvc-proto.
+#6 10.54 Preparing to unpack .../19-rpcsvc-proto_1.4.3-1_amd64.deb ...
+#6 10.55 Unpacking rpcsvc-proto (1.4.3-1) ...
+#6 10.58 Selecting previously unselected package libc6-dev:amd64.
+#6 10.59 Preparing to unpack .../20-libc6-dev_2.36-9+deb12u14_amd64.deb ...
+#6 10.59 Unpacking libc6-dev:amd64 (2.36-9+deb12u14) ...
+#6 11.36 Selecting previously unselected package libisl23:amd64.
+#6 11.36 Preparing to unpack .../21-libisl23_0.25-1.1_amd64.deb ...
+#6 11.37 Unpacking libisl23:amd64 (0.25-1.1) ...
+#6 11.45 Selecting previously unselected package libmpfr6:amd64.
+#6 11.46 Preparing to unpack .../22-libmpfr6_4.2.0-1_amd64.deb ...
+#6 11.46 Unpacking libmpfr6:amd64 (4.2.0-1) ...
+#6 11.53 Selecting previously unselected package libmpc3:amd64.
+#6 11.54 Preparing to unpack .../23-libmpc3_1.3.1-1_amd64.deb ...
+#6 11.54 Unpacking libmpc3:amd64 (1.3.1-1) ...
+#6 11.58 Selecting previously unselected package cpp-12.
+#6 11.58 Preparing to unpack .../24-cpp-12_12.2.0-14+deb12u1_amd64.deb ...
+#6 11.58 Unpacking cpp-12 (12.2.0-14+deb12u1) ...
+#6 12.22 Selecting previously unselected package cpp.
+#6 12.22 Preparing to unpack .../25-cpp_4%3a12.2.0-3_amd64.deb ...
+#6 12.23 Unpacking cpp (4:12.2.0-3) ...
+#6 12.26 Selecting previously unselected package libcc1-0:amd64.
+#6 12.26 Preparing to unpack .../26-libcc1-0_12.2.0-14+deb12u1_amd64.deb ...
+#6 12.51 Unpacking libcc1-0:amd64 (12.2.0-14+deb12u1) ...
+#6 12.86 Selecting previously unselected package libgomp1:amd64.
+#6 12.86 Preparing to unpack .../27-libgomp1_12.2.0-14+deb12u1_amd64.deb ...
+#6 12.87 Unpacking libgomp1:amd64 (12.2.0-14+deb12u1) ...
+#6 12.92 Selecting previously unselected package libitm1:amd64.
+#6 12.92 Preparing to unpack .../28-libitm1_12.2.0-14+deb12u1_amd64.deb ...
+#6 12.92 Unpacking libitm1:amd64 (12.2.0-14+deb12u1) ...
+#6 12.97 Selecting previously unselected package libatomic1:amd64.
+#6 12.97 Preparing to unpack .../29-libatomic1_12.2.0-14+deb12u1_amd64.deb ...
+#6 12.97 Unpacking libatomic1:amd64 (12.2.0-14+deb12u1) ...
+#6 13.01 Selecting previously unselected package libasan8:amd64.
+#6 13.01 Preparing to unpack .../30-libasan8_12.2.0-14+deb12u1_amd64.deb ...
+#6 13.02 Unpacking libasan8:amd64 (12.2.0-14+deb12u1) ...
+#6 13.21 Selecting previously unselected package liblsan0:amd64.
+#6 13.21 Preparing to unpack .../31-liblsan0_12.2.0-14+deb12u1_amd64.deb ...
+#6 13.21 Unpacking liblsan0:amd64 (12.2.0-14+deb12u1) ...
+#6 13.31 Selecting previously unselected package libtsan2:amd64.
+#6 13.31 Preparing to unpack .../32-libtsan2_12.2.0-14+deb12u1_amd64.deb ...
+#6 13.32 Unpacking libtsan2:amd64 (12.2.0-14+deb12u1) ...
+#6 13.51 Selecting previously unselected package libubsan1:amd64.
+#6 13.51 Preparing to unpack .../33-libubsan1_12.2.0-14+deb12u1_amd64.deb ...
+#6 13.52 Unpacking libubsan1:amd64 (12.2.0-14+deb12u1) ...
+#6 13.62 Selecting previously unselected package libquadmath0:amd64.
+#6 13.62 Preparing to unpack .../34-libquadmath0_12.2.0-14+deb12u1_amd64.deb ...
+#6 13.62 Unpacking libquadmath0:amd64 (12.2.0-14+deb12u1) ...
+#6 13.66 Selecting previously unselected package libgcc-12-dev:amd64.
+#6 13.67 Preparing to unpack .../35-libgcc-12-dev_12.2.0-14+deb12u1_amd64.deb ...
+#6 13.67 Unpacking libgcc-12-dev:amd64 (12.2.0-14+deb12u1) ...
+#6 13.87 Selecting previously unselected package gcc-12.
+#6 13.87 Preparing to unpack .../36-gcc-12_12.2.0-14+deb12u1_amd64.deb ...
+#6 13.87 Unpacking gcc-12 (12.2.0-14+deb12u1) ...
+#6 15.63 Selecting previously unselected package gcc.
+#6 15.63 Preparing to unpack .../37-gcc_4%3a12.2.0-3_amd64.deb ...
+#6 15.64 Unpacking gcc (4:12.2.0-3) ...
+#6 15.68 Selecting previously unselected package libstdc++-12-dev:amd64.
+#6 15.69 Preparing to unpack .../38-libstdc++-12-dev_12.2.0-14+deb12u1_amd64.deb ...
+#6 15.69 Unpacking libstdc++-12-dev:amd64 (12.2.0-14+deb12u1) ...
+#6 15.95 Selecting previously unselected package g++-12.
+#6 15.95 Preparing to unpack .../39-g++-12_12.2.0-14+deb12u1_amd64.deb ...
+#6 15.96 Unpacking g++-12 (12.2.0-14+deb12u1) ...
+#6 16.95 Selecting previously unselected package g++.
+#6 16.95 Preparing to unpack .../40-g++_4%3a12.2.0-3_amd64.deb ...
+#6 16.96 Unpacking g++ (4:12.2.0-3) ...
+#6 16.99 Selecting previously unselected package make.
+#6 16.99 Preparing to unpack .../41-make_4.3-4.1_amd64.deb ...
+#6 16.99 Unpacking make (4.3-4.1) ...
+#6 17.05 Selecting previously unselected package libdpkg-perl.
+#6 17.06 Preparing to unpack .../42-libdpkg-perl_1.21.23_all.deb ...
+#6 17.06 Unpacking libdpkg-perl (1.21.23) ...
+#6 17.14 Selecting previously unselected package patch.
+#6 17.14 Preparing to unpack .../43-patch_2.7.6-7_amd64.deb ...
+#6 17.14 Unpacking patch (2.7.6-7) ...
+#6 17.18 Selecting previously unselected package dpkg-dev.
+#6 17.19 Preparing to unpack .../44-dpkg-dev_1.21.23_all.deb ...
+#6 17.19 Unpacking dpkg-dev (1.21.23) ...
+#6 17.30 Selecting previously unselected package build-essential.
+#6 17.30 Preparing to unpack .../45-build-essential_12.9_amd64.deb ...
+#6 17.31 Unpacking build-essential (12.9) ...
+#6 17.34 Selecting previously unselected package libsasl2-modules-db:amd64.
+#6 17.34 Preparing to unpack .../46-libsasl2-modules-db_2.1.28+dfsg-10_amd64.deb ...
+#6 17.34 Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg-10) ...
+#6 17.38 Selecting previously unselected package libsasl2-2:amd64.
+#6 17.38 Preparing to unpack .../47-libsasl2-2_2.1.28+dfsg-10_amd64.deb ...
+#6 17.39 Unpacking libsasl2-2:amd64 (2.1.28+dfsg-10) ...
+#6 17.43 Selecting previously unselected package libldap-2.5-0:amd64.
+#6 17.43 Preparing to unpack .../48-libldap-2.5-0_2.5.13+dfsg-5_amd64.deb ...
+#6 17.44 Unpacking libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+#6 17.48 Selecting previously unselected package libpq5:amd64.
+#6 17.49 Preparing to unpack .../49-libpq5_15.19-0+deb12u1_amd64.deb ...
+#6 17.49 Unpacking libpq5:amd64 (15.19-0+deb12u1) ...
+#6 17.54 Selecting previously unselected package libssl-dev:amd64.
+#6 17.54 Preparing to unpack .../50-libssl-dev_3.0.22-1~deb12u1_amd64.deb ...
+#6 17.55 Unpacking libssl-dev:amd64 (3.0.22-1~deb12u1) ...
+#6 17.74 Selecting previously unselected package libpq-dev.
+#6 17.74 Preparing to unpack .../51-libpq-dev_15.19-0+deb12u1_amd64.deb ...
+#6 17.75 Unpacking libpq-dev (15.19-0+deb12u1) ...
+#6 17.80 Setting up binutils-common:amd64 (2.40-2) ...
+#6 17.82 Setting up linux-libc-dev:amd64 (6.1.187-1) ...
+#6 17.82 Setting up libctf-nobfd0:amd64 (2.40-2) ...
+#6 17.83 Setting up libgomp1:amd64 (12.2.0-14+deb12u1) ...
+#6 17.84 Setting up bzip2 (1.0.8-5+b1) ...
+#6 17.85 Setting up libjansson4:amd64 (2.14-2) ...
+#6 17.86 Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg-10) ...
+#6 17.88 Setting up perl-modules-5.36 (5.36.0-7+deb12u4) ...
+#6 17.88 Setting up libtirpc-dev:amd64 (1.3.3+ds-1) ...
+#6 17.89 Setting up rpcsvc-proto (1.4.3-1) ...
+#6 17.90 Setting up make (4.3-4.1) ...
+#6 17.91 Setting up libmpfr6:amd64 (4.2.0-1) ...
+#6 17.92 Setting up xz-utils (5.4.1-1+deb12u2) ...
+#6 17.94 update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+#6 17.94 update-alternatives: warning: skip creation of /usr/share/man/man1/lzma.1.gz because associated file /usr/share/man/man1/xz.1.gz (of link group lzma) doesn't exist
+#6 17.94 update-alternatives: warning: skip creation of /usr/share/man/man1/unlzma.1.gz because associated file /usr/share/man/man1/unxz.1.gz (of link group lzma) doesn't exist
+#6 17.94 update-alternatives: warning: skip creation of /usr/share/man/man1/lzcat.1.gz because associated file /usr/share/man/man1/xzcat.1.gz (of link group lzma) doesn't exist
+#6 17.94 update-alternatives: warning: skip creation of /usr/share/man/man1/lzmore.1.gz because associated file /usr/share/man/man1/xzmore.1.gz (of link group lzma) doesn't exist
+#6 17.94 update-alternatives: warning: skip creation of /usr/share/man/man1/lzless.1.gz because associated file /usr/share/man/man1/xzless.1.gz (of link group lzma) doesn't exist
+#6 17.94 update-alternatives: warning: skip creation of /usr/share/man/man1/lzdiff.1.gz because associated file /usr/share/man/man1/xzdiff.1.gz (of link group lzma) doesn't exist
+#6 17.94 update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) doesn't exist
+#6 17.94 update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
+#6 17.94 update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't exist
+#6 17.94 update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't exist
+#6 17.95 Setting up libquadmath0:amd64 (12.2.0-14+deb12u1) ...
+#6 17.96 Setting up libssl-dev:amd64 (3.0.22-1~deb12u1) ...
+#6 17.97 Setting up libmpc3:amd64 (1.3.1-1) ...
+#6 17.98 Setting up libatomic1:amd64 (12.2.0-14+deb12u1) ...
+#6 17.99 Setting up patch (2.7.6-7) ...
+#6 18.01 Setting up libgdbm-compat4:amd64 (1.23-3) ...
+#6 18.02 Setting up libsasl2-2:amd64 (2.1.28+dfsg-10) ...
+#6 18.03 Setting up libubsan1:amd64 (12.2.0-14+deb12u1) ...
+#6 18.04 Setting up libnsl-dev:amd64 (1.3.0-2) ...
+#6 18.05 Setting up libcrypt-dev:amd64 (1:4.4.33-2) ...
+#6 18.07 Setting up libasan8:amd64 (12.2.0-14+deb12u1) ...
+#6 18.08 Setting up libtsan2:amd64 (12.2.0-14+deb12u1) ...
+#6 18.09 Setting up libbinutils:amd64 (2.40-2) ...
+#6 18.10 Setting up libisl23:amd64 (0.25-1.1) ...
+#6 18.11 Setting up libc-dev-bin (2.36-9+deb12u14) ...
+#6 18.12 Setting up libcc1-0:amd64 (12.2.0-14+deb12u1) ...
+#6 18.14 Setting up libperl5.36:amd64 (5.36.0-7+deb12u4) ...
+#6 18.15 Setting up liblsan0:amd64 (12.2.0-14+deb12u1) ...
+#6 18.16 Setting up libitm1:amd64 (12.2.0-14+deb12u1) ...
+#6 18.17 Setting up libctf0:amd64 (2.40-2) ...
+#6 18.18 Setting up cpp-12 (12.2.0-14+deb12u1) ...
+#6 18.19 Setting up libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+#6 18.21 Setting up perl (5.36.0-7+deb12u4) ...
+#6 18.23 Setting up libgprofng0:amd64 (2.40-2) ...
+#6 18.24 Setting up libgcc-12-dev:amd64 (12.2.0-14+deb12u1) ...
+#6 18.25 Setting up libdpkg-perl (1.21.23) ...
+#6 18.26 Setting up cpp (4:12.2.0-3) ...
+#6 18.28 Setting up libc6-dev:amd64 (2.36-9+deb12u14) ...
+#6 18.29 Setting up binutils-x86-64-linux-gnu (2.40-2) ...
+#6 18.30 Setting up libstdc++-12-dev:amd64 (12.2.0-14+deb12u1) ...
+#6 18.32 Setting up libpq5:amd64 (15.19-0+deb12u1) ...
+#6 18.33 Setting up libpq-dev (15.19-0+deb12u1) ...
+#6 18.34 Setting up binutils (2.40-2) ...
+#6 18.35 Setting up dpkg-dev (1.21.23) ...
+#6 18.37 Setting up gcc-12 (12.2.0-14+deb12u1) ...
+#6 18.38 Setting up g++-12 (12.2.0-14+deb12u1) ...
+#6 18.39 Setting up gcc (4:12.2.0-3) ...
+#6 18.41 Setting up g++ (4:12.2.0-3) ...
+#6 18.42 update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+#6 18.43 Setting up build-essential (12.9) ...
+#6 18.44 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+#6 DONE 20.1s
+
+#7 [api 3/5] WORKDIR /app
+#7 DONE 0.2s
+
+#8 [api 4/5] COPY . .
+#8 DONE 0.1s
+
+#9 [api 5/5] RUN python -m pip install --no-cache-dir -r requirements.txt gunicorn==23.0.0 &&     python -m pip install --no-cache-dir --no-deps . &&     useradd --system --uid 10001 --no-create-home alerta
+#9 2.099 Collecting gunicorn==23.0.0
+#9 2.185   Downloading gunicorn-23.0.0-py3-none-any.whl.metadata (4.4 kB)
+#9 2.255 Collecting bcrypt==5.0.0 (from -r requirements.txt (line 1))
+#9 2.273   Downloading bcrypt-5.0.0-cp39-abi3-manylinux_2_34_x86_64.whl.metadata (10 kB)
+#9 2.301 Collecting blinker==1.9.0 (from -r requirements.txt (line 2))
+#9 2.318   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+#9 2.552 Collecting cryptography==46.0.6 (from -r requirements.txt (line 3))
+#9 2.571   Downloading cryptography-46.0.6-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+#9 2.599 Collecting defusedxml==0.7.1 (from -r requirements.txt (line 4))
+#9 2.618   Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+#9 2.656 Collecting Flask==3.1.3 (from -r requirements.txt (line 5))
+#9 2.674   Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+#9 2.700 Collecting Flask-Compress==1.23 (from -r requirements.txt (line 6))
+#9 2.923   Downloading flask_compress-1.23-py3-none-any.whl.metadata (11 kB)
+#9 2.952 Collecting Flask-Cors==6.0.2 (from -r requirements.txt (line 7))
+#9 2.970   Downloading flask_cors-6.0.2-py3-none-any.whl.metadata (5.3 kB)
+#9 3.190 Collecting mohawk==1.1.0 (from -r requirements.txt (line 8))
+#9 3.208   Downloading mohawk-1.1.0-py3-none-any.whl.metadata (1.3 kB)
+#9 3.255 Collecting psycopg2==2.9.11 (from -r requirements.txt (line 9))
+#9 3.273   Downloading psycopg2-2.9.11.tar.gz (379 kB)
+#9 3.379   Installing build dependencies: started
+#9 5.739   Installing build dependencies: finished with status 'done'
+#9 5.740   Getting requirements to build wheel: started
+#9 6.364   Getting requirements to build wheel: finished with status 'done'
+#9 6.366   Preparing metadata (pyproject.toml): started
+#9 6.998   Preparing metadata (pyproject.toml): finished with status 'done'
+#9 7.027 Collecting PyJWT==2.12.1 (from -r requirements.txt (line 10))
+#9 7.045   Downloading pyjwt-2.12.1-py3-none-any.whl.metadata (4.1 kB)
+#9 7.329 Collecting pymongo==4.16.0 (from -r requirements.txt (line 11))
+#9 7.347   Downloading pymongo-4.16.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10.0 kB)
+#9 7.389 Collecting pyparsing==3.3.2 (from -r requirements.txt (line 12))
+#9 7.409   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+#9 7.434 Collecting python-dateutil==2.9.0.post0 (from -r requirements.txt (line 13))
+#9 7.452   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+#9 7.501 Collecting pytz==2026.1.post1 (from -r requirements.txt (line 14))
+#9 7.520   Downloading pytz-2026.1.post1-py2.py3-none-any.whl.metadata (22 kB)
+#9 7.565 Collecting PyYAML==6.0.3 (from -r requirements.txt (line 15))
+#9 7.583   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+#9 7.621 Collecting requests==2.32.5 (from -r requirements.txt (line 16))
+#9 7.639   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+#9 7.860 Collecting requests-hawk==1.2.1 (from -r requirements.txt (line 17))
+#9 7.878   Downloading requests_hawk-1.2.1-py2.py3-none-any.whl.metadata (5.6 kB)
+#9 7.948 Collecting sentry-sdk==2.56.0 (from sentry-sdk[flask]==2.56.0->-r requirements.txt (line 18))
+#9 7.966   Downloading sentry_sdk-2.56.0-py2.py3-none-any.whl.metadata (10 kB)
+#9 8.009 Collecting StrEnum==0.4.15 (from -r requirements.txt (line 19))
+#9 8.027   Downloading StrEnum-0.4.15-py3-none-any.whl.metadata (5.3 kB)
+#9 8.062 Collecting werkzeug==3.1.7 (from -r requirements.txt (line 20))
+#9 8.081   Downloading werkzeug-3.1.7-py3-none-any.whl.metadata (4.0 kB)
+#9 8.111 Collecting packaging (from gunicorn==23.0.0)
+#9 8.128   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+#9 8.266 Collecting cffi>=2.0.0 (from cryptography==46.0.6->-r requirements.txt (line 3))
+#9 8.283   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+#9 8.316 Collecting click>=8.1.3 (from Flask==3.1.3->-r requirements.txt (line 5))
+#9 8.334   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#9 8.358 Collecting itsdangerous>=2.2.0 (from Flask==3.1.3->-r requirements.txt (line 5))
+#9 8.376   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+#9 8.403 Collecting jinja2>=3.1.2 (from Flask==3.1.3->-r requirements.txt (line 5))
+#9 8.421   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#9 8.482 Collecting markupsafe>=2.1.1 (from Flask==3.1.3->-r requirements.txt (line 5))
+#9 8.499   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#9 8.546 Collecting brotli (from Flask-Compress==1.23->-r requirements.txt (line 6))
+#9 8.565   Downloading brotli-1.2.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.1 kB)
+#9 8.633 Collecting backports.zstd (from Flask-Compress==1.23->-r requirements.txt (line 6))
+#9 8.651   Downloading backports_zstd-1.7.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (6.8 kB)
+#9 8.686 Collecting six (from mohawk==1.1.0->-r requirements.txt (line 8))
+#9 8.703   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+#9 8.732 Collecting dnspython<3.0.0,>=2.6.1 (from pymongo==4.16.0->-r requirements.txt (line 11))
+#9 8.750   Downloading dnspython-2.8.0-py3-none-any.whl.metadata (5.7 kB)
+#9 8.889 Collecting charset_normalizer<4,>=2 (from requests==2.32.5->-r requirements.txt (line 16))
+#9 8.906   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+#9 8.938 Collecting idna<4,>=2.5 (from requests==2.32.5->-r requirements.txt (line 16))
+#9 8.955   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#9 8.997 Collecting urllib3<3,>=1.21.1 (from requests==2.32.5->-r requirements.txt (line 16))
+#9 9.014   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+#9 9.048 Collecting certifi>=2017.4.17 (from requests==2.32.5->-r requirements.txt (line 16))
+#9 9.065   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+#9 9.110 Collecting pycparser (from cffi>=2.0.0->cryptography==46.0.6->-r requirements.txt (line 3))
+#9 9.127   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+#9 9.168 Downloading gunicorn-23.0.0-py3-none-any.whl (85 kB)
+#9 9.185 Downloading bcrypt-5.0.0-cp39-abi3-manylinux_2_34_x86_64.whl (278 kB)
+#9 9.206 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#9 9.225 Downloading cryptography-46.0.6-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+#9 9.271    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 99.7 MB/s eta 0:00:00
+#9 9.289 Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+#9 9.307 Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+#9 9.325 Downloading flask_compress-1.23-py3-none-any.whl (10 kB)
+#9 9.344 Downloading flask_cors-6.0.2-py3-none-any.whl (13 kB)
+#9 9.362 Downloading mohawk-1.1.0-py3-none-any.whl (22 kB)
+#9 9.380 Downloading pyjwt-2.12.1-py3-none-any.whl (29 kB)
+#9 9.399 Downloading pymongo-4.16.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+#9 9.404    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 669.3 MB/s eta 0:00:00
+#9 9.422 Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+#9 9.440 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#9 9.459 Downloading pytz-2026.1.post1-py2.py3-none-any.whl (510 kB)
+#9 9.479 Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+#9 9.482    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 687.0 MB/s eta 0:00:00
+#9 9.500 Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+#9 9.520 Downloading requests_hawk-1.2.1-py2.py3-none-any.whl (7.4 kB)
+#9 9.538 Downloading sentry_sdk-2.56.0-py2.py3-none-any.whl (451 kB)
+#9 9.557 Downloading StrEnum-0.4.15-py3-none-any.whl (8.9 kB)
+#9 9.576 Downloading werkzeug-3.1.7-py3-none-any.whl (226 kB)
+#9 9.594 Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+#9 9.613 Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+#9 9.639 Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+#9 9.657 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#9 9.675 Downloading dnspython-2.8.0-py3-none-any.whl (331 kB)
+#9 9.694 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#9 9.711 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#9 9.729 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#9 9.748 Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#9 9.766 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+#9 9.784 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+#9 9.804 Downloading backports_zstd-1.7.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (496 kB)
+#9 9.823 Downloading brotli-1.2.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+#9 9.832    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 349.5 MB/s eta 0:00:00
+#9 9.850 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+#9 9.868 Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+#9 9.913 Building wheels for collected packages: psycopg2
+#9 9.915   Building wheel for psycopg2 (pyproject.toml): started
+#9 17.79   Building wheel for psycopg2 (pyproject.toml): finished with status 'done'
+#9 17.79   Created wheel for psycopg2: filename=psycopg2-2.9.11-cp312-cp312-linux_x86_64.whl size=520243 sha256=<PRIVATE_REF_02857>
+#9 17.79   Stored in directory: /tmp/pip-ephem-wheel-cache-83dqu358/wheels/da/54/60/<PRIVATE_REF_01156>
+#9 17.80 Successfully built psycopg2
+#9 17.86 Installing collected packages: StrEnum, pytz, brotli, urllib3, six, PyYAML, pyparsing, PyJWT, pycparser, psycopg2, packaging, markupsafe, itsdangerous, idna, dnspython, defusedxml, click, charset_normalizer, certifi, blinker, bcrypt, backports.zstd, werkzeug, sentry-sdk, requests, python-dateutil, pymongo, mohawk, jinja2, gunicorn, cffi, requests-hawk, Flask, cryptography, Flask-Cors, Flask-Compress
+#9 20.67 Successfully installed Flask-3.1.3 Flask-Compress-1.23 Flask-Cors-6.0.2 PyJWT-2.12.1 PyYAML-6.0.3 StrEnum-0.4.15 backports.zstd-1.7.0 bcrypt-5.0.0 blinker-1.9.0 brotli-1.2.0 certifi-2026.7.22 cffi-2.1.1 charset_normalizer-3.5.2 click-8.5.0 cryptography-46.0.6 defusedxml-0.7.1 dnspython-2.8.0 gunicorn-23.0.0 idna-3.20 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.4 mohawk-1.1.0 packaging-26.3 psycopg2-2.9.11 pycparser-3.0 pymongo-4.16.0 pyparsing-3.3.2 python-dateutil-2.9.0.post0 pytz-2026.1.post1 requests-2.32.5 requests-hawk-1.2.1 sentry-sdk-2.56.0 six-1.17.0 urllib3-2.8.0 werkzeug-3.1.7
+#9 20.67 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 20.84 
+#9 20.84 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#9 20.84 [notice] To update, run: pip install --upgrade pip
+#9 22.33 Processing /app
+#9 22.34   Installing build dependencies: started
+#9 24.53   Installing build dependencies: finished with status 'done'
+#9 24.53   Getting requirements to build wheel: started
+#9 25.14   Getting requirements to build wheel: finished with status 'done'
+#9 25.14   Preparing metadata (pyproject.toml): started
+#9 25.77   Preparing metadata (pyproject.toml): finished with status 'done'
+#9 25.78 Building wheels for collected packages: alerta-server
+#9 25.78   Building wheel for alerta-server (pyproject.toml): started
+#9 26.52   Building wheel for alerta-server (pyproject.toml): finished with status 'done'
+#9 26.53   Created wheel for alerta-server: filename=alerta_server-9.1.0-py2.py3-none-any.whl size=170019 sha256=<PRIVATE_REF_01531>
+#9 26.53   Stored in directory: /tmp/pip-ephem-wheel-cache-l46ufpta/wheels/54/1b/b7/<PRIVATE_REF_02715>
+#9 26.53 Successfully built alerta-server
+#9 26.53 Installing collected packages: alerta-server
+#9 26.71 Successfully installed alerta-server-9.1.0
+#9 26.71 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 26.88 
+#9 26.88 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#9 26.88 [notice] To update, run: pip install --upgrade pip
+#9 27.02 useradd warning: alerta's uid 10001 is greater than SYS_UID_MAX 999
+#9 DONE 28.0s
+
+#10 [api] exporting to image
+#10 exporting layers
+#10 exporting layers 19.6s done
+#10 exporting manifest sha256:<PRIVATE_REF_02375> 0.0s done
+#10 exporting config sha256:<PRIVATE_REF_03655> 0.0s done
+#10 exporting attestation manifest sha256:<PRIVATE_REF_03644> 0.0s done
+#10 exporting manifest list sha256:<PRIVATE_REF_02378> 0.0s done
+#10 naming to docker.io/library/<W2_RUN_RESOURCE_PREFIX>-api:latest done
+#10 unpacking to docker.io/library/<W2_RUN_RESOURCE_PREFIX>-api:latest
+#10 unpacking to docker.io/library/<W2_RUN_RESOURCE_PREFIX>-api:latest 11.2s done
+#10 DONE 30.9s
+
+#11 [api] resolving provenance for metadata file
+#11 DONE 0.2s
+Updating project ssh metadata...
+..........................................................................Updated [<PRIVATE_URL_0469>].
+...done.
+Waiting for SSH key to propagate.
+WARNING: 
+
+To increase the performance of the tunnel, consider installing NumPy. For instructions,
+please see <PRIVATE_URL_0075>ogle.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
+
+WARNING: 
+
+To increase the performance of the tunnel, consider installing NumPy. For instructions,
+please see <PRIVATE_URL_0075>ogle.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
+
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+mke2fs 1.47.0 (5-Feb-2023)
+ db Pulling 
+ web Pulling 
+ 4f4fb700ef54 Pulling fs layer 
+ 15dab9c57989 Pulling fs layer 
+ 0f5b24603697 Pulling fs layer 
+ c108b7dc59eb Pulling fs layer 
+ d49a2dee86fb Pulling fs layer 
+ c70c031f679d Pulling fs layer 
+ f4baa57a3cc7 Pulling fs layer 
+ 8bd8ce8492d5 Pulling fs layer 
+ 6cb8fb654a8d Pulling fs layer 
+ c0ca64f2011e Pulling fs layer 
+ 8eaf27f6576d Pulling fs layer 
+ 7aa71304d2ca Pulling fs layer 
+ ee67d2d59980 Pulling fs layer 
+ 89e6130c295b Pulling fs layer 
+ <PRIVATE_REF_02113> Pulling fs layer 
+ 55601d7a9d50 Pulling fs layer 
+ dce7e4753c95 Pulling fs layer 
+ 3393b06e3522 Pulling fs layer 
+ 2049766aed7c Pulling fs layer 
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ c70c031f679d Downloading [==================================================>]     184B/184B
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ c70c031f679d Downloading [==================================================>]     184B/184B
+ 2049766aed7c Downloading [==================================================>]  1.196MB/1.196MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ d49a2dee86fb Downloading [==================================================>]  3.805MB/3.805MB
+ d49a2dee86fb Downloading [==================================================>]  3.805MB/3.805MB
+ c108b7dc59eb Downloading [==================================================>]  7.502kB/7.502kB
+ 0f5b24603697 Downloading [================>                                  ]  5.243MB/15.92MB
+ 4f4fb700ef54 Download complete 
+ c70c031f679d Download complete 
+ f4baa57a3cc7 Downloading [==================================================>]  1.167kB/1.167kB
+ 2049766aed7c Download complete 
+ 8bd8ce8492d5 Downloading [==================================================>]  3.144kB/3.144kB
+ d49a2dee86fb Download complete 
+ 8bd8ce8492d5 Download complete 
+ c0ca64f2011e Download complete 
+ c108b7dc59eb Download complete 
+ 0f5b24603697 Downloading [=================================================> ]  15.73MB/15.92MB
+ 8eaf27f6576d Download complete 
+ ee67d2d59980 Downloading [==================================================>]  6.108kB/6.108kB
+ f4baa57a3cc7 Download complete 
+ 6cb8fb654a8d Downloading [=>                                                 ]  4.194MB/112.9MB
+ d49a2dee86fb Extracting 1 s
+ 7aa71304d2ca Download complete 
+ 89e6130c295b Downloading [==================================================>]     113B/113B
+ 15dab9c57989 Downloading [==================================================>]  2.766MB/2.766MB
+ 0f5b24603697 Downloading [==================================================>]  15.92MB/15.92MB
+ 89e6130c295b Download complete 
+ dce7e4753c95 Downloading [===========>                                       ]  1.049MB/4.534MB
+ <PRIVATE_REF_02113> Downloading [=>                                                 ]  1.049MB/28.24MB
+ 6cb8fb654a8d Downloading [=====>                                             ]  12.58MB/112.9MB
+ d49a2dee86fb Extracting 1 s
+ ee67d2d59980 Download complete 
+ dce7e4753c95 Downloading [==================================================>]  4.534MB/4.534MB
+ 3393b06e3522 Downloading [================================>                  ]  5.243MB/8.066MB
+ <PRIVATE_REF_02113> Downloading [==============>                                    ]  8.389MB/28.24MB
+ 6cb8fb654a8d Downloading [======>                                            ]  13.63MB/112.9MB
+ 55601d7a9d50 Downloading [==================================================>]   1.25MB/1.25MB
+ 15dab9c57989 Downloading [==================================================>]  2.766MB/2.766MB
+ 0f5b24603697 Downloading [==================================================>]  15.92MB/15.92MB
+ d49a2dee86fb Extracting 1 s
+ dce7e4753c95 Downloading [==================================================>]  4.534MB/4.534MB
+ 3393b06e3522 Downloading [==================================================>]  8.066MB/8.066MB
+ <PRIVATE_REF_02113> Downloading [===========================>                       ]  15.73MB/28.24MB
+ 6cb8fb654a8d Downloading [=========>                                         ]  22.02MB/112.9MB
+ 55601d7a9d50 Downloading [==================================================>]   1.25MB/1.25MB
+ 15dab9c57989 Download complete 
+ 0f5b24603697 Download complete 
+ d49a2dee86fb Extracting 1 s
+ d49a2dee86fb Extracting 1 s
+ dce7e4753c95 Download complete 
+ 3393b06e3522 Download complete 
+ <PRIVATE_REF_02113> Downloading [========================================>          ]  23.07MB/28.24MB
+ 6cb8fb654a8d Downloading [=============>                                     ]  29.36MB/112.9MB
+ 55601d7a9d50 Download complete 
+ <PRIVATE_REF_02113> Downloading [==================================================>]  28.24MB/28.24MB
+ 6cb8fb654a8d Downloading [=================>                                 ]   38.8MB/112.9MB
+ d49a2dee86fb Extracting 1 s
+ <PRIVATE_REF_02113> Downloading [==================================================>]  28.24MB/28.24MB
+ 6cb8fb654a8d Downloading [========================>                          ]  54.53MB/112.9MB
+ d49a2dee86fb Extracting 1 s
+ <PRIVATE_REF_02113> Download complete 
+ 6cb8fb654a8d Downloading [===============================>                   ]  70.25MB/112.9MB
+ dfa8d6bed712 Download complete 
+ d49a2dee86fb Pull complete 
+ <PRIVATE_REF_02113> Extracting 1 s
+ 6cb8fb654a8d Downloading [=================================>                 ]  76.55MB/112.9MB
+ 1dd0c7149ac7 Downloading [==========================>                        ]  3.146MB/5.928MB
+ 15dab9c57989 Extracting 1 s
+ <PRIVATE_REF_02113> Extracting 1 s
+ 6cb8fb654a8d Downloading [=====================================>             ]  84.93MB/112.9MB
+ 1dd0c7149ac7 Download complete 
+ e9930b2d8eb9 Download complete 
+ 15dab9c57989 Extracting 1 s
+ <PRIVATE_REF_02113> Extracting 1 s
+ 6cb8fb654a8d Downloading [=========================================>         ]  94.37MB/112.9MB
+ 7441b80a9e30 Download complete 
+ 15dab9c57989 Extracting 1 s
+ <PRIVATE_REF_02113> Extracting 1 s
+ 6cb8fb654a8d Downloading [===============================================>   ]    107MB/112.9MB
+ 15dab9c57989 Extracting 1 s
+ <PRIVATE_REF_02113> Extracting 1 s
+ 6cb8fb654a8d Downloading [==================================================>]  112.9MB/112.9MB
+ <PRIVATE_REF_02113> Extracting 1 s
+ 6cb8fb654a8d Downloading [==================================================>]  112.9MB/112.9MB
+ <PRIVATE_REF_02113> Extracting 1 s
+ 6cb8fb654a8d Downloading [==================================================>]  112.9MB/112.9MB
+ <PRIVATE_REF_02113> Extracting 1 s
+ 6cb8fb654a8d Downloading [==================================================>]  112.9MB/112.9MB
+ <PRIVATE_REF_02113> Extracting 1 s
+ 6cb8fb654a8d Downloading [==================================================>]  112.9MB/112.9MB
+ <PRIVATE_REF_02113> Extracting 1 s
+ 6cb8fb654a8d Downloading [==================================================>]  112.9MB/112.9MB
+ <PRIVATE_REF_02113> Extracting 1 s
+ 6cb8fb654a8d Downloading [==================================================>]  112.9MB/112.9MB
+ <PRIVATE_REF_02113> Extracting 2 s
+ 6cb8fb654a8d Downloading [==================================================>]  112.9MB/112.9MB
+ <PRIVATE_REF_02113> Extracting 2 s
+ 6cb8fb654a8d Downloading [==================================================>]  112.9MB/112.9MB
+ <PRIVATE_REF_02113> Extracting 2 s
+ 6cb8fb654a8d Downloading [==================================================>]  112.9MB/112.9MB
+ <PRIVATE_REF_02113> Extracting 2 s
+ 6cb8fb654a8d Download complete 
+ c108b7dc59eb Pull complete 
+ 15dab9c57989 Pull complete 
+ <PRIVATE_REF_02113> Extracting 2 s
+ 0f5b24603697 Extracting 1 s
+ <PRIVATE_REF_02113> Extracting 2 s
+ 0f5b24603697 Extracting 1 s
+ <PRIVATE_REF_02113> Extracting 2 s
+ 0f5b24603697 Extracting 1 s
+ <PRIVATE_REF_02113> Extracting 2 s
+ 0f5b24603697 Extracting 1 s
+ <PRIVATE_REF_02113> Extracting 2 s
+ 0f5b24603697 Extracting 1 s
+ <PRIVATE_REF_02113> Extracting 2 s
+ 4f4fb700ef54 Pull complete 
+ 0f5b24603697 Pull complete 
+ f4baa57a3cc7 Pull complete 
+ dce7e4753c95 Extracting 1 s
+ <PRIVATE_REF_02113> Pull complete 
+ web Pulled 
+ dce7e4753c95 Extracting 1 s
+ dce7e4753c95 Extracting 1 s
+ dce7e4753c95 Pull complete 
+ 3393b06e3522 Extracting 1 s
+ 55601d7a9d50 Pull complete 
+ 3393b06e3522 Extracting 1 s
+ 3393b06e3522 Pull complete 
+ 2049766aed7c Extracting 1 s
+ 2049766aed7c Pull complete 
+ 8bd8ce8492d5 Pull complete 
+ 89e6130c295b Pull complete 
+ 6cb8fb654a8d Extracting 1 s
+ 6cb8fb654a8d Extracting 1 s
+ 6cb8fb654a8d Extracting 1 s
+ 6cb8fb654a8d Extracting 1 s
+ 6cb8fb654a8d Extracting 1 s
+ 6cb8fb654a8d Extracting 1 s
+ 6cb8fb654a8d Extracting 1 s
+ 6cb8fb654a8d Extracting 1 s
+ 6cb8fb654a8d Extracting 1 s
+ 6cb8fb654a8d Extracting 1 s
+ 6cb8fb654a8d Extracting 1 s
+ 6cb8fb654a8d Extracting 2 s
+ 6cb8fb654a8d Extracting 2 s
+ 6cb8fb654a8d Extracting 2 s
+ 6cb8fb654a8d Extracting 2 s
+ 6cb8fb654a8d Extracting 2 s
+ 6cb8fb654a8d Extracting 2 s
+ 6cb8fb654a8d Extracting 2 s
+ 6cb8fb654a8d Extracting 2 s
+ 6cb8fb654a8d Extracting 2 s
+ 6cb8fb654a8d Extracting 2 s
+ 6cb8fb654a8d Extracting 3 s
+ 6cb8fb654a8d Extracting 3 s
+ 6cb8fb654a8d Extracting 3 s
+ 6cb8fb654a8d Extracting 3 s
+ 6cb8fb654a8d Extracting 3 s
+ 6cb8fb654a8d Extracting 3 s
+ 6cb8fb654a8d Extracting 3 s
+ 6cb8fb654a8d Pull complete 
+ c0ca64f2011e Extracting 1 s
+ c0ca64f2011e Extracting 1 s
+ c0ca64f2011e Pull complete 
+ 8eaf27f6576d Pull complete 
+ 7aa71304d2ca Extracting 1 s
+ c70c031f679d Pull complete 
+ 7aa71304d2ca Pull complete 
+ ee67d2d59980 Pull complete 
+ db Pulled 
+time="2026-10-05T10:02:42Z" level=warning msg="Docker Compose is configured to build using Bake, but buildx isn't installed"
+ api  Built
+ Network <W2_RUN_RESOURCE_PREFIX>_default  Creating
+ Network <W2_RUN_RESOURCE_PREFIX>_default  Created
+ Container <W2_RUN_RESOURCE_PREFIX>-db-1  Creating
+ Container <W2_RUN_RESOURCE_PREFIX>-db-1  Created
+ Container <W2_RUN_RESOURCE_PREFIX>-api-1  Creating
+ Container <W2_RUN_RESOURCE_PREFIX>-api-1  Created
+ Container <W2_RUN_RESOURCE_PREFIX>-web-1  Creating
+ Container <W2_RUN_RESOURCE_PREFIX>-web-1  Created
+ Container <W2_RUN_RESOURCE_PREFIX>-db-1  Starting
+ Container <W2_RUN_RESOURCE_PREFIX>-db-1  Started
+ Container <W2_RUN_RESOURCE_PREFIX>-db-1  Waiting
+ Container <W2_RUN_RESOURCE_PREFIX>-db-1  Healthy
+ Container <W2_RUN_RESOURCE_PREFIX>-api-1  Starting
+ Container <W2_RUN_RESOURCE_PREFIX>-api-1  Started
+ Container <W2_RUN_RESOURCE_PREFIX>-api-1  Waiting
+ Container <W2_RUN_RESOURCE_PREFIX>-api-1  Healthy
+ Container <W2_RUN_RESOURCE_PREFIX>-web-1  Starting
+ Container <W2_RUN_RESOURCE_PREFIX>-web-1  Started
+ Container <W2_RUN_RESOURCE_PREFIX>-db-1  Waiting
+ Container <W2_RUN_RESOURCE_PREFIX>-api-1  Waiting
+ Container <W2_RUN_RESOURCE_PREFIX>-web-1  Waiting
+ Container <W2_RUN_RESOURCE_PREFIX>-web-1  Healthy
+ Container <W2_RUN_RESOURCE_PREFIX>-db-1  Healthy
+ Container <W2_RUN_RESOURCE_PREFIX>-api-1  Healthy
+Traceback (most recent call last):
+  File "<stdin>", line 18, in <module>
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1348, in do_open
+    r = h.getresponse()
+        ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1457, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 228, in partial_apport_excepthook
+    return apport_excepthook(binary, exc_type, exc_obj, exc_tb)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 114, in apport_excepthook
+    report["ExecutableTimestamp"] = str(int(os.stat(binary).st_mtime))
+                                            ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/<W2_RUN_RESOURCE_PREFIX>/-'
+
+Original exception was:
+Traceback (most recent call last):
+  File "<stdin>", line 18, in <module>
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1348, in do_open
+    r = h.getresponse()
+        ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1457, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer

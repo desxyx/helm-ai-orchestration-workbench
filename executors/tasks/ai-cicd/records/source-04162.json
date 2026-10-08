@@ -1,0 +1,33 @@
+{
+  "task_ref": "WATCHOVER_FINAL_PATCH_2026-10-07",
+  "authority": "Owner confirmed exact basis and D-0; receipt/ledger recorded before role prompts",
+  "isolated_root": "<CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07",
+  "builder_source": {
+    "head": "<PRIVATE_REF_01823>",
+    "tree": "<PRIVATE_REF_01954>",
+    "branch": "final-patch-2026-10-07",
+    "clean": true,
+    "clone_mode": "local single-branch --no-hardlinks"
+  },
+  "reviewer_source": "NOT_CREATED — waits for exact submitted candidate",
+  "input_files": 7,
+  "charter_exact_copy": true,
+  "named_forbidden_marker_check": {
+    "positive_control_detected": true,
+    "input_files_checked": 7,
+    "hits": 0,
+    "scope": "Named-marker check plus explicit packet allowlist; not a universal sanitization or OS-isolation proof"
+  },
+  "runtime_products_changed": false,
+  "role_sessions": "NOT_STARTED; ACK/ENTRY unknown",
+  "independent_acceptance": "NOT_RECEIVED",
+  "packet_manifest_sha256": "<PRIVATE_REF_01138>",
+  "copy_verification": {
+    "role_control_files_matched": {
+      "builder": 8,
+      "reviewer": 8
+    },
+    "unexpected_input_files": 0,
+    "owned_outputs": "EMPTY; role artifacts not fabricated"
+  }
+}

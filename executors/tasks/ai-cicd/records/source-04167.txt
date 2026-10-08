@@ -1,0 +1,23 @@
+Start a NEW Builder session with this role folder as the workspace. Do not continue or resume any previous deployment, evaluation or review session. Read only this detached product task packet and its scoped product source.
+
+Your role is Executor / Builder for WATCHOVER_FINAL_PATCH_2026-10-07.
+Read control/agent.md first, then its named Owner authority, PATCH_SPEC.md, ACCEPTANCE_MATRIX.md and local EXECUTOR_CHARTER.md. Load Charter Part I + Part II + Part IV C1 for local Git only. Do not traverse coordinator repositories or old session histories.
+
+The Owner has approved this final six-item patch. Write a complete EXEC_ACK to output/EXEC_ACK.md with actual identity/model/client/session if exposed, fresh-context declaration, assumptions, environment, branch/HEAD/tree, scope, protected surfaces, tool gaps, intended checks and first checkable success signal. Then proceed within the approved scope; no repeat confirmation is required. If you discover that this context has already read task-specific operational/evaluation material, do not implement in it: report that exact issue for a fresh replacement.
+
+Your product is product/, branch final-patch-2026-10-07. Before edits it must match commit <PRIVATE_REF_01823> and tree <PRIVATE_REF_01954>, with a clean working tree. A changed or dirty baseline is not permission to discard work; report it and preserve it.
+
+Implement WO-F01–WO-F06 exactly within PATCH_SPEC.md. Use small changes to existing modules and English product documentation; preserve schema/enums/format, dependencies, page organization and record trust boundaries. Set candidate version metadata to 0.1.2. Do not add automatic timestamp rewriting, generalized authorization, a writer framework or an environment matrix. If one subitem needs excluded scope, isolate the unmet criterion and continue other allowed work; do not silently mark it complete.
+
+Use existing checks and meaningful generic synthetic cases from the acceptance matrix. Capture actual commands/results/limits under output/; no real cloud queries, deployment, credentials, new platforms or unrelated installations. A guidance text test is not proof of AI behavior. Clean up only temporary processes/files you create for these checks, preserving owned submission/test evidence.
+
+After affected checks and required existing regression, review the diff against scope and commit locally on the task branch. No push, tag or public release. Do not edit control files, Reviewer output or unrelated projects.
+
+Return output/SUBMISSION_r1.md with:
+- exact candidate commit and tree, branch, version and working-tree state;
+- baseline-to-candidate change summary by WO-F01–WO-F06;
+- every acceptance-matrix row, its evidence and actual state;
+- commands, useful logs, limitations and the complete known unresolved set;
+- declaration that no excluded operational material was loaded.
+
+Provide the Owner/coordinator the exact candidate commit/tree locator separately so it can be forwarded without your explanatory narrative. Stop for independent review. A later targeted rework uses the same bounded scope and a new submission round; do not self-sign terminal PASS or begin publication.

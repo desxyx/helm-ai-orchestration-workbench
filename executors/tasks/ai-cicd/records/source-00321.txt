@@ -1,0 +1,12 @@
+$ gcloud compute addresses create <RUN_STATIC_IP> --region australia-southeast1 --network-tier PREMIUM --project <CLOUD_PROJECT>
+# started 2026-10-06T12:35:48.279Z  ended 2026-10-06T12:35:58.145Z  exit 0
+--- stdout
+address: <IP_ADDRESS_115>
+name: <RUN_STATIC_IP>
+networkTier: PREMIUM
+region: <PRIVATE_URL_0345>
+status: RESERVED
+
+--- stderr
+Created [<PRIVATE_URL_0338>].
+

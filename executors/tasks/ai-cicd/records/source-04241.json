@@ -1,0 +1,56 @@
+{
+  "artifact_class": "PRIVATE_PUBLICATION_EXECUTION_RESULT",
+  "push": {
+    "chunk_id": "d32903",
+    "wall_time_seconds": 1.641004709,
+    "exit_code": 0,
+    "original_token_count": 47,
+    "output": "To <PRIVATE_URL_0154>\n * [new branch]      main -> main\n * [new tag]         v0.1.1 -> v0.1.1\nbranch 'main' set up to track 'origin/main'.\n"
+  },
+  "remote_reads": [
+    {
+      "i": 0,
+      "chunk_id": "dc6803",
+      "wall_time_seconds": 0.743155666,
+      "exit_code": 0,
+      "original_token_count": 56,
+      "output": "<PRIVATE_REF_01823>\tHEAD\n<PRIVATE_REF_01823>\trefs/heads/main\n<PRIVATE_REF_02433>\trefs/tags/v0.1.1\n<PRIVATE_REF_01823>\trefs/tags/v0.1.1^{}\n"
+    },
+    {
+      "i": 1,
+      "chunk_id": "07ea8f",
+      "wall_time_seconds": 0.382772625,
+      "exit_code": 0,
+      "original_token_count": 95,
+      "output": "{\"clone_url\":\"<PRIVATE_URL_0154>\",\"default_branch\":\"main\",\"full_name\":\"helmls-studio/<PRIVATE_PROTOTYPE_REPOSITORY>\",\"html_url\":\"<PRIVATE_URL_0154>\",\"id\":\"<NUMERIC_RESOURCE_0007>\",\"permissions\":{\"admin\":true,\"maintain\":true,\"pull\":true,\"push\":true,\"triage\":true},\"private\":true,\"visibility\":\"private\"}\n"
+    },
+    {
+      "i": 2,
+      "chunk_id": "461509",
+      "wall_time_seconds": 0.662212333,
+      "exit_code": 0,
+      "original_token_count": 26,
+      "output": "{\"sha\":\"<PRIVATE_REF_01823>\",\"tree\":\"<PRIVATE_REF_01954>\"}\n"
+    },
+    {
+      "i": 3,
+      "chunk_id": "5eaf3c",
+      "wall_time_seconds": 1.0666e-05,
+      "exit_code": 0,
+      "original_token_count": 6,
+      "output": "## main...origin/main\n"
+    },
+    {
+      "i": 5,
+      "chunk_id": "9b1dae",
+      "wall_time_seconds": 1e-05,
+      "exit_code": 0,
+      "original_token_count": 7,
+      "output": "2026-10-06T17:55:09+11:00\n"
+    }
+  ],
+  "operational_result": "PUSH_SUCCEEDED_PRIVATE_EXACT_ACCEPTED_REFS",
+  "independent_publication_acceptance": "PENDING_Reviewer_Actor_02_VERIFYONLY",
+  "public_release": "DEFERRED_AFTER_WINDOWS_FINAL_AND_SANITIZED_EXPORT",
+  "recorded_at": "2026-10-06T17:56:58.464980+11:00"
+}

@@ -1,0 +1,1 @@
+{"key_http": 201, "key_id": "<NATIVE_ID_2725>", "key_owner_matches_bound_identity": true, "kind": "derive-key", "login_http": 200, "scopes": ["write"], "utc": "2026-10-05T11:05:53Z", "verdict": "PASS"}

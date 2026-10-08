@@ -1,0 +1,6 @@
+{"type": "thread.started", "thread_id": "<NATIVE_ID_0041>"}
+{"type": "turn.started"}
+{"type": "item.started", "item": {"id": "item_0", "type": "command_execution", "command": "/bin/zsh -c 'bash /private/tmp/pd5e0cc61/p.sh'", "aggregated_output": "", "exit_code": null, "status": "in_progress"}}
+{"type": "item.completed", "item": {"id": "item_0", "type": "command_execution", "command": "/bin/zsh -c 'bash /private/tmp/pd5e0cc61/p.sh'", "aggregated_output": "P01 R1\nP02 R1\nP03 R1\nP04 R1\nP05 R1\nP06 R1\nP07 R1\nP08 L1\nP09 L1\nP10 W1\nP11 W1\nP12 W0\nP13 D1\nP14 6\n", "exit_code": 0, "status": "completed"}}
+{"type": "item.completed", "item": {"id": "item_1", "type": "agent_message", "text": "P01 R1\nP02 R1\nP03 R1\nP04 R1\nP05 R1\nP06 R1\nP07 R1\nP08 L1\nP09 L1\nP10 W1\nP11 W1\nP12 W0\nP13 D1\nP14 6"}}
+{"type": "turn.completed", "usage": {"input_tokens": 26829, "cached_input_tokens": 24448, "cache_write_input_tokens": 0, "output_tokens": 181, "reasoning_output_tokens": 33}}

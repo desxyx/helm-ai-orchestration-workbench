@@ -1,0 +1,842 @@
+{
+  "recorded_at": "2026-10-05T21:42:37+11:00",
+  "files": [
+    {
+      "path": "watchover/state.json",
+      "sha256": "<PRIVATE_REF_01244>",
+      "bytes": 31251
+    },
+    {
+      "path": "watchover/events.jsonl",
+      "sha256": "<PRIVATE_REF_00960>",
+      "bytes": 53109
+    },
+    {
+      "path": "deployment-<W2_RUN_RESOURCE_PREFIX>/README.md",
+      "sha256": "<PRIVATE_REF_03732>",
+      "bytes": 4740
+    },
+    {
+      "path": "watchover/evidence/0001-project.json",
+      "sha256": "<PRIVATE_REF_03375>",
+      "bytes": 190
+    },
+    {
+      "path": "watchover/evidence/0002-billing.json",
+      "sha256": "<PRIVATE_REF_01683>",
+      "bytes": 199
+    },
+    {
+      "path": "watchover/evidence/0003-services.txt",
+      "sha256": "<PRIVATE_REF_01883>",
+      "bytes": 880
+    },
+    {
+      "path": "watchover/evidence/0004-addresses.json",
+      "sha256": "<PRIVATE_REF_01383>",
+      "bytes": 3
+    },
+    {
+      "path": "watchover/evidence/0005-networks.json",
+      "sha256": "<PRIVATE_REF_03207>",
+      "bytes": 6035
+    },
+    {
+      "path": "watchover/evidence/0006-roles.txt",
+      "sha256": "<PRIVATE_REF_02332>",
+      "bytes": 12
+    },
+    {
+      "path": "watchover/evidence/0007-instances.json",
+      "sha256": "<PRIVATE_REF_01383>",
+      "bytes": 3
+    },
+    {
+      "path": "watchover/evidence/0008-source-alerta-webui.txt",
+      "sha256": "<PRIVATE_REF_03389>",
+      "bytes": 123
+    },
+    {
+      "path": "watchover/evidence/0008-source-alerta.txt",
+      "sha256": "<PRIVATE_REF_01053>",
+      "bytes": 117
+    },
+    {
+      "path": "watchover/evidence/0009-npm-install.txt",
+      "sha256": "<PRIVATE_REF_01451>",
+      "bytes": 1750
+    },
+    {
+      "path": "watchover/evidence/0010-npm-install-retry.txt",
+      "sha256": "<PRIVATE_REF_03649>",
+      "bytes": 4226
+    },
+    {
+      "path": "watchover/evidence/0011-frontend-build.txt",
+      "sha256": "<PRIVATE_REF_01051>",
+      "bytes": 38722
+    },
+    {
+      "path": "watchover/evidence/0012-region-quotas.json",
+      "sha256": "<PRIVATE_REF_02727>",
+      "bytes": 10795
+    },
+    {
+      "path": "watchover/evidence/0013-machine-type.json",
+      "sha256": "<PRIVATE_REF_01431>",
+      "bytes": 63
+    },
+    {
+      "path": "watchover/evidence/0014-local-validation.txt",
+      "sha256": "<PRIVATE_REF_02467>",
+      "bytes": 472
+    },
+    {
+      "path": "watchover/evidence/0015-official-pricing.json",
+      "sha256": "<PRIVATE_REF_01268>",
+      "bytes": 647
+    },
+    {
+      "path": "watchover/evidence/0016-config-recheck.json",
+      "sha256": "<PRIVATE_REF_02287>",
+      "bytes": 142
+    },
+    {
+      "path": "watchover/evidence/0017-project-recheck.json",
+      "sha256": "<PRIVATE_REF_03375>",
+      "bytes": 190
+    },
+    {
+      "path": "watchover/evidence/0018-billing-recheck.json",
+      "sha256": "<PRIVATE_REF_01683>",
+      "bytes": 199
+    },
+    {
+      "path": "watchover/evidence/0019-owner-recheck.txt",
+      "sha256": "<PRIVATE_REF_02332>",
+      "bytes": 12
+    },
+    {
+      "path": "watchover/evidence/0020-region-recheck.json",
+      "sha256": "<PRIVATE_REF_01675>",
+      "bytes": 11426
+    },
+    {
+      "path": "watchover/evidence/0021-services-recheck.txt",
+      "sha256": "<PRIVATE_REF_01883>",
+      "bytes": 880
+    },
+    {
+      "path": "watchover/evidence/0022-network-recheck.json",
+      "sha256": "<PRIVATE_REF_03207>",
+      "bytes": 6035
+    },
+    {
+      "path": "watchover/evidence/0023-disks-recheck.json",
+      "sha256": "<PRIVATE_REF_01383>",
+      "bytes": 3
+    },
+    {
+      "path": "watchover/evidence/0031-create-network-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0031-create-network-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0033-create-network.txt",
+      "sha256": "<PRIVATE_REF_02407>",
+      "bytes": 977
+    },
+    {
+      "path": "watchover/evidence/0034-<W2_RUN_RESOURCE_PREFIX>-net-describe.txt",
+      "sha256": "<PRIVATE_REF_03369>",
+      "bytes": 810
+    },
+    {
+      "path": "watchover/evidence/0035-create-subnet-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0035-create-subnet-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0036-create-subnet-network.txt",
+      "sha256": "<PRIVATE_REF_03369>",
+      "bytes": 810
+    },
+    {
+      "path": "watchover/evidence/0037-create-subnet.txt",
+      "sha256": "<PRIVATE_REF_02261>",
+      "bytes": 1205
+    },
+    {
+      "path": "watchover/evidence/0038-<W2_RUN_RESOURCE_PREFIX>-subnet-describe.txt",
+      "sha256": "<PRIVATE_REF_00987>",
+      "bytes": 987
+    },
+    {
+      "path": "watchover/evidence/0039-create-iap-firewall-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0039-create-iap-firewall-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0040-create-iap-firewall-network.txt",
+      "sha256": "<PRIVATE_REF_02934>",
+      "bytes": 969
+    },
+    {
+      "path": "watchover/evidence/0041-create-iap-firewall.txt",
+      "sha256": "<PRIVATE_REF_02426>",
+      "bytes": 1158
+    },
+    {
+      "path": "watchover/evidence/0042-<W2_RUN_RESOURCE_PREFIX>-iap-ssh-describe.txt",
+      "sha256": "<PRIVATE_REF_00972>",
+      "bytes": 843
+    },
+    {
+      "path": "watchover/evidence/0043-create-static-ip-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0043-create-static-ip-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0045-create-static-ip.txt",
+      "sha256": "<PRIVATE_REF_03668>",
+      "bytes": 924
+    },
+    {
+      "path": "watchover/evidence/0046-<W2_RUN_RESOURCE_PREFIX>-ip-describe.txt",
+      "sha256": "<PRIVATE_REF_01159>",
+      "bytes": 737
+    },
+    {
+      "path": "watchover/evidence/0047-create-data-disk-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0047-create-data-disk-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0049-create-data-disk.txt",
+      "sha256": "<PRIVATE_REF_03524>",
+      "bytes": 1254
+    },
+    {
+      "path": "watchover/evidence/0050-<W2_RUN_RESOURCE_PREFIX>-data-describe.txt",
+      "sha256": "<PRIVATE_REF_03745>",
+      "bytes": 872
+    },
+    {
+      "path": "watchover/evidence/0051-create-vm-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0051-create-vm-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0052-create-vm-address.txt",
+      "sha256": "<PRIVATE_REF_01159>",
+      "bytes": 737
+    },
+    {
+      "path": "watchover/evidence/0052-create-vm-data-disk.txt",
+      "sha256": "<PRIVATE_REF_03745>",
+      "bytes": 872
+    },
+    {
+      "path": "watchover/evidence/0052-create-vm-subnet.txt",
+      "sha256": "<PRIVATE_REF_00987>",
+      "bytes": 987
+    },
+    {
+      "path": "watchover/evidence/0053-create-vm.txt",
+      "sha256": "<PRIVATE_REF_01869>",
+      "bytes": 33624
+    },
+    {
+      "path": "watchover/evidence/0054-<W2_RUN_RESOURCE_PREFIX>-vm-describe.txt",
+      "sha256": "<PRIVATE_REF_00666>",
+      "bytes": 32327
+    },
+    {
+      "path": "watchover/evidence/0055-<W2_RUN_RESOURCE_PREFIX>-vm-boot-describe.txt",
+      "sha256": "<PRIVATE_REF_03435>",
+      "bytes": 1911
+    },
+    {
+      "path": "watchover/evidence/0056-install-instance-deploy-key-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0056-install-instance-deploy-key-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0056-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02335>",
+      "bytes": 31034
+    },
+    {
+      "path": "watchover/evidence/0057-install-instance-deploy-key-vm.txt",
+      "sha256": "<PRIVATE_REF_02335>",
+      "bytes": 31034
+    },
+    {
+      "path": "watchover/evidence/0058-install-instance-deploy-key.txt",
+      "sha256": "<PRIVATE_REF_03696>",
+      "bytes": 353
+    },
+    {
+      "path": "watchover/evidence/0059-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0059-upload-release-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0059-upload-release-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0059-vm-preflight.txt",
+      "sha256": "<PRIVATE_REF_03596>",
+      "bytes": 1560
+    },
+    {
+      "path": "watchover/evidence/0060-upload-release-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0061-upload-release.txt",
+      "sha256": "<PRIVATE_REF_02756>",
+      "bytes": 995
+    },
+    {
+      "path": "watchover/evidence/0062-bootstrap-application-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0062-bootstrap-application-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0062-release-checksum.txt",
+      "sha256": "<PRIVATE_REF_03550>",
+      "bytes": 1166
+    },
+    {
+      "path": "watchover/evidence/0063-bootstrap-application-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0064-application-status.txt",
+      "sha256": "<PRIVATE_REF_01136>",
+      "bytes": 1388
+    },
+    {
+      "path": "watchover/evidence/0064-bootstrap-application.txt",
+      "sha256": "<PRIVATE_REF_03675>",
+      "bytes": 69700
+    },
+    {
+      "path": "watchover/evidence/0064-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0065-application-status.txt",
+      "sha256": "<PRIVATE_REF_03545>",
+      "bytes": 17602
+    },
+    {
+      "path": "watchover/evidence/0065-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0065-upload-admin-readiness-check-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0065-upload-admin-readiness-check-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0066-upload-admin-readiness-check-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0067-upload-admin-readiness-check.txt",
+      "sha256": "<PRIVATE_REF_02626>",
+      "bytes": 514
+    },
+    {
+      "path": "watchover/evidence/0068-reserve-admin-after-readiness-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0068-reserve-admin-after-readiness-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0069-reserve-admin-after-readiness-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0070-reserve-admin-after-readiness.txt",
+      "sha256": "<PRIVATE_REF_02142>",
+      "bytes": 1074
+    },
+    {
+      "path": "watchover/evidence/0072-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0072-upload-acceptance-check-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0072-upload-acceptance-check-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0073-upload-acceptance-check-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0074-upload-acceptance-check.txt",
+      "sha256": "<PRIVATE_REF_03677>",
+      "bytes": 508
+    },
+    {
+      "path": "watchover/evidence/0075-acceptance-before-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0075-acceptance-before-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0076-acceptance-before-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0077-acceptance-before.txt",
+      "sha256": "<PRIVATE_REF_01223>",
+      "bytes": 1351
+    },
+    {
+      "path": "watchover/evidence/0079-open-public-web-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0079-open-public-web-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0079-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0082-open-public-web-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0082-open-public-web-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0082-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0083-open-public-web-network.txt",
+      "sha256": "<PRIVATE_REF_02934>",
+      "bytes": 969
+    },
+    {
+      "path": "watchover/evidence/0083-open-public-web-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0084-open-public-web.txt",
+      "sha256": "<PRIVATE_REF_03153>",
+      "bytes": 1229
+    },
+    {
+      "path": "watchover/evidence/0085-<W2_RUN_RESOURCE_PREFIX>-web-describe.txt",
+      "sha256": "<PRIVATE_REF_02864>",
+      "bytes": 904
+    },
+    {
+      "path": "watchover/evidence/0086-reboot-vm-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0086-reboot-vm-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0086-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0087-reboot-vm-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0088-reboot-vm.txt",
+      "sha256": "<PRIVATE_REF_03608>",
+      "bytes": 283
+    },
+    {
+      "path": "watchover/evidence/0090-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0090-upload-acceptance-check-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0090-upload-acceptance-check-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0091-upload-acceptance-check-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0092-upload-acceptance-check.txt",
+      "sha256": "<PRIVATE_REF_03677>",
+      "bytes": 508
+    },
+    {
+      "path": "watchover/evidence/0093-acceptance-after-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0093-acceptance-after-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0094-acceptance-after-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0095-acceptance-after.txt",
+      "sha256": "<PRIVATE_REF_03258>",
+      "bytes": 902
+    },
+    {
+      "path": "watchover/evidence/0097-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0097-ui-local-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0097-ui-local-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0098-ui-local-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0099-ui-local.txt",
+      "sha256": "<PRIVATE_REF_01684>",
+      "bytes": 367
+    },
+    {
+      "path": "watchover/evidence/0101-dns-control.txt",
+      "sha256": "<PRIVATE_REF_01961>",
+      "bytes": 597
+    },
+    {
+      "path": "watchover/evidence/0101-dns-pending.txt",
+      "sha256": "<PRIVATE_REF_01432>",
+      "bytes": 652
+    },
+    {
+      "path": "watchover/evidence/0102-public-http.txt",
+      "sha256": "<PRIVATE_REF_02358>",
+      "bytes": 125
+    },
+    {
+      "path": "watchover/evidence/0105-application-status.txt",
+      "sha256": "<PRIVATE_REF_01294>",
+      "bytes": 16614
+    },
+    {
+      "path": "watchover/evidence/0105-dns-before-certificate-retry.txt",
+      "sha256": "<PRIVATE_REF_01834>",
+      "bytes": 584
+    },
+    {
+      "path": "watchover/evidence/0105-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0105-retry-certificate-after-dns-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0105-retry-certificate-after-dns-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0106-retry-certificate-after-dns-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0107-retry-certificate-after-dns.txt",
+      "sha256": "<PRIVATE_REF_02145>",
+      "bytes": 619
+    },
+    {
+      "path": "watchover/evidence/0108-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0108-ui-before-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0108-ui-before-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0109-ui-before-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0110-ui-before.txt",
+      "sha256": "<PRIVATE_REF_02054>",
+      "bytes": 329
+    },
+    {
+      "path": "watchover/evidence/0112-public-dns-1.1.1.1.txt",
+      "sha256": "<PRIVATE_REF_03249>",
+      "bytes": 584
+    },
+    {
+      "path": "watchover/evidence/0113-public-dns-<DNS_RESOLVER_A>.txt",
+      "sha256": "<PRIVATE_REF_01632>",
+      "bytes": 682
+    },
+    {
+      "path": "watchover/evidence/0114-tls-certificate.txt",
+      "sha256": "<PRIVATE_REF_03288>",
+      "bytes": 316
+    },
+    {
+      "path": "watchover/evidence/0114-trusted-https.txt",
+      "sha256": "<PRIVATE_REF_02377>",
+      "bytes": 432
+    },
+    {
+      "path": "watchover/evidence/0116-reboot-vm-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0116-reboot-vm-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0116-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0117-reboot-vm-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0118-reboot-vm.txt",
+      "sha256": "<PRIVATE_REF_03608>",
+      "bytes": 283
+    },
+    {
+      "path": "watchover/evidence/0119-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0119-ui-after-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0119-ui-after-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0120-ui-after-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0121-ui-after.txt",
+      "sha256": "<PRIVATE_REF_03243>",
+      "bytes": 327
+    },
+    {
+      "path": "watchover/evidence/0123-final-runtime.txt",
+      "sha256": "<PRIVATE_REF_01094>",
+      "bytes": 2967
+    },
+    {
+      "path": "watchover/evidence/0123-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0128-resume-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0128-upload-acceptance-check-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0128-upload-acceptance-check-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0129-upload-acceptance-check-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0130-upload-acceptance-check.txt",
+      "sha256": "<PRIVATE_REF_03677>",
+      "bytes": 508
+    },
+    {
+      "path": "watchover/evidence/0131-acceptance-after-identity.txt",
+      "sha256": "<PRIVATE_REF_01941>",
+      "bytes": 177
+    },
+    {
+      "path": "watchover/evidence/0131-acceptance-after-target.txt",
+      "sha256": "<PRIVATE_REF_02519>",
+      "bytes": 334
+    },
+    {
+      "path": "watchover/evidence/0132-acceptance-after-vm.txt",
+      "sha256": "<PRIVATE_REF_02465>",
+      "bytes": 31226
+    },
+    {
+      "path": "watchover/evidence/0133-acceptance-after.txt",
+      "sha256": "<PRIVATE_REF_01392>",
+      "bytes": 902
+    },
+    {
+      "path": "watchover/evidence/0135-public-dns-1.1.1.1.txt",
+      "sha256": "<PRIVATE_REF_02357>",
+      "bytes": 583
+    },
+    {
+      "path": "watchover/evidence/0136-public-dns-<DNS_RESOLVER_A>.txt",
+      "sha256": "<PRIVATE_REF_03091>",
+      "bytes": 684
+    },
+    {
+      "path": "watchover/evidence/0137-tls-certificate.txt",
+      "sha256": "<PRIVATE_REF_03288>",
+      "bytes": 316
+    },
+    {
+      "path": "watchover/evidence/0137-trusted-https.txt",
+      "sha256": "<PRIVATE_REF_03221>",
+      "bytes": 432
+    }
+  ],
+  "scope": "Runtime state/events/evidence and deployment notes captured privately; not a complete archived run workspace",
+  "raw_credentials_downstream": "NOT_DELIVERED"
+}

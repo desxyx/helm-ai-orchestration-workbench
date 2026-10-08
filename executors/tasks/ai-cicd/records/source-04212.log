@@ -1,0 +1,15 @@
+initialized <TMP>/watchover
+--- candidate validate
+invalid: 2 problems
+- [secret] evidence/helm-values.txt line 2 (secret-assignment): possible secret (secret-assignment); the value is not shown
+- [secret] evidence/helm-values.txt line 4 (secret-assignment): possible secret (secret-assignment); the value is not shown
+secret scan self-test passed (15 patterns), 2 findings
+exit=1
+--- candidate brief
+refused: the record is not valid; no summary is shown
+2 problems
+- [secret] evidence/helm-values.txt line 2 (secret-assignment): possible secret (secret-assignment); the value is not shown
+exit=1
+--- baseline validate (same input, baseline scanner via baseline checkout)
+valid: all checks passed; secret scan self-test passed (11 patterns), 0 findings
+exit=0

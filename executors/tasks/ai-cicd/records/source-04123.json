@@ -1,0 +1,20 @@
+{
+  "artifact_class": "SUPPLEMENTAL_HC_ADMINISTRATION",
+  "run_id": "RUN-W2B",
+  "point": "HC-TERM",
+  "prepared_at": "2026-10-05T21:42:37+11:00",
+  "frozen_timing_compliant": false,
+  "cause": "Prompt administered after Owner authorized password retrieval and performed website/Console/restart checks; earlier terminal-window10min answer lock absent",
+  "frozen_HC_status": "INVALID_FOR_HC / no retrospective frozen HC score",
+  "supplemental_answers": "LOCKED",
+  "questions_unchanged": true,
+  "confidence_required": [
+    "SURE",
+    "UNSURE",
+    "UNKNOWN"
+  ],
+  "consultation_from_now": "Current Deployer chat and WatchOver view only; no additional Console/AI clarification before supplemental answer lock",
+  "score_by_Operations Coordinator": false,
+  "primary_acceptance_unaffected": true,
+  "answer_lock_record": "hc_custody/HC_TERM_SUPPLEMENTAL_LOCK_METADATA.json"
+}

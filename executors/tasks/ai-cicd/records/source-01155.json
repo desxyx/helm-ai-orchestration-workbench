@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-10-05T15:00:13+11:00",
+  "evidence_type": "OWNER_SCREENSHOT_AFTER_REPORTED_MANUAL_RESTART",
+  "matching_display_fields": {
+    "service": "WatchOver",
+    "environment": "Development",
+    "resource": "<W2_RUN_RESOURCE_PREFIX>-deployment-verification",
+    "event": "DeploymentPersistenceCheck",
+    "last_receive_time_displayed": "Mon 5 Oct 14:07",
+    "severity": "Informational",
+    "status": "Open"
+  },
+  "post_restart_list_count": 1,
+  "observation": "Pre-existing verification alert remains visible after Owner-reported restart; displayed fields match earlier details screenshot",
+  "identity_limit": "Post-restart list screenshot does not display Alert ID; exact ID equality is not inferred",
+  "restart_limit": "Provider operation, precise restart time and guest boot/process evidence not independently captured",
+  "formal_acceptance": "Supports manual persistence observation; no full frozen A5 PASS assigned",
+  "screenshots": [
+    {
+      "locator": "OWNER_SCREENSHOTS/alert_before_restart.png",
+      "sha256": "<PRIVATE_REF_02775>",
+      "status": "PRESERVED_UNCHANGED"
+    },
+    {
+      "locator": "OWNER_SCREENSHOTS/alert_after_restart.png",
+      "sha256": "<PRIVATE_REF_02475>",
+      "status": "PRESERVED_UNCHANGED"
+    }
+  ],
+  "credentials": "Not included"
+}

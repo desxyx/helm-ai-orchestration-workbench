@@ -1,0 +1,638 @@
+{
+  "stage": "scan",
+  "primary_verdict": "PASS_NO_REAL_SECRET_MATCHES",
+  "primary_scan": {
+    "canaryFound": true,
+    "matches": [],
+    "files_scanned": 965,
+    "skipped": []
+  },
+  "synthetic_custody_events": {
+    "registered": [],
+    "candidates": [
+      {
+        "file": "S1_NATIVE_PRIVATE.jsonl",
+        "pattern": "password_assignment",
+        "count": 60,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "S1_NATIVE_PRIVATE.jsonl",
+        "pattern": "url_userinfo_password",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "S2_NATIVE_PRIVATE.jsonl",
+        "pattern": "password_assignment",
+        "count": 24,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "S2_NATIVE_PRIVATE.jsonl",
+        "pattern": "url_userinfo_password",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/acceptance.py",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/bootstrap.sh",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/reserve_admin.py",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/verify-ui.mjs",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/admin-legacy.32dee267.js",
+        "pattern": "password_assignment",
+        "count": 3,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/admin-legacy.32dee267.js.map",
+        "pattern": "password_assignment",
+        "count": 5,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/admin.c17c30ad.js",
+        "pattern": "password_assignment",
+        "count": 3,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/admin.c17c30ad.js.map",
+        "pattern": "password_assignment",
+        "count": 5,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/app-legacy.8a8a744a.js.map",
+        "pattern": "password_assignment",
+        "count": 17,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/app.d371eacf.js",
+        "pattern": "password_assignment",
+        "count": 15,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/app.d371eacf.js.map",
+        "pattern": "password_assignment",
+        "count": 17,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/auth-legacy.34d5c94a.js",
+        "pattern": "password_assignment",
+        "count": 7,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/auth-legacy.34d5c94a.js.map",
+        "pattern": "password_assignment",
+        "count": 13,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/auth.04107fd9.js",
+        "pattern": "password_assignment",
+        "count": 7,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/web-dist/js/auth.04107fd9.js.map",
+        "pattern": "password_assignment",
+        "count": 13,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/src/services/api/auth.service.ts",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/src/locales/de.js",
+        "pattern": "password_assignment",
+        "count": 4,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/src/locales/en.js",
+        "pattern": "password_assignment",
+        "count": 4,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/src/locales/fr.js",
+        "pattern": "password_assignment",
+        "count": 3,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/src/locales/tr.js",
+        "pattern": "password_assignment",
+        "count": 4,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/src/components/UserList.vue",
+        "pattern": "password_assignment",
+        "count": 4,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/src/components/auth/UserLogin.vue",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/src/components/auth/UserReset.vue",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/src/components/auth/UserSignup.vue",
+        "pattern": "password_assignment",
+        "count": 4,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/admin-legacy.32dee267.js",
+        "pattern": "password_assignment",
+        "count": 3,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/admin-legacy.32dee267.js.map",
+        "pattern": "password_assignment",
+        "count": 5,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/admin.c17c30ad.js",
+        "pattern": "password_assignment",
+        "count": 3,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/admin.c17c30ad.js.map",
+        "pattern": "password_assignment",
+        "count": 5,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/app-legacy.8a8a744a.js.map",
+        "pattern": "password_assignment",
+        "count": 17,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/app.d371eacf.js",
+        "pattern": "password_assignment",
+        "count": 15,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/app.d371eacf.js.map",
+        "pattern": "password_assignment",
+        "count": 17,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/auth-legacy.34d5c94a.js",
+        "pattern": "password_assignment",
+        "count": 7,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/auth-legacy.34d5c94a.js.map",
+        "pattern": "password_assignment",
+        "count": 13,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/auth.04107fd9.js",
+        "pattern": "password_assignment",
+        "count": 7,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta-webui/dist/js/auth.04107fd9.js.map",
+        "pattern": "password_assignment",
+        "count": 13,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/README.md",
+        "pattern": "url_userinfo_password",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/docker-compose.yml",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/docker-compose.yml",
+        "pattern": "url_userinfo_password",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/tests/test_auth.py",
+        "pattern": "password_assignment",
+        "count": 3,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/tests/test_customers.py",
+        "pattern": "password_assignment",
+        "count": 4,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/tests/test_forwarder.py",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/tests/test_groups.py",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/tests/test_users.py",
+        "pattern": "password_assignment",
+        "count": 5,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/tests/integration/test_auth_ldap.py",
+        "pattern": "password_assignment",
+        "count": 4,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/tests/integration/fixtures/docker-compose.yml",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/tests/integration/fixtures/docker-compose.yml",
+        "pattern": "url_userinfo_password",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/alerta/commands.py",
+        "pattern": "password_assignment",
+        "count": 4,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/alerta/settings.py",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/alerta/utils/mailer.py",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/alerta/models/user.py",
+        "pattern": "password_assignment",
+        "count": 5,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/alerta/database/backends/mongodb/base.py",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/alerta/auth/basic.py",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/alerta/auth/basic_ldap.py",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/alerta/auth/decorators.py",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/alerta/auth/utils.py",
+        "pattern": "password_assignment",
+        "count": 3,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/.github/workflows/performance.yml",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/.github/workflows/performance.yml",
+        "pattern": "url_userinfo_password",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/.github/workflows/release.yml",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/.github/workflows/release.yml",
+        "pattern": "url_userinfo_password",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/.github/workflows/tests.yml",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/source/alerta/.github/workflows/tests.yml",
+        "pattern": "url_userinfo_password",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/bootstrap.sh",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/web-dist/js/admin-legacy.32dee267.js",
+        "pattern": "password_assignment",
+        "count": 3,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/web-dist/js/admin-legacy.32dee267.js.map",
+        "pattern": "password_assignment",
+        "count": 5,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/web-dist/js/admin.c17c30ad.js",
+        "pattern": "password_assignment",
+        "count": 3,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/web-dist/js/admin.c17c30ad.js.map",
+        "pattern": "password_assignment",
+        "count": 5,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/web-dist/js/app-legacy.8a8a744a.js.map",
+        "pattern": "password_assignment",
+        "count": 17,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/web-dist/js/app.d371eacf.js",
+        "pattern": "password_assignment",
+        "count": 15,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/web-dist/js/app.d371eacf.js.map",
+        "pattern": "password_assignment",
+        "count": 17,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/web-dist/js/auth-legacy.34d5c94a.js",
+        "pattern": "password_assignment",
+        "count": 7,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/web-dist/js/auth-legacy.34d5c94a.js.map",
+        "pattern": "password_assignment",
+        "count": 13,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/web-dist/js/auth.04107fd9.js",
+        "pattern": "password_assignment",
+        "count": 7,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/web-dist/js/auth.04107fd9.js.map",
+        "pattern": "password_assignment",
+        "count": 13,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/README.md",
+        "pattern": "url_userinfo_password",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/docker-compose.yml",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/docker-compose.yml",
+        "pattern": "url_userinfo_password",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/tests/test_auth.py",
+        "pattern": "password_assignment",
+        "count": 3,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/tests/test_customers.py",
+        "pattern": "password_assignment",
+        "count": 4,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/tests/test_forwarder.py",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/tests/test_groups.py",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/tests/test_users.py",
+        "pattern": "password_assignment",
+        "count": 5,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/tests/integration/test_auth_ldap.py",
+        "pattern": "password_assignment",
+        "count": 4,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/tests/integration/fixtures/docker-compose.yml",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/tests/integration/fixtures/docker-compose.yml",
+        "pattern": "url_userinfo_password",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/alerta/commands.py",
+        "pattern": "password_assignment",
+        "count": 4,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/alerta/settings.py",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/alerta/utils/mailer.py",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/alerta/models/user.py",
+        "pattern": "password_assignment",
+        "count": 5,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/alerta/database/backends/mongodb/base.py",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/alerta/auth/basic.py",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/alerta/auth/basic_ldap.py",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/alerta/auth/decorators.py",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/alerta/auth/utils.py",
+        "pattern": "password_assignment",
+        "count": 3,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/.github/workflows/performance.yml",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/.github/workflows/performance.yml",
+        "pattern": "url_userinfo_password",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/.github/workflows/release.yml",
+        "pattern": "password_assignment",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/.github/workflows/release.yml",
+        "pattern": "url_userinfo_password",
+        "count": 1,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/.github/workflows/tests.yml",
+        "pattern": "password_assignment",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      },
+      {
+        "file": "WORKSPACE_TEXT/EXPANDED_RELEASE/source/alerta/.github/workflows/tests.yml",
+        "pattern": "url_userinfo_password",
+        "count": 2,
+        "class": "CREDENTIAL_CANDIDATE_UNCLASSIFIED"
+      }
+    ],
+    "files_scanned": 964,
+    "skipped": []
+  },
+  "registry_item_names": [],
+  "run_id": "RUN-W2B",
+  "timestamp": "2026-10-05T11:35:52.823Z"
+}

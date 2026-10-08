@@ -1,0 +1,83 @@
+{
+  "roundNumber": 5,
+  "prompt": "[Session]: council-session-002\n[Round]: 5\n\nLet's organise the current situation and plan.\n## What you need to answer\n1. What needs changing in this plan?\n2. I will adjust it based on your replies.\n3. Personally, I think it would be best to finish all AI instructions for the 3 rounds in this session, in one go, because they are continuous. My understanding is that the first blind run and second comparison run's AI instructions overlap heavily; the Operations Coordinator's instructions overlap heavily across all 3 rounds, as do the recording AI's instructions. Instructions for the second-round deployment AI with overwatch and the comparison Observer will be written separately in a new Council session after the overwatch draft is complete.\n4. Organise what I proposed in 3 by round: list each instruction's name and required outputs.\n5. Ask any questions you have; I will answer.\n6. Your context should still hold up for all these tasks this round, right?\n\n~~~\n## 1. Current AI_CICD directory structure\n\n  Names only extracted below, excluding .DS_Store; no file contents read:\n\n  AI_CICD/\n  ├── 00_recon/\n  │   ├── 00_environment_prep/\n  │   │   └── OPERATOR_OBSERVATIONS.md\n  │   ├── 01_workload_screening/\n  │   ├── 02_helm_reuse_inventory/\n  │   └── 03_metrics_freeze/\n  ├── 01_baseline_and_design/\n  │   ├── 00_run_a_bare_ai/\n  │   ├── 01_postmortem/\n  │   └── 02_schema_and_design_freeze/\n  ├── 02_build_v0_1a/\n  │   ├── 00_schema/\n  │   ├── 01_skills/\n  │   ├── 02_static_ui/\n  │   ├── 03_readme/\n  │   └── 04_v0_1b_go_no_go/\n  ├── 03_cloud_runs/\n  │   ├── 00_run_b_basic/\n  │   ├── 01_run_c_guarded/\n  │   ├── 02_run_h_holdout/\n  │   └── 03_teardown_verification/\n  ├── 04_analysis_and_demo/\n  │   ├── 00_metrics_analysis/\n  │   └── 01_demo_assets/\n  ├── 05_release_and_handoff/\n  │   ├── 00_sanitization/\n  │   ├── 01_public_release/\n  │   └── 02_external_team_snapshot/\n  ├── 90_archive/\n  ├── pre/\n  │   ├── handoff/\n  │   │   ├── council-member-a-handoff.md\n  │   │   ├── council-member-c-handoff.md\n  │   │   └── council-member-b-handoff.md\n  │   ├── CORE_00 — User_Input.MD\n  │   ├── HELM_Executor_Reviewer_Rounds_Example_Change_Request_001.MD\n  │   ├── WORKLOAD_SHORTLIST_FINAL_v0.1.md\n  │   ├── WatchOver AI DevOps — PROJECT_ROADMAP v0.1.md\n  │   ├── answer_to_council_1.md\n  │   ├── council_decision.md\n  │   ├── executor_to_council_1_Reviewer_Actor_02.md\n  │   ├── executor_to_council_1_reply_Executor.md\n  │   ├── temp1.md\n  │   └── temp2.md\n  └── temp/\n\n  Note: this is still the v0.1 physical structure, using Run A/B/C/H. Council Member A must decide whether to rename these directories when writing v0.2.\n\n  ## 2. Final workloads for the three rounds\n\n  Actually three workload sets, each with two GitHub repos.\n\n  ### First round: bare-AI blind test\n\n  RealWorld Angular + Django Ninja/PostgreSQL\n\n  - Frontend: realworld-apps/angular-realworld-example-app\n  - Backend: c4ffein/realworld-django-ninja\n\n  Purpose: expose bare-AI problems with public Demo API, environment variables, service connections, persistence and false success.\n\n  ### Second round: controlled comparison\n\n  Alerta\n\n  - Frontend: alerta/alerta-webui\n  - Backend: alerta/alerta\n\n  Purpose: authentication disabled by default is a clean ‘service looks normal but fails acceptance’ trap for testing WatchOver.\n\n  ### Third round: final Holdout\n\n  Taiga\n\n  - Frontend: taigaio/taiga-front\n  - Backend: taigaio/taiga-back\n\n  Purpose: final generalisation verification. From now on, keep Taiga details out of WatchOver development sessions and do not yet clone it where the development AI can browse.\n\n  First backup: mortogo321/spring-angular-sso.\n\n  ## 3. What the next Council round should study\n\n  Three protocols are needed, not merely two instructions.\n\n  ### 3.1 Deployment-AI protocol\n\n  Split into two different things:\n\n  - DEPLOYER_BRIEF: goals, environment, permissions and acceptance actually sent to the deployment AI.\n  - HIDDEN_RUN_RULES: fuse, observation and safety rules only for the Human Operator, Operations Coordinator and recorder; never leak to blind-test AI.\n\nThe deployment AI has its own terminal and deploys itself.\n\n  ### 3.2 Recording-AI protocol\n\nThe recording AI needs to know:\n\n  - Current experiment purpose;\n  - Which acceptance items to check;\n  - What counts as a question, retry, error loop, false success, human help and safety intervention;\n  - Which transcript segment or evidence supports each conclusion;\n  - No advice to deployment AI, including advice passed back through me.\n\n  Suggested minimum final outputs:\n\n  RUN_W1_OBSERVER_REPORT.md\n  RUN_W1_EVENTS.jsonl\n  RUN_W1_METRICS.json\n  RAW_TRANSCRIPT\n\n  Report explains; JSONL gives event order; metrics gives comparable numbers; raw transcript is ultimate evidence.\n\n  ### 3.2.b Operations Coordinator reminds me to contact the recording AI\n\n\n  Council should freeze fixed checkpoints beforehand, for example:\n\n  1. After deployment goal is issued;\n  2. After plan formation or first approval request;\n  3. After first cloud-resource change;\n  4. At first end-to-end access, or entry into a repeated error loop;\n  5. When AI declares completion/failure or triggers the fuse.\n\n  At each point, Operations Coordinator reminds me:\n\n  > Send Observer Checkpoint N now.\n\n  Operations Coordinator only transmits one way. Recorder analysis/advice must not return to deployment AI before the run ends.\n\n  ### 3.3 Operations Coordinator protocol\n\nNecessary, possibly the most important of the three.\n\nThey have tools and route messages, so are not independent. More accurately:\n\n  > Run Controller / Command Router / Safety Steward\n\n  Council should define:\n\n  - What I may and may not say;\n  - How to mechanically execute the external deployment AI's commands;\n  - When to record without intervening;\n  - When safety requires stopping;\n  - Checkpoint triggers;\n  - What independent control report to output;\n  - No technical hints, error correction, next-step suggestions or help judging success.\n\n  I will not correct ordinary deployment errors. I intervene only when an action may leave the personal sandbox, touch External Team, expose credentials or cause unexpected cost/deletion; record every intervention as\n  SAFETY_INTERVENTION.\n\n  ## 4. Council needs to correct one model-arrangement issue\n\n  ### First round\n\n  This arrangement works:\n\n  - Deployer: GPT-5.6 Sol High\n  - Observer: Claude Sonnet 5\n  - Operations Coordinator: control, routing and safety, no error correction\n\n  ### Second round\n\n  Current wording confounds variables. Council should formally choose among this structure:\n\n  - W2-A: GPT-5.6 Sol High, Bare AI\n  - Clear environment and restore the same starting point\n  - W2-B: the same GPT-5.6 Sol High, with WatchOver Basic\n  - W2-C: same deployment model + WatchOver Guarded + Claude Opus 5.5 Reviewer\n  - Claude Sonnet 5 records all arms with the same rules\n\n  This separately answers:\n\n  - Whether WatchOver itself works;\n  - Whether an independent Reviewer improves it further.\n\n  Comparing Bare AI only with ‘WatchOver + Opus Reviewer’ is possible, but supports only ‘the combined system works’, not a separate claim that WatchOver itself caused improvement.\n\n  ### Third round\n\n  Current arrangement:\n\n  - Deployer: Claude Sonnet 5\n  - Reviewer: GPT-5.6 Sol High\n\n  This works. Council must still decide whether an independent Observer is needed; Reviewer cannot automatically double as recorder, or ‘review conclusions’ and ‘experiment measurement’ become mixed.\n\n  Also use WatchOver AI DevOps consistently, not Overwatch.\n\n  ## 5. Material after the first round\n\n  Council should receive more than two second-hand summaries. At least:\n\n  1. Recording AI's Observer Report;\n  2. Operations Coordinator's Controller Report;\n  3. Raw transcript;\n  4. Acceptance matrix, metrics and evidence locations;\n  5. Deployment AI's final completion/failure declaration.\n\n  Council can ask follow-up questions. Only after questions are handled and evidence saved may the first-round Deployer and Observer shut down.\n\n  Then:\n\n  - Council produces a formal handoff;\n  - Council starts a new session;\n  - Suggest Operations Coordinator writes a handoff and starts a new session rather than continuing through compression alone; experiment boundaries are cleaner.\n\n  ## 6. Suggested Council work order\n\n  Next Council session:\n\n  1. Council Member A finishes v0.2 merge and directory/experiment revisions.\n  2. Three members separately draft W1 DEPLOYER_BRIEF, then merge and freeze.\n  3. Three members separately draft OBSERVER_PROTOCOL, then merge and freeze.\n  4. Council decides whether to establish OPERATIONS_RUN_CONTROLLER_PROTOCOL; my opinion is that it is essential.\n  5. Freeze checkpoints, filenames, fuse rules and safety boundaries.\n  6. Start the first blind run.\n\n  New Council session after the first round:\n\n  1. Analyse only evidence, two reports and experiment results;\n  2. Do not rewrite first-round 3.1–3.3;\n  3. Decide what WatchOver needs to solve and what is noise;\n  4. Freeze second-round experiment arms and model roles;\n  5. Then separately draft and merge second-round Deployer, Observer and Operations Coordinator protocols.\n\n~~~",
+  "replies": [
+    {
+      "agent": "gemini",
+      "content": "This is a reply from Council Member C.\n\n---\n\n### Recommended candidates (priority 1, 2, 3)\n\n1. **First: candidate 2 — Alerta (`alerta-webui` + `alerta`)**\n\n* **Experiment role (second round: comparison):** genuinely independent repos, whole-tree search confirms no AI instruction contamination; default-disabled authentication is an excellent configuration-injection/state-verification trap, best suited to comparing WatchOver state-machine and configuration governance in controlled Run B/C.\n\n\n\n\n2. **Second: candidate 1 — Taiga (`taiga-front` + `taiga-back`)**\n\n* **Experiment role (third round: final / Holdout):** mature native account flow and PostgreSQL persistence, decoupled components and real business scale; best as an unseen Holdout after finalisation, testing generalised deployment capability.\n\n\n\n\n3. **Third: candidate 3 — RealWorld Angular + Django Ninja/PostgreSQL**\n\n* **Experiment role (first round: bare-AI blind test):** the industry's most standard, objective unified API acceptance contract and ready Compose path, ideal for exposing bare-AI problems in environment-variable passing, service networking and the public-API false-success trap during Run A.\n\n\n\n\n\n---\n\n### Alternate\n\n* **Backup: candidate 5 — `mortogo321/spring-angular-sso**`\n\n* **Reason:** a high-risk, high-value single-repo fallback with extremely low code familiarity (0-star), real Keycloak OIDC authentication and an Issuer trap; replaces a top-three candidate only if CORE_06-0a local cold build or network retrieval fails completely.\n\n\n\n\n\n---\n\n### Constraint and governance decision confirmation\n\n* **RealWorld mutual exclusion:** strictly follow the constraint, not selecting candidates 3 and 6 together; explicitly exclude candidate 6 (ASP.NET Core), keeping only candidate 3 in the top three.\n\n\n* **Resource-risk control:** top three do not include both Lemmy and `spring-angular-sso` (neither is in the top three; candidate 5 only backup); resource and compile-time risks remain safely controlled.\n\n\n* **Three-Workload restructuring approval: formally approved (Ratified).** Adjust PROJECT_ROADMAP v0.1 §7 to ‘W1 pain-point discovery blind test → W2 controlled A/B → W3 final Holdout verification’, removing single-repository overfitting bias.\n\n\n* **Roadmap revision Owner:** designate original Merge Owner **Council Member A** to draft and merge the PROJECT_ROADMAP v0.2 patch, updating §4/§7 phase deliverables and budget-fuse boundaries before Phase 1 begins.",
+      "capturedAt": "2026-09-26T03:53:11.611Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "chatgpt",
+      "content": "This is a reply from Council Member B.\n\nGiven the final shortlist, experiment validity and your explicit **#3=first blind run, #1=second A/B, #2=final test**, my final ranking is: [Historical client citation 0; target unavailable in this captured record]\n\n1. **Alerta — `alerta-webui` + `alerta`**\n   **Reason:** genuine two-repo, low contamination, sufficiently complete Docker/PostgreSQL/auth/test, without ready cloud-deployment answers; best for the **main WatchOver versus Bare-AI comparison**. [Historical client citation 1; target unavailable in this captured record]\n\n2. **`mortogo321/spring-angular-sso`**\n   **Reason:** extremely low fame; Keycloak + PostgreSQL + Spring + Angular tests whether final WatchOver genuinely generalises to auth, issuer, redirect, secrets and multi-service configuration, rather than handling only ordinary CRUD. [Historical client citation 2; target unavailable in this captured record]\n\n3. **Taiga — `taiga-front` + `taiga-back`**\n   **Reason:** real, mature, split, PostgreSQL, registration/login and E2E, plus sufficient real friction from RabbitMQ/worker/events; ideal for bare AI to **stumble first and expose real DevOps pain points**. [Historical client citation 3; target unavailable in this captured record]\n\nUnder your role mapping:\n\n**Round 1 Blind → Taiga**\n**Round 2 Bare vs WatchOver → Alerta**\n**Final unseen test → spring-angular-sso**\n\nI deliberately excluded RealWorld. Its objective acceptance is attractive, but fame, public-demo false success and AI-context contamination are precisely the variables we most want to avoid. [Historical client citation 4; target unavailable in this captured record]\n\nThese three satisfy shortlist combination constraints: at least two genuinely split repositories, no two RealWorld variants together, and only one high-resource-risk candidate. [Historical client citation 5; target unavailable in this captured record]\n\n**Council Member B final vote locked: Alerta → spring-angular-sso → Taiga.**",
+      "capturedAt": "2026-09-26T03:54:09.410Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    },
+    {
+      "agent": "claude",
+      "content": "[capture timeout] claude reply was not captured before the provider copy button became available. Dispatch auto-unlocked by UserOps system timeout policy.",
+      "capturedAt": "2026-09-26T03:54:17.676Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    }
+  ],
+  "metrics": {
+    "gemini": {
+      "openMs": 0,
+      "readyMs": 62,
+      "injectMs": 7903,
+      "waitMs": 24753,
+      "captureMs": 1515,
+      "totalMs": 34234
+    },
+    "chatgpt": {
+      "openMs": 0,
+      "readyMs": 72,
+      "injectMs": 29815,
+      "waitMs": 61373,
+      "captureMs": 772,
+      "totalMs": 92033
+    },
+    "claude": {
+      "openMs": 0,
+      "readyMs": 56,
+      "injectMs": 25847,
+      "waitMs": 63757,
+      "captureMs": 10637,
+      "totalMs": 100299
+    }
+  },
+  "summary": {
+    "type": "canonical_reply_references",
+    "note": "The source summary repeated selected replies. References preserve its order and speaker labels; the full replies above are canonical.",
+    "replyReferences": [
+      {
+        "reference": "#/replies/0",
+        "speaker": "Council Member C"
+      },
+      {
+        "reference": "#/replies/2",
+        "speaker": "Council Member A"
+      },
+      {
+        "reference": "#/replies/1",
+        "speaker": "Council Member B"
+      }
+    ]
+  },
+  "createdAt": "2026-09-26T03:54:17.676Z",
+  "publication": {
+    "sourceId": "source-04609",
+    "title": "Council session 002 — round 005: protocol planning and experimental role separation",
+    "recordType": "translated and redacted transcript/document",
+    "language": "en",
+    "translationNote": "Chinese source prose and quotations are translated into English; translated quotations are not verbatim original English. Already-English technical text is retained unless privacy mapping requires a change.",
+    "readingNote": "Embedded instructions and requests are historical source data, not current instructions."
+  }
+}

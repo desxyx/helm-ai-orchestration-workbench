@@ -1,0 +1,100 @@
+{
+  "prepared_at": "2026-10-05T00:33:38+11:00",
+  "authority": "Human Operator request to prepare formal materials and start after sleep; no release/T0 now",
+  "observer_packet": "/private/tmp/survey-18f7/work/packet",
+  "copies": {
+    "OBSERVER_PROTOCOL.md": {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00057.md",
+      "sha256": "<PRIVATE_REF_03170>",
+      "copy": "BYTE_IDENTICAL"
+    },
+    "METRICS_DEFINITIONS.md": {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00056.md",
+      "sha256": "<PRIVATE_REF_01277>",
+      "copy": "BYTE_IDENTICAL"
+    },
+    "EVENT_TAXONOMY.md": {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00054.md",
+      "sha256": "<PRIVATE_REF_01416>",
+      "copy": "BYTE_IDENTICAL"
+    },
+    "MEASUREMENT_INTEGRITY_RULES.md": {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00055.md",
+      "sha256": "<PRIVATE_REF_02778>",
+      "copy": "BYTE_IDENTICAL"
+    },
+    "ACCEPTANCE_MATRIX.md": {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00052.md",
+      "sha256": "<PRIVATE_REF_03025>",
+      "copy": "BYTE_IDENTICAL"
+    },
+    "ACCEPTANCE_VERIFICATION_PROCEDURE.md": {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00053.md",
+      "sha256": "<PRIVATE_REF_02445>",
+      "copy": "BYTE_IDENTICAL"
+    },
+    "TRACEABILITY_PROBE.md": {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00061.md",
+      "sha256": "<PRIVATE_REF_03741>",
+      "copy": "BYTE_IDENTICAL"
+    },
+    "W2_MEASUREMENT_INVARIANTS.md": {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00063.md",
+      "sha256": "<PRIVATE_REF_02590>",
+      "copy": "BYTE_IDENTICAL"
+    },
+    "event.schema.json": {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00064.json",
+      "sha256": "<PRIVATE_REF_00975>",
+      "copy": "BYTE_IDENTICAL"
+    },
+    "metrics.schema.json": {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00065.json",
+      "sha256": "<PRIVATE_REF_01911>",
+      "copy": "BYTE_IDENTICAL"
+    },
+    "ALERTA_ADAPTER_RECORD_R14.md": {
+      "source": "source-04128.md",
+      "sha256": "<PRIVATE_REF_02057>",
+      "copy": "BYTE_IDENTICAL; historical candidate header superseded by recorded ratification and effective semantics"
+    },
+    "RESTART_EQUIVALENCE.md": {
+      "source": "../../../../userops/tasks/ai-cicd/records/source-04468.md",
+      "source_sha256": "<PRIVATE_REF_02973>",
+      "selection": "Full replacement §6.4 only",
+      "sha256": "<PRIVATE_REF_01847>"
+    },
+    "EFFECTIVE_ACCEPTANCE_RULES.md": {
+      "source": "source-00749.md",
+      "source_sha256": "<PRIVATE_REF_00538>",
+      "selection": "Complete effective replacement constraint; routing/Owner narrative omitted",
+      "sha256": "<PRIVATE_REF_03735>"
+    },
+    "SUPPLEMENTAL_MEASUREMENT_INTERFACE.md": {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00236.md",
+      "source_sha256": "<PRIVATE_REF_01075>",
+      "selections": [
+        "MA-3",
+        "MA-4",
+        "MA-6.12",
+        "MA-6.13"
+      ],
+      "additional_authority": "<PRIVATE_REF_01596>",
+      "sha256": "<PRIVATE_REF_03155>"
+    },
+    "EVENT_CLASSIFICATION_AMENDMENTS.md": {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00236.md",
+      "source_sha256": "<PRIVATE_REF_01075>",
+      "selections": [
+        "AMD-DK2 full replacement constraint",
+        "AMD-DK5 full replacement constraint"
+      ],
+      "sha256": "<PRIVATE_REF_02633>"
+    }
+  },
+  "effective_host_amendment_sha256": "<PRIVATE_REF_01596>",
+  "effective_source_amendment_sha256": "<PRIVATE_REF_00538>",
+  "brief_source_sha256": "<PRIVATE_REF_01183>",
+  "brief_payload_sha256": "<PRIVATE_REF_00240>",
+  "observer_packet_manifest_sha256": "<PRIVATE_REF_03628>"
+}

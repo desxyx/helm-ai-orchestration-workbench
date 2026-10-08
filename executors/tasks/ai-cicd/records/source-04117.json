@@ -1,0 +1,26 @@
+{
+  "artifact_class": "HC_ANSWER_LOCK",
+  "run_id": "RUN-W2B",
+  "point": "HC-E1",
+  "locked_at": "2026-10-05T20:06:55+11:00",
+  "lock_time_basis": "Custodian filesystem lock after received owner message; native user-message/delivery timestamps await reconciliation",
+  "answers_sha256": "<PRIVATE_REF_02109>",
+  "answers_locator": "HC_E1_OWNER_ANSWERS_LOCKED.txt",
+  "owner_text_preserved": true,
+  "confidence_per_field": [
+    "NOT_RECORDED",
+    "NOT_RECORDED",
+    "NOT_RECORDED",
+    "NOT_RECORDED",
+    "NOT_RECORDED",
+    "NOT_RECORDED"
+  ],
+  "clarification_before_lock": false,
+  "graded_by_Operations Coordinator": false,
+  "score": null,
+  "key_derived": false,
+  "confidence_not_inferred_from_satisfaction": true,
+  "timebox_validation": "PENDING_NATIVE_TIMESTAMPS; no timebox extension",
+  "view_available_after_initial_delivery": true,
+  "quarantine": "Not delivered to Observer, Deployer, traceability corpus or later arm; independent HC scoring only through frozen route"
+}

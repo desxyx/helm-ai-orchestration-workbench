@@ -1,0 +1,22 @@
+$ gcloud compute addresses|firewall-rules|disks|instances|resource-policies list; operations list --limit 10 (read-only, on resume)
+# run at 2026-10-06T12:49:59.000Z
+--- addresses
+NAME      ADDRESS/RANGE  TYPE      PURPOSE  NETWORK  REGION                SUBNET  STATUS
+<RUN_STATIC_IP>  <IP_ADDRESS_115>  EXTERNAL                    australia-southeast1          RESERVED
+--- firewall-rules
+NAME                    SOURCE_RANGES  ALLOW                         TARGET_TAGS
+default-allow-icmp      0.0.0.0/0      icmp
+default-allow-internal  <IP_ADDRESS_004>/9   tcp:0-65535,udp:0-65535,icmp
+default-allow-rdp       0.0.0.0/0      tcp:3389
+default-allow-ssh       0.0.0.0/0      tcp:22
+--- disks
+Listed 0 items.
+--- instances
+Listed 0 items.
+--- resource-policies
+Listed 0 items.
+--- recent operations
+TYPE                                        TARGET                      STATUS  TIMESTAMP
+insert                                      <RUN_STATIC_IP>                    DONE    2026-10-06T05:35:52.493-07:00
+compute.projects.setCommonInstanceMetadata  <CLOUD_PROJECT>  DONE    2026-10-05T05:51:18.825-07:00
+compute.projects.setCommonInstanceMetadata  <CLOUD_PROJECT>  DONE    2026-10-05T05:51:17.414-07:00

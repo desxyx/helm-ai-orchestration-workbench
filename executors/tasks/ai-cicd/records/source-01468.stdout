@@ -1,0 +1,19 @@
+[
+  {
+    "address": "<IP_ADDRESS_113>",
+    "addressType": "EXTERNAL",
+    "creationTimestamp": "2026-10-05T02:25:00.645-07:00",
+    "description": "",
+    "id": "<NUMERIC_RESOURCE_0095>",
+    "kind": "compute#address",
+    "labelFingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+    "name": "<W2_RUN_RESOURCE_PREFIX>-ip",
+    "networkTier": "PREMIUM",
+    "region": "<PRIVATE_URL_0351>",
+    "selfLink": "<PRIVATE_URL_0346>",
+    "status": "IN_USE",
+    "users": [
+      "<PRIVATE_URL_0439>"
+    ]
+  }
+]

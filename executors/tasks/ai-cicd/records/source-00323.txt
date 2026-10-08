@@ -1,0 +1,9 @@
+$ gcloud compute firewall-rules create <RUN_FIREWALL> --network default --direction INGRESS --allow tcp:80,tcp:443,udp:443 --source-ranges 0.0.0.0/0 --target-tags taiga-web --project <CLOUD_PROJECT>
+# started 2026-10-06T12:51:01.000Z  ended 2026-10-06T12:51:11.000Z  exit 0
+--- stdout
+NAME             NETWORK  DIRECTION  PRIORITY  ALLOW                   DENY  DISABLED
+<RUN_FIREWALL>  default  INGRESS    1000      tcp:80,tcp:443,udp:443        False
+--- stderr
+Creating firewall...
+..Created [<PRIVATE_URL_0273>].
+done.

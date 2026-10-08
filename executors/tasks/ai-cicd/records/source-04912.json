@@ -1,0 +1,1680 @@
+{
+  "tool": "project-inventory",
+  "project_alias": "WATCHOVER_SANDBOX",
+  "timestamp": "2026-09-28T06:35:11.395Z",
+  "instrument_version": "experiment-control-tool/0.2.0",
+  "mode": "LIVE_READONLY",
+  "status": "PASS_PRIMARY_INSTRUMENT_AVAILABLE",
+  "query_coverage_description": "primary: Cloud Asset project-wide search; supplementary: selected service list calls for coverage diagnostics only",
+  "primary_project_wide_inventory": {
+    "instrument": "gcloud asset search-all-resources",
+    "status": "COVERED_PROJECT_WIDE",
+    "detected_count": 135,
+    "detected_resources": [
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigqueryconnection.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/datastore.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudtrace.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Instance",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/zones/us-west1-b/instances/watchover-w1",
+        "state": "RUNNING",
+        "location": "us-west1-b"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Disk",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/zones/us-west1-b/disks/watchover-w1",
+        "state": "READY",
+        "location": "us-west1-b"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Firewall",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/firewalls/watchover-w1-iap-ssh",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Firewall",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/firewalls/watchover-w1-web",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-3af32226126fcbec",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-west1/subnetworks/watchover-w1-subnet",
+        "state": null,
+        "location": "us-west1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Address",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-west1/addresses/watchover-w1-ip",
+        "state": "IN_USE",
+        "location": "us-west1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-7b226e8750ef327e",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Network",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/networks/watchover-w1-net",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Firewall",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/firewalls/default-allow-icmp",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Firewall",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/firewalls/default-allow-rdp",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Firewall",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/firewalls/default-allow-ssh",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Firewall",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/firewalls/default-allow-internal",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-0f05f462ded39f93",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-c2222bb7d57a7eae",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-fde752ba8b8ea5d6",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-d5589664b552d55e",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-b33afae6c3807a9c",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-553afcca85cb62f6",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-2f0eca40840faa2c",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-f08f869c7186280c",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-fbe0bafcf4dd4955",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-4410da301a0cfb50",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-c561386976b95782",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-9157f9d2e1200961",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-cd46e09a0cfcb4e7",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-c2170ea3162f0eba",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-fe232f342701f529",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-31480ebd671916aa",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-630a992de167740b",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-b551e2b3fe01828f",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-bb81fb37bb3a7be8",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-3b787143cdccde17",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-b45ad58dd227e1a4",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-b4345d8e8aaa6231",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-58c2046b4951baaa",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-a343f3b521225f2a",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-34b206080d98ac88",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-f6c1b9d4b3aacf6c",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-3e49dae3f8b88064",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-d7e4b568c25d0b5b",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-abe76ed5f35a0b02",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-ad9de0c26f568134",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-23b2121dde5c4c9a",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-85cb9ea0eee820f3",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-6f9b8f165e33a74e",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-457b7bd782d6c3d2",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-1d23e4ecb890f8be",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-bdaeb129f2075504",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-96742c206e16349a",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-a38e9e49402eb923",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-4f3fcc3a5d649bfc",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-a1bfe98081062a05",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-6258cc6cec765a43",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/australia-southeast2/subnetworks/default",
+        "state": null,
+        "location": "australia-southeast2"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/me-central1/subnetworks/default",
+        "state": null,
+        "location": "me-central1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/australia-southeast1/subnetworks/default",
+        "state": null,
+        "location": "australia-southeast1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-south2/subnetworks/default",
+        "state": null,
+        "location": "asia-south2"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/africa-south1/subnetworks/default",
+        "state": null,
+        "location": "africa-south1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-ba4e845273ce570e",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-west2/subnetworks/default",
+        "state": null,
+        "location": "us-west2"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-northeast1/subnetworks/default",
+        "state": null,
+        "location": "asia-northeast1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/southamerica-east1/subnetworks/default",
+        "state": null,
+        "location": "southamerica-east1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-east5/subnetworks/default",
+        "state": null,
+        "location": "us-east5"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-north2/subnetworks/default",
+        "state": null,
+        "location": "europe-north2"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west12/subnetworks/default",
+        "state": null,
+        "location": "europe-west12"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-northeast2/subnetworks/default",
+        "state": null,
+        "location": "asia-northeast2"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/northamerica-south1/subnetworks/default",
+        "state": null,
+        "location": "northamerica-south1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/northamerica-northeast2/subnetworks/default",
+        "state": null,
+        "location": "northamerica-northeast2"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west8/subnetworks/default",
+        "state": null,
+        "location": "europe-west8"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-east4/subnetworks/default",
+        "state": null,
+        "location": "us-east4"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-south1/subnetworks/default",
+        "state": null,
+        "location": "us-south1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-southeast1/subnetworks/default",
+        "state": null,
+        "location": "asia-southeast1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-southwest1/subnetworks/default",
+        "state": null,
+        "location": "europe-southwest1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-east1/subnetworks/default",
+        "state": null,
+        "location": "us-east1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west3/subnetworks/default",
+        "state": null,
+        "location": "europe-west3"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west9/subnetworks/default",
+        "state": null,
+        "location": "europe-west9"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west2/subnetworks/default",
+        "state": null,
+        "location": "europe-west2"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/me-west1/subnetworks/default",
+        "state": null,
+        "location": "me-west1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-northeast3/subnetworks/default",
+        "state": null,
+        "location": "asia-northeast3"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-south1/subnetworks/default",
+        "state": null,
+        "location": "asia-south1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-west4/subnetworks/default",
+        "state": null,
+        "location": "us-west4"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-central2/subnetworks/default",
+        "state": null,
+        "location": "europe-central2"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-southeast2/subnetworks/default",
+        "state": null,
+        "location": "asia-southeast2"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/northamerica-northeast1/subnetworks/default",
+        "state": null,
+        "location": "northamerica-northeast1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-west1/subnetworks/default",
+        "state": null,
+        "location": "us-west1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-east2/subnetworks/default",
+        "state": null,
+        "location": "asia-east2"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west4/subnetworks/default",
+        "state": null,
+        "location": "europe-west4"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/southamerica-west1/subnetworks/default",
+        "state": null,
+        "location": "southamerica-west1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west6/subnetworks/default",
+        "state": null,
+        "location": "europe-west6"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-north1/subnetworks/default",
+        "state": null,
+        "location": "europe-north1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west1/subnetworks/default",
+        "state": null,
+        "location": "europe-west1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west10/subnetworks/default",
+        "state": null,
+        "location": "europe-west10"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-west3/subnetworks/default",
+        "state": null,
+        "location": "us-west3"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-southeast3/subnetworks/default",
+        "state": null,
+        "location": "asia-southeast3"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-east1/subnetworks/default",
+        "state": null,
+        "location": "asia-east1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Subnetwork",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-central1/subnetworks/default",
+        "state": null,
+        "location": "us-central1"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Route",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-176e04ad2df0d484",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Network",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/networks/default",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "compute.googleapis.com/Project",
+        "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "iam.googleapis.com/ServiceAccount",
+        "name_alias": "//iam.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/serviceAccounts/[REDACTED:email]",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "cloudbilling.googleapis.com/ProjectBillingInfo",
+        "name_alias": "//cloudbilling.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/billingInfo",
+        "state": "ACTIVE",
+        "location": "global"
+      },
+      {
+        "asset_type": "cloudresourcemanager.googleapis.com/Project",
+        "name_alias": "//cloudresourcemanager.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]",
+        "state": "ACTIVE",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage-component.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigqueryreservation.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "logging.googleapis.com/LogSink",
+        "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/sinks/_Required",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/billingbudgets.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/servicemanagement.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/dataplex.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/logging.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/analyticshub.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquery.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "logging.googleapis.com/LogBucket",
+        "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/locations/global/buckets/_Default",
+        "state": "ACTIVE",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/apptopology.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/oslogin.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/monitoring.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerymigration.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerystorage.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/telemetry.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerydatapolicy.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/compute.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "logging.googleapis.com/LogSink",
+        "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/sinks/_Default",
+        "state": null,
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerydatatransfer.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/sql-component.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudapis.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/iap.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/dataform.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudasset.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage-api.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "serviceusage.googleapis.com/Service",
+        "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/serviceusage.googleapis.com",
+        "state": "ENABLED",
+        "location": "global"
+      },
+      {
+        "asset_type": "logging.googleapis.com/LogBucket",
+        "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/locations/global/buckets/_Required",
+        "state": "ACTIVE",
+        "location": "global"
+      }
+    ]
+  },
+  "supplementary_checks": [
+    {
+      "resource_class": "compute.googleapis.com/Instance",
+      "status": "COVERED_SUPPLEMENTARY",
+      "detected_count": 1
+    },
+    {
+      "resource_class": "storage.googleapis.com/Bucket",
+      "status": "COVERED_SUPPLEMENTARY",
+      "detected_count": 0
+    },
+    {
+      "resource_class": "sqladmin.googleapis.com/Instance",
+      "status": "API_NOT_ENABLED",
+      "detected_count": null,
+      "note": "API [sqladmin.googleapis.com] not enabled on project \n[[ALIAS:WATCHOVER_SANDBOX]]. Would you like to enable and retry (this will take\n a few minutes)? (y/N)?  \nERROR: (gcloud.sql.instances.list) [[ALIAS:PERSONAL_GCP]] does not have permission to access projects instance [[ALIAS:WATCHOVER_SANDBOX]] (or it may not exist): Cloud SQL Admin API has not been used in project [ALIAS:WATCHOVER_SANDBOX] before or it is disabled. Enable it by visiting <PRIVATE_URL_0094>.google.com/apis/api/sqlad"
+    },
+    {
+      "resource_class": "run.googleapis.com/Service",
+      "status": "API_NOT_ENABLED",
+      "detected_count": null,
+      "note": "API [run.googleapis.com] not enabled on project [[ALIAS:WATCHOVER_SANDBOX]]. \nWould you like to enable and retry (this will take a few minutes)? (y/N)?  \nERROR: (gcloud.run.services.list) PERMISSION_DENIED: Cloud Run Admin API has not been used in project [ALIAS:WATCHOVER_SANDBOX] before or it is disabled. Enable it by visiting <PRIVATE_URL_0094>.google.com/apis/api/run.googleapis.com/overview?project=[ALIAS:WATCHOVER_SANDBOX] then retry. If you enabled this API recently, wait a few m"
+    }
+  ],
+  "resource_classes_covered": [
+    "serviceusage.googleapis.com/Service",
+    "compute.googleapis.com/Instance",
+    "compute.googleapis.com/Disk",
+    "compute.googleapis.com/Firewall",
+    "compute.googleapis.com/Route",
+    "compute.googleapis.com/Subnetwork",
+    "compute.googleapis.com/Address",
+    "compute.googleapis.com/Network",
+    "compute.googleapis.com/Project",
+    "iam.googleapis.com/ServiceAccount",
+    "cloudbilling.googleapis.com/ProjectBillingInfo",
+    "cloudresourcemanager.googleapis.com/Project",
+    "logging.googleapis.com/LogSink",
+    "logging.googleapis.com/LogBucket"
+  ],
+  "detected_residuals": [
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigqueryconnection.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/datastore.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudtrace.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Instance",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/zones/us-west1-b/instances/watchover-w1",
+      "state": "RUNNING",
+      "location": "us-west1-b"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Disk",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/zones/us-west1-b/disks/watchover-w1",
+      "state": "READY",
+      "location": "us-west1-b"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Firewall",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/firewalls/watchover-w1-iap-ssh",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Firewall",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/firewalls/watchover-w1-web",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-3af32226126fcbec",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-west1/subnetworks/watchover-w1-subnet",
+      "state": null,
+      "location": "us-west1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Address",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-west1/addresses/watchover-w1-ip",
+      "state": "IN_USE",
+      "location": "us-west1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-7b226e8750ef327e",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Network",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/networks/watchover-w1-net",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Firewall",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/firewalls/default-allow-icmp",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Firewall",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/firewalls/default-allow-rdp",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Firewall",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/firewalls/default-allow-ssh",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Firewall",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/firewalls/default-allow-internal",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-0f05f462ded39f93",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-c2222bb7d57a7eae",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-fde752ba8b8ea5d6",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-d5589664b552d55e",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-b33afae6c3807a9c",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-553afcca85cb62f6",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-2f0eca40840faa2c",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-f08f869c7186280c",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-fbe0bafcf4dd4955",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-4410da301a0cfb50",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-c561386976b95782",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-9157f9d2e1200961",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-cd46e09a0cfcb4e7",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-c2170ea3162f0eba",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-fe232f342701f529",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-31480ebd671916aa",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-630a992de167740b",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-b551e2b3fe01828f",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-bb81fb37bb3a7be8",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-3b787143cdccde17",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-b45ad58dd227e1a4",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-b4345d8e8aaa6231",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-58c2046b4951baaa",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-a343f3b521225f2a",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-34b206080d98ac88",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-f6c1b9d4b3aacf6c",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-3e49dae3f8b88064",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-d7e4b568c25d0b5b",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-abe76ed5f35a0b02",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-ad9de0c26f568134",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-23b2121dde5c4c9a",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-85cb9ea0eee820f3",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-6f9b8f165e33a74e",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-457b7bd782d6c3d2",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-1d23e4ecb890f8be",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-bdaeb129f2075504",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-96742c206e16349a",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-a38e9e49402eb923",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-4f3fcc3a5d649bfc",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-a1bfe98081062a05",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-6258cc6cec765a43",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/australia-southeast2/subnetworks/default",
+      "state": null,
+      "location": "australia-southeast2"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/me-central1/subnetworks/default",
+      "state": null,
+      "location": "me-central1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/australia-southeast1/subnetworks/default",
+      "state": null,
+      "location": "australia-southeast1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-south2/subnetworks/default",
+      "state": null,
+      "location": "asia-south2"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/africa-south1/subnetworks/default",
+      "state": null,
+      "location": "africa-south1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-r-ba4e845273ce570e",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-west2/subnetworks/default",
+      "state": null,
+      "location": "us-west2"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-northeast1/subnetworks/default",
+      "state": null,
+      "location": "asia-northeast1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/southamerica-east1/subnetworks/default",
+      "state": null,
+      "location": "southamerica-east1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-east5/subnetworks/default",
+      "state": null,
+      "location": "us-east5"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-north2/subnetworks/default",
+      "state": null,
+      "location": "europe-north2"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west12/subnetworks/default",
+      "state": null,
+      "location": "europe-west12"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-northeast2/subnetworks/default",
+      "state": null,
+      "location": "asia-northeast2"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/northamerica-south1/subnetworks/default",
+      "state": null,
+      "location": "northamerica-south1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/northamerica-northeast2/subnetworks/default",
+      "state": null,
+      "location": "northamerica-northeast2"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west8/subnetworks/default",
+      "state": null,
+      "location": "europe-west8"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-east4/subnetworks/default",
+      "state": null,
+      "location": "us-east4"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-south1/subnetworks/default",
+      "state": null,
+      "location": "us-south1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-southeast1/subnetworks/default",
+      "state": null,
+      "location": "asia-southeast1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-southwest1/subnetworks/default",
+      "state": null,
+      "location": "europe-southwest1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-east1/subnetworks/default",
+      "state": null,
+      "location": "us-east1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west3/subnetworks/default",
+      "state": null,
+      "location": "europe-west3"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west9/subnetworks/default",
+      "state": null,
+      "location": "europe-west9"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west2/subnetworks/default",
+      "state": null,
+      "location": "europe-west2"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/me-west1/subnetworks/default",
+      "state": null,
+      "location": "me-west1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-northeast3/subnetworks/default",
+      "state": null,
+      "location": "asia-northeast3"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-south1/subnetworks/default",
+      "state": null,
+      "location": "asia-south1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-west4/subnetworks/default",
+      "state": null,
+      "location": "us-west4"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-central2/subnetworks/default",
+      "state": null,
+      "location": "europe-central2"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-southeast2/subnetworks/default",
+      "state": null,
+      "location": "asia-southeast2"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/northamerica-northeast1/subnetworks/default",
+      "state": null,
+      "location": "northamerica-northeast1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-west1/subnetworks/default",
+      "state": null,
+      "location": "us-west1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-east2/subnetworks/default",
+      "state": null,
+      "location": "asia-east2"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west4/subnetworks/default",
+      "state": null,
+      "location": "europe-west4"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/southamerica-west1/subnetworks/default",
+      "state": null,
+      "location": "southamerica-west1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west6/subnetworks/default",
+      "state": null,
+      "location": "europe-west6"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-north1/subnetworks/default",
+      "state": null,
+      "location": "europe-north1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west1/subnetworks/default",
+      "state": null,
+      "location": "europe-west1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/europe-west10/subnetworks/default",
+      "state": null,
+      "location": "europe-west10"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-west3/subnetworks/default",
+      "state": null,
+      "location": "us-west3"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-southeast3/subnetworks/default",
+      "state": null,
+      "location": "asia-southeast3"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/asia-east1/subnetworks/default",
+      "state": null,
+      "location": "asia-east1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Subnetwork",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/regions/us-central1/subnetworks/default",
+      "state": null,
+      "location": "us-central1"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Route",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/routes/default-route-176e04ad2df0d484",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Network",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/global/networks/default",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "compute.googleapis.com/Project",
+      "name_alias": "//compute.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "iam.googleapis.com/ServiceAccount",
+      "name_alias": "//iam.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/serviceAccounts/[REDACTED:email]",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "cloudbilling.googleapis.com/ProjectBillingInfo",
+      "name_alias": "//cloudbilling.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]/billingInfo",
+      "state": "ACTIVE",
+      "location": "global"
+    },
+    {
+      "asset_type": "cloudresourcemanager.googleapis.com/Project",
+      "name_alias": "//cloudresourcemanager.googleapis.com/projects/[ALIAS:WATCHOVER_SANDBOX]",
+      "state": "ACTIVE",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage-component.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigqueryreservation.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "logging.googleapis.com/LogSink",
+      "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/sinks/_Required",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/billingbudgets.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/servicemanagement.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/dataplex.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/logging.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/analyticshub.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquery.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "logging.googleapis.com/LogBucket",
+      "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/locations/global/buckets/_Default",
+      "state": "ACTIVE",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/apptopology.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/oslogin.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/monitoring.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerymigration.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerystorage.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/telemetry.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerydatapolicy.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/compute.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "logging.googleapis.com/LogSink",
+      "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/sinks/_Default",
+      "state": null,
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerydatatransfer.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/sql-component.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudapis.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/iap.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/dataform.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudasset.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage-api.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "serviceusage.googleapis.com/Service",
+      "name_alias": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/serviceusage.googleapis.com",
+      "state": "ENABLED",
+      "location": "global"
+    },
+    {
+      "asset_type": "logging.googleapis.com/LogBucket",
+      "name_alias": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/locations/global/buckets/_Required",
+      "state": "ACTIVE",
+      "location": "global"
+    }
+  ],
+  "sanitisation_status": "SANITISED_ALIAS_ONLY",
+  "note": "Master 03 §10.3 known-present Resource X positive control is deferred to W1 FORCED_INTERRUPT. An empty result here is not a zero-residual claim."
+}

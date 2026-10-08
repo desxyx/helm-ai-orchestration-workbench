@@ -1,0 +1,15 @@
+{
+  "recorded_at": "2026-10-05T14:57:32+11:00",
+  "evidence_type": "OWNER_SELF_REPORT",
+  "reported_facts": [
+    "Owner confirms restart completed",
+    "Website reported normal after restart",
+    "Login reported successful after restart",
+    "Administrator login also reported successful"
+  ],
+  "restart_time_and_provider_operation": "NOT_CAPTURED",
+  "same_alert_id_and_content_after_restart": "AWAIT_OWNER_CONFIRMATION",
+  "credentials": "Excluded",
+  "verdict": "OBSERVATION_ONLY; not full frozen A5 PASS",
+  "OPERATIONS_COORDINATOR_actions": "Local custody only; no cloud calls/restart/login/deletion"
+}

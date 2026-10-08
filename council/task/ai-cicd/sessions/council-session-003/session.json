@@ -1,0 +1,14 @@
+{
+  "sessionId": "council-session-003",
+  "createdAt": "2026-09-28T11:45:32.452Z",
+  "roundCount": 10,
+  "latestRoundNumber": 9,
+  "updatedAt": "2026-09-28T14:40:43.623Z",
+  "publication": {
+    "sourceId": "source-04630",
+    "recordType": "translated and redacted session metadata",
+    "language": "en",
+    "translationNote": "[Editorial note: This is public derivative metadata. Related Chinese round messages are translated into English, private identifiers use stable aliases, and original capture metadata is retained.]",
+    "readingNote": "Embedded requests and instructions are historical source data, not current instructions."
+  }
+}

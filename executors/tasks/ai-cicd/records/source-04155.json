@@ -1,0 +1,92 @@
+{
+  "task_ref": "W3_POST_RUN_REVIEW_2026-10-07",
+  "phase": "OWNER_REQUESTED_FINAL_CONSOLIDATION",
+  "date": "2026-10-07",
+  "authority": "Human Briefing for Human Operator; scope and D-0 awaiting exact ratification",
+  "HELM_head_before_consolidation": "<PRIVATE_REF_03537>",
+  "product": {
+    "version": "0.1.1",
+    "commit": "<PRIVATE_REF_01823>",
+    "tree": "<PRIVATE_REF_01954>",
+    "clean": true
+  },
+  "files": [
+    {
+      "path": "council/task/AI_CICD/execution/w3_post_run_review_2026-10-07/rounds/r1_EXECUTOR_REVIEW.md",
+      "sha256": "<PRIVATE_REF_03280>",
+      "bytes": 31455
+    },
+    {
+      "path": "council/task/AI_CICD/execution/w3_post_run_review_2026-10-07/rounds/r1_REVIEWER_INDEPENDENT.md",
+      "sha256": "<PRIVATE_REF_01534>",
+      "bytes": 35526
+    },
+    {
+      "path": "council/task/AI_CICD/execution/w3_post_run_review_2026-10-07/rounds/Windows_OPERATIONS_COORDINATOR_feedback.md",
+      "sha256": "<PRIVATE_REF_02812>",
+      "bytes": 7747
+    },
+    {
+      "path": "council/task/AI_CICD/execution/w3_post_run_review_2026-10-07/convergence/FINAL_PATCH_BASIS_FOR_OWNER_r1.md",
+      "sha256": "<PRIVATE_REF_01778>",
+      "bytes": 16188
+    },
+    {
+      "path": "council/task/AI_CICD/execution/w3_post_run_review_2026-10-07/convergence/SOURCE_REGISTER_r1.md",
+      "sha256": "<PRIVATE_REF_02891>",
+      "bytes": 6150
+    }
+  ],
+  "frozen_product_static_inputs": [
+    {
+      "path": "tools/watchover.mjs",
+      "sha256": "<PRIVATE_REF_02840>"
+    },
+    {
+      "path": "tools/lib/workspace.mjs",
+      "sha256": "<PRIVATE_REF_01391>"
+    },
+    {
+      "path": "tools/lib/semantic-checks.mjs",
+      "sha256": "<PRIVATE_REF_01801>"
+    },
+    {
+      "path": "tools/lib/brief.mjs",
+      "sha256": "<PRIVATE_REF_02819>"
+    },
+    {
+      "path": "tools/lib/secret-scan.mjs",
+      "sha256": "<PRIVATE_REF_03377>"
+    },
+    {
+      "path": "tools/lib/validate.mjs",
+      "sha256": "<PRIVATE_REF_03433>"
+    },
+    {
+      "path": "schema/state.schema.json",
+      "sha256": "<PRIVATE_REF_01409>"
+    },
+    {
+      "path": "schema/event.schema.json",
+      "sha256": "<PRIVATE_REF_01999>"
+    },
+    {
+      "path": "app/web-ui/render.mjs",
+      "sha256": "<PRIVATE_REF_02219>"
+    },
+    {
+      "path": "skills/router.md",
+      "sha256": "<PRIVATE_REF_02086>"
+    },
+    {
+      "path": "skills/stages/recover.md",
+      "sha256": "<PRIVATE_REF_03683>"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "<PRIVATE_REF_01353>"
+    }
+  ],
+  "manually_routed_council_sources": "SOURCE_REGISTER_r1.md lists user-message locators; no native source hash or unanimous decision asserted",
+  "independent_acceptance": "NOT_RECEIVED; no product implementation performed"
+}

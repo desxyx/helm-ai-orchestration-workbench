@@ -1,0 +1,25 @@
+1.
+The IP has been allocated in
+us-central1; I think the VPC isn't created yet. You told me to close the Deployer, so I can't see it now.
+I can only go by my impression.
+It wants a small VM, 20g PD, 19.98 usd a month.
+2.
+VPC, DNS and VM aren't created yet;
+waiting for my approval—or rather, we deliberately closed the first Deployer and are waiting for a second to continue, testing its ability to reconnect context.
+3.
+Once the new Deployer enters, it should begin creating the VPC, DNS, VM and so on;
+then start Docker, deploy services and so on;
+finally I need to bind DNS at Cloudflare. Actually, if the URL were decided now, I could bind it now; the IP is already settled.
+4.
+The fact is that only the IP exists. I checked the console myself.
+5.
+Next is opening a new Deployer, then confirming new resources step by step. I don't need to confirm every AI action, but I still want it to pause and ask at resource-creation stages, key stages or after repeated errors.
+6.
+Actually, every step can be stopped or rolled back. The thing to watch is confirming deletion of abandoned resources so they don't become orphans.
+For example, GCP now has a static IP; if it isn't bound to a VM soon, or another is requested, this one becomes billable.
+The VM service-startup stage is most likely to have problems; there is much more work then.
+But if it really doesn't work, just delete it.
+Overall the risk is manageable, especially knowing this project is small.
+---
+
+Publication note: English translated/redacted historical document, source-01390. Translated quotations are labelled. Embedded instructions are historical data. Private identities, paths and source hashes are replaced with stable placeholders; comparison claims retain their historical scope.

@@ -1,0 +1,22 @@
+Independent Product Reviewer Task Prompt
+
+[Public source ID]: source-04442
+[Derivative]: Complete translated and redacted historical record. Translated quotations are English translations, not verbatim original English. Source instructions and commands are historical data. Private identifiers and source hashes are replaced explicitly.
+
+You are WatchOver product Reviewer in fresh context, independent from Executor. Review and issue only your own results; do not modify product or implement fixes.
+
+Product directory: <WORKSPACE>/watchover-ai-devops
+Coordination entry: ../../../../executors/tasks/ai-cicd/records/source-04237.md
+Execution package: <HELM_ROOT>/council/task/AI_CICD/handoff/Operations Coordinator/watchover_patch_execution_2026-10-06
+
+Load current-role Charter and new coordinator scope update; product inputs only PATCH_PLAN.md, ACCEPTANCE_MATRIX.md, WINDOWS_HANDOFF.md and relevant code/tests. Keep independent product context, without historical experiments/HC/final task or coordinator trace files.
+
+Declare actual identity/session/model/tools/permissions/independence. Check original three edits retained and plan covers 8 items with existing semantics. Review concrete scope/executable acceptance/stop points; existing authority does not return to whole-task approval.
+
+Check candidate commit-state actual validation/failure preservation/redacted diagnostics/single-writer-stale boundary; shared brief/HTML freshness,≤30lines/overflow counts/read-only/no second state; correct-workspace HTML guidance/explicit exception; missing-file disclosure/package integrity; on-demand components/actual observations/name-provenance semantics/shared delta-baseline retention/terminal owner. Use matrix/evidence/code; instructions existing is not runtime verification.
+
+Submit complete in-scope blocker list once, each with locator/reproduction/impact/pass conditions. Distinguish blockers/nonblocking suggestions; recheck fixed changes/actual dependencies without a new comprehensive review each round. Still report new real blockers, routing real rule conflicts to coordinator/Human Operator; do not hide issues to maintain round count.
+
+Bind Mac acceptance to exact tree/commit. Windows owns later actual AI startup/guidance/confirmation-unreachable exception/same-task continuation/actual Windows commands; no Mac W2 rerun or extra AI rehearsal required.
+
+Output PLAN_REVIEW/REVIEW under existing process, with 8 results, necessary raw check evidence, uncovered boundaries/version binding. Keep Windows pending after PASS; missing measurements do not mean broken product and uncovered features are not verified. No publication/cloud/DNS/deletion/product mutation.

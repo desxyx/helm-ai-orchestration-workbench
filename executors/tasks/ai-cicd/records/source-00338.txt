@@ -1,0 +1,143 @@
+$ ssh -F C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/sshcfg taiga sudo docker compose -f /srv/taiga/app/docker-compose.yml up -d 2>&1; sleep 5; sudo docker compose -f /srv/taiga/app/docker-compose.yml ps
+# started 2026-10-06T13:36:33.000Z  ended 2026-10-06T13:36:58.000Z  exit 0
+--- stdout
+ Image postgres:16-alpine Pulling 
+ 509688edf37b Pulling fs layer 0B
+ e2de96513ba9 Pulling fs layer 0B
+ 1b7f9cd581ee Pulling fs layer 0B
+ 210b280f9556 Pulling fs layer 0B
+ 81717818649a Pulling fs layer 0B
+ 3ae6141cfd99 Pulling fs layer 0B
+ 25b77f59fd95 Pulling fs layer 0B
+ 6c25da34e03f Pulling fs layer 0B
+ a88782f92806 Pulling fs layer 0B
+ d8d21be4bf02 Pulling fs layer 0B
+ 6117bd39f23f Pulling fs layer 0B
+ 6117bd39f23f Download complete 0B
+ 81717818649a Download complete 0B
+ 509688edf37b Download complete 0B
+ e2de96513ba9 Downloading 3.146MB
+ 1b7f9cd581ee Download complete 0B
+ 210b280f9556 Downloading 901.4kB
+ e2de96513ba9 Download complete 0B
+ e2de96513ba9 Extracting 1B
+ 210b280f9556 Download complete 0B
+ 6c25da34e03f Download complete 0B
+ e2de96513ba9 Extracting 1B
+ 3ae6141cfd99 Download complete 0B
+ e2de96513ba9 Extracting 1B
+ 25b77f59fd95 Downloading 6.291MB
+ a88782f92806 Download complete 0B
+ e2de96513ba9 Extracting 1B
+ d8d21be4bf02 Download complete 0B
+ 25b77f59fd95 Downloading 15.73MB
+ e2de96513ba9 Extracting 1B
+ 25b77f59fd95 Downloading 26.21MB
+ e2de96513ba9 Extracting 1B
+ 25b77f59fd95 Downloading 32.51MB
+ e2de96513ba9 Extracting 1B
+ 25b77f59fd95 Downloading 38.8MB
+ e2de96513ba9 Extracting 1B
+ 25b77f59fd95 Downloading 44.04MB
+ e6b147246a89 Downloading 44.31kB
+ 021b01ea4cc2 Downloading 598kB
+ e2de96513ba9 Pull complete 0B
+ e6b147246a89 Download complete 0B
+ 021b01ea4cc2 Download complete 0B
+ 25b77f59fd95 Downloading 51.38MB
+ 1b7f9cd581ee Pull complete 0B
+ 210b280f9556 Extracting 1B
+ 25b77f59fd95 Downloading 57.67MB
+ 81717818649a Pull complete 0B
+ 210b280f9556 Pull complete 0B
+ 3ae6141cfd99 Extracting 1B
+ 25b77f59fd95 Downloading 66.06MB
+ 3ae6141cfd99 Pull complete 0B
+ 25b77f59fd95 Downloading 74.45MB
+ 25b77f59fd95 Downloading 82.84MB
+ 25b77f59fd95 Downloading 91.23MB
+ 25b77f59fd95 Downloading 99.61MB
+ 25b77f59fd95 Downloading 109.1MB
+ 25b77f59fd95 Downloading 111.3MB
+ 25b77f59fd95 Downloading 111.3MB
+ 25b77f59fd95 Downloading 111.3MB
+ 25b77f59fd95 Downloading 111.3MB
+ 25b77f59fd95 Downloading 111.3MB
+ 25b77f59fd95 Downloading 111.3MB
+ 25b77f59fd95 Downloading 111.3MB
+ 25b77f59fd95 Downloading 111.3MB
+ 25b77f59fd95 Downloading 111.3MB
+ 25b77f59fd95 Download complete 0B
+ 25b77f59fd95 Extracting 1B
+ 25b77f59fd95 Extracting 1B
+ 25b77f59fd95 Extracting 1B
+ 25b77f59fd95 Extracting 1B
+ 25b77f59fd95 Extracting 1B
+ 25b77f59fd95 Extracting 1B
+ 25b77f59fd95 Extracting 1B
+ 25b77f59fd95 Extracting 1B
+ 25b77f59fd95 Extracting 1B
+ 25b77f59fd95 Extracting 1B
+ 25b77f59fd95 Extracting 1B
+ 25b77f59fd95 Extracting 2B
+ 25b77f59fd95 Extracting 2B
+ 25b77f59fd95 Extracting 2B
+ 25b77f59fd95 Extracting 2B
+ 25b77f59fd95 Extracting 2B
+ 25b77f59fd95 Extracting 2B
+ 25b77f59fd95 Extracting 2B
+ 25b77f59fd95 Extracting 2B
+ 25b77f59fd95 Extracting 2B
+ 25b77f59fd95 Extracting 2B
+ 25b77f59fd95 Extracting 3B
+ 25b77f59fd95 Extracting 3B
+ 25b77f59fd95 Extracting 3B
+ 25b77f59fd95 Extracting 3B
+ 25b77f59fd95 Extracting 3B
+ 25b77f59fd95 Extracting 3B
+ 25b77f59fd95 Extracting 3B
+ 25b77f59fd95 Extracting 3B
+ 25b77f59fd95 Extracting 3B
+ 25b77f59fd95 Extracting 3B
+ 25b77f59fd95 Extracting 4B
+ 25b77f59fd95 Extracting 4B
+ 25b77f59fd95 Extracting 4B
+ 25b77f59fd95 Extracting 4B
+ 25b77f59fd95 Extracting 4B
+ 25b77f59fd95 Extracting 4B
+ 25b77f59fd95 Extracting 4B
+ 25b77f59fd95 Extracting 4B
+ 25b77f59fd95 Extracting 4B
+ 25b77f59fd95 Extracting 4B
+ 25b77f59fd95 Extracting 5B
+ 25b77f59fd95 Extracting 5B
+ 6c25da34e03f Pull complete 0B
+ a88782f92806 Pull complete 0B
+ 25b77f59fd95 Pull complete 0B
+ 6117bd39f23f Pull complete 0B
+ 509688edf37b Pull complete 0B
+ d8d21be4bf02 Pull complete 0B
+ Image postgres:16-alpine Pulled 
+ Network taiga_default Creating 
+ Network taiga_default Creating 
+ Network taiga_default Created 
+ Network taiga_default Created 
+ Container taiga-postgres-1 Creating 
+ Container taiga-postgres-1 Created 
+ Container taiga-taiga-back-1 Creating 
+ Container taiga-taiga-back-1 Created 
+ Container taiga-caddy-1 Creating 
+ Container taiga-caddy-1 Created 
+ Container taiga-postgres-1 Starting 
+ Container taiga-postgres-1 Started 
+ Container taiga-postgres-1 Waiting 
+ Container taiga-postgres-1 Healthy 
+ Container taiga-taiga-back-1 Starting 
+ Container taiga-taiga-back-1 Started 
+ Container taiga-caddy-1 Starting 
+ Container taiga-caddy-1 Started 
+NAME                 IMAGE                        COMMAND                  SERVICE      CREATED          STATUS                                    PORTS
+taiga-caddy-1        taiga-front-caddy:<PRIVATE_REF_03189>   "caddy run --config …"   caddy        13 seconds ago   Up 5 seconds                              0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp, 0.0.0.0:443->443/udp, [::]:443->443/udp, 2019/tcp
+taiga-postgres-1     postgres:16-alpine           "docker-entrypoint.s…"   postgres     14 seconds ago   Up 12 seconds (healthy)                   5432/tcp
+taiga-taiga-back-1   taiga-back:<PRIVATE_REF_01638>          "bash -c 'cp /srv-co…"   taiga-back   13 seconds ago   Restarting (127) Less than a second ago   
+--- stderr

@@ -1,0 +1,17 @@
+$ gcloud compute ssh <ACCOUNT>@<W2_RUN_RESOURCE_PREFIX>-vm --zone=australia-southeast2-a --tunnel-through-iap --ssh-key-file=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-ssh-key --ssh-key-expire-after=2h --ssh-flag=-oUserKnownHostsFile=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-known-hosts '--command=sha256sum /tmp/<W2_RUN_RESOURCE_PREFIX>-release.tar.gz; sudo test ! -e /opt/<W2_RUN_RESOURCE_PREFIX> && echo fresh-release-directory' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+<PRIVATE_REF_03615>  /tmp/<W2_RUN_RESOURCE_PREFIX>-release.tar.gz
+fresh-release-directory
+Updating project ssh metadata...
+..........................................................................Updated [<PRIVATE_URL_0469>].
+..done.
+Waiting for SSH key to propagate.
+WARNING: 
+
+To increase the performance of the tunnel, consider installing NumPy. For instructions,
+please see <PRIVATE_URL_0075>ogle.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
+
+WARNING: 
+
+To increase the performance of the tunnel, consider installing NumPy. For instructions,
+please see <PRIVATE_URL_0075>ogle.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
+

@@ -1,0 +1,30 @@
+✔ clock preload is active in this test process (1.051166ms)
+✔ CLI brief and the view classify the same facts the same way at a fixed time (2.2845ms)
+✔ 200 facts: at most 30 lines, exact totals and an exact omitted count with its location (0.825583ms)
+✔ pending, working, terminal and approved records: the human action matches the view banner (1.702208ms)
+✔ the CLI brief is read-only: workspace bytes and file set are unchanged (126.408084ms)
+✔ an invalid record is refused with no summary, no secret, and nothing written (204.09625ms)
+✔ brief rejects an unparsable --now as a usage error (35.265125ms)
+✔ every scenario fixture validates without any provider profile (8.836458ms)
+✔ WO-P05: service rows come from health facts and host resources, with honest freshness (2.064541ms)
+✔ WO-P06: logical ids and real names are both kept; a declaration is not a runtime observation (0.538208ms)
+✔ WO-P07: only this run's delta is reversed and the baseline hash is preserved (0.366083ms)
+✔ WO-P08: an interruption names the pending intent and owner; brief and view agree (0.277292ms)
+✔ WO-P08: after deployment the owner and choice are explicit; deployed is not cleaned up (0.3585ms)
+✔ generic core: router and stages need no particular cloud command (0.349625ms)
+✔ the complete package has no dangling stage or provider reference (0.327292ms)
+✔ a deliberately reduced package is detected, and the router keeps its gates and rules (3.764042ms)
+✔ the router opens with the minimal loop and keeps generic rules out of provider files (0.118542ms)
+✔ a declared reduced package: actual omissions match the declaration and the record discloses each gap once (3.654417ms)
+✔ show --port 0 binds a real port and serves this workspace (12.179917ms)
+✔ the CLI prints the actual URL it serves (42.935792ms)
+✔ the handoff fixtures validate and keep page confirmation, the exception and approval apart (1.770125ms)
+✔ the skills and README require the early handoff and the narrow exception, consistently (0.445334ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 469.316375

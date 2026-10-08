@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-06T01:06:52.678Z",
+  "scope": "Delivery artifacts only; not a new experiment metric or product acceptance",
+  "scanner": "Existing frozen experiment-control-tool-0.3.1 secretScan and syntheticScan",
+  "primary": {
+    "canaryFound": true,
+    "matches": [],
+    "files_scanned": 13,
+    "skipped": []
+  },
+  "verdict": "PASS_NO_REAL_SECRET_MATCHES",
+  "synthetic_findings": {
+    "registered": [],
+    "candidates": [],
+    "files_scanned": 12,
+    "skipped": []
+  },
+  "canary_removed": true
+}

@@ -1,0 +1,52 @@
+✔ every product schema uses only the supported keyword subset (3.098708ms)
+✔ both schemas use exactly the seven FT-7 status strings (0.803542ms)
+✔ both schemas share the same stage values, covering every Annex E stage (0.530542ms)
+✔ every valid fixture state and event is schema-valid (14.215542ms)
+✔ the lifecycle fixture covers the ten required steps in order (1.791209ms)
+✔ lifecycle steps carry the situations the verification standard names (1.133208ms)
+✔ each lifecycle step only appends to the previous step's events (1.287833ms)
+✔ there is one status fixture per FT-7 status, each holding a fact with that status (1.004708ms)
+✔ every pattern detects its own built-in canary (the positive control) (3.239041ms)
+✔ single-line assignments and YAML scalars exclude benign nested mappings and auth modes (0.754167ms)
+{"case":"r2-benign-evidence-cli","validate_exit":0,"brief_exit":0,"credential_control_exits":[1,1],"value_echo":false}
+{"case":"r2-whitespace-performance","samples":[{"spaces":65536,"scan_and_redact_ms":1.9548330000000007},{"spaces":262144,"scan_and_redact_ms":2.723832999999999},{"spaces":1048576,"scan_and_redact_ms":9.343834000000001}],"positive_control":true}
+✔ benign evidence still permits real CLI validate and brief, while a nearby credential is refused (185.68875ms)
+✔ long whitespace and empty YAML values scan and redact within a bounded subprocess (41.60425ms)
+✔ the self-test fails closed when a pattern stops detecting its canary (0.16425ms)
+✔ findings name the pattern, file and line but never the value (0.105208ms)
+✔ realistic credential shapes are detected (0.080667ms)
+✔ sanitized and reference-only text is not flagged (0.094459ms)
+✔ redact removes every secret-shaped span and names the pattern (0.57ms)
+✔ redact leaves text without secrets unchanged (0.077667ms)
+✔ finite added shapes have synthetic positives, nearby negatives and value-free diagnostics (0.614292ms)
+✔ every valid fixture validates, with the scanner self-test passing in the same call (47.048791ms)
+✔ every invalid fixture is rejected for exactly its intended reason (11.369542ms)
+✔ the planted canary is caught in the same pass that clears the valid fixtures (33.287167ms)
+✔ the secret scan still runs when the JSON is malformed, and errors never echo the input (4.571625ms)
+✔ a product schema with an unsupported keyword fails closed (4.707833ms)
+✔ a product schema with a remote $ref fails closed (4.731083ms)
+✔ a product schema with an unknown format fails closed (3.434084ms)
+✔ a schema file that is not valid JSON fails closed (3.196709ms)
+✔ a workspace without events.jsonl is rejected (3.390666ms)
+✔ when one workspace file is missing, the remaining file is still secret-scanned (5.095666ms)
+✔ a blank line inside events.jsonl is rejected (3.948084ms)
+✔ schema errors on events name the line, keyword and pointer (4.6885ms)
+✔ clean evidence files keep a valid workspace valid (4.345417ms)
+✔ every regular file under evidence/ is secret-scanned, recursively (4.66775ms)
+✔ evidence is scanned even when state is malformed and events are missing (1.533292ms)
+✔ evidence symbolic links are reported and never followed (4.043ms)
+✔ an evidence folder that is itself a symbolic link is reported and not followed (3.737375ms)
+✔ schema errors on secret-shaped property names are redacted (4.03725ms)
+✔ named-check errors quoting secret-shaped identifiers are redacted (3.593959ms)
+✔ an oversized events line is rejected even when its numbers are in range (3.64125ms)
+✔ an oversized state.json is rejected by its size limit (13.556459ms)
+✔ an evidence file over the scan limit is reported and not scanned (17.826042ms)
+✔ a special evidence file is reported without being opened (8.731958ms)
+ℹ tests 42
+ℹ suites 0
+ℹ pass 42
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 273.536709

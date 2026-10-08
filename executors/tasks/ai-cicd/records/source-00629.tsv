@@ -1,0 +1,18 @@
+1	2026-10-04T11:19:02Z	Q01_project_describe	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> projects describe <CLOUD_PROJECT> --format=json
+2	2026-10-04T11:19:12Z	Q02_services_enabled	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> services list --enabled --format=value(config.name)
+3	2026-10-04T11:19:15Z	Q03_compute_instances	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> compute instances list --format=json
+4	2026-10-04T11:19:17Z	Q04_compute_disks	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> compute disks list --format=json
+5	2026-10-04T11:19:18Z	Q05_compute_addresses	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> compute addresses list --format=json
+6	2026-10-04T11:19:20Z	Q06_compute_firewall	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> compute firewall-rules list --format=json
+7	2026-10-04T11:19:22Z	Q07_compute_networks	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> compute networks list --format=json
+8	2026-10-04T11:19:23Z	Q08_compute_forwarding	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> compute forwarding-rules list --format=json
+9	2026-10-04T11:19:25Z	Q09_compute_images_custom	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> compute images list --no-standard-images --format=json
+10	2026-10-04T11:19:27Z	Q10_compute_project_info	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> compute project-info describe --format=json(commonInstanceMetadata.items[].key,defaultServiceAccount)
+11	2026-10-04T11:19:28Z	Q11_run_services	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> run services list --format=json
+13	2026-10-04T11:23:27Z	Q12_sql_instances	rc=1	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> sql instances list --format=json
+14	2026-10-04T11:23:28Z	Q13_storage_buckets	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> storage buckets list --format=json
+15	2026-10-04T11:23:29Z	Q14_artifact_repos	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> artifacts repositories list --format=json
+16	2026-10-04T11:23:33Z	Q15_secrets	rc=1	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> secrets list --format=json
+17	2026-10-04T11:23:34Z	Q16_gke_clusters	rc=1	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> container clusters list --format=json
+18	2026-10-04T11:23:35Z	Q17_asset_all	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> asset search-all-resources --scope=projects/<CLOUD_PROJECT> --format=json
+19	2026-10-04T11:23:44Z	Q18_active_account	rc=0	gcloud --configuration=watchover-personal --project=<CLOUD_PROJECT> auth list --filter=status:ACTIVE --format=value(account)

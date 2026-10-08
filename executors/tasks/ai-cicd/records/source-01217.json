@@ -1,0 +1,157 @@
+{
+  "instances": [
+    {
+      "name": "<W2_RUN_RESOURCE_PREFIX>-alerta",
+      "status": "RUNNING",
+      "zone": "us-central1-a",
+      "machine_type": "e2-small",
+      "last_start_timestamp": "2026-10-04T19:59:54.636-07:00",
+      "disks": [
+        {
+          "source": "<W2_RUN_RESOURCE_PREFIX>-alerta",
+          "boot": true,
+          "auto_delete": false
+        },
+        {
+          "source": "<W2_RUN_RESOURCE_PREFIX>-data",
+          "boot": false,
+          "auto_delete": false
+        }
+      ],
+      "external_ips": [
+        "<IP_ADDRESS_114>"
+      ]
+    }
+  ],
+  "disks": [
+    {
+      "name": "<W2_RUN_RESOURCE_PREFIX>-alerta",
+      "size_gb": "20",
+      "type": "pd-balanced",
+      "status": "READY",
+      "zone": "us-central1-a",
+      "users": [
+        "<W2_RUN_RESOURCE_PREFIX>-alerta"
+      ]
+    },
+    {
+      "name": "<W2_RUN_RESOURCE_PREFIX>-data",
+      "size_gb": "20",
+      "type": "pd-balanced",
+      "status": "READY",
+      "zone": "us-central1-a",
+      "users": [
+        "<W2_RUN_RESOURCE_PREFIX>-alerta"
+      ]
+    }
+  ],
+  "address": {
+    "name": "<W2_RUN_RESOURCE_PREFIX>-ip",
+    "address": "<IP_ADDRESS_114>",
+    "status": "IN_USE",
+    "users": [
+      "<W2_RUN_RESOURCE_PREFIX>-alerta"
+    ]
+  },
+  "networks": [
+    {
+      "name": "default",
+      "auto_create_subnetworks": true
+    },
+    {
+      "name": "<W2_RUN_RESOURCE_PREFIX>-network",
+      "auto_create_subnetworks": false
+    }
+  ],
+  "firewalls": [
+    {
+      "name": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "network": "<W2_RUN_RESOURCE_PREFIX>-network",
+      "source_ranges": [
+        "<IP_ADDRESS_119>/20"
+      ],
+      "allowed": [
+        {
+          "IPProtocol": "tcp",
+          "ports": [
+            "22"
+          ]
+        }
+      ],
+      "disabled": false,
+      "target_tags": [
+        "<W2_RUN_RESOURCE_PREFIX>"
+      ]
+    },
+    {
+      "name": "<W2_RUN_RESOURCE_PREFIX>-web",
+      "network": "<W2_RUN_RESOURCE_PREFIX>-network",
+      "source_ranges": [
+        "0.0.0.0/0"
+      ],
+      "allowed": [
+        {
+          "IPProtocol": "tcp",
+          "ports": [
+            "80"
+          ]
+        },
+        {
+          "IPProtocol": "tcp",
+          "ports": [
+            "443"
+          ]
+        }
+      ],
+      "disabled": false,
+      "target_tags": [
+        "<W2_RUN_RESOURCE_PREFIX>"
+      ]
+    }
+  ],
+  "asset_inventory_count": 148,
+  "task_assets": [
+    {
+      "type": "compute.googleapis.com/Disk",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-a/disks/<W2_RUN_RESOURCE_PREFIX>-alerta"
+    },
+    {
+      "type": "compute.googleapis.com/Instance",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-a/instances/<W2_RUN_RESOURCE_PREFIX>-alerta"
+    },
+    {
+      "type": "compute.googleapis.com/Disk",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-a/disks/<W2_RUN_RESOURCE_PREFIX>-data"
+    },
+    {
+      "type": "compute.googleapis.com/Firewall",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/<W2_RUN_RESOURCE_PREFIX>-iap-ssh"
+    },
+    {
+      "type": "compute.googleapis.com/Firewall",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/<W2_RUN_RESOURCE_PREFIX>-web"
+    },
+    {
+      "type": "compute.googleapis.com/Subnetwork",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-central1/subnetworks/<W2_RUN_RESOURCE_PREFIX>-subnet"
+    },
+    {
+      "type": "compute.googleapis.com/Network",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/networks/<W2_RUN_RESOURCE_PREFIX>-network"
+    },
+    {
+      "type": "compute.googleapis.com/Address",
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-central1/addresses/<W2_RUN_RESOURCE_PREFIX>-ip"
+    }
+  ],
+  "http": {
+    "code": 200,
+    "certificate_verification": "SUCCESS",
+    "remote_ip": "<IP_ADDRESS_114>"
+  },
+  "dns": {
+    "local": "<IP_ADDRESS_114>",
+    "public_1_1_1_1": "<IP_ADDRESS_114>"
+  },
+  "acceptance_boundary": "Read-only inventory and unauthenticated HTTPS only; signup/login, VM-restart persistence and A1-A7 final verdict not independently established."
+}

@@ -1,0 +1,47 @@
+{
+  "artifact_class": "ACTION_SCOPE_DRAFT",
+  "receipt_id": "AI-CICD-20261005-W2B-CP01-READONLY-001",
+  "prepared_at": "2026-10-05T20:30:04+11:00",
+  "status": "UNSIGNED_NOT_CONSUMED",
+  "target": "<CLOUD_PROJECT>; australia-southeast2; <W2_RUN_RESOURCE_PREFIX> task resource inventory at forced interruption",
+  "actor": "Operations Coordinator control plane",
+  "action": "One bounded independent interruption snapshot, raw output saved privately; no guest login, resources/DNS mutation, reset, install, API enablement or credentials inspection",
+  "command_attempt_cap": 10,
+  "planned_queries": [
+    {
+      "purpose": "full-project primary asset inventory",
+      "read": "gcloud asset search-all-resources --project=<CLOUD_PROJECT> --format=json"
+    },
+    {
+      "purpose": "target VM/current status",
+      "read": "gcloud compute instances describe <W2_RUN_RESOURCE_PREFIX>-vm --project=<CLOUD_PROJECT> --zone=australia-southeast2-a --format=json"
+    },
+    {
+      "purpose": "run disks",
+      "read": "gcloud compute disks list --project=<CLOUD_PROJECT> --format=json"
+    },
+    {
+      "purpose": "run addresses",
+      "read": "gcloud compute addresses list --project=<CLOUD_PROJECT> --format=json"
+    },
+    {
+      "purpose": "network baseline",
+      "read": "gcloud compute networks list --project=<CLOUD_PROJECT> --format=json"
+    },
+    {
+      "purpose": "subnet baseline",
+      "read": "gcloud compute networks subnets list --project=<CLOUD_PROJECT> --format=json"
+    },
+    {
+      "purpose": "firewall baseline",
+      "read": "gcloud compute firewall-rules list --project=<CLOUD_PROJECT> --format=json"
+    },
+    {
+      "purpose": "pending VM/resource operations",
+      "read": "gcloud compute operations list --project=<CLOUD_PROJECT> --format=json"
+    }
+  ],
+  "validity": "10 minutes from actual issue, no automatic extension",
+  "stop_point": "Snapshot captured and limits recorded; no S2 brief until S1 close/HC-INT and applicable continuation facts recorded",
+  "source_authorization": "PENDING_OWNER_EXACT_SCOPE_APPROVAL"
+}

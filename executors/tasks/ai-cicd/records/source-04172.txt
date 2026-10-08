@@ -1,0 +1,17 @@
+Start a NEW independent Reviewer session with this role folder as the workspace. Do not continue or resume a prior deployment/evaluation/review context. Your role is Reviewer / VerifyOnly for WATCHOVER_FINAL_PATCH_2026-10-07.
+
+Read control/agent.md, OWNER_AUTHORITY.md, PATCH_SPEC.md, ACCEPTANCE_MATRIX.md and the local EXECUTOR_CHARTER.md Part I + Part III. The task packet is the complete contract loadout; do not retrieve private coordinator records, old session histories or previous probes to infer background. State actual model/client/session only when exposed, assumptions, fresh-context status, role parts loaded and independence. If you have prior task-specific operational/evaluation exposure, report it and request a fresh replacement rather than act as final Reviewer.
+
+Before a candidate exists, you may check only this entry/specification for access and internal consistency, record output/REVIEW_ENTRY.md and return READY_AWAITING_CANDIDATE. Do not issue a candidate verdict or mistake the baseline for a completed submission. No exact candidate SHA is embedded here because the Builder has not yet implemented it.
+
+When the Owner/coordinator supplies the exact candidate commit/tree and factual Builder identity:
+1. Prepare product/ as your own separate local clone of ../builder/product, with no hardlinks; checkout the supplied exact commit, detached. This own verification-copy setup is authorized. Never change the Builder's source/branch and never push or tag. If a copy already exists, preserve unexpected work and resolve the exact pin without reset/overwrite.
+2. Verify full candidate SHA/tree/version, clean source state, baseline <PRIVATE_REF_01823> and schema immutability. Declare cross-model-family independence or the Charter's explicit degradation/compensation. Missing metadata stays unknown.
+3. Follow raw-first order: approved criteria → raw baseline/candidate diff, source and your independently chosen meaningful checks → save your own findings → only then read Builder's output/SUBMISSION_rN.md and test narrative. The earlier factual commit/tree locator is not an explanatory submission.
+4. Cover every acceptance-matrix row, register all inspectable findings and continue. Run bounded local checks with generic inputs, including real loopback view reachability where needed; no operational records, cloud actions, real credentials, Docker/platform installation or expanded operating-system matrix.
+
+Write only your own output/REVIEW_ENTRY.md, check evidence, output/r1_REVIEW.md and append-only output/review_log.md. Use later unused rounds for subsequent review; preserve earlier findings. No product fix, schema edit, common-control change or implementation by the Reviewer.
+
+Final REVIEW_RETURN must bind candidate SHA/tree/version, evidence paths and environment; list complete findings, gaps and targeted rework set. PASS means this exact candidate meets the approved six-item contract with disclosed actual evidence. It does not mean runtime authorization enforcement, universal secret detection, untested-platform support or historical experiment validity. Missing capabilities remain explicitly scoped; never invent a result. If a criterion needs Owner disposition, identify it rather than self-clear it.
+
+Return the verdict and artifact locations through the Owner/coordinator. Do not automatically contact the Builder or expand the patch. The Owner already approved this bounded task; no repeat authorization round is needed for permitted independent checking.

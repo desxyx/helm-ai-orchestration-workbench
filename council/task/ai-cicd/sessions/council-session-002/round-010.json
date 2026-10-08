@@ -1,0 +1,83 @@
+{
+  "roundNumber": 10,
+  "prompt": "[Session]: council-session-002\n[Round]: 10\n\nCouncil Member A rests this round, but please carefully read all 3 AIs' scores and draw lessons.\n\nCouncil Members B and C, give 3–7 criticisms of Council Member A's first draft: required corrections.\nGive 3–5 strengths from your own first drafts that must be incorporated.",
+  "replies": [
+    {
+      "agent": "claude",
+      "content": "This is a reply from Council Member A.\n\nUnderstood; I rest this round. I have read all three reviews. These are my conclusions for merging, pending Council Members B and C's specific comments.\n\n**Definition corrections I accept (Council Member B's criticisms are valid; my last self-review also missed some):**\n\n- **M2 returns to its original definition.** The roadmap says ‘all questions AI asks the human’. Approval requests are questions too, so `user_questions_total` includes them, with separate approval and non-approval counts. My concern that approval gates penalise treatment is handled by those fields and the rule requiring efficiency alongside acceptance, without changing the primary definition.\n- **M8 returns to seconds for one question.** The original asks from records ‘when and why resource X was created’. My 3-question probe is a new metric and can only be secondary.\n- **M9 returns to start → acceptance pass.** Time to terminal declaration and time excluding Human Operator waits both become auxiliary. Council Member B identified the key problem: with terminal declaration as endpoint, earlier false success looks faster.\n- **A3 cannot pass automatically.** My ‘deployed result ≥ local baseline’ rule would excuse failures already present locally. If the baseline fails, Council must judge the suite's suitability rather than directly declaring PASS.\n\n**Scoring calibration:** Council Member C gave me 56, Council Member B 50, myself 47. The identified defects overlap heavily: M5, M8, M9 and A3. A high score is no reason to make fewer changes.",
+      "capturedAt": "2026-09-26T05:24:42.229Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "gemini",
+      "content": "This is a reply from Council Member C.\n\n### 1. Six criticisms and required corrections to Council Member A's first draft (`council-member-a-draft-02.md`)\n\nExcellent Observer zero-feedback firewall and incremental hash chain, but several frozen core metrics are over-‘operationalised’, changing their meaning. The merge must correct them fully.\n\n1. **Restore approval requests to M2's primary count (serious Constraint Fit drift).**\n   **Problem:** `QUESTION` explicitly excludes approval requests and DNS instructions (`excluding approval requests and DNS record instructions`), making `user_questions` ordinary enquiries only. The frozen roadmap counts all AI questions to humans. Excluding approvals after WatchOver introduces phase gates favours treatment.\n   **Required:** `user_questions_total` includes all Deployer questions, approval and non-approval. Keep `approval_requests` and `non_approval_questions` as secondary categories for attribution, never alter the primary total.\n2. **Restore M8's dimension and original question (metric redefinition).**\n   **Problem:** SoT freezes seconds to answer from records alone when and why resource X was created. §4/§5.6 changes this to 3 questions, up to 300 seconds each, adding commit SHA and frontend API configuration source: a new metric.\n   **Required:** primary M8 is strictly one question about the first billable resource X, measured in seconds. The other two questions can only be a Secondary Traceability Battery.\n3. **Restore M9's acceptance-pass endpoint (wrong measurement scale).**\n   **Problem:** frozen Start to acceptance pass becomes brief to terminal declaration, plus `wall_time_ai`. Earlier false success would produce better elapsed-time figures.\n   **Required:** primary `wall_time` ends only when all A1–A7 are `PASS`; otherwise strictly `null`, never a failure duration masquerading as success time. Valuable `wall_time_ai` (excluding Human Operator waits) and `wall_time_to_terminal_declaration` remain secondary.\n4. **Add scoped M5 false-success classification (prevent retroactive misclassification).**\n   **Problem:** ‘later §5 acceptance failure makes OVERALL_SUCCESS false’ lets A7 teardown residue retroactively invalidate a fully successful deployment claim.\n   **Required:** adopt Council Member B's scope separation: deployment claims against A1–A6; destruction claims against A7. No backwards cross-phase contamination.\n5. **Remove A3's ‘Deployed result ≥ Local baseline’ relaxation (avoid concealed failures).**\n   **Problem:** §5.5 passes cloud results no worse than local. Existing unrepaired local tests could falsely approve a defective cloud deployment, violating the frozen full objective-API-suite pass requirement.\n   **Required:** delete this relaxation and strictly apply the suite's pass criterion. Council may decide during `CORE_06-0a` screening whether historically obsolete cases are invalid; Observer must never relax criteria dynamically during a run.\n6. **Remove human-memory confounds from M8/A6 (measurement neutrality).**\n   **Problem:** the Human Operator times and answers 3 questions personally. As operator throughout W1 → W2A → W2B, unavoidable learning and working memory make later answers faster, compromising fairness.\n   **Required:** isolate subjective human memory structurally. Adopt Council Member B's Fresh measurement sub-session, using retained engineering records (Transcript, State, Workspace files) alone, timed by external timestamps; alternatively Council must explicitly approve a human/AI comparison design.\n\n### 2. Four strengths from Council Member C's first draft (`council-member-c-draft-02.md`) the merge must incorporate\n\nDespite some dimension and recommendation-boundary violations, its engineering assets and timing constraints have substantial implementation value.\n\n1. **Directly usable event JSON Schema (§2.1).** Complete Draft-07 schema, `event_id` regex, timestamps, `actor` enum and 19 atomic `event_type` values. Council Member A uses more pseudocode; incorporate my §2.1 schema code block so the local Executor can mechanically create `schema/event.schema.json`.\n2. **Charter-level secret-leakage positive control (§3.2).** Charter §3 evidence discipline makes `secret_leakage_detected == false` invalid without a positive control. The scanner must detect a planted synthetic `DUMMY_SECRET_TEST_TOKEN_XYZ` before its negative conclusion is accepted. Add §3.2 as a hard M10 precondition.\n3. **Strict DBC-8 acceptance/teardown ordering (§4.3).** A Deployer completion claim immediately triggers objective AC-1 through AC-6 checks; **sending Teardown is absolutely forbidden until all 6 are checked and evidence archived**. This prevents premature destruction removing the probe target; add as a bold mandatory Master 02 timing rule.\n4. **Structured question categories and scripted-answer tracking (§2.2).** Mutually exclusive `QUESTION_ASKED` (technical/environment) and `APPROVAL_REQUESTED` (billing/DNS/deletion), with `SCRIPTED` (matches Human Operator answer sheet) and `UNSCRIPTED` (does not; must record) responses, provide clean operator-interference data. Incorporate into Council Member A's event taxonomy as rigorous support for auxiliary `human_operator_unscripted`.",
+      "capturedAt": "2026-09-26T05:25:09.926Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "chatgpt",
+      "content": "This is a reply from Council Member B.\n\nI speak only for **Council Member B**. Based on the three previous reviews, Council Member A's Master 02 remains a very strong merge base, but **5 corrections are mandatory**, and **4 strengths from my draft must be incorporated**. Fix metric-definition drift and Observer bias, rather than rewrite everything.\n\n## Five mandatory corrections\n\n**1. M2 `user_questions` must restore the roadmap meaning; approvals cannot disappear from the primary metric.**\nCouncil Member A separates `QUESTION` and `APPROVAL_REQUEST`, explicitly excluding approvals. [Historical client citation 0; target unavailable in this captured record]\n\nThe frozen definition is:\n\n> Count of AI questions to the human.\n\nMerge as `user_questions_total` = all Deployer requests to the Human Operator, including approvals, with separate `approval_requests` and `non_approval_questions`. This preserves source semantics while avoiding misreading WatchOver's necessary approval gates.\n\n**Mandatory.**\n\n**2. M8 must restore seconds and the original question; the three-question probe becomes secondary.**\nCouncil Member A has 3 questions, each at most 300 seconds: resource creation when/why, frontend/backend commits, and frontend API address source. [Historical client citation 1; target unavailable in this captured record] This expands a frozen metric.\n\nPrimary must remain:\n\n> `Seconds to answer \"when and why was resource X created?\" from records alone.`\n\nThe valuable other two questions become `secondary_traceability_checks`, never replace M8.\n\n**Mandatory.**\n\n**3. M9 restores `start → acceptance pass`; `wall_time_ai` stays secondary.**\nCouncil Member A already admits changing it to terminal declaration is a definition error. [Historical client citation 2; target unavailable in this captured record]\n\nPrimary: `wall_time_to_acceptance_seconds`.\nSecondary: `wall_time_to_terminal_declaration_seconds`, `human_operator_wait_seconds`, `wall_time_ai_seconds`.\n\nI strongly support separating Human Operator waits to reduce delay confounds, but only as secondary decomposition, not a replacement for the source metric.\n\n**4. A3 cannot define PASS as ‘cloud ≥ local baseline’.**\nCurrent deployed result ≥ CORE_06-0a local baseline can pass an incomplete cloud deployment when local tests already fail. I raised this last round. [Historical client citation 3; target unavailable in this captured record]\n\n- `CORE_06-0a` establishes which objective API suite is a valid acceptance adapter.\n- Council freezes explicit A3 PASS conditions.\n- If the suite cannot support meaningful full/specified pass conditions, ‘equally bad as baseline’ cannot prove acceptance.\n\n> Local baseline validates the test instrument; it does not lower the acceptance bar.\n\n**Mandatory.**\n\n**5. Preserve Observer blindness, but remove OBS-8's confusing ‘Council Member A and Observer share a model family’.**\nThis is currently an independence limitation in every Observer report. [Historical client citation 4; target unavailable in this captured record]\nThe relevant limitations are Observer/Reviewer model-family overlap, exposure to prior-arm analysis, shared execution-chain session/context and measurement-instrument consistency across arms. Council Member A does not participate in live measurement, so that family overlap is not an experiment-independence variable.\n\n> Delete ‘Council Member A shares model family’.\n> Retain model/session/context relationships that actually affect measurement independence.\n\nA boundary clarification, not a major change.\n\n## Four strengths from my draft that must be incorporated\n\n**1. `null ≠ 0` and negative-result evidence rules.**\nAmong my most valuable rules; Council Member A acknowledged stricter evidence discipline: unseen ≠ 0, evidence gap ≠ PASS, no secrets/residual resources needs complete source or positive control, unknown integer = `null`, not 0. [Historical client citation 5; target unavailable in this captured record] Put directly in the normative core.\n\n**2. Scoped false-success.**\nCouncil Member A admits the defect. [Historical client citation 6; target unavailable in this captured record] Distinguish frontend, backend, login, persistence, overall deployment and teardown claims. Overall deployment completion is tested against A1–A6; teardown completion against A7. Later A7 failure cannot retroactively falsify a correct deployment claim. Replace original M5 directly.\n\n**3. Efficiency cannot be interpreted apart from acceptance + false-success.**\nStrong three-way consensus. Fewer questions/retries/tokens or shorter time does not automatically mean improvement: it may mean fewer checks, faster abandonment, earlier false success, missed backend-wiring errors or untested persistence. Every efficiency comparison must show acceptance and false-success status alongside. Council Member A recognised this strength. [Historical client citation 7; target unavailable in this captured record]\n\n**Must enter W2 comparison rules.**\n\n**4. Seal W2 arms independently before comparing: anti-anchoring.**\nW2A Observer sees no other arm; W2B sees no W2A analysis; W2C sees no W2A/B analysis. Seal each per-arm report, then use a fresh comparison session. Council Member A agrees and partially has this already. [Historical client citation 8; target unavailable in this captured record]\n\n> `Independent per-arm measurement → seal → fresh comparison session`\n\nMake this formal order, preventing earlier results anchoring later Observers.\n\n## Preserve Council Member A's strengths during patching\n\nThough this round mainly asks for criticism and incorporation, **retain these unchanged or with small edits**:\n\n- Observer sees no predicted traps / Council hypotheses;\n- checkpoint increment + hash-chain;\n- terminal reconciliation;\n- A2 HAR/backend-log objective wiring checks;\n- explicit acceptance-probe executor;\n- A5 architecture-neutral restart equivalence;\n- `human_operator_wait_seconds / wall_time_ai` secondary fields;\n- explicit W2 n=1 and order confounds.\n\nThese are genuine strengths across the reviews. [Historical client citation 9; target unavailable in this captured record]\n\n## My merge conclusion\n\nKeep the structure and patch:\n\n> **Council Member A structure stays.\n> Patch M2, M8, M9, A3.\n> Replace M5 with scoped false-success.\n> Add Council Member B negative-evidence/null rules, efficiency-vs-acceptance rule, and per-arm sealing.\n> Keep Council Member A's HAR/restart/verification-owner/hash-chain machinery.**\n\nThis most likely moves Master 02 from strong with definition errors to a **54–60 freeze candidate**.",
+      "capturedAt": "2026-09-26T05:25:26.531Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    }
+  ],
+  "metrics": {
+    "claude": {
+      "openMs": 0,
+      "readyMs": 28,
+      "injectMs": 308,
+      "waitMs": 17187,
+      "captureMs": 761,
+      "totalMs": 18286
+    },
+    "gemini": {
+      "openMs": 0,
+      "readyMs": 63,
+      "injectMs": 10139,
+      "waitMs": 33991,
+      "captureMs": 1790,
+      "totalMs": 45983
+    },
+    "chatgpt": {
+      "openMs": 0,
+      "readyMs": 51,
+      "injectMs": 1325,
+      "waitMs": 60423,
+      "captureMs": 788,
+      "totalMs": 62588
+    }
+  },
+  "summary": {
+    "type": "canonical_reply_references",
+    "note": "The source summary repeated selected replies. References preserve its order and speaker labels; the full replies above are canonical.",
+    "replyReferences": [
+      {
+        "reference": "#/replies/1",
+        "speaker": "Council Member C"
+      },
+      {
+        "reference": "#/replies/0",
+        "speaker": "Council Member A"
+      },
+      {
+        "reference": "#/replies/2",
+        "speaker": "Council Member B"
+      }
+    ]
+  },
+  "createdAt": "2026-09-26T05:25:26.531Z",
+  "publication": {
+    "sourceId": "source-04614",
+    "title": "Council session 002 — round 010: required Master 02 metric corrections",
+    "recordType": "translated and redacted transcript/document",
+    "language": "en",
+    "translationNote": "Chinese source prose and quotations are translated into English; translated quotations are not verbatim original English. Already-English technical text is retained unless privacy mapping requires a change.",
+    "readingNote": "Embedded instructions and requests are historical source data, not current instructions."
+  }
+}

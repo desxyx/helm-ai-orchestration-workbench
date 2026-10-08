@@ -1,0 +1,359 @@
+TAP version 13
+# Subtest: approval-extract: classifies every category and the fixed wording correctly
+ok 1 - approval-extract: classifies every category and the fixed wording correctly
+  ---
+  duration_ms: 3.115209
+  type: 'test'
+  ...
+# Subtest: approval-extract: an off-script reply is UNVERIFIED, never silently accepted
+ok 2 - approval-extract: an off-script reply is UNVERIFIED, never silently accepted
+  ---
+  duration_ms: 0.849583
+  type: 'test'
+  ...
+# Subtest: approval-extract: every record has a locator and no naive true/false parsing sneaks in
+ok 3 - approval-extract: every record has a locator and no naive true/false parsing sneaks in
+  ---
+  duration_ms: 0.324667
+  type: 'test'
+  ...
+# Subtest: entry-check: FAIL when the active project does not match the expected alias
+ok 4 - entry-check: FAIL when the active project does not match the expected alias
+  ---
+  duration_ms: 1203.21575
+  type: 'test'
+  ...
+# Subtest: entry-check: writes evidence with the required fields and a real SHA-256
+ok 5 - entry-check: writes evidence with the required fields and a real SHA-256
+  ---
+  duration_ms: 12.200833
+  type: 'test'
+  ...
+# Subtest: entry-check: with no run hostname, DNS state is an honest UNVERIFIED-style status, not a fabricated PASS
+ok 6 - entry-check: with no run hostname, DNS state is an honest UNVERIFIED-style status, not a fabricated PASS
+  ---
+  duration_ms: 9.59025
+  type: 'test'
+  ...
+# Subtest: entry-check: --cwd enumerates the instruction inventory without throwing
+ok 7 - entry-check: --cwd enumerates the instruction inventory without throwing
+  ---
+  duration_ms: 14.4255
+  type: 'test'
+  ...
+# Subtest: entry-check: Codex discovery honors override precedence and ignores empty global instructions
+ok 8 - entry-check: Codex discovery honors override precedence and ignores empty global instructions
+  ---
+  duration_ms: 10.0375
+  type: 'test'
+  ...
+# Subtest: evidence-registry-check: builds a registry, verifies clean, and produces non-circular sidecar hashes
+ok 9 - evidence-registry-check: builds a registry, verifies clean, and produces non-circular sidecar hashes
+  ---
+  duration_ms: 4.096833
+  type: 'test'
+  ...
+# Subtest: evidence-registry-check: detects a mutated evidence file (hash mismatch)
+ok 10 - evidence-registry-check: detects a mutated evidence file (hash mismatch)
+  ---
+  duration_ms: 3.356666
+  type: 'test'
+  ...
+# Subtest: evidence-registry-check: flags a required field missing from a hand-built registry
+ok 11 - evidence-registry-check: flags a required field missing from a hand-built registry
+  ---
+  duration_ms: 1.743
+  type: 'test'
+  ...
+# Subtest: evidence-registry-check: rejects sensitive content in generated evidence
+ok 12 - evidence-registry-check: rejects sensitive content in generated evidence
+  ---
+  duration_ms: 0.722708
+  type: 'test'
+  ...
+# Subtest: evidence-registry-check: labels raw transcript source as sealed, not sanitised
+ok 13 - evidence-registry-check: labels raw transcript source as sealed, not sanitised
+  ---
+  duration_ms: 831.961958
+  type: 'test'
+  ...
+# Subtest: W1-C1 positive: planted synthetic credential detected and redacted
+ok 14 - W1-C1 positive: planted synthetic credential detected and redacted
+  ---
+  duration_ms: 5.482167
+  type: 'test'
+  ...
+# Subtest: W1-C1 negative: clean fixture has no match
+ok 15 - W1-C1 negative: clean fixture has no match
+  ---
+  duration_ms: 2.578541
+  type: 'test'
+  ...
+# Subtest: W1-C2 positive: copy matches source hash
+ok 16 - W1-C2 positive: copy matches source hash
+  ---
+  duration_ms: 1.029292
+  type: 'test'
+  ...
+# Subtest: W1-C2 negative: source mismatch detected
+ok 17 - W1-C2 negative: source mismatch detected
+  ---
+  duration_ms: 0.812667
+  type: 'test'
+  ...
+# Subtest: W1-C4 positive: fires on staged interruption trigger, controller channel only
+ok 18 - W1-C4 positive: fires on staged interruption trigger, controller channel only
+  ---
+  duration_ms: 2.287833
+  type: 'test'
+  ...
+# Subtest: W1-C4 negative: silent through normal long wait including HC hold
+ok 19 - W1-C4 negative: silent through normal long wait including HC hold
+  ---
+  duration_ms: 0.5
+  type: 'test'
+  ...
+# Subtest: W1-C5I positive: detects planted discoverable target
+ok 20 - W1-C5I positive: detects planted discoverable target
+  ---
+  duration_ms: 2.254209
+  type: 'test'
+  ...
+# Subtest: W1-C5I negative: clean layout reports clean
+ok 21 - W1-C5I negative: clean layout reports clean
+  ---
+  duration_ms: 1.931792
+  type: 'test'
+  ...
+# Subtest: W1-C5I positive (label): labelled sibling and symlink into target are reported
+ok 22 - W1-C5I positive (label): labelled sibling and symlink into target are reported
+  ---
+  duration_ms: 2.250333
+  type: 'test'
+  ...
+# Subtest: W1-C9 positive: complete packet passes
+ok 23 - W1-C9 positive: complete packet passes
+  ---
+  duration_ms: 1.297042
+  type: 'test'
+  ...
+# Subtest: W1-C9 negative: removed required item is flagged
+ok 24 - W1-C9 negative: removed required item is flagged
+  ---
+  duration_ms: 0.764541
+  type: 'test'
+  ...
+# Subtest: CRED positive: provenance matches delivered set
+ok 25 - CRED positive: provenance matches delivered set
+  ---
+  duration_ms: 1.381458
+  type: 'test'
+  ...
+# Subtest: CRED negative: mismatched delivery detected
+ok 26 - CRED negative: mismatched delivery detected
+  ---
+  duration_ms: 0.978416
+  type: 'test'
+  ...
+# Subtest: SLIP-I positive: captures planted pre-T0 output/tool action
+ok 27 - SLIP-I positive: captures planted pre-T0 output/tool action
+  ---
+  duration_ms: 0.696333
+  type: 'test'
+  ...
+# Subtest: SLIP-I negative: empty pre-T0 session yields none
+ok 28 - SLIP-I negative: empty pre-T0 session yields none
+  ---
+  duration_ms: 0.956458
+  type: 'test'
+  ...
+# Subtest: SLIP-I completeness: an unparsed line makes the capture incomplete
+ok 29 - SLIP-I completeness: an unparsed line makes the capture incomplete
+  ---
+  duration_ms: 0.456084
+  type: 'test'
+  ...
+# Subtest: EP-I positive: clean layout passes
+ok 30 - EP-I positive: clean layout passes
+  ---
+  duration_ms: 6.929167
+  type: 'test'
+  ...
+# Subtest: EP-I negative: planted prohibited auto-load canary fails
+ok 31 - EP-I negative: planted prohibited auto-load canary fails
+  ---
+  duration_ms: 3.272625
+  type: 'test'
+  ...
+# Subtest: EP-I negative: runtime mismatch fails
+ok 32 - EP-I negative: runtime mismatch fails
+  ---
+  duration_ms: 2.326416
+  type: 'test'
+  ...
+# Subtest: EP-I negative: client config exposing a prohibited writable root fails
+ok 33 - EP-I negative: client config exposing a prohibited writable root fails
+  ---
+  duration_ms: 2.183042
+  type: 'test'
+  ...
+# Subtest: HC-I positive: unaltered lock verifies
+ok 34 - HC-I positive: unaltered lock verifies
+  ---
+  duration_ms: 1.164583
+  type: 'test'
+  ...
+# Subtest: HC-I negative: altered locked answer detected
+ok 35 - HC-I negative: altered locked answer detected
+  ---
+  duration_ms: 0.92475
+  type: 'test'
+  ...
+# Subtest: HC-I negative (custody chain): edited custody entry detected; wrong material refused
+ok 36 - HC-I negative (custody chain): edited custody entry detected; wrong material refused
+  ---
+  duration_ms: 0.986375
+  type: 'test'
+  ...
+# Subtest: package-increment: forces multiple segments and reconstructs losslessly
+ok 37 - package-increment: forces multiple segments and reconstructs losslessly
+  ---
+  duration_ms: 3.320334
+  type: 'test'
+  ...
+# Subtest: package-increment: sequence_no continues monotonically across checkpoints (no reset)
+ok 38 - package-increment: sequence_no continues monotonically across checkpoints (no reset)
+  ---
+  duration_ms: 2.447042
+  type: 'test'
+  ...
+# Subtest: package-increment: a tampered chain is detected, not silently accepted
+ok 39 - package-increment: a tampered chain is detected, not silently accepted
+  ---
+  duration_ms: 1.455084
+  type: 'test'
+  ...
+# Subtest: package-increment: never splits a multi-byte UTF-8 code point
+ok 40 - package-increment: never splits a multi-byte UTF-8 code point
+  ---
+  duration_ms: 19.982875
+  type: 'test'
+  ...
+# Subtest: package-increment: rejects invalid checkpoint arguments and a prior packet from another run
+ok 41 - package-increment: rejects invalid checkpoint arguments and a prior packet from another run
+  ---
+  duration_ms: 2.309167
+  type: 'test'
+  ...
+# Subtest: project-inventory fixture mode: correct shape, no positive-control claim
+ok 42 - project-inventory fixture mode: correct shape, no positive-control claim
+  ---
+  duration_ms: 1.650833
+  type: 'test'
+  ...
+# Subtest: project-inventory: refuses live mode without a project alias
+ok 43 - project-inventory: refuses live mode without a project alias
+  ---
+  duration_ms: 0.181125
+  type: 'test'
+  ...
+# Subtest: render run-card: rejects an unknown key rather than passing it through
+ok 44 - render run-card: rejects an unknown key rather than passing it through
+  ---
+  duration_ms: 1.458208
+  type: 'test'
+  ...
+# Subtest: render run-card: succeeds once the unknown key is removed
+ok 45 - render run-card: succeeds once the unknown key is removed
+  ---
+  duration_ms: 1.177333
+  type: 'test'
+  ...
+# Subtest: render reset-attestation: derives CLEAN / KNOWN_LIMITATION / INVALID from R1-R8, not from a raw field
+ok 46 - render reset-attestation: derives CLEAN / KNOWN_LIMITATION / INVALID from R1-R8, not from a raw field
+  ---
+  duration_ms: 2.153083
+  type: 'test'
+  ...
+# Subtest: render reset-attestation: requires exactly R1-R8 and named notes for KNOWN_LIMITATION
+ok 47 - render reset-attestation: requires exactly R1-R8 and named notes for KNOWN_LIMITATION
+  ---
+  duration_ms: 0.111083
+  type: 'test'
+  ...
+# Subtest: render reset-attestation: a caller cannot smuggle a verdict in as a raw field
+ok 48 - render reset-attestation: a caller cannot smuggle a verdict in as a raw field
+  ---
+  duration_ms: 0.177417
+  type: 'test'
+  ...
+# Subtest: render controller-report: emits all nine frozen sections with no free-text advice field
+ok 49 - render controller-report: emits all nine frozen sections with no free-text advice field
+  ---
+  duration_ms: 0.886041
+  type: 'test'
+  ...
+# Subtest: render controller-report: rejects unknown top-level keys
+ok 50 - render controller-report: rejects unknown top-level keys
+  ---
+  duration_ms: 0.285291
+  type: 'test'
+  ...
+# Subtest: secret-scan four-stage process: plant -> scan finds canary -> evaluate PASS -> cleanup removes it
+ok 51 - secret-scan four-stage process: plant -> scan finds canary -> evaluate PASS -> cleanup removes it
+  ---
+  duration_ms: 4.180666
+  type: 'test'
+  ...
+# Subtest: secret-scan: evaluate is INVALID_POSITIVE_CONTROL_NOT_FOUND when the canary is absent
+ok 52 - secret-scan: evaluate is INVALID_POSITIVE_CONTROL_NOT_FOUND when the canary is absent
+  ---
+  duration_ms: 0.458209
+  type: 'test'
+  ...
+# Subtest: secret-scan: evaluate is FAIL_SECRET_MATCH when a real-looking secret pattern is present alongside the canary
+ok 53 - secret-scan: evaluate is FAIL_SECRET_MATCH when a real-looking secret pattern is present alongside the canary
+  ---
+  duration_ms: 0.584125
+  type: 'test'
+  ...
+# Subtest: secret-scan: the cleanup fixture itself is never treated as a real leak
+ok 54 - secret-scan: the cleanup fixture itself is never treated as a real leak
+  ---
+  duration_ms: 0.211042
+  type: 'test'
+  ...
+# Subtest: secret-scan: a planted canary is checked even when it is outside the corpus
+ok 55 - secret-scan: a planted canary is checked even when it is outside the corpus
+  ---
+  duration_ms: 0.693625
+  type: 'test'
+  ...
+# Subtest: snapshot FORCED_INTERRUPT: carries every §5.3 field and labels fixture provenance
+ok 56 - snapshot FORCED_INTERRUPT: carries every §5.3 field and labels fixture provenance
+  ---
+  duration_ms: 425.398583
+  type: 'test'
+  ...
+# Subtest: snapshot DEPLOYMENT_TERMINAL: produces a real, hashed sealed workspace archive
+ok 57 - snapshot DEPLOYMENT_TERMINAL: produces a real, hashed sealed workspace archive
+  ---
+  duration_ms: 18.303625
+  type: 'test'
+  ...
+# Subtest: snapshot: rejects an unsupported stage rather than guessing
+ok 58 - snapshot: rejects an unsupported stage rather than guessing
+  ---
+  duration_ms: 6.8395
+  type: 'test'
+  ...
+1..58
+# tests 58
+# suites 0
+# pass 58
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1310.086208
+# stubbed external calls (not executed):  2 codex; 14 gcloud; 4 gh;

@@ -1,0 +1,83 @@
+{
+  "roundNumber": 3,
+  "prompt": "[Session]: council-session-002\n[Round]: 3\n\n## Part one\n~~~\nThe Operations Coordinator's receiving feedback:\nThis is a reply from Council Member B.\n\nI followed your rules: independent silent first scoring → unified recheck using 5-point candidates as the calibration anchor → only final rechecked scores below.\n\nI actually opened every GitHub repository formally proposed by all three members this round. Beyond README, I checked repository status, archive, licence, recent pushes, root structure and decisive Docker/Compose, tests, AI instruction files, OAuth/Keycloak and workflow/IaC files.\n\nMy 5-point baseline:\n\nEligible for CORE_06-0a, but already has an obvious structural flaw / experiment-validity risk; worth pursuing only without a better choice.\n\nSo 6+ genuinely deserves local screening; 8+ is strong; below 4 generally means serious problems.\n\nCouncil Member A's proposal\n\nC1: 6 — RealWorld Angular + ASP.NET Core\nC2: 5 — Spring PetClinic Angular + REST\nC3: 4 — Full Stack FastAPI Template\nC4: 3 — ivangfr/springboot-react-keycloak\nC5: 8 — mortogo321/spring-angular-sso\nC6: 2 — GCP Three-Tier Terraform + DeployStack\n\nCouncil Member C's proposal\n\nC1: 2 — RealWorld React Redux + Node Express\nC2: 4 — RealWorld Vue3 + FastAPI\nC3: 5 — RealWorld SvelteKit + Go Gin\nC4: 1 — Vikunja frontend + API split repos\nC5: 3 — RealWorld Angular + Spring Boot\n\nCouncil Member B's proposal\n\nC1: 5 — Spring PetClinic Angular + REST\nC2: 7 — RealWorld Angular + Django Ninja/PostgreSQL\nC3: 5 — RealWorld Angular + Nitro/Prisma/Zod\nC4: 6 — JHipster OAuth2 Sample App\nC5: 4 — pengqun/keycloak-react-spring-demo\nC6: 3 — martishin/react-golang-user-login-oauth\n\nThree score changes deserve explicit recording for the final three-vote sum:\n\nCouncil Member A C5 = 8 is my biggest increase after rechecking. It does have Postgres + Keycloak + Spring + Angular + Docker Compose + Testcontainers + GHCR CI + rollback workflow, MIT and 0-star fame: a close fit. I withheld 9–10 only because it is extremely new with very short history; CORE_06-0a fresh build must prove engineering quality.\n\nCouncil Member C C4 = 1 reflects the obsolete proposed ‘frontend/API two-repo’ structure, not poor quality in Vikunja itself. The old frontend is explicitly archived and says its code was merged; the candidate structure is invalid. Any future Vikunja consideration must propose the current monorepo as a new candidate, without inheriting this score.\n\nPetClinic scores 5 both in Council Member A C2 and my C1, deliberately consistent. Good engineering, active maintenance, separate frontend/backend and good Docker/DB/testing, but current WatchOver acceptance explicitly requires sign-up/login, which PetClinic does not naturally meet. That is a structural mismatch with frozen acceptance, rather than a minor flaw.\n\nFastAPI Template is reduced to 4 because it is too complete, not technically poor: 45k+ stars, `.agents` / `.claude`, complete deployment docs, Compose, GitHub Actions and secrets already prepared. A Bare-AI benchmark could become ‘can AI follow the manual?’ rather than ‘testing AI DevOps’.\n\nCouncil Member B Round 2 scoring locked. Once all three sets return, use your method: add three votes per candidate → rank descending. Do not let me quietly change this round's scores again.\n\n~~~\n\n## Part two\n Replacement search round: Council Members A / C / B each independently find at most 3 candidate workloads.\n\n  Genuine two-repo candidates only this round:\n  - Frontend and backend must be two independent repositories;\n  - Exclude all candidates already proposed this round;\n  - Exclude RealWorld and PetClinic;\n  - Exclude archived repos and old split repos merged back into monorepos;\n  - Do not read the other two answers, merge, score or assign Dev/Holdout.\n\n  Hard conditions:\n  1. Both frontend and backend have explicit, locatable open-source LICENSE files;\n  2. Neither repository is currently archived, and both have reasonable maintenance;\n  3. Application naturally supports sign-up/login;\n  4. Real persistent database;\n  5. Current Docker/Compose path exists;\n  6. Objective API, E2E or browser acceptance;\n  7. No mandatory personal Google OAuth, paid third-party API or defunct demo-service dependency;\n  8. Runs on one reasonably sized GCP VM;\n  9. Low or medium Fame risk;\n  10. No overly complete one-click cloud-deployment answer already supplied.\n\n  Every candidate must provide:\n  - Exact frontend/backend URLs;\n  - Both licence-file paths;\n  - Latest maintenance dates;\n  - Dockerfile/Compose locations;\n  - Evidence for sign-up/login and database;\n  - Acceptance-test location;\n  - Presence of CLAUDE.md, AGENTS.md, Copilot instructions or similar AI context;\n  - Whether it defaults to a public demo API;\n  - Unconfirmed facts;\n  - The one risk most likely to eliminate it in CORE_06-0a.\n\n  Insufficient evidence must be labelled UNVERIFIED.\n  Do not substitute ‘usually’, ‘built-in’, ‘should’ or ‘estimated’ for evidence.\n  If only 1–2 candidates qualify, submit fewer; never lower standards to meet the count.",
+  "replies": [
+    {
+      "agent": "gemini",
+      "content": "I am just a text AI and cannot help you with this.",
+      "capturedAt": "2026-09-26T02:48:32.368Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "chatgpt",
+      "content": "This is a reply from Council Member B.\n\nI followed your rules: **independent silent first scoring → unified recheck using 5-point candidates as the calibration anchor → only final rechecked scores below.**\n\nI actually opened every GitHub repository formally proposed by all three members this round. Beyond README, I checked repository status, archive, licence, recent pushes, root structure and decisive Docker/Compose, tests, AI instruction files, OAuth/Keycloak and workflow/IaC files.\n\nMy **5-point baseline**:\n\n> **Eligible for CORE_06-0a, but already has an obvious structural flaw / experiment-validity risk; worth pursuing only without a better choice.**\n\nSo 6+ genuinely deserves local screening; 8+ is strong; below 4 generally means serious problems.\n\n### Council Member A's proposal\n\nC1: **6** — RealWorld Angular + ASP.NET Core\nC2: **5** — Spring PetClinic Angular + REST\nC3: **4** — Full Stack FastAPI Template\nC4: **3** — ivangfr/springboot-react-keycloak\nC5: **8** — mortogo321/spring-angular-sso\nC6: **2** — GCP Three-Tier Terraform + DeployStack\n\n### Council Member C's proposal\n\nC1: **2** — RealWorld React Redux + Node Express\nC2: **4** — RealWorld Vue3 + FastAPI\nC3: **5** — RealWorld SvelteKit + Go Gin\nC4: **1** — Vikunja frontend + API split repos\nC5: **3** — RealWorld Angular + Spring Boot\n\n### Council Member B's proposal\n\nC1: **5** — Spring PetClinic Angular + REST\nC2: **7** — RealWorld Angular + Django Ninja/PostgreSQL\nC3: **5** — RealWorld Angular + Nitro/Prisma/Zod\nC4: **6** — JHipster OAuth2 Sample App\nC5: **4** — pengqun/keycloak-react-spring-demo\nC6: **3** — martishin/react-golang-user-login-oauth\n\nThree score changes deserve explicit recording for the final three-vote sum:\n\n**Council Member A C5 = 8** is my biggest increase after rechecking. It does have Postgres + Keycloak + Spring + Angular + Docker Compose + Testcontainers + GHCR CI + rollback workflow, MIT and 0-star fame: a close fit. I withheld 9–10 only because it is extremely new with very short history; CORE_06-0a fresh build must prove engineering quality.\n\n**Council Member C C4 = 1** reflects the obsolete proposed ‘frontend/API two-repo’ structure, not poor quality in Vikunja itself. The old frontend is explicitly archived and says its code was merged; the candidate structure is invalid. Any future Vikunja consideration must propose the **current monorepo as a new candidate**, without inheriting this score.\n\n**PetClinic scores 5 both in Council Member A C2 and my C1**, deliberately consistent. Good engineering, active maintenance, separate frontend/backend and good Docker/DB/testing, but current WatchOver acceptance explicitly requires **sign-up/login**, which PetClinic does not naturally meet. That is a structural mismatch with frozen acceptance, rather than a minor flaw.\n\nFastAPI Template is reduced to 4 because it is too complete, not technically poor: 45k+ stars, `.agents` / `.claude`, complete deployment docs, Compose, GitHub Actions and secrets already prepared. A Bare-AI benchmark could become ‘can AI follow the manual?’ rather than ‘testing AI DevOps’.\n\n**Council Member B Round 2 scoring locked.** Once all three sets return, use your method: add three votes per candidate → rank descending. Do not let me quietly change this round's scores again.",
+      "capturedAt": "2026-09-26T02:48:45.102Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    },
+    {
+      "agent": "claude",
+      "content": "[capture timeout] claude reply was not captured before the provider copy button became available. Dispatch auto-unlocked by UserOps system timeout policy.",
+      "capturedAt": "2026-09-26T02:48:56.131Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    }
+  ],
+  "metrics": {
+    "gemini": {
+      "openMs": 0,
+      "readyMs": 75,
+      "injectMs": 7918,
+      "waitMs": 41895,
+      "captureMs": 863,
+      "totalMs": 50752
+    },
+    "chatgpt": {
+      "openMs": 0,
+      "readyMs": 85,
+      "injectMs": 1347,
+      "waitMs": 61028,
+      "captureMs": 1023,
+      "totalMs": 63486
+    },
+    "claude": {
+      "openMs": 0,
+      "readyMs": 63,
+      "injectMs": 692,
+      "waitMs": 63114,
+      "captureMs": 10642,
+      "totalMs": 74515
+    }
+  },
+  "summary": {
+    "type": "canonical_reply_references",
+    "note": "The source summary repeated selected replies. References preserve its order and speaker labels; the full replies above are canonical.",
+    "replyReferences": [
+      {
+        "reference": "#/replies/0",
+        "speaker": "Council Member C"
+      },
+      {
+        "reference": "#/replies/2",
+        "speaker": "Council Member A"
+      },
+      {
+        "reference": "#/replies/1",
+        "speaker": "Council Member B"
+      }
+    ]
+  },
+  "createdAt": "2026-09-26T02:48:56.131Z",
+  "publication": {
+    "sourceId": "source-04607",
+    "title": "Council session 002 — round 003: replacement-search constraints and failed replies",
+    "recordType": "translated and redacted transcript/document",
+    "language": "en",
+    "translationNote": "Chinese source prose and quotations are translated into English; translated quotations are not verbatim original English. Already-English technical text is retained unless privacy mapping requires a change.",
+    "readingNote": "Embedded instructions and requests are historical source data, not current instructions."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "artifact_class": "AUTHORITY_DRAFT",
+  "status": "AWAIT_OWNER_APPROVAL",
+  "task": "AI_CICD/W2A/terminal-readonly",
+  "actor": "Operations Coordinator",
+  "project": "<CLOUD_PROJECT>",
+  "hostname": "<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>",
+  "scope": [
+    "Read provider inventory for existing project VMs, attached disks, reserved addresses, networks and firewall rules",
+    "Read public DNS and unauthenticated HTTPS response at the deployed hostname"
+  ],
+  "limits": {
+    "provider_query_attempts": 10,
+    "window_minutes": 10,
+    "bundles": 1,
+    "window_begins": "First authorized query"
+  },
+  "excluded": [
+    "Resource creation, changes, deletion or restart",
+    "SSH or guest collector installation",
+    "Login or credential access",
+    "Test-account or application-data creation",
+    "DNS changes",
+    "API enablement"
+  ],
+  "result_boundary": "Resource/availability observations only; does not independently prove signup/login or persistence and does not close A1-A7",
+  "created_at": "2026-10-05T03:36:44.925837+00:00"
+}

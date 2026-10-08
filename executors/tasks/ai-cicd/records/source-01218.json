@@ -1,0 +1,18 @@
+{
+  "receipt_id": "AI-CICD-20261005-W2A-TERMINAL-READONLY-001",
+  "actor": "Operations Coordinator",
+  "lane": "terminal control-plane read-only custody",
+  "target": "<EXPERIMENT_PROJECT>; <W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>",
+  "action": "SDK/account/project metadata, existing project inventory/VM/disks/addresses/networks/firewalls; public DNS and unauthenticated HTTPS",
+  "mutation_class": "local evidence only; provider read-only",
+  "allowed_count": 1,
+  "provider_command_attempt_cap": 10,
+  "valid_from": "2026-10-05T14:39:47.140743+11:00",
+  "valid_until": "2026-10-05T14:49:47.140743+11:00",
+  "source_authorization": "Human Operator: approved read-only acceptance",
+  "signed_by": "Human Operator via explicit current-message approval",
+  "draft_sha256": "<PRIVATE_REF_01696>",
+  "consumption": "STARTED 1/1; no reuse",
+  "result": "PENDING",
+  "stop_point": "Capture complete, 10 provider attempts, 10 minutes, or mutation needed; whichever first"
+}

@@ -1,0 +1,6 @@
+{
+  "billingAccountName": "billingAccounts/<BILLING_ACCOUNT>",
+  "billingEnabled": true,
+  "name": "projects/<CLOUD_PROJECT>/billingInfo",
+  "projectId": "<CLOUD_PROJECT>"
+}

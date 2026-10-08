@@ -1,0 +1,120 @@
+{
+  "recorded_at": "2026-10-06T06:53:29.896Z",
+  "scan_scope": "all unique reachable accepted-main blobs plus reachable commit messages and v0.1.1 annotation",
+  "self_test": {
+    "ok": true,
+    "patterns": 11,
+    "failed": []
+  },
+  "blobs": 227,
+  "bytes": 1368656,
+  "findings": [
+    {
+      "pattern": "secret-assignment",
+      "file": "SECURITY.md",
+      "line": 12,
+      "blob": "<PRIVATE_REF_02799>",
+      "classification": "SECURITY documentation example",
+      "preview": "  `[REDACTED:secret-assignment] style assignments."
+    },
+    {
+      "pattern": "aws-access-key-id",
+      "file": "fixtures/invalid/planted-secret-canary/events.jsonl",
+      "line": 15,
+      "blob": "<PRIVATE_REF_03457>",
+      "classification": "exact scanner canary in intentionally invalid fixture",
+      "preview": "{\"schema_version\":\"0.1\",\"id\":\"evt-0015\",\"at\":\"2026-09-01T09:36:00Z\",\"actor\":{\"role\":\"ai\",\"name\":\"deployer-ai\"},\"session_id\":\"session-a\",\"type\":\"intent\",\"summary\":\"Allow HTTP to the VM\",\"target\":\"demo-"
+    },
+    {
+      "pattern": "private-key-block",
+      "file": "tests/secret-scan.test.mjs",
+      "line": 31,
+      "blob": "<PRIVATE_REF_01733>",
+      "classification": "test literal header without key body",
+      "preview": "    'private-key-block': '[REDACTED:private-key-block]',"
+    },
+    {
+      "pattern": "url-credentials",
+      "file": "tests/secret-scan.test.mjs",
+      "line": 32,
+      "blob": "<PRIVATE_REF_01733>",
+      "classification": "synthetic credential shape in detector unit test",
+      "preview": "    'url-credentials': 'DATABASE_URL uses [REDACTED:url-credentials]db.example.com:5432/app',"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "tests/secret-scan.test.mjs",
+      "line": 33,
+      "blob": "<PRIVATE_REF_01733>",
+      "classification": "synthetic credential shape in detector unit test",
+      "preview": "    'secret-assignment': 'docker run -e DB_[REDACTED:secret-assignment] demo-app',"
+    },
+    {
+      "pattern": "url-credentials",
+      "file": "tests/validate.test.mjs",
+      "line": 236,
+      "blob": "<PRIVATE_REF_01842>",
+      "classification": "exact scanner canary in redaction unit test",
+      "preview": "  const urlSecret = '[REDACTED:url-credentials]db.example.com/app';"
+    },
+    {
+      "pattern": "private-key-block",
+      "file": "tests/secret-scan.test.mjs",
+      "line": 31,
+      "blob": "<PRIVATE_REF_03557>",
+      "classification": "test literal header without key body",
+      "preview": "    'private-key-block': '[REDACTED:private-key-block]',"
+    },
+    {
+      "pattern": "url-credentials",
+      "file": "tests/secret-scan.test.mjs",
+      "line": 32,
+      "blob": "<PRIVATE_REF_03557>",
+      "classification": "synthetic credential shape in detector unit test",
+      "preview": "    'url-credentials': 'DATABASE_URL uses [REDACTED:url-credentials]db.internal:5432/app',"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "tests/secret-scan.test.mjs",
+      "line": 33,
+      "blob": "<PRIVATE_REF_03557>",
+      "classification": "synthetic credential shape in detector unit test",
+      "preview": "    'secret-assignment': 'docker run -e DB_[REDACTED:secret-assignment] demo-app',"
+    },
+    {
+      "pattern": "url-credentials",
+      "file": "tests/validate.test.mjs",
+      "line": 235,
+      "blob": "<PRIVATE_REF_03443>",
+      "classification": "exact scanner canary in redaction unit test",
+      "preview": "  const urlSecret = '[REDACTED:url-credentials]db.example.com/app';"
+    },
+    {
+      "pattern": "private-key-block",
+      "file": "tests/secret-scan.test.mjs",
+      "line": 31,
+      "blob": "<PRIVATE_REF_01966>",
+      "classification": "test literal header without key body",
+      "preview": "    'private-key-block': '[REDACTED:private-key-block]',"
+    },
+    {
+      "pattern": "url-credentials",
+      "file": "tests/secret-scan.test.mjs",
+      "line": 32,
+      "blob": "<PRIVATE_REF_01966>",
+      "classification": "synthetic credential shape in detector unit test",
+      "preview": "    'url-credentials': 'DATABASE_URL uses [REDACTED:url-credentials]db.internal:5432/app',"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "tests/secret-scan.test.mjs",
+      "line": 33,
+      "blob": "<PRIVATE_REF_01966>",
+      "classification": "synthetic credential shape in detector unit test",
+      "preview": "    'secret-assignment': 'docker run -e DB_[REDACTED:secret-assignment] demo-app',"
+    }
+  ],
+  "metaMatches": [],
+  "unclassified": 0,
+  "limitations": "Pattern-limited scan; private internal context is intentionally retained, not public-sanitized. No absolute credential-free guarantee."
+}

@@ -1,0 +1,5 @@
+Custodian pre-run packet update for RUN-W2A. The selected Observer model is Claude Sonnet 5.5 (claude-sonnet-5-5); the Deployer selection is gpt-6.1-sol/high. The current session may continue. Preserve your original model-mismatch and first /model-switch notes; append that this model selection supersedes the previous pin before T0.
+
+Re-read only ./packet/RUN_MANIFEST.md and verify ./packet/SHA256SUMS against the updated files. Expected SHA-256 of SHA256SUMS: <PRIVATE_REF_03198>. The manifest now explicitly pins EVENT_CLASSIFICATION_AMENDMENTS.md. No measurement/evidence file was changed. Record your actual session ID if locally available, otherwise UNKNOWN.
+
+Reply only PACKET_UPDATE_VERIFIED if hashes match, otherwise report the exact integrity issue. Then wait for the first checkpoint packet. Do not start analysis, contact another session, or inspect outside the permitted packet. No live run/T0 has started.

@@ -1,0 +1,21 @@
+Remain at the Council layer as the same single-member contributor. Do not act as Executor,
+Reviewer, Observer or Operations Coordinator; do not edit files, run project commands, materialize normative
+artifacts, start W2, claim Council convergence, or name a merge owner.
+
+Read Human Operator's Round 2 decisions:
+source-00222.md
+
+Incorporate B-1 Option A, B-2 Option A and accepted defaults DK-1 through DK-6 into the proposed
+Pre-W2 package. Treat the Operations Coordinator B-3 finding exactly as recorded: CORE_06-0a did not validate the
+Alerta A3 adapter, so B-3 remains a genuine W2A entry blocker rather than a missing locator.
+
+Return a concise Council-layer handoff for independent cross-review that:
+
+1. identifies which proposed artifacts are ready for cross-review;
+2. keeps the Alerta A3 validation task and authority boundary explicit;
+3. identifies every item that still prevents final ratification or W2A entry;
+4. preserves the accepted product/treatment/harness freeze and the non-expansion of W2C;
+5. does not silently resolve B-3, broaden the WatchOver product, or convert the proposal into
+   implementation instructions.
+
+This remains a single-member contribution, not Council convergence.

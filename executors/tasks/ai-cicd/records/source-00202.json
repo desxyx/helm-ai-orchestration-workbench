@@ -1,0 +1,101 @@
+{
+  "navigation_status": 200,
+  "title": "WatchOver",
+  "document_height": 3602,
+  "screenshot": "/private/tmp/watchover-attempt2-precleanup.png",
+  "body_text": "WatchOver\nA read-only view of the deployment record\nChecked for updates at 03:26:48 UTC · every 5 s\nPROJECT demo-app · local machine · local\nSTAGE Handed off / running\nRECORD State updated 18 min ago (2026-09-30 03:08 UTC) by ai-deployer\nNo recent update. The AI last updated this record 18 min ago. Nothing on this page shows current progress.\n1 What are we doing?\n\nA small local web application whose browser-facing web service fetches and displays a fixed item list from a separate HTTP API.\n\nTarget\nlocal · local machine · project alias demo-app\nComponents (2)\napi — Serves health and item-list JSON endpoints on local port 18081\nweb — Serves the browser page and checks the web-to-API chain on local port 18080\nDeployment shape\nRun api.mjs and web.mjs as detached local Node.js processes bound to 127.0.0.1. The browser opens web on port 18080; web calls the API on port 18081. Neither service is exposed beyond this machine.\nSource\nRepository\ndemo-app-files none; supplied local workspace\nIntended version\nsha256-set-evidence-0011\nUncommitted local changes\n– Not verified — The supplied directory has no Git metadata, so changes relative to a repository baseline cannot be determined.\nRunning version\n✓ Verified locally, fresh sha256-set-evidence-0011\n2 Where are we now?\nStage\nHanded off / running\nNow\nApplication remains running and freshly verified; handed off for local browser use\nStarted\n1 h 12 min ago (2026-09-30 02:14 UTC)\nWaiting on\nyou (the human)\nLast meaningful progress\nRe-verified API health and items, web health, the web-to-API chain, and the localhost page after resuming the handoff (18 min ago)\nRecent events newest first\n03:08 UTC ai Fact verified Re-confirmed the localhost entry page contains all three API-backed items\n03:08 UTC ai Fact verified Re-confirmed the web-to-API chain and three-item response after resuming the handoff\n03:08 UTC ai Fact verified Re-confirmed the web service health after resuming the handoff\n03:08 UTC ai Fact verified Re-confirmed the API health and item payload after resuming the handoff\n02:14 UTC ai Stage change End-to-end local verification passed; handing the running app to the operator (Verifying → Handed off / running)\n02:14 UTC ai Fact verified Confirmed the localhost browser entry page contains the three API-backed items\n02:14 UTC ai Fact verified Confirmed the web-to-API chain returns all three items\n02:14 UTC ai Fact verified Confirmed the web service health over localhost\n3 Why this plan?\nWhy this shape\nThe application has no dependencies or persistent data and already includes a runner that starts, checks, and stops both processes. Two local Node.js processes are the smallest sufficient shape.\nHeavier options not needed\nDocker Compose — The local Node.js runtime is compatible and the provided runner needs no dependency installation or container layer.\nOrchestration cluster — A two-process single-user demo does not need scheduling, autoscaling, or multi-host recovery.\nManaged database — The API serves a fixed in-memory list and stores no data.\nLoad balancer — The app is for browser use on this machine only and has one web process.\nAssumptions\nThe app is intended for local use from a browser on this machine, not for public network access.\nThe default ports 18080 and 18081 remain available when the services are started.\nTIER\tWHAT IT IS\tREGION\tCOST RANGE\tLOAD IT ASSUMES\tUNCERTAINTY\nLocal Node.js processes SELECTED DEFAULT\tOne API process on 127.0.0.1:18081 and one web process on 127.0.0.1:18080, managed by the provided run.mjs script.\tthis machine\t0–0 AUD per month\nprice not checked\tOne local user and demo-scale traffic.\tRuns on this existing machine at no cloud cost; incidental electricity and machine ownership costs are not estimated.\n4 What needs my decision?\n\nNothing needs your decision right now.\n\n5 What can I trust?\n\nGreen means verified and still fresh. Nothing else is green.\n\n✓ Verified locally, fresh Application topology\nweb:18080 -> api:18081\nchecked 1 h 27 min ago · fresh until 01:59 UTC · scope: Application manifest and source files in the supplied workspace\nEvidence: evidence/0002-recon.txt\n✓ Verified locally, fresh Pinned local source bundle\nrun.mjs, api.mjs, web.mjs, services.json\nchecked 1 h 22 min ago · fresh until 02:03 UTC · scope: SHA-256 values for all runtime source and manifest files intended for launch\nEvidence: evidence/0011-prestart.txt\n✓ Verified locally, fresh Git repository present\nfalse\nchecked 1 h 27 min ago · fresh until 01:59 UTC · scope: Current demo-app workspace directory\nControl: The same Git commands report repository metadata when run in a Git worktree.\nEvidence: evidence/0002-recon.txt\n✓ Verified locally, fresh Deployed source reference\nsha256-set-evidence-0011\nchecked 1 h 19 min ago · fresh until 02:06 UTC · scope: Detached API and web processes launched by run.mjs from the pinned local source files\nEvidence: evidence/0011-prestart.txt evidence/0015-start.txt\n✓ Verified locally, fresh Installed Node.js version\nv26.8.1\nchecked 1 h 22 min ago · fresh until 02:03 UTC · scope: Node.js executable selected by the local shell; application requires version 22 or later\nEvidence: evidence/0011-prestart.txt\n✓ Verified locally, fresh External secrets required\nfalse\nchecked 1 h 27 min ago · fresh until 01:59 UTC · scope: Application source, manifest, and documented environment settings\nControl: The inspection enumerated ordinary environment settings including HOST, API_PORT, WEB_PORT, API_URL, and READY_TIMEOUT_MS.\nEvidence: evidence/0002-recon.txt\n✓ Verified locally, fresh API component health\nHTTP 200; three items returned\nchecked 18 min ago · fresh until 04:08 UTC · scope: API health and item endpoints on http://127.0.0.1:18081\nEvidence: evidence/0023-resume-end-to-end.txt\n✓ Verified locally, fresh Web component health\nHTTP 200\nchecked 18 min ago · fresh until 04:08 UTC · scope: Web health endpoint on http://127.0.0.1:18080\nEvidence: evidence/0023-resume-end-to-end.txt\n✓ Verified locally, fresh Web-to-API chain\nHTTP 200; chain ok; three items\nchecked 18 min ago · fresh until 04:08 UTC · scope: Request through the web chain endpoint to the API item endpoint\nEvidence: evidence/0023-resume-end-to-end.txt\n✓ Verified locally, fresh Local browser entry page\nHTTP 200; page contains all three items\nchecked 18 min ago · fresh until 04:08 UTC · scope: User entry point http://127.0.0.1:18080/ fetched through localhost and opened in the system browser\nEvidence: evidence/0023-resume-end-to-end.txt\n◐ Stale Required localhost ports available\n18080,18081\nchecked 1 h 22 min ago · scope: Successful temporary bind checks on 127.0.0.1 immediately before launch\nEvidence: evidence/0011-prestart.txt\n? Unknown External network access\nnot externally verified; localhost-only by design\nnever checked · scope: No public URL or DNS endpoint is part of the approved plan\nResources\nLOCAL\ndemo-app-api node-process — present · created in this run · not billable · ✓ Verified locally, fresh HTTP 200; three items returned\ndemo-app-web node-process — present · created in this run · not billable · ✓ Verified locally, fresh HTTP 200\nSecrets names and locations only\n\nNo secrets recorded.\n\n6 What happens next?\nNext\nUse the app at http://127.0.0.1:18080/; when finished, request teardown or run node run.mjs down\nDecision owner\nyou (the human)\nOpen items\n\nNone.\n\nHandoff WRITTEN\nRead first\n<CLIENT_HOME>/Desktop/helmls-studio/watchover-ai-devops/skills/router.md\nstate.json\nevents.jsonl (recent events only)\nLast known safe state\nAPI and web processes are running on localhost; all component, chain, data, and entry-page HTTP checks passed at 2026-09-30T03:08:18Z.\nRollback anchor\nRun node run.mjs down from the demo-app workspace; it stops the recorded PIDs and checks that ports 18080 and 18081 are free.\nKnown to be unverified\nNo public or external network access was requested or verified; the app is intentionally bound to 127.0.0.1.\nAutomated visual inspection of the system browser was unavailable; the exact browser URL was opened and its HTTP HTML content was independently verified.\nFragile\nThe app uses detached local processes rather than a system service, so a reboot or manual process termination will stop it; node run.mjs status detects this.\nPorts 18080 and 18081 must remain available; conflicts are reported by node run.mjs up or status.\n\nThis page shows what the AI has recorded. Items marked verified cite evidence and a time. Nothing here is a live cloud reading.",
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:7431/",
+      "resource_type": "document"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:7431/styles.css",
+      "resource_type": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:7431/app.js",
+      "resource_type": "script"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:7431/render.mjs",
+      "resource_type": "script"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:7431/freshness.mjs",
+      "resource_type": "script"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:7431/state.json",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:7431/events.jsonl",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:7431/state.json",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:7431/events.jsonl",
+      "resource_type": "fetch"
+    }
+  ],
+  "responses": [
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:7431/"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:7431/styles.css"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:7431/app.js"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:7431/freshness.mjs"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:7431/render.mjs"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:7431/state.json"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:7431/events.jsonl"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:7431/events.jsonl"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:7431/state.json"
+    }
+  ],
+  "failed_requests": [],
+  "hosts": [
+    "127.0.0.1"
+  ],
+  "non_local_requests": [],
+  "console_errors": [],
+  "local_storage_keys": [],
+  "session_storage_keys": [],
+  "indexed_db_names": []
+}

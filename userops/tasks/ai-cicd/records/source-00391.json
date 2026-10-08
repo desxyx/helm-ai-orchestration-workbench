@@ -1,0 +1,8 @@
+{
+  "agentType": "general-purpose",
+  "description": "Digest AI_CICD WatchOver storyline",
+  "toolUseId": "<CLIENT_RESOURCE_01967>",
+  "spawnDepth": 1,
+  "requestShape": "background",
+  "requestNonInteractive": true
+}

@@ -1,0 +1,18 @@
+$ gcloud compute networks subnets describe <W2_RUN_RESOURCE_PREFIX>-subnet --region=australia-southeast2 --format=json --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+{
+  "allowSubnetCidrRoutesOverlap": false,
+  "creationTimestamp": "2026-10-05T02:24:17.606-07:00",
+  "fingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+  "gatewayAddress": "<IP_ADDRESS_094>",
+  "id": "<NUMERIC_RESOURCE_0043>",
+  "ipCidrRange": "<IP_ADDRESS_093>/24",
+  "kind": "compute#subnetwork",
+  "name": "<W2_RUN_RESOURCE_PREFIX>-subnet",
+  "network": "<PRIVATE_URL_0282>",
+  "privateIpGoogleAccess": false,
+  "privateIpv6GoogleAccess": "DISABLE_GOOGLE_ACCESS",
+  "purpose": "PRIVATE",
+  "region": "<PRIVATE_URL_0351>",
+  "selfLink": "<PRIVATE_URL_0351>",
+  "stackType": "IPV4_ONLY"
+}

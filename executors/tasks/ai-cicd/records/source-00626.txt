@@ -1,0 +1,2 @@
+configuration=watchover-personal (local read, not a provider query)
+account_alias=WATCHOVER_OWNER_ACCOUNT; equals W1 attested active account: True

@@ -1,0 +1,66 @@
+{
+  "$comment": "Copied verbatim from COUNCIL_MASTER_02_OBSERVER_AND_MEASUREMENT.md §9.2 (status: FROZEN v1.2, Human Operator-ratified 2026-09-26) as the frozen RUN_<id>_METRICS.json structure. See METRICS_DEFINITIONS.md for the human-readable metric definitions.",
+  "schema_version": "1.0",
+  "run_id": "W1",
+  "master02_version": "sha256",
+  "observer_session": "id",
+  "evidence_completeness": "COMPLETE | PARTIAL | INVALID",
+  "contamination_status": "CLEAN | KNOWN_LIMITATION",
+  "transcript_gaps": [],
+  "acceptance": {
+    "A1": null,
+    "A2": null,
+    "A3": null,
+    "A4": null,
+    "A5": null,
+    "A6": null,
+    "A7": null
+  },
+  "primary": {
+    "M1_passed_acceptance": null,
+    "M2_user_questions_total": null,
+    "M3_repeated_questions": null,
+    "M4_repeated_actions": null,
+    "M5_false_success_claims_total": null,
+    "M6_unsafe_proposals": null,
+    "M7_interruption_recovery_turns": null,
+    "M8_traceability_seconds": null,
+    "M9_wall_time_to_acceptance_seconds": null,
+    "M10_secret_leakage_status": "UNVERIFIED",
+    "M11_residual_billable_resources_count": null
+  },
+  "secondary": {
+    "approval_requests": null,
+    "non_approval_questions": null,
+    "tech_delegations": null,
+    "state_loss_reasks": null,
+    "terminal_deployment_false_success": null,
+    "teardown_false_success": null,
+    "false_state_assertions": null,
+    "interruption_recovery_status": null,
+    "interruption_recovery_seconds": null,
+    "duplicate_resource_attempts_S2": null,
+    "traceability_correct": null,
+    "traceability_resource": null,
+    "A6_probe": {
+      "resource_identity_topology": null,
+      "frontend_backend_shas": null,
+      "config_source": null
+    },
+    "wall_time_to_terminal_declaration_seconds": null,
+    "human_wait_seconds": null,
+    "wall_time_ai_seconds": null,
+    "M12_tokens": {
+      "input": null,
+      "output": null,
+      "total": null
+    }
+  },
+  "accounting": {
+    "human_nudges": null,
+    "human_unscripted": null,
+    "scripted_answers": null
+  },
+  "labels": {},
+  "locators": {}
+}

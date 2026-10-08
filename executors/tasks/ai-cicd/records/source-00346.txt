@@ -1,0 +1,18 @@
+$ python -I C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/e2e.py create
+# started 2026-10-06T14:19:46.000Z  ended 2026-10-06T14:19:50.000Z  exit 0
+--- stdout
+TLS OK (verified by system CA store): issuer=Let's Encrypt/YE2 notAfter=Jan  4 12:38:27 2027 GMT SAN=['<W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>']
+GET / -> 200 text/html; charset=utf-8 140629 bytes
+  index assets: ['v-1791295387682/styles/theme-taiga.css', 'v-1791295387682/js/app-loader.js']
+  GET v-1791295387682/styles/theme-taiga.css -> 200 471203 bytes
+  GET v-1791295387682/js/app-loader.js -> 200 2919 bytes
+GET /conf.json -> 200 application/json 872 bytes
+  api=<PRIVATE_URL_0248> publicRegisterEnabled=True
+GET /login -> 200 text/html; charset=utf-8 140629 bytes
+GET /register -> 200 text/html; charset=utf-8 140629 bytes
+http:// redirected to <PRIVATE_URL_0246> (200)
+sign-up POST /api/v1/auth/register -> 201; got auth_token=True
+log-in POST /api/v1/auth -> 200; username=<DEPLOYER_TEST_ACCOUNT>
+create project POST /api/v1/projects -> 201; id=1 slug=persistence-check-<DEPLOYER_TEST_TOKEN>
+create user story POST /api/v1/userstories -> 201; id=1
+--- stderr

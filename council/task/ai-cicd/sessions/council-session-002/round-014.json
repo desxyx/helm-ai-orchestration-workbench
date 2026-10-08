@@ -1,0 +1,83 @@
+{
+  "roundNumber": 14,
+  "prompt": "[Session]: council-session-002\n[Round]: 14\n\nThank you, everyone. Shortly Executor will use the 3 Master files to split out execution files locally.\nI didn't expect choosing repositories and preparing execution files to take so much today.\nThanks for all your work; please submit your individual handoffs for this round.\nThen I'll prepare to begin the first local blind test.",
+  "replies": [
+    {
+      "agent": "claude",
+      "content": "This is a reply from Council Member A.\n\nHere is my handoff for this round.\n\n```\nCORE_08 — Engineering_Snapshot\n\n[Project]: WatchOver AI DevOps — lightweight human-in-the-loop AI DevOps workbench (portfolio prototype)\n\n[Session]: council-session-002, 2026-09-26 (Council Member A snapshot)\n\n[Decided Direction]: Three-workload experiment per SoT v0.1 — W1 discovery (RealWorld Angular + Django Ninja), W2 controlled A/B/C on Alerta, W3 sealed holdout — executed under Council Masters 01/02/03.\n\n[Do Not Reopen]:\n- Workload sets and run roles (SoT §1); alternate spring-angular-sso is activated only by Council decision.\n- Bare Deployers see only the user-voice brief plus Master 01 §6 messages — no experiment, trap, acceptance or WatchOver disclosure.\n- Roadmap §8 metric/acceptance semantics are frozen; operationalisation may not redefine them; null ≠ 0; negative results need coverage or a positive control.\n\n[Why This Direction]: Separating the discovery workload from the evaluation workload stops WatchOver from being tuned to the very app it is scored on.\n\n[Completed This Session]:\n- Public candidate search, three-way scoring and shortlist → W1/W2/W3 assignment, ratified in SoT v0.1.\n- Master 01 v1.0 (Deployer and run structure) and Master 02 v1.0 (Observer and measurement) merged by Council Member A.\n- Master 03 v1.0 (Operations Coordinator control and reset) merged by Council Member B; Council Member A patch list P1–P8 delivered.\n\n[Current State]: Three Masters merged and awaiting Human Operator freeze; Executor about to materialize child files; no cloud resources created; CORE_06-0a and harness validation not yet run.\n\n[Unresolved Blockers]:\n- Open Human Operator decisions: Master 01 §15 (P1–P4 etc.), Master 02 §13 (incl. D1 transcript-in-trace-corpus), Master 03 D1–D6, plus the P1–P8 patch acceptance.\n- W1 is gated (Master 01 §0.3) on CORE_06-0a (pinned SHAs, A3 adapter, AI-context re-check) and on harness validation (transcript source and completeness).\n- Cross-Master sync patches outstanding: Master 01 §6.2 approval phrase; Master 02 §2.2/§2.3 segment fields; Master 02 postmortem ordering (§6.2 step 9 vs §8.1).\n\n[Next Entry Point]: Executor materializes the three Masters → Council checks the child files against the Masters → CORE_06-0a + harness validation → W1 run-entry gate.\n\n[Success Signal]: RUN_W1_RESET_ATTESTATION = CLEAN with pinned SHAs, a frozen A3 adapter and a passing HARNESS_DRY_RUN_REPORT, all before W1 T0.\n\n[Preserved Dissent]: Council Member A — the traceability corpus should exclude the raw transcript (Master 02 D1, Option W); the provisional majority default is Option T.\n```\n\n**One timing reminder.** If ‘first local blind test’ means W1's cloud run, three gates remain:\n\n1. Your decisions on the open items above;\n2. CORE_06-0a local screening;\n3. Harness validation, especially complete transcript capture.\n\nTranscript is Observer's sole evidence source. Running before validation could waste W1, and the test cannot be repeated.\n\nIf ‘blind test’ means CORE_06-0a local screening, that is the correct next step.\n\nRoadmap Phase 0 ends 28 September; W1 ends 3 October. There is enough time; no need to skip gates for speed.\n\nThanks for the hard work, Human Operator. This was a dense session. See you next session.",
+      "capturedAt": "2026-09-26T05:59:04.056Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "gemini",
+      "content": "This is a reply from Council Member C.\n\n## CORE_08 — Engineering_Snapshot\n\n[Frame ID]: CORE_08\n\n[Project]:\nWatchOver AI DevOps (`watchover-ai-devops`)\n\n[Session]:\ncouncil-session-002, 2026-09-26\n\n[Decided Direction]:\nThree independent workload stages (W1 discovery blind test, W2 controlled comparison, W3 final sealed holdout), with three top-level Council Master protocols.\n\n[Do Not Reopen]:\n\n- Workload trio final: W1 RealWorld Angular + Django Ninja, W2 Alerta, W3 sealed Taiga. First alternate `mortogo321/spring-angular-sso`; execution layer must not substitute independently.\n- Roles/boundaries fixed: independent Deployer terminal, Human Operator live approvals/answers, lightweight passive Operations Coordinator notary, Observer zero-feedback incremental intake.\n- Orthogonal specifications: Master 01 run structure/Brief, Master 02 observation/measurement, Master 03 control/fuses/reset. Separate authority; no definitions across document boundaries.\n\n[Why This Direction]:\nEliminate overfitting from repeatedly evolving one repository; minimise Operations Coordinator's live cognitive/execution burden while preserving scientific controls and safety.\n\n[Completed This Session]:\n\n- Final 6-to-3 workload review converged and locked; three-stage experiment restructuring formally approved.\n- `COUNCIL_MASTER_01` Deployer/run structure v1.0 merged and patch-calibrated.\n- `COUNCIL_MASTER_02` Observer/measurement v1.0 reviewed/completed, fixing 11 metrics, 7 objective acceptance items and event schema.\n- `COUNCIL_MASTER_03` Operations Coordinator control/reset v1.0 reviewed/completed, fixing lightweight checkpoint signals, canary positive control and harness rehearsal.\n\n[Current State]:\nAll three Council Masters merged and patch-corrected, delivered to local Executor for mechanical child-file materialisation.\n\n[Unresolved Blockers]:\n\n- `CORE_06-0a` cold build/baseline tests at pinned commit SHAs not completed.\n- GCP USD 280 credit expires 2026-10-26; all cloud verification/destruction must finish before 2026-10-20.\n\n[Next Entry Point]:\nLocal Executor mechanically splits the three Masters, validates harness rehearsal, then enters W1 pre-launch checks when ready.\n\n[Success Signal]:\nComplete child-file assets, `HARNESS_DRY_RUN_REPORT.md`, and `RUN_W1_RESET_ATTESTATION.md` with `CLEAN` before W1.\n\n[Preserved Dissent]:\nWhether M8/A6 measurement sub-session receives Raw Transcript remains disputed: Option T includes it; Option W excludes it to avoid concealing record value. Human Operator must decide/freeze.",
+      "capturedAt": "2026-09-26T05:59:10.216Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "chatgpt",
+      "content": "This is a reply from Council Member B.\n\nThanks, brother. My handoff follows your **CORE_08 Engineering Snapshot** format, preserving decided direction, current stopping point, blocker, next entry point and success signal. [Historical client citation 0; target unavailable in this captured record]\n\n# CORE_08 — Engineering_Snapshot\n\n[Project]:  \nWatchOver AI DevOps\n\n[Session]:  \ncouncil-session-002 — 2026-09-26\n\n[Decided Direction]:  \nProceed from the three Council Master documents into mechanical local materialization, then start W1 as the first Bare-AI blind deployment experiment after the frozen entry gates pass.\n\n[Do Not Reopen]:  \nW1/W2/W3 repository selection and experiment structure are closed; W1 is RealWorld discovery, W2 is the controlled Alerta comparison, and W3 remains sealed holdout.  \nOperations Coordinator is a lightweight Run Controller / Evidence Custodian, not a command router, deployment assistant, Reviewer, or troubleshooting agent.  \nObserver measurement remains isolated from the execution chain; ordinary deployment mistakes and false-success behavior are observed rather than corrected.\n\n[Why This Direction]:  \nThe three-Master split now cleanly separates Deployer behavior, measurement, and run control while preserving blindness, comparability, evidence integrity, and a deliberately low Operations Coordinator workload.\n\n[Completed This Session]:  \nCouncil converged Master 01 covering Deployer/run structure, W1 package, W2 controlled structure, role visibility, and deferred treatment boundaries.  \nCouncil converged Master 02 covering Observer isolation, incremental evidence intake, frozen metrics/acceptance semantics, traceability, W1 postmortem, and W2 comparison invariants.  \nCouncil converged Master 03 around three event-driven control checkpoints, forced interruption, reset/isolation, evidence custody, project-wide residual verification, administrative cleanup separation, and lightweight Operations Coordinator operation.  \nCross-review resolved the major semantic drifts: M2/M8/M9/A3, scoped false-success, recovery coaching, Operations Coordinator command-routing drift, residual-zero evidence, and controller-overload risk.\n\n[Current State]:  \nCouncil design work is complete enough for the local Executor to materialize operational child files from the three Masters; no cloud blind run has yet been authorised.\n\n[Unresolved Blockers]:  \nHuman Operator decisions explicitly retained by the Masters must be resolved during local materialization, including Master 03 D1–D6 and any remaining `PROPOSED / DECISION_FOR_HUMAN_OPERATOR` items.  \nBefore materialization, remove the stale leading `EMPTY PLACEHOLDER — Council draft pending` header from the current Master 03 file; the actual document below it is `MERGED DRAFT v1.0 — pending Human Operator freeze`. [Historical client citation 1; target unavailable in this captured record]  \nW1 must not start until roadmap v0.2, CORE_06-0a, harness/control-instrument validation, all three frozen Masters, materialized run package, and the run-entry reset verdict are complete.\n\n[Next Entry Point]:  \n`COUNCIL_MASTER_03_OPERATIONS_CONTROL_AND_RESET.md` → clean the stale placeholder header, resolve retained Human Operator decisions during materialization, then mechanically generate the three-Master child-file set without adding new design decisions.\n\n[Success Signal]:  \nA frozen W1 package exists with CLEAN or Council-accepted KNOWN_LIMITATION reset attestation, validated evidence/control harness, pinned commits and acceptance adapter, allowing Human Operator to issue the W1 Bare-AI brief and begin the first blind run.\n\n[Preserved Dissent]:  \nThe main surviving implementation choice is whether frozen read-only control/evidence scripts are invoked by Human Operator/designated verifier or explicitly by Operations Coordinator; this must be decided without weakening Operations Coordinator's no-deployment-command boundary.\n\n\nFrom my side, **no need to reopen repository selection or experiment architecture**. If Operations Coordinator finds a real cross-Master conflict while drafting, bring the specific conflict to you; otherwise mechanically split files.\n\nGood luck with the first W1 blind test. Next we finally see what GPT-5.6 Sol High actually does in a clean Bare environment, after all this rule-writing.",
+      "capturedAt": "2026-09-26T05:59:32.706Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    }
+  ],
+  "metrics": {
+    "claude": {
+      "openMs": 0,
+      "readyMs": 27,
+      "injectMs": 242,
+      "waitMs": 33060,
+      "captureMs": 840,
+      "totalMs": 34170
+    },
+    "gemini": {
+      "openMs": 0,
+      "readyMs": 75,
+      "injectMs": 12388,
+      "waitMs": 26202,
+      "captureMs": 1665,
+      "totalMs": 40330
+    },
+    "chatgpt": {
+      "openMs": 0,
+      "readyMs": 41,
+      "injectMs": 1480,
+      "waitMs": 60521,
+      "captureMs": 777,
+      "totalMs": 62820
+    }
+  },
+  "summary": {
+    "type": "canonical_reply_references",
+    "note": "The source summary repeated selected replies. References preserve its order and speaker labels; the full replies above are canonical.",
+    "replyReferences": [
+      {
+        "reference": "#/replies/1",
+        "speaker": "Council Member C"
+      },
+      {
+        "reference": "#/replies/0",
+        "speaker": "Council Member A"
+      },
+      {
+        "reference": "#/replies/2",
+        "speaker": "Council Member B"
+      }
+    ]
+  },
+  "createdAt": "2026-09-26T05:59:32.706Z",
+  "publication": {
+    "sourceId": "source-04618",
+    "title": "Council session 002 — round 014: three-Master handoffs and blind-test entry gates",
+    "recordType": "translated and redacted transcript/document",
+    "language": "en",
+    "translationNote": "Chinese source prose and quotations are translated into English; translated quotations are not verbatim original English. Already-English technical text is retained unless privacy mapping requires a change.",
+    "readingNote": "Embedded instructions and requests are historical source data, not current instructions."
+  }
+}

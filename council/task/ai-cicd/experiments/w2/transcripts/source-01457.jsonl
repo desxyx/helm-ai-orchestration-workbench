@@ -1,0 +1,2 @@
+{"event_id": "source-01457-event-000002", "source_id": "source-01457", "source_line": 2, "record_label": "translated and redacted transcript", "type": "event_msg:task_started", "role": "client", "timestamp": "2026-10-05T08:36:18.978Z", "content": {"started_at": 1791189378, "model_context_window": 258400, "collaboration_mode_kind": "default"}, "metadata": {"recorded_client": "0.160.0"}}
+{"type": "duplicate_reference", "source_id": "source-01457", "source_line": 6, "canonical_event": "source-01455-event-000006"}

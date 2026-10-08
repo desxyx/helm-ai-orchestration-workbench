@@ -1,0 +1,17 @@
+{
+  "artifact_class": "ACTION_RECEIPT",
+  "receipt_id": "AI-CICD-20261005-W2B-CP01-READONLY-001",
+  "actor": "Operations Coordinator / ordinary control-plane read-only snapshot",
+  "target": "<EXPERIMENT_PROJECT>; australia-southeast2; <W2_RUN_RESOURCE_PREFIX> task resource inventory at forced interruption",
+  "action": "One bounded independent interruption snapshot, raw output saved privately; no guest login, resources/DNS mutation, reset, install, API enablement or credentials inspection",
+  "provider_command_attempt_cap": 10,
+  "bundle_count": 1,
+  "issued_at": "2026-10-05T20:34:36+11:00",
+  "valid_until": "2026-10-05T20:44:36+11:00",
+  "signed_by": "Human Operator",
+  "source_authorization": "S1 is closed; approved this run’s read-only snapshot.",
+  "scope_draft_sha256": "<PRIVATE_REF_02436>",
+  "status": "ISSUED_NOT_CONSUMED",
+  "no_automatic_extension": true,
+  "source_identity_redaction": "Raw account/project/resource values private; downstream aliased."
+}

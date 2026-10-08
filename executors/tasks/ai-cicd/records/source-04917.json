@@ -1,0 +1,6 @@
+{
+  "stage": "plant",
+  "locator": "secret_scan/fixtures/run_W1_PRE_TEARDOWN/fixtures/canary.txt",
+  "sha256": "<PRIVATE_REF_01646>",
+  "timestamp": "2026-09-28T06:35:54.638Z"
+}

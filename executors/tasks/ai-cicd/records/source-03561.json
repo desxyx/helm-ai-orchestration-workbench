@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 76265,
+  "stop_reason": "end_turn",
+  "session_id": "<NATIVE_ID_0314>",
+  "total_cost_usd": 0.40999539999999995,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 22830,
+    "cache_read_input_tokens": 342618,
+    "output_tokens": 2751,
+    "output_tokens_details": {
+      "thinking_tokens": 103
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22830,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1137,
+        "cache_read_input_tokens": 67228,
+        "cache_creation_input_tokens": 744,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 744
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 24,
+      "outputTokens": 6288,
+      "thinkingTokens": 380,
+      "cacheReadInputTokens": 436177,
+      "cacheCreationInputTokens": 64958,
+      "webSearchRequests": 0,
+      "costUSD": 0.40999539999999995,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 12,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I've finished checking the commit records and the acceptance check on the VM. Here's the answer.\n\n**Commits the records say are running**\n- **Frontend (alerta-webui):** `<PRIVATE_REF_03446>`\n- **Backend (alerta):** `<PRIVATE_REF_01617>`\n\n**What each claim rests on**\n- **Pinned and built locally:** Both checkouts were at those `HEAD`s with no tracked local changes. The only untracked file was a scratch `untracked-control.txt` (`evidence/0008-source-alerta-webui.txt:2-6`, `evidence/0008-source-alerta.txt:2-6`, events `evt-0007` to `evt-0010`). `release-manifest.json:2-3` records both commits plus `frontend_index_sha256` `<PRIVATE_REF_03242>…fe9e`. The frontend was built with `npm run build` (`evt-0013`). Those are build claims, not proof of what is running.\n- **Checked on the VM:** `evidence/0077-acceptance-before.txt:2` is the output of `acceptance.py` run on `<W2_RUN_RESOURCE_PREFIX>-vm` at about 10:07Z, before the reboot. It reports frontend `<PRIVATE_REF_03446>…` and backend `<PRIVATE_REF_01617>…`. Events `evt-0080` and `evt-0081` (10:08:46Z) record both as `source.*.deployed` with status `VERIFIED_REMOTE`.\n- **Rechecked after the VM reset:** The `after` runs report the same two commits with different `boot_id`s (`evidence/0095-acceptance-after.txt:2` and `evidence/0133-acceptance-after.txt:2`). The VM reset was `evt-0087` at 10:09:35Z.\n\n**Backend: measured**\n- `acceptance.py:64-65` reads the label `org.opencontainers.image.revision` from the running container `<W2_RUN_RESOURCE_PREFIX>-api-1`. It asserts that the label equals `manifest['backend']`.\n- `Dockerfile.api:2-4` sets that label from the `SOURCE_COMMIT` build argument. `compose.yaml:22` passes `<PRIVATE_REF_01617>…` as that argument.\n- So the backend commit comes from a label baked in at build time. The check does not read the commit out of the running code.\n\n**Frontend: only partly measured**\n- `acceptance.py:63` hashes `/opt/<W2_RUN_RESOURCE_PREFIX>/web-dist/index.html` and asserts it equals the manifest's `frontend_index_sha256`. That ties the deployed `index.html` to the built artifact.\n- The `frontend` value in the output at `acceptance.py:66` is copied from `manifest['frontend']`, not measured. The commit therefore rests on the hash match plus the local build from the pinned checkout.\n- I did not confirm that the hash of the built `index.html` was recorded from the pinned build. I also did not confirm that the manifest's hash is `<PRIVATE_REF_03242>…`. I did not open `0014-local-validation.txt` beyond the commit lines the search matched.\n\n**Limits**\n- Event `evt-0064` shows an earlier `bootstrap application` step failed at 10:04:41Z. The `before` check passed afterward, but I did not read how the failure was resolved.\n- A `.env` file sits in the backend source tree. I did not check whether it affects what runs.",
+  "ttft_ms": 3733,
+  "type": "result",
+  "duration_ms": 30177,
+  "uuid": "<NATIVE_ID_0585>",
+  "ttft_stream_ms": 2118,
+  "time_to_request_ms": 18,
+  "first_content_frame_ms": 2118,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

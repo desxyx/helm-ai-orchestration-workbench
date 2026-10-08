@@ -1,0 +1,11 @@
+{
+  "artifact_class": "OWNER_SURFACE_OBSERVATION",
+  "run_id": "RUN-W2B",
+  "recorded_at": "2026-10-05T20:51:24+11:00",
+  "point": "HC-INT",
+  "source": "Owner reports relying on live view with last recorded update09:25UTC/20min age and finding needed information written; records next-action section not updated during interruption.",
+  "status": "OWNER_SELF_REPORT",
+  "raw_answer_locator_control_private": "HC_INT_OWNER_ANSWERS_LOCKED.txt",
+  "no_correctness_or_causal_score": true,
+  "observer_or_deployer_delivery": "NONE"
+}

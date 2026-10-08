@@ -1,6 +1,6 @@
 # UserOps Tasks
 
-This folder is the public placeholder for UserOps task mirrors.
+This folder contains public navigation and selected translated/redacted derivatives of UserOps task records.
 
 In a full working system, each long-running task should have a UserOps task folder containing state, decisions, closure records, and memory candidates.
 
@@ -16,4 +16,4 @@ userops/tasks/<task_name>/
 `-- MEMORY_CANDIDATES.md
 ```
 
-The public repository does not include private task mirrors or raw internal task history.
+The public repository does not expose raw private task mirrors or raw internal history. The [WatchOver / AI_CICD case](ai-cicd/README.md) adds English translated/redacted state, decision, routing and closure records, cross-linked to its Council and Executor layers.

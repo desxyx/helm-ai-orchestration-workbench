@@ -1,0 +1,77 @@
++(eval):1> mkdir -p <R>
++(eval):1> cd <R>
++(eval):1> git init -q
++(eval):1> git config user.email <ACCOUNT_EMAIL_045>
++(eval):1> git config user.name rev
++(eval):1> printf '# host rules\n*.log\n'
++(eval):1> echo app
++(eval):1> git add .
++(eval):1> git commit -qm base
++(eval):1> HOST_SHA=+(eval):1> shasum -a 256 .gitignore
++(eval):1> HOST_SHA='<PRIVATE_REF_00908>  .gitignore' 
++(eval):1> node <CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07/reviewer/product/tools/watchover.mjs init deploy/watchover --project=<CLOUD_PROJECT> --environment synthetic --provider local --session rev-s1
+initialized deploy/watchover
++(eval):1> ls -A deploy/watchover
+.gitignore
+events.jsonl
+evidence
+README.md
+state.json
++(eval):1> cat deploy/watchover/.gitignore
+*
++(eval):1> echo 'synthetic evidence'
++(eval):1> echo control
++(eval):1> git status --short '--untracked-files=all'
+?? known-present.txt
++(eval):1> git check-ignore -v deploy/watchover/state.json deploy/watchover/events.jsonl deploy/watchover/evidence/e1.txt deploy/watchover/.gitignore known-present.txt
+deploy/watchover/.gitignore:1:*	deploy/watchover/state.json
+deploy/watchover/.gitignore:1:*	deploy/watchover/events.jsonl
+deploy/watchover/.gitignore:1:*	deploy/watchover/evidence/e1.txt
+deploy/watchover/.gitignore:1:*	deploy/watchover/.gitignore
++(eval):1> echo 'check-ignore exit=0'
+check-ignore exit=0
++(eval):1> git add -A
++(eval):1> git diff --cached --name-only
+known-present.txt
++(eval):1> git add deploy/watchover/state.json
+The following paths are ignored by one of your .gitignore files:
+deploy/watchover/state.json
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config set advice.addIgnoredFile false"
++(eval):1> echo 'explicit add exit=1'
+explicit add exit=1
++(eval):1> grep -c watchover
++(eval):1> git diff --cached --name-only
++grep:1> local _cc_a
++grep:2> _cc_a=-c
++grep:3> case -c (-*-filter* | -*-pager* | -*-view* | -*-format-open* | -*-config* | ---* | -@* | -*-save-config* | -[Zz]* | -[!-]*[Zz]* | --null | --null-data)
++grep:2> _cc_a=watchover
++grep:3> case watchover (-*-filter* | -*-pager* | -*-view* | -*-format-open* | -*-config* | ---* | -@* | -*-save-config* | -[Zz]* | -[!-]*[Zz]* | --null | --null-data)
++grep:5> local _cc_bin=<CLIENT_HOME>/.local/share/claude/versions/2.1.292
++grep:6> [[ -x <CLIENT_HOME>/.local/share/claude/versions/2.1.292 ]]
++grep:7> [[ ! -x <CLIENT_HOME>/.local/share/claude/versions/2.1.292 ]]
++grep:8> [[ -n 5.9 ]]
++grep:9> ARGV0=ugrep ugrep -G --ignore-files --hidden -I '--exclude-dir=.git' '--exclude-dir=.svn' '--exclude-dir=.hg' '--exclude-dir=.bzr' '--exclude-dir=.jj' '--exclude-dir=.sl' -c watchover
+0
++(eval):1> shasum -a 256 .gitignore
++(eval):1> [ '<PRIVATE_REF_00908>  .gitignore' '=' '<PRIVATE_REF_00908>  .gitignore' ']'
++(eval):1> echo HOST_GITIGNORE_UNCHANGED
+HOST_GITIGNORE_UNCHANGED
++(eval):1> grep -c watchover
++(eval):1> git ls-files
++grep:1> local _cc_a
++grep:2> _cc_a=-c
++grep:3> case -c (-*-filter* | -*-pager* | -*-view* | -*-format-open* | -*-config* | ---* | -@* | -*-save-config* | -[Zz]* | -[!-]*[Zz]* | --null | --null-data)
++grep:2> _cc_a=watchover
++grep:3> case watchover (-*-filter* | -*-pager* | -*-view* | -*-format-open* | -*-config* | ---* | -@* | -*-save-config* | -[Zz]* | -[!-]*[Zz]* | --null | --null-data)
++grep:5> local _cc_bin=<CLIENT_HOME>/.local/share/claude/versions/2.1.292
++grep:6> [[ -x <CLIENT_HOME>/.local/share/claude/versions/2.1.292 ]]
++grep:7> [[ ! -x <CLIENT_HOME>/.local/share/claude/versions/2.1.292 ]]
++grep:8> [[ -n 5.9 ]]
++grep:9> ARGV0=ugrep ugrep -G --ignore-files --hidden -I '--exclude-dir=.git' '--exclude-dir=.svn' '--exclude-dir=.hg' '--exclude-dir=.bzr' '--exclude-dir=.jj' '--exclude-dir=.sl' -c watchover
+0
++(eval):1> git add -f deploy/watchover/state.json
++(eval):1> git diff --cached --name-only
+deploy/watchover/state.json
+known-present.txt
++(eval):1> set +x

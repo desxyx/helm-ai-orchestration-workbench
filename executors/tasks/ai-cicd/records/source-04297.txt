@@ -1,0 +1,10 @@
+ docs/design-decisions.md                           |  2 +-
+ .../packages/reduced-no-dns/package-omissions.json |  5 ++
+ fixtures/valid/scenarios/package-gap/events.jsonl  |  2 +
+ fixtures/valid/scenarios/package-gap/state.json    | 97 ++++++++++++++++++++++
+ .../scenarios/shared-object-delta/events.jsonl     | 26 +++---
+ .../valid/scenarios/shared-object-delta/state.json | 22 ++---
+ skills/router.md                                   |  4 +-
+ tests/scenarios.test.mjs                           | 45 ++++++++--
+ tests/skill-package.test.mjs                       | 47 ++++++++++-
+ 9 files changed, 213 insertions(+), 37 deletions(-)

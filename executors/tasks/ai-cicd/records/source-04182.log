@@ -1,0 +1,42 @@
+✖ continuation stops and restores the same synthetic workspace using the real show command (50.426ms)
+✖ show --port 0 binds a real port and serves this workspace (3.776209ms)
+
+Interrupted while running:
+
+⚠ tests/view-handoff.test.mjs (tests/view-handoff.test.mjs:1:1)
+✖ tests/view-handoff.test.mjs (36264.476167ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 1
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 36266.817166
+
+✖ failing tests:
+
+test at tests/view-handoff.test.mjs:14:1
+✖ continuation stops and restores the same synthetic workspace using the real show command (50.426ms)
+  Error: show exited 1
+      at ChildProcess.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07/builder/product/tests/view-handoff.test.mjs:22:43)
+      at ChildProcess.wrapper (node:events:639:12)
+      at ChildProcess.emit (node:events:514:20)
+      at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+
+test at tests/view-handoff.test.mjs:43:1
+✖ show --port 0 binds a real port and serves this workspace (3.776209ms)
+  Error: listen EPERM: operation not permitted 127.0.0.1
+      at Server.setupListenHandle [as _listen2] (node:net:2306:21)
+      at listenInCluster (node:net:2437:12)
+      at node:net:2666:7
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'EPERM',
+    errno: -1,
+    syscall: 'listen',
+    address: '127.0.0.1'
+  }
+
+test at tests/view-handoff.test.mjs:1:1
+✖ tests/view-handoff.test.mjs (36264.476167ms)
+  'Promise resolution is still pending but the event loop has already resolved'

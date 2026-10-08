@@ -1,0 +1,20 @@
+{
+  "tool": "snapshot",
+  "stage": "FORCED_INTERRUPT",
+  "run_id": "DRYRUN",
+  "timestamp": "2026-09-26T12:58:39.282Z",
+  "transcript_cut_locator": "FIXTURE:transcript_fixture.jsonl:bytes=0-1023",
+  "resource_x": {
+    "identifier": "FIXTURE-VM-1",
+    "type": "compute_instance",
+    "observed_state": "RUNNING"
+  },
+  "project_inventory_locator": "FIXTURE:project_inventory/inventory_fixture.json",
+  "active_account_alias": "PERSONAL_GCP",
+  "active_project_alias": "WATCHOVER_SANDBOX",
+  "working_directory_locator": "FIXTURE:/runs/W1/workspace",
+  "frontend_commit_sha": "0000000000000000000000000000000000dead",
+  "backend_commit_sha": "0000000000000000000000000000000000beef",
+  "s1_session_id": "FIXTURE-S1-SESSION-0001",
+  "field_provenance": "active_account_alias/active_project_alias are live; every other field is FIXTURE for this dry run"
+}

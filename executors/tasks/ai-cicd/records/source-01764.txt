@@ -1,0 +1,7 @@
+$ gcloud compute ssh <ACCOUNT>@<W2_RUN_RESOURCE_PREFIX>-vm --zone=australia-southeast2-a --tunnel-through-iap --ssh-key-file=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-ssh-key --ssh-flag=-oUserKnownHostsFile=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-known-hosts '--command=sudo python3 /tmp/<W2_RUN_RESOURCE_PREFIX>-acceptance.py after' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+{"phase": "after", "signup": "passed", "fresh_login": "passed", "ordinary_user_scope": "passed", "admin_reserved": "passed", "alert_readback": "passed", "alert_id": "<NATIVE_ID_2225>", "frontend": "<PRIVATE_REF_03446>", "backend": "<PRIVATE_REF_01617>", "boot_id": "<NATIVE_ID_2287>"}
+WARNING: 
+
+To increase the performance of the tunnel, consider installing NumPy. For instructions,
+please see <PRIVATE_URL_0075>ogle.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
+

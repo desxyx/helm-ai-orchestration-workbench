@@ -1,0 +1,23 @@
+$ ssh -F C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/sshcfg taiga sudo bash /tmp/taiga-stage/setup-vm.sh /tmp/taiga-stage 2>&1 | tail -15; echo "--- entrypoint line1:"; head -1 /opt/taiga/src/taiga-back/docker/entrypoint.sh | od -c | head -2; echo "files with CR under /opt/taiga/src: $(sudo grep -rlI $'\r' /opt/taiga/src | wc -l)"
+# started 2026-10-06T13:38:38.000Z  ended 2026-10-06T13:38:41.000Z  exit 0
+--- stdout
+Synchronizing state of docker.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable docker
+Docker version 29.8.2, build 7fc2dff
+Docker Compose version v5.6.0
+== config
+total 20
+-rw-r--r-- 1 root root  377 Oct  6 13:38 Caddyfile
+-rw-r--r-- 1 root root  658 Oct  6 13:38 deploy_settings.py
+-rw-r--r-- 1 root root 2056 Oct  6 13:38 docker-compose.yml
+-rw------- 1 root root  181 Oct  6 12:56 secrets.env
+-rw-r--r-- 1 root root  507 Oct  6 13:38 taiga.env
+== sources
+taiga-back <PRIVATE_REF_01638>
+taiga-front <PRIVATE_REF_03189>
+setup done
+--- entrypoint line1:
+0000000   #   !   /   u   s   r   /   b   i   n   /   e   n   v       b
+0000020   a   s   h  \n
+files with CR under /opt/taiga/src: 1
+--- stderr

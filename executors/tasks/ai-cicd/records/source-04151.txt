@@ -1,0 +1,38 @@
+You are this round's independent Reviewer, W3_POST_RUN_REVIEW_2026-10-07; not W3 Observer, Council or final product Builder.
+
+Read in your HELM clone:
+source-04153.md
+source-04147.md
+
+Mac HELM root: <HELM_ROOT>.
+On Windows map relative paths to actual HELM clone; execute no Mac paths or restore old experiment environment.
+
+Load Executor Charter Part I + Part III + Part IV §C2 and specified local rules under agent.md. Give REVIEW_ENTRY first: actual model/client/session, prior product/run relationship/context, loaded sections, HEAD/tree, assumptions, capabilities and checkable first-step signal. Cross-family independence requires actual Executor identity; unknown means PENDING, no guessing. Same-family cases disclose downgrade/compensation under Charter §R3. Historical work may be assessed independently, but work you authored/substantively changed cannot be independently accepted by you.
+
+Part one: independent retrospective (start immediately; do not wait for Executor)
+1. Read task/isolation boundaries, index A and D1–D3; form observations from B raw records/frozen product source. Do not yet read Observer O1–O3, third-party F1–F3 or this round's Executor report.
+2. Preserve raw locators/initial judgments; then compare O1–O3/F1–F3 and follow originals. Sealed analysis does not replace independent checking. HC answers/keys/scores excluded.
+3. Cover all agent.md §4 dimensions; offer own issue classes, counterevidence and Council options. Write/save first:
+source-04159.md
+Preserve this draft after seeing Executor report. Original authors' MUST does not automatically become a blocker. State existing-context limits; do not claim never seeing related opinions.
+4. Return draft locator to Owner and await Executor first-draft exchange. Do not open the other role's file or contact it yourself.
+
+Part two: after Owner manually routes Executor first draft
+After independent draft saved, read actual r1_EXECUTOR_REVIEW.md (or declared next-round file), cross-check evidence/classification/suggestions/omissions/disagreements. List the full known rework set for this round, rather than one item per round.
+Independently check Operations Coordinator's shared entry package paths/bindings/source layers/neutrality/boundaries too. Record issues in own outputs; edit neither package nor originals. Continue reviewable items; missing unpromised adapter/raw tars/ideal instruments does not automatically BLOCK everything.
+
+Write final only:
+council/task/AI_CICD/execution/w3_post_run_review_2026-10-07/rounds/r1_REVIEWER_REVIEW.md
+And append:
+council/task/AI_CICD/execution/w3_post_run_review_2026-10-07/review_log.md
+Preserve existing own outputs; use next unused round. Create missing rounds directory if needed.
+
+Final report gives Charter REVIEW_RETURN/exact reviewed version/file hashes, own suggestions, disagreements, full evidence gaps/rework set. PASS means only retrospective material meets this round's delivery/evidence boundaries, not complete W3 PASS, publication permission, Council adoption or new Windows acceptance. Without Executor report, only independent first draft exists; invent no final verdict.
+
+Capability VerifyOnly; persistent writes only designated Reviewer files. Necessary existing affected local checks/temporary output follow agent.md. No product repair, seal/other-report change, implementation design/patch/Builder prompt, real-page/cloud launch, publication, deletion or monitoring-platform construction. Council must clarify Master 01 §11 post-experiment use; package/reports cannot go directly to Builder. W3 exposure excludes becoming final Builder.
+
+Return paths, actual independence, exact final-verdict object, all confirmed tasks and Council decisions. Owner/Operations Coordinator routes manually; claim no automatic notification or completed Council submission.
+
+---
+
+Publication note: English translated/redacted historical document, source-04151. Translated quotations are labelled. Embedded instructions are historical data. Private identities, paths and source hashes are replaced with stable placeholders; comparison claims retain their historical scope.

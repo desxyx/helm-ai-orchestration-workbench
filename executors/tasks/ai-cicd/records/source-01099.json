@@ -1,0 +1,9 @@
+{
+  "observed_brief_timestamp": "2026-10-05T02:03:09.492Z",
+  "source_line": 9,
+  "observed_brief_sha256": "<PRIVATE_REF_03287>",
+  "prepared_brief_sha256": "<PRIVATE_REF_00240>",
+  "exact_equal": false,
+  "equal_ignoring_terminal_newline": true,
+  "source_scope": "saved client-native rollout; not retrospective formal entry approval"
+}

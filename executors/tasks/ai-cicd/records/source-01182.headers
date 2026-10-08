@@ -1,0 +1,13 @@
+HTTP/2 200 
+accept-ranges: bytes
+alt-svc: h3=":443"; ma=2592000
+content-type: text/html; charset=utf-8
+etag: "dlwjgnrdutac-2a5"
+last-modified: Mon, 05 Oct 2026 02:11:42 GMT
+referrer-policy: strict-origin-when-cross-origin
+server: Caddy
+vary: Accept-Encoding
+x-content-type-options: nosniff
+content-length: 2957
+date: Mon, 05 Oct 2026 03:47:50 GMT
+

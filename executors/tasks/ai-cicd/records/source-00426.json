@@ -1,0 +1,137 @@
+{
+  "task": "WATCHOVER_PUBLIC_RELEASE_2026-10-07",
+  "round": "r1",
+  "candidate_commit": "<PRIVATE_REF_02615>",
+  "candidate_tree": "<PRIVATE_REF_03203>",
+  "paths_relative_to": "output/",
+  "files": {
+    "BUILDER_IDENTITY_r1.txt": {
+      "bytes": 532,
+      "sha256": "<PRIVATE_REF_02963>"
+    },
+    "CANDIDATE_LOCATOR_r1.txt": {
+      "bytes": 422,
+      "sha256": "<PRIVATE_REF_03217>"
+    },
+    "EXEC_ACK.md": {
+      "bytes": 5326,
+      "sha256": "<PRIVATE_REF_01697>"
+    },
+    "SUBMISSION_r1.md": {
+      "bytes": 16348,
+      "sha256": "<PRIVATE_REF_03719>"
+    },
+    "adaptation-paths.json": {
+      "bytes": 3696,
+      "sha256": "<PRIVATE_REF_01755>"
+    },
+    "affected-correction.md": {
+      "bytes": 440,
+      "sha256": "<PRIVATE_REF_03108>"
+    },
+    "affected-final.log": {
+      "bytes": 5515,
+      "sha256": "<PRIVATE_REF_02089>"
+    },
+    "affected.log": {
+      "bytes": 11219,
+      "sha256": "<PRIVATE_REF_01419>"
+    },
+    "audit-public.py": {
+      "bytes": 9182,
+      "sha256": "<PRIVATE_REF_02517>"
+    },
+    "candidate-public.tar": {
+      "bytes": 901120,
+      "sha256": "<PRIVATE_REF_00244>"
+    },
+    "cli-view-smoke.json": {
+      "bytes": 3024,
+      "sha256": "<PRIVATE_REF_01970>"
+    },
+    "delivery-verification.py": {
+      "bytes": 22754,
+      "sha256": "<PRIVATE_REF_03427>"
+    },
+    "final-doc-check.log": {
+      "bytes": 2426,
+      "sha256": "<PRIVATE_REF_00141>"
+    },
+    "freeze.json": {
+      "bytes": 603,
+      "sha256": "<PRIVATE_REF_02611>"
+    },
+    "freeze.log": {
+      "bytes": 22438,
+      "sha256": "<PRIVATE_REF_01563>"
+    },
+    "git-preparation.log": {
+      "bytes": 9164,
+      "sha256": "<PRIVATE_REF_02135>"
+    },
+    "history-privacy.json": {
+      "bytes": 1044,
+      "sha256": "<PRIVATE_REF_02605>"
+    },
+    "path-manifest-final.json": {
+      "bytes": 28511,
+      "sha256": "<PRIVATE_REF_03095>"
+    },
+    "path-manifest-postfreeze.json": {
+      "bytes": 28511,
+      "sha256": "<PRIVATE_REF_03095>"
+    },
+    "path-manifest-preinit.json": {
+      "bytes": 28511,
+      "sha256": "<PRIVATE_REF_03138>"
+    },
+    "path-manifest-updated.json": {
+      "bytes": 28511,
+      "sha256": "<PRIVATE_REF_02759>"
+    },
+    "privacy-final.json": {
+      "bytes": 4825,
+      "sha256": "<PRIVATE_REF_01666>"
+    },
+    "privacy-postfreeze.json": {
+      "bytes": 4830,
+      "sha256": "<PRIVATE_REF_02897>"
+    },
+    "privacy-preinit.json": {
+      "bytes": 4827,
+      "sha256": "<PRIVATE_REF_01086>"
+    },
+    "privacy-updated.json": {
+      "bytes": 4827,
+      "sha256": "<PRIVATE_REF_01272>"
+    },
+    "public-links.json": {
+      "bytes": 1177,
+      "sha256": "<PRIVATE_REF_02992>"
+    },
+    "regression-final.log": {
+      "bytes": 27279,
+      "sha256": "<PRIVATE_REF_02823>"
+    },
+    "regression.log": {
+      "bytes": 27243,
+      "sha256": "<PRIVATE_REF_01622>"
+    },
+    "run-local-checks.py": {
+      "bytes": 10639,
+      "sha256": "<PRIVATE_REF_03408>"
+    },
+    "source-to-public.patch": {
+      "bytes": 72526,
+      "sha256": "<PRIVATE_REF_01977>"
+    },
+    "source-verification.json": {
+      "bytes": 414,
+      "sha256": "<PRIVATE_REF_03531>"
+    },
+    "staged-paths.txt": {
+      "bytes": 4930,
+      "sha256": "<PRIVATE_REF_01556>"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "status": "RELEASED_TO_FRESH_ANALYSIS_AFTER_BOTH_SEALS",
+  "arms": {
+    "RUN-W2A": "W2A Bare",
+    "RUN-W2B": "W2B WatchOver Basic"
+  },
+  "W2C": "NOT_EXECUTED; no pre-W2A accepted/hashed Guarded package and interface; no Reviewer-layer incremental claim",
+  "released_at": "2026-10-06T02:27:45.875330+11:00"
+}

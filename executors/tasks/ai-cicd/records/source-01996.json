@@ -1,0 +1,1137 @@
+[
+  {
+    "path": "deployment-<W2_RUN_RESOURCE_PREFIX>/teardown.py",
+    "size": 16292,
+    "sha256": "<PRIVATE_REF_03544>"
+  },
+  {
+    "path": "deployment-<W2_RUN_RESOURCE_PREFIX>/README.md",
+    "size": 5687,
+    "sha256": "<PRIVATE_REF_01310>"
+  },
+  {
+    "path": "watchover/state.json",
+    "size": 35084,
+    "sha256": "<PRIVATE_REF_02826>"
+  },
+  {
+    "path": "watchover/README.md",
+    "size": 734,
+    "sha256": "<PRIVATE_REF_01707>"
+  },
+  {
+    "path": "watchover/events.jsonl",
+    "size": 73372,
+    "sha256": "<PRIVATE_REF_02454>"
+  },
+  {
+    "path": "watchover/evidence/0157-before-delete-<W2_RUN_RESOURCE_PREFIX>-web.txt",
+    "size": 415,
+    "sha256": "<PRIVATE_REF_02011>"
+  },
+  {
+    "path": "watchover/evidence/0002-billing.json",
+    "size": 199,
+    "sha256": "<PRIVATE_REF_01683>"
+  },
+  {
+    "path": "watchover/evidence/0177-teardown-project.txt",
+    "size": 250,
+    "sha256": "<PRIVATE_REF_03314>"
+  },
+  {
+    "path": "watchover/evidence/0184-teardown-project.txt",
+    "size": 250,
+    "sha256": "<PRIVATE_REF_03314>"
+  },
+  {
+    "path": "watchover/evidence/0059-upload-release-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0007-instances.json",
+    "size": 3,
+    "sha256": "<PRIVATE_REF_01383>"
+  },
+  {
+    "path": "watchover/evidence/0079-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0075-acceptance-before-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0173-delete-<W2_RUN_RESOURCE_PREFIX>-iap-ssh.txt",
+    "size": 247,
+    "sha256": "<PRIVATE_REF_01494>"
+  },
+  {
+    "path": "watchover/evidence/teardown-dns-removed.txt",
+    "size": 676,
+    "sha256": "<PRIVATE_REF_02673>"
+  },
+  {
+    "path": "watchover/evidence/0176-delete-<W2_RUN_RESOURCE_PREFIX>-subnet.txt",
+    "size": 301,
+    "sha256": "<PRIVATE_REF_01153>"
+  },
+  {
+    "path": "watchover/evidence/0077-acceptance-before.txt",
+    "size": 1351,
+    "sha256": "<PRIVATE_REF_01223>"
+  },
+  {
+    "path": "watchover/evidence/0192-teardown-after-networks.txt",
+    "size": 5491,
+    "sha256": "<PRIVATE_REF_02074>"
+  },
+  {
+    "path": "watchover/evidence/0133-acceptance-after.txt",
+    "size": 902,
+    "sha256": "<PRIVATE_REF_01392>"
+  },
+  {
+    "path": "watchover/evidence/0168-teardown-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0092-upload-acceptance-check.txt",
+    "size": 508,
+    "sha256": "<PRIVATE_REF_03677>"
+  },
+  {
+    "path": "watchover/evidence/0112-public-dns-1.1.1.1.txt",
+    "size": 584,
+    "sha256": "<PRIVATE_REF_03249>"
+  },
+  {
+    "path": "watchover/evidence/0183-ssh-key-removal.txt",
+    "size": 65,
+    "sha256": "<PRIVATE_REF_03473>"
+  },
+  {
+    "path": "watchover/evidence/0022-network-recheck.json",
+    "size": 6035,
+    "sha256": "<PRIVATE_REF_03207>"
+  },
+  {
+    "path": "watchover/evidence/0018-billing-recheck.json",
+    "size": 199,
+    "sha256": "<PRIVATE_REF_01683>"
+  },
+  {
+    "path": "watchover/evidence/0182-remove-deployment-project-ssh-key.txt",
+    "size": 285,
+    "sha256": "<PRIVATE_REF_02034>"
+  },
+  {
+    "path": "watchover/evidence/0062-bootstrap-application-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0011-frontend-build.txt",
+    "size": 38722,
+    "sha256": "<PRIVATE_REF_01051>"
+  },
+  {
+    "path": "watchover/evidence/0067-upload-admin-readiness-check.txt",
+    "size": 514,
+    "sha256": "<PRIVATE_REF_02626>"
+  },
+  {
+    "path": "watchover/evidence/0172-before-delete-<W2_RUN_RESOURCE_PREFIX>-iap-ssh.txt",
+    "size": 423,
+    "sha256": "<PRIVATE_REF_02882>"
+  },
+  {
+    "path": "watchover/evidence/0143-teardown-before.json",
+    "size": 59001,
+    "sha256": "<PRIVATE_REF_02510>"
+  },
+  {
+    "path": "watchover/evidence/0039-create-iap-firewall-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0180-teardown-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0047-create-data-disk-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0052-create-vm-data-disk.txt",
+    "size": 872,
+    "sha256": "<PRIVATE_REF_03745>"
+  },
+  {
+    "path": "watchover/evidence/0072-upload-acceptance-check-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0174-teardown-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0066-upload-admin-readiness-check-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0132-acceptance-after-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0082-open-public-web-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0162-teardown-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0035-create-subnet-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0088-reboot-vm.txt",
+    "size": 283,
+    "sha256": "<PRIVATE_REF_03608>"
+  },
+  {
+    "path": "watchover/evidence/0014-local-validation.txt",
+    "size": 472,
+    "sha256": "<PRIVATE_REF_02467>"
+  },
+  {
+    "path": "watchover/evidence/0186-teardown-after-disks.txt",
+    "size": 143,
+    "sha256": "<PRIVATE_REF_01103>"
+  },
+  {
+    "path": "watchover/evidence/0123-final-runtime.txt",
+    "size": 2967,
+    "sha256": "<PRIVATE_REF_01094>"
+  },
+  {
+    "path": "watchover/evidence/0097-ui-local-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0144-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-vm.txt",
+    "size": 31144,
+    "sha256": "<PRIVATE_REF_01300>"
+  },
+  {
+    "path": "watchover/evidence/0121-ui-after.txt",
+    "size": 327,
+    "sha256": "<PRIVATE_REF_03243>"
+  },
+  {
+    "path": "watchover/evidence/0165-teardown-project.txt",
+    "size": 250,
+    "sha256": "<PRIVATE_REF_03314>"
+  },
+  {
+    "path": "watchover/evidence/0136-public-dns-<DNS_RESOLVER_A>.txt",
+    "size": 684,
+    "sha256": "<PRIVATE_REF_03091>"
+  },
+  {
+    "path": "watchover/evidence/0056-install-instance-deploy-key-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0085-<W2_RUN_RESOURCE_PREFIX>-web-describe.txt",
+    "size": 904,
+    "sha256": "<PRIVATE_REF_02864>"
+  },
+  {
+    "path": "watchover/evidence/0109-ui-before-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0178-before-delete-<W2_RUN_RESOURCE_PREFIX>-net.txt",
+    "size": 293,
+    "sha256": "<PRIVATE_REF_02614>"
+  },
+  {
+    "path": "watchover/evidence/0010-npm-install-retry.txt",
+    "size": 4226,
+    "sha256": "<PRIVATE_REF_03649>"
+  },
+  {
+    "path": "watchover/evidence/0065-upload-admin-readiness-check-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0001-project.json",
+    "size": 190,
+    "sha256": "<PRIVATE_REF_03375>"
+  },
+  {
+    "path": "watchover/evidence/0119-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0090-upload-acceptance-check-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0156-teardown-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0043-create-static-ip-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0090-upload-acceptance-check-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0083-open-public-web-network.txt",
+    "size": 969,
+    "sha256": "<PRIVATE_REF_02934>"
+  },
+  {
+    "path": "watchover/evidence/0040-create-iap-firewall-network.txt",
+    "size": 969,
+    "sha256": "<PRIVATE_REF_02934>"
+  },
+  {
+    "path": "watchover/evidence/0128-upload-acceptance-check-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0120-ui-after-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0148-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-web.txt",
+    "size": 415,
+    "sha256": "<PRIVATE_REF_02011>"
+  },
+  {
+    "path": "watchover/evidence/0097-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0102-public-http.txt",
+    "size": 125,
+    "sha256": "<PRIVATE_REF_02358>"
+  },
+  {
+    "path": "watchover/evidence/0069-reserve-admin-after-readiness-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0023-disks-recheck.json",
+    "size": 3,
+    "sha256": "<PRIVATE_REF_01383>"
+  },
+  {
+    "path": "watchover/evidence/0137-trusted-https.txt",
+    "size": 432,
+    "sha256": "<PRIVATE_REF_03221>"
+  },
+  {
+    "path": "watchover/evidence/0193-teardown-final-key-check.txt",
+    "size": 38,
+    "sha256": "<PRIVATE_REF_02538>"
+  },
+  {
+    "path": "watchover/evidence/0180-teardown-project.txt",
+    "size": 250,
+    "sha256": "<PRIVATE_REF_03314>"
+  },
+  {
+    "path": "watchover/evidence/0072-upload-acceptance-check-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0149-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-iap-ssh.txt",
+    "size": 423,
+    "sha256": "<PRIVATE_REF_02882>"
+  },
+  {
+    "path": "watchover/evidence/0130-upload-acceptance-check.txt",
+    "size": 508,
+    "sha256": "<PRIVATE_REF_03677>"
+  },
+  {
+    "path": "watchover/evidence/0086-reboot-vm-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0079-open-public-web-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0034-<W2_RUN_RESOURCE_PREFIX>-net-describe.txt",
+    "size": 810,
+    "sha256": "<PRIVATE_REF_03369>"
+  },
+  {
+    "path": "watchover/evidence/0159-teardown-project.txt",
+    "size": 250,
+    "sha256": "<PRIVATE_REF_03314>"
+  },
+  {
+    "path": "watchover/evidence/0105-retry-certificate-after-dns-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0114-tls-certificate.txt",
+    "size": 316,
+    "sha256": "<PRIVATE_REF_03288>"
+  },
+  {
+    "path": "watchover/evidence/0075-acceptance-before-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0090-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0158-delete-<W2_RUN_RESOURCE_PREFIX>-web.txt",
+    "size": 239,
+    "sha256": "<PRIVATE_REF_01150>"
+  },
+  {
+    "path": "watchover/evidence/0068-reserve-admin-after-readiness-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0053-create-vm.txt",
+    "size": 33624,
+    "sha256": "<PRIVATE_REF_01869>"
+  },
+  {
+    "path": "watchover/evidence/0107-retry-certificate-after-dns.txt",
+    "size": 619,
+    "sha256": "<PRIVATE_REF_02145>"
+  },
+  {
+    "path": "watchover/evidence/0035-create-subnet-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0087-reboot-vm-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0116-reboot-vm-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0185-teardown-after-instances.txt",
+    "size": 159,
+    "sha256": "<PRIVATE_REF_01723>"
+  },
+  {
+    "path": "watchover/evidence/0059-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0117-reboot-vm-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0101-dns-control.txt",
+    "size": 597,
+    "sha256": "<PRIVATE_REF_01961>"
+  },
+  {
+    "path": "watchover/evidence/0184-teardown-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0146-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-data.txt",
+    "size": 606,
+    "sha256": "<PRIVATE_REF_00924>"
+  },
+  {
+    "path": "watchover/evidence/0073-upload-acceptance-check-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0008-source-alerta.txt",
+    "size": 117,
+    "sha256": "<PRIVATE_REF_01053>"
+  },
+  {
+    "path": "watchover/evidence/0105-application-status.txt",
+    "size": 16614,
+    "sha256": "<PRIVATE_REF_01294>"
+  },
+  {
+    "path": "watchover/evidence/0156-teardown-project.txt",
+    "size": 250,
+    "sha256": "<PRIVATE_REF_03314>"
+  },
+  {
+    "path": "watchover/evidence/0060-upload-release-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0037-create-subnet.txt",
+    "size": 1205,
+    "sha256": "<PRIVATE_REF_02261>"
+  },
+  {
+    "path": "watchover/evidence/0042-<W2_RUN_RESOURCE_PREFIX>-iap-ssh-describe.txt",
+    "size": 843,
+    "sha256": "<PRIVATE_REF_00972>"
+  },
+  {
+    "path": "watchover/evidence/0008-source-alerta-webui.txt",
+    "size": 123,
+    "sha256": "<PRIVATE_REF_03389>"
+  },
+  {
+    "path": "watchover/evidence/0164-delete-<W2_RUN_RESOURCE_PREFIX>-vm-boot.txt",
+    "size": 276,
+    "sha256": "<PRIVATE_REF_01265>"
+  },
+  {
+    "path": "watchover/evidence/0123-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0064-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0118-reboot-vm.txt",
+    "size": 283,
+    "sha256": "<PRIVATE_REF_03608>"
+  },
+  {
+    "path": "watchover/evidence/0033-create-network.txt",
+    "size": 977,
+    "sha256": "<PRIVATE_REF_02407>"
+  },
+  {
+    "path": "watchover/evidence/0099-ui-local.txt",
+    "size": 367,
+    "sha256": "<PRIVATE_REF_01684>"
+  },
+  {
+    "path": "watchover/evidence/0119-ui-after-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0086-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0059-vm-preflight.txt",
+    "size": 1560,
+    "sha256": "<PRIVATE_REF_03596>"
+  },
+  {
+    "path": "watchover/evidence/0017-project-recheck.json",
+    "size": 190,
+    "sha256": "<PRIVATE_REF_03375>"
+  },
+  {
+    "path": "watchover/evidence/0045-create-static-ip.txt",
+    "size": 924,
+    "sha256": "<PRIVATE_REF_03668>"
+  },
+  {
+    "path": "watchover/evidence/0062-release-checksum.txt",
+    "size": 1166,
+    "sha256": "<PRIVATE_REF_03550>"
+  },
+  {
+    "path": "watchover/evidence/0050-<W2_RUN_RESOURCE_PREFIX>-data-describe.txt",
+    "size": 872,
+    "sha256": "<PRIVATE_REF_03745>"
+  },
+  {
+    "path": "watchover/evidence/0168-teardown-project.txt",
+    "size": 250,
+    "sha256": "<PRIVATE_REF_03314>"
+  },
+  {
+    "path": "watchover/evidence/0064-application-status.txt",
+    "size": 1388,
+    "sha256": "<PRIVATE_REF_01136>"
+  },
+  {
+    "path": "watchover/evidence/0004-addresses.json",
+    "size": 3,
+    "sha256": "<PRIVATE_REF_01383>"
+  },
+  {
+    "path": "watchover/evidence/0113-public-dns-<DNS_RESOLVER_A>.txt",
+    "size": 682,
+    "sha256": "<PRIVATE_REF_01632>"
+  },
+  {
+    "path": "watchover/evidence/0131-acceptance-after-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0082-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0065-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0072-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0177-teardown-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0166-before-delete-<W2_RUN_RESOURCE_PREFIX>-data.txt",
+    "size": 459,
+    "sha256": "<PRIVATE_REF_02548>"
+  },
+  {
+    "path": "watchover/evidence/0003-services.txt",
+    "size": 880,
+    "sha256": "<PRIVATE_REF_01883>"
+  },
+  {
+    "path": "watchover/evidence/0160-before-delete-<W2_RUN_RESOURCE_PREFIX>-vm.txt",
+    "size": 31144,
+    "sha256": "<PRIVATE_REF_01300>"
+  },
+  {
+    "path": "watchover/evidence/0056-install-instance-deploy-key-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0162-teardown-project.txt",
+    "size": 250,
+    "sha256": "<PRIVATE_REF_03314>"
+  },
+  {
+    "path": "watchover/evidence/0054-<W2_RUN_RESOURCE_PREFIX>-vm-describe.txt",
+    "size": 32327,
+    "sha256": "<PRIVATE_REF_00666>"
+  },
+  {
+    "path": "watchover/evidence/0116-reboot-vm-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0191-teardown-after-subnets.txt",
+    "size": 12462,
+    "sha256": "<PRIVATE_REF_02201>"
+  },
+  {
+    "path": "watchover/evidence/0108-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0110-ui-before.txt",
+    "size": 329,
+    "sha256": "<PRIVATE_REF_02054>"
+  },
+  {
+    "path": "watchover/evidence/0170-delete-<W2_RUN_RESOURCE_PREFIX>-ip.txt",
+    "size": 284,
+    "sha256": "<PRIVATE_REF_01760>"
+  },
+  {
+    "path": "watchover/evidence/0179-delete-<W2_RUN_RESOURCE_PREFIX>-net.txt",
+    "size": 232,
+    "sha256": "<PRIVATE_REF_01376>"
+  },
+  {
+    "path": "watchover/evidence/0051-create-vm-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0019-owner-recheck.txt",
+    "size": 12,
+    "sha256": "<PRIVATE_REF_02332>"
+  },
+  {
+    "path": "watchover/evidence/0084-open-public-web.txt",
+    "size": 1229,
+    "sha256": "<PRIVATE_REF_03153>"
+  },
+  {
+    "path": "watchover/evidence/0047-create-data-disk-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0052-create-vm-subnet.txt",
+    "size": 987,
+    "sha256": "<PRIVATE_REF_00987>"
+  },
+  {
+    "path": "watchover/evidence/0131-acceptance-after-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0159-teardown-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0013-machine-type.json",
+    "size": 63,
+    "sha256": "<PRIVATE_REF_01431>"
+  },
+  {
+    "path": "watchover/evidence/0091-upload-acceptance-check-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0061-upload-release.txt",
+    "size": 995,
+    "sha256": "<PRIVATE_REF_02756>"
+  },
+  {
+    "path": "watchover/evidence/0064-bootstrap-application.txt",
+    "size": 69700,
+    "sha256": "<PRIVATE_REF_03675>"
+  },
+  {
+    "path": "watchover/evidence/0108-ui-before-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0006-roles.txt",
+    "size": 12,
+    "sha256": "<PRIVATE_REF_02332>"
+  },
+  {
+    "path": "watchover/evidence/0128-upload-acceptance-check-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0041-create-iap-firewall.txt",
+    "size": 1158,
+    "sha256": "<PRIVATE_REF_02426>"
+  },
+  {
+    "path": "watchover/evidence/0108-ui-before-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0095-acceptance-after.txt",
+    "size": 902,
+    "sha256": "<PRIVATE_REF_03258>"
+  },
+  {
+    "path": "watchover/evidence/0059-upload-release-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0167-delete-<W2_RUN_RESOURCE_PREFIX>-data.txt",
+    "size": 280,
+    "sha256": "<PRIVATE_REF_02562>"
+  },
+  {
+    "path": "watchover/evidence/0165-teardown-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0101-dns-pending.txt",
+    "size": 652,
+    "sha256": "<PRIVATE_REF_01432>"
+  },
+  {
+    "path": "watchover/evidence/0147-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-ip.txt",
+    "size": 640,
+    "sha256": "<PRIVATE_REF_02667>"
+  },
+  {
+    "path": "watchover/evidence/0036-create-subnet-network.txt",
+    "size": 810,
+    "sha256": "<PRIVATE_REF_03369>"
+  },
+  {
+    "path": "watchover/evidence/0055-<W2_RUN_RESOURCE_PREFIX>-vm-boot-describe.txt",
+    "size": 1911,
+    "sha256": "<PRIVATE_REF_03435>"
+  },
+  {
+    "path": "watchover/evidence/0063-bootstrap-application-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0065-upload-admin-readiness-check-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0083-open-public-web-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0058-install-instance-deploy-key.txt",
+    "size": 353,
+    "sha256": "<PRIVATE_REF_03696>"
+  },
+  {
+    "path": "watchover/evidence/0189-teardown-after-firewalls.txt",
+    "size": 914,
+    "sha256": "<PRIVATE_REF_01681>"
+  },
+  {
+    "path": "watchover/evidence/0049-create-data-disk.txt",
+    "size": 1254,
+    "sha256": "<PRIVATE_REF_03524>"
+  },
+  {
+    "path": "watchover/evidence/0163-before-delete-<W2_RUN_RESOURCE_PREFIX>-vm-boot.txt",
+    "size": 455,
+    "sha256": "<PRIVATE_REF_02872>"
+  },
+  {
+    "path": "watchover/evidence/0135-public-dns-1.1.1.1.txt",
+    "size": 583,
+    "sha256": "<PRIVATE_REF_02357>"
+  },
+  {
+    "path": "watchover/evidence/0021-services-recheck.txt",
+    "size": 880,
+    "sha256": "<PRIVATE_REF_01883>"
+  },
+  {
+    "path": "watchover/evidence/0106-retry-certificate-after-dns-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0129-upload-acceptance-check-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0052-create-vm-address.txt",
+    "size": 737,
+    "sha256": "<PRIVATE_REF_01159>"
+  },
+  {
+    "path": "watchover/evidence/0151-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-net.txt",
+    "size": 452,
+    "sha256": "<PRIVATE_REF_01413>"
+  },
+  {
+    "path": "watchover/evidence/0116-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0105-retry-certificate-after-dns-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0150-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-subnet.txt",
+    "size": 572,
+    "sha256": "<PRIVATE_REF_02423>"
+  },
+  {
+    "path": "watchover/evidence/0020-region-recheck.json",
+    "size": 11426,
+    "sha256": "<PRIVATE_REF_01675>"
+  },
+  {
+    "path": "watchover/evidence/0012-region-quotas.json",
+    "size": 10795,
+    "sha256": "<PRIVATE_REF_02727>"
+  },
+  {
+    "path": "watchover/evidence/0188-teardown-after-addresses.txt",
+    "size": 157,
+    "sha256": "<PRIVATE_REF_01014>"
+  },
+  {
+    "path": "watchover/evidence/0169-before-delete-<W2_RUN_RESOURCE_PREFIX>-ip.txt",
+    "size": 495,
+    "sha256": "<PRIVATE_REF_03193>"
+  },
+  {
+    "path": "watchover/evidence/0137-tls-certificate.txt",
+    "size": 316,
+    "sha256": "<PRIVATE_REF_03288>"
+  },
+  {
+    "path": "watchover/evidence/0105-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0119-ui-after-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0097-ui-local-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0031-create-network-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0070-reserve-admin-after-readiness.txt",
+    "size": 1074,
+    "sha256": "<PRIVATE_REF_02142>"
+  },
+  {
+    "path": "watchover/evidence/0031-create-network-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0143-teardown-project.txt",
+    "size": 250,
+    "sha256": "<PRIVATE_REF_03314>"
+  },
+  {
+    "path": "watchover/evidence/0114-trusted-https.txt",
+    "size": 432,
+    "sha256": "<PRIVATE_REF_02377>"
+  },
+  {
+    "path": "watchover/evidence/0098-ui-local-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0093-acceptance-after-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0086-reboot-vm-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0128-resume-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0079-open-public-web-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0009-npm-install.txt",
+    "size": 1750,
+    "sha256": "<PRIVATE_REF_01451>"
+  },
+  {
+    "path": "watchover/evidence/0043-create-static-ip-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0082-open-public-web-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0062-bootstrap-application-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0171-teardown-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0056-resume-vm.txt",
+    "size": 31034,
+    "sha256": "<PRIVATE_REF_02335>"
+  },
+  {
+    "path": "watchover/evidence/0005-networks.json",
+    "size": 6035,
+    "sha256": "<PRIVATE_REF_03207>"
+  },
+  {
+    "path": "watchover/evidence/0074-upload-acceptance-check.txt",
+    "size": 508,
+    "sha256": "<PRIVATE_REF_03677>"
+  },
+  {
+    "path": "watchover/evidence/0065-application-status.txt",
+    "size": 17602,
+    "sha256": "<PRIVATE_REF_03545>"
+  },
+  {
+    "path": "watchover/evidence/0145-teardown-inventory-<W2_RUN_RESOURCE_PREFIX>-vm-boot.txt",
+    "size": 602,
+    "sha256": "<PRIVATE_REF_02824>"
+  },
+  {
+    "path": "watchover/evidence/0143-teardown-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0093-acceptance-after-identity.txt",
+    "size": 177,
+    "sha256": "<PRIVATE_REF_01941>"
+  },
+  {
+    "path": "watchover/evidence/0015-official-pricing.json",
+    "size": 647,
+    "sha256": "<PRIVATE_REF_01268>"
+  },
+  {
+    "path": "watchover/evidence/0171-teardown-project.txt",
+    "size": 250,
+    "sha256": "<PRIVATE_REF_03314>"
+  },
+  {
+    "path": "watchover/evidence/0016-config-recheck.json",
+    "size": 142,
+    "sha256": "<PRIVATE_REF_02287>"
+  },
+  {
+    "path": "watchover/evidence/teardown-dns-control.txt",
+    "size": 628,
+    "sha256": "<PRIVATE_REF_02953>"
+  },
+  {
+    "path": "watchover/evidence/0039-create-iap-firewall-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0038-<W2_RUN_RESOURCE_PREFIX>-subnet-describe.txt",
+    "size": 987,
+    "sha256": "<PRIVATE_REF_00987>"
+  },
+  {
+    "path": "watchover/evidence/0051-create-vm-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0046-<W2_RUN_RESOURCE_PREFIX>-ip-describe.txt",
+    "size": 737,
+    "sha256": "<PRIVATE_REF_01159>"
+  },
+  {
+    "path": "watchover/evidence/0068-reserve-admin-after-readiness-target.txt",
+    "size": 334,
+    "sha256": "<PRIVATE_REF_02519>"
+  },
+  {
+    "path": "watchover/evidence/0094-acceptance-after-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0105-dns-before-certificate-retry.txt",
+    "size": 584,
+    "sha256": "<PRIVATE_REF_01834>"
+  },
+  {
+    "path": "watchover/evidence/0076-acceptance-before-vm.txt",
+    "size": 31226,
+    "sha256": "<PRIVATE_REF_02465>"
+  },
+  {
+    "path": "watchover/evidence/0161-delete-<W2_RUN_RESOURCE_PREFIX>-vm.txt",
+    "size": 301,
+    "sha256": "<PRIVATE_REF_02448>"
+  },
+  {
+    "path": "watchover/evidence/0175-before-delete-<W2_RUN_RESOURCE_PREFIX>-subnet.txt",
+    "size": 572,
+    "sha256": "<PRIVATE_REF_02423>"
+  },
+  {
+    "path": "watchover/evidence/0174-teardown-project.txt",
+    "size": 250,
+    "sha256": "<PRIVATE_REF_03314>"
+  },
+  {
+    "path": "watchover/evidence/0057-install-instance-deploy-key-vm.txt",
+    "size": 31034,
+    "sha256": "<PRIVATE_REF_02335>"
+  }
+]

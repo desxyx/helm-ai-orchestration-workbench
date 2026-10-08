@@ -1,0 +1,35 @@
+✔ every scenario fixture validates without any provider profile (9.113792ms)
+✖ WO-P05: service rows come from health facts and host resources, with honest freshness (1.420666ms)
+✔ WO-P06: logical ids and real names are both kept; a declaration is not a runtime observation (0.727875ms)
+✔ WO-P07: only this run's delta is reversed and the baseline hash is preserved (0.467417ms)
+✔ WO-P08: an interruption names the pending intent and owner; brief and view agree (0.32675ms)
+✔ WO-P08: after deployment the owner and choice are explicit; deployed is not cleaned up (0.392625ms)
+✔ generic core: router and stages need no particular cloud command (0.395125ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 21.543625
+
+✖ failing tests:
+
+test at ../../../../../private/tmp/wb9c7fb5/old_scenarios.test.mjs:23:1
+✖ WO-P05: service rows come from health facts and host resources, with honest freshness (1.420666ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /data-kind="verified-local"/. Input:
+  
+  '<li class="service" data-service="api"><span class="badge" data-kind="verified-expired"><span class="sym" aria-hidden="true">◌</span> Verified locally, expired</span> <strong>api</strong> on <strong>demo-app-api-1</strong> <span class="type">(api-container, present)</span>\n' +
+    '      <div class="fact-meta">200 on /health · checked 10 days ago · freshness window ended · Evidence: <code>evidence/0020-api-health.txt</code></div></li>'
+  
+      at TestContext.<anonymous> (file:///private/tmp/wb9c7fb5/old_scenarios.test.mjs:27:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<li class="service" data-service="api"><span class="badge" data-kind="verified-expired"><span class="sym" aria-hidden="true">◌</span> Verified locally, expired</span> <strong>api</strong> on <strong>demo-app-api-1</strong> <span class="type">(api-container, present)</span>\n      <div class="fact-meta">200 on /health · checked 10 days ago · freshness window ended · Evidence: <code>evidence/0020-api-health.txt</code></div></li>',
+    expected: /data-kind="verified-local"/,
+    operator: 'match',
+    diff: 'simple'
+  }

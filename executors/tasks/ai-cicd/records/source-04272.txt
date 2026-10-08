@@ -1,0 +1,6 @@
+<PRIVATE_REF_02324> chore(release): candidate 0.1.1 (eight-patch pass)
+<PRIVATE_REF_02351> feat(skills,view): services, real names, shared-object deltas, interruption and terminal owner (WO-P05..P08)
+<PRIVATE_REF_03477> feat(brief): read-only takeover summary, shared freshness and the human's next action (WO-P03)
+<PRIVATE_REF_01445> docs(skills): early view handoff with narrow exception; router loop and package gaps (WO-P02, WO-P04)
+<PRIVATE_REF_02340> feat(commit-state): validated single-writer state replacement (WO-P01)
+<PRIVATE_REF_02654> docs: retain Owner early-view handoff edits (pre-r2 baseline)

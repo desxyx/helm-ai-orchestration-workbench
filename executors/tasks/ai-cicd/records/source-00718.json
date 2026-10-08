@@ -1,0 +1,43 @@
+{
+  "started_at": "2026-10-05T22:34:14.653+00:00",
+  "session_id_requested": "<NATIVE_ID_2616>",
+  "fresh_session": true,
+  "resume_continue_fork": false,
+  "model_requested": "claude-sonnet-5-5",
+  "tools": [
+    "Read",
+    "Glob",
+    "Grep"
+  ],
+  "cwd": "/private/tmp/w2-comparison-20261006/work",
+  "input_manifest_sha256": "<PRIVATE_REF_03111>",
+  "prompt_sha256": "<PRIVATE_REF_02297>",
+  "authorization": "Owner: current Operations Coordinator persists through comparison report completion, then handoff; frozen rule requires fresh analysis after both seals",
+  "argv": [
+    "<CLIENT_HOME>/.local/bin/claude",
+    "--print",
+    "--model",
+    "claude-sonnet-5-5",
+    "--output-format",
+    "json",
+    "--safe-mode",
+    "--restricted",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--setting-sources",
+    "",
+    "--disable-slash-commands",
+    "--tools",
+    "Read,Glob,Grep",
+    "--allowedTools",
+    "Read,Glob,Grep",
+    "--max-turns",
+    "40",
+    "--session-id",
+    "<NATIVE_ID_2616>",
+    "--append-system-prompt",
+    "You are a fresh post-run comparison analyst. Read only ./inputs. Output the requested report. No writes, cloud actions, other sessions, W3 details or product work."
+  ],
+  "status": "LAUNCHED"
+}

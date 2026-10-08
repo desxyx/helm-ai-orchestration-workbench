@@ -1,0 +1,11 @@
+Custodian supplies the frozen M8/A6 trace-probe answers as permitted supplementary verification records for RUN-W2A.
+
+Read only /private/tmp/survey-18f7/work/closure_inputs/TRACE_PROBE/SHA256SUMS and its referenced files in that directory. Expected SHA-256 of SHA256SUMS: <PRIVATE_REF_02305>.
+
+These are answers from a separate fresh measurement session, requested and natively observed as claude-sonnet-5-5 on Claude Code2.1.289. External per-question issue/complete timestamps and elapsed time accompany each answer. No custodian answer grade is supplied. Verify custody/hash records, and retain corpus limitations (credential/identity redaction, three verification-image pixel exclusions, expanded redacted archive).
+
+Against your already-ingested complete CP-01 + CP-02 transcript and permitted mechanical evidence, score M8 and each of the three A6 answers separately as CORRECT, INCORRECT or UNANSWERABLE, with evidence locators. Use only the external timer for M8; do not substitute your own reading time or the total four-question runtime. Keep M8 and A6 independent. Do not treat a build/deployment claim as stronger source proof than its records support. Do not guess missing information.
+
+Update your private working measurement files/report draft under /private/tmp/survey-18f7/work/output/. This is supplementary verification evidence, not a new Deployer transcript increment: do not create a new segment receipt or repeat checkpoint counting. No tool calls to cloud/browser/credentials, feedback to the Deployer, comparison to other arms, or new tests. Do not inspect any controller/HELM/other-session directory or HC answers/keys/scores.
+
+Further acceptance sampling is ending with current recorded evidence; absent required proof remains governed by the unchanged frozen definitions. Resource deletion is approved but has not yet been observed complete. RUN_CLOSE, teardown declaration/DNS removal/residual inspection are still outstanding. Keep grades/analysis private; do not seal a final run report or invent A7/cleanup. Wait for RUN_CLOSE to finalize and return sealed artifacts.

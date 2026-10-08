@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/opt/homebrew/share/google-cloud-sdk/bin/gcloud",
+    "compute",
+    "instances",
+    "describe",
+    "<W2_RUN_RESOURCE_PREFIX>-vm",
+    "--zone=australia-southeast2-a",
+    "--project=<CLOUD_PROJECT>",
+    "--format=json"
+  ],
+  "started": "2026-10-05T11:05:44.264687+00:00",
+  "ended": "2026-10-05T11:05:45.519295+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "<PRIVATE_REF_02223>",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "receipt_id": "AI-CICD-20261005-W2B-VERIFY-TRACE-001"
+}

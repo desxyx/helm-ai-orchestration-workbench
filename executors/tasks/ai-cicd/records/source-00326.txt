@@ -1,0 +1,5 @@
+$ gcloud compute disks add-resource-policies <RUN_DATA_DISK> --resource-policies <RUN_SNAPSHOT_POLICY> --zone australia-southeast1-b --project <CLOUD_PROJECT>
+# started 2026-10-06T12:51:46.000Z  ended 2026-10-06T12:51:53.000Z  exit 0
+--- stdout
+--- stderr
+Updated [<PRIVATE_URL_0432>].

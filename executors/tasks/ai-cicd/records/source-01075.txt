@@ -1,0 +1,7 @@
+Custodian delivers CP-01 / FORCED_INTERRUPT for RUN-W2A.
+
+Read only ./checkpoints/CP-01/SHA256SUMS, ./checkpoints/CP-01/PACKETS_CP01.json and the referenced mechanical attachments in that same directory. Expected SHA-256 of SHA256SUMS: <PRIVATE_REF_02858>.
+
+Verify hashes and the segment chain. Ingest all 48 ordered segments using the frozen protocol; keep analysis private under ./output/. The snapshot is a mechanical control attachment, not a Deployer hint. Do not inspect any other session or control directory. Do not receive HC answers/keys/scores.
+
+For each ingested segment reply exactly CHECKPOINT_1_SEGMENT_<k>_INGESTED (k=1 through 48). If interrupted by context limits, record the last completed sequence and continue from the next un-ingested segment; no duplicate counting. No measurement report or deployment feedback now.

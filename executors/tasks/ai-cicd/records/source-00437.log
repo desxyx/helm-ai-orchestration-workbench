@@ -1,0 +1,72 @@
+Command: ["node", "--test", "tests/docs.test.mjs", "tests/design-decisions.test.mjs", "tests/vocabulary.test.mjs", "tests/neutral-domains.test.mjs", "tests/view-handoff.test.mjs", "tests/skills.test.mjs", "tests/skill-package.test.mjs", "tests/fixtures.test.mjs"]
+CWD: product/
+Started local check; no installs or real deployments.
+✔ design-decisions.md records every C1 default (2.368083ms)
+✔ design-decisions.md records every C1 R1-batch default (0.669625ms)
+✔ no C1 default is still listed as undecided (1.23925ms)
+✔ the documented keyword subset matches the validator (2.439208ms)
+✔ the documented freshness caps match the validator (1.238458ms)
+✔ design-decisions.md records every C2 default and none is still undecided (0.506542ms)
+✔ D-04 names Framework Python 3.12 as the working default for browser checks (1.831375ms)
+✔ design-decisions.md records every C3 default, matching the code (14.192584ms)
+✔ design-decisions.md records every C4 default, matching the skills test budgets (1.325ms)
+✔ design-decisions.md records every C5 default and nothing for C5 is still undecided (0.664458ms)
+✔ public design rationale retains product docs and excludes evaluation-only decisions (0.278208ms)
+✔ design-decisions.md records the R3 defaults (0.30075ms)
+✔ the README defines the product and separates Validated from Roadmap (2.08125ms)
+✔ no document makes a benchmark or result claim (3.333667ms)
+✔ documents allow attribution and history while excluding arm labels and private canaries (2.542875ms)
+✔ SECURITY.md covers secrets, the read-only local view, evidence and known limits (0.754625ms)
+✔ docs/architecture.md describes every component and trust boundary (0.589916ms)
+✔ README, validation and provenance agree on evidence and archive limits (2.73175ms)
+✔ local Markdown documentation links resolve inside the product (3.886875ms)
+✔ the README quick start runs as written and leaves a valid workspace (192.28525ms)
+✔ every product schema uses only the supported keyword subset (3.355125ms)
+✔ both schemas use exactly the seven FT-7 status strings (0.74375ms)
+✔ both schemas share the same stage values, covering every Annex E stage (2.1265ms)
+✔ every valid fixture state and event is schema-valid (19.4675ms)
+✔ the lifecycle fixture covers the ten required steps in order (4.12125ms)
+✔ lifecycle steps carry the situations the verification standard names (3.245667ms)
+✔ each lifecycle step only appends to the previous step's events (3.452417ms)
+✔ there is one status fixture per FT-7 status, each holding a fact with that status (1.533541ms)
+✔ tracked domains stay generic except scoped dialect and exact public links (37.817583ms)
+✔ public URL exceptions reject suffixes, lookalikes and use outside documentation (0.213167ms)
+✔ the complete package has no dangling stage or provider reference (4.2635ms)
+✔ a deliberately reduced package is detected, and the router keeps its gates and rules (17.47975ms)
+✔ the router opens with the minimal loop and keeps generic rules out of provider files (0.748625ms)
+✔ a declared reduced package: actual omissions match the declaration and the record discloses each gap once (16.834167ms)
+✔ the router lives at exactly skills/router.md, as the workspace pointer says (1.284166ms)
+✔ the router, stage and provider files exist, and nothing else is in skills/ (4.611875ms)
+✔ every skill stays inside its length budget (2.441125ms)
+✔ the router carries every always-on rule (0.689875ms)
+✔ every stage file restates the always-on rules (2.131625ms)
+✔ the router says what to read first, how to use the tools, and which one stage file to load (0.272875ms)
+✔ each stage file carries its Annex J responsibility (1.654875ms)
+✔ the handoff guidance covers all ten Annex K items (0.520833ms)
+✔ GCP is the target with validation pending; every other provider is UNVALIDATED (1.192292ms)
+✔ skills are neutral, client-neutral and free of governance or experiment wording (2.934209ms)
+✔ every example event in the skills is schema-valid once append fills its defaults (4.136042ms)
+✔ Cloudflare manual-edit mode records the approval and a gated intent before the human edits DNS (0.333292ms)
+{"case":"same-workspace-view-restoration","workspace":"<CLIENT_TEMP_ROOT>/T/watchover-test-R6LRzO/watchover","project":"continuation-control","first_url":"http://127.0.0.1:63981/","restored_url":"http://127.0.0.1:63981/","stopped_urls_unreachable":true,"restored_state_and_events_equal":true}
+✔ continuation stops and restores the same synthetic workspace using the real show command (122.623542ms)
+✔ show --port 0 binds a real port and serves this workspace (6.165375ms)
+✔ the CLI prints the actual URL it serves (44.37925ms)
+✔ the handoff fixtures validate and keep page confirmation, the exception and approval apart (4.732292ms)
+✔ the skills and README require the early handoff and the narrow exception, consistently (0.561416ms)
+✔ each experiment-wording guard catches its own class (0.472125ms)
+✔ the private-seat guard catches neutral canaries, whole words only (0.107833ms)
+✔ the coordinator guard catches its neutral canary, whole words only (0.069875ms)
+✔ the guards leave neutral product wording alone (0.070209ms)
+✔ tracked files exclude arm labels and neutral private-identity canaries (28.751875ms)
+ℹ tests 56
+ℹ suites 0
+ℹ pass 56
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 262.426958
+
+STDERR:
+
+EXIT_CODE=0

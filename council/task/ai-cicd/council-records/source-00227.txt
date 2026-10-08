@@ -1,0 +1,15 @@
+Q1 decision: continue the full cross-review; do not limit the PATCH scope to the Round 3 handoff.
+
+The complete Council Member A Round 2 proposal is now materialized at this exact path:
+
+source-00220.md
+
+Read that file in full. It contains the PA-1–PA-7, WF-1–WF-8 and MA-1–MA-8 proposal text that was
+missing from the prior review packet. Treat it as the same Council Member A single-member proposal,
+not as authority, ratification, implementation authorization or Council convergence.
+
+Continue from your existing PATCH review. Review the Round 2 PA/WF/MA body against the checkpoints
+you froze and against your findings 1–11. Return a revised complete verdict for the proposal body,
+including any additional numbered findings and precise replacement text. Preserve the explicit
+record that this Council Member A-on-Council Member A pass is a self-review input, not an independent Council
+cross-review. Do not perform implementation, start W2, or name/recommend a merge owner.

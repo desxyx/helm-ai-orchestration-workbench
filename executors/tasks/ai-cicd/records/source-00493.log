@@ -1,0 +1,17 @@
+control-none                 README.md                                                                           => ℹ pass 27 ℹ fail 0 
+url-suffix                   README.md              see https://github.com/helmls-studio/agent-run-recorder/extra => ℹ pass 26 ℹ fail 1 
+url-other-user               README.md              see <PRIVATE_URL_0149>                  => ℹ pass 26 ℹ fail 1 
+url-in-tool                  tools/lib/brief.mjs    // https://github.com/helmls-studio/agent-run-recorder       => ℹ pass 26 ℹ fail 1 
+arm-label                    skills/router.md       Use the W2B wording.                                         => ℹ pass 25 ℹ fail 2 
+canary                       README.md              ask private-coordinator-417 first                            => ℹ pass 26 ℹ fail 1 
+stage-label-in-skill         skills/router.md       Stage W2 applies here.                                       => ℹ pass 27 ℹ fail 0 
+real-seat-name               README.md              Reviewer Actor 02 reviewed this release.                                 => ℹ pass 27 ℹ fail 0 
+real-coordinator             README.md              Ask Human Operator before release.                                      => ℹ pass 27 ℹ fail 0 
+private-path                 README.md              Built in <CLIENT_HOME>/work.                                => ℹ pass 27 ℹ fail 0 
+private-handle               README.md              Contact <ACCOUNT> for details.                                   => ℹ pass 27 ℹ fail 0 
+bare-username                README.md              Maintained by <PUBLIC_ACCOUNT_HANDLE>.                                        => ℹ pass 27 ℹ fail 0 
+--- same plants against BASELINE source suite (comparison)
+BASELINE control-none         README.md                                                   => ℹ pass 26 ℹ fail 0 
+BASELINE real-seat-name       README.md          Reviewer Actor 02 reviewed this release.             => ℹ pass 24 ℹ fail 2 
+BASELINE real-coordinator     README.md          Ask Human Operator before release.                  => ℹ pass 25 ℹ fail 1 
+BASELINE stage-label-in-skill skills/router.md   Stage W2 applies here.                   => ℹ pass 24 ℹ fail 2 

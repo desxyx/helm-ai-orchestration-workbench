@@ -1,0 +1,43 @@
+{
+  "candidate": "<PRIVATE_REF_02615>",
+  "controls": [
+    {
+      "case": "identity",
+      "command": "node --test tests/vocabulary.test.mjs",
+      "exit": 0,
+      "invalid_input_accepted": true
+    },
+    {
+      "case": "oversight",
+      "command": "node --test tests/vocabulary.test.mjs",
+      "exit": 0,
+      "invalid_input_accepted": true
+    },
+    {
+      "case": "mac-path",
+      "command": "node --test tests/vocabulary.test.mjs",
+      "exit": 0,
+      "invalid_input_accepted": true
+    },
+    {
+      "case": "handle",
+      "command": "node --test tests/vocabulary.test.mjs",
+      "exit": 0,
+      "invalid_input_accepted": true
+    },
+    {
+      "case": "bare-username",
+      "command": "node --test tests/vocabulary.test.mjs",
+      "exit": 0,
+      "invalid_input_accepted": true
+    },
+    {
+      "case": "stage-in-skills",
+      "command": "node --test tests/vocabulary.test.mjs",
+      "exit": 0,
+      "invalid_input_accepted": true
+    }
+  ],
+  "isolated_control_copy_removed": true,
+  "private_values_not_written_to_product": true
+}

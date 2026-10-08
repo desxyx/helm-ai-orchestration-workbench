@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 118779,
+  "stop_reason": "end_turn",
+  "session_id": "<NATIVE_ID_2154>",
+  "total_cost_usd": 0.868599,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 9084,
+    "cache_read_input_tokens": 341252,
+    "output_tokens": 2854,
+    "output_tokens_details": {
+      "thinking_tokens": 85
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 9084,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1454,
+        "cache_read_input_tokens": 89877,
+        "cache_creation_input_tokens": 1083,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1083
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 64,
+      "outputTokens": 13897,
+      "thinkingTokens": 822,
+      "cacheReadInputTokens": 1888585,
+      "cacheCreationInputTokens": 87946,
+      "webSearchRequests": 0,
+      "costUSD": 0.868599,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 11,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The frontend gets its API address from two places that agree: a value baked into the built JavaScript and a `config.json` shipped next to `index.html`. Both give `<PRIVATE_URL_0025>`. All of this is from the workspace copy in `corpus/workspace/deployment-<W2_RUN_RESOURCE_PREFIX>/`, so it is configuration as built and deployed. I did not look for a copy read back from the VM.\n\n**Frontend API address**\n- **Baked into the build:** `frontend-dist/js/app.f9359e1b.js` line 1 contains `VUE_APP_ALERTA_ENDPOINT:\"<PRIVATE_URL_0025>\"`. `getEnvConfig()` turns it into `{endpoint:\"<PRIVATE_URL_0025>\"}`. The legacy bundle `app-legacy.130409bf.js` is the same build for older browsers.\n- **Runtime file:** `frontend-dist/config.json:1` is `{\"endpoint\": \"<PRIVATE_URL_0025>\"}`.\n  - The app fetches it with `getLocalConfig()` from `/config.json`, which Caddy serves from `/srv/www`.\n  - The same file name appears in `build-manifest.json:16`. The shipped `config.json.example` is `{\"endpoint\": \"http://localhost:8080\"}`, and it is not what the deployment uses.\n- **Precedence in the app:** `mergeConfig()` builds `{...remoteConfig, ...localConfig, ...envConfig}`. The env value (baked-in) wins over `config.json`, and both win over the backend's `/config` response.\n- **Fallback:** the app falls back to `http://localhost:8080` only if no endpoint is set. Here one is set.\n- **Remote config:** after choosing the endpoint, the app calls `<endpoint>/config`. The backend answers from `backend/alerta/views/config.py:9-74`. That reply includes `endpoint: absolute_url()`, `auth_required`, `provider`, `signup_enabled`, `email_verification` and others, taken from backend settings.\n\n**How `/api` reaches the backend**\n- `Caddyfile:7-9` handles `/api/*` with `handle_path`, which strips the `/api` prefix, then runs `reverse_proxy api:8080`.\n- `Caddyfile:10-14` serves everything else from `/srv/www` with `try_files {path} /index.html`.\n- The site address in the Caddyfile is the redacted `HOST-H`. `compose.yaml:57-62` publishes only Caddy's ports 80 and 443. The API listens on 8080 inside the private Docker network and is started by gunicorn (`backend.Dockerfile:15`).\n\n**Backend configuration**\n- `alertad.conf` is mounted read-only at `/etc/alertad.conf` (`compose.yaml:43`). `ALERTA_SVR_CONF_FILE` points to it (`compose.yaml:31`).\n- It sets `AUTH_REQUIRED=True`, `AUTH_PROVIDER='basic'`, `SIGNUP_ENABLED=True`, `EMAIL_VERIFICATION=False`, `USE_PROXYFIX=True`, `BASE_URL='/api'`, `CORS_ORIGINS=['<PRIVATE_URL_0022>']`, `DEBUG=False`, `PLUGINS` and `ALLOWED_ENVIRONMENTS` (`alertad.conf:1-11`).\n- `compose.yaml:30-41` sets the same auth, signup, proxyfix and CORS values as environment variables. It also sets `DATABASE_URL`, `DATABASE_NAME`, `SECRET_KEY` and `ADMIN_USERS`.\n  - `SECRET_KEY` and the database password are taken from `${…}` variables and are required. They are redacted or not shown in the corpus.\n  - I did not open `.env` and did not look at the secrets files.\n- The two sources for the backend overlap. I did not check which one takes precedence in the backend code.\n- `README.txt:35-37` states email verification is disabled, signup is public, and authentication is required. That matches `alertad.conf`.\n\n**Not shown:** `HOST-H` is redacted everywhere, so the exact hostname is not in the corpus. The only link between `<W2_RUN_RESOURCE_PREFIX>` and `<IP_ADDRESS_114>` is the README's DNS record (`README.txt:42-44`).",
+  "ttft_ms": 2482,
+  "type": "result",
+  "duration_ms": 22080,
+  "uuid": "<NATIVE_ID_1569>",
+  "ttft_stream_ms": 1797,
+  "time_to_request_ms": 164,
+  "first_content_frame_ms": 1797,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

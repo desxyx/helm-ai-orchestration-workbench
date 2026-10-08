@@ -1,0 +1,5 @@
+$ gcloud compute networks describe <W2_RUN_RESOURCE_PREFIX>-net '--format=json(name,id,status,zone,region,network,subnetwork,subnetworks,users,address,disks,networkInterfaces)' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+{
+  "id": "<NUMERIC_RESOURCE_0085>",
+  "name": "<W2_RUN_RESOURCE_PREFIX>-net"
+}

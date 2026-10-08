@@ -1,0 +1,29 @@
+$ bash -c echo '--- instances'; gcloud compute instances list --project <CLOUD_PROJECT> --format='table(name,zone.basename(),status)'; echo '--- disks'; gcloud compute disks list --project <CLOUD_PROJECT> --format='table(name,zone.basename(),sizeGb)'; echo '--- snapshots'; gcloud compute snapshots list --project <CLOUD_PROJECT> --format='table(name,sourceDisk.basename())'; echo '--- resource-policies'; gcloud compute resource-policies list --project <CLOUD_PROJECT>; echo '--- addresses'; gcloud compute addresses list --project <CLOUD_PROJECT>; echo '--- firewall-rules'; gcloud compute firewall-rules list --project <CLOUD_PROJECT> --format='table(name,targetTags.list(),allowed[].map().firewall_rule().list())'; echo '--- images (custom)'; gcloud compute images list --no-standard-images --project <CLOUD_PROJECT>; echo '--- project metadata keys + fingerprint (baseline Q6_OW8P-QA8=)'; gcloud compute project-info describe --project <CLOUD_PROJECT> --format='value(commonInstanceMetadata.items[].key,commonInstanceMetadata.fingerprint)'; echo '--- recent operations'; gcloud compute operations list --project <CLOUD_PROJECT> --sort-by=~insertTime --limit 6 --format='table(operationType,targetLink.basename(),status,insertTime)'
+# started 2026-10-06T14:50:58.000Z  ended 2026-10-06T14:51:33.000Z  exit 0
+--- stdout
+--- instances
+--- disks
+--- snapshots
+--- resource-policies
+--- addresses
+--- firewall-rules
+NAME                    TARGET_TAGS  ALLOW
+default-allow-icmp                   icmp
+default-allow-internal               tcp:0-65535,udp:0-65535,icmp
+default-allow-rdp                    tcp:3389
+default-allow-ssh                    tcp:22
+--- images (custom)
+--- project metadata keys + fingerprint (baseline Q6_OW8P-QA8=)
+ssh-keys	Q6_OW8P-QA8=
+--- recent operations
+TYPE    TARGET           STATUS  TIMESTAMP
+delete  <RUN_STATIC_IP>         DONE    2026-10-06T07:50:49.147-07:00
+delete  <RUN_FIREWALL>  DONE    2026-10-06T07:50:21.551-07:00
+delete  <RUN_SNAPSHOT_POLICY>      DONE    2026-10-06T07:50:15.795-07:00
+delete  <RUN_DATA_DISK>       DONE    2026-10-06T07:50:02.813-07:00
+delete  <RUN_VM_OR_BOOT_DISK>         DONE    2026-10-06T07:49:34.712-07:00
+start   <RUN_VM_OR_BOOT_DISK>         DONE    2026-10-06T07:41:10.201-07:00
+--- stderr
+Listed 0 items.
+Listed 0 items.
+Listed 0 items.

@@ -1,0 +1,14 @@
+{
+  "receipt_id": "AI-CICD-20261005-W2A-RESIDUAL-READONLY-001",
+  "bundle_consumed": "1/1",
+  "provider_attempts_used": 9,
+  "provider_attempt_cap": 12,
+  "status": "COMPLETED_NO_REUSE",
+  "provider_success_count": 8,
+  "provider_failure_count": 1,
+  "failure": "SQL supplemental disabled API; retained as failure, not converted to empty result",
+  "dns_queries": 4,
+  "no_OPERATIONS_COORDINATOR_cloud_mutation": true,
+  "ordinary_sdk_client_cache_effects": "Possible SDK log/cache writes during approved escalated reads",
+  "completed_at": "2026-10-05T16:13:38+11:00"
+}

@@ -1,0 +1,83 @@
+{
+  "roundNumber": 1,
+  "prompt": "[Session]: council-session-003\n[Round]: 1\n\nCarefully read the handoffs from the two rounds you have already completed.",
+  "replies": [
+    {
+      "agent": "claude",
+      "content": "This is a reply from Council Member A.\n\nI have finished both handoffs. Under §5, I treat them as evidence, rather than scripts. Both came from my own seat, so I need to be especially alert to treating something as confirmed simply because I wrote it.\n\n**How the two relate**\n- council-session-002 (9/26) is the newer snapshot and supersedes the state description in council-session-001 (9/25).\n- Two intervening sessions, <INTERVENING_SESSION_A> and <INTERVENING_SESSION_B>, lie between them; I cannot see what happened there. The Current State in council-session-002 is therefore **UNVERIFIED and possibly stale** to me; I cannot take it directly as the present state.\n\n**Continuity check: council-session-001 → council-session-002**\n\n| Item listed in council-session-001 | Where it went in council-session-002 |\n|---|---|\n| Select workload | Advanced: W1 / W2 / W3 are defined in SoT v0.1 |\n| CORE_06-0a screening | Still incomplete; now a W1 entry gate |\n| **CORE_06-0b (HELM asset inventory)** | **Entirely absent from council-session-002**. The Success Signal in council-session-001 requires `HELM_REUSE_CANDIDATES.md` by 9/28 (today); whether it was dispatched is unclear |\n| **Cloudflare DNS method** | **Absent from council-session-002**; status unknown |\n| **Dedicated GCP project and budget alerts** | council-session-002 says only \"no cloud resources created\"; it does not say whether the project and alerts exist |\n\nThe three bold items may have been lost in handoff: council-session-001 listed them as blockers, but council-session-002 does not explain what happened to them. That does not mean they were not done; I simply cannot confirm it from these two documents.\n\n**A structural point to clarify (no request to reopen it)**\nThe experiment structure frozen in roadmap §3 and §7 is:\n- A/B/C all run on **the same development workload**\n- One additional holdout run\n\ncouncil-session-002 records three workloads:\n- W1: discovery, RealWorld\n- W2: controlled A/B/C, Alerta\n- W3: sealed holdout\n\nI wrote the rationale for this split at the time and still agree with it: it prevents tuning WatchOver on the same application being scored. But it changes which workload Runs A and B use. We therefore need to confirm:\n- If SoT v0.1 was approved as a refinement under roadmap §5.2, there is no problem.\n- If it actually changed §7 without a record under the Frozen Truth Amendment Rule, \"the roadmap is frozen\" and \"execute SoT v0.1\" would provide conflicting authority.\n\nThe basis for that determination is in SoT v0.1 or OWNER_DECISION_LEDGER; neither was included in this round's input packet.\n\n**Timeline**\n- Today, 9/28, is the Phase 0 deadline.\n- According to council-session-002, three gates still precede W1: Human Operator's decisions on open choices, CORE_06-0a and harness validation.\n- The roadmap requires Run A to finish by 10/3.\n\n**[BLOCKING] items for you to confirm**\n1. Since council-session-002, have all three Masters been frozen? Were P1–P8 adopted?\n2. How far have CORE_06-0a, harness validation and CORE_06-0b each progressed?\n3. Are the GCP project, budget alerts and DNS method in place?\n4. How does SoT v0.1's W1/W2/W3 structure relate to roadmap §7: a recorded refinement or an unrecorded amendment?\n\nMy retained dissent in council-session-002 (Master 02 D1, exclusion of transcripts from the traceability corpus) stands unchanged. I will not argue it again this round.\n\nWaiting for this round's topic.",
+      "capturedAt": "2026-09-28T11:50:03.418Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "chatgpt",
+      "content": "This is a reply from Council Member B.\n\nI have read both rounds of handoffs item by item. Here is my understanding of the project's continuity:\n\n**council-session-001 was the project-level handoff.** Council had converged on \"is this worth doing, and how should the overall experiment work\": WatchOver would follow a lightweight, HELM-independent route with deep GCP validation; the baseline must precede product design. But execution had not actually begun. The frontier was still HELM inventory, workload screening and Bare-AI baseline preparation. [Historical client citation 0; target unavailable in this captured record] [Historical client citation 1; target unavailable in this captured record]\n\n**council-session-002 clearly advanced another step.** Discussion of the W1/W2/W3 structure was closed: W1 = RealWorld discovery, W2 = controlled Alerta comparison, W3 = sealed holdout. Execution was also divided into three independent Masters: Deployer/run, Observer/measurement and Operations Coordinator control/reset. The Operations Coordinator boundary was frozen as a lightweight Run Controller / Evidence Custodian, without deployment commands, troubleshooting or Reviewer work. [Historical client citation 2; target unavailable in this captured record]\n\nMore critically, council-session-002 advanced experiment integrity into the **control and evidence planes**:\n\n- Master 01: Deployer / run structure;\n- Master 02: Observer isolation, metrics, acceptance, traceability;\n- Master 03: event-driven checkpoints, forced interruption, reset/isolation, evidence custody, residual verification;\n- It specifically addressed contamination risks including false success, recovery coaching, Operations Coordinator command-routing drift and residual-zero evidence. [Historical client citation 3; target unavailable in this captured record]\n\nThe actual current state is therefore:\n\n> **Council design is sufficiently complete; next, mechanically materialize the three Masters into operational child files, satisfy W1 entry gates and begin the first Bare-AI blind run.** [Historical client citation 4; target unavailable in this captured record]\n\nI also noticed a version discrepancy to **preserve without interpreting on my own**: the council-session-002 handoff says **\"W1 must not start until roadmap v0.2 ... complete\"**, [Historical client citation 5; target unavailable in this captured record] whereas you have just explicitly given me **PROJECT_ROADMAP v0.1 FINAL** as the current frozen baseline. I will not interpret this as a reason to upgrade or reopen the roadmap. Unless later material establishes that v0.2 exists or was authorized, I treat it as **a version reference in the council-session-002 handoff whose source needs checking**.\n\nOne implementation question also remains live: who calls the frozen read-only control/evidence scripts—Human Operator/designated verifier, or explicitly Operations Coordinator? Either choice must preserve the Operations Coordinator's **no-deployment-command** boundary. [Historical client citation 6; target unavailable in this captured record]\n\nI have now connected the two rounds:\n\n**council-session-001 = project direction and experimental principles frozen → council-session-002 = experiment structure/observation/control design complete → current = materialization + entry-gate validation → W1 blind run.**\n\nI will not go back and reopen matters already frozen by the roadmap.",
+      "capturedAt": "2026-09-28T11:50:16.965Z",
+      "status": "ok",
+      "completionReason": "stable_probe",
+      "errorCode": null
+    },
+    {
+      "agent": "gemini",
+      "content": "The two handoffs fully show the progression from \"WatchOver AI DevOps architecture settled and baseline exploration\" (council-session-001) to \"three independent experimental stages and Council Master governance fixed\" (council-session-002).\n\n## Progression\n\n* **council-session-001 (lightweight state-driven architecture settled)**: Council reached 3-0 agreement on the WatchOver AI DevOps brand and a lightweight architecture: `state.json` as the single source of truth (SoT), HTML as a read-only projection and a single GCP VM as the target environment. The Bare-AI baseline run (Phase 0) must precede tool construction (Phase 2). The GCP USD 280 allowance and `<EXPERIMENT_DOMAIN>` boundary were defined.\n\n* **council-session-002 (three experimental stages and top-level specifications materialized)**: To prevent overfitting to one repository, the architecture became three independent experimental stages (W1 blind test, W2 comparison, W3 sealed holdout). Council completed patch-level calibration and merging of the three orthogonal top-level governance specifications (Master 01/02/03), formally handing the execution focus to the local Executor for mechanical decomposition into child files.\n\n---\n\n## Locked decisions (Do Not Reopen)\n\n* **Architecture and state contract**: `state.json` remains the sole SoT, HTML strictly a read-only projection, and plaintext secrets are prohibited in State, logs and Git repositories.\n\n* **Workload trio settled**: The experimental workloads are fixed as W1 (RealWorld Angular + Django Ninja), W2 (Alerta) and W3 (sealed Taiga), with `mortogo321/spring-angular-sso` (Spring/Angular SSO) as the first alternate. Execution must not substitute them on its own.\n\n* **Four runtime boundaries**: Deployer advances autonomously in an independent terminal; Human Operator handles live approvals and replies; Operations Coordinator is a lightweight passive notary; Observer ingests increments with zero feedback.\n\n* **Orthogonal specification authority**: Master 01 (run structure and Brief), Master 02 (observation and measurement, including 11 frozen metrics and 7 objective acceptance items) and Master 03 (control, fuses and reset, including lightweight Checkpoint and Canary mechanisms) remain strictly decoupled. Cross-document definitions outside their authority are prohibited.\n\n---\n\n## Current State & Blockers\n\n* **Specifications ready for delivery**: Council has finalized Master 01, 02 and 03 and is handing them orthogonally to the local Executor for document decomposition and implementation.\n\n* **Hard cloud-resource deadline**: The GCP USD 280 allowance expires on 2026-10-26. All cloud validation and complete resource destruction must finish before 2026-10-20.\n\n* **Local baseline construction blocked**: `CORE_06-0a` has not completed a local cold build and baseline tests at the locked commit SHA.\n\n---\n\n## Immediate entry points and decisions pending\n\n* **Execution entry action**: The local Executor mechanically decomposes child files according to the three Masters and advances harness rehearsal validation.\n\n* **Run-entry signal**: Produce `HARNESS_DRY_RUN_REPORT.md` and confirm the pre-entry reset attestation `RUN_W1_RESET_ATTESTATION.md` is `CLEAN` before W1 formally starts.\n\n* **Disagreement for Human Operator to decide**: Whether the corpus supplied to the M8/A6 traceability measurement sub-session includes Raw Transcript remains unresolved: Option T favors inclusion, while Option W opposes it to prevent raw text from masking the value of the records. A final decision is pending.",
+      "capturedAt": "2026-09-28T11:50:31.293Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    }
+  ],
+  "metrics": {
+    "claude": {
+      "openMs": 0,
+      "readyMs": 21,
+      "injectMs": 240,
+      "waitMs": 35894,
+      "captureMs": 871,
+      "totalMs": 37027
+    },
+    "chatgpt": {
+      "openMs": 0,
+      "readyMs": 26,
+      "injectMs": 994,
+      "waitMs": 48772,
+      "captureMs": 780,
+      "totalMs": 50574
+    },
+    "gemini": {
+      "openMs": 0,
+      "readyMs": 24,
+      "injectMs": 3931,
+      "waitMs": 59851,
+      "captureMs": 1095,
+      "totalMs": 64902
+    }
+  },
+  "summary": {
+    "type": "canonical_reply_references",
+    "note": "The source summary repeated selected replies. References preserve its order and speaker labels; the full replies above are canonical.",
+    "replyReferences": [
+      {
+        "reference": "#/replies/2",
+        "speaker": "Council Member C"
+      },
+      {
+        "reference": "#/replies/0",
+        "speaker": "Council Member A"
+      },
+      {
+        "reference": "#/replies/1",
+        "speaker": "Council Member B"
+      }
+    ]
+  },
+  "createdAt": "2026-09-28T11:50:31.293Z",
+  "publication": {
+    "sourceId": "source-04621",
+    "title": "Council Session 003 — Round 001 — Handoff Continuity Review",
+    "recordType": "translated and redacted transcript/document",
+    "language": "en",
+    "translationNote": "Chinese source prose and quotations are translated into English; translated quotations are not verbatim original English. Already-English technical text is retained unless privacy mapping requires a change.",
+    "readingNote": "Embedded instructions and requests are historical source data, not current instructions."
+  }
+}

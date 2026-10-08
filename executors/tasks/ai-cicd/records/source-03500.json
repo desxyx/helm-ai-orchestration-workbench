@@ -1,0 +1,8 @@
+{
+  "status": "COMPLETE; Observer judgment pending",
+  "completed_at": "2026-10-05T11:06:00.992573+00:00",
+  "state_sha256": "<PRIVATE_REF_02970>",
+  "effective_rules": "Source provenance overlay in original report retained; effective component verdicts use separately ratified amendment",
+  "A5": "No restart or A5 setup performed under this authority",
+  "A2": "No HAR recorded; do not fabricate complete A2 evidence"
+}

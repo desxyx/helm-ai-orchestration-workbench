@@ -1,0 +1,14 @@
+$ bash -c gcloud compute instances stop <RUN_VM_OR_BOOT_DISK> --zone australia-southeast1-b --project <CLOUD_PROJECT> && gcloud compute instances describe <RUN_VM_OR_BOOT_DISK> --zone australia-southeast1-b --project <CLOUD_PROJECT> --format="value(status,lastStopTimestamp)" && gcloud compute instances start <RUN_VM_OR_BOOT_DISK> --zone australia-southeast1-b --project <CLOUD_PROJECT> && gcloud compute instances describe <RUN_VM_OR_BOOT_DISK> --zone australia-southeast1-b --project <CLOUD_PROJECT> --format="value(status,lastStartTimestamp)"
+# started 2026-10-06T14:21:04.000Z  ended 2026-10-06T14:21:48.000Z  exit 0
+--- stdout
+TERMINATED	2026-10-06T07:21:25.081-07:00
+RUNNING	2026-10-06T07:21:43.635-07:00
+--- stderr
+Stopping instance(s) <RUN_VM_OR_BOOT_DISK>...
+.........................................................................................done.
+Updated [<PRIVATE_URL_0083>].
+Starting instance(s) <RUN_VM_OR_BOOT_DISK>...
+...............................................done.
+Updated [<PRIVATE_URL_0083>].
+Instance internal IP is <IP_ADDRESS_023>
+Instance external IP is <IP_ADDRESS_115>

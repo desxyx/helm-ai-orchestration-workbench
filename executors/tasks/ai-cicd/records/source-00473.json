@@ -1,0 +1,27 @@
+{
+  "round": "r2",
+  "commit": "5c662eac0449bd30eddd01c606d268f0aa510631",
+  "tree": "<PRIVATE_REF_00957>",
+  "branch": "release/0.1.2",
+  "version": "0.1.2",
+  "working_tree": "clean",
+  "reachable_commits": 1,
+  "parents": [],
+  "r1_commit_preserved_in_bundle": "<PRIVATE_REF_02615>",
+  "rework_paths": [
+    "docs/architecture.md",
+    "docs/validation.md",
+    "tests/docs.test.mjs",
+    "tests/helpers/vocabulary.mjs",
+    "tests/vocabulary.test.mjs"
+  ],
+  "r1_other_files_byte_equal": 128,
+  "author_committer": "WatchOver contributors <ACCOUNT_EMAIL_067>",
+  "remotes": [],
+  "tags": [],
+  "archive_files": 133,
+  "archive_owner": "root/root",
+  "archive_sha256": "<PRIVATE_REF_01009>",
+  "r1_manifest_files_hash_equal": 32,
+  "checked_at": "2026-10-07T23:58:45.875184+11:00"
+}

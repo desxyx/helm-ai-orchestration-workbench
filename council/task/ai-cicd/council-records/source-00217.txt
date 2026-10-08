@@ -1,0 +1,15 @@
+Remain at the Council layer as the same single-member contributor. Do not act as Executor or Reviewer, do not edit files, do not run project commands, and do not claim Council convergence.
+
+Read Human Operator's recorded decisions:
+source-00219.md
+
+Incorporate D-1 through D-6 into your Pre-W2 proposal. In particular, Human Operator chose a scored human-comprehension secondary measure. Make that measure operationally comparable without overstating its inference: identical out-of-band questions/timing across arms, answers locked before clarification, pre-frozen objective rubric and ground truth, no score feedback until comparison seal, and explicit unblinded/n=1 limitation.
+
+Return a concise revised Council contribution containing:
+1. the remaining `[BLOCKING]` items, if any, after the Chair decisions;
+2. any `[DEFAULT_OK]` assumptions still requiring explicit acceptance;
+3. the proposed normative contents and authority boundaries of `MEASUREMENT_CONTROL_PATCH_AUTHORIZATION`;
+4. the proposed normative contents and authority boundaries of `W2_EXPERIMENT_FREEZE` and its Measurement Addendum;
+5. a direct statement of whether the material is ready for cross-review or still needs another decision round.
+
+Do not materialize either artifact, write implementation instructions, assign a merge owner, modify WatchOver, or start W2.

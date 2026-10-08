@@ -1,0 +1,13 @@
+ERROR: (gcloud.sql.instances.list) [[REDACTED:email]] does not have permission to access projects instance [<CLOUD_PROJECT>] (or it may not exist): Cloud SQL Admin API has not been used in project <CLOUD_PROJECT> before or it is disabled. Enable it by visiting <PRIVATE_URL_0100> then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. This command is authenticated as [REDACTED:email] which is the active account specified by the [core/account] property.
+Cloud SQL Admin API has not been used in project <CLOUD_PROJECT> before or it is disabled. Enable it by visiting <PRIVATE_URL_0100> then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+Google developers console API activation
+<PRIVATE_URL_0100>
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: googleapis.com
+  metadata:
+    activationUrl: <PRIVATE_URL_0100>
+    consumer: projects/<CLOUD_PROJECT>
+    containerInfo: <CLOUD_PROJECT>
+    service: sqladmin.googleapis.com
+    serviceTitle: Cloud SQL Admin API
+  reason: SERVICE_DISABLED

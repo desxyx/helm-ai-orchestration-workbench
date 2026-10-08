@@ -1,0 +1,5 @@
+$ gcloud compute disks delete <RUN_DATA_DISK> --zone australia-southeast1-b --quiet --project <CLOUD_PROJECT>
+# started 2026-10-06T14:49:56.000Z  ended 2026-10-06T14:50:03.000Z  exit 0
+--- stdout
+--- stderr
+Deleted [<PRIVATE_URL_0432>].

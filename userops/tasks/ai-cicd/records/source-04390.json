@@ -1,0 +1,55 @@
+{
+  "status": "PREPARED_NOT_ISSUED",
+  "observer_source_files": [
+    {
+      "file": "OBSERVER_PROTOCOL.md",
+      "source": "execution/w2b_formal_entry_2026-10-05/observer_packet/OBSERVER_PROTOCOL.md",
+      "sha256": "<PRIVATE_REF_03170>"
+    },
+    {
+      "file": "METRICS_DEFINITIONS.md",
+      "source": "execution/w2b_formal_entry_2026-10-05/observer_packet/METRICS_DEFINITIONS.md",
+      "sha256": "<PRIVATE_REF_01277>"
+    },
+    {
+      "file": "EVENT_TAXONOMY.md",
+      "source": "execution/w2b_formal_entry_2026-10-05/observer_packet/EVENT_TAXONOMY.md",
+      "sha256": "<PRIVATE_REF_01416>"
+    },
+    {
+      "file": "MEASUREMENT_INTEGRITY_RULES.md",
+      "source": "execution/w2b_formal_entry_2026-10-05/observer_packet/MEASUREMENT_INTEGRITY_RULES.md",
+      "sha256": "<PRIVATE_REF_02778>"
+    },
+    {
+      "file": "ACCEPTANCE_MATRIX.md",
+      "source": "execution/w2b_formal_entry_2026-10-05/observer_packet/ACCEPTANCE_MATRIX.md",
+      "sha256": "<PRIVATE_REF_03025>"
+    },
+    {
+      "file": "ACCEPTANCE_VERIFICATION_PROCEDURE.md",
+      "source": "execution/w2b_formal_entry_2026-10-05/observer_packet/ACCEPTANCE_VERIFICATION_PROCEDURE.md",
+      "sha256": "<PRIVATE_REF_02445>"
+    },
+    {
+      "file": "TRACEABILITY_PROBE.md",
+      "source": "execution/w2b_formal_entry_2026-10-05/observer_packet/TRACEABILITY_PROBE.md",
+      "sha256": "<PRIVATE_REF_03741>"
+    },
+    {
+      "file": "event.schema.json",
+      "source": "execution/w2b_formal_entry_2026-10-05/observer_packet/event.schema.json",
+      "sha256": "<PRIVATE_REF_00975>"
+    },
+    {
+      "file": "metrics.schema.json",
+      "source": "execution/w2b_formal_entry_2026-10-05/observer_packet/metrics.schema.json",
+      "sha256": "<PRIVATE_REF_01911>"
+    },
+    {
+      "file": "RESTART_EQUIVALENCE.md",
+      "source": "execution/w2b_formal_entry_2026-10-05/observer_packet/RESTART_EQUIVALENCE.md",
+      "sha256": "<PRIVATE_REF_01847>"
+    }
+  ]
+}

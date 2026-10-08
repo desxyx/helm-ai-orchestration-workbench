@@ -1,0 +1,25 @@
+{
+  "receipt_id": "AI-CICD-20261005-W2A-TERMINAL-READONLY-001",
+  "bundle_consumed": "1/1",
+  "provider_attempts_used": 10,
+  "provider_attempt_cap": 10,
+  "status": "COMPLETED_NO_REUSE",
+  "successful_provider_attempts": 9,
+  "failed_provider_attempts": [
+    {
+      "attempt": 4,
+      "query": "Q04_address",
+      "exit_code": 1
+    }
+  ],
+  "raw_custody": "Separate exclusive stdout/stderr, exact argv, timestamps and hashes retained; initial sandbox failures preserved, not attributed to deployment",
+  "scope_result": "Existing VM/two20GB disks/static IP/network/firewall confirmed; local/public DNS and unauthenticated HTTPS successful",
+  "mutations": "No cloud/DNS/resource/credential mutation; ordinary SDK cache/log writes during escalated reads possible",
+  "acceptance_not_proven": [
+    "Independent signup/login",
+    "Full VM-restart persistence",
+    "Source provenance",
+    "A1-A7 formal final verdict"
+  ],
+  "completed_at": "2026-10-05T14:49:15+11:00"
+}

@@ -1,0 +1,7 @@
+{
+  "core": {
+    "account": "<ACCOUNT_EMAIL_011>",
+    "disable_usage_reporting": "True",
+    "project": "<CLOUD_PROJECT>"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "tool": "interrupt-detect",
+  "run_id": "RUN-W2B",
+  "rollout_sha256": "<PRIVATE_REF_02652>",
+  "rules_sha256": "<PRIVATE_REF_02353>",
+  "status": "SILENT",
+  "trigger": null,
+  "attempts": [],
+  "controller_notified": false,
+  "timestamp": "2026-10-05T09:09:17.580Z"
+}

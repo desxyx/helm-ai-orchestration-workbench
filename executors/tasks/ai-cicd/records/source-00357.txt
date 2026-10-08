@@ -1,0 +1,23 @@
+$ bash -c for s in <DNS_RESOLVER_A> <DNS_RESOLVER_B>; do echo "== @$s"; nslookup -type=A <W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> $s 2>&1 | grep -vE "^Server:|^Address:.*#53$|^$" ; echo "-- control apex:"; nslookup -type=A <EXPERIMENT_DOMAIN> $s 2>&1 | grep -A3 "^Name:"; done; echo "== dns.google:"; curl -s "<PRIVATE_URL_0108>" | head -c 300; echo; echo "== 1.1.1.1:"; curl -s -H "accept: application/dns-json" "<PRIVATE_URL_0020>" | head -c 300
+# started 2026-10-06T14:50:34.000Z  ended 2026-10-06T14:50:35.000Z  exit 0
+--- stdout
+== @<DNS_RESOLVER_A>
+*** <DNS_RESOLVER_A> can't find <W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>: Non-existent domain
+Address:  <IP_ADDRESS_107>
+-- control apex:
+Name:    <EXPERIMENT_DOMAIN>
+Addresses:  <IP_ADDRESS_097>
+	  <IP_ADDRESS_108>
+
+== @<DNS_RESOLVER_B>
+*** <DNS_RESOLVER_B> can't find <W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>: Non-existent domain
+Address:  <IP_ADDRESS_104>
+-- control apex:
+Name:    <EXPERIMENT_DOMAIN>
+Addresses:  <IP_ADDRESS_108>
+	  <IP_ADDRESS_097>
+
+== dns.google:
+{"Status":3,"TC":false,"RD":true,"RA":true,"AD":false,"CD":false,"Question":[{"name":"<W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>.","type":1}],"Authority":[{"name":"<EXPERIMENT_DOMAIN>.","type":6,"TTL":1800,"data":"<DNS_RESOLVER_A>. dns.cloudflare.com. 2416783858 10000 2400 604800 1800"}],"Comment":"Response from 108.162.
+== 1.1.1.1:
+{"Status":3,"TC":false,"RD":true,"RA":true,"AD":false,"CD":false,"Question":[{"name":"<W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>","type":1}],"Authority":[{"name":"<EXPERIMENT_DOMAIN>","type":6,"TTL":1800,"data":"<DNS_RESOLVER_A>. dns.cloudflare.com. 2416783858 10000 2400 604800 1800"}]}--- stderr

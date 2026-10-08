@@ -1,0 +1,68 @@
+{
+  "artifact_class": "CUSTODY_RECEIPT",
+  "run_id": "RUN-W2A",
+  "received_at": "2026-10-05T16:32:13+11:00",
+  "custodian": "Operations Coordinator",
+  "source_directory": "/private/tmp/survey-18f7/work/output/FINAL_SEALED",
+  "durable_directory": "<HELM_ROOT>/council/task/AI_CICD/execution/w2_formal_entry_2026-10-05/evidence/observer_final/FINAL_SEALED",
+  "verification": "Seven source and copied file digests match; the final manifest names and covers exactly the six sealed artifacts.",
+  "files": [
+    {
+      "name": "RUN_RUN-W2A_OBSERVER_REPORT.md",
+      "sha256": "<PRIVATE_REF_00950>",
+      "bytes": 12593,
+      "mode": "0444"
+    },
+    {
+      "name": "RUN_RUN-W2A_METRICS.json",
+      "sha256": "<PRIVATE_REF_03312>",
+      "bytes": 8874,
+      "mode": "0444"
+    },
+    {
+      "name": "RUN_RUN-W2A_ACCEPTANCE.json",
+      "sha256": "<PRIVATE_REF_02870>",
+      "bytes": 5262,
+      "mode": "0444"
+    },
+    {
+      "name": "RUN_RUN-W2A_EVENTS.jsonl",
+      "sha256": "<PRIVATE_REF_02365>",
+      "bytes": 44647,
+      "mode": "0444"
+    },
+    {
+      "name": "RUN_RUN-W2A_INGESTION_LEDGER.json",
+      "sha256": "<PRIVATE_REF_03695>",
+      "bytes": 49789,
+      "mode": "0444"
+    },
+    {
+      "name": "RUN_RUN-W2A_HARNESS_PERMISSION_PROMPTS.jsonl",
+      "sha256": "<PRIVATE_REF_00899>",
+      "bytes": 8769,
+      "mode": "0444"
+    },
+    {
+      "name": "SHA256SUMS_FINAL",
+      "sha256": "<PRIVATE_REF_02116>",
+      "bytes": 590,
+      "mode": "0444"
+    }
+  ],
+  "working_drafts_accepted_as_final": false,
+  "observer_artifacts_modified": false,
+  "observer_declared_ingestion": {
+    "checkpoints": 3,
+    "segments": 135,
+    "gaps": 0,
+    "events": 73,
+    "CP03_S2_line_range": [
+      433,
+      540
+    ]
+  },
+  "independent_measurement_repeated": false,
+  "cloud_actions_performed": false,
+  "formal_disposition": "See RUN_W2A_CUSTODIAN_CLOSE.md; separate from immutable Observer scores."
+}

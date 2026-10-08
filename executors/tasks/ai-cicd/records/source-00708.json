@@ -1,0 +1,495 @@
+{
+  "manifest_sha256": "<PRIVATE_REF_03042>",
+  "count": 81,
+  "matches": 81,
+  "rows": [
+    {
+      "path": "D3_INSTALL_PLAN.md",
+      "expected": "<PRIVATE_REF_03336>",
+      "actual": "<PRIVATE_REF_03336>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/ACTUAL_ENTRY_SUBMISSION_r1.md",
+      "expected": "<PRIVATE_REF_02427>",
+      "actual": "<PRIVATE_REF_02427>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/EXEC_ACK.md",
+      "expected": "<PRIVATE_REF_00887>",
+      "actual": "<PRIVATE_REF_00887>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/NOTE_TO_OPERATIONS_COORDINATOR_D3_DOCKER_CONFLICT.md",
+      "expected": "<PRIVATE_REF_03402>",
+      "actual": "<PRIVATE_REF_03402>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/ACCOUNT_ALIAS_CHECK.txt",
+      "expected": "<PRIVATE_REF_02996>",
+      "actual": "<PRIVATE_REF_02996>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/ANOMALIES.txt",
+      "expected": "<PRIVATE_REF_02429>",
+      "actual": "<PRIVATE_REF_02429>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/QUERY_COUNT.txt",
+      "expected": "<PRIVATE_REF_02704>",
+      "actual": "<PRIVATE_REF_02704>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/QUERY_LOG.tsv",
+      "expected": "<PRIVATE_REF_03572>",
+      "actual": "<PRIVATE_REF_03572>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/cloud_inventory.sh",
+      "expected": "<PRIVATE_REF_01365>",
+      "actual": "<PRIVATE_REF_01365>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/cloud_inventory_part2.sh",
+      "expected": "<PRIVATE_REF_03535>",
+      "actual": "<PRIVATE_REF_03535>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q01_project_describe.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q01_project_describe.out",
+      "expected": "<PRIVATE_REF_03375>",
+      "actual": "<PRIVATE_REF_03375>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q02_services_enabled.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q02_services_enabled.out",
+      "expected": "<PRIVATE_REF_01883>",
+      "actual": "<PRIVATE_REF_01883>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q03_compute_instances.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q03_compute_instances.out",
+      "expected": "<PRIVATE_REF_01383>",
+      "actual": "<PRIVATE_REF_01383>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q04_compute_disks.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q04_compute_disks.out",
+      "expected": "<PRIVATE_REF_01383>",
+      "actual": "<PRIVATE_REF_01383>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q05_compute_addresses.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q05_compute_addresses.out",
+      "expected": "<PRIVATE_REF_01383>",
+      "actual": "<PRIVATE_REF_01383>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q06_compute_firewall.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q06_compute_firewall.out",
+      "expected": "<PRIVATE_REF_03458>",
+      "actual": "<PRIVATE_REF_03458>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q07_compute_networks.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q07_compute_networks.out",
+      "expected": "<PRIVATE_REF_03207>",
+      "actual": "<PRIVATE_REF_03207>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q08_compute_forwarding.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q08_compute_forwarding.out",
+      "expected": "<PRIVATE_REF_01383>",
+      "actual": "<PRIVATE_REF_01383>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q09_compute_images_custom.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q09_compute_images_custom.out",
+      "expected": "<PRIVATE_REF_01383>",
+      "actual": "<PRIVATE_REF_01383>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q10_compute_project_info.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q10_compute_project_info.out",
+      "expected": "<PRIVATE_REF_02395>",
+      "actual": "<PRIVATE_REF_02395>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q11_run_services.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q11_run_services.out",
+      "expected": "<PRIVATE_REF_01383>",
+      "actual": "<PRIVATE_REF_01383>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q12_sql_instances.err",
+      "expected": "<PRIVATE_REF_02544>",
+      "actual": "<PRIVATE_REF_02544>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q12_sql_instances.out",
+      "expected": "<PRIVATE_REF_01383>",
+      "actual": "<PRIVATE_REF_01383>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q13_storage_buckets.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q13_storage_buckets.out",
+      "expected": "<PRIVATE_REF_01383>",
+      "actual": "<PRIVATE_REF_01383>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q14_artifact_repos.err",
+      "expected": "<PRIVATE_REF_01714>",
+      "actual": "<PRIVATE_REF_01714>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q14_artifact_repos.out",
+      "expected": "<PRIVATE_REF_01383>",
+      "actual": "<PRIVATE_REF_01383>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q15_secrets.err",
+      "expected": "<PRIVATE_REF_01113>",
+      "actual": "<PRIVATE_REF_01113>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q15_secrets.out",
+      "expected": "<PRIVATE_REF_01383>",
+      "actual": "<PRIVATE_REF_01383>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q16_gke_clusters.err",
+      "expected": "<PRIVATE_REF_00667>",
+      "actual": "<PRIVATE_REF_00667>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q16_gke_clusters.out",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q17_asset_all.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q17_asset_all.out",
+      "expected": "<PRIVATE_REF_03503>",
+      "actual": "<PRIVATE_REF_03503>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q18_active_account.err",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/cloud/raw/Q18_active_account.out",
+      "expected": "<PRIVATE_REF_03279>",
+      "actual": "<PRIVATE_REF_03279>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/deps/inputs.sha256",
+      "expected": "<PRIVATE_REF_01719>",
+      "actual": "<PRIVATE_REF_01719>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/deps/webui_build.stderr",
+      "expected": "<PRIVATE_REF_02920>",
+      "actual": "<PRIVATE_REF_02920>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/deps/webui_build.stdout",
+      "expected": "<PRIVATE_REF_01386>",
+      "actual": "<PRIVATE_REF_01386>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/deps/webui_build_result.txt",
+      "expected": "<PRIVATE_REF_02136>",
+      "actual": "<PRIVATE_REF_02136>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/deps/webui_build_start.txt",
+      "expected": "<PRIVATE_REF_02591>",
+      "actual": "<PRIVATE_REF_02591>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/dns/DNS_READONLY.txt",
+      "expected": "<PRIVATE_REF_02981>",
+      "actual": "<PRIVATE_REF_02981>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/dns/DNS_READONLY_attempt1_INVALID_zsh_wordsplit.txt",
+      "expected": "<PRIVATE_REF_03676>",
+      "actual": "<PRIVATE_REF_03676>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/docker/D3_INSTALL_LOG.txt",
+      "expected": "<PRIVATE_REF_01715>",
+      "actual": "<PRIVATE_REF_01715>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi/C01_BUNDLED_SYSTEM_SKILLS.sha256",
+      "expected": "<PRIVATE_REF_01946>",
+      "actual": "<PRIVATE_REF_01946>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi/PROMPT_INPUT_LABEL_SCAN.txt",
+      "expected": "<PRIVATE_REF_03344>",
+      "actual": "<PRIVATE_REF_03344>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi/check_out.json",
+      "expected": "<PRIVATE_REF_01368>",
+      "actual": "<PRIVATE_REF_01368>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi/observed_runtime_c01.json",
+      "expected": "<PRIVATE_REF_02687>",
+      "actual": "<PRIVATE_REF_02687>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi/probe_out.json",
+      "expected": "<PRIVATE_REF_03415>",
+      "actual": "<PRIVATE_REF_03415>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi/raw/ep_i/ep_i_check_1791114057338.json",
+      "expected": "<PRIVATE_REF_01216>",
+      "actual": "<PRIVATE_REF_01216>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi/raw/ep_i/ep_i_probe_1791114056758.json",
+      "expected": "<PRIVATE_REF_03105>",
+      "actual": "<PRIVATE_REF_03105>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi/targets_actual.json",
+      "expected": "<PRIVATE_REF_01091>",
+      "actual": "<PRIVATE_REF_01091>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/isolation/PROBE_DIR.txt",
+      "expected": "<PRIVATE_REF_01682>",
+      "actual": "<PRIVATE_REF_01682>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/isolation/PROBE_LABEL_MAP.md",
+      "expected": "<PRIVATE_REF_03277>",
+      "actual": "<PRIVATE_REF_03277>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/isolation/SANDBOX_PROBE_RESULT.txt",
+      "expected": "<PRIVATE_REF_00971>",
+      "actual": "<PRIVATE_REF_00971>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/isolation/probe1_events.jsonl",
+      "expected": "<PRIVATE_REF_03269>",
+      "actual": "<PRIVATE_REF_03269>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/isolation/probe1_last_message.txt",
+      "expected": "<PRIVATE_REF_01967>",
+      "actual": "<PRIVATE_REF_01967>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/isolation/probe1_meta.txt",
+      "expected": "<PRIVATE_REF_00942>",
+      "actual": "<PRIVATE_REF_00942>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/isolation/probe1_stderr.txt",
+      "expected": "<PRIVATE_REF_01064>",
+      "actual": "<PRIVATE_REF_01064>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/isolation/sandbox_probe.sh",
+      "expected": "<PRIVATE_REF_02361>",
+      "actual": "<PRIVATE_REF_02361>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/models/observer_probe1.json",
+      "expected": "<PRIVATE_REF_01701>",
+      "actual": "<PRIVATE_REF_01701>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/models/observer_probe1.stderr",
+      "expected": "<PRIVATE_REF_03399>",
+      "actual": "<PRIVATE_REF_03399>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/models/observer_probe1_meta.txt",
+      "expected": "<PRIVATE_REF_01752>",
+      "actual": "<PRIVATE_REF_01752>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/packet/ALIAS_MAPPING_CONTROL_ONLY.md",
+      "expected": "<PRIVATE_REF_03313>",
+      "actual": "<PRIVATE_REF_03313>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/packet/GITHUB_AUTH_STATE.txt",
+      "expected": "<PRIVATE_REF_00911>",
+      "actual": "<PRIVATE_REF_00911>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/packet/OBSERVER_RUN_MANIFEST_DRAFT.md",
+      "expected": "<PRIVATE_REF_01807>",
+      "actual": "<PRIVATE_REF_01807>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/packet/PROPOSED_RUN_HOSTNAME.txt",
+      "expected": "<PRIVATE_REF_03218>",
+      "actual": "<PRIVATE_REF_03218>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/packet/R3A_R6_LAYOUT_HOSTNAME.txt",
+      "expected": "<PRIVATE_REF_03301>",
+      "actual": "<PRIVATE_REF_03301>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/packet/W2A_BRIEF_RENDERED_PROPOSED.txt",
+      "expected": "<PRIVATE_REF_00240>",
+      "actual": "<PRIVATE_REF_00240>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/packet/W2A_BRIEF_TEMPLATE_EXTRACT.txt",
+      "expected": "<PRIVATE_REF_02393>",
+      "actual": "<PRIVATE_REF_02393>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/remote/REMOTE_PIN_VERIFY.txt",
+      "expected": "<PRIVATE_REF_02138>",
+      "actual": "<PRIVATE_REF_02138>",
+      "match": true
+    }
+  ],
+  "submission_sha256": "<PRIVATE_REF_02427>",
+  "state": "# W2 actual entry preparation — shared state\n\n[Artifact Class]: MUTABLE_STATE\n[Task]: AI_CICD / W2_ACTUAL_ENTRY_PREPARATION\n[Release]: ../../../../userops/tasks/ai-cicd/records/source-04544.md\n[Status]: RELEASED; Executor candidate W2AE-CAND-r1 submitted; Executor recommends BLOCKED on owner issues O-1/O-2 (O-3 limitation approval)\n[NEXT]: REVIEWER\n[Executor]: continuing non-run Executor Actor 01 (Claude Opus 5.5) — ACK 22:10:08; candidate delivered 2026-10-04T22:44+11:00; no further preparation action pending\n[Reviewer]: continuing independent VerifyOnly Reviewer Actor 02 (OpenAI GPT-6; host-disclosed) — REVIEW_ACK evidence/reviewer/REVIEW_ACK.md at 2026-10-04T22:14:50+11:00; awaiting exact candidate and NEXT=REVIEWER\n[Current candidate]: W2AE-CAND-r1 (with §7 addendum appended before review start, Human Operator-requested Docker-dependency note; not a rework round) — evidence/executor/ACTUAL_ENTRY_SUBMISSION_r1.md (sha256 <PRIVATE_REF_02427>); pins evidence/executor/EVIDENCE_MANIFEST_AE_r1.sha256 (sha256 <PRIVATE_REF_03042>, 81 files). Docker preparation PAUSED by Human Operator; separate conflict note to Operations Coordinator: evidence/executor/NOTE_TO_OPERATIONS_COORDINATOR_D3_DOCKER_CONFLICT.md\n[Current review]: NONE\n[Execution ACK time / deadline]: 2026-10-04T22:10:08+11:00 / 2026-10-05T00:10:08+11:00\n[Confirmed inputs]: exact W2EP-CAND-r2 local PASS; Human Operator common-harness/mode confirmation; R14/R11/HC remain closed\n[Actual readiness]: client c01 configured+logged in; gpt-5.6-sol and claude-sonnet-5 live (1/2 probes each); pins match; Docker 4.93.0 engine 29.8.1; web-UI deps built; cloud/DNS/remote/account clean; prompt input clean. OPEN: O-1 no physical read isolation for Deployer; O-2 Docker shell-profile edits + docker reachable by Deployer; O-3 bundled vendor skills need WF-9(c) limitation approval\n[Conditional guest action]: NOT AUTHORIZED NOW; precise per-VM receipt required after real deployment terminal\n[Final result]: NONE; no W2 release/T0\n[Last updated by]: Executor Actor 01\n\nExecutor delivers exact versioned candidate and sets NEXT=REVIEWER. Reviewer writes own independent disposition and sets DONE_ENTRY_PREPARATION, EXECUTOR for finite authorized correction, or BLOCKED for a precise owner issue. No new same-scope approval; no extra login/install attempts or excluded action. Preserve the old local loop's DONE_LOCAL state.\n"
+}

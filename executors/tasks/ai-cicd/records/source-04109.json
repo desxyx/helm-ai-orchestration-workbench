@@ -1,0 +1,48 @@
+{
+  "run_id": "RUN-W2B",
+  "source_directory": "/private/tmp/survey-7c92/work/output/FINAL_RUN-W2B_SEALED",
+  "durable_directory": "<HELM_ROOT>/council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/observer_final/FINAL_SEALED",
+  "files": [
+    {
+      "name": "RUN-W2B_ACCEPTANCE.json",
+      "sha256": "<PRIVATE_REF_02903>",
+      "bytes": 7087,
+      "mode": "0444"
+    },
+    {
+      "name": "RUN-W2B_EVENTS.jsonl",
+      "sha256": "<PRIVATE_REF_01600>",
+      "bytes": 136611,
+      "mode": "0444"
+    },
+    {
+      "name": "RUN-W2B_INGESTION_LEDGER.json",
+      "sha256": "<PRIVATE_REF_02899>",
+      "bytes": 140798,
+      "mode": "0444"
+    },
+    {
+      "name": "RUN-W2B_METRICS.json",
+      "sha256": "<PRIVATE_REF_01794>",
+      "bytes": 6387,
+      "mode": "0444"
+    },
+    {
+      "name": "RUN-W2B_OBSERVER_REPORT.md",
+      "sha256": "<PRIVATE_REF_02628>",
+      "bytes": 16137,
+      "mode": "0444"
+    },
+    {
+      "name": "SHA256SUMS_FINAL",
+      "sha256": "<PRIVATE_REF_00929>",
+      "bytes": 458,
+      "mode": "0444"
+    }
+  ],
+  "owner_final_relay_received": true,
+  "source_copies_and_expected_pins_match": true,
+  "private_notes_or_drafts_read": false,
+  "observer_assessments_modified": false,
+  "received_at": "2026-10-06T00:19:22.362852+11:00"
+}

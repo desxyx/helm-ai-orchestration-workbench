@@ -1,0 +1,273 @@
+{
+  "task_ref": "W3_POST_RUN_REVIEW_2026-10-07",
+  "binding_date": "2026-10-07",
+  "source_helm_head_before_package": "<PRIVATE_REF_03244>",
+  "paths_relative_to": "HELM repository root",
+  "product": {
+    "commit": "<PRIVATE_REF_01823>",
+    "tree": "<PRIVATE_REF_01954>",
+    "version": "0.1.1"
+  },
+  "scope": "Key existing input files only; not a replacement for source seals; not authentication by an external party. Mutable operational TASK_STATE/ledger remain live references, not frozen experimental evidence. No HC answer semantics accessed.",
+  "files": [
+    {
+      "path": "executors/EXECUTOR CHARTER — v1.0.md",
+      "sha256": "<PRIVATE_REF_02319>",
+      "bytes": 60135
+    },
+    {
+      "path": "council/council_constitution_v1.7.md",
+      "sha256": "<PRIVATE_REF_03680>",
+      "bytes": 37198
+    },
+    {
+      "path": "council/task/AI_CICD/00_recon/04_execution_protocol_freeze/COUNCIL_MASTER_01_DEPLOYER_AND_RUN_STRUCTURE.md",
+      "sha256": "<PRIVATE_REF_02128>",
+      "bytes": 41026
+    },
+    {
+      "path": "council/task/AI_CICD/execution/watchover_mac_close_2026-10-06/rounds/r3_REVIEW.md",
+      "sha256": "<PRIVATE_REF_02774>",
+      "bytes": 8725
+    },
+    {
+      "path": "council/task/AI_CICD/05_release_and_handoff/WINDOWS_FINAL_INTAKE.md",
+      "sha256": "<PRIVATE_REF_01384>",
+      "bytes": 3822
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/OBSERVER_PACKET_LOCATOR_MAP.json",
+      "sha256": "<PRIVATE_REF_02796>",
+      "bytes": 19900
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/INTAKE_MANIFEST.json",
+      "sha256": "<PRIVATE_REF_03011>",
+      "bytes": 19744
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/SHA256SUMS_ARCHIVE",
+      "sha256": "<PRIVATE_REF_02690>",
+      "bytes": 15732
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/win_followup/RECEIPT.md",
+      "sha256": "<PRIVATE_REF_02725>",
+      "bytes": 4868
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/win_followup/MAC_ACK.md",
+      "sha256": "<PRIVATE_REF_01140>",
+      "bytes": 3641
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/win_followup/MAC_ACK_CHECKS.json",
+      "sha256": "<PRIVATE_REF_03192>",
+      "bytes": 1285
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/win_followup/SHA256SUMS",
+      "sha256": "<PRIVATE_REF_02329>",
+      "bytes": 2276
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/SHA256SUMS",
+      "sha256": "<PRIVATE_REF_02987>",
+      "bytes": 11405
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/packet_meta/RUN_MANIFEST.md",
+      "sha256": "<PRIVATE_REF_03295>",
+      "bytes": 2731
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/packet_meta/CONTROL_FACTS.md",
+      "sha256": "<PRIVATE_REF_02914>",
+      "bytes": 4722
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/custody/RUN_W3_SOURCE_VERIFICATION.md",
+      "sha256": "<PRIVATE_REF_03048>",
+      "bytes": 19199
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/custody/CP01_FORCED_INTERRUPT_SNAPSHOT.md",
+      "sha256": "<PRIVATE_REF_01821>",
+      "bytes": 2292
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/custody/project_inventory_CP02.txt",
+      "sha256": "<PRIVATE_REF_02464>",
+      "bytes": 1562
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/custody/RESIDUAL_INVENTORY_POST_TEARDOWN.txt",
+      "sha256": "<PRIVATE_REF_01505>",
+      "bytes": 8404
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/control/W3_DEPLOYER_BRIEF.txt",
+      "sha256": "<PRIVATE_REF_03637>",
+      "bytes": 887
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/control/DEPLOYER_OPENING_MESSAGE.txt",
+      "sha256": "<PRIVATE_REF_02386>",
+      "bytes": 978
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/control/DEPLOYER_CONTINUATION_MESSAGE.txt",
+      "sha256": "<PRIVATE_REF_01179>",
+      "bytes": 1052
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/control/TEARDOWN_PROMPT.txt",
+      "sha256": "<PRIVATE_REF_02476>",
+      "bytes": 233
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/W3_RESULT_SUMMARY.md",
+      "sha256": "<PRIVATE_REF_02639>",
+      "bytes": 5500
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/observer_definitions/ACCEPTANCE_MATRIX.md",
+      "sha256": "<PRIVATE_REF_03025>",
+      "bytes": 2142
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/observer_definitions/ACCEPTANCE_VERIFICATION_PROCEDURE.md",
+      "sha256": "<PRIVATE_REF_02445>",
+      "bytes": 4660
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/observer_definitions/EVENT_TAXONOMY.md",
+      "sha256": "<PRIVATE_REF_01416>",
+      "bytes": 3073
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/observer_definitions/MEASUREMENT_INTEGRITY_RULES.md",
+      "sha256": "<PRIVATE_REF_02778>",
+      "bytes": 2166
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/observer_definitions/METRICS_DEFINITIONS.md",
+      "sha256": "<PRIVATE_REF_01277>",
+      "bytes": 5567
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/observer_definitions/OBSERVER_PROTOCOL.md",
+      "sha256": "<PRIVATE_REF_03170>",
+      "bytes": 8764
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/observer_definitions/RESTART_EQUIVALENCE.md",
+      "sha256": "<PRIVATE_REF_01847>",
+      "bytes": 1940
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/observer_definitions/TRACEABILITY_PROBE.md",
+      "sha256": "<PRIVATE_REF_03741>",
+      "bytes": 2503
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/observer_definitions/W3_MEASUREMENT_SCOPE.md",
+      "sha256": "<PRIVATE_REF_00928>",
+      "bytes": 2639
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/observer_definitions/event.schema.json",
+      "sha256": "<PRIVATE_REF_00975>",
+      "bytes": 2085
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/observer_definitions/metrics.schema.json",
+      "sha256": "<PRIVATE_REF_01911>",
+      "bytes": 1937
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/product_feedback_quarantined/LIVE_RUN_OWNER_AND_SIDE_OBSERVATIONS_2026-10-06.md",
+      "sha256": "<PRIVATE_REF_00949>",
+      "bytes": 3456
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/product_feedback_quarantined/RELAY_RAW_2026-10-06.md",
+      "sha256": "<PRIVATE_REF_01506>",
+      "bytes": 5942
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/product_feedback_quarantined/SNAPSHOT_WATCHOVER_PROTOTYPE_REVIEW_2026-10-06.md",
+      "sha256": "<PRIVATE_REF_02760>",
+      "bytes": 12222
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/RUN_W3_ACCEPTANCE_MATRIX.json",
+      "sha256": "<PRIVATE_REF_02484>",
+      "bytes": 7402
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/RUN_W3_EVENTS.jsonl",
+      "sha256": "<PRIVATE_REF_03200>",
+      "bytes": 189871
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/RUN_W3_EVIDENCE_PROVENANCE.json",
+      "sha256": "<PRIVATE_REF_03023>",
+      "bytes": 6868
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/RUN_W3_IDENTITY.json",
+      "sha256": "<PRIVATE_REF_02150>",
+      "bytes": 2495
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/RUN_W3_METRICS.json",
+      "sha256": "<PRIVATE_REF_01367>",
+      "bytes": 30328
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/RUN_W3_OBSERVER_REPORT.md",
+      "sha256": "<PRIVATE_REF_03257>",
+      "bytes": 20685
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/RUN_W3_SOURCE_PROVENANCE.json",
+      "sha256": "<PRIVATE_REF_01057>",
+      "bytes": 5006
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/RUN_W3_TRACEABILITY.json",
+      "sha256": "<PRIVATE_REF_02765>",
+      "bytes": 1469
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/RUN_W3_VALIDATION.json",
+      "sha256": "<PRIVATE_REF_02017>",
+      "bytes": 1406
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/SHA256SUMS",
+      "sha256": "<PRIVATE_REF_01974>",
+      "bytes": 1044
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/packet_integrity.json",
+      "sha256": "<PRIVATE_REF_02233>",
+      "bytes": 23318
+    },
+    {
+      "path": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/record_audit.json",
+      "sha256": "<PRIVATE_REF_02240>",
+      "bytes": 23036
+    }
+  ],
+  "revision_sources": [
+    {
+      "commit": "<PRIVATE_REF_02678>",
+      "path": "<OPERATIONS_ROOT>/tasks/AI_CICD/OWNER_DECISION_LEDGER.md",
+      "sha256": "<PRIVATE_REF_03361>",
+      "section": "W3 Windows local cleanup and follow-ups",
+      "note": "Pinned Windows closure receipt; source file includes unrelated historical entries, read only named section."
+    }
+  ]
+}

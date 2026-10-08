@@ -1,0 +1,16 @@
+r2 local freeze
+Pre-commit commands: git status --short; git diff --cached --stat; git diff --cached --check; git branch --show-current; git rev-parse HEAD; byte comparison of staged diff against output/r2/r1-to-r2.patch.
+Before commit: six explicitly authorized paths staged, no protected/control paths; HEAD <PRIVATE_REF_01925> on final-patch-2026-10-07. Staged patch equals reviewed/tested patch.
+Command: git commit -m "Fix bounded secret scan false positives and rollback examples"
+Exit 0. 6 files changed, 143 insertions(+), 24 deletions(-).
+After commit: branch, HEAD, tree, status, log and diff --check; byte comparison of committed diff to tested patch and clean status assertion.
+final-patch-2026-10-07
+<PRIVATE_REF_03069>
+<PRIVATE_REF_01459>
+<PRIVATE_REF_03069>
+<PRIVATE_REF_01459>
+2026-10-07T22:14:10+11:00
+Fix bounded secret scan false positives and rollback examples
+Committed diff equals tested r2 patch; working tree clean. Prior staged paths are the positive status control.
+2026-10-07 10:14 PM AEDT
+

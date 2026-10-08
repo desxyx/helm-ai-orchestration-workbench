@@ -1,0 +1,26 @@
+{
+  "run_id": "RUN-W2A",
+  "checkpoint_no": 2,
+  "checkpoint_kind": "DEPLOYMENT_TERMINAL",
+  "terminal_timestamp": "2026-10-05T03:11:13.524Z",
+  "terminal_source_line": 429,
+  "terminal_actor": "Deployer S2",
+  "terminal_verdict": "SUBJECT_SUCCESS_DECLARATION; independent A1-A7 not assigned",
+  "s2_session_id": "<NATIVE_ID_0060>",
+  "transcript_cut": {
+    "source": "<CLIENT_HOME>/.codex/sessions/2026/10/05/rollout-2026-10-05T13-49-55-<NATIVE_ID_0060>.jsonl",
+    "sealed_copy": "../../../../council/task/ai-cicd/experiments/w2/transcripts/source-01157.jsonl",
+    "lines": 432,
+    "last_timestamp": "2026-10-05T03:11:13.605Z",
+    "sha256": "<PRIVATE_REF_02443>"
+  },
+  "observed_t0": "2026-10-05T02:03:09.492Z",
+  "measurement_window": "deployment window closes at declaration; acceptance outside Deployer next",
+  "private_credentials": "file presence observed; no secret value displayed or interpreted",
+  "provider_metadata_snapshot": "PENDING_NEW_BOUNDED_READONLY_AUTHORITY; old CP01 receipt exhausted",
+  "workspace_archive": "PENDING_LOCAL_BLIND_CUSTODY_COPY",
+  "a1_a5": "PENDING_OWNER_INDEPENDENT_VERIFICATION; self-test is not formal pass",
+  "hc_term": "PENDING_DELIVERY_AND_LOCK",
+  "teardown": "NOT_REQUESTED; acceptance/trace/archive precede it",
+  "entry_limits": "Historical pre-T0 gate omissions and actual client-home differences remain disclosed"
+}

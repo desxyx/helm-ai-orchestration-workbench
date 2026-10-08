@@ -1,0 +1,44 @@
+$ node <repo>/tools/watchover.mjs init <tmp>/proj/watchover --project=<CLOUD_PROJECT> --environment local trial --provider local --session session-a
+initialized <tmp>/proj/watchover
+exit=0
+
+$ node <repo>/tools/watchover.mjs append <tmp>/proj/watchover --file <tmp>/ev.json
+appended evt-0002; workspace valid
+exit=0
+
+$ node <repo>/tools/watchover.mjs commit-state <tmp>/proj/watchover --file <tmp>/candidate.json
+committed state.json; workspace valid (folder sync: synced)
+exit=0
+
+$ node <repo>/tools/watchover.mjs commit-state <tmp>/proj/watchover --file <tmp>/bad.json
+refused: 1 problem
+- [schema] state.json /facts/0/value (maxLength): must be at most 300 characters (got 301)
+state.json is unchanged
+exit=1
+
+state.json unchanged after refusal: yes
+
+$ node <repo>/tools/watchover.mjs validate <tmp>/proj/watchover
+valid: all checks passed; secret scan self-test passed (11 patterns), 0 findings
+exit=0
+
+$ node <repo>/tools/watchover.mjs brief <tmp>/proj/watchover
+WatchOver brief — demo-app (local trial) — at 2026-10-06T06:09:58.620Z
+Derived from a validated record. Read state.json and evidence before acting.
+Stage: recon · state updated just now by ai
+Activity: Read-only recon of the project files · waiting on the AI
+Last progress: Listed the project files (just now)
+Pending decision: none
+Human action now: nothing needs the human right now
+Next: Start read-only recon: the app, its source, the target account and th… · owner: the AI
+Last safe state: not recorded
+Recorded approvals (history, not new authority): none
+Blocking open items: 0
+Facts: 0 total · current 0 · expired 0 · stale 0 · unknown 0 · blocked 0 · assumed 0 · human-confirmed 0 · future-dated 0 · problems 0
+All facts are listed above.
+exit=0
+
+serving <tmp>/proj/watchover at http://127.0.0.1:61774/ (read-only, loopback only; press Ctrl-C to stop)
+GET http://127.0.0.1:61774/state.json -> 200; GET http://127.0.0.1:61774/ -> 200; GET http://127.0.0.1:61774/evidence/ -> 404
+show exit=0
+events.jsonl evidence README.md state.json 

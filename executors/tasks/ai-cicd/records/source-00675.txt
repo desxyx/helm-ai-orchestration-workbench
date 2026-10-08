@@ -1,0 +1,48 @@
+# D3 install log (single attempt) — started 2026-10-04T22:21:27+1100
+## step2 sha256
+<PRIVATE_REF_02944>  <HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/docker/Docker-4.93.0-240920.dmg
+## step3 attach
+/dev/disk6s1        	EFI                            	
+/dev/disk6s2        	Apple_HFS                      	<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/docker/mnt
+rc=0
+## step4 codesign
+codesign rc=0
+Identifier=com.docker.docker
+TeamIdentifier=9BNSXJN65R
+<HELM_ROOT>/council/task/AI_CICD/execution/w2_actual_entry_preparation/staging/docker/mnt/Docker.app: accepted
+source=Notarized Developer ID
+origin=Developer ID Application: Docker Inc (9BNSXJN65R)
+4.93.0
+## step5 preexisting?
+absent
+## step5 NOT EXECUTED (2026-10-04T22:23:08+1100): the Executor host harness (Claude Code auto-mode classifier) refused the copy into /Applications. No byte was written to /Applications. DMG remains mounted read-only at staging/docker/mnt. Step 5 handed to Human Operator as the same single attempt (no second attempt).
+## step7-8 readiness (2026-10-04T22:39:00+1100) — copy/open/first-run reported done by Operations Coordinator/Human Operator
+client=29.8.1 api=1.56 server=29.8.1 os=linux/arm64
+NAME              DESCRIPTION                               DOCKER ENDPOINT                               ERROR
+default           Current DOCKER_HOST based configuration   unix:///var/run/docker.sock                   
+desktop-linux *   Docker Desktop                            unix://<CLIENT_HOME>/.docker/run/docker.sock   
+server=29.8.1 os=Docker Desktop arch=aarch64 cpus=10 mem=8319504384
+## privileged pieces
+ls: /var/run/docker.sock: No such file or directory
+no docker privileged helper in /Library/PrivilegedHelperTools
+ls: /usr/local/bin/docker: No such file or directory
+## settings (non-secret keys)
+AutoStart = False
+EnableDefaultDockerSocket = False
+## shell profile check (names only, no edits expected)
+<CLIENT_HOME>/.zshrc docker-mentions=4
+<CLIENT_HOME>/.zprofile docker-mentions=3
+<CLIENT_HOME>/.bash_profile docker-mentions=3
+<CLIENT_HOME>/.profile docker-mentions=3
+## credsStore in ~/.docker/config.json
+{'auths': [], 'credsStore': 'desktop', 'currentContext': 'desktop-linux', 'plugins': {'-x-cli-hints': {'enabled': 'true'}, 'ai': {'hooks': 'build,buildx build,run,compose'}, 'compose': {'hooks': 'logs,compose logs,compose attach,compose up'}, 'debug': {'hooks': 'exec'}}, 'features': {'hooks': 'true'}}
+{
+  "builder": {
+    "gc": {
+      "defaultKeepStorage": "20GB",
+      "enabled": true
+    }
+  },
+  "experimental": false
+}
+ANOMALY 2026-10-04T22:39:36+1100: Docker Desktop first run (performed by Operations Coordinator/Human Operator, 22:36:55) appended Docker sections to ~/.zshrc (completions fpath, lines 21-25), ~/.zprofile, ~/.bash_profile, ~/.profile (PATH += ~/.docker/bin). Release §2 excludes a global shell/profile change. Not reverted by Executor (owner files; reversal is an owner decision). Effect: docker CLI and the running Docker Desktop engine are reachable from any new login shell, including a Deployer shell, unless removed/stopped before T0.

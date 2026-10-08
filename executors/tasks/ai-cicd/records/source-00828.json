@@ -1,0 +1,20 @@
+{
+  "targets": [
+    {
+      "alias": "W2B_EXPORT_R2",
+      "path": "/private/tmp/qefdb2bab/d1020f3ce00567b7"
+    },
+    {
+      "alias": "W2B_EXPORT_R1",
+      "path": "/private/tmp/q2d7363ee/f76066e97ceb7e3b"
+    },
+    {
+      "alias": "HELM",
+      "path": "<HELM_ROOT>"
+    },
+    {
+      "alias": "PRODUCT_REPO",
+      "path": "<CLIENT_HOME>/Desktop/helmls-studio/watchover-ai-devops"
+    }
+  ]
+}

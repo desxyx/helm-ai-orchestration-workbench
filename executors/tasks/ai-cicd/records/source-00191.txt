@@ -1,0 +1,10 @@
+Complete the final WatchOver local rehearsal Attempt 2 review. Your pre-cleanup verdict was PASS with Annex K 10/10 and cleanup authorized, while final complete rehearsal PASS was withheld only for cleanup evidence.
+
+Read and independently verify:
+source-00189.md
+
+The retained screenshot and browser record are now under the same round directory:
+- watchover-attempt2-precleanup.png
+- watchover-attempt2-browser-evidence.json
+
+Confirm the two target ports, the two recorded child PIDs and `.run/pids.json` are absent using suitable positive controls. Then issue the final complete rehearsal verdict under Verification Standard item 5. State explicitly whether C7 is authorized. Do not modify the product repository or rehearsal workspace.

@@ -1,0 +1,20 @@
+{
+  "attempt": 4,
+  "query": "address_inventory",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "compute",
+    "addresses",
+    "list",
+    "--project=<CLOUD_PROJECT>",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T20:35:06.210+11:00",
+  "end_utc": "2026-10-05T20:35:07.923+11:00",
+  "exit_code": 0,
+  "stdout": "address_inventory_attempt4.stdout",
+  "stdout_sha256": "<PRIVATE_REF_02317>",
+  "stderr": "address_inventory_attempt4.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

@@ -1,0 +1,5 @@
+{
+  "guestCpus": 2,
+  "memoryMb": 2048,
+  "name": "e2-small"
+}

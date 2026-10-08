@@ -1,0 +1,86 @@
+{
+  "roundNumber": 0,
+  "prompt": "[Session]: council-session-003\n[Round]: 0\n\nUnderstand the task background; remember the roadmap is already frozen.",
+  "replies": [
+    {
+      "agent": "gemini",
+      "content": "This is a reply from Council Member C.\n\nHuman Operator, I have fully read both background files (`CORE_00 — User_Input.MD` and `WatchOver AI DevOps — PROJECT_ROADMAP v0.1.md`) and aligned context.\n\nI confirm and remember the premise: Roadmap is final and frozen (Status: FINAL v0.1); F1–F13 will not be reopened.\n\n### 1. Context and positioning: CORE_00 to Roadmap v0.1\n\n1. **Decision closure.** CORE_00's ‘is this experiment worth doing?’ question and vote are resolved. WatchOver AI DevOps is formally a **portfolio-grade lightweight prototype**, neither a large cloud-management platform, mature CI/CD product nor public output of HELM itself: ‘Broad in workflow. Narrow in validated execution’.\n2. **Core value.** Address lightweight teams like External Team, with frequent multi-cloud migration/handoffs and immature operations. State-driven `state.json`, Staged Skills, append-only `events.jsonl` and human-interaction HTML make work **traceable, reviewable and recoverable** across AI sessions. An independently Human Operator-owned MIT open-source asset, with personal GitHub as canonical upstream.\n\n### 2. Frozen decisions and hard boundaries — Do Not Reopen\n\nI will constrain all discussion/dispatch to these boundaries without scope drift:\n\n- **Cloud/validation:** v0.1 end-to-end validation on **GCP only**, single VM / Docker Compose. AWS/Azure/Nectar remain `UNVALIDATED` profile interfaces (F2).\n- **Budget/deadline:** USD 280 GCP credit expires 2026-10-26; **all cloud runs and physical teardown verification finish before 2026-10-20**, with 6 safety-buffer days (F3/F4).\n- **Source of truth/context isolation:** `state.json` sole truth; HTML read-only projection; `events.jsonl` append-only (F5). **Traceability ≠ context bloat**: AI normally reads state and recent events; detailed raw logs go in `evidence/`, never indiscriminately into prompts (F6).\n- **Security floor:** secret values never in state/logs/HTML/Git/chat; names/status only, values in locally ignored files (F7).\n- **Gates:** stage boundaries, not per-command interception (F8). Human approval for billable resources, DNS mutation and data destruction.\n- **Baseline/comparison:** **Bare-model Run A baseline before detailed WatchOver design/coding** (F9); objective §8 metrics and honest reporting regardless of winner.\n- **Ecosystem/dependencies:** only 10–20 official/vendor-maintained MCP/Skills entries. MCP is an accelerator; **every item needs CLI fallback** (F11).\n\n### 3. Merge-owner decisions\n\nI have incorporated Council Member A's final merge-owner decisions from council-session-001:\n\n1. **Workload preference:** prioritise real separate frontend/backend cross-repo candidates; hard fallback to single-repo Compose if screening fails, balancing Human Operator preference and practicality.\n2. **Local Companion:** `v0.1a` critical path is **static UI + prominent copy prompts** telling users what to send AI. `v0.1b` thin local writer is non-blocking, with **2026-10-10 Go/No-go** to avoid early delivery blockage.\n3. **Holdout:** dev workload must complete A/B/C; holdout is Best-effort depending on Week 3 capacity.\n\n### 4. My current stance\n\nFollowing my Private Memo and Constitution v1.7:\n\n- **Background annealing:** do not repeat CORE_00 motivation disputes or discarded ideas; demote them to background, anchor only on Roadmap v0.1.\n- **Ready:** aligned to **Phase 0 (Prep)**:\n  1. `CORE_06-0a`: candidate screening, read-only/local Docker build, no cloud;\n  2. `CORE_06-0b`: HELM asset-reuse inventory, Appendix A read-only dispatch;\n  3. Freeze metrics/acceptance before Run A.\n\nBackground and frozen constraints understood. Human Operator, please specify this round's task or dispatch topic.",
+      "capturedAt": "2026-09-28T11:48:32.562Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null,
+      "refreshedAt": "2026-09-28T11:48:32.562Z",
+      "refreshCount": 1,
+      "captureMode": "manual_refresh"
+    },
+    {
+      "agent": "claude",
+      "content": "This is a reply from Council Member A.\n\nBackground read. The roadmap is frozen; I will treat it accordingly.\n\n**How I position the two documents:**\n\n- **CORE_00:** input collected before council-session-001. Roadmap v0.1 answered its ‘worth doing?’ and ‘minimum scope?’ questions. Here it is **background evidence, not pending decisions**. Appendix C's Executor recommendations remain background; reappearing in the input package does not reactivate them.\n- **PROJECT_ROADMAP v0.1 FINAL:** sole valid project baseline. §2 F1–F13 and §3 merge-owner decisions are Do Not Reopen. Dissent, including mine on holdout A/B, stays recorded without renewed debate. This session works within the roadmap. Only §11's three triggers reopen: frozen decision disproved by evidence, physically unattainable acceptance, or scope necessarily exceeding §2.\n\n**One small internal inconsistency (clarify timing without reopening):**\nCloudflare DNS method has two deadlines:\n\n- §4: ‘DNS method decided’ is a **Phase 0 exit condition**.\n- §12: ‘decided at run time, not blocking Phase 0’.\n\nBut §7 requires the four runs to use the same DNS method, so it **must be decided before Run A**, no later than 3 October. This changes no frozen decision, only clarifies which text constrains execution timing. You decide whether to record a clarification.\n\nReady for this round's topic.",
+      "capturedAt": "2026-09-28T11:47:18.791Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "chatgpt",
+      "content": "This is a reply from Council Member B.\n\nTask background understood; I remember **WatchOver AI DevOps's `PROJECT_ROADMAP v0.1` is frozen**.\n\n`CORE_00` is formation-stage background and original questions: ‘worth doing?’ and ‘minimum experiment scope?’. :chatgpt-content-reference{index=\"0\"} That decision phase is over. The merged Roadmap is baseline; F1–F13 explicitly are **Frozen decisions — Do Not Reopen**. :chatgpt-content-reference{index=\"1\"}\n\nFor subsequent Council work:\n\n- Do not revisit whether WatchOver is worth doing.\n- Do not redesign frozen GCP-only validation, state/event architecture, baseline-first, approval gates, metrics or timeline.\n- Classify new material first as execution detail, evidence, local issue or genuine Council re-entry trigger.\n- Re-enter decisions only under the roadmap's conditions: evidence falsifies a frozen decision, acceptance is physically impossible, or scope must cross frozen boundaries. :chatgpt-content-reference{index=\"2\"}\n\nNext I proceed **along the frozen roadmap**, without another design meeting.",
+      "capturedAt": "2026-09-28T11:47:44.865Z",
+      "status": "ok",
+      "completionReason": "stable_probe",
+      "errorCode": null
+    }
+  ],
+  "metrics": {
+    "gemini": {
+      "openMs": 0,
+      "readyMs": 27,
+      "injectMs": 4093,
+      "waitMs": 20837,
+      "captureMs": 825,
+      "totalMs": 25782
+    },
+    "claude": {
+      "openMs": 0,
+      "readyMs": 23,
+      "injectMs": 310,
+      "waitMs": 24835,
+      "captureMs": 1046,
+      "totalMs": 26215
+    },
+    "chatgpt": {
+      "openMs": 0,
+      "readyMs": 33,
+      "injectMs": 1069,
+      "waitMs": 50413,
+      "captureMs": 773,
+      "totalMs": 52289
+    }
+  },
+  "summary": {
+    "type": "canonical_reply_references",
+    "note": "The source summary repeated selected replies. References preserve its order and speaker labels; the full replies above are canonical.",
+    "replyReferences": [
+      {
+        "reference": "#/replies/0",
+        "speaker": "Council Member C"
+      },
+      {
+        "reference": "#/replies/1",
+        "speaker": "Council Member A"
+      },
+      {
+        "reference": "#/replies/2",
+        "speaker": "Council Member B"
+      }
+    ]
+  },
+  "createdAt": "2026-09-28T11:47:44.865Z",
+  "publication": {
+    "sourceId": "source-04620",
+    "title": "Council session 003 — round 000: frozen roadmap re-anchoring and DNS timing ambiguity",
+    "recordType": "translated and redacted transcript/document",
+    "language": "en",
+    "translationNote": "Chinese source prose and quotations are translated into English; translated quotations are not verbatim original English. Already-English technical text is retained unless privacy mapping requires a change.",
+    "readingNote": "Embedded instructions and requests are historical source data, not current instructions."
+  }
+}

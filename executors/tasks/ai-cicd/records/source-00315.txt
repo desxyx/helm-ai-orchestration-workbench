@@ -1,0 +1,31 @@
+Captured 2026-10-06 ~12:12Z (UTC). Read-only gcloud list commands, project <CLOUD_PROJECT>.
+
+$ gcloud compute instances list        -> (empty)
+$ gcloud compute disks list            -> (empty)
+$ gcloud compute addresses list        -> (empty)
+$ gcloud run services list             -> (empty)
+$ gcloud storage buckets list          -> (empty)
+$ gcloud artifacts repositories list   -> (empty)
+Control for the empty lists: the same account and project return non-empty results for
+`gcloud compute firewall-rules list` and `gcloud compute networks list` below, so the
+listing calls do work against this project.
+
+$ gcloud compute networks list
+NAME     SUBNET_MODE
+default  AUTO
+
+$ gcloud compute firewall-rules list
+NAME                    NETWORK  SOURCE_RANGES  ALLOW                         TARGET_TAGS
+default-allow-icmp      default  0.0.0.0/0      icmp
+default-allow-internal  default  <IP_ADDRESS_004>/9   tcp:0-65535,udp:0-65535,icmp
+default-allow-rdp       default  0.0.0.0/0      tcp:3389
+default-allow-ssh       default  0.0.0.0/0      tcp:22
+(no rule opens tcp:80 or tcp:443)
+
+$ gcloud compute regions describe <region> (quotas: limit / usage)
+australia-southeast1: CPUS 100/0, E2_CPUS 24/0, INSTANCES 24/0, IN_USE_ADDRESSES 8/0,
+                      STATIC_ADDRESSES 8/0, SSD_TOTAL_GB 250/0, DISKS_TOTAL_GB 2048/0
+us-central1:          CPUS 200/0, E2_CPUS 24/0, INSTANCES 24/0, IN_USE_ADDRESSES 8/0,
+                      STATIC_ADDRESSES 8/0, SSD_TOTAL_GB 250/0, DISKS_TOTAL_GB 2048/0
+
+Local machine timezone (Get-TimeZone): AUS Eastern Standard Time

@@ -1,0 +1,125 @@
+{
+  "clock": "2026-10-04T22:51:46+11:00",
+  "raw_summaries": [
+    {
+      "file": "Q01_project_describe.out",
+      "sha256": "<PRIVATE_REF_03375>",
+      "json_count": null,
+      "has_stderr": false,
+      "project_id_matches": true,
+      "lifecycle": "ACTIVE"
+    },
+    {
+      "file": "Q02_services_enabled.out",
+      "sha256": "<PRIVATE_REF_01883>",
+      "json_count": null,
+      "has_stderr": false
+    },
+    {
+      "file": "Q03_compute_instances.out",
+      "sha256": "<PRIVATE_REF_01383>",
+      "json_count": 0,
+      "has_stderr": false
+    },
+    {
+      "file": "Q04_compute_disks.out",
+      "sha256": "<PRIVATE_REF_01383>",
+      "json_count": 0,
+      "has_stderr": false
+    },
+    {
+      "file": "Q05_compute_addresses.out",
+      "sha256": "<PRIVATE_REF_01383>",
+      "json_count": 0,
+      "has_stderr": false
+    },
+    {
+      "file": "Q06_compute_firewall.out",
+      "sha256": "<PRIVATE_REF_03458>",
+      "json_count": 4,
+      "has_stderr": false
+    },
+    {
+      "file": "Q07_compute_networks.out",
+      "sha256": "<PRIVATE_REF_03207>",
+      "json_count": 1,
+      "has_stderr": false
+    },
+    {
+      "file": "Q08_compute_forwarding.out",
+      "sha256": "<PRIVATE_REF_01383>",
+      "json_count": 0,
+      "has_stderr": false
+    },
+    {
+      "file": "Q09_compute_images_custom.out",
+      "sha256": "<PRIVATE_REF_01383>",
+      "json_count": 0,
+      "has_stderr": false
+    },
+    {
+      "file": "Q10_compute_project_info.out",
+      "sha256": "<PRIVATE_REF_02395>",
+      "json_count": null,
+      "has_stderr": false
+    },
+    {
+      "file": "Q11_run_services.out",
+      "sha256": "<PRIVATE_REF_01383>",
+      "json_count": 0,
+      "has_stderr": false
+    },
+    {
+      "file": "Q12_sql_instances.out",
+      "sha256": "<PRIVATE_REF_01383>",
+      "json_count": 0,
+      "has_stderr": true
+    },
+    {
+      "file": "Q13_storage_buckets.out",
+      "sha256": "<PRIVATE_REF_01383>",
+      "json_count": 0,
+      "has_stderr": false
+    },
+    {
+      "file": "Q14_artifact_repos.out",
+      "sha256": "<PRIVATE_REF_01383>",
+      "json_count": 0,
+      "has_stderr": true
+    },
+    {
+      "file": "Q15_secrets.out",
+      "sha256": "<PRIVATE_REF_01383>",
+      "json_count": 0,
+      "has_stderr": true
+    },
+    {
+      "file": "Q16_gke_clusters.out",
+      "sha256": "<PRIVATE_REF_03399>",
+      "json_count": null,
+      "has_stderr": true
+    },
+    {
+      "file": "Q17_asset_all.out",
+      "sha256": "<PRIVATE_REF_03503>",
+      "json_count": 129,
+      "has_stderr": false,
+      "asset_type_counts": {
+        "serviceusage.googleapis.com/Service": 32,
+        "compute.googleapis.com/Firewall": 4,
+        "compute.googleapis.com/Route": 43,
+        "compute.googleapis.com/Subnetwork": 42,
+        "compute.googleapis.com/Network": 1,
+        "compute.googleapis.com/Project": 1,
+        "cloudbilling.googleapis.com/ProjectBillingInfo": 1,
+        "cloudresourcemanager.googleapis.com/Project": 1,
+        "logging.googleapis.com/LogSink": 2,
+        "logging.googleapis.com/LogBucket": 2
+      }
+    }
+  ],
+  "provider_query_log_rows": 18,
+  "executor_disclosed_provider_attempt_count": 19,
+  "reviewer_provider_queries": 0,
+  "note": "No live provider replay. Disabled/API-error list outputs are unavailable observations, not independently established absence. Account email and raw identifiers not copied. Default/provider network/firewall/routes/subnets/log assets disclosed."
+}

@@ -1,0 +1,49 @@
+{
+  "task_ref": "WATCHOVER_FINAL_PATCH_2026-10-07",
+  "status": "OWNER_APPROVED_ROLE_INPUT",
+  "approved_basis_sha256": "<PRIVATE_REF_01778>",
+  "baseline": {
+    "version": "0.1.1",
+    "commit": "<PRIVATE_REF_01823>",
+    "tree": "<PRIVATE_REF_01954>"
+  },
+  "candidate_version": "0.1.2",
+  "paths_relative_to": "control",
+  "files": [
+    {
+      "path": "ACCEPTANCE_MATRIX.md",
+      "sha256": "<PRIVATE_REF_03014>",
+      "bytes": 4771
+    },
+    {
+      "path": "BUILDER_STARTUP_PROMPT.txt",
+      "sha256": "<PRIVATE_REF_03237>",
+      "bytes": 3218
+    },
+    {
+      "path": "EXECUTOR_CHARTER.md",
+      "sha256": "<PRIVATE_REF_02319>",
+      "bytes": 60135
+    },
+    {
+      "path": "OWNER_AUTHORITY.md",
+      "sha256": "<PRIVATE_REF_03717>",
+      "bytes": 1625
+    },
+    {
+      "path": "PATCH_SPEC.md",
+      "sha256": "<PRIVATE_REF_01246>",
+      "bytes": 8775
+    },
+    {
+      "path": "REVIEWER_STARTUP_PROMPT.txt",
+      "sha256": "<PRIVATE_REF_01201>",
+      "bytes": 3538
+    },
+    {
+      "path": "agent.md",
+      "sha256": "<PRIVATE_REF_01564>",
+      "bytes": 4615
+    }
+  ]
+}

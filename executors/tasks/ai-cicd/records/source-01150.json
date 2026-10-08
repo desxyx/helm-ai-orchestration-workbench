@@ -1,0 +1,21 @@
+{
+  "source_sha256": "<PRIVATE_REF_02443>",
+  "raw_lines": 432,
+  "redacted_lines": 432,
+  "known_pattern_matches_after": 0,
+  "candidate_patterns_after": 0,
+  "files_scanned": 46,
+  "unreadable": [],
+  "scope": "S2 transcript and explicitly permitted mechanical/acceptance attachment text only",
+  "positive_control_basis": "Previously reviewed r2 scanner controls reused; no new arm-wide canary or M10 verdict",
+  "credential_redaction": "Existing candidate/key-field extraction on client JSON records and machine-decoded existing credential archive files; values never printed, registry not delivered",
+  "format": "One delivered JSONL record per original record; JSON reserialization and mechanical string redaction",
+  "redaction_repair": "Initial post-alias URL candidate held before delivery; HOST-H uses a plain alias to prevent colon ambiguity",
+  "excluded": [
+    "HC answers/keys/scores",
+    "Council/control interpretation",
+    "Private credential values",
+    "Private base64 workspace archive",
+    "Prior-arm analysis"
+  ]
+}

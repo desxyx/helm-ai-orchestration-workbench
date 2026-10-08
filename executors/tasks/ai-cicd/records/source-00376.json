@@ -1,0 +1,659 @@
+{
+  "native_sessions": {
+    "S1": {
+      "line_count": 485,
+      "missing_parent_uuids": [],
+      "duplicate_uuids": 0,
+      "timestamp_inversions": [
+        {
+          "line": 6,
+          "timestamp": "2026-10-06T12:08:59.147Z",
+          "previous_line": 5,
+          "previous_timestamp": "2026-10-06T12:08:59.148Z",
+          "type": "attachment"
+        },
+        {
+          "line": 25,
+          "timestamp": "2026-10-06T12:09:38.266Z",
+          "previous_line": 24,
+          "previous_timestamp": "2026-10-06T12:09:38.267Z",
+          "type": "user"
+        },
+        {
+          "line": 29,
+          "timestamp": "2026-10-06T12:09:41.137Z",
+          "previous_line": 28,
+          "previous_timestamp": "2026-10-06T12:09:41.138Z",
+          "type": "attachment"
+        },
+        {
+          "line": 225,
+          "timestamp": "2026-10-06T12:15:48.332Z",
+          "previous_line": 224,
+          "previous_timestamp": "2026-10-06T12:16:24.844Z",
+          "type": "assistant"
+        },
+        {
+          "line": 246,
+          "timestamp": "2026-10-06T12:16:55.555Z",
+          "previous_line": 245,
+          "previous_timestamp": "2026-10-06T12:17:01.307Z",
+          "type": "assistant"
+        },
+        {
+          "line": 252,
+          "timestamp": "2026-10-06T12:17:03.568Z",
+          "previous_line": 251,
+          "previous_timestamp": "2026-10-06T12:17:40.808Z",
+          "type": "assistant"
+        },
+        {
+          "line": 276,
+          "timestamp": "2026-10-06T12:18:18.812Z",
+          "previous_line": 275,
+          "previous_timestamp": "2026-10-06T12:18:35.007Z",
+          "type": "assistant"
+        },
+        {
+          "line": 314,
+          "timestamp": "2026-10-06T12:19:33.168Z",
+          "previous_line": 313,
+          "previous_timestamp": "2026-10-06T12:19:44.909Z",
+          "type": "assistant"
+        },
+        {
+          "line": 327,
+          "timestamp": "2026-10-06T12:28:49.290Z",
+          "previous_line": 326,
+          "previous_timestamp": "2026-10-06T12:28:49.291Z",
+          "type": "attachment"
+        },
+        {
+          "line": 335,
+          "timestamp": "2026-10-06T12:29:16.074Z",
+          "previous_line": 334,
+          "previous_timestamp": "2026-10-06T12:29:21.484Z",
+          "type": "assistant"
+        },
+        {
+          "line": 346,
+          "timestamp": "2026-10-06T12:31:17.689Z",
+          "previous_line": 345,
+          "previous_timestamp": "2026-10-06T12:31:17.690Z",
+          "type": "attachment"
+        },
+        {
+          "line": 354,
+          "timestamp": "2026-10-06T12:31:20.288Z",
+          "previous_line": 348,
+          "previous_timestamp": "2026-10-06T12:31:25.416Z",
+          "type": "assistant"
+        },
+        {
+          "line": 387,
+          "timestamp": "2026-10-06T12:33:13.915Z",
+          "previous_line": 386,
+          "previous_timestamp": "2026-10-06T12:33:28.793Z",
+          "type": "assistant"
+        },
+        {
+          "line": 413,
+          "timestamp": "2026-10-06T12:33:51.618Z",
+          "previous_line": 412,
+          "previous_timestamp": "2026-10-06T12:34:07.153Z",
+          "type": "assistant"
+        },
+        {
+          "line": 437,
+          "timestamp": "2026-10-06T12:34:21.847Z",
+          "previous_line": 436,
+          "previous_timestamp": "2026-10-06T12:34:32.932Z",
+          "type": "assistant"
+        },
+        {
+          "line": 456,
+          "timestamp": "2026-10-06T12:35:23.310Z",
+          "previous_line": 455,
+          "previous_timestamp": "2026-10-06T12:35:39.244Z",
+          "type": "assistant"
+        },
+        {
+          "line": 481,
+          "timestamp": "2026-10-06T12:40:34.892Z",
+          "previous_line": 480,
+          "previous_timestamp": "2026-10-06T12:40:34.893Z",
+          "type": "user"
+        }
+      ],
+      "client_versions": [
+        "2.1.291"
+      ],
+      "cost_state": [
+        {
+          "line": 479,
+          "model_usage": {
+            "claude-haiku-4-5-20251001": {
+              "inputTokens": 932,
+              "outputTokens": 18,
+              "thinkingTokens": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.001022
+            },
+            "claude-opus-5-5": {
+              "inputTokens": 302,
+              "outputTokens": 66269,
+              "thinkingTokens": 23959,
+              "cacheReadInputTokens": 5553407,
+              "cacheCreationInputTokens": 125099,
+              "webSearchRequests": 0,
+              "costUSD": 3.4380614
+            }
+          }
+        }
+      ]
+    },
+    "S2": {
+      "line_count": 650,
+      "missing_parent_uuids": [],
+      "duplicate_uuids": 0,
+      "timestamp_inversions": [
+        {
+          "line": 6,
+          "timestamp": "2026-10-06T12:48:48.259Z",
+          "previous_line": 5,
+          "previous_timestamp": "2026-10-06T12:48:48.260Z",
+          "type": "attachment"
+        },
+        {
+          "line": 306,
+          "timestamp": "2026-10-06T13:01:07.192Z",
+          "previous_line": 305,
+          "previous_timestamp": "2026-10-06T13:01:07.193Z",
+          "type": "attachment"
+        },
+        {
+          "line": 561,
+          "timestamp": "2026-10-06T14:44:59.672Z",
+          "previous_line": 560,
+          "previous_timestamp": "2026-10-06T14:44:59.673Z",
+          "type": "attachment"
+        },
+        {
+          "line": 581,
+          "timestamp": "2026-10-06T14:49:06.601Z",
+          "previous_line": 580,
+          "previous_timestamp": "2026-10-06T14:49:06.602Z",
+          "type": "attachment"
+        }
+      ],
+      "client_versions": [
+        "2.1.291"
+      ],
+      "cost_state": [
+        {
+          "line": 646,
+          "model_usage": {
+            "claude-haiku-4-5-20251001": {
+              "inputTokens": 1209,
+              "outputTokens": 17,
+              "thinkingTokens": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.001294
+            },
+            "claude-opus-5-5": {
+              "inputTokens": 1186,
+              "outputTokens": 75374,
+              "thinkingTokens": 15001,
+              "cacheReadInputTokens": 13241396,
+              "cacheCreationInputTokens": 166471,
+              "webSearchRequests": 0,
+              "costUSD": 5.4922712
+            }
+          }
+        }
+      ]
+    }
+  },
+  "embedded_native_event_discrepancies": [],
+  "persisted_output_references": [
+    {
+      "session": "S2",
+      "line": 38,
+      "delivered_path": "packet/evidence/transcripts/<NATIVE_ID_0991>/tool-results/b0ajh8f1p.txt",
+      "exists": true
+    }
+  ],
+  "consumed_packet_text_files": [
+    {
+      "path": "packet/ACCEPTANCE_MATRIX.md",
+      "bytes": 2142,
+      "sha256": "<PRIVATE_REF_03025>"
+    },
+    {
+      "path": "packet/ACCEPTANCE_VERIFICATION_PROCEDURE.md",
+      "bytes": 4660,
+      "sha256": "<PRIVATE_REF_02445>"
+    },
+    {
+      "path": "packet/ALIASES.json",
+      "bytes": 651,
+      "sha256": "<PRIVATE_REF_02035>"
+    },
+    {
+      "path": "packet/CONTROL_FACTS.md",
+      "bytes": 4722,
+      "sha256": "<PRIVATE_REF_02914>"
+    },
+    {
+      "path": "packet/event.schema.json",
+      "bytes": 2085,
+      "sha256": "<PRIVATE_REF_00975>"
+    },
+    {
+      "path": "packet/EVENT_TAXONOMY.md",
+      "bytes": 3073,
+      "sha256": "<PRIVATE_REF_01416>"
+    },
+    {
+      "path": "packet/evidence/control/DEPLOYER_CONTINUATION_MESSAGE.txt",
+      "bytes": 1052,
+      "sha256": "<PRIVATE_REF_01179>"
+    },
+    {
+      "path": "packet/evidence/control/DEPLOYER_OPENING_MESSAGE.txt",
+      "bytes": 978,
+      "sha256": "<PRIVATE_REF_02386>"
+    },
+    {
+      "path": "packet/evidence/control/project_inventory_CP02.txt",
+      "bytes": 1562,
+      "sha256": "<PRIVATE_REF_02464>"
+    },
+    {
+      "path": "packet/evidence/control/RESIDUAL_INVENTORY_POST_TEARDOWN.txt",
+      "bytes": 8404,
+      "sha256": "<PRIVATE_REF_01505>"
+    },
+    {
+      "path": "packet/evidence/control/TEARDOWN_PROMPT.txt",
+      "bytes": 233,
+      "sha256": "<PRIVATE_REF_02476>"
+    },
+    {
+      "path": "packet/evidence/control/W3_DEPLOYER_BRIEF.txt",
+      "bytes": 887,
+      "sha256": "<PRIVATE_REF_03637>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/events.jsonl",
+      "bytes": 47094,
+      "sha256": "<PRIVATE_REF_03004>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0002-gcp-identity.txt",
+      "bytes": 1166,
+      "sha256": "<PRIVATE_REF_00576>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0003-gcp-inventory.txt",
+      "bytes": 1570,
+      "sha256": "<PRIVATE_REF_02971>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0004-dns-precheck.txt",
+      "bytes": 722,
+      "sha256": "<PRIVATE_REF_01110>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0005-source-checkout.txt",
+      "bytes": 1267,
+      "sha256": "<PRIVATE_REF_02500>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0006-app-config-findings.txt",
+      "bytes": 1952,
+      "sha256": "<PRIVATE_REF_00152>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0007-price-catalog.txt",
+      "bytes": 2130,
+      "sha256": "<PRIVATE_REF_03431>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0008-preflight.txt",
+      "bytes": 569,
+      "sha256": "<PRIVATE_REF_02186>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0009-address-create.txt",
+      "bytes": 558,
+      "sha256": "<PRIVATE_REF_03571>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0010-resume-inventory.txt",
+      "bytes": 1218,
+      "sha256": "<PRIVATE_REF_01092>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0011-firewall-create.txt",
+      "bytes": 629,
+      "sha256": "<PRIVATE_REF_02516>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0012-disk-create.txt",
+      "bytes": 802,
+      "sha256": "<PRIVATE_REF_03135>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0013-snapshot-policy-create.txt",
+      "bytes": 523,
+      "sha256": "<PRIVATE_REF_01858>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0014-disk-attach-policy.txt",
+      "bytes": 384,
+      "sha256": "<PRIVATE_REF_03118>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0015-created-describe.txt",
+      "bytes": 1406,
+      "sha256": "<PRIVATE_REF_03010>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0016-vm-create.txt",
+      "bytes": 675,
+      "sha256": "<PRIVATE_REF_03013>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0017-vm-absent-check.txt",
+      "bytes": 541,
+      "sha256": "<PRIVATE_REF_02581>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0018-vm-create.txt",
+      "bytes": 1169,
+      "sha256": "<PRIVATE_REF_03651>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0019-vm-describe.txt",
+      "bytes": 822,
+      "sha256": "<PRIVATE_REF_01076>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0020-stage-check.txt",
+      "bytes": 780,
+      "sha256": "<PRIVATE_REF_03290>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0021-vm-ssh-key.txt",
+      "bytes": 505,
+      "sha256": "<PRIVATE_REF_03230>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0022-setup-vm.txt",
+      "bytes": 4054,
+      "sha256": "<PRIVATE_REF_02213>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0023-dns-precheck2.txt",
+      "bytes": 422,
+      "sha256": "<PRIVATE_REF_01732>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0024-dns-record-check.txt",
+      "bytes": 774,
+      "sha256": "<PRIVATE_REF_02082>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0025-build-result.txt",
+      "bytes": 888,
+      "sha256": "<PRIVATE_REF_03681>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0026-compose-up.txt",
+      "bytes": 5398,
+      "sha256": "<PRIVATE_REF_01335>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0027-back-crashloop.txt",
+      "bytes": 972,
+      "sha256": "<PRIVATE_REF_02438>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0028-crlf-cause.txt",
+      "bytes": 454,
+      "sha256": "<PRIVATE_REF_01928>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0029-tarball-blob-check.txt",
+      "bytes": 1145,
+      "sha256": "<PRIVATE_REF_03150>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0030-setup-vm-rerun.txt",
+      "bytes": 1307,
+      "sha256": "<PRIVATE_REF_02446>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0031-rebuild-result.txt",
+      "bytes": 863,
+      "sha256": "<PRIVATE_REF_01592>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0032-compose-up2.txt",
+      "bytes": 3787,
+      "sha256": "<PRIVATE_REF_02837>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0033-e2e-create.txt",
+      "bytes": 1629,
+      "sha256": "<PRIVATE_REF_01676>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0034-e2e-create.txt",
+      "bytes": 1192,
+      "sha256": "<PRIVATE_REF_02182>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0035-deployed-ref-health.txt",
+      "bytes": 2350,
+      "sha256": "<PRIVATE_REF_02787>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0036-expected-blobs.txt",
+      "bytes": 557,
+      "sha256": "<PRIVATE_REF_03073>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0037-vm-stop-start.txt",
+      "bytes": 1286,
+      "sha256": "<PRIVATE_REF_01595>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0038-e2e-after-restart.txt",
+      "bytes": 1194,
+      "sha256": "<PRIVATE_REF_02462>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0039-teardown-inventory-before.txt",
+      "bytes": 2792,
+      "sha256": "<PRIVATE_REF_01054>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0040-dns-removed-check.txt",
+      "bytes": 1235,
+      "sha256": "<PRIVATE_REF_01198>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0041-delete-vm.txt",
+      "bytes": 349,
+      "sha256": "<PRIVATE_REF_03289>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0042-delete-disk.txt",
+      "bytes": 345,
+      "sha256": "<PRIVATE_REF_02584>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0043-delete-policy.txt",
+      "bytes": 370,
+      "sha256": "<PRIVATE_REF_01909>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0044-delete-firewall.txt",
+      "bytes": 316,
+      "sha256": "<PRIVATE_REF_02137>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0045-dns-removed-check2.txt",
+      "bytes": 1644,
+      "sha256": "<PRIVATE_REF_03407>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0046-delete-ip.txt",
+      "bytes": 349,
+      "sha256": "<PRIVATE_REF_02338>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/evidence/0047-teardown-inventory-after.txt",
+      "bytes": 2380,
+      "sha256": "<PRIVATE_REF_01730>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/README.md",
+      "bytes": 729,
+      "sha256": "<PRIVATE_REF_03547>"
+    },
+    {
+      "path": "packet/evidence/deployer_record/state.json",
+      "bytes": 35061,
+      "sha256": "<PRIVATE_REF_01056>"
+    },
+    {
+      "path": "packet/evidence/transcripts/<NATIVE_ID_0991>/tool-results/b0ajh8f1p.txt",
+      "bytes": 37295,
+      "sha256": "<PRIVATE_REF_02195>"
+    },
+    {
+      "path": "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl",
+      "bytes": 1482232,
+      "sha256": "<PRIVATE_REF_02699>"
+    },
+    {
+      "path": "packet/evidence/transcripts/<NATIVE_ID_1514>.jsonl",
+      "bytes": 1161284,
+      "sha256": "<PRIVATE_REF_02595>"
+    },
+    {
+      "path": "packet/MEASUREMENT_INTEGRITY_RULES.md",
+      "bytes": 2166,
+      "sha256": "<PRIVATE_REF_02778>"
+    },
+    {
+      "path": "packet/metrics.schema.json",
+      "bytes": 1937,
+      "sha256": "<PRIVATE_REF_01911>"
+    },
+    {
+      "path": "packet/METRICS_DEFINITIONS.md",
+      "bytes": 5567,
+      "sha256": "<PRIVATE_REF_01277>"
+    },
+    {
+      "path": "packet/OBSERVER_PROTOCOL.md",
+      "bytes": 8764,
+      "sha256": "<PRIVATE_REF_03170>"
+    },
+    {
+      "path": "packet/RESTART_EQUIVALENCE.md",
+      "bytes": 1940,
+      "sha256": "<PRIVATE_REF_01847>"
+    },
+    {
+      "path": "packet/RUN_MANIFEST.md",
+      "bytes": 2731,
+      "sha256": "<PRIVATE_REF_03295>"
+    },
+    {
+      "path": "packet/SHA256SUMS",
+      "bytes": 9038,
+      "sha256": "<PRIVATE_REF_00673>"
+    },
+    {
+      "path": "packet/TRACEABILITY_PROBE.md",
+      "bytes": 2503,
+      "sha256": "<PRIVATE_REF_03741>"
+    },
+    {
+      "path": "packet/W3_MEASUREMENT_SCOPE.md",
+      "bytes": 2639,
+      "sha256": "<PRIVATE_REF_00928>"
+    }
+  ],
+  "label": "DIRECT",
+  "confidence": null,
+  "tool_coverage": {
+    "S1": {
+      "path": "packet/evidence/transcripts/<NATIVE_ID_1514>.jsonl",
+      "line_count": 485,
+      "type_counts": {
+        "mode": 25,
+        "permission-mode": 25,
+        "atis-latch": 25,
+        "file-history-snapshot": 6,
+        "user": 85,
+        "attachment": 86,
+        "last-prompt": 25,
+        "ai-title": 24,
+        "assistant": 154,
+        "file-history-delta": 23,
+        "system": 4,
+        "cost-state": 1,
+        "queue-operation": 2
+      },
+      "tool_calls": 74,
+      "tool_results": 74,
+      "unmatched_calls": [],
+      "orphan_results": [],
+      "models": [
+        "claude-opus-5-5"
+      ],
+      "timestamp_first": "2026-10-06T12:08:59.148Z",
+      "timestamp_last": "2026-10-06T12:40:34.985Z"
+    },
+    "S2": {
+      "path": "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl",
+      "line_count": 650,
+      "type_counts": {
+        "mode": 34,
+        "permission-mode": 34,
+        "atis-latch": 34,
+        "file-history-snapshot": 5,
+        "user": 107,
+        "attachment": 124,
+        "last-prompt": 34,
+        "ai-title": 33,
+        "assistant": 225,
+        "system": 12,
+        "queue-operation": 6,
+        "file-history-delta": 1,
+        "cost-state": 1
+      },
+      "tool_calls": 97,
+      "tool_results": 97,
+      "unmatched_calls": [],
+      "orphan_results": [],
+      "models": [
+        "claude-opus-5-5"
+      ],
+      "timestamp_first": "2026-10-06T12:48:48.260Z",
+      "timestamp_last": "2026-10-06T14:54:20.115Z"
+    }
+  },
+  "checkpoint_increment_chain_status": "NOT_DELIVERED; not fabricated",
+  "source_manifest": "packet/SHA256SUMS"
+}

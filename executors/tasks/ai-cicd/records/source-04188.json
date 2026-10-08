@@ -1,0 +1,43 @@
+{
+  "command": "baseline byte and scope comparison",
+  "baseline": "<PRIVATE_REF_01823>",
+  "changed_path_positive_control": [
+    "README.md",
+    "SECURITY.md",
+    "app/web-ui/render.mjs",
+    "app/web-ui/styles.css",
+    "package.json",
+    "skills/providers/aws.md",
+    "skills/providers/azure.md",
+    "skills/providers/dns-cloudflare.md",
+    "skills/providers/gcp.md",
+    "skills/providers/nectar.md",
+    "skills/router.md",
+    "skills/stages/execute.md",
+    "skills/stages/plan.md",
+    "skills/stages/recover.md",
+    "skills/stages/verify-handoff.md",
+    "tests/brief.test.mjs",
+    "tests/browser.test.mjs",
+    "tests/browser/view_check.py",
+    "tests/cli.test.mjs",
+    "tests/commit-state.test.mjs",
+    "tests/render.test.mjs",
+    "tests/secret-scan.test.mjs",
+    "tests/semantic-checks.test.mjs",
+    "tests/skills-workflow.test.mjs",
+    "tests/view-handoff.test.mjs",
+    "tests/workspace.test.mjs",
+    "tools/lib/brief.mjs",
+    "tools/lib/secret-scan.mjs",
+    "tools/lib/semantic-checks.mjs",
+    "tools/lib/workspace.mjs",
+    "tools/watchover.mjs"
+  ],
+  "protected_files_byte_equal": 84,
+  "schema_sha256": {
+    "schema/event.schema.json": "<PRIVATE_REF_01999>",
+    "schema/state.schema.json": "<PRIVATE_REF_01409>"
+  },
+  "package_only_version_changed": "0.1.2"
+}

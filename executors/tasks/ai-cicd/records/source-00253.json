@@ -1,0 +1,238 @@
+{
+  "source_helm_commit": "<PRIVATE_REF_03725>",
+  "original_path": "execution/w3_windows_run_2026-10-06",
+  "canonical_path": "03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06",
+  "sealed_file_hashes": {
+    "W3_RESULT_SUMMARY.md": "<PRIVATE_REF_02639>",
+    "README.md": "<PRIVATE_REF_01500>",
+    "SHA256SUMS": "<PRIVATE_REF_02987>",
+    "deployer_deploy_config/conf.json": "<PRIVATE_REF_01828>",
+    "deployer_deploy_config/setup-vm.sh": "<PRIVATE_REF_02331>",
+    "deployer_deploy_config/Caddyfile": "<PRIVATE_REF_00879>",
+    "deployer_deploy_config/docker-compose.yml": "<PRIVATE_REF_02179>",
+    "deployer_deploy_config/Dockerfile.front": "<PRIVATE_REF_01181>",
+    "deployer_deploy_config/taiga.env": "<PRIVATE_REF_01266>",
+    "deployer_deploy_config/deploy_settings.py": "<PRIVATE_REF_02171>",
+    "deployer_record/state.json": "<PRIVATE_REF_01056>",
+    "deployer_record/README.md": "<PRIVATE_REF_03547>",
+    "deployer_record/events.jsonl": "<PRIVATE_REF_03004>",
+    "hc_custody/HC_INT_ANSWERS_LOCKED_written_in_E1_form.md": "<PRIVATE_REF_01470>",
+    "hc_custody/HC_TERM_ANSWERS_LOCKED.md": "<PRIVATE_REF_03561>",
+    "custody/project_inventory_CP02.txt": "<PRIVATE_REF_02464>",
+    "custody/CAPTURE_SHA256SUMS_acceptance.txt": "<PRIVATE_REF_03112>",
+    "custody/OBSERVER_RUN_ID.txt": "<PRIVATE_REF_01982>",
+    "custody/RESIDUAL_INVENTORY_POST_TEARDOWN.txt": "<PRIVATE_REF_01505>",
+    "custody/CP01_FORCED_INTERRUPT_SNAPSHOT.md": "<PRIVATE_REF_01821>",
+    "custody/HARNESS_NOTE_CLAUDE_TRANSCRIPT_2026-10-06.md": "<PRIVATE_REF_01781>",
+    "custody/KIT_56e694ac_SHA256SUMS": "<PRIVATE_REF_01648>",
+    "custody/OBSERVER_PACKET_RUN-W3_SHA256SUMS": "<PRIVATE_REF_00673>",
+    "custody/RUN_W3_SOURCE_VERIFICATION.md": "<PRIVATE_REF_03048>",
+    "control/OPERATOR_START_HERE.md": "<PRIVATE_REF_02046>",
+    "control/W3_DEPLOYER_BRIEF.txt": "<PRIVATE_REF_03637>",
+    "control/OBSERVER_STARTUP_PROMPT.txt": "<PRIVATE_REF_02838>",
+    "control/TEARDOWN_PROMPT.txt": "<PRIVATE_REF_02476>",
+    "control/DEPLOYER_OPENING_MESSAGE.txt": "<PRIVATE_REF_02386>",
+    "control/DEPLOYER_CONTINUATION_MESSAGE.txt": "<PRIVATE_REF_01179>",
+    "deployer_transcripts/<NATIVE_ID_0991>.jsonl": "<PRIVATE_REF_02699>",
+    "deployer_transcripts/<NATIVE_ID_1514>.jsonl": "<PRIVATE_REF_02595>",
+    "deployer_transcripts/<NATIVE_ID_0991>/tool-results/b0ajh8f1p.txt": "<PRIVATE_REF_02195>",
+    "observer/packet_meta/CONTROL_FACTS.md": "<PRIVATE_REF_02914>",
+    "observer/packet_meta/ALIASES.json": "<PRIVATE_REF_02035>",
+    "observer/packet_meta/RUN_MANIFEST.md": "<PRIVATE_REF_03295>",
+    "observer/packet_meta/SHA256SUMS": "<PRIVATE_REF_00673>",
+    "observer/outputs/RUN_W3_SOURCE_PROVENANCE.json": "<PRIVATE_REF_01057>",
+    "observer/outputs/RUN_W3_OBSERVER_REPORT.md": "<PRIVATE_REF_03257>",
+    "observer/outputs/packet_integrity.json": "<PRIVATE_REF_02233>",
+    "observer/outputs/RUN_W3_IDENTITY.json": "<PRIVATE_REF_02150>",
+    "observer/outputs/RUN_W3_TRACEABILITY.json": "<PRIVATE_REF_02765>",
+    "observer/outputs/RUN_W3_METRICS.json": "<PRIVATE_REF_01367>",
+    "observer/outputs/RUN_W3_ACCEPTANCE_MATRIX.json": "<PRIVATE_REF_02484>",
+    "observer/outputs/record_audit.json": "<PRIVATE_REF_02240>",
+    "observer/outputs/RUN_W3_VALIDATION.json": "<PRIVATE_REF_02017>",
+    "observer/outputs/SHA256SUMS": "<PRIVATE_REF_01974>",
+    "observer/outputs/RUN_W3_EVIDENCE_PROVENANCE.json": "<PRIVATE_REF_03023>",
+    "observer/outputs/RUN_W3_EVENTS.jsonl": "<PRIVATE_REF_03200>",
+    "deployer_record/evidence/0038-e2e-after-restart.txt": "<PRIVATE_REF_02462>",
+    "deployer_record/evidence/0034-e2e-create.txt": "<PRIVATE_REF_02182>",
+    "deployer_record/evidence/0033-e2e-create.txt": "<PRIVATE_REF_01676>",
+    "deployer_record/evidence/0029-tarball-blob-check.txt": "<PRIVATE_REF_03150>",
+    "deployer_record/evidence/0039-teardown-inventory-before.txt": "<PRIVATE_REF_01054>",
+    "deployer_record/evidence/0017-vm-absent-check.txt": "<PRIVATE_REF_02581>",
+    "deployer_record/evidence/0043-delete-policy.txt": "<PRIVATE_REF_01909>",
+    "deployer_record/evidence/0046-delete-ip.txt": "<PRIVATE_REF_02338>",
+    "deployer_record/evidence/0007-price-catalog.txt": "<PRIVATE_REF_03431>",
+    "deployer_record/evidence/0012-disk-create.txt": "<PRIVATE_REF_03135>",
+    "deployer_record/evidence/0006-app-config-findings.txt": "<PRIVATE_REF_00152>",
+    "deployer_record/evidence/0036-expected-blobs.txt": "<PRIVATE_REF_03073>",
+    "deployer_record/evidence/0030-setup-vm-rerun.txt": "<PRIVATE_REF_02446>",
+    "deployer_record/evidence/0040-dns-removed-check.txt": "<PRIVATE_REF_01198>",
+    "deployer_record/evidence/0045-dns-removed-check2.txt": "<PRIVATE_REF_03407>",
+    "deployer_record/evidence/0011-firewall-create.txt": "<PRIVATE_REF_02516>",
+    "deployer_record/evidence/0008-preflight.txt": "<PRIVATE_REF_02186>",
+    "deployer_record/evidence/0042-delete-disk.txt": "<PRIVATE_REF_02584>",
+    "deployer_record/evidence/0028-crlf-cause.txt": "<PRIVATE_REF_01928>",
+    "deployer_record/evidence/0010-resume-inventory.txt": "<PRIVATE_REF_01092>",
+    "deployer_record/evidence/0016-vm-create.txt": "<PRIVATE_REF_03013>",
+    "deployer_record/evidence/0022-setup-vm.txt": "<PRIVATE_REF_02213>",
+    "deployer_record/evidence/0027-back-crashloop.txt": "<PRIVATE_REF_02438>",
+    "deployer_record/evidence/0014-disk-attach-policy.txt": "<PRIVATE_REF_03118>",
+    "deployer_record/evidence/0005-source-checkout.txt": "<PRIVATE_REF_02500>",
+    "deployer_record/evidence/0037-vm-stop-start.txt": "<PRIVATE_REF_01595>",
+    "deployer_record/evidence/0041-delete-vm.txt": "<PRIVATE_REF_03289>",
+    "deployer_record/evidence/0044-delete-firewall.txt": "<PRIVATE_REF_02137>",
+    "deployer_record/evidence/0015-created-describe.txt": "<PRIVATE_REF_03010>",
+    "deployer_record/evidence/0002-gcp-identity.txt": "<PRIVATE_REF_00576>",
+    "deployer_record/evidence/0025-build-result.txt": "<PRIVATE_REF_03681>",
+    "deployer_record/evidence/0020-stage-check.txt": "<PRIVATE_REF_03290>",
+    "deployer_record/evidence/0035-deployed-ref-health.txt": "<PRIVATE_REF_02787>",
+    "deployer_record/evidence/0013-snapshot-policy-create.txt": "<PRIVATE_REF_01858>",
+    "deployer_record/evidence/0047-teardown-inventory-after.txt": "<PRIVATE_REF_01730>",
+    "deployer_record/evidence/0031-rebuild-result.txt": "<PRIVATE_REF_01592>",
+    "deployer_record/evidence/0026-compose-up.txt": "<PRIVATE_REF_01335>",
+    "deployer_record/evidence/0004-dns-precheck.txt": "<PRIVATE_REF_01110>",
+    "deployer_record/evidence/0009-address-create.txt": "<PRIVATE_REF_03571>",
+    "deployer_record/evidence/0019-vm-describe.txt": "<PRIVATE_REF_01076>",
+    "deployer_record/evidence/0032-compose-up2.txt": "<PRIVATE_REF_02837>",
+    "deployer_record/evidence/0023-dns-precheck2.txt": "<PRIVATE_REF_01732>",
+    "deployer_record/evidence/0021-vm-ssh-key.txt": "<PRIVATE_REF_03230>",
+    "deployer_record/evidence/0003-gcp-inventory.txt": "<PRIVATE_REF_02971>",
+    "deployer_record/evidence/0018-vm-create.txt": "<PRIVATE_REF_03651>",
+    "deployer_record/evidence/0024-dns-record-check.txt": "<PRIVATE_REF_02082>",
+    "deployer_deploy_config/stage/conf.json": "<PRIVATE_REF_01828>",
+    "deployer_deploy_config/stage/setup-vm.sh": "<PRIVATE_REF_02331>",
+    "deployer_deploy_config/stage/source-refs.txt": "<PRIVATE_REF_02740>",
+    "deployer_deploy_config/stage/Caddyfile": "<PRIVATE_REF_00879>",
+    "deployer_deploy_config/stage/docker-compose.yml": "<PRIVATE_REF_02179>",
+    "deployer_deploy_config/stage/Dockerfile.front": "<PRIVATE_REF_01181>",
+    "deployer_deploy_config/stage/taiga.env": "<PRIVATE_REF_01266>",
+    "deployer_deploy_config/stage/deploy_settings.py": "<PRIVATE_REF_02171>"
+  },
+  "copied_annexes": [
+    {
+      "source": "<HELM_ROOT>/<OPERATIONS_ROOT>/tasks/AI_CICD/W3_WINDOWS_RESULT_2026-10-07/acceptance_screenshots/1st_login.png",
+      "archive_path": "acceptance_screenshots/1st_login.png",
+      "bytes": 118089,
+      "sha256": "<PRIVATE_REF_01262>"
+    },
+    {
+      "source": "<HELM_ROOT>/<OPERATIONS_ROOT>/tasks/AI_CICD/W3_WINDOWS_RESULT_2026-10-07/acceptance_screenshots/Create_project.png",
+      "archive_path": "acceptance_screenshots/Create_project.png",
+      "bytes": 116865,
+      "sha256": "<PRIVATE_REF_00138>"
+    },
+    {
+      "source": "<HELM_ROOT>/<OPERATIONS_ROOT>/tasks/AI_CICD/W3_WINDOWS_RESULT_2026-10-07/acceptance_screenshots/landing_page.png",
+      "archive_path": "acceptance_screenshots/landing_page.png",
+      "bytes": 138638,
+      "sha256": "<PRIVATE_REF_00534>"
+    },
+    {
+      "source": "<HELM_ROOT>/<OPERATIONS_ROOT>/tasks/AI_CICD/W3_WINDOWS_RESULT_2026-10-07/acceptance_screenshots/re_login_via_edge.png",
+      "archive_path": "acceptance_screenshots/re_login_via_edge.png",
+      "bytes": 154282,
+      "sha256": "<PRIVATE_REF_03291>"
+    },
+    {
+      "source": "<HELM_ROOT>/<OPERATIONS_ROOT>/tasks/AI_CICD/W3_WINDOWS_RESULT_2026-10-07/acceptance_screenshots/vm_stopped.png",
+      "archive_path": "acceptance_screenshots/vm_stopped.png",
+      "bytes": 269339,
+      "sha256": "<PRIVATE_REF_03206>"
+    },
+    {
+      "source": "source-00275.md",
+      "archive_path": "product_feedback_quarantined/LIVE_RUN_OWNER_AND_SIDE_OBSERVATIONS_2026-10-06.md",
+      "bytes": 3456,
+      "sha256": "<PRIVATE_REF_00949>"
+    },
+    {
+      "source": "source-00276.md",
+      "archive_path": "product_feedback_quarantined/RELAY_RAW_2026-10-06.md",
+      "bytes": 5942,
+      "sha256": "<PRIVATE_REF_01506>"
+    },
+    {
+      "source": "source-00277.md",
+      "archive_path": "product_feedback_quarantined/SNAPSHOT_WATCHOVER_PROTOTYPE_REVIEW_2026-10-06.md",
+      "bytes": 12222,
+      "sha256": "<PRIVATE_REF_02760>"
+    },
+    {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00052.md",
+      "archive_path": "observer_definitions/ACCEPTANCE_MATRIX.md",
+      "bytes": 2142,
+      "sha256": "<PRIVATE_REF_03025>"
+    },
+    {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00053.md",
+      "archive_path": "observer_definitions/ACCEPTANCE_VERIFICATION_PROCEDURE.md",
+      "bytes": 4660,
+      "sha256": "<PRIVATE_REF_02445>"
+    },
+    {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00054.md",
+      "archive_path": "observer_definitions/EVENT_TAXONOMY.md",
+      "bytes": 3073,
+      "sha256": "<PRIVATE_REF_01416>"
+    },
+    {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00055.md",
+      "archive_path": "observer_definitions/MEASUREMENT_INTEGRITY_RULES.md",
+      "bytes": 2166,
+      "sha256": "<PRIVATE_REF_02778>"
+    },
+    {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00056.md",
+      "archive_path": "observer_definitions/METRICS_DEFINITIONS.md",
+      "bytes": 5567,
+      "sha256": "<PRIVATE_REF_01277>"
+    },
+    {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00057.md",
+      "archive_path": "observer_definitions/OBSERVER_PROTOCOL.md",
+      "bytes": 8764,
+      "sha256": "<PRIVATE_REF_03170>"
+    },
+    {
+      "source": "source-00270.md",
+      "archive_path": "observer_definitions/RESTART_EQUIVALENCE.md",
+      "bytes": 1940,
+      "sha256": "<PRIVATE_REF_01847>"
+    },
+    {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00061.md",
+      "archive_path": "observer_definitions/TRACEABILITY_PROBE.md",
+      "bytes": 2503,
+      "sha256": "<PRIVATE_REF_03741>"
+    },
+    {
+      "source": "source-00272.md",
+      "archive_path": "observer_definitions/W3_MEASUREMENT_SCOPE.md",
+      "bytes": 2639,
+      "sha256": "<PRIVATE_REF_00928>"
+    },
+    {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00064.json",
+      "archive_path": "observer_definitions/event.schema.json",
+      "bytes": 2085,
+      "sha256": "<PRIVATE_REF_00975>"
+    },
+    {
+      "source": "../../../../council/task/ai-cicd/council-records/source-00065.json",
+      "archive_path": "observer_definitions/metrics.schema.json",
+      "bytes": 1937,
+      "sha256": "<PRIVATE_REF_01911>"
+    }
+  ],
+  "checks": {
+    "sealed_tree_files": 103,
+    "sealed_tree_byte_matches": 103,
+    "run_manifest_entries": 102,
+    "observer_output_seal_entries": 11,
+    "observer_packet_entries_resolved": 77,
+    "annex_copies": 19,
+    "runtime_kit_entries": 23,
+    "runtime_kit_matches_mac_payload": 23
+  },
+  "hc_content_read": false,
+  "independent_review": "NOT_PERFORMED_BY_MAC_INTAKE"
+}

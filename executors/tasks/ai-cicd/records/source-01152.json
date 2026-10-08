@@ -1,0 +1,19 @@
+{
+  "run_id": "RUN-W2A",
+  "checkpoint": 2,
+  "segments": 72,
+  "source_records": 432,
+  "attachments": 45,
+  "first_sequence": 49,
+  "last_sequence": 120,
+  "prev_segment_hash": "<PRIVATE_REF_02125>",
+  "combined_chain_verified": true,
+  "lossless_redacted_reconstruction": true,
+  "sha256sums": "<PRIVATE_REF_02419>",
+  "observer_path": "/private/tmp/survey-18f7/work/checkpoints/CP-02",
+  "source_raw_hash": "<PRIVATE_REF_02443>",
+  "redacted_increment_hash": "<PRIVATE_REF_03501>",
+  "time_range": "2026-10-05T02:50:20.281Z/2026-10-05T03:11:13.605Z",
+  "status": "MATERIALIZED; OBSERVER_RECEIPTS_PENDING",
+  "run_close": "NOT_ISSUED"
+}

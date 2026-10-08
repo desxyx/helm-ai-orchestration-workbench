@@ -1,0 +1,34 @@
+{
+  "task_ref": "W3_POST_RUN_REVIEW_2026-10-07",
+  "checked_by": "Operations Coordinator operational verification; NOT independent acceptance",
+  "input_files_bound": 50,
+  "source_seals": [
+    {
+      "manifest": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/SHA256SUMS",
+      "matched": 102
+    },
+    {
+      "manifest": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/sealed_run_record/observer/outputs/SHA256SUMS",
+      "matched": 11
+    },
+    {
+      "manifest": "council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/win_followup/SHA256SUMS",
+      "matched": 15
+    }
+  ],
+  "hash_instrument_control": {
+    "known_present_file": "executors/EXECUTOR CHARTER — v1.0.md",
+    "matching_digest_accepted": true,
+    "altered_expected_digest_rejected": true
+  },
+  "product": {
+    "commit": "<PRIVATE_REF_01823>",
+    "tree": "<PRIVATE_REF_01954>",
+    "version": "0.1.1"
+  },
+  "product_worktree_clean": true,
+  "local_markdown_links_resolved": 6,
+  "role_outputs": "NOT_RECEIVED",
+  "hc": "Hash-only source-seal verification; no semantic reading/scoring",
+  "source_mutation": "No existing W3 evidence or product files edited"
+}

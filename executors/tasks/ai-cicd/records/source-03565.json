@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 46176,
+  "stop_reason": "end_turn",
+  "session_id": "<NATIVE_ID_0314>",
+  "total_cost_usd": 0.22261779999999998,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 28820,
+    "cache_read_input_tokens": 77882,
+    "output_tokens": 1714,
+    "output_tokens_details": {
+      "thinking_tokens": 64
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 28820,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1176,
+        "cache_read_input_tokens": 44006,
+        "cache_creation_input_tokens": 1136,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1136
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 3537,
+      "thinkingTokens": 277,
+      "cacheReadInputTokens": 93559,
+      "cacheCreationInputTokens": 42128,
+      "webSearchRequests": 0,
+      "costUSD": 0.22261779999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 5,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The run is served by a single Compute Engine VM, `<W2_RUN_RESOURCE_PREFIX>-vm`, in project `PROJECT-P`, zone `australia-southeast2-a`. The provider inventory shows the VM and its supporting resources exist. It does not show what code is running on the VM.\n\n**Resources the provider inventory shows** (`corpus/PROVIDER_asset_inventory.json`)\n- **Network:** `<W2_RUN_RESOURCE_PREFIX>-net` (custom-mode VPC), created 2026-10-05 09:23:54Z (lines 220-232).\n- **Subnet:** `<W2_RUN_RESOURCE_PREFIX>-subnet` in `australia-southeast2`, gateway `<IP_ADDRESS_094>`, created 09:24:17Z (lines 192-205). The range comes from `provision.py:9`, which uses `<IP_ADDRESS_093>/24`.\n- **VM:** `<W2_RUN_RESOURCE_PREFIX>-vm` (lines 73-107)\n  - Type and state: `e2-small`, `RUNNING`, created 09:25:19Z.\n  - Addresses: internal IP `<IP_ADDRESS_095>`, external IP `<IP_ADDRESS_113>`.\n  - Tag and network: tagged `<W2_RUN_RESOURCE_PREFIX>`, on `<W2_RUN_RESOURCE_PREFIX>-net`.\n  - Access: no full API access (`hasFullApiAccess` is false).\n- **Static IP:** `<W2_RUN_RESOURCE_PREFIX>-ip`, `<IP_ADDRESS_113>`, state `IN_USE` (lines 146-160). It is the same address as the VM's external IP.\n- **Boot disk:** `<W2_RUN_RESOURCE_PREFIX>-vm`, 20 GB `pd-standard` (lines 108-126).\n- **Data disk:** `<W2_RUN_RESOURCE_PREFIX>-data`, 20 GB `pd-standard`, created 09:25:08Z (lines 127-145). Both disks list `<W2_RUN_RESOURCE_PREFIX>-vm` as their user.\n- **Firewalls:** both target the tag `<W2_RUN_RESOURCE_PREFIX>`.\n  - `<W2_RUN_RESOURCE_PREFIX>-iap-ssh`, created 09:24:45Z (lines 161-177).\n  - `<W2_RUN_RESOURCE_PREFIX>-web`, created 10:09:08Z (lines 32-48). The plan has it open to `0.0.0.0/0` on ports 80 and 443 (`planned-resources.json:8`). The inventory does not show its ports or sources.\n- **Cloud Run:** `run.googleapis.com` appears at line 1836 as an enabled service API. I found no Cloud Run service or other serving resource for this run in the inventory.\n\n**What the plan says about intent** (`corpus/WORKSPACE/app/deployment-<W2_RUN_RESOURCE_PREFIX>/`)\n- `provision.py:18-25` attaches `<W2_RUN_RESOURCE_PREFIX>-data` as a non-auto-delete second disk and creates the VM with no service account and no scopes. It describes `<W2_RUN_RESOURCE_PREFIX>-data` as \"Retained PostgreSQL data, secrets and certificate storage\" (line 20). It also gives the boot disk `--no-boot-disk-auto-delete`.\n- `planned-resources.json:14` has Cloudflare DNS with an `A` record named `<W2_RUN_RESOURCE_PREFIX>`, owned by the user, set to DNS only.\n- `provision.py:27-28` leaves a note that the release still had to be uploaded through IAP, with the data disk to be initialized and the deployment verified before the web firewall and DNS handoff.\n\n**Limits**\n- `<W2_RUN_RESOURCE_PREFIX>-web` is created after the provision script's last step. I didn't look for the events or evidence that created it.\n- Nothing I read proves what source code is running on `<W2_RUN_RESOURCE_PREFIX>-vm`. The inventory only shows the VM is `RUNNING`.\n- The `us-central1` `<W2_RUN_RESOURCE_PREFIX>-*` resources from 2026-10-04 were deleted. They are not part of the current topology.",
+  "ttft_ms": 3019,
+  "type": "result",
+  "duration_ms": 29055,
+  "uuid": "<NATIVE_ID_2967>",
+  "ttft_stream_ms": 1746,
+  "time_to_request_ms": 22,
+  "first_content_frame_ms": 1747,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

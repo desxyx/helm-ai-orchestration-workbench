@@ -1,0 +1,19 @@
+$ gcloud compute ssh <ACCOUNT>@<W2_RUN_RESOURCE_PREFIX>-vm --zone=australia-southeast2-a --tunnel-through-iap --ssh-key-file=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-ssh-key --ssh-key-expire-after=2h --ssh-flag=-oUserKnownHostsFile=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-known-hosts '--command=sudo findmnt /srv/<W2_RUN_RESOURCE_PREFIX>; sudo docker compose -f /opt/<W2_RUN_RESOURCE_PREFIX>/compose.yaml ps; curl -fsS http://127.0.0.1:18080/api/management/gtg; sudo docker compose -f /opt/<W2_RUN_RESOURCE_PREFIX>/compose.yaml logs --tail=45 api' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+TARGET      SOURCE   FSTYPE OPTIONS
+/srv/<W2_RUN_RESOURCE_PREFIX> /dev/sdb ext4   rw,relatime
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
+Updating project ssh metadata...
+..............................................................................Updated [<PRIVATE_URL_0469>].
+...done.
+Waiting for SSH key to propagate.
+WARNING: 
+
+To increase the performance of the tunnel, consider installing NumPy. For instructions,
+please see <PRIVATE_URL_0075>ogle.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
+
+WARNING: 
+
+To increase the performance of the tunnel, consider installing NumPy. For instructions,
+please see <PRIVATE_URL_0075>ogle.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
+
+curl: (7) Failed to connect to 127.0.0.1 port 18080 after 0 ms: Couldn't connect to server

@@ -1,0 +1,11 @@
+$ bash -c for s in <DNS_RESOLVER_A> <DNS_RESOLVER_B>; do ip=$(getent hosts $s | cut -d" " -f1); echo "@$s: $(curl -s -H "accept: application/dns-json" "https://1.1.1.1/dns-query?name=$s&type=A" >/dev/null; echo)"; done; ssh -F "C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/sshcfg" taiga "for s in <DNS_RESOLVER_A> <DNS_RESOLVER_B> 8.8.8.8; do echo \"@\$s <W3_RUN_HOST_LABEL> A: [\$(dig +short <W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> A @\$s)] status: \$(dig <W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> A @\$s | grep -o \"status: [A-Z]*\") | apex control: \$(dig +short <EXPERIMENT_DOMAIN> A @\$s | tr \"\n\" \" \")\"; done"
+# started 2026-10-06T14:49:17.000Z  ended 2026-10-06T14:49:19.000Z  exit 0
+--- stdout
+@<DNS_RESOLVER_A>: 
+@<DNS_RESOLVER_B>: 
+@<DNS_RESOLVER_A> <W3_RUN_HOST_LABEL> A: [<IP_ADDRESS_115>] status: status: NOERROR | apex control: <IP_ADDRESS_097> <IP_ADDRESS_108> 
+@<DNS_RESOLVER_B> <W3_RUN_HOST_LABEL> A: [<IP_ADDRESS_115>] status: status: NOERROR | apex control: <IP_ADDRESS_097> <IP_ADDRESS_108> 
+@8.8.8.8 <W3_RUN_HOST_LABEL> A: [] status: status: NXDOMAIN | apex control: <IP_ADDRESS_108> <IP_ADDRESS_097> 
+--- stderr
+bash: line 1: getent: command not found
+bash: line 1: getent: command not found

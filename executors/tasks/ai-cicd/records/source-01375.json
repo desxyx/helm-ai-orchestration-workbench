@@ -1,0 +1,46 @@
+{
+  "recorded_at": "2026-10-05T15:59:56+11:00",
+  "evidence_source": "Human Operator relay of Observer grading summary; private working files not inspected by Operations Coordinator",
+  "observer_reported_integrity": {
+    "probe_sha256sums_matched": true,
+    "listed_files_verified": "6/6",
+    "answer_hashes_match_mechanical_record": true,
+    "original_native_response_hashes": "NOT_INDEPENDENTLY_VERIFIED_BY_OBSERVER; originals not delivered"
+  },
+  "observer_reported_grades": {
+    "M8": {
+      "grade": "CORRECT",
+      "elapsed_seconds_external": 20.893
+    },
+    "A6_RESOURCE": {
+      "grade": "CORRECT",
+      "elapsed_seconds_external": 17.811
+    },
+    "A6_COMMITS": {
+      "grade": "CORRECT",
+      "elapsed_seconds_external": 63.012
+    },
+    "A6_CONFIG": {
+      "grade": "CORRECT",
+      "elapsed_seconds_external": 23.109
+    }
+  },
+  "a6_reported_status": "PROVISIONAL_PASS",
+  "a6_confidence": "MEDIUM",
+  "source_provenance_reported_status": "UNVERIFIED",
+  "remaining_reported_status": {
+    "A7": "EVIDENCE_MISSING",
+    "M11": "EVIDENCE_MISSING",
+    "M1": false,
+    "M9": null,
+    "report": "DRAFT_NOT_SEALED"
+  },
+  "corpus_limits": [
+    "Credential/identity redaction",
+    "Three verification screenshot pixel exclusions",
+    "Deployment archive supplied as redacted expanded files"
+  ],
+  "routing_boundary": "User relayed private-grade summary to Operations Coordinator before RUN_CLOSE; preserved as disclosure, not returned to Deployer or later arms",
+  "deployer_teardown": "NO_DECLARATION_RECEIVED_IN_THIS_TURN",
+  "OPERATIONS_COORDINATOR_grade": "NONE; register Observer verdict only"
+}

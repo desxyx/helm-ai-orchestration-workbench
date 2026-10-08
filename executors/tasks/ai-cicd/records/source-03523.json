@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "/usr/bin/dig",
+    "@1.1.1.1",
+    "<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>",
+    "A",
+    "+time=3",
+    "+tries=1"
+  ],
+  "started": "2026-10-05T11:05:47.073828+00:00",
+  "ended": "2026-10-05T11:05:47.249455+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "<PRIVATE_REF_00128>",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "receipt_id": "AI-CICD-20261005-W2B-VERIFY-TRACE-001"
+}

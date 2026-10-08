@@ -1,0 +1,181 @@
+{
+  "self_test": {
+    "ok": true,
+    "patterns": 11,
+    "failed": []
+  },
+  "checked": 1577,
+  "bytes": 18428602,
+  "binary": [
+    {
+      "path": "council/task/AI_CICD/execution/w2_formal_entry_2026-10-05/evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_SCREENSHOTS/alert_after_restart.png",
+      "bytes": 226804
+    },
+    {
+      "path": "council/task/AI_CICD/execution/w2_formal_entry_2026-10-05/evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_SCREENSHOTS/alert_before_restart.png",
+      "bytes": 444035
+    },
+    {
+      "path": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/CP-01_FORCED_INTERRUPT/OWNER_VM_SCREENSHOT_1.png",
+      "bytes": 84267
+    },
+    {
+      "path": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/CP-01_FORCED_INTERRUPT/OWNER_VM_SCREENSHOT_2.png",
+      "bytes": 84267
+    },
+    {
+      "path": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_SCREENSHOTS/BEFORE_ADMIN_OR_ALERT_LIST.png",
+      "bytes": 293617
+    },
+    {
+      "path": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_SCREENSHOTS/OWNER_AFTER_REBOOT_INCOGNITO_ALERT_LIST.png",
+      "bytes": 319063
+    },
+    {
+      "path": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_SCREENSHOTS/OWNER_TEST_ACCOUNT_MENU.png",
+      "bytes": 323584
+    },
+    {
+      "path": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_SCREENSHOTS/OWNER_VM_STOPPING_CONSOLE.png",
+      "bytes": 621169
+    }
+  ],
+  "findings": [
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.0/tests/pa4.test.js",
+      "line": 38,
+      "preview": "    ? `created account tester with password ${SYN_VALUE}\\nexport ADMIN_[REDACTED:secret-assignment] ok\\n`",
+      "classification": "synthetic detector/test fixture literal"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.0/tests/pa4.test.js",
+      "line": 224,
+      "preview": "  const values = fx.writeJson(path.join(root, 'control', 'values.json'), { APP_TEST_USER_[REDACTED:secret-assignment]', APP_TEST_API_[REDACTED:secret-assignment]' });",
+      "classification": "synthetic detector/test fixture literal"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.0/tests/pa4.test.js",
+      "line": 241,
+      "preview": "  fs.writeFileSync(env, 'APP_TEST_USER_[REDACTED:secret-assignment]');",
+      "classification": "synthetic detector/test fixture literal"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.0/tests/pa4.test.js",
+      "line": 244,
+      "preview": "  assert.ok(r.problems.some((p) => p.startsWith('APP_TEST_USER_[REDACTED:secret-assignment] value')));",
+      "classification": "synthetic detector/test fixture literal"
+    },
+    {
+      "pattern": "aws-access-key-id",
+      "file": "council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.0/tests/secretScan.test.js",
+      "line": 44,
+      "preview": "  fs.writeFileSync(path.join(corpus, 'leak.env'), 'AWS_KEY=[REDACTED:aws-access-key-id]\\n');",
+      "classification": "synthetic detector/test fixture literal"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.0/tool/src/secretScan.js",
+      "line": 9,
+      "preview": "const CANARY_[REDACTED:secret-assignment]';",
+      "classification": "named CANARY_SECRET constant"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/pa4.test.js",
+      "line": 38,
+      "preview": "    ? `created account tester with password ${SYN_VALUE}\\nexport ADMIN_[REDACTED:secret-assignment] ok\\n`",
+      "classification": "synthetic detector/test fixture literal"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/pa4.test.js",
+      "line": 224,
+      "preview": "  const values = fx.writeJson(path.join(root, 'control', 'values.json'), { APP_TEST_USER_[REDACTED:secret-assignment]', APP_TEST_API_[REDACTED:secret-assignment]' });",
+      "classification": "synthetic detector/test fixture literal"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/pa4.test.js",
+      "line": 241,
+      "preview": "  fs.writeFileSync(env, 'APP_TEST_USER_[REDACTED:secret-assignment]');",
+      "classification": "synthetic detector/test fixture literal"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/pa4.test.js",
+      "line": 244,
+      "preview": "  assert.ok(r.problems.some((p) => p.startsWith('APP_TEST_USER_[REDACTED:secret-assignment] value')));",
+      "classification": "synthetic detector/test fixture literal"
+    },
+    {
+      "pattern": "aws-access-key-id",
+      "file": "council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/secretScan.test.js",
+      "line": 44,
+      "preview": "  fs.writeFileSync(path.join(corpus, 'leak.env'), 'AWS_KEY=[REDACTED:aws-access-key-id]\\n');",
+      "classification": "synthetic detector/test fixture literal"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tool/src/secretScan.js",
+      "line": 9,
+      "preview": "const CANARY_[REDACTED:secret-assignment]';",
+      "classification": "named CANARY_SECRET constant"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/INDEPENDENT_VERIFICATION/fixtures/test_alerta_api_smoke.py",
+      "line": 26,
+      "preview": "[REDACTED:secret-assignment]'ALERTA_API_KEY') or None",
+      "classification": "os.environ access expression, not stored key"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/INDEPENDENT_VERIFICATION/fixtures/test_alerta_ui_flow.py",
+      "line": 37,
+      "preview": "[REDACTED:secret-assignment]'MA1_UI_USER_PASSWORD', '')",
+      "classification": "os.environ/existing variable-derived wrong value/CSS selector source"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/INDEPENDENT_VERIFICATION/fixtures/test_alerta_ui_flow.py",
+      "line": 40,
+      "preview": "WRONG_[REDACTED:secret-assignment] + '-wrong'  # derived at runtime, guaranteed different, never printed",
+      "classification": "os.environ/existing variable-derived wrong value/CSS selector source"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/INDEPENDENT_VERIFICATION/fixtures/test_alerta_ui_flow.py",
+      "line": 45,
+      "preview": "SEL_[REDACTED:secret-assignment]\"password\"]'",
+      "classification": "os.environ/existing variable-derived wrong value/CSS selector source"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/INDEPENDENT_VERIFICATION/ma1_verify_r14.py",
+      "line": 1776,
+      "preview": "                        'volumeMounts': len(c.get('volumeMounts') or []), 'env': env, 'env_[REDACTED:secret-assignment]",
+      "classification": "source data-shape field"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/INDEPENDENT_VERIFICATION/run_authorized_verification.py",
+      "line": 76,
+      "preview": "credentials={'email':'ma1-'+secrets.token_hex(6)+'@example.com','[REDACTED:secret-assignment]",
+      "classification": "runtime random generation / dict lookup source, not persisted value"
+    },
+    {
+      "pattern": "secret-assignment",
+      "file": "council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/INDEPENDENT_VERIFICATION/run_authorized_verification.py",
+      "line": 79,
+      "preview": "userenv=dict(ENV,MA1_UI_USER_EMAIL=credentials['email'],MA1_UI_USER_[REDACTED:secret-assignment]'password'])",
+      "classification": "runtime random generation / dict lookup source, not persisted value"
+    }
+  ],
+  "scope": "remaining modified/untracked files under actual updated Git exclusions",
+  "unclassified": 0,
+  "binary_limit": "8 remaining new binary files recorded but pattern scan is text only; private work-record sync is not an absolute secret-free certification"
+}

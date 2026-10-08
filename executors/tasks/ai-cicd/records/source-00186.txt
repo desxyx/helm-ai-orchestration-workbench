@@ -1,0 +1,3 @@
+Before you start, read <CLIENT_HOME>/Desktop/helmls-studio/watchover-ai-devops/skills/router.md and follow it.
+
+The folder you are in contains demo-app, a small web app with an API. Please get it running on this machine so I can use it in a browser, and make sure it works end to end.

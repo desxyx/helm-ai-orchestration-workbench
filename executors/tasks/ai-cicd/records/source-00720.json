@@ -1,0 +1,15 @@
+{
+  "completed_at": "2026-10-05T22:36:05.550+00:00",
+  "exit_code": 0,
+  "timeout": false,
+  "session_id_requested": "<NATIVE_ID_2616>",
+  "native_session_id": "<NATIVE_ID_2616>",
+  "native_model_usage_ids": [
+    "claude-sonnet-5-5"
+  ],
+  "is_error": false,
+  "duration_external_seconds": 110.89511458401103,
+  "native_sha256": "<PRIVATE_REF_03114>",
+  "report_materialized": false,
+  "inputs_unchanged": true
+}

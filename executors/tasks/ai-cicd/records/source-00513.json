@@ -1,0 +1,42 @@
+{
+  "task_ref": "WATCHOVER_PUBLIC_RELEASE_2026-10-07",
+  "completed_at": "2026-10-07T13:13:47.869031+00:00",
+  "authority": "Existing Owner directive: final product under helmls-studio; approved public-edition assignment. Reviewer does not grant release authority.",
+  "accepted_commit": "5c662eac0449bd30eddd01c606d268f0aa510631",
+  "accepted_tree": "<PRIVATE_REF_00957>",
+  "version": "0.1.2",
+  "review_verdict": "PASS",
+  "review_sha256": "<PRIVATE_REF_02025>",
+  "local_product": "<CLIENT_HOME>/Desktop/helmls-studio/watchover-ai-devops-public",
+  "local_branch": "release/0.1.2",
+  "local_status": "clean",
+  "public_repository": "https://github.com/helmls-studio/watchover-ai-devops",
+  "remote_visibility": "public",
+  "remote_default_branch": "main",
+  "remote_commit": "5c662eac0449bd30eddd01c606d268f0aa510631",
+  "remote_tree": "<PRIVATE_REF_00957>",
+  "remote_parents": [],
+  "remote_author_and_committer": {
+    "name": "WatchOver contributors",
+    "email": "<ACCOUNT_EMAIL_067>"
+  },
+  "remote_verification": "GitHub commit/repository APIs plus git ls-remote; local origin/main matches",
+  "prepublication_test": {
+    "exit_code": 0,
+    "tests": 284,
+    "passed": 284,
+    "failed": 0,
+    "skipped": 0,
+    "private_denylist_configured": true,
+    "word_private_human_label_included": true,
+    "log_sha256": "<PRIVATE_REF_01395>",
+    "initial_sandbox_attempt": "exit 1, loopback EPERM; preserved separately; authorized outside-sandbox retry passed",
+    "word_private_human_label_included_note": "Privacy alias for the historical standalone private-human-label scan check. The recorded boolean is unchanged; the public key does not reproduce the private literal scan term."
+  },
+  "transport": "--no-local clone, not copied Builder .git",
+  "private_prototype_visibility_changed": false,
+  "tag_created": false,
+  "github_release_created": false,
+  "public_process_case": "Still pending, separate from product repository publication",
+  "limits": "Reviewer exact-object local R1–R6 scope only; no universal privacy/AI compliance/other-platform/cloud/historical-experiment claim."
+}

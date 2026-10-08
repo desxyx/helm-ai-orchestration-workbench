@@ -1,0 +1,637 @@
+{
+  "schema_version": "0.1",
+  "identity": {
+    "project_alias": "<W2_RUN_RESOURCE_PREFIX>",
+    "target_environment": "Google Cloud <CLOUD_PROJECT>; <PRIVATE_URL_0233>",
+    "provider_profile": "gcp",
+    "mode": "basic",
+    "updated_at": "2026-10-05T09:25:32.290Z",
+    "updated_by": {
+      "role": "ai",
+      "name": "ai-deployer"
+    },
+    "session_id": "<W2_RUN_RESOURCE_PREFIX>-20261005-01"
+  },
+  "stage": "executing",
+  "activity": {
+    "summary": "create vm",
+    "started_at": "2026-10-05T09:25:16.343Z",
+    "expected_duration": {
+      "min_minutes": 0,
+      "max_minutes": 3
+    },
+    "slow_reason": null,
+    "waiting_on": "ai",
+    "last_progress": {
+      "at": "2026-10-05T09:25:29.728Z",
+      "summary": "create vm completed"
+    }
+  },
+  "brief": {
+    "app_summary": "Alerta monitoring application with a Vue frontend, Python API, and PostgreSQL storage. Users register and log in with email/password.",
+    "components": [
+      {
+        "name": "webui",
+        "role": "Vue static website built from the pinned frontend commit"
+      },
+      {
+        "name": "api",
+        "role": "Alerta Python API with authenticated signup and login"
+      },
+      {
+        "name": "postgres",
+        "role": "Durable account and alert storage"
+      },
+      {
+        "name": "caddy",
+        "role": "HTTPS certificates, static files, and same-origin API reverse proxy"
+      }
+    ],
+    "topology": "Dedicated VPC and subnet; one Melbourne VM runs Caddy, Alerta API and PostgreSQL in Compose. Only HTTP/HTTPS are public. SSH uses IAP. PostgreSQL data and secret files live on a separate persistent disk; services restart automatically.",
+    "resource_rationale": "Small single-server deployment suits assumed light traffic and requires few paid resources. Separate retained data disk meets restart durability; Caddy manages HTTPS without a paid load balancer.",
+    "heavier_alternatives": [
+      {
+        "alternative": "GKE cluster",
+        "why_unnecessary": "No multi-server scheduling or scaling requirement was supplied."
+      },
+      {
+        "alternative": "Cloud SQL",
+        "why_unnecessary": "PostgreSQL on retained storage meets restart persistence; managed database adds recurring cost."
+      },
+      {
+        "alternative": "Cloud Load Balancing",
+        "why_unnecessary": "Caddy on the VM terminates HTTPS for this single hostname."
+      }
+    ],
+    "assumptions": [
+      "Initial traffic is light; single VM availability is sufficient.",
+      "User delegated region choice; Melbourne chosen near <LOCAL_INSTITUTION>.",
+      "User delegated admin choice; reserve admin role for active gcloud account email.",
+      "Open email/password signup without email verification; reserve admin account before DNS release; no SMTP setup requested."
+    ]
+  },
+  "plan": {
+    "tiers": [
+      {
+        "id": "a",
+        "name": "Small (recommended)",
+        "composition": "e2-small 2 GiB VM, 20 GiB standard boot disk, 20 GiB retained standard data disk, one static IPv4, dedicated VPC/subnet and web/IAP firewall rules",
+        "region": "australia-southeast2",
+        "cost_range": {
+          "low": 21,
+          "high": 30,
+          "currency": "USD",
+          "period": "month"
+        },
+        "price_checked_at": "2026-10-05T08:49:08.704Z",
+        "load_assumption": "Light traffic, a few concurrent users",
+        "uncertainty": "Fixed base about USD20.56/month at 730 hours; traffic, tax and currency conversion extra; estimated range is not a spending cap."
+      },
+      {
+        "id": "b",
+        "name": "More memory",
+        "composition": "Same resources with e2-medium 4 GiB VM",
+        "region": "australia-southeast2",
+        "cost_range": {
+          "low": 35,
+          "high": 45,
+          "currency": "USD",
+          "period": "month"
+        },
+        "price_checked_at": "2026-10-05T08:49:08.704Z",
+        "load_assumption": "More memory headroom for modest activity",
+        "uncertainty": "Fixed base about USD35.31/month at 730 hours; traffic, tax and currency conversion extra; estimated range is not a spending cap."
+      }
+    ],
+    "default_tier": "a",
+    "selected_tier": "a"
+  },
+  "pending_decision": null,
+  "resources": [
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-net",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "compute.network",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-net",
+      "purpose": "Dedicated application network",
+      "billable": false,
+      "lifecycle": "present",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-net"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-subnet",
+      "parent_id": "<W2_RUN_RESOURCE_PREFIX>-net",
+      "provider": "gcp",
+      "type": "compute.subnetwork",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-subnet",
+      "purpose": "Private VM subnet",
+      "billable": false,
+      "lifecycle": "present",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-subnet"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "parent_id": "<W2_RUN_RESOURCE_PREFIX>-net",
+      "provider": "gcp",
+      "type": "compute.firewall",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "purpose": "SSH restricted to Google IAP",
+      "billable": false,
+      "lifecycle": "present",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-iap-ssh"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-ip",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "compute.address",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-ip",
+      "purpose": "Static public IPv4 for user-managed DNS",
+      "billable": true,
+      "lifecycle": "present",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-ip"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-data",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "compute.disk",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-data",
+      "purpose": "Retained PostgreSQL data, secrets and certificate storage",
+      "billable": true,
+      "lifecycle": "present",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-data"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-vm",
+      "parent_id": null,
+      "provider": "gcp",
+      "type": "compute.instance",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-vm",
+      "purpose": "Approved option A application VM",
+      "billable": true,
+      "lifecycle": "present",
+      "origin": "created_this_run",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-vm"
+    },
+    {
+      "id": "<W2_RUN_RESOURCE_PREFIX>-vm-boot",
+      "parent_id": "<W2_RUN_RESOURCE_PREFIX>-vm",
+      "provider": "gcp",
+      "type": "compute.disk",
+      "name": "<W2_RUN_RESOURCE_PREFIX>-vm-boot",
+      "purpose": "Retained 20 GiB boot disk created with VM",
+      "billable": true,
+      "lifecycle": "present",
+      "origin": "created_implicitly",
+      "evidence_fact": "resource.<W2_RUN_RESOURCE_PREFIX>-vm-boot"
+    }
+  ],
+  "sources": [
+    {
+      "name": "alerta-webui",
+      "remote": "https://github.com/alerta/alerta-webui",
+      "pinned_ref": "<PRIVATE_REF_03446>",
+      "local_changes_fact": "source.alerta-webui.changes",
+      "local_changes_summary": "Clean; git status control passed",
+      "deployed_ref_fact": "source.alerta-webui.deployed"
+    },
+    {
+      "name": "alerta",
+      "remote": "https://github.com/alerta/alerta",
+      "pinned_ref": "<PRIVATE_REF_01617>",
+      "local_changes_fact": "source.alerta.changes",
+      "local_changes_summary": "Clean; git status control passed",
+      "deployed_ref_fact": "source.alerta.deployed"
+    }
+  ],
+  "facts": [
+    {
+      "key": "gcp.network",
+      "label": "Existing default VPC available",
+      "value": "default",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "gcloud compute networks list",
+      "checked_at": "2026-10-05T08:40:07.345Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0005-networks.json"
+      ]
+    },
+    {
+      "key": "load.expected",
+      "label": "Expected initial traffic",
+      "value": "Light traffic; a few concurrent users",
+      "status": "ASSUMED",
+      "source": "reasoning",
+      "class": "other",
+      "scope": "No traffic requirements supplied; single VM proposed",
+      "checked_at": null,
+      "fresh_for_minutes": 1440,
+      "evidence": []
+    },
+    {
+      "key": "source.alerta-webui.commit",
+      "label": "alerta-webui pinned commit confirmed",
+      "value": "<PRIVATE_REF_03446>",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "Local git rev-parse HEAD",
+      "checked_at": "2026-10-05T08:41:17.283Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0008-source-alerta-webui.txt"
+      ]
+    },
+    {
+      "key": "source.alerta-webui.changes",
+      "label": "alerta-webui has no local changes",
+      "value": "clean",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "git status --porcelain=v1 --untracked-files=all",
+      "checked_at": "2026-10-05T08:41:17.375Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0008-source-alerta-webui.txt"
+      ],
+      "negative_result": true,
+      "control": "Same git status command reports untracked-control.txt in scratch repository"
+    },
+    {
+      "key": "source.alerta-webui.deployed",
+      "label": "alerta-webui deployed commit pending",
+      "value": null,
+      "status": "UNKNOWN",
+      "source": "reasoning",
+      "class": "source",
+      "scope": "No deployment performed",
+      "checked_at": null,
+      "fresh_for_minutes": 1440,
+      "evidence": []
+    },
+    {
+      "key": "source.alerta.commit",
+      "label": "alerta pinned commit confirmed",
+      "value": "<PRIVATE_REF_01617>",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "Local git rev-parse HEAD",
+      "checked_at": "2026-10-05T08:41:17.546Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0008-source-alerta.txt"
+      ]
+    },
+    {
+      "key": "source.alerta.changes",
+      "label": "alerta has no local changes",
+      "value": "clean",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "git status --porcelain=v1 --untracked-files=all",
+      "checked_at": "2026-10-05T08:41:17.634Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0008-source-alerta.txt"
+      ],
+      "negative_result": true,
+      "control": "Same git status command reports untracked-control.txt in scratch repository"
+    },
+    {
+      "key": "source.alerta.deployed",
+      "label": "alerta deployed commit pending",
+      "value": null,
+      "status": "UNKNOWN",
+      "source": "reasoning",
+      "class": "source",
+      "scope": "No deployment performed",
+      "checked_at": null,
+      "fresh_for_minutes": 1440,
+      "evidence": []
+    },
+    {
+      "key": "choice.region",
+      "label": "Region selected under user delegation",
+      "value": "australia-southeast2 (Melbourne)",
+      "status": "ASSUMED",
+      "source": "reasoning",
+      "class": "identity",
+      "scope": "User replied your choice; AI chose Melbourne near <LOCAL_INSTITUTION>",
+      "checked_at": null,
+      "fresh_for_minutes": 1440,
+      "evidence": []
+    },
+    {
+      "key": "choice.admin_email",
+      "label": "Administrator email selected under user delegation",
+      "value": "<ACCOUNT_EMAIL_011>",
+      "status": "ASSUMED",
+      "source": "reasoning",
+      "class": "other",
+      "scope": "User delegated choice; selected active gcloud account email; account will be created by user through signup",
+      "checked_at": null,
+      "fresh_for_minutes": 1440,
+      "evidence": []
+    },
+    {
+      "key": "build.frontend",
+      "label": "Production frontend build passed",
+      "value": true,
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "npm run build at requested frontend commit",
+      "checked_at": "2026-10-05T08:47:39.474Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0011-frontend-build.txt"
+      ]
+    },
+    {
+      "key": "build.release",
+      "label": "Deployment archive prepared",
+      "value": true,
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "Backend git archive and built static frontend; shell/config syntax checked",
+      "checked_at": "2026-10-05T08:47:39.562Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0014-local-validation.txt"
+      ]
+    },
+    {
+      "key": "price.fixed_small",
+      "label": "Small tier fixed monthly cost",
+      "value": 20.56,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "price",
+      "scope": "Official GCP Melbourne rates observed; 730 hours, 40 GiB standard disks, one in-use external IPv4",
+      "checked_at": "2026-10-05T08:49:08.705Z",
+      "fresh_for_minutes": 43200,
+      "evidence": [
+        "evidence/0015-official-pricing.json"
+      ]
+    },
+    {
+      "key": "price.fixed_medium",
+      "label": "Medium tier fixed monthly cost",
+      "value": 35.31,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "price",
+      "scope": "Official GCP Melbourne rates observed; 730 hours, 40 GiB standard disks, one in-use external IPv4",
+      "checked_at": "2026-10-05T08:49:08.798Z",
+      "fresh_for_minutes": 43200,
+      "evidence": [
+        "evidence/0015-official-pricing.json"
+      ]
+    },
+    {
+      "key": "gcp.machine",
+      "label": "e2-small has 2 GiB RAM",
+      "value": "e2-small: 2 GiB RAM, shared CPU",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Machine type describe in australia-southeast2-a",
+      "checked_at": "2026-10-05T08:49:08.980Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0013-machine-type.json"
+      ]
+    },
+    {
+      "key": "gcp.billing",
+      "label": "Billing enabled rechecked",
+      "value": true,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "permission",
+      "scope": "Pre-provision live gcloud check",
+      "checked_at": "2026-10-05T09:23:39.416Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0018-billing-recheck.json"
+      ]
+    },
+    {
+      "key": "gcp.owner",
+      "label": "Owner permission rechecked",
+      "value": "<ACCOUNT_EMAIL_011>: roles/owner",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "permission",
+      "scope": "Pre-provision live gcloud check",
+      "checked_at": "2026-10-05T09:23:39.511Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0019-owner-recheck.txt"
+      ]
+    },
+    {
+      "key": "gcp.compute_api",
+      "label": "Compute API rechecked",
+      "value": true,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "permission",
+      "scope": "Pre-provision live gcloud check",
+      "checked_at": "2026-10-05T09:23:39.616Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0021-services-recheck.txt"
+      ]
+    },
+    {
+      "key": "gcp.region",
+      "label": "Melbourne status and quotas rechecked",
+      "value": "UP; approved tier quotas available",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Pre-provision live gcloud check",
+      "checked_at": "2026-10-05T09:23:39.733Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0020-region-recheck.json"
+      ]
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-net",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-net present",
+      "value": "<W2_RUN_RESOURCE_PREFIX>-net",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Dedicated application network",
+      "checked_at": "2026-10-05T09:24:09.992Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0034-<W2_RUN_RESOURCE_PREFIX>-net-describe.txt"
+      ]
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-subnet",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-subnet present",
+      "value": "<W2_RUN_RESOURCE_PREFIX>-subnet",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Private VM subnet",
+      "checked_at": "2026-10-05T09:24:40.768Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0038-<W2_RUN_RESOURCE_PREFIX>-subnet-describe.txt"
+      ]
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh present",
+      "value": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "SSH restricted to Google IAP",
+      "checked_at": "2026-10-05T09:24:53.386Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0042-<W2_RUN_RESOURCE_PREFIX>-iap-ssh-describe.txt"
+      ]
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-ip",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-ip present",
+      "value": "<W2_RUN_RESOURCE_PREFIX>-ip",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Static public IPv4 for user-managed DNS",
+      "checked_at": "2026-10-05T09:25:05.548Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0046-<W2_RUN_RESOURCE_PREFIX>-ip-describe.txt"
+      ]
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-data",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-data present",
+      "value": "<W2_RUN_RESOURCE_PREFIX>-data",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Retained PostgreSQL data, secrets and certificate storage",
+      "checked_at": "2026-10-05T09:25:11.674Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0050-<W2_RUN_RESOURCE_PREFIX>-data-describe.txt"
+      ]
+    },
+    {
+      "key": "gcp.project",
+      "label": "Target project reverified before write",
+      "value": "<CLOUD_PROJECT>",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "identity",
+      "scope": "Explicit project describe before create-vm",
+      "checked_at": "2026-10-05T09:25:12.918Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0051-create-vm-target.txt"
+      ]
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-vm",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-vm present",
+      "value": "<W2_RUN_RESOURCE_PREFIX>-vm",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Approved option A application VM",
+      "checked_at": "2026-10-05T09:25:30.978Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0054-<W2_RUN_RESOURCE_PREFIX>-vm-describe.txt"
+      ]
+    },
+    {
+      "key": "resource.<W2_RUN_RESOURCE_PREFIX>-vm-boot",
+      "label": "<W2_RUN_RESOURCE_PREFIX>-vm-boot present",
+      "value": "<W2_RUN_RESOURCE_PREFIX>-vm-boot",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "Retained 20 GiB boot disk created with VM",
+      "checked_at": "2026-10-05T09:25:32.128Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0055-<W2_RUN_RESOURCE_PREFIX>-vm-boot-describe.txt"
+      ]
+    }
+  ],
+  "secrets": [
+    {
+      "name": "SECRET_KEY",
+      "location": "Planned /srv/<W2_RUN_RESOURCE_PREFIX>/secrets/api.env on data disk",
+      "last_verified_at": null,
+      "availability": "missing"
+    },
+    {
+      "name": "POSTGRES_PASSWORD",
+      "location": "Planned /srv/<W2_RUN_RESOURCE_PREFIX>/secrets/db.env on data disk",
+      "last_verified_at": null,
+      "availability": "missing"
+    },
+    {
+      "name": "ADMIN_INITIAL_PASSWORD",
+      "location": "Planned root-only /srv/<W2_RUN_RESOURCE_PREFIX>/secrets/admin.json",
+      "last_verified_at": null,
+      "availability": "missing"
+    }
+  ],
+  "open_items": [
+    {
+      "text": "User will add Cloudflare DNS after static IPv4 is allocated; exact value unavailable before approval.",
+      "owner": "human",
+      "blocking": true
+    },
+    {
+      "text": "Provider files referenced by router are absent; official docs and CLI evidence used.",
+      "owner": "ai",
+      "blocking": false
+    }
+  ],
+  "next": {
+    "action": "Upload release through IAP; initialize new disk and deploy; verify before web firewall and DNS handoff",
+    "decision_owner": "ai"
+  },
+  "handoff": {
+    "read_first": [
+      "/private/tmp/qefdb2bab/d1020f3ce00567b7/skills/router.md",
+      "state.json",
+      "events.jsonl (recent events only)"
+    ],
+    "last_safe_state": "Approved VM and disks created; public web firewall not yet created. Data disk awaiting initialization.",
+    "rollback_anchor": null,
+    "known_unverified": [
+      "Cloud application runtime, public HTTPS, browser signup/login and data persistence after reboot remain unverified."
+    ],
+    "fragile": []
+  }
+}

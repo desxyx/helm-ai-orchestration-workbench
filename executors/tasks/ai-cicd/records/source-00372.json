@@ -1,0 +1,41 @@
+{
+  "run_id": "RUN-W3",
+  "M8": {
+    "seconds": null,
+    "correct": null,
+    "status": "UNMEASURABLE",
+    "resource": "RESOURCE_X",
+    "query_issued_at": null,
+    "answer_returned_at": null,
+    "probe_performed": false,
+    "reason": "No external timer or complete required corpus/fresh-probe record. No new session contacted."
+  },
+  "A6": {
+    "status": "UNVERIFIED",
+    "resource_identity_topology": null,
+    "frontend_backend_shas": null,
+    "config_source": null
+  },
+  "record_only_reconstruction_not_scored": {
+    "created_at_utc": "2026-10-06T12:35:52Z",
+    "result_seen_at_utc": "2026-10-06T12:35:58Z",
+    "why": "Static external address for the single serving VM, stable public DNS destination and planned HTTPS deployment.",
+    "label": "INFERRED",
+    "confidence": "HIGH",
+    "locators": [
+      "packet/CONTROL_FACTS.md#CP-01",
+      "packet/evidence/deployer_record/events.jsonl:L32",
+      "packet/evidence/deployer_record/events.jsonl:L33",
+      "packet/evidence/transcripts/<NATIVE_ID_1514>.jsonl:L323",
+      "packet/evidence/deployer_record/evidence/0009-address-create.txt"
+    ]
+  },
+  "required_corpus_missing": [
+    "Complete sealed pre-teardown workspace archive (including deploy files and source tree)"
+  ],
+  "not_substitutes": [
+    "Final post-teardown state.json",
+    "Main Observer memory",
+    "Owner human-comprehension responses (not delivered)"
+  ]
+}

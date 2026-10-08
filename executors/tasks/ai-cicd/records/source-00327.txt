@@ -1,0 +1,45 @@
+$ bash -c gcloud compute firewall-rules describe <RUN_FIREWALL> --project <CLOUD_PROJECT> --format='yaml(name,network.basename(),direction,sourceRanges,allowed,targetTags,disabled)'; echo ---; gcloud compute disks describe <RUN_DATA_DISK> --zone australia-southeast1-b --project <CLOUD_PROJECT> --format='yaml(name,sizeGb,type.basename(),status,resourcePolicies.map().basename(),users)'; echo ---; gcloud compute resource-policies describe <RUN_SNAPSHOT_POLICY> --region australia-southeast1 --project <CLOUD_PROJECT> --format='yaml(name,status,snapshotSchedulePolicy)'
+# started 2026-10-06T12:52:02.000Z  ended 2026-10-06T12:52:15.000Z  exit 0
+--- stdout
+allowed:
+- IPProtocol: tcp
+  ports:
+  - '80'
+- IPProtocol: tcp
+  ports:
+  - '443'
+- IPProtocol: udp
+  ports:
+  - '443'
+direction: INGRESS
+disabled: false
+name: <RUN_FIREWALL>
+network: default
+sourceRanges:
+- 0.0.0.0/0
+targetTags:
+- taiga-web
+---
+name: <RUN_DATA_DISK>
+resourcePolicies:
+- <RUN_SNAPSHOT_POLICY>
+sizeGb: '10'
+status: READY
+type: pd-balanced
+---
+name: <RUN_SNAPSHOT_POLICY>
+snapshotSchedulePolicy:
+  retentionPolicy:
+    maxRetentionDays: 7
+    onSourceDiskDelete: KEEP_AUTO_SNAPSHOTS
+  schedule:
+    dailySchedule:
+      daysInCycle: 1
+      duration: PT14400S
+      startTime: 16:00
+  snapshotProperties:
+    guestFlush: false
+    storageLocations:
+    - australia-southeast1
+status: READY
+--- stderr

@@ -1,0 +1,26 @@
+Captured 2026-10-06 ~12:20Z (UTC). Read-only: Cloud Billing Catalog API
+GET <PRIVATE_URL_0075> (Compute Engine),
+OnDemand list prices, USD, filtered to us-central1 / australia-southeast1 / global.
+
+SKU            | Description                              | Region               | Unit     | Price
+9819-4AB8-1A87 | E2 Instance Core running in Sydney       | australia-southeast1 | h        | 0.03095064
+F9E1-E6EF-86F3 | E2 Instance Ram running in Sydney        | australia-southeast1 | GiBy.h   | 0.00414759
+CF4E-A0C7-E3BF | E2 Instance Core running in Americas     | us-central1          | h        | 0.02181159
+F449-33EC-A5EF | E2 Instance Ram running in Americas      | us-central1          | GiBy.h   | 0.00292353
+B046-9075-75BA | Balanced PD Capacity in Sydney           | australia-southeast1 | GiBy.mo  | 0.135
+6AE1-525F-8B80 | Balanced PD Capacity                     | us-central1 (+others)| GiBy.mo  | 0.10
+C8DC-D162-2E92 | Storage PD Snapshot in Sydney            | australia-southeast1 | GiBy.mo  | 0.062
+817F-F5A3-514E | Storage PD Snapshot                      | us-central1 (+others)| GiBy.mo  | 0.05
+C054-7F72-A02E | External IP Charge on a Standard VM      | global               | h        | 0.005 (after first 744 h)
+86CA-83C3-89BA | Static Ip Charge in Sydney (unattached)  | australia-southeast1 | h        | 0.014
+66A2-68EA-56BE | Static Ip Charge (unattached)            | us-central1          | h        | 0.01
+
+Derived monthly estimates (730 h/month; e2-small bills 0.5 vCPU + 2 GiB, e2-medium 1 vCPU + 4 GiB):
+Sydney  e2-small  : (0.5*0.03095 + 2*0.004148)*730 = 17.35 USD
+Sydney  e2-medium : (1.0*0.03095 + 4*0.004148)*730 = 34.71 USD
+US-C1   e2-small  : (0.5*0.02181 + 2*0.002924)*730 = 12.23 USD
+US-C1   e2-medium : (1.0*0.02181 + 4*0.002924)*730 = 24.46 USD
+30 GiB balanced disk: Sydney 4.05, us-central1 3.00 USD
+External IP in use : 0.005*730 = 3.65 USD
+Daily snapshots of a 10 GiB data disk, 7 kept (incremental, est. 2-10 GiB stored): ~0.1-0.6 USD
+Network egress for a small team: est. 0-2 USD (not priced from catalog; estimate)

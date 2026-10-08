@@ -1,0 +1,121 @@
+{
+  "tool": "discoverability",
+  "run_id": "DRYRUN",
+  "workspace_relative_to_chain_top": "site/app",
+  "targets": [
+    "W2B_EXPORT",
+    "HELM",
+    "PRODUCT_REPO"
+  ],
+  "labels_checked": 14,
+  "label_check_above_chain_top": true,
+  "entries_listed": 86,
+  "entry_cap_reached": false,
+  "findings": [
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/Operations Coordinator-science-review.FsckOu",
+      "label": "Operations Coordinator",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/OPERATIONS_COORDINATOR_ai_cicd_init",
+      "label": "Operations Coordinator",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/helm_candidates.txt",
+      "label": "HELM",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/helm_grep_err.txt",
+      "label": "HELM",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/helm_hits.txt",
+      "label": "HELM",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/helm_hits2.txt",
+      "label": "HELM",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w1_council_authority_20260928",
+      "label": "Council",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w1_council_export_groups_20260928",
+      "label": "Council",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-attempt2-browser-evidence.json",
+      "label": "WatchOver",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-attempt2-precleanup.png",
+      "label": "WatchOver",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-codex-instruction-probe",
+      "label": "WatchOver",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-harness-dryrun-workspace",
+      "label": "WatchOver",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-harness-evidence-prepatch",
+      "label": "WatchOver",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-harness-scan-corpus",
+      "label": "WatchOver",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-r3-screens-20260929",
+      "label": "WatchOver",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover_attempt2_browser_check.py",
+      "label": "WatchOver",
+      "via": "above_chain_top:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover_bundle_metadata",
+      "label": "WatchOver",
+      "via": "above_chain_top:/private/tmp"
+    }
+  ],
+  "unlistable": [],
+  "verdict": "LABELLED",
+  "timestamp": "2026-10-04T09:48:30.004Z"
+}

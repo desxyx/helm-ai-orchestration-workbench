@@ -1,0 +1,291 @@
+{
+  "artifact_class": "RAW_SNAPSHOT_MECHANICAL_SUMMARY_PRIVATE",
+  "recorded_at": "2026-10-05T20:37:42+11:00",
+  "run_id": "RUN-W2B",
+  "receipt_id": "AI-CICD-20261005-W2B-CP01-READONLY-001",
+  "provider_command_attempts": 8,
+  "commands_all_exit_zero": true,
+  "primary_asset_count": 147,
+  "primary_asset_task_matches": [
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast2-a/instances/<W2_RUN_RESOURCE_PREFIX>-vm",
+      "assetType": "compute.googleapis.com/Instance"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast2-a/disks/<W2_RUN_RESOURCE_PREFIX>-vm",
+      "assetType": "compute.googleapis.com/Disk"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast2-a/disks/<W2_RUN_RESOURCE_PREFIX>-data",
+      "assetType": "compute.googleapis.com/Disk"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/australia-southeast2/addresses/<W2_RUN_RESOURCE_PREFIX>-ip",
+      "assetType": "compute.googleapis.com/Address"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "assetType": "compute.googleapis.com/Firewall"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/australia-southeast2/subnetworks/<W2_RUN_RESOURCE_PREFIX>-subnet",
+      "assetType": "compute.googleapis.com/Subnetwork"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/networks/<W2_RUN_RESOURCE_PREFIX>-net",
+      "assetType": "compute.googleapis.com/Network"
+    }
+  ],
+  "vm": {
+    "name": "<W2_RUN_RESOURCE_PREFIX>-vm",
+    "id": "<NUMERIC_RESOURCE_0150>",
+    "status": "RUNNING",
+    "zone": "<PRIVATE_URL_0447>",
+    "creationTimestamp": "2026-10-05T02:25:19.556-07:00",
+    "lastStartTimestamp": "2026-10-05T02:25:28.665-07:00",
+    "machineType": "<PRIVATE_URL_0440>"
+  },
+  "vm_disk_auto_delete": [
+    false,
+    false
+  ],
+  "task_disks": [
+    {
+      "name": "<W2_RUN_RESOURCE_PREFIX>-data",
+      "id": "<NUMERIC_RESOURCE_0026>",
+      "sizeGb": "20",
+      "status": "READY",
+      "zone": "<PRIVATE_URL_0447>",
+      "creationTimestamp": "2026-10-05T02:25:08.421-07:00"
+    },
+    {
+      "name": "<W2_RUN_RESOURCE_PREFIX>-vm",
+      "id": "<NUMERIC_RESOURCE_0005>",
+      "sizeGb": "20",
+      "status": "READY",
+      "zone": "<PRIVATE_URL_0447>",
+      "creationTimestamp": "2026-10-05T02:25:19.564-07:00"
+    }
+  ],
+  "task_address": {
+    "name": "<W2_RUN_RESOURCE_PREFIX>-ip",
+    "id": "<NUMERIC_RESOURCE_0095>",
+    "status": "IN_USE",
+    "address": "<IP_ADDRESS_113>",
+    "region": "<PRIVATE_URL_0351>",
+    "creationTimestamp": "2026-10-05T02:25:00.645-07:00",
+    "users": [
+      "<PRIVATE_URL_0439>"
+    ]
+  },
+  "task_networks": [
+    "<W2_RUN_RESOURCE_PREFIX>-net"
+  ],
+  "task_subnets": [
+    "<W2_RUN_RESOURCE_PREFIX>-subnet"
+  ],
+  "task_firewalls": [
+    {
+      "name": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "allowed": [
+        {
+          "IPProtocol": "tcp",
+          "ports": [
+            "22"
+          ]
+        }
+      ],
+      "sourceRanges": [
+        "<IP_ADDRESS_119>/20"
+      ]
+    }
+  ],
+  "task_operations": [
+    {
+      "name": "<CLIENT_RESOURCE_00868>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0283>",
+      "endTime": "2026-10-04T19:59:07.227-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00870>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0273>",
+      "endTime": "2026-10-04T19:59:26.783-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00871>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0272>",
+      "endTime": "2026-10-04T19:59:33.080-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00882>",
+      "operationType": "delete",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0273>",
+      "endTime": "2026-10-04T22:01:11.261-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00883>",
+      "operationType": "delete",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0272>",
+      "endTime": "2026-10-04T22:01:10.558-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00885>",
+      "operationType": "delete",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0283>",
+      "endTime": "2026-10-04T22:01:40.622-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00888>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0282>",
+      "endTime": "2026-10-05T02:24:07.687-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00890>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0272>",
+      "endTime": "2026-10-05T02:24:51.172-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00867>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0393>",
+      "endTime": "2026-10-04T19:22:22.964-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00869>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0399>",
+      "endTime": "2026-10-04T19:59:19.232-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00881>",
+      "operationType": "delete",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0393>",
+      "endTime": "2026-10-04T22:01:03.764-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00884>",
+      "operationType": "delete",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0399>",
+      "endTime": "2026-10-04T22:01:22.419-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00889>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0351>",
+      "endTime": "2026-10-05T02:24:38.593-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00891>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0346>",
+      "endTime": "2026-10-05T02:25:03.247-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00872>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0453>",
+      "endTime": "2026-10-04T19:59:37.433-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00873>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0454>",
+      "endTime": "2026-10-04T19:59:54.677-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00876>",
+      "operationType": "stop",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0454>",
+      "endTime": "2026-10-04T20:54:17.892-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00877>",
+      "operationType": "start",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0454>",
+      "endTime": "2026-10-04T20:55:07.740-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00878>",
+      "operationType": "delete",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0454>",
+      "endTime": "2026-10-04T22:00:59.433-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00879>",
+      "operationType": "delete",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0453>",
+      "endTime": "2026-10-04T22:01:00.873-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00880>",
+      "operationType": "delete",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0452>",
+      "endTime": "2026-10-04T22:01:00.835-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00892>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0437>",
+      "endTime": "2026-10-05T02:25:09.875-07:00",
+      "error_present": false
+    },
+    {
+      "name": "<CLIENT_RESOURCE_00893>",
+      "operationType": "insert",
+      "status": "DONE",
+      "targetLink": "<PRIVATE_URL_0439>",
+      "endTime": "2026-10-05T02:25:28.694-07:00",
+      "error_present": false
+    }
+  ],
+  "snapshot_claim_limits": "Independent point-in-time inventory and operation status only, not HTTPS/app/data acceptance. VM output/metadata is private; no whole-project CLEAN claim. Cloud Asset can lag, supplemental direct reads retained.",
+  "no_secret_values_rendered": true
+}

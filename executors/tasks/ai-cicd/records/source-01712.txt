@@ -1,0 +1,28 @@
+$ gcloud compute ssh <ACCOUNT>@<W2_RUN_RESOURCE_PREFIX>-vm --zone=australia-southeast2-a --tunnel-through-iap --ssh-key-file=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-ssh-key --ssh-key-expire-after=2h --ssh-flag=-oUserKnownHostsFile=/private/tmp/<W2_RUN_RESOURCE_PREFIX>-known-hosts '--command=hostname; sudo lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINTS; sudo wipefs --no-act /dev/disk/by-id/google-<W2_RUN_RESOURCE_PREFIX>-data; cloud-init status --wait' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+<W2_RUN_RESOURCE_PREFIX>-vm
+NAME      SIZE FSTYPE   MOUNTPOINTS
+loop0    66.8M squashfs /snap/core24/2124
+loop1   348.2M squashfs /snap/google-cloud-cli/499
+loop2    50.3M squashfs /snap/snapd/27738
+sda        20G          
+├─sda1     19G ext4     /
+├─sda14     4M          
+├─sda15   106M vfat     /boot/efi
+└─sda16   913M ext4     /boot
+sdb        20G          
+status: done
+Updating project ssh metadata...
+............................................................................Updated [<PRIVATE_URL_0469>].
+...done.
+Waiting for SSH key to propagate.
+WARNING: 
+
+To increase the performance of the tunnel, consider installing NumPy. For instructions,
+please see <PRIVATE_URL_0075>ogle.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
+
+Warning: Permanently added 'compute.<NUMERIC_RESOURCE_0150>' (ED25519) to the list of known hosts.
+WARNING: 
+
+To increase the performance of the tunnel, consider installing NumPy. For instructions,
+please see <PRIVATE_URL_0075>ogle.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
+

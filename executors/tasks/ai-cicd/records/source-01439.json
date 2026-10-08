@@ -1,0 +1,88 @@
+{
+  "status": "DRAFT_NOT_AUTHORIZED",
+  "run_id": "RUN-W2B",
+  "project": "<CLOUD_PROJECT>",
+  "resources": [
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/<W2_RUN_RESOURCE_PREFIX>-web",
+      "assetType": "compute.googleapis.com/Firewall",
+      "location": "global"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast2-a/instances/<W2_RUN_RESOURCE_PREFIX>-vm",
+      "assetType": "compute.googleapis.com/Instance",
+      "location": "australia-southeast2-a"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast2-a/disks/<W2_RUN_RESOURCE_PREFIX>-vm",
+      "assetType": "compute.googleapis.com/Disk",
+      "location": "australia-southeast2-a"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast2-a/disks/<W2_RUN_RESOURCE_PREFIX>-data",
+      "assetType": "compute.googleapis.com/Disk",
+      "location": "australia-southeast2-a"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/australia-southeast2/addresses/<W2_RUN_RESOURCE_PREFIX>-ip",
+      "assetType": "compute.googleapis.com/Address",
+      "location": "australia-southeast2"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+      "assetType": "compute.googleapis.com/Firewall",
+      "location": "global"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/australia-southeast2/subnetworks/<W2_RUN_RESOURCE_PREFIX>-subnet",
+      "assetType": "compute.googleapis.com/Subnetwork",
+      "location": "australia-southeast2"
+    },
+    {
+      "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/networks/<W2_RUN_RESOURCE_PREFIX>-net",
+      "assetType": "compute.googleapis.com/Network",
+      "location": "global"
+    }
+  ],
+  "vm": {
+    "name": "<W2_RUN_RESOURCE_PREFIX>-vm",
+    "id": "<NUMERIC_RESOURCE_0150>",
+    "zone": "<PRIVATE_URL_0447>",
+    "attached_disks": [
+      {
+        "source": "<PRIVATE_URL_0438>",
+        "deviceName": "persistent-disk-0",
+        "autoDelete": false
+      },
+      {
+        "source": "<PRIVATE_URL_0437>",
+        "deviceName": "<W2_RUN_RESOURCE_PREFIX>-data",
+        "autoDelete": false
+      }
+    ]
+  },
+  "DNS_owner_action": {
+    "type": "A",
+    "name": "<W2_RUN_RESOURCE_PREFIX>",
+    "value": "<IP_ADDRESS_113>",
+    "zone": "<EXPERIMENT_DOMAIN>"
+  },
+  "app_data": "Database and private secrets on <W2_RUN_RESOURCE_PREFIX>-data permanently lost if disk deleted",
+  "scope_boundary": "Only this arm-created resources; default/unrelated project resources excluded",
+  "order": "Evidence and traceability archived first; user approves exact teardown scope; Deployer deletes; independent readonly residual then RUN_CLOSE",
+  "deployment_ssh_entry": "Only this deployment-added instance/project metadata SSH key entries; exact bound public key; preserve pre-existing/shared entries",
+  "residual_read_bundle": "Whole-project unfiltered asset listing plus compute/Run/disks/addresses/networks/subnets/firewalls/storage/SQL list; disabled API is not an empty list; no API enable",
+  "ready_for_user_approval": "After authorized trace result archive and Observer checkpoint prompt ready",
+  "deployment_ssh_key_binding": {
+    "public_key_sha256": "<PRIVATE_REF_03570>",
+    "public_key_path": "/private/tmp/<W2_RUN_RESOURCE_PREFIX>-ssh-key.pub",
+    "metadata_matching_entries": 1,
+    "remove_rule": "Remove only exact matching key material from task VM metadata; deleting VM removes its instance metadata; no project-wide or unrelated access deletion"
+  },
+  "project_ssh_key_scope": {
+    "exact_public_key_sha256": "<PRIVATE_REF_03570>",
+    "matching_entries_claimed": 8,
+    "guard": "Remove only deployment-added exact entries; preserve unrelated/pre-existing/shared entries and other metadata; if origin conflicts stop for owner decision",
+    "permission": "DRAFT_NOT_AUTHORIZED"
+  }
+}

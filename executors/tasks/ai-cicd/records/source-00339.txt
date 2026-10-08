@@ -1,0 +1,14 @@
+$ ssh -F C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/sshcfg taiga sudo docker compose -f /srv/taiga/app/docker-compose.yml ps --format "{{.Name}} {{.Status}}"; sudo docker logs --tail 4 taiga-taiga-back-1 2>&1; echo "--- entrypoint.sh line 1 in image:"; sudo docker run --rm --entrypoint sh taiga-back:<PRIVATE_REF_01638> -c "head -1 docker/entrypoint.sh | od -c | head -2"
+# started 2026-10-06T13:37:34.000Z  ended 2026-10-06T13:37:35.000Z  exit 0
+--- stdout
+taiga-caddy-1 Up 41 seconds
+taiga-postgres-1 Up 48 seconds (healthy)
+taiga-taiga-back-1 Restarting (127) 10 seconds ago
+env: ‘bash\r’: No such file or directory
+env: use -[v]S to pass options in shebang lines
+env: ‘bash\r’: No such file or directory
+env: use -[v]S to pass options in shebang lines
+--- entrypoint.sh line 1 in image:
+0000000   #   !   /   u   s   r   /   b   i   n   /   e   n   v       b
+0000020   a   s   h  \r  \n
+--- stderr

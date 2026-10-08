@@ -1,0 +1,10 @@
+$ gcloud compute instances create <RUN_VM_OR_BOOT_DISK> --zone australia-southeast1-b --machine-type e2-small --image-family debian-12 --image-project debian-cloud --boot-disk-size 20GB --boot-disk-type pd-balanced --address <RUN_STATIC_IP> --network-tier PREMIUM --tags taiga-web --disk name=<RUN_DATA_DISK>,device-name=<RUN_DATA_DISK>,mode=rw,boot=no,auto-delete=no --shielded-secure-boot --no-service-account --no-scopes --project <CLOUD_PROJECT>
+# started 2026-10-06T12:53:13.000Z  ended 2026-10-06T12:53:32.000Z  exit 0
+--- stdout
+NAME      ZONE                    MACHINE_TYPE  PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
+<RUN_VM_OR_BOOT_DISK>  australia-southeast1-b  e2-small                   <IP_ADDRESS_023>   <IP_ADDRESS_115>  RUNNING
+--- stderr
+Created [<PRIVATE_URL_0433>].
+WARNING: Some requests generated warnings:
+ - Disk size: '20 GB' is larger than image size: '10 GB'. You might need to resize the root repartition manually if the operating system does not support automatic resizing. See <PRIVATE_URL_0075>ogle.com/compute/docs/disks/add-persistent-disk#resize_pd for details.
+

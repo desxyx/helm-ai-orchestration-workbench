@@ -1,0 +1,22 @@
+{
+  "attempt": 13,
+  "query": "R10_subnets",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "compute",
+    "networks",
+    "subnets",
+    "list",
+    "--project=<CLOUD_PROJECT>",
+    "--quiet",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T23:57:06.298+11:00",
+  "end_utc": "2026-10-05T23:57:07.745+11:00",
+  "exit_code": 0,
+  "stdout": "R10_subnets_attempt13.stdout",
+  "stdout_sha256": "<PRIVATE_REF_02736>",
+  "stderr": "R10_subnets_attempt13.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

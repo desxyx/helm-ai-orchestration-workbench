@@ -1,0 +1,239 @@
+total 992
+drwxr-xr-x 1 <ACCOUNT> 197609      0 Oct  6 21:55 .
+drwxr-xr-x 1 <ACCOUNT> 197609      0 Oct  5 14:48 ..
+-rw-r--r-- 1 <ACCOUNT> 197609   4111 Oct  6 21:55 AMD_A5_CLOUD_RUN_EQUIVALENCE_2026-10-04.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2846 Oct  6 21:55 AMD_MA13_BILLING_SCOPE_CORRECTION_2026-10-02.md
+-rw-r--r-- 1 <ACCOUNT> 197609   1103 Oct  6 21:55 AMD_MA13_EXECUTION_CHAIN_NOTICE_2026-10-02.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3293 Oct  6 21:55 AMD_MA13_GCP_PROFILE_VALIDATION_2026-10-02.md
+-rw-r--r-- 1 <ACCOUNT> 197609   1261 Oct  6 21:55 AMD_MA13_R1_EXECUTION_CHAIN_NOTICE_2026-10-02.md
+-rw-r--r-- 1 <ACCOUNT> 197609   4565 Oct  6 21:55 AMD_W2_MAC_LIMITATION_ENTRY_2026-10-04.md
+-rw-r--r-- 1 <ACCOUNT> 197609   1906 Oct  6 21:55 AMD_W2_MODEL_PINS_2026-10-05.md
+-rw-r--r-- 1 <ACCOUNT> 197609   4792 Oct  6 21:55 AMD_W2_SOURCE_SEPARATION_2026-10-04.md
+-rw-r--r-- 1 <ACCOUNT> 197609 309870 Oct  6 21:55 OWNER_DECISION_LEDGER.md
+-rw-r--r-- 1 <ACCOUNT> 197609   1689 Oct  6 21:55 DOCKER_OWNER_CLEANUP_2026-10-05.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2318 Oct  6 21:55 DOCKER_OWNER_CLEANUP_DETAILS_2026-10-05.json
+-rw-r--r-- 1 <ACCOUNT> 197609   2414 Oct  6 21:55 DOCKER_OWNER_CLEANUP_RESULT_2026-10-05.md
+-rw-r--r-- 1 <ACCOUNT> 197609  39732 Oct  6 21:55 ESCALATION_REGISTER.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2553 Oct  6 21:55 HUMAN_BRIEFING_2026-09-30_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   1333 Oct  6 21:55 HUMAN_BRIEFING_2026-10-04_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   1632 Oct  6 21:55 HUMAN_BRIEFING_2026-10-06_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   1992 Oct  6 21:55 HUMAN_BRIEFING_2026-10-06_r2.md
+-rw-r--r-- 1 <ACCOUNT> 197609   8134 Oct  6 21:55 MA1_ADAPTER_R14_RATIFICATION_DRAFT_2026-10-04.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3168 Oct  6 21:55 MA1_ADAPTER_R3_FINITE_REVIEW_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3303 Oct  6 21:55 MA1_ADAPTER_R4_FINITE_REVIEW_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3066 Oct  6 21:55 MA1_ADAPTER_R4_FINITE_REWORK_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   5098 Oct  6 21:55 MA1_ADAPTER_R5_STATIC_PROVENANCE_REVIEW_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   4990 Oct  6 21:55 MA1_ADAPTER_R5_STATIC_PROVENANCE_REWORK_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   4665 Oct  6 21:55 MA1_ADAPTER_R6_LOG_CARDINALITY_REWORK_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2974 Oct  6 21:55 MA1_ADAPTER_RECORD_COMPLETION_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2354 Oct  6 21:55 MA1_ADAPTER_RECORD_STATIC_REVIEW_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3480 Oct  6 21:55 MA1_ADAPTER_RECORD_TARGETED_REWORK_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2717 Oct  6 21:55 MA1_ADAPTER_TARGETED_REREVIEW_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   6214 Oct  6 21:55 MA1_ALERTA_PROFILE_FINALIZATION_RELEASE_2026-10-04_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609  10533 Oct  6 21:55 MA1_GCP_PROFILE_VALIDATION_LOOP_DRAFT_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609  12216 Oct  6 21:55 MA1_GCP_PROFILE_VALIDATION_LOOP_RELEASE_2026-10-03_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609  13023 Oct  6 21:55 MA1_GCP_SUPPLEMENTAL_CAPTURE_DRAFT_2026-10-04_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609  15104 Oct  6 21:55 MA1_GCP_SUPPLEMENTAL_CAPTURE_RELEASE_2026-10-04_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   4120 Oct  6 21:55 MA1_MINIMAL_FIXTURE_BUILD_DRAFT_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   6025 Oct  6 21:55 MA1_MINIMAL_FIXTURE_BUILD_RELEASE_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   5151 Oct  6 21:55 MA1_MINIMAL_FIXTURE_DIFF_REVIEW_RELEASE_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   5648 Oct  6 21:55 MA1_MINIMAL_FIXTURE_REVIEW_RELEASE_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2482 Oct  6 21:55 MA1_MINIMAL_FIXTURE_TARGETED_REWORK_RELEASE_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2069 Oct  6 21:55 MA1_PROVISIONING_RUNTIME_FRESH_CONTINUATION_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   1620 Oct  6 21:55 MA1_PROVISIONING_RUNTIME_MANUAL_RESUME_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609  11398 Oct  6 21:55 MA1_PROVISIONING_RUNTIME_RELEASE_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2385 Oct  6 21:55 MA1_PROVISIONING_RUNTIME_RESUME_RELEASE_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3000 Oct  6 21:55 MA1_PROVISIONING_RUNTIME_RETRY_DRAFT_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3582 Oct  6 21:55 MA1_PROVISIONING_RUNTIME_RETRY_RELEASE_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   1519 Oct  6 21:55 MA1_RUNTIME_FRESH_Executor_Actor_01_ENTRY_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   4806 Oct  6 21:55 MA1_RUNTIME_FULL_REVIEW_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2171 Oct  6 21:55 MA1_RUNTIME_INC1_CORRECTION_REVIEW_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   6651 Oct  6 21:55 MA1_STATIC_PROVENANCE_EXECUTOR_REVIEWER_LOOP_RELEASE_2026-10-02_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   4186 Oct  6 21:55 PREFLIGHT_DISPATCH_2026-09-30_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   8973 Oct  6 21:55 PREFLIGHT_DISPATCH_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   4792 Oct  6 21:55 PREFLIGHT_DISPATCH_2026-10-01_r2.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2100 Oct  6 21:55 PREFLIGHT_DISPATCH_2026-10-06_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2096 Oct  6 21:55 PREFLIGHT_DISPATCH_2026-10-06_r2.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2633 Oct  6 21:55 PREFLIGHT_NOTE.md
+-rw-r--r-- 1 <ACCOUNT> 197609  13464 Oct  6 21:55 R10_GCP_EVIDENCE_DECISION_DRAFT_2026-10-04.md
+-rw-r--r-- 1 <ACCOUNT> 197609  10910 Oct  6 21:55 RESOLUTION_STAGE_DISPATCH_DRAFT_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   1877 Oct  6 21:55 RESOLUTION_STAGE_ENTRY_RELEASE_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609  10766 Oct  6 21:55 RESOLUTION_STAGE_EXECUTOR_RELEASE_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   5807 Oct  6 21:55 RESOLUTION_STAGE_REVIEW_RELEASE_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   5795 Oct  6 21:55 RESOLUTION_STAGE_TARGETED_REREVIEW_RELEASE_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   4410 Oct  6 21:55 RESOLUTION_STAGE_TARGETED_REREVIEW_RELEASE_2026-10-01_r2.md
+-rw-r--r-- 1 <ACCOUNT> 197609   4280 Oct  6 21:55 RESOLUTION_STAGE_TARGETED_REWORK_RELEASE_2026-10-01_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3568 Oct  6 21:55 RESOLUTION_STAGE_TARGETED_REWORK_RELEASE_2026-10-01_r2.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2774 Sep 30 20:54 RUN_W1_CARD.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2995 Oct  6 21:55 SKILL_MCP_LOADOUT_2026-09-30_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3506 Oct  6 21:55 SKILL_MCP_LOADOUT_2026-10-04_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3378 Oct  6 21:55 SKILL_MCP_LOADOUT_2026-10-06_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3121 Oct  6 21:55 SKILL_MCP_LOADOUT_2026-10-06_r2.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2556 Oct  6 21:55 SKILL_MCP_LOADOUT_GCP_PROFILE_2026-10-03_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609  40724 Sep 28 15:07 TASK_HANDOFF_BOARD.html
+-rw-r--r-- 1 <ACCOUNT> 197609   1984 Sep 28 15:07 TASK_HANDOFF_DATA.json
+-rw-r--r-- 1 <ACCOUNT> 197609  26453 Oct  6 21:55 TASK_STATE.md
+-rw-r--r-- 1 <ACCOUNT> 197609   2593 Oct  6 21:55 W2A_WORKSPACE_PLACEMENT_DECISION_2026-10-04.md
+-rw-r--r-- 1 <ACCOUNT> 197609   7034 Oct  6 21:55 W2_ACTUAL_ENTRY_PREPARATION_DRAFT_2026-10-04_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3469 Oct  6 21:55 W2_ACTUAL_ENTRY_PREPARATION_RELAY_2026-10-04_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609  13253 Oct  6 21:55 W2_ACTUAL_ENTRY_PREPARATION_RELEASE_2026-10-04_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609  10849 Oct  6 21:55 W2_ENTRY_LOCAL_PREPARATION_JOINT_DRAFT_2026-10-04_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609  13087 Oct  6 21:55 W2_ENTRY_LOCAL_PREPARATION_JOINT_RELEASE_2026-10-04_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3505 Oct  6 21:55 W2_ENTRY_LOCAL_PREPARATION_START_PROMPTS_2026-10-04_r1.md
+-rw-r--r-- 1 <ACCOUNT> 197609   3112 Oct  6 21:55 W2_ENTRY_OWNER_ASSISTANCE_2026-10-04.md
+-rw-r--r-- 1 <ACCOUNT> 197609   1726 Oct  6 21:55 W2_ENTRY_OWNER_ASSISTANCE_RESULT_2026-10-04.md
+-rw-r--r-- 1 <ACCOUNT> 197609   1952 Oct  6 21:55 W2_MINIMAL_ENTRY_DECISION_NOTICE_2026-10-04.md
+drwxr-xr-x 1 <ACCOUNT> 197609      0 Sep 28 15:07 evidence
+-rw-r--r-- 1 <ACCOUNT> 197609  15213 Oct  6 21:55 interactions.md
+-rw-r--r-- 1 <ACCOUNT> 197609  15777 Oct  6 21:55 observations.md
+   148 TASK_STATE.md
+  2142 OWNER_DECISION_LEDGER.md
+  2290 total
+# TASK_STATE — AI_CICD
+
+[Task name]: AI_CICD
+[W3 workload repository location]: Private <PRIVATE_URL_0164>; local Coding/WatchOver_AI_DevOps_Workloads/03_sealed_holdout_validation origin matched. Metadata only; actual frozen ref/mode/input release/access remain Windows intake facts. See current W3_REPOSITORY_LOCATION_SUPPLEMENT.md
+[Task root]: <HELM_ROOT>/council/task/AI_CICD
+[Operations Coordinator mirror root]: <HELM_ROOT>/<OPERATIONS_ROOT>/tasks/AI_CICD
+[Provider boundary]: Generic guidance and record keeping per Human Operator current clarification; core requires no GCP tools/project/profile. Current rounds/r4_PROVIDER_NEUTRAL_CLARIFICATION.md aligns existing eight-patch docs/examples/acceptance; no multi-cloud expansion or new review restart
+[Current mode]: Operations Coordinator control plane after successful final HELM receipt/tag synchronization; bounded lane stop recorded in ledger
+[Current stage]: MAC_PRODUCT_PRIVATE_PUSHED; WINDOWS_OPERATIONS_COORDINATOR_HANDOFF_REMOTE_AVAILABLE; FINAL_SYNC_RECEIPT_TAG
+[Active contract]: Direct Human Operator Mac scope execution/watchover_mac_close_2026-10-06/README.md; sealed PATCH_PLAN/ACCEPTANCE_MATRIX; r2_STAGE_RELEASE plus r3_CONTEXT_CONTINUATION_AMENDMENT for session reuse only; UserOps v0.5 and role Charter methods
+[Active reviewer file]: execution/watchover_mac_close_2026-10-06/rounds/r2_PLAN_REVIEW.md if unused; next unused role-owned round for any prior completed review/supplement. No new review received
+[Historical preparation reviewer file]: ../../../../executors/tasks/ai-cicd/records/source-00707.md; SHA-256 <PRIVATE_REF_01417>; BLOCKED readiness, completed verification
+[Executor status]: Executor Actor 01 product patch/freeze complete; exact0.1.1/tag/commit retained; Mac product lease ended. Operations Coordinator completed authorized private create/configure/push only
+[Reviewer status]: Reviewer Actor 02 exact local PASS r3_REVIEW on5e101471/tree6986c1a2/version0.1.1; allWMCclosed. Separate narrow publication verification pending manual prompt relay
+[Blue Deployer status]: Both deployment runs and approved teardown complete; no pending execution
+[Observer status]: RUN-W2A and RUN-W2B final seals received, verified and archived
+[Last Human Operator decision]: Directly push private prototype; delegated temp/prototype naming. Created helmls-studio/<PRIVATE_PROTOTYPE_REPOSITORY>/private/main/v0.1.1; public cleanup/export follows Windows final changes
+[Last accepted stage]: Both Observer seals and fresh descriptive comparison sealed; measurements unchanged
+[Open blockers]: No known local product blockers or private push blocker. Independent private-publication integrity return pending; actual Windows runtime/mode/client access before Windows entry
+[Next expected action]: Windows new Operations Coordinator reads WINDOWS_W3_TAKEOVER startup from private HELM, acknowledges actual paths/runtime/private fetch and routes narrow independent publication/sync verification; then final mode/business-task/evidence preparation
+[Council re-entry needed]: W2B §14.3 record-only return prepared; no dispatch or adjudication claimed. No automatic new review round
+[Risk class]: routine
+[Independence status]: Product local acceptance independent Reviewer Actor 02/OpenAI GPT-6 against Executor Actor 01/Anthropic Claude Opus5.5. Operations Coordinator executed private push and cannot independently accept it; Reviewer Actor 02 remote verification pending
+[External artifact expected]: Private prototype repo now exists and acceptedmain/tag pushed; Windows fetch handoff ready. Public sanitized export deferred until Windows final changes
+[Owner decisions pending]: No private repository/name/create/push decision pending. Actual Windows runtime/client/mode/evidence facts and eventual exact public target/sanitized release remain later inputs
+[Current release]: r2eightpatch+r3context+r4generic+r5privatefirst retained; r6_PRIVATE_PROTOTYPE_RELEASE executed. Private exactmain/v0.1.1 transfer done; no public/final experiment release
+[Current receipts]: All prior action receipts completed or consumed; not reusable
+[Selected actual directories]: Historical W2 run directories preserved. Product source <CLIENT_HOME>/Desktop/helmls-studio/watchover-ai-devops; next-stage entry in final handoff
+[Current exact local pins]: Product main<PRIVATE_REF_01823>/tree<PRIVATE_REF_01954>/version0.1.1; annotatedtag<PRIVATE_REF_02433>; remoteexactmatching; cleanmaintracksoriginmain
+[Actual routing]: Private HELM primary push verified; Windows new Operations Coordinator handoff available remotely. Final receipt/tag sync completes this Mac transfer. Product repo URL is explicit; no Windows ACK/behavior claimed
+[Boundary disclosures]: BE-1 W3 filenames only; BE-2 baseline external CLI invocation and possible unobserved network/client effects remain disclosed UNVERIFIED. Corrected r2 tests do not erase historical events; actual reset/isolation must cover retained patch/scratch/export residues
+[Open deferred items]: INC-1 egress uncertainty applies only to the completed local run; revisit before any W2 arm repeats the install path
+[Scope comparison]: Operations Coordinator checked original 00_recon plan and its retained roadmap v0.1 against later PRE_W2/AMD/R14: main experiment goals/workloads consistent; verifier/control and human-comprehension measurement engineering materially expanded. Report execution/w2_entry_preparation/PLAN_SCOPE_COMPARISON_2026-10-04.md in task root. No new technical review, extra platform/generalization task or gate waiver issued
+[Carry-forward debt]: W1 M7–M10 measurement limitations remain routed by the ratified disposition; product README rehearsal wording is stale but deferred; ignored `evidence/c7/` must remain untracked and unpublished; W2 interpretation must not generalise small-workload results into a final judgment on WatchOver's maintenance-phase value
+[Waiting on]: Independent narrow publication/sync return, Windows actual receipt ACK, actual client/runtime/mode/business-task entry; Mac has no product implementation task
+[Owner assistance result]: c01 login completed; accepted local/client/model readiness evidence retained. Docker subsequently removed by explicit Owner request; future entry uses post-cleanup baseline, not stale installation state
+[Docker cleanup]: Owner-directed uninstall completed; application/user data/installer and Docker profile blocks removed. Only 460-byte macOS-protected container metadata remains; source-04479.md. Future reset uses actual post-cleanup hashes/state; no new repair or reinstall
+[Amendment routing ACK]: Both red roles confirm exact amendment hashes; ACKs preceded later Docker removal. The run packet uses latest cleanup result. Existing c01 probes created runtime cache/state; memory absence does not imply all runtime state absent
+[Last updated by]: Operations Coordinator
+[Last updated]: 2026-10-06T21:26:14+11:00
+
+[Pre-run model and Observer update]: 2026-10-05T13:08:34+11:00; AMD-W2-MODEL-PINS-1 recorded. No live checkpoint, final authority or T0. New model choices are not prior probe results; session IDs remain pending.
+
+[Live run relay update]: 2026-10-05T13:19:14+11:00; Deployer active locally and first billable approval pending by user relay. Exact T0/release/session/source-entry facts not established, no retroactive authorization. HC-E1 INVALID_FOR_HC; no repeat. Region scope requires resolution; first-successful-billable-resource interruption remains.
+
+[Owner approval clarification]: 2026-10-05T13:21:53+11:00; Iowa/us-central1 is Deployer-selected; no Melbourne restriction was delivered. Human Operator approves first displayed billable proposal; advise Approved. Pending actual creation/checkpoint and exact live-entry history, no claim of historical formal release.
+
+[Current observed stage]: CP-01 FORCED_INTERRUPT; reserved IP succeeded, S1 paused. Local evidence sealed; S1 close/provider inventory/HC-INT/S2 pending. Observed T0 2026-10-05T02:03:09.492Z; formal pre-T0 release not evidenced. Actual client home default .codex differs from prepared c01; record limitations rather than claim CLEAN.
+
+[Next live action]: 2026-10-05T13:39:36+11:00; HC-INT own-answer lock, then fresh S2 same model/client/mode/workspace. Observer CP-01 raw packet prepared48 segments/receipt pending; no report yet. Cloud unchanged by controller, read-only receipt exhausted.
+
+[HC-INT lock]: 2026-10-05T02:45:27.888Z; within time box; no score/filled confidence. Quarantined own-answer hash only in custody.
+
+[Observer routing correction]: 2026-10-05T13:57:58+11:00; S2 continuation mistakenly sent to Observer, rejected without receipt. Same Observer retained; correct CP-01 packet reverified and routed, receipts pending.
+
+[Owner login observation]: 2026-10-05T14:52:07+11:00; successful logout/relogin self-report recorded under OWNER-TEST-ACCOUNT-1; signup and full A4 steps not inferred. Restart persistence still not independently verified.
+
+[Owner manual restart observation]: 2026-10-05T14:57:32+11:00; website and user/admin login reported normal after restart. Same alert identity/content confirmation and frozen restart evidence remain pending; no full A5 PASS.
+
+[Owner post-restart alert evidence]: 2026-10-05T15:00:13+11:00; pre-existing alert visible with matching resource/event/time display, screenshots sealed. Manual website/login/data-persistence observations collected; formal A1–A7/Observer metrics and trace/closure remain pending.
+
+[Final custodian close]: 2026-10-05T16:32:13+11:00; A1/A6 PASS, A2/A3/A4/A5/A7 UNVERIFIED, M1false/M9null/M11null, provenanceUNVERIFIED. Assisted descriptive observation; ineligible for unassisted causal comparison. AMD-DK5 missing proof yields formal INVALID. Durable close: ../../../../executors/tasks/ai-cicd/records/source-00742.md
+
+[W2B preparation]: 2026-10-05T16:43:25+11:00; operator ../../../../executors/tasks/ai-cicd/records/source-01429.md; workspace site-02/app empty; neutral Observer survey-7c92/work; actual .codex home continuity; hashes checked only, no suite replay or cloud/session launch.
+
+
+## W2B supplemental HC-TERM owner-answer lock — 2026-10-05T21:54:40+11:00
+
+Six owner answers preserved unchanged at hc_custody/HC_TERM_SUPPLEMENTAL_OWNER_ANSWERS_LOCKED.txt; SHA256 <PRIVATE_REF_01055>. All six confidence fields NOT_RECORDED, with no inference from owner wording. Original frozen HC-TERM remains INVALID_FOR_HC because prior website/Console/restart and credential observations preceded delivery; this is supplemental only. No correctness/key/score assigned; answers quarantined from Observer/Deployer/trace probes/later arms. Primary acceptance remains separately pending. No cloud actions or cleanup authority.
+
+
+## W2B registered verification, trace custody and Observer handoff ready — 2026-10-05T22:40:47+11:00
+
+Human Operator explicitly approves the concrete one-shot supplemental verification/read-only trace scope. Receipt AI-CICD-20261005-W2B-VERIFY-TRACE-001 consumed:1verificationbundle,1A4,1A3,9SDK read attempts including2existing configuration listings,1fresh trace session. No billable resource creation, DNS mutation, VM restart, collector installation or app/config changes. One synthetic account/key remains for eventual disk cleanup; frozen probe-created alert deleted by fixture. Existing-key/plain strict-host IAP log export only; first wrong data-directory read, then app-directory correction, original records retained.
+
+Frozen R14 verifier/fixtures copied byte-identically. A4 raw component PASS,8steps; derived key PASS. A3 all6HTTP tests OK/exit0, but backend access-log correlation empty at evaluation; unchanged component A3-P FAIL. No retry, report rewrite or advice to Deployer. A2 HAR absent; frozen A5 blackouts/sentinel/eligible guest/platform chain not collected; existing Owner/Deployer restart observations retained, not upgraded. Source provenance remains separately UNVERIFIED. Original R14 report overlay preserved; ratified source-separation governs effective component interpretation. Full current project metadata, trusted HTTPS and public DNS captured before cleanup.
+
+Full private workspace tar427233280bytes SHA256<PRIVATE_REF_01978> retained. Read-only trace corpus includes967text representations, current provider records and complete S1/S2 native transcripts; archive expanded, identities/credentials redacted, generated source-map pixels/binaries/dependency/git/cache/large assets withheld with custody record. Fresh trace session<NATIVE_ID_0314> uses actual claude-sonnet-5-5 for all4responses, all native responses delivered byte-identical. External timings M8=18.705314917s,A6resources=30.145774s,A6commits=31.244470s,A6config=41.493403s. No answer grade by Operations Coordinator; independent Observer judgment remains private/pending.
+
+Frozen SLIP-I run on complete352-record S1 has no parse/timestamp/order completeness errors; pre-T0 categories META3/USER4/UNKNOWN1, no observed assistant/tool category; world_state unknown retained for governed classification, not auto-passed. Frozen secret positive control detected/removed; selected965-file text corpus has no primary real-secret-pattern hit,103password-like candidate groups retained unclassified. Incomplete binary/dependency/text corpus coverage disclosed; no whole-arm M10 PASS assigned.
+
+CP01S1records1–352 and CP02S2records1–528 packaged with frozen tool,179segments continuous/lossless; all253checkpoint manifest files and62supplement files mechanically hash verified. No packet or Observer note read claimed. Neutral files staged at /private/tmp/survey-7c92/work/inbox; owner-relay prompt OBSERVER_CURRENT_HANDOFF_PROMPT.txt ready. Observer identity ACK/ingestion receipts NOT_RECEIVED, no RUN_CLOSE/final seal claimed. HC answers/keys/scores remain excluded.
+
+Concrete teardown scope prepared from current unfiltered inventory:8task-created resources, exact retained disks(autoDelete=false), one matching instance SSH key. DRAFT_NOT_AUTHORIZED; no deletion yet. DNS removal remains Owner action. Deployer teardown template and separate scope approval draft ready; no new Execution/Council or engineering rework.
+
+
+## W2B Observer intake acknowledgment and provisional limitations — 2026-10-05T12:26:28.443491+00:00
+
+Owner relays aggregate Observer acknowledgment:CP01(81segments),CP02(98),253checkpoint files/62supplement files hash-verified, chain/byte ranges continuous; supplement reviewed, no final seal. Individual native receipt ledger still pending. Relay preserved in evidence/OBSERVER_RELAY_QUARANTINED, never forwarded to Deployer/probe/later arms; private Observer notes not read. Deployer owner-relayed idle/complete statement is a repeated success claim, not new independent verification.
+
+Custody flags retained:bare personal login identifiers remain in already ingested inputs; future aliases expanded, historical packet/hash inputs immutable and no claim to erase prior exposure. Canonical arm token in control handoff path makes fully blinded Observer claim unavailable; dispatch read scope disclosed. Neutral custody notice prepared in Observer inbox. No new detection tool, test/review or deployment repair. Raw A3-P FAIL preserved; Observer provisional UNVERIFIED remains terminal rule-reconciliation point, not custodian replacement or PASS. Outside prior corpus verification-script read/use recorded from S2 tool events; assisted descriptive/comparison limitations retained; path alone does not establish prohibited prior-run analytical delivery.
+
+Eight-resource teardown and scoped residual draft remain UNAUTHORIZED. No cloud, DNS, restart, key/config or deletion action taken in this turn.
+
+
+## W2B relay disclosure and mirror recovery — 2026-10-05T12:28:35.172001+00:00
+
+Both prior pending mirror entries successfully appended to TASK_STATE and OWNER_DECISION_LEDGER; previous permission failure preserved, mirror status now UPDATED. Owner-relayed Observer provisional grades/flags reached custodian during verification before RUN_CLOSE, so total analysis quarantine until RUN_CLOSE is not claimed. Existing execution/HC/trace collection preceded relay; no grades/analysis forwarded to Deployer, probe or later arm. Neutral custody notice includes this disclosure and packet/identifier/blinding/raw-A3 limits; no new test, causal claim or score rewrite.
+
+
+## W2B Deployer teardown request relayed — 2026-10-05T12:42:49.153735+00:00
+
+Owner relays ready-for-teardown/no-deletions statement and request for literal approve teardown. Eight named resources match saved scope. Project SSH cleanup is explicitly this-deployment-only; retained Deployer inventory claims8matching entries, exact public-key blob matches bound run key; not independently asserted as project inventory. DRAFT scope includes only deployment-added instance/project entries, preserving pre-existing/shared access and other metadata. No Owner approval received, no cloud action/deletion. DNS A <W2_RUN_RESOURCE_PREFIX>→<IP_ADDRESS_113> remains Owner deletion only.
+
+
+## W2B Deployer teardown and independent RUN_CLOSE delivery — 2026-10-06T00:06:32.975323+11:00
+
+Native S2 proves Owner literal approve teardown at12:48:05.836Z(line648), Deployer terminal deletion declaration12:53:16.055Z(line731). Original full734-record S2 captured; CP02 original528-record prefix matches exact hash. Deployer performed approved8resource and deployment-added SSH cleanup; custodian performed no deletion/cloud mutation. Subject claims and own-session checks retained separately.
+
+Current Owner explicitly approves one independent residual bundle; receiptAI-CICD-20261005-W2B-RESIDUAL-001 consumed14/14 SDK and7/8 DNS attempts within issued30min window, no reuse. Unfiltered full-project inventory141assets and successful compute/Run/storage/subnet/project-key reads show no named deployment resource or bound SSH key. Same primary query's prior CP01 known Resource-X detection retained as positive control; existing default network/four firewalls/42subnets present. SQL supplementary query failed because API disabled: coverage PARTIAL, residual_billable_resources_count=null/UNVERIFIED, no whole-project clean claim, no APIenable/retry. Both Cloudflare authorities returnNXDOMAIN; same authority SOA positive controls pass; no additional DNS action requested.
+
+Final selected1190-file text corpus frozen scan canary detected/removed; no primary secret match,103candidate groups unclassified and archive coverage limits retained. CP03derived128files have no primary/candidate/registered residue; final two mechanical attachments added. Previous personal identifier exposure, possible arm-token dispatch exposure, early Observer grade relay, outside operational material adoption and entry/SLIP limits retained. No Observer private output read, no analysis feedback to Deployer/probe/later arm.
+
+CP03RUN_CLOSE prepared at neutral inbox /private/tmp/survey-7c92/work/inbox,45segments sequences180–224; original S2records529–734,130attachments,131manifest files. Full224-segment chain verifies and reconstructs losslessly. ManifestSHA256 <PRIVATE_REF_01812>; packetSHA256 <PRIVATE_REF_03474>. Exact neutral dispatch RUN_CLOSE_HANDOFF_PROMPT.txt ready for Owner relay. Ingestion/final sealing NOT_YET_ACKNOWLEDGED; no final verdict or whole-arm PASS asserted. Operations Coordinator awaits final Observer handoff, then durable seal registration/custodian disposition. No additional engineering, test, Council or cloud action needed.
+
+
+## Owner final-session endpoint and Windows follow-on — 2026-10-06T00:15:31.334948+11:00
+
+Owner directs current Operations Coordinator to persist through sealed W2 comparison report, then issue full handoff. Fresh Operations Coordinator takes product improvement and subsequent WatchOver remote push; Owner intends final W3 on Windows. This is future routing, not a new live run or immediate product/push dispatch. Current freeze continues until comparison seal. W3 workload remains excluded from builder context; Windows-specific runtime/reset/measurement and publication scope must be fixed by next custodian before execution. W2B final Observer seal not yet available; fresh comparison input is blocked on that actual seal, prior artifacts remain immutable. Direction: execution/w2_comparison_2026-10-06/OWNER_HANDOFF_DIRECTION.json.
+
+
+## W2B final seal registered / fresh comparison launched — 2026-10-06T09:36:19.034330+11:00
+
+Owner delivers final Observer seal from neutral FINAL_RUN-W2B_SEALED directory. Five outputs +manifest copied byte-identically/read-only; all6Owner pins and5manifest rows match. CP01/02/03 complete224segments, no gaps/overlap. Final A1/A4/A6PASS; A2/A3/A5/A7UNVERIFIED; A3rawFAIL retained, effective missing-check verdict Observer-owned; M1false/M9null/M10UNVERIFIED/M11null; source provenanceUNVERIFIED. No private Observer notes/drafts read. Final custodian record: execution/w2b_formal_entry_2026-10-05/RUN_W2B_CUSTODIAN_CLOSE.md.
+
+Literal AMD-DK5 exclusion cannot be proved from client-supplied pre-T0 developer/world_state task/treatment strings; no observed pre-T0 assistant/tool execution asserted. FormalINVALID recorded with raw/descriptive evidence retained and strict controlled causal-effect eligibility excluded. Master03§14.3 record-only Council return prepared, no dispatch/rework/rerun. Outside operational-material assistance and broader partial-blinding/identifier/early-analysis-relay limits preserved.
+
+Observer CP03D-1 remains immutable. Private-original <PRIVATE_REF_03350>…955cf vs delivered-redacted <PRIVATE_REF_03382>…753fa are verified distinct layers;206records each and exact delivered packet reconstruction; ambiguity in increment_sha256 field clarified separately in CP03_HASH_LAYER_CUSTODY_CLARIFICATION.json. Private-source hash not independently reproducible by Observer, no source or score rewrite.
+
+Both arms sealed; mapping and25-file input manifest released only now to a new record-only comparison session. Owner authorizes current Operations Coordinator through final report completion. Fresh Claude5.5 analysis launched with only Read/Glob/Grep, strict emptyMCP/no settings sources/no slash commands; no old context, no Deployer/HC/private-provider/product/W3 input. Analyst creates descriptive report only; no valid treatment-effect estimate, new fixture, metric amendment or product code action. Native result and final report/custody seal pending.
+
+
+## W2 comparison sealed and final Operations Coordinator handoff issued — 2026-10-06T10:10:47.396404+11:00
+
+Both Observer seals remain byte-identical. Fresh read-only Sonnet5.5 session <NATIVE_ID_2616> returned the descriptive comparison; one narrow binding/citation revision used the same fresh session. No new measurement, score rewrite, product change or cloud action. Final report: execution/w2_comparison_2026-10-06/RUN_W2_COMPARISON_REPORT.md; SHA256 <PRIVATE_REF_02244>. Comparison manifest SHA256 <PRIVATE_REF_02349>; all38files verified, original25-row plus1-row binding supplement verified,28input files copied byte-identically/read-only. Final report artifact scan positive control passes; no primary/synthetic/candidate/known-identifier match. Historical M10 unchanged.
+
+Both runs formalINVALID and assisted descriptive; no qualified unassisted causal-effect estimate. W2B A1/A4/A6PASS, other itemsUNVERIFIED, A3rawFAIL/effectiveUNVERIFIED preserved; both M1false/M9null/M10UNVERIFIED/M11null. Owner W2B satisfaction/timely-view excerpts preserved qualitatively. W2CNOT_EXECUTED. Cloud/DNS cleanup complete within known scope; SQL coverage and historical SSH baseline gaps remain. Council §14.3 record-only return prepared, not dispatched or adjudicated. All old action receipts consumed.
+
+Final handoff: handoff/Operations Coordinator/W2_comparison_close_2026-10-06/OPERATIONS_COORDINATOR_HANDOFF.md; startup NEXT_OPERATIONS_COORDINATOR_STARTUP_PROMPT.txt; general requirements NEXT_PHASE_GENERAL_REQUIREMENTS.md. Handoff manifest SHA256 <PRIVATE_REF_02032>; issue receipt SHA256 <PRIVATE_REF_01870>. Current Operations Coordinator endpoint fulfilled. New Operations Coordinator coordinates one bounded improvement, exact remote publication and Windows final experiment; no final-run release yet. Product baseline <PRIVATE_REF_02752> clean/no remote at inspection. Publication URL/branch/visibility and Windows runtime/final Basic-vs-Guarded scope remain future facts. W3 specifics excluded from builder loadout; no broad rework or additional experiments implied.
+
+
+## Owner HTML early-entry rule and handoff r2 — 2026-10-06T10:21:06.262845+11:00
+
+Owner explicitly directs Deployer to start the view service autonomously after basic facts and an initial plan, guide the human to this task's HTML, and wait for explicit page-visible confirmation before continuing. Before acknowledgment, only view access and record upkeep proceed; no dependency installs, builds, provisioning or deployment. Page visibility does not authorize spending/DNS/deletion. Same-task continuation may reuse recorded acknowledgment and restore the service.
+
+Applied three product instruction/document files: skills/router.md, skills/stages/plan.md, README.md. Runtime, schema and W2 report/metrics unchanged; no cloud action, commit or push. Product HEAD <PRIVATE_REF_02752> now has these3uncommitted changes; next Operations Coordinator retains and verifies behavior for publication. Change record: execution/w2_comparison_2026-10-06/owner_followup_html_entry_2026-10-06/OWNER_HTML_ENTRY_RULE_RECORD.json.
+
+Handoff updated and sealed as r2 at the same entry paths, original r1 preserved byte-identically in REVISIONS/r1. New handoff manifest SHA256 <PRIVATE_REF_01248>; issue receipt SHA256 <PRIVATE_REF_01664>. W2 comparison manifest remains <PRIVATE_REF_02349>. General requirements and startup prompt include the new rule and updated product state. No new measurement or retroactive W2 rule change.

@@ -1,0 +1,340 @@
+{
+  "task_ref": "WATCHOVER_FINAL_PATCH_2026-10-07",
+  "recorded_at": "2026-10-07T11:33:01.578808+00:00",
+  "kind": "UserOps locator and custody registration; not a new acceptance verdict",
+  "candidate": {
+    "commit": "<PRIVATE_REF_03069>",
+    "tree": "<PRIVATE_REF_01459>",
+    "version": "0.1.2"
+  },
+  "superseded_candidate": "<PRIVATE_REF_01925>",
+  "approved_basis": {
+    "sha256": "<PRIVATE_REF_01778>",
+    "current_matches_ratified_commit": true,
+    "ratified_helm_commit": "<PRIVATE_REF_03467>"
+  },
+  "source_root": "<CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07",
+  "source_states": {
+    "builder": {
+      "commit": "<PRIVATE_REF_03069>",
+      "tree": "<PRIVATE_REF_01459>",
+      "branch": "final-patch-2026-10-07",
+      "working_tree": "",
+      "version": "0.1.2",
+      "tags_at_candidate": [],
+      "schema_diff_empty": true
+    },
+    "reviewer": {
+      "commit": "<PRIVATE_REF_03069>",
+      "tree": "<PRIVATE_REF_01459>",
+      "branch": "",
+      "working_tree": "",
+      "version": "0.1.2",
+      "tags_at_candidate": [],
+      "schema_diff_empty": true
+    }
+  },
+  "control_files_per_role_matching": 7,
+  "builder_manifests_verified": [
+    "ARTIFACT_MANIFEST.json",
+    "r2/ARTIFACT_MANIFEST.json"
+  ],
+  "patches_byte_match_git_diff": true,
+  "reviewer_identity_assignment": "reviewer/output/review_log.md append binds earlier UNASSIGNED records to Owner-assigned Reviewer Actor 01",
+  "copied_files": 58,
+  "copied_bytes": 670322,
+  "files": [
+    {
+      "path": "builder/output/ARTIFACT_MANIFEST.json",
+      "bytes": 2421,
+      "sha256": "<PRIVATE_REF_02994>"
+    },
+    {
+      "path": "builder/output/CANDIDATE_LOCATOR.txt",
+      "bytes": 252,
+      "sha256": "<PRIVATE_REF_01930>"
+    },
+    {
+      "path": "builder/output/CANDIDATE_LOCATOR_r2.txt",
+      "bytes": 314,
+      "sha256": "<PRIVATE_REF_03583>"
+    },
+    {
+      "path": "builder/output/CHECKS.md",
+      "bytes": 5956,
+      "sha256": "<PRIVATE_REF_02254>"
+    },
+    {
+      "path": "builder/output/EXEC_ACK.md",
+      "bytes": 4778,
+      "sha256": "<PRIVATE_REF_02130>"
+    },
+    {
+      "path": "builder/output/EXEC_ACK_r2.md",
+      "bytes": 3380,
+      "sha256": "<PRIVATE_REF_01597>"
+    },
+    {
+      "path": "builder/output/F01-view-retry.log",
+      "bytes": 568,
+      "sha256": "<PRIVATE_REF_01176>"
+    },
+    {
+      "path": "builder/output/F01-view.log",
+      "bytes": 1616,
+      "sha256": "<PRIVATE_REF_03585>"
+    },
+    {
+      "path": "builder/output/SUBMISSION_r1.md",
+      "bytes": 12297,
+      "sha256": "<PRIVATE_REF_02092>"
+    },
+    {
+      "path": "builder/output/SUBMISSION_r2.md",
+      "bytes": 12013,
+      "sha256": "<PRIVATE_REF_03334>"
+    },
+    {
+      "path": "builder/output/affected-final.log",
+      "bytes": 7858,
+      "sha256": "<PRIVATE_REF_02238>"
+    },
+    {
+      "path": "builder/output/affected-first.log",
+      "bytes": 13445,
+      "sha256": "<PRIVATE_REF_03619>"
+    },
+    {
+      "path": "builder/output/baseline-to-candidate.patch",
+      "bytes": 87043,
+      "sha256": "<PRIVATE_REF_03238>"
+    },
+    {
+      "path": "builder/output/boundary-check.json",
+      "bytes": 1414,
+      "sha256": "<PRIVATE_REF_01885>"
+    },
+    {
+      "path": "builder/output/docs-scanner-recheck.log",
+      "bytes": 14354,
+      "sha256": "<PRIVATE_REF_02384>"
+    },
+    {
+      "path": "builder/output/freeze.log",
+      "bytes": 1246,
+      "sha256": "<PRIVATE_REF_02250>"
+    },
+    {
+      "path": "builder/output/r2/ARTIFACT_MANIFEST.json",
+      "bytes": 1966,
+      "sha256": "<PRIVATE_REF_01601>"
+    },
+    {
+      "path": "builder/output/r2/affected-first.log",
+      "bytes": 3900,
+      "sha256": "<PRIVATE_REF_03664>"
+    },
+    {
+      "path": "builder/output/r2/baseline-to-r2.patch",
+      "bytes": 96613,
+      "sha256": "<PRIVATE_REF_01981>"
+    },
+    {
+      "path": "builder/output/r2/boundary.json",
+      "bytes": 821,
+      "sha256": "<PRIVATE_REF_02031>"
+    },
+    {
+      "path": "builder/output/r2/check-boundary.py",
+      "bytes": 2147,
+      "sha256": "<PRIVATE_REF_03368>"
+    },
+    {
+      "path": "builder/output/r2/freeze.log",
+      "bytes": 1123,
+      "sha256": "<PRIVATE_REF_01947>"
+    },
+    {
+      "path": "builder/output/r2/performance-before.json",
+      "bytes": 488,
+      "sha256": "<PRIVATE_REF_01385>"
+    },
+    {
+      "path": "builder/output/r2/r1-to-r2.patch",
+      "bytes": 14420,
+      "sha256": "<PRIVATE_REF_03730>"
+    },
+    {
+      "path": "builder/output/r2/regression.log",
+      "bytes": 28089,
+      "sha256": "<PRIVATE_REF_03183>"
+    },
+    {
+      "path": "builder/output/r2/reproduction-before.json",
+      "bytes": 1295,
+      "sha256": "<PRIVATE_REF_03194>"
+    },
+    {
+      "path": "builder/output/regression-final.log",
+      "bytes": 27401,
+      "sha256": "<PRIVATE_REF_02121>"
+    },
+    {
+      "path": "builder/output/regression-first.log",
+      "bytes": 80462,
+      "sha256": "<PRIVATE_REF_01016>"
+    },
+    {
+      "path": "builder/output/regression-second.log",
+      "bytes": 37122,
+      "sha256": "<PRIVATE_REF_02560>"
+    },
+    {
+      "path": "builder/output/scenarios-recheck.log",
+      "bytes": 785,
+      "sha256": "<PRIVATE_REF_01254>"
+    },
+    {
+      "path": "reviewer/output/REVIEW_ENTRY.md",
+      "bytes": 6887,
+      "sha256": "<PRIVATE_REF_03588>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-F01-view.json",
+      "bytes": 2380,
+      "sha256": "<PRIVATE_REF_02536>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-F03-render-five.json",
+      "bytes": 1093,
+      "sha256": "<PRIVATE_REF_01052>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-F03-render-incident.log",
+      "bytes": 331,
+      "sha256": "<PRIVATE_REF_01333>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-F05A-false-positive-cli.log",
+      "bytes": 760,
+      "sha256": "<PRIVATE_REF_03462>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-F05B-baseline.json",
+      "bytes": 274,
+      "sha256": "<PRIVATE_REF_03611>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-F05C-git.log",
+      "bytes": 4016,
+      "sha256": "<PRIVATE_REF_03478>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-cli-checks.json",
+      "bytes": 11147,
+      "sha256": "<PRIVATE_REF_03674>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-cli-checks.stderr",
+      "bytes": 0,
+      "sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-raw-first-findings.md",
+      "bytes": 11859,
+      "sha256": "<PRIVATE_REF_02929>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-regression.log",
+      "bytes": 27243,
+      "sha256": "<PRIVATE_REF_03728>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-secret-checks.json",
+      "bytes": 12540,
+      "sha256": "<PRIVATE_REF_02060>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-secret-timing.log",
+      "bytes": 115,
+      "sha256": "<PRIVATE_REF_02540>"
+    },
+    {
+      "path": "reviewer/output/evidence/r1-terminal-intent-inplace.log",
+      "bytes": 1917,
+      "sha256": "<PRIVATE_REF_00998>"
+    },
+    {
+      "path": "reviewer/output/evidence/r2-F01-view.json",
+      "bytes": 2380,
+      "sha256": "<PRIVATE_REF_00988>"
+    },
+    {
+      "path": "reviewer/output/evidence/r2-F05A-cli.log",
+      "bytes": 472,
+      "sha256": "<PRIVATE_REF_00991>"
+    },
+    {
+      "path": "reviewer/output/evidence/r2-cli-checks.json",
+      "bytes": 11147,
+      "sha256": "<PRIVATE_REF_03393>"
+    },
+    {
+      "path": "reviewer/output/evidence/r2-raw-first-findings.md",
+      "bytes": 5183,
+      "sha256": "<PRIVATE_REF_02922>"
+    },
+    {
+      "path": "reviewer/output/evidence/r2-regression.log",
+      "bytes": 27855,
+      "sha256": "<PRIVATE_REF_02078>"
+    },
+    {
+      "path": "reviewer/output/evidence/r2-secret-checks.json",
+      "bytes": 17755,
+      "sha256": "<PRIVATE_REF_03309>"
+    },
+    {
+      "path": "reviewer/output/evidence/r2-terminal-intent-inplace.log",
+      "bytes": 957,
+      "sha256": "<PRIVATE_REF_01263>"
+    },
+    {
+      "path": "reviewer/output/evidence/scripts/r1_cli_checks.mjs",
+      "bytes": 16989,
+      "sha256": "<PRIVATE_REF_01881>"
+    },
+    {
+      "path": "reviewer/output/evidence/scripts/r1_secret_checks.mjs",
+      "bytes": 4795,
+      "sha256": "<PRIVATE_REF_02959>"
+    },
+    {
+      "path": "reviewer/output/evidence/scripts/r1_view_checks.mjs",
+      "bytes": 3815,
+      "sha256": "<PRIVATE_REF_02202>"
+    },
+    {
+      "path": "reviewer/output/evidence/scripts/r2_secret_checks.mjs",
+      "bytes": 7033,
+      "sha256": "<PRIVATE_REF_01354>"
+    },
+    {
+      "path": "reviewer/output/r1_REVIEW.md",
+      "bytes": 12548,
+      "sha256": "<PRIVATE_REF_02972>"
+    },
+    {
+      "path": "reviewer/output/r2_REVIEW.md",
+      "bytes": 7509,
+      "sha256": "<PRIVATE_REF_02802>"
+    },
+    {
+      "path": "reviewer/output/review_log.md",
+      "bytes": 5735,
+      "sha256": "<PRIVATE_REF_02966>"
+    }
+  ],
+  "product_tests_rerun_by_Operations Coordinator": false,
+  "product_tag_push_publish_executed": false
+}

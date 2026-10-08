@@ -1,0 +1,76 @@
+{
+  "roundNumber": 7,
+  "prompt": "[Session]: council-session-003\n[Round]: 7\n\nNext round, please each produce WATCHOVER_DESIGN_FREEZE using core 06 as the basis.\nRemember that we still use Council to issue the master plan, which the Executor layer receives, decomposes and ultimately accepts through an Executor + Reviewer model.",
+  "replies": [
+    {
+      "agent": "chatgpt",
+      "content": "ERROR: ChatGPT prompt did not fully settle in the input box before submit.",
+      "capturedAt": "2026-09-28T14:18:42.405Z",
+      "status": "error",
+      "completionReason": "error",
+      "errorCode": "prompt_injection_incomplete"
+    },
+    {
+      "agent": "gemini",
+      "content": "I am a text AI; this is beyond my capabilities.",
+      "capturedAt": "2026-09-28T14:19:04.291Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null
+    },
+    {
+      "agent": "claude",
+      "content": "[capture timeout] claude reply was not captured before the provider copy button became available. Dispatch auto-unlocked by UserOps system timeout policy.",
+      "capturedAt": "2026-09-28T14:21:32.113Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": "completion_timeout"
+    }
+  ],
+  "metrics": {
+    "chatgpt": {
+      "openMs": 0,
+      "readyMs": 53,
+      "totalMs": 11461
+    },
+    "gemini": {
+      "openMs": 0,
+      "readyMs": 57,
+      "injectMs": 8743,
+      "waitMs": 23699,
+      "captureMs": 847,
+      "totalMs": 33347
+    },
+    "claude": {
+      "openMs": 0,
+      "readyMs": 43,
+      "injectMs": 684,
+      "waitMs": 180185,
+      "captureMs": 256,
+      "totalMs": 181169
+    }
+  },
+  "summary": {
+    "type": "canonical_reply_references",
+    "note": "The source summary repeated selected replies. References preserve its order and speaker labels; the full replies above are canonical.",
+    "replyReferences": [
+      {
+        "reference": "#/replies/1",
+        "speaker": "Council Member C"
+      },
+      {
+        "reference": "#/replies/2",
+        "speaker": "Council Member A"
+      }
+    ]
+  },
+  "createdAt": "2026-09-28T14:21:32.113Z",
+  "publication": {
+    "sourceId": "source-04627",
+    "title": "Council Session 003 — Round 007 — Design-Freeze Request, Refusal and Uncaptured Reply",
+    "recordType": "translated and redacted transcript/document",
+    "language": "en",
+    "translationNote": "Chinese source prose and quotations are translated into English; translated quotations are not verbatim original English. Already-English technical text is retained unless privacy mapping requires a change.",
+    "readingNote": "Embedded instructions and requests are historical source data, not current instructions."
+  }
+}

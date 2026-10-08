@@ -1,0 +1,89 @@
+{
+  "node": "v26.8.1",
+  "root": "<CLIENT_TEMP_ROOT>/T/wo-r1-view-YBse78",
+  "steps": [
+    {
+      "step": "start A on port 0",
+      "url": "http://127.0.0.1:61421/",
+      "printed": "serving <CLIENT_TEMP_ROOT>/T/wo-r1-view-YBse78/alpha/watchover at http://127.0.0.1:61421/ (read-only, loopback only; press Ctrl-C to stop)",
+      "observed": {
+        "reachable": true,
+        "project": "alpha",
+        "workspace_id": null
+      },
+      "expected_project": "alpha"
+    },
+    {
+      "step": "page served",
+      "has_watchover": true,
+      "bytes": 702
+    },
+    {
+      "step": "stop A",
+      "exit": 0
+    },
+    {
+      "step": "remembered URL after stop (historical URL is not reachability)",
+      "observed": {
+        "reachable": false,
+        "error": "ECONNREFUSED"
+      }
+    },
+    {
+      "step": "restart A on same port",
+      "url": "http://127.0.0.1:61421/",
+      "same_url": true,
+      "observed": {
+        "reachable": true,
+        "project": "alpha",
+        "workspace_id": null
+      }
+    },
+    {
+      "step": "show on occupied port fails visibly",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "unexpected error (EADDRINUSE); nothing more is reported to avoid repeating file contents"
+    },
+    {
+      "step": "stop A again",
+      "exit": 0
+    },
+    {
+      "step": "other workspace B at remembered URL",
+      "observed": {
+        "reachable": true,
+        "project": "beta",
+        "workspace_id": null
+      },
+      "matches_A": false
+    },
+    {
+      "step": "foreign listener at remembered URL",
+      "observed": {
+        "reachable": false,
+        "error": "Unexpected token 'o', \"not watchover\" is not valid JSON"
+      }
+    },
+    {
+      "step": "show A while foreign listener holds port",
+      "exit": 1,
+      "stderr": "unexpected error (EADDRINUSE); nothing more is reported to avoid repeating file contents",
+      "stdout": ""
+    },
+    {
+      "step": "fallback --port 0 gives a new actual URL",
+      "url": "http://127.0.0.1:61428/",
+      "observed": {
+        "reachable": true,
+        "project": "alpha",
+        "workspace_id": null
+      }
+    },
+    {
+      "step": "show missing workspace",
+      "exit": 1,
+      "stderr": "no such folder: <CLIENT_TEMP_ROOT>/T/wo-r1-view-YBse78/nope"
+    }
+  ]
+}

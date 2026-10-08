@@ -1,0 +1,90 @@
+{
+  "artifact_class": "OWNER_REQUESTED_CONSOLIDATED_PATCH_EXECUTION_PACKAGE",
+  "prepared_at": "2026-10-06T01:03:51.604128+00:00",
+  "status": "SEALED_EXECUTION_PACKAGE",
+  "owner_direction": "Current Operations Coordinator consolidates Council candidates plus prior product suggestions; new Operations Coordinator implements",
+  "product_patches": [
+    "WO-P01",
+    "WO-P02",
+    "WO-P03",
+    "WO-P04",
+    "WO-P05",
+    "WO-P06",
+    "WO-P07",
+    "WO-P08"
+  ],
+  "single_final_freeze": true,
+  "Council_inputs": "Owner-pasted Executor Actor 03/Executor Actor 02/Executor Actor 01 integrated candidates in current conversation; source-to-scope mapping in DECISIONS_AND_TRACE.md; not a new Council adjudication",
+  "source_documents": [
+    {
+      "file": "handoff/Operations Coordinator/W2_comparison_close_2026-10-06/OPERATIONS_COORDINATOR_HANDOFF.md",
+      "sha256": "<PRIVATE_REF_03322>"
+    },
+    {
+      "file": "handoff/Operations Coordinator/W2_comparison_close_2026-10-06/NEXT_PHASE_GENERAL_REQUIREMENTS.md",
+      "sha256": "<PRIVATE_REF_01282>"
+    },
+    {
+      "file": "handoff/Operations Coordinator/W2_comparison_close_2026-10-06/SHA256SUMS_HANDOFF",
+      "sha256": "<PRIVATE_REF_01248>"
+    },
+    {
+      "file": "handoff/Operations Coordinator/W2_comparison_close_2026-10-06/HANDOFF_ISSUE_RECEIPT.json",
+      "sha256": "<PRIVATE_REF_01664>"
+    },
+    {
+      "file": "handoff/Operations Coordinator/W2_comparison_close_2026-10-06/PREVIOUS_OPERATIONS_COORDINATOR_SUPPLEMENT_2026-10-06.md",
+      "sha256": "<PRIVATE_REF_03040>"
+    },
+    {
+      "file": "handoff/Operations Coordinator/W2_comparison_close_2026-10-06/OWNER_FEEDBACK_COMPONENT_STATUS_2026-10-06.md",
+      "sha256": "<PRIVATE_REF_01862>"
+    },
+    {
+      "file": "execution/w2_comparison_2026-10-06/RUN_W2_COMPARISON_REPORT.md",
+      "sha256": "<PRIVATE_REF_02244>"
+    },
+    {
+      "file": "execution/w2_comparison_2026-10-06/SHA256SUMS_FINAL",
+      "sha256": "<PRIVATE_REF_02349>"
+    },
+    {
+      "file": "execution/watchover_mac_close_2026-10-06/README.md",
+      "sha256": "<PRIVATE_REF_01035>"
+    },
+    {
+      "file": "execution/watchover_mac_close_2026-10-06/rounds/r1_STAGE_RELEASE.md",
+      "sha256": "<PRIVATE_REF_03247>"
+    }
+  ],
+  "W2_comparison_sealed_at": "2026-10-05T23:06:57.516310+00:00",
+  "initial_HTML_rule_change_recorded_at": "2026-10-05T23:20:22.948377+00:00",
+  "initial_HTML_change_registered_after_comparison_seal": true,
+  "exact_independent_rule_write_timestamp": "NOT_SEPARATELY_ESTABLISHED; recorded chronology and hashes preserved",
+  "product_changes_in_this_packaging_turn": false,
+  "live_execution_or_cloud_actions": false,
+  "all_prior_seals_unchanged": true,
+  "source_loadout_split": {
+    "product_roles": [
+      "PATCH_PLAN.md",
+      "ACCEPTANCE_MATRIX.md",
+      "WINDOWS_HANDOFF.md",
+      "PRODUCT_SOURCE_PINS.json"
+    ],
+    "custodian_only": [
+      "DECISIONS_AND_TRACE.md",
+      "EVAL_PREPARATION_NOTE.md",
+      "PACKAGE_CUSTODY.json"
+    ]
+  },
+  "deferred": [
+    "scanner path noise classification",
+    "generic resource/fact upsert commands",
+    "redact tool",
+    "combined event+state transaction"
+  ],
+  "W3_specific_material_delivered": false,
+  "implementation_dispatched": false,
+  "sealed_at": "2026-10-06T01:07:15.678570+00:00",
+  "delivery_artifact_scan": "PACKAGE_ARTIFACT_SCAN.json; 0 secret, registered synthetic or unclassified credential candidates; positive control found and removed"
+}

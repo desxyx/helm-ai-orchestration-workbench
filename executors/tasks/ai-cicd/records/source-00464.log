@@ -1,0 +1,47 @@
+Command: ["node", "--test", "tests/vocabulary.test.mjs", "tests/docs.test.mjs", "tests/skills.test.mjs", "tests/neutral-domains.test.mjs"]
+CWD: verified product/
+WATCHOVER_PRIVACY_DENYLIST: external temporary input derived from private control file plus standalone oversight word, no private terms copied into product.
+✔ the README defines the product and separates Validated from Roadmap (1.893833ms)
+✔ no document makes a benchmark or result claim (1.642708ms)
+✔ documents allow attribution and history while excluding arm labels and private canaries (0.973875ms)
+✔ SECURITY.md covers secrets, the read-only local view, evidence and known limits (0.341458ms)
+✔ docs/architecture.md describes every component and trust boundary (0.3425ms)
+✔ README, validation and provenance agree on evidence and archive limits (0.826459ms)
+✔ local Markdown documentation links resolve inside the product (1.705459ms)
+✔ the README quick start runs as written and leaves a valid workspace (180.67825ms)
+✔ tracked domains stay generic except scoped dialect and exact public links (22.272042ms)
+✔ public URL exceptions reject suffixes, lookalikes and use outside documentation (0.16925ms)
+✔ the router lives at exactly skills/router.md, as the workspace pointer says (0.387958ms)
+✔ the router, stage and provider files exist, and nothing else is in skills/ (2.237167ms)
+✔ every skill stays inside its length budget (1.632916ms)
+✔ the router carries every always-on rule (0.5025ms)
+✔ every stage file restates the always-on rules (0.713708ms)
+✔ the router says what to read first, how to use the tools, and which one stage file to load (0.434958ms)
+✔ each stage file carries its Annex J responsibility (1.040209ms)
+✔ the handoff guidance covers all ten Annex K items (0.457667ms)
+✔ GCP is the target with validation pending; every other provider is UNVALIDATED (0.79575ms)
+✔ skills are neutral, client-neutral and free of governance or experiment wording (2.36425ms)
+✔ every example event in the skills is schema-valid once append fills its defaults (2.828792ms)
+✔ Cloudflare manual-edit mode records the approval and a gated intent before the human edits DNS (0.243375ms)
+✔ each experiment-wording guard catches its own class (0.422042ms)
+✔ the private-seat guard catches neutral canaries, whole words only (0.109ms)
+✔ the coordinator guard catches its neutral canary, whole words only (0.062ms)
+✔ the guards leave neutral product wording alone (0.071917ms)
+External privacy denylist: configured
+✔ tracked paths and content pass always-on guards and any configured private denylist (212.269667ms)
+✔ personal-path guards reject neutral account paths and allow ordinary local usage (0.191167ms)
+✔ bare historical stage labels are scoped to exactly three documents (0.089459ms)
+✔ external private terms detect neutral literal, escaped and split forms with exact URL exceptions (1.094ms)
+✔ the optional private input fails closed when configured incorrectly (0.79375ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 253.342959
+
+STDERR:
+
+EXIT_CODE=0

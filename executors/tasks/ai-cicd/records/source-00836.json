@@ -1,0 +1,19 @@
+{
+  "tool": "discoverability",
+  "run_id": "DRYRUN",
+  "workspace_relative_to_chain_top": "app",
+  "targets": [
+    "W2B_EXPORT_R2",
+    "W2B_EXPORT_R1",
+    "HELM",
+    "PRODUCT_REPO"
+  ],
+  "labels_checked": 14,
+  "label_check_above_chain_top": true,
+  "entries_listed": 114,
+  "entry_cap_reached": false,
+  "findings": [],
+  "unlistable": [],
+  "verdict": "CLEAN",
+  "timestamp": "2026-10-04T10:07:29.213Z"
+}

@@ -1,0 +1,36 @@
+This is the r2 scope update for independent Reviewer Actor 02.
+
+Read the current exclusive entry:
+source-04237.md
+
+Then read and follow the sealed package's actual Reviewer prompt:
+../../../../userops/tasks/ai-cicd/records/source-04442.txt
+
+That prompt and current r2 release replace the narrow r1 scope. Review all WO-P01–WO-P08
+against PATCH_PLAN, ACCEPTANCE_MATRIX and WINDOWS_HANDOFF with actual product source/tests.
+Do not load coordinator trace/evaluation or historical experimental/human/private materials.
+
+Human Operator explicitly directs you to continue your existing independent Reviewer session.
+Read rounds/r3_CONTEXT_CONTINUATION_AMENDMENT.md as the narrow override of fresh-context
+wording. Report completed reviews and exact accepted candidate/plan if any, then acknowledge
+the full r2 scope. Declare actual model/session/tools/permissions and cross-family
+independence. Product capability VerifyOnly; never implement fixes or alter actor evidence.
+Carry valid prior evidence forward; do not rewrite old reviews or claim a fresh context.
+
+Check the current Executor plan/supplement when submitted; use the next unused
+role-owned PLAN_REVIEW file (r2_PLAN_REVIEW.md if free). Review exact
+candidate and raw matrix evidence in role-owned round files. Return the complete finite
+blocking list and distinguish nonblocking suggestions, per current Charter §R4.
+Final PASS binds exact tree/commit/version and retains Windows behavior/OS limits.
+No new Mac multi-session AI rehearsal, cloud operation, installation or publication by Reviewer.
+
+Latest Owner product clarification: read rounds/r4_PROVIDER_NEUTRAL_CLARIFICATION.md.
+Keep generic core and shared rules independent of GCP. GCP-specific details stay in its
+profile; clarify generic product purpose versus provider validation coverage. Incorporate
+within the current eight-patch plan/rework and existing local checks; do not restart or
+expand to a multi-cloud implementation/validation project.
+
+Publication update: read rounds/r5_PRIVATE_FIRST_PUBLICATION.md. Current Mac deliverable
+is a private development/test release for Windows, not a public upload. Continue the current
+targeted product review; public sanitization follows Windows final changes as a separate
+export. Exact private remote/action still to be settled; no remote mutation from this note.

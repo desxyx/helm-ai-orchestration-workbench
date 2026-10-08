@@ -1,0 +1,7 @@
+[
+  "tests/helpers/vocabulary.mjs",
+  "tests/vocabulary.test.mjs",
+  "tests/docs.test.mjs",
+  "docs/architecture.md",
+  "docs/validation.md"
+]

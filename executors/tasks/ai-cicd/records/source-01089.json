@@ -1,0 +1,55 @@
+{
+  "recorded_at": "2026-10-05T13:54:42+11:00",
+  "source": "Human Operator relays S2 proposal; session facts only if found in local client-native metadata",
+  "s2_sessions": [
+    {
+      "session_id": "<NATIVE_ID_0060>",
+      "client": "0.160.0",
+      "cwd": "<CLIENT_HOME>/Workspaces/site-01/app",
+      "source": "<CLIENT_HOME>/.codex/sessions/2026/10/05/rollout-2026-10-05T13-49-55-<NATIVE_ID_0060>.jsonl",
+      "continuation": {
+        "timestamp": "2026-10-05T02:50:20.738Z",
+        "line": 9,
+        "exact_match": false,
+        "match_ignoring_terminal_newline": false,
+        "contains_original_brief": true
+      },
+      "runtime": {
+        "model": "gpt-6.1-sol",
+        "effort": "high",
+        "approval_policy": "on-request",
+        "sandbox_policy": {
+          "type": "workspace-write",
+          "writable_roots": [
+            "<CLIENT_HOME>/Desktop/Coding/WatchOver_AI_CICD_W1_2026-09-28",
+            "<HELM_ROOT>/<OPERATIONS_ROOT>/tasks/AI_CICD"
+          ],
+          "network_access": false,
+          "exclude_tmpdir_env_var": false,
+          "exclude_slash_tmp": false
+        }
+      }
+    }
+  ],
+  "proposal": {
+    "project": "<CLOUD_PROJECT> (original brief)",
+    "region": "us-central1",
+    "vm": "one e2-small",
+    "disks": "two20GB persistent disks",
+    "ancillary": "task network/firewall rules",
+    "address": "reuse existing<IP_ADDRESS_114>; no new IP proposed",
+    "dns": {
+      "type": "A",
+      "name": "<W2_RUN_RESOURCE_PREFIX>",
+      "address": "<IP_ADDRESS_114>",
+      "proxy": "DNS only",
+      "ttl": "Auto",
+      "actor": "Human Operator"
+    }
+  },
+  "approval_status": "within previously Owner-accepted plan; advise frozen reply Approved.; actual reply delivery unobserved",
+  "dns_status": "REQUESTED; no change or Done confirmation asserted",
+  "source_runtime_claims": "S2 reports commit verification/API correction/undeployed state; subject claims, not acceptance verdict",
+  "forced_interrupt": "CP-01 completed; no repeat trigger for subsequent resources",
+  "provider_action_by_Operations Coordinator": "NONE; CP01 query receipt exhausted"
+}

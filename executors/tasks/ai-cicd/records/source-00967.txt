@@ -1,0 +1,57 @@
++ set -u
++ MODE=all
++++ dirname tool/experiment-control-tool-0.3.1/tests/run_local_safe.sh
+++ cd tool/experiment-control-tool-0.3.1/tests
+++ pwd
++ HERE=<HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests
++ TOOL=<HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/../tool
+++ command -v node
++ NODE=/opt/homebrew/bin/node
+++ mktemp -d /private/tmp/r.XXXXXXXX
++ ROOT=/private/tmp/r.pi8Rs32A
++ '[' 1 = 1 ']'
++ mkdir -p /private/tmp/r.pi8Rs32A/stubbin /private/tmp/r.pi8Rs32A/tmp
++ for c in gh gcloud gsutil dig codex docker curl wget ssh scp
++ printf '#!/bin/sh\necho %s >> "%s/stub_calls.log"\nexit 127\n' gh /private/tmp/r.pi8Rs32A
++ chmod 755 /private/tmp/r.pi8Rs32A/stubbin/gh
++ for c in gh gcloud gsutil dig codex docker curl wget ssh scp
++ printf '#!/bin/sh\necho %s >> "%s/stub_calls.log"\nexit 127\n' gcloud /private/tmp/r.pi8Rs32A
++ chmod 755 /private/tmp/r.pi8Rs32A/stubbin/gcloud
++ for c in gh gcloud gsutil dig codex docker curl wget ssh scp
++ printf '#!/bin/sh\necho %s >> "%s/stub_calls.log"\nexit 127\n' gsutil /private/tmp/r.pi8Rs32A
++ chmod 755 /private/tmp/r.pi8Rs32A/stubbin/gsutil
++ for c in gh gcloud gsutil dig codex docker curl wget ssh scp
++ printf '#!/bin/sh\necho %s >> "%s/stub_calls.log"\nexit 127\n' dig /private/tmp/r.pi8Rs32A
++ chmod 755 /private/tmp/r.pi8Rs32A/stubbin/dig
++ for c in gh gcloud gsutil dig codex docker curl wget ssh scp
++ printf '#!/bin/sh\necho %s >> "%s/stub_calls.log"\nexit 127\n' codex /private/tmp/r.pi8Rs32A
++ chmod 755 /private/tmp/r.pi8Rs32A/stubbin/codex
++ for c in gh gcloud gsutil dig codex docker curl wget ssh scp
++ printf '#!/bin/sh\necho %s >> "%s/stub_calls.log"\nexit 127\n' docker /private/tmp/r.pi8Rs32A
++ chmod 755 /private/tmp/r.pi8Rs32A/stubbin/docker
++ for c in gh gcloud gsutil dig codex docker curl wget ssh scp
++ printf '#!/bin/sh\necho %s >> "%s/stub_calls.log"\nexit 127\n' curl /private/tmp/r.pi8Rs32A
++ chmod 755 /private/tmp/r.pi8Rs32A/stubbin/curl
++ for c in gh gcloud gsutil dig codex docker curl wget ssh scp
++ printf '#!/bin/sh\necho %s >> "%s/stub_calls.log"\nexit 127\n' wget /private/tmp/r.pi8Rs32A
++ chmod 755 /private/tmp/r.pi8Rs32A/stubbin/wget
++ for c in gh gcloud gsutil dig codex docker curl wget ssh scp
++ printf '#!/bin/sh\necho %s >> "%s/stub_calls.log"\nexit 127\n' ssh /private/tmp/r.pi8Rs32A
++ chmod 755 /private/tmp/r.pi8Rs32A/stubbin/ssh
++ for c in gh gcloud gsutil dig codex docker curl wget ssh scp
++ printf '#!/bin/sh\necho %s >> "%s/stub_calls.log"\nexit 127\n' scp /private/tmp/r.pi8Rs32A
++ chmod 755 /private/tmp/r.pi8Rs32A/stubbin/scp
++ case "$MODE" in
++ FILES=("$HERE"/*.test.js)
++ cd <HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/../tool
++ PATH='/private/tmp/r.pi8Rs32A/stubbin:<CLIENT_HOME>/.codex/packages/app-server-daemon/releases/0.160.0-aarch64-apple-darwin/codex-path:<CLIENT_HOME>/.antigravity-ide/antigravity-ide/bin:<CLIENT_HOME>/.local/bin:<CLIENT_HOME>/.local/bin:<CLIENT_HOME>/.antigravity/antigravity/bin:<CLIENT_HOME>/.splashkit:/opt/homebrew/opt/ruby/bin:/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/bin:<CLIENT_HOME>/.rvm/gems/ruby-3.4.2/bin:<CLIENT_HOME>/.rvm/gems/ruby-3.4.2@global/bin:<CLIENT_HOME>/.rvm/rubies/ruby-3.4.2/bin:<CLIENT_HOME>/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/usr/local/share/dotnet:~/.dotnet/tools:<CLIENT_HOME>/.codex/tmp/arg0/codex-arg0RpdHF4:<CLIENT_HOME>/.codex/packages/app-server-daemon/releases/0.160.0-aarch64-apple-darwin/codex-path:<CLIENT_HOME>/.codex/tmp/arg0/codex-arg0Jwqo9O:<CLIENT_HOME>/.codex/packages/app-server-daemon/releases/0.159.3-aarch64-apple-darwin/codex-path:<CLIENT_HOME>/.codex/tmp/arg0/codex-arg0rFPSFm:/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/codex-path:<CLIENT_HOME>/.rvm/gems/ruby-3.4.2/bin:<CLIENT_HOME>/.rvm/gems/ruby-3.4.2@global/bin:<CLIENT_HOME>/.rvm/rubies/ruby-3.4.2/bin:<CLIENT_HOME>/.antigravity-ide/antigravity-ide/bin:<CLIENT_HOME>/.local/bin:<CLIENT_HOME>/.antigravity/antigravity/bin:<CLIENT_HOME>/.splashkit:/opt/homebrew/opt/ruby/bin:/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.12/bin:<CLIENT_HOME>/.rvm/bin:/Applications/Warp.app/Contents/Resources/bin:<CLIENT_HOME>/.rvm/bin'
++ TMPDIR=/private/tmp/r.pi8Rs32A/tmp
++ /opt/homebrew/bin/node --test --test-reporter=tap <HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/approvalExtract.test.js <HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/entryCheck.test.js <HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/evidenceRegistryCheck.test.js <HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/pa4.test.js <HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/packageIncrement.test.js <HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/projectInventory.test.js <HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/render.test.js <HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/secretScan.test.js <HELM_ROOT>/council/task/AI_CICD/execution/w2_entry_preparation/tool/experiment-control-tool-0.3.1/tests/snapshot.test.js
++ rc=0
++ '[' -f /private/tmp/r.pi8Rs32A/stub_calls.log ']'
+++ sort /private/tmp/r.pi8Rs32A/stub_calls.log
+++ uniq -c
+++ tr -s ' '
+++ tr '\n' ';'
++ echo '# stubbed external calls (not executed):  2 codex; 14 gcloud; 4 gh;'
++ exit 0

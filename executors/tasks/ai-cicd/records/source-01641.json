@@ -1,0 +1,14 @@
+{
+  "artifact_class": "FULL_WORKSPACE_CUSTODY_ARCHIVE",
+  "source": "<CLIENT_HOME>/Workspaces/site-02/app",
+  "archive": "WORKSPACE_ARCHIVE_PRIVATE.tar",
+  "sha256": "<PRIVATE_REF_01978>",
+  "bytes": 427233280,
+  "started": "2026-10-05T10:58:15.950372+00:00",
+  "ended": "2026-10-05T10:58:21.715944+00:00",
+  "exclusions": [],
+  "symlinks": "preserved; no dereference outside workspace",
+  "private": true,
+  "observer_delivery": "Never deliver archive directly; contains dependencies/binaries and possible credential material",
+  "limitation": "Point-in-time capture after Owner manual verification, not claimed simultaneous with deployment declaration"
+}

@@ -1,0 +1,46 @@
+{
+  "run_id": "RUN-W3",
+  "observer_role": "independent post-hoc Observer",
+  "actual_identity": {
+    "assistant_name": "Codex",
+    "model_family": "GPT-6 (developer-provided identity)",
+    "model_id": null,
+    "client_name": "Codex tool-hosted session; Codex CLI asserted by task and manifest",
+    "client_version": null,
+    "session_id": null,
+    "orchestrator_task_name": "/root",
+    "reasoning_effort": null,
+    "fresh_session": "asserted by user; no earlier run analysis in supplied context",
+    "shell": "PowerShell",
+    "os": "Windows",
+    "identity_label": "DIRECT for visible assistant/task/shell identity; UNMEASURABLE for hidden model/version/session metadata"
+  },
+  "issued_identity_claim": {
+    "model": "gpt-6.1-sol",
+    "client": "Codex CLI",
+    "client_version": "0.160.1",
+    "reasoning_effort": "high",
+    "locator": "packet/RUN_MANIFEST.md; current user instruction"
+  },
+  "attestation_limitation": "The active context exposes no runtime model id, CLI build number or native session UUID. These actual values remain null. No environment, client logs or files outside packet/output were read to seek them. The issued claim is not silently promoted to actual runtime identity.",
+  "protocol_sha256": "<PRIVATE_REF_03170>",
+  "independence": {
+    "shares_model_family_with_deployer": false,
+    "reviewer_present_in_record": false,
+    "shares_model_family_with_reviewer": null,
+    "saw_prior_run_analytical_output": false,
+    "shared_execution_session_or_context": false,
+    "instrument_identical_across_compared_arms": null,
+    "reason_instrument_comparison_unknown": "No other arm or instrument supplied.",
+    "feedback_to_execution_chain": false
+  },
+  "contamination_status": "KNOWN_LIMITATION",
+  "disclosures": [
+    "Manifest reveals the treatment name, contrary to generic OBS-5/B.1 blinding.",
+    "W3 identity is deferred in common protocol; issued manifest supplies a run-specific identity claim.",
+    "W3 scope document retains prepared/not-issued wording within the issued packet; frozen common meanings were applied unchanged.",
+    "User explicitly authorizes post-hoc one-shot delivery, so no incremental receipts or hash chain were fabricated.",
+    "S1 pre-T0 contains a custody-file clipboard command and /model selection; same OS user provides relative isolation only.",
+    "HC answers/keys/scores were not delivered or inspected."
+  ]
+}

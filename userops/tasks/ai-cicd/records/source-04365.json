@@ -1,0 +1,22 @@
+{
+  "artifact_class": "FINAL_OPERATIONS_COORDINATOR_HANDOFF_ISSUE",
+  "issued_at": "2026-10-05T23:10:47.396404+00:00",
+  "status": "W2_COMPARISON_SEALED_AND_HANDOFF_ISSUED",
+  "owner_endpoint_fulfilled": "Current Operations Coordinator completes W2 comparison then hands off",
+  "handoff_manifest_sha256": "<PRIVATE_REF_02032>",
+  "manifest_scope": "Four final handoff artifacts; receipt digest recorded separately in task state",
+  "comparison_report_sha256": "<PRIVATE_REF_02244>",
+  "comparison_manifest_sha256": "<PRIVATE_REF_02349>",
+  "startup_prompt_sha256": "<PRIVATE_REF_02456>",
+  "product_baseline_head": "<PRIVATE_REF_02752>",
+  "product_changes_this_session": false,
+  "remote_configured": false,
+  "next_owner": "Fresh Operations Coordinator: bounded improvement, normal remote publication, Windows final-run coordination",
+  "future_mode_remote_runtime_facts_pending": true,
+  "W3_specific_material_in_handoff": false,
+  "no_cloud_or_DNS_action": true,
+  "drafts_preserved_and_superseded": [
+    "HANDOFF_DRAFT.md",
+    "NEXT_OPERATIONS_COORDINATOR_PROMPT_DRAFT.txt"
+  ]
+}

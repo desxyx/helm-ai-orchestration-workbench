@@ -1,0 +1,71 @@
+{
+  "task": "WATCHOVER_FINAL_PATCH_2026-10-07",
+  "candidate_commit": "<PRIVATE_REF_01925>",
+  "candidate_tree": "<PRIVATE_REF_01233>",
+  "files": {
+    "CANDIDATE_LOCATOR.txt": {
+      "bytes": 252,
+      "sha256": "<PRIVATE_REF_01930>"
+    },
+    "CHECKS.md": {
+      "bytes": 5956,
+      "sha256": "<PRIVATE_REF_02254>"
+    },
+    "EXEC_ACK.md": {
+      "bytes": 4778,
+      "sha256": "<PRIVATE_REF_02130>"
+    },
+    "F01-view-retry.log": {
+      "bytes": 568,
+      "sha256": "<PRIVATE_REF_01176>"
+    },
+    "F01-view.log": {
+      "bytes": 1616,
+      "sha256": "<PRIVATE_REF_03585>"
+    },
+    "SUBMISSION_r1.md": {
+      "bytes": 12297,
+      "sha256": "<PRIVATE_REF_02092>"
+    },
+    "affected-final.log": {
+      "bytes": 7858,
+      "sha256": "<PRIVATE_REF_02238>"
+    },
+    "affected-first.log": {
+      "bytes": 13445,
+      "sha256": "<PRIVATE_REF_03619>"
+    },
+    "baseline-to-candidate.patch": {
+      "bytes": 87043,
+      "sha256": "<PRIVATE_REF_03238>"
+    },
+    "boundary-check.json": {
+      "bytes": 1414,
+      "sha256": "<PRIVATE_REF_01885>"
+    },
+    "docs-scanner-recheck.log": {
+      "bytes": 14354,
+      "sha256": "<PRIVATE_REF_02384>"
+    },
+    "freeze.log": {
+      "bytes": 1246,
+      "sha256": "<PRIVATE_REF_02250>"
+    },
+    "regression-final.log": {
+      "bytes": 27401,
+      "sha256": "<PRIVATE_REF_02121>"
+    },
+    "regression-first.log": {
+      "bytes": 80462,
+      "sha256": "<PRIVATE_REF_01016>"
+    },
+    "regression-second.log": {
+      "bytes": 37122,
+      "sha256": "<PRIVATE_REF_02560>"
+    },
+    "scenarios-recheck.log": {
+      "bytes": 785,
+      "sha256": "<PRIVATE_REF_01254>"
+    }
+  }
+}

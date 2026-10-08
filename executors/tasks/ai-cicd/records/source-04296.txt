@@ -1,0 +1,2 @@
+<PRIVATE_REF_01823> docs(decisions): D-23 lists scenario and declared reduced-package fixtures
+<PRIVATE_REF_03530> test(scenarios): deterministic service clock, declared reduced package, scoped undo approval (WMC-1..WMC-3)

@@ -1,0 +1,112 @@
+[
+  {
+    "allowed": [
+      {
+        "IPProtocol": "icmp"
+      }
+    ],
+    "creationTimestamp": "2026-10-02T23:51:41.186-07:00",
+    "description": "Allow ICMP from anywhere",
+    "direction": "INGRESS",
+    "disabled": false,
+    "id": "<NUMERIC_RESOURCE_0173>",
+    "kind": "compute#firewall",
+    "logConfig": {
+      "enable": false
+    },
+    "name": "default-allow-icmp",
+    "network": "<PRIVATE_URL_0281>",
+    "priority": 65534,
+    "selfLink": "<PRIVATE_URL_0268>",
+    "sourceRanges": [
+      "0.0.0.0/0"
+    ]
+  },
+  {
+    "allowed": [
+      {
+        "IPProtocol": "tcp",
+        "ports": [
+          "0-65535"
+        ]
+      },
+      {
+        "IPProtocol": "udp",
+        "ports": [
+          "0-65535"
+        ]
+      },
+      {
+        "IPProtocol": "icmp"
+      }
+    ],
+    "creationTimestamp": "2026-10-02T23:51:41.019-07:00",
+    "description": "Allow internal traffic on the default network",
+    "direction": "INGRESS",
+    "disabled": false,
+    "id": "<NUMERIC_RESOURCE_0136>",
+    "kind": "compute#firewall",
+    "logConfig": {
+      "enable": false
+    },
+    "name": "default-allow-internal",
+    "network": "<PRIVATE_URL_0281>",
+    "priority": 65534,
+    "selfLink": "<PRIVATE_URL_0269>",
+    "sourceRanges": [
+      "<IP_ADDRESS_004>/9"
+    ]
+  },
+  {
+    "allowed": [
+      {
+        "IPProtocol": "tcp",
+        "ports": [
+          "3389"
+        ]
+      }
+    ],
+    "creationTimestamp": "2026-10-02T23:51:41.130-07:00",
+    "description": "Allow RDP from anywhere",
+    "direction": "INGRESS",
+    "disabled": false,
+    "id": "<NUMERIC_RESOURCE_0128>",
+    "kind": "compute#firewall",
+    "logConfig": {
+      "enable": false
+    },
+    "name": "default-allow-rdp",
+    "network": "<PRIVATE_URL_0281>",
+    "priority": 65534,
+    "selfLink": "<PRIVATE_URL_0270>",
+    "sourceRanges": [
+      "0.0.0.0/0"
+    ]
+  },
+  {
+    "allowed": [
+      {
+        "IPProtocol": "tcp",
+        "ports": [
+          "22"
+        ]
+      }
+    ],
+    "creationTimestamp": "2026-10-02T23:51:41.074-07:00",
+    "description": "Allow SSH from anywhere",
+    "direction": "INGRESS",
+    "disabled": false,
+    "id": "<NUMERIC_RESOURCE_0140>",
+    "kind": "compute#firewall",
+    "logConfig": {
+      "enable": false
+    },
+    "name": "default-allow-ssh",
+    "network": "<PRIVATE_URL_0281>",
+    "priority": 65534,
+    "selfLink": "<PRIVATE_URL_0271>",
+    "sourceRanges": [
+      "0.0.0.0/0"
+    ]
+  }
+]

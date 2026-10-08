@@ -1,0 +1,14 @@
+$ git -c core.autocrlf=false archive --format=tar.gz <pinned>; then per-file git blob sha1 of every tar member vs git ls-tree -r <pinned>
+# run at 2026-10-06T13:38:17Z
+== taiga-back @ <PRIVATE_REF_01638>
+new:
+taiga-back.tar.gz: tar files=2013 tree blobs=2013 mismatches=0 sh_with_crlf=0 []
+control (old CRLF tarball, same check):
+taiga-back.tar.gz: tar files=2013 tree blobs=2013 mismatches=1125 sh_with_crlf=4 ['.ctags', '.dockerignore', '.github/ISSUE_TEMPLATE/bug_report.md', '.github/ISSUE_TEMPLATE/config.yml', '.github/ISSUE_TEMPLATE/feature_request.md']
+sha256 new tar.gz: <PRIVATE_REF_03667>
+== taiga-front @ <PRIVATE_REF_03189>
+new:
+taiga-front.tar.gz: tar files=2876 tree blobs=2876 mismatches=0 sh_with_crlf=0 []
+control (old CRLF tarball, same check):
+taiga-front.tar.gz: tar files=2876 tree blobs=2876 mismatches=1302 sh_with_crlf=1 ['.babelrc', '.dockerignore', '.editorconfig', '.github/ISSUE_TEMPLATE/bug_report.md', '.github/ISSUE_TEMPLATE/config.yml']
+sha256 new tar.gz: <PRIVATE_REF_03360>

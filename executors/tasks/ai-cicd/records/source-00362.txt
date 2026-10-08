@@ -1,0 +1,660 @@
+# WatchOver record
+
+This folder is the WatchOver record for a deployment: a shared, freshness-honest account
+of what is being built, where it stands and what happens next.
+
+If you are an AI continuing this work, read these first, in order:
+
+1. <WORKSPACE>\<PRODUCT_KIT>\skills\router.md — how to read and update these records
+2. state.json — the current state; the only source of truth
+3. events.jsonl — the append-only history; read recent events only, as needed
+
+evidence/ holds sanitized command output that facts and events point to. Open it only
+when a locator sends you there.
+
+Nothing here is loaded automatically, and nothing here is a live cloud reading.
+Secret values never belong in any of these files.
+----
+{
+  "schema_version": "0.1",
+  "identity": {
+    "project_alias": "taiga",
+    "target_environment": "GCP project <CLOUD_PROJECT>, served at <PRIVATE_URL_0249>",
+    "provider_profile": "gcp",
+    "mode": "basic",
+    "updated_at": "2026-10-06T12:35:47.860Z",
+    "updated_by": {
+      "role": "ai",
+      "name": "ai-deployer"
+    },
+    "session_id": "<NATIVE_ID_1514>"
+  },
+  "stage": "executing",
+  "activity": {
+    "summary": "Creating GCP resources in australia-southeast1 (tier syd-small)",
+    "started_at": "2026-10-06T12:31:33.207Z",
+    "expected_duration": null,
+    "slow_reason": null,
+    "waiting_on": "ai",
+    "last_progress": {
+      "at": "2026-10-06T12:35:47.860Z",
+      "summary": "Pre-flight re-verification passed"
+    }
+  },
+  "brief": {
+    "app_summary": "Taiga, an open-source agile project-management web app: an AngularJS single-page frontend (taiga-front) that calls a Django REST API (taiga-back), which stores everything in PostgreSQL and keeps uploaded files on disk.",
+    "components": [
+      {
+        "name": "taiga-front",
+        "role": "Static single-page web UI, built from the pinned source with gulp and served as files by the web server"
+      },
+      {
+        "name": "taiga-back",
+        "role": "Django REST API under gunicorn; runs database migrations on start; handles sign-up, login and all data"
+      },
+      {
+        "name": "postgres",
+        "role": "PostgreSQL database holding all users, projects and items (the data that must survive restarts)"
+      },
+      {
+        "name": "caddy",
+        "role": "Public web server: gets and renews the HTTPS certificate, serves the UI, static and media files, proxies /api and /admin to taiga-back"
+      },
+      {
+        "name": "media-store",
+        "role": "Uploaded attachments and avatars on the persistent data disk"
+      }
+    ],
+    "topology": "One Compute Engine VM (Debian 12 + Docker Compose) with a reserved static external IP. Three containers: caddy (the only public part, tcp 80/443), taiga-back (internal :8000) and postgres (internal only). The frontend is built from the pinned commit and served by caddy. Postgres data, uploaded media and caddy certificates live on a separate 10 GiB persistent data disk (auto-delete off) mounted at /srv/taiga, with a daily snapshot schedule keeping 7 days. A firewall rule opens tcp 80/443 only to this VM. Cloudflare A record <W3_RUN_HOST_LABEL> -> the static IP, DNS only.",
+    "resource_rationale": "A single small VM fits a small team and is the cheapest shape that keeps all of Taiga in one place. Restarts are safe because the database and uploads sit on a persistent disk that is separate from the VM and is also snapshotted daily. Caddy gets a free Let's Encrypt certificate itself, so no load balancer or certificate service is needed. Everything can be rebuilt from the pinned commits.",
+    "heavier_alternatives": [
+      {
+        "alternative": "Cloud SQL for PostgreSQL",
+        "why_unnecessary": "Adds at least ~10-30 USD/month and private networking; a Postgres container on a snapshotted persistent disk is enough for a small team."
+      },
+      {
+        "alternative": "HTTPS load balancer + Google-managed certificate",
+        "why_unnecessary": "About 18 USD/month minimum; caddy on the VM gets and renews the certificate for one hostname."
+      },
+      {
+        "alternative": "Cloud Run for frontend and API",
+        "why_unnecessary": "Would need Cloud SQL and object storage for uploads (taiga-back stores media on local disk), plus a load balancer or domain mapping for the custom domain."
+      },
+      {
+        "alternative": "GKE (Kubernetes)",
+        "why_unnecessary": "Cluster fee and operational overhead are not justified for three containers on one host."
+      },
+      {
+        "alternative": "RabbitMQ + taiga-events/taiga-async",
+        "why_unnecessary": "Not part of the two given repos; Taiga runs tasks inline and works without live updates (pages refresh instead)."
+      }
+    ],
+    "assumptions": [
+      "Users are mostly in Australia (from this machine's timezone), so Sydney is the default region",
+      "A small team: tens of users, low traffic; one small VM is enough",
+      "Public sign-up is open to anyone who can reach the site, as requested",
+      "No SMTP server: emails (welcome, password reset) are written to the API log instead of sent, until SMTP is provided",
+      "Optional Taiga services not in the two repos (taiga-events live updates, taiga-async/RabbitMQ, taiga-protected) are left out; Taiga works without them"
+    ]
+  },
+  "plan": {
+    "tiers": [
+      {
+        "id": "syd-medium",
+        "name": "Sydney, e2-medium (2 shared vCPU, 4 GiB)",
+        "composition": "e2-medium in australia-southeast1-b; Debian 12 VM with Docker; 20 GiB balanced boot disk; 10 GiB balanced data disk (auto-delete off) with daily snapshots kept 7 days; reserved static external IP; firewall tcp 80/443; caddy + taiga-back + postgres containers",
+        "region": "australia-southeast1 (Sydney)",
+        "cost_range": {
+          "low": 42,
+          "high": 48,
+          "currency": "USD",
+          "period": "month"
+        },
+        "price_checked_at": "2026-10-06T12:17:50.330Z",
+        "load_assumption": "Up to ~30 active users; the frontend build on the VM (~1.5-2 GiB RAM peak) fits comfortably",
+        "uncertainty": "List prices before tax, no discounts; snapshot storage and egress are estimates (~0-3 USD); the 744 free in-use IP hours may not apply, so the IP is priced at full rate"
+      },
+      {
+        "id": "syd-small",
+        "name": "Sydney, e2-small (2 shared vCPU, 2 GiB)",
+        "composition": "e2-small in australia-southeast1-b plus 2 GiB swap; Debian 12 VM with Docker; 20 GiB balanced boot disk; 10 GiB balanced data disk (auto-delete off) with daily snapshots kept 7 days; reserved static external IP; firewall tcp 80/443; caddy + taiga-back + postgres containers",
+        "region": "australia-southeast1 (Sydney)",
+        "cost_range": {
+          "low": 25,
+          "high": 30,
+          "currency": "USD",
+          "period": "month"
+        },
+        "price_checked_at": "2026-10-06T12:17:50.330Z",
+        "load_assumption": "Up to ~10 active users; tighter memory, slower first build (uses swap)",
+        "uncertainty": "Same price caveats as syd-medium; risk that the frontend build is slow or needs a retry under 2 GiB RAM"
+      },
+      {
+        "id": "usc-medium",
+        "name": "Iowa (us-central1), e2-medium",
+        "composition": "e2-medium in us-central1-a; Debian 12 VM with Docker; 20 GiB balanced boot disk; 10 GiB balanced data disk (auto-delete off) with daily snapshots kept 7 days; reserved static external IP; firewall tcp 80/443; caddy + taiga-back + postgres containers",
+        "region": "us-central1 (Iowa, USA)",
+        "cost_range": {
+          "low": 31,
+          "high": 36,
+          "currency": "USD",
+          "period": "month"
+        },
+        "price_checked_at": "2026-10-06T12:17:50.330Z",
+        "load_assumption": "Same as syd-medium; roughly 150-200 ms extra latency for users in Australia",
+        "uncertainty": "Same price caveats as syd-medium"
+      }
+    ],
+    "default_tier": "syd-medium",
+    "selected_tier": "syd-small"
+  },
+  "pending_decision": null,
+  "resources": [],
+  "sources": [
+    {
+      "name": "taiga-back",
+      "remote": "https://github.com/taigaio/taiga-back",
+      "pinned_ref": "<PRIVATE_REF_01638>",
+      "local_changes_fact": "source.taiga-back.local_changes",
+      "local_changes_summary": "Clean checkout; no local changes",
+      "deployed_ref_fact": "source.taiga-back.deployed_ref"
+    },
+    {
+      "name": "taiga-front",
+      "remote": "https://github.com/taigaio/taiga-front",
+      "pinned_ref": "<PRIVATE_REF_03189>",
+      "local_changes_fact": "source.taiga-front.local_changes",
+      "local_changes_summary": "Clean checkout; no local changes",
+      "deployed_ref_fact": "source.taiga-front.deployed_ref"
+    }
+  ],
+  "facts": [
+    {
+      "key": "gcp.account",
+      "label": "Active gcloud account",
+      "value": "<ACCOUNT_EMAIL_011>",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "identity",
+      "scope": "gcloud configuration \"sandbox\" on this machine",
+      "checked_at": "2026-10-06T12:35:47.324Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0008-preflight.txt"
+      ]
+    },
+    {
+      "key": "gcp.project",
+      "label": "Target project is active",
+      "value": "<CLOUD_PROJECT> (ACTIVE, no parent org)",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "identity",
+      "scope": "GCP project <CLOUD_PROJECT>",
+      "checked_at": "2026-10-06T12:17:48.225Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0002-gcp-identity.txt"
+      ]
+    },
+    {
+      "key": "gcp.billing_enabled",
+      "label": "Billing enabled on project",
+      "value": true,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "permission",
+      "scope": "GCP project <CLOUD_PROJECT>",
+      "checked_at": "2026-10-06T12:35:47.462Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0008-preflight.txt"
+      ]
+    },
+    {
+      "key": "gcp.permission_owner",
+      "label": "Account role on project",
+      "value": "roles/owner",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "permission",
+      "scope": "<ACCOUNT_EMAIL_011> on <CLOUD_PROJECT>",
+      "checked_at": "2026-10-06T12:35:47.592Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0008-preflight.txt"
+      ]
+    },
+    {
+      "key": "gcp.compute_api_enabled",
+      "label": "Compute Engine API enabled",
+      "value": true,
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "GCP project <CLOUD_PROJECT>",
+      "checked_at": "2026-10-06T12:17:48.600Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0002-gcp-identity.txt"
+      ]
+    },
+    {
+      "key": "gcp.no_existing_app_resources",
+      "label": "Planned names not in use",
+      "value": "no addresses, taiga-* firewall rules, disks, instances or snapshot schedules",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "<CLOUD_PROJECT> compute resources",
+      "checked_at": "2026-10-06T12:35:47.725Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0008-preflight.txt"
+      ],
+      "negative_result": true,
+      "control": "Same run listed the 4 existing default firewall rules"
+    },
+    {
+      "key": "gcp.no_web_firewall_rule",
+      "label": "No firewall rule opens tcp 80/443",
+      "value": "none found",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "network",
+      "scope": "firewall rules on network default",
+      "checked_at": "2026-10-06T12:17:48.847Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0003-gcp-inventory.txt"
+      ],
+      "negative_result": true,
+      "control": "The same listing returned 4 default rules (icmp, internal, rdp, ssh)"
+    },
+    {
+      "key": "gcp.quota_ok",
+      "label": "Regional quotas sufficient",
+      "value": "australia-southeast1 and us-central1: E2_CPUS 24, IN_USE_ADDRESSES 8, SSD_TOTAL_GB 250, all unused",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "resource",
+      "scope": "compute quotas in australia-southeast1 and us-central1",
+      "checked_at": "2026-10-06T12:17:48.973Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0003-gcp-inventory.txt"
+      ]
+    },
+    {
+      "key": "dns.<W3_RUN_HOST_LABEL>_record_absent",
+      "label": "No DNS record for <W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> yet",
+      "value": "NXDOMAIN",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "network",
+      "scope": "public DNS via 1.1.1.1 for <W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>",
+      "checked_at": "2026-10-06T12:17:49.095Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0004-dns-precheck.txt"
+      ],
+      "negative_result": true,
+      "control": "Same query returned A records for <EXPERIMENT_DOMAIN> and www.google.com"
+    },
+    {
+      "key": "dns.zone_on_cloudflare",
+      "label": "<EXPERIMENT_DOMAIN> is served by Cloudflare",
+      "value": "NS denver/<DNS_RESOLVER_B>; apex is proxied",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "network",
+      "scope": "<EXPERIMENT_DOMAIN> NS records via 1.1.1.1",
+      "checked_at": "2026-10-06T12:17:49.217Z",
+      "fresh_for_minutes": 240,
+      "evidence": [
+        "evidence/0004-dns-precheck.txt"
+      ]
+    },
+    {
+      "key": "source.taiga-back.ref",
+      "label": "taiga-back checkout at pinned commit",
+      "value": "<PRIVATE_REF_01638>",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "<WORKSPACE>/app/src/taiga-back",
+      "checked_at": "2026-10-06T12:17:49.339Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0005-source-checkout.txt"
+      ]
+    },
+    {
+      "key": "source.taiga-front.ref",
+      "label": "taiga-front checkout at pinned commit",
+      "value": "<PRIVATE_REF_03189>",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "<WORKSPACE>/app/src/taiga-front",
+      "checked_at": "2026-10-06T12:17:49.465Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0005-source-checkout.txt"
+      ]
+    },
+    {
+      "key": "source.taiga-back.local_changes",
+      "label": "taiga-back local changes",
+      "value": "none found",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "git status --porcelain --untracked-files=all in src/taiga-back",
+      "checked_at": "2026-10-06T12:17:49.588Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0005-source-checkout.txt"
+      ],
+      "negative_result": true,
+      "control": "Same command reported a planted untracked file in a scratch clone of taiga-front"
+    },
+    {
+      "key": "source.taiga-front.local_changes",
+      "label": "taiga-front local changes",
+      "value": "none found",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "source",
+      "scope": "git status --porcelain --untracked-files=all in src/taiga-front",
+      "checked_at": "2026-10-06T12:17:49.710Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0005-source-checkout.txt"
+      ],
+      "negative_result": true,
+      "control": "Same command reported a planted untracked file in a scratch clone of taiga-front"
+    },
+    {
+      "key": "app.front_dockerfile_ignores_source",
+      "label": "Upstream front Dockerfile downloads prebuilt 6.10.3",
+      "value": "true: must build front from source with gulp deploy",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "other",
+      "scope": "taiga-front/docker/Dockerfile at <PRIVATE_REF_03189>",
+      "checked_at": "2026-10-06T12:17:49.832Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0006-app-config-findings.txt"
+      ],
+      "problem": true
+    },
+    {
+      "key": "app.back_docker_config_needs_rabbitmq",
+      "label": "Upstream back docker config assumes RabbitMQ",
+      "value": "events + celery default to RabbitMQ; override to postgres events backend, CELERY_ENABLED=False",
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "other",
+      "scope": "taiga-back/docker/config.py at <PRIVATE_REF_01638>",
+      "checked_at": "2026-10-06T12:17:49.956Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0006-app-config-findings.txt"
+      ],
+      "problem": true
+    },
+    {
+      "key": "app.signup_without_email_verification",
+      "label": "Sign-up returns a token without email verification",
+      "value": true,
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "other",
+      "scope": "taiga-back/taiga/auth/services.py public_register()",
+      "checked_at": "2026-10-06T12:17:50.080Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0006-app-config-findings.txt"
+      ]
+    },
+    {
+      "key": "local.docker_engine_running",
+      "label": "Local Docker engine available",
+      "value": false,
+      "status": "VERIFIED_LOCAL",
+      "source": "local_check",
+      "class": "other",
+      "scope": "Docker Desktop on this Windows machine",
+      "checked_at": "2026-10-06T12:17:50.204Z",
+      "fresh_for_minutes": 1440,
+      "evidence": [
+        "evidence/0006-app-config-findings.txt"
+      ],
+      "problem": true
+    },
+    {
+      "key": "price.compute_catalog",
+      "label": "GCE list prices (E2, balanced PD, IP)",
+      "value": "Sydney e2-medium 34.71/mo, e2-small 17.35/mo; us-central1 e2-medium 24.46/mo; IP 3.65/mo (USD)",
+      "status": "VERIFIED_REMOTE",
+      "source": "remote_observation",
+      "class": "price",
+      "scope": "Cloud Billing Catalog, Compute Engine OnDemand USD list prices",
+      "checked_at": "2026-10-06T12:17:50.330Z",
+      "fresh_for_minutes": 43200,
+      "evidence": [
+        "evidence/0007-price-catalog.txt"
+      ]
+    },
+    {
+      "key": "source.taiga-back.deployed_ref",
+      "label": "taiga-back ref deployed",
+      "value": null,
+      "status": "UNKNOWN",
+      "source": "reasoning",
+      "class": "source",
+      "scope": "Nothing deployed yet",
+      "checked_at": null,
+      "fresh_for_minutes": null,
+      "evidence": []
+    },
+    {
+      "key": "source.taiga-front.deployed_ref",
+      "label": "taiga-front ref deployed",
+      "value": null,
+      "status": "UNKNOWN",
+      "source": "reasoning",
+      "class": "source",
+      "scope": "Nothing deployed yet",
+      "checked_at": null,
+      "fresh_for_minutes": null,
+      "evidence": []
+    },
+    {
+      "key": "user.region_preference",
+      "label": "Users mostly in Australia",
+      "value": "australia-southeast1 (Sydney)",
+      "status": "ASSUMED",
+      "source": "reasoning",
+      "class": "other",
+      "scope": "Inferred from this machine timezone (AUS Eastern Standard Time); not stated by the human",
+      "checked_at": null,
+      "fresh_for_minutes": null,
+      "evidence": []
+    },
+    {
+      "key": "user.smtp_available",
+      "label": "SMTP server for outgoing email",
+      "value": null,
+      "status": "UNKNOWN",
+      "source": "reasoning",
+      "class": "other",
+      "scope": "Needed only for password-reset and notification emails; not needed for sign-up/login",
+      "checked_at": null,
+      "fresh_for_minutes": null,
+      "evidence": []
+    },
+    {
+      "key": "user.dns_owner",
+      "label": "Human adds Cloudflare DNS records",
+      "value": "human adds records; AI gives exact records",
+      "status": "USER_CONFIRMED",
+      "source": "human",
+      "class": "other",
+      "scope": "Stated in the task request",
+      "checked_at": null,
+      "fresh_for_minutes": null,
+      "evidence": []
+    },
+    {
+      "key": "user.requirements",
+      "label": "Definition of working",
+      "value": "HTTPS at <PRIVATE_URL_0249>; sign up + log in; data survives server restart",
+      "status": "USER_CONFIRMED",
+      "source": "human",
+      "class": "other",
+      "scope": "Stated in the task request",
+      "checked_at": null,
+      "fresh_for_minutes": null,
+      "evidence": []
+    },
+    {
+      "key": "view.page_confirmed",
+      "label": "Operator can see the view page",
+      "value": "I can see the page.",
+      "status": "USER_CONFIRMED",
+      "source": "human",
+      "class": "other",
+      "scope": "This workspace (<WORKSPACE>/app/watchover) served at http://127.0.0.1:7431/",
+      "checked_at": null,
+      "fresh_for_minutes": null,
+      "evidence": []
+    }
+  ],
+  "secrets": [
+    {
+      "name": "TAIGA_SECRET_KEY",
+      "location": "to be generated on the VM into /srv/taiga/app/.env (root-only, 0600)",
+      "last_verified_at": null,
+      "availability": "missing"
+    },
+    {
+      "name": "POSTGRES_PASSWORD",
+      "location": "to be generated on the VM into /srv/taiga/app/.env (root-only, 0600)",
+      "last_verified_at": null,
+      "availability": "missing"
+    },
+    {
+      "name": "EMAIL_HOST_PASSWORD",
+      "location": "optional SMTP credential; not provided; would live in the same .env",
+      "last_verified_at": null,
+      "availability": "missing"
+    }
+  ],
+  "open_items": [
+    {
+      "text": "Provider profiles providers/gcp.md and providers/dns-cloudflare.md are not shipped in this package (skills/package-omissions.json); following the generic rules, live evidence and official GCP/Cloudflare docs instead.",
+      "owner": "ai",
+      "blocking": false
+    },
+    {
+      "text": "SMTP: without an SMTP server, password-reset and notification emails are not delivered. Provide SMTP host/user/password later if wanted.",
+      "owner": "human",
+      "blocking": false
+    },
+    {
+      "text": "Upstream taiga-front Dockerfile downloads release 6.10.3 instead of building the pinned commit; the deployment builds the frontend from the pinned source instead.",
+      "owner": "ai",
+      "blocking": false
+    },
+    {
+      "text": "Without taiga-protected, uploaded attachments are served by unguessable URL but without a login check.",
+      "owner": "human",
+      "blocking": false
+    },
+    {
+      "text": "Operator did not answer the optional SMTP and admin-account questions; proceeding with no SMTP and no pre-created admin.",
+      "owner": "human",
+      "blocking": false
+    }
+  ],
+  "next": {
+    "action": "Reserve static IP <RUN_STATIC_IP>, then firewall rule, data disk, snapshot schedule and VM",
+    "decision_owner": "ai"
+  },
+  "handoff": {
+    "read_first": [
+      "<WORKSPACE>\\<PRODUCT_KIT>\\skills\\router.md",
+      "state.json",
+      "events.jsonl (recent events only)"
+    ],
+    "last_safe_state": null,
+    "rollback_anchor": null,
+    "known_unverified": [],
+    "fragile": []
+  }
+}----
+{"schema_version":"0.1","id":"evt-0001","at":"2026-10-06T12:10:23.174Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"stage_change","summary":"Workspace initialized; starting read-only recon","stage":{"from":null,"to":"recon"}}
+{"schema_version":"0.1","id":"evt-0002","at":"2026-10-06T12:17:48.101Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified Active gcloud account","fact":{"key":"gcp.account","status":"VERIFIED_REMOTE"},"evidence":["evidence/0002-gcp-identity.txt"]}
+{"schema_version":"0.1","id":"evt-0003","at":"2026-10-06T12:17:48.225Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified Target project is active","fact":{"key":"gcp.project","status":"VERIFIED_REMOTE"},"evidence":["evidence/0002-gcp-identity.txt"]}
+{"schema_version":"0.1","id":"evt-0004","at":"2026-10-06T12:17:48.352Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified Billing enabled on project","fact":{"key":"gcp.billing_enabled","status":"VERIFIED_REMOTE"},"evidence":["evidence/0002-gcp-identity.txt"]}
+{"schema_version":"0.1","id":"evt-0005","at":"2026-10-06T12:17:48.475Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified Account role on project","fact":{"key":"gcp.permission_owner","status":"VERIFIED_REMOTE"},"evidence":["evidence/0002-gcp-identity.txt"]}
+{"schema_version":"0.1","id":"evt-0006","at":"2026-10-06T12:17:48.600Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified Compute Engine API enabled","fact":{"key":"gcp.compute_api_enabled","status":"VERIFIED_REMOTE"},"evidence":["evidence/0002-gcp-identity.txt"]}
+{"schema_version":"0.1","id":"evt-0007","at":"2026-10-06T12:17:48.724Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified No VMs, disks, IPs, Cloud Run, buckets","fact":{"key":"gcp.no_existing_app_resources","status":"VERIFIED_REMOTE"},"evidence":["evidence/0003-gcp-inventory.txt"]}
+{"schema_version":"0.1","id":"evt-0008","at":"2026-10-06T12:17:48.847Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified No firewall rule opens tcp 80/443","fact":{"key":"gcp.no_web_firewall_rule","status":"VERIFIED_REMOTE"},"evidence":["evidence/0003-gcp-inventory.txt"]}
+{"schema_version":"0.1","id":"evt-0009","at":"2026-10-06T12:17:48.973Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified Regional quotas sufficient","fact":{"key":"gcp.quota_ok","status":"VERIFIED_REMOTE"},"evidence":["evidence/0003-gcp-inventory.txt"]}
+{"schema_version":"0.1","id":"evt-0010","at":"2026-10-06T12:17:49.095Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified No DNS record for <W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> yet","fact":{"key":"dns.<W3_RUN_HOST_LABEL>_record_absent","status":"VERIFIED_REMOTE"},"evidence":["evidence/0004-dns-precheck.txt"]}
+{"schema_version":"0.1","id":"evt-0011","at":"2026-10-06T12:17:49.217Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified <EXPERIMENT_DOMAIN> is served by Cloudflare","fact":{"key":"dns.zone_on_cloudflare","status":"VERIFIED_REMOTE"},"evidence":["evidence/0004-dns-precheck.txt"]}
+{"schema_version":"0.1","id":"evt-0012","at":"2026-10-06T12:17:49.339Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified taiga-back checkout at pinned commit","fact":{"key":"source.taiga-back.ref","status":"VERIFIED_LOCAL"},"evidence":["evidence/0005-source-checkout.txt"]}
+{"schema_version":"0.1","id":"evt-0013","at":"2026-10-06T12:17:49.465Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified taiga-front checkout at pinned commit","fact":{"key":"source.taiga-front.ref","status":"VERIFIED_LOCAL"},"evidence":["evidence/0005-source-checkout.txt"]}
+{"schema_version":"0.1","id":"evt-0014","at":"2026-10-06T12:17:49.588Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified taiga-back local changes","fact":{"key":"source.taiga-back.local_changes","status":"VERIFIED_LOCAL"},"evidence":["evidence/0005-source-checkout.txt"]}
+{"schema_version":"0.1","id":"evt-0015","at":"2026-10-06T12:17:49.710Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified taiga-front local changes","fact":{"key":"source.taiga-front.local_changes","status":"VERIFIED_LOCAL"},"evidence":["evidence/0005-source-checkout.txt"]}
+{"schema_version":"0.1","id":"evt-0016","at":"2026-10-06T12:17:49.832Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified Upstream front Dockerfile downloads prebuilt 6.10.3","fact":{"key":"app.front_dockerfile_ignores_source","status":"VERIFIED_LOCAL"},"evidence":["evidence/0006-app-config-findings.txt"]}
+{"schema_version":"0.1","id":"evt-0017","at":"2026-10-06T12:17:49.956Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified Upstream back docker config assumes RabbitMQ","fact":{"key":"app.back_docker_config_needs_rabbitmq","status":"VERIFIED_LOCAL"},"evidence":["evidence/0006-app-config-findings.txt"]}
+{"schema_version":"0.1","id":"evt-0018","at":"2026-10-06T12:17:50.080Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified Sign-up returns a token without email verification","fact":{"key":"app.signup_without_email_verification","status":"VERIFIED_LOCAL"},"evidence":["evidence/0006-app-config-findings.txt"]}
+{"schema_version":"0.1","id":"evt-0019","at":"2026-10-06T12:17:50.204Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified Local Docker engine available","fact":{"key":"local.docker_engine_running","status":"VERIFIED_LOCAL"},"evidence":["evidence/0006-app-config-findings.txt"]}
+{"schema_version":"0.1","id":"evt-0020","at":"2026-10-06T12:17:50.330Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Verified GCE list prices (E2, balanced PD, IP)","fact":{"key":"price.compute_catalog","status":"VERIFIED_REMOTE"},"evidence":["evidence/0007-price-catalog.txt"]}
+{"schema_version":"0.1","id":"evt-0021","at":"2026-10-06T12:17:50.713Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"stage_change","summary":"Recon finished; preparing the plan","stage":{"from":"recon","to":"plan"}}
+{"schema_version":"0.1","id":"evt-0022","at":"2026-10-06T12:18:57.629Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"intent","summary":"Start the read-only WatchOver view so the human can see the plan","target":"local read-only view on 127.0.0.1","action":"node <repo>/tools/watchover.mjs show <WORKSPACE>/app/watchover","action_kinds":["local"]}
+{"schema_version":"0.1","id":"evt-0023","at":"2026-10-06T12:19:52.040Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"decision_request","summary":"Asked to accept the plan and approve creating the billable GCP resources (default tier syd-medium)","request":{"id":"dec-01","categories":["plan_acceptance","billable"]}}
+{"schema_version":"0.1","id":"evt-0024","at":"2026-10-06T12:19:52.277Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"stage_change","summary":"Plan ready; waiting for the human to accept it and approve cost","stage":{"from":"plan","to":"awaiting_decision"}}
+{"schema_version":"0.1","id":"evt-0025","at":"2026-10-06T12:29:28.627Z","actor":{"role":"human","name":"operator"},"session_id":"<NATIVE_ID_1514>","type":"decision","summary":"Operator accepted the plan and delegated the tier choice to the AI with \"as cheap as reasonable\"; AI selects syd-small","decision":{"request_id":"dec-01","reply":"Your choice, Keep it as cheap as is reasonable for a small app.","redacted":false,"outcome":"approved"},"related":["evt-0023"]}
+{"schema_version":"0.1","id":"evt-0026","at":"2026-10-06T12:31:33.044Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"result","summary":"Operator confirmed they can see the view page; reply: \"I can see the page.\"","outcome":"succeeded","related":["evt-0022"]}
+{"schema_version":"0.1","id":"evt-0027","at":"2026-10-06T12:31:33.174Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"stage_change","summary":"Plan approved (syd-small) and view confirmed; starting execution","stage":{"from":"awaiting_decision","to":"executing"}}
+{"schema_version":"0.1","id":"evt-0028","at":"2026-10-06T12:35:47.324Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Re-verified gcloud account before the first create","fact":{"key":"gcp.account","status":"VERIFIED_REMOTE"},"evidence":["evidence/0008-preflight.txt"]}
+{"schema_version":"0.1","id":"evt-0029","at":"2026-10-06T12:35:47.462Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Re-verified billing before the first create","fact":{"key":"gcp.billing_enabled","status":"VERIFIED_REMOTE"},"evidence":["evidence/0008-preflight.txt"]}
+{"schema_version":"0.1","id":"evt-0030","at":"2026-10-06T12:35:47.592Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Re-verified owner role before the first create","fact":{"key":"gcp.permission_owner","status":"VERIFIED_REMOTE"},"evidence":["evidence/0008-preflight.txt"]}
+{"schema_version":"0.1","id":"evt-0031","at":"2026-10-06T12:35:47.725Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"fact_verified","summary":"Re-verified no planned resource names exist","fact":{"key":"gcp.no_existing_app_resources","status":"VERIFIED_REMOTE"},"evidence":["evidence/0008-preflight.txt"]}
+{"schema_version":"0.1","id":"evt-0032","at":"2026-10-06T12:35:48.243Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"intent","summary":"Reserve static external IP <RUN_STATIC_IP> in australia-southeast1","target":"<CLOUD_PROJECT> / australia-southeast1","action":"gcloud compute addresses create <RUN_STATIC_IP> --region australia-southeast1 --network-tier PREMIUM --project <CLOUD_PROJECT>","action_kinds":["remote_mutating","gated"],"related":["evt-0025"]}
+{"schema_version":"0.1","id":"evt-0033","at":"2026-10-06T12:35:58.239Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"result","summary":"Static IP <RUN_STATIC_IP> reserved","outcome":"succeeded","state_change":"Added static address <RUN_STATIC_IP>","evidence":["evidence/0009-address-create.txt"],"related":["evt-0032"]}
+{"schema_version":"0.1","id":"evt-0034","at":"2026-10-06T12:36:13.693Z","actor":{"role":"ai","name":"ai-deployer"},"session_id":"<NATIVE_ID_1514>","type":"intent","summary":"Create firewall rule <RUN_FIREWALL> (tcp 80/443, udp 443) to tag taiga-web","target":"<CLOUD_PROJECT> / network default","action":"gcloud compute firewall-rules create <RUN_FIREWALL> --network default --direction INGRESS --allow tcp:80,tcp:443,udp:443 --source-ranges 0.0.0.0/0 --target-tags taiga-web --project <CLOUD_PROJECT>","action_kinds":["remote_mutating","gated"],"related":["evt-0025"]}
+----
+deploy/stage:
+total 6261
+drwxr-xr-x 1 <ACCOUNT> 197609       0 Oct  6 23:34 .
+drwxr-xr-x 1 <ACCOUNT> 197609       0 Oct  6 23:34 ..
+-rw-r--r-- 1 <ACCOUNT> 197609     377 Oct  6 23:33 Caddyfile
+-rw-r--r-- 1 <ACCOUNT> 197609     439 Oct  6 23:33 Dockerfile.front
+-rw-r--r-- 1 <ACCOUNT> 197609     872 Oct  6 23:33 conf.json
+-rw-r--r-- 1 <ACCOUNT> 197609     658 Oct  6 23:33 deploy_settings.py
+-rw-r--r-- 1 <ACCOUNT> 197609    1831 Oct  6 23:33 docker-compose.yml
+-rwxr-xr-x 1 <ACCOUNT> 197609    2977 Oct  6 23:34 setup-vm.sh
+-rw-r--r-- 1 <ACCOUNT> 197609     106 Oct  6 23:34 source-refs.txt
+-rw-r--r-- 1 <ACCOUNT> 197609 2451962 Oct  6 23:34 taiga-back.tar.gz
+-rw-r--r-- 1 <ACCOUNT> 197609 3930261 Oct  6 23:34 taiga-front.tar.gz
+-rw-r--r-- 1 <ACCOUNT> 197609     507 Oct  6 23:33 taiga.env
+
+watchover/evidence:
+total 30
+drwxr-xr-x 1 <ACCOUNT> 197609    0 Oct  6 23:35 .
+drwxr-xr-x 1 <ACCOUNT> 197609    0 Oct  6 23:35 ..
+-rw-r--r-- 1 <ACCOUNT> 197609 1166 Oct  6 23:15 0002-gcp-identity.txt
+-rw-r--r-- 1 <ACCOUNT> 197609 1570 Oct  6 23:15 0003-gcp-inventory.txt
+-rw-r--r-- 1 <ACCOUNT> 197609  722 Oct  6 23:16 0004-dns-precheck.txt
+-rw-r--r-- 1 <ACCOUNT> 197609 1267 Oct  6 23:16 0005-source-checkout.txt
+-rw-r--r-- 1 <ACCOUNT> 197609 1952 Oct  6 23:16 0006-app-config-findings.txt
+-rw-r--r-- 1 <ACCOUNT> 197609 2130 Oct  6 23:16 0007-price-catalog.txt
+-rw-r--r-- 1 <ACCOUNT> 197609  569 Oct  6 23:35 0008-preflight.txt
+-rw-r--r-- 1 <ACCOUNT> 197609  558 Oct  6 23:35 0009-address-create.txt

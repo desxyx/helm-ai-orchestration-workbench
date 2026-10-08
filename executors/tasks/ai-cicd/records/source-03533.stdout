@@ -1,0 +1,1 @@
+{"deployment_inventory": null, "fixtures": {"test_alerta_api_smoke.py": "<PRIVATE_REF_00881>", "test_alerta_ui_flow.py": "<PRIVATE_REF_03225>"}, "kind": "init", "script_sha256": "<PRIVATE_REF_02821>", "utc": "2026-10-05T11:05:47Z"}

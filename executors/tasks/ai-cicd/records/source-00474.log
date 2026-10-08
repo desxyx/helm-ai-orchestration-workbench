@@ -1,0 +1,173 @@
+Before stage/commit: exact five paths, r1 HEAD/tree and own product root verified; all source/tested hashes and all r1 evidence hashes equal; independent r1 bundle verified.
+ M docs/architecture.md
+ M docs/validation.md
+ M tests/docs.test.mjs
+ M tests/helpers/vocabulary.mjs
+ M tests/vocabulary.test.mjs
+ docs/architecture.md         |  4 +--
+ docs/validation.md           | 21 ++++++++++++++
+ tests/docs.test.mjs          |  8 ++++--
+ tests/helpers/vocabulary.mjs | 65 ++++++++++++++++++++++++++++++++++++++++++--
+ tests/vocabulary.test.mjs    | 65 +++++++++++++++++++++++++++++++++++++++-----
+ 5 files changed, 149 insertions(+), 14 deletions(-)
+
+Command: git commit --amend --reset-author -m "Prepare WatchOver 0.1.2 public edition" (own unpublished root only; r1 preserved outside candidate).
+[release/0.1.2 5c662ea] Prepare WatchOver 0.1.2 public edition
+ 133 files changed, 15864 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 LICENSE
+ create mode 100644 README.md
+ create mode 100644 SECURITY.md
+ create mode 100644 app/web-ui/app.js
+ create mode 100644 app/web-ui/freshness.mjs
+ create mode 100644 app/web-ui/index.html
+ create mode 100644 app/web-ui/render.mjs
+ create mode 100644 app/web-ui/styles.css
+ create mode 100644 docs/architecture.md
+ create mode 100644 docs/design-decisions.md
+ create mode 100644 docs/provenance.md
+ create mode 100644 docs/validation.md
+ create mode 100644 fixtures/invalid/malformed-events-line/events.jsonl
+ create mode 100644 fixtures/invalid/malformed-events-line/expected.json
+ create mode 100644 fixtures/invalid/malformed-events-line/state.json
+ create mode 100644 fixtures/invalid/malformed-state-json/events.jsonl
+ create mode 100644 fixtures/invalid/malformed-state-json/expected.json
+ create mode 100644 fixtures/invalid/malformed-state-json/state.json
+ create mode 100644 fixtures/invalid/planted-secret-canary/events.jsonl
+ create mode 100644 fixtures/invalid/planted-secret-canary/expected.json
+ create mode 100644 fixtures/invalid/planted-secret-canary/state.json
+ create mode 100644 fixtures/invalid/schema-invalid-secret-value-field/events.jsonl
+ create mode 100644 fixtures/invalid/schema-invalid-secret-value-field/expected.json
+ create mode 100644 fixtures/invalid/schema-invalid-secret-value-field/state.json
+ create mode 100644 fixtures/invalid/schema-invalid-status/events.jsonl
+ create mode 100644 fixtures/invalid/schema-invalid-status/expected.json
+ create mode 100644 fixtures/invalid/schema-invalid-status/state.json
+ create mode 100644 fixtures/packages/reduced-no-dns/package-omissions.json
+ create mode 100644 fixtures/valid/lifecycle/01-recon/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/01-recon/state.json
+ create mode 100644 fixtures/valid/lifecycle/02-approval-pending/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/02-approval-pending/state.json
+ create mode 100644 fixtures/valid/lifecycle/03-long-operation/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/03-long-operation/state.json
+ create mode 100644 fixtures/valid/lifecycle/04-verification-failed/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/04-verification-failed/state.json
+ create mode 100644 fixtures/valid/lifecycle/05-incident/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/05-incident/state.json
+ create mode 100644 fixtures/valid/lifecycle/06-recovered/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/06-recovered/state.json
+ create mode 100644 fixtures/valid/lifecycle/07-verified/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/07-verified/state.json
+ create mode 100644 fixtures/valid/lifecycle/08-handoff/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/08-handoff/state.json
+ create mode 100644 fixtures/valid/lifecycle/09-teardown/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/09-teardown/state.json
+ create mode 100644 fixtures/valid/lifecycle/10-closed/events.jsonl
+ create mode 100644 fixtures/valid/lifecycle/10-closed/state.json
+ create mode 100644 fixtures/valid/scenarios/awaiting-acceptance/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/awaiting-acceptance/state.json
+ create mode 100644 fixtures/valid/scenarios/interrupted/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/interrupted/state.json
+ create mode 100644 fixtures/valid/scenarios/package-gap/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/package-gap/state.json
+ create mode 100644 fixtures/valid/scenarios/services-and-names/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/services-and-names/state.json
+ create mode 100644 fixtures/valid/scenarios/shared-object-delta/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/shared-object-delta/state.json
+ create mode 100644 fixtures/valid/scenarios/view-handoff-confirmed/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/view-handoff-confirmed/state.json
+ create mode 100644 fixtures/valid/scenarios/view-handoff-exception/events.jsonl
+ create mode 100644 fixtures/valid/scenarios/view-handoff-exception/state.json
+ create mode 100644 fixtures/valid/status/assumed/events.jsonl
+ create mode 100644 fixtures/valid/status/assumed/state.json
+ create mode 100644 fixtures/valid/status/blocked/events.jsonl
+ create mode 100644 fixtures/valid/status/blocked/state.json
+ create mode 100644 fixtures/valid/status/stale/events.jsonl
+ create mode 100644 fixtures/valid/status/stale/state.json
+ create mode 100644 fixtures/valid/status/unknown/events.jsonl
+ create mode 100644 fixtures/valid/status/unknown/state.json
+ create mode 100644 fixtures/valid/status/user_confirmed/events.jsonl
+ create mode 100644 fixtures/valid/status/user_confirmed/state.json
+ create mode 100644 fixtures/valid/status/verified_local/events.jsonl
+ create mode 100644 fixtures/valid/status/verified_local/state.json
+ create mode 100644 fixtures/valid/status/verified_remote/events.jsonl
+ create mode 100644 fixtures/valid/status/verified_remote/state.json
+ create mode 100644 integrations/catalog.json
+ create mode 100644 package.json
+ create mode 100644 schema/event.schema.json
+ create mode 100644 schema/state.schema.json
+ create mode 100644 skills/providers/aws.md
+ create mode 100644 skills/providers/azure.md
+ create mode 100644 skills/providers/dns-cloudflare.md
+ create mode 100644 skills/providers/gcp.md
+ create mode 100644 skills/providers/nectar.md
+ create mode 100644 skills/router.md
+ create mode 100644 skills/stages/execute.md
+ create mode 100644 skills/stages/plan.md
+ create mode 100644 skills/stages/recon.md
+ create mode 100644 skills/stages/recover.md
+ create mode 100644 skills/stages/verify-handoff.md
+ create mode 100644 tests/brief.test.mjs
+ create mode 100644 tests/browser.test.mjs
+ create mode 100644 tests/browser/view_check.py
+ create mode 100644 tests/catalog.test.mjs
+ create mode 100644 tests/cli.test.mjs
+ create mode 100644 tests/commit-state.test.mjs
+ create mode 100644 tests/design-decisions.test.mjs
+ create mode 100644 tests/docs.test.mjs
+ create mode 100644 tests/fixtures.test.mjs
+ create mode 100644 tests/freshness.test.mjs
+ create mode 100644 tests/helpers/fixtures.mjs
+ create mode 100644 tests/helpers/python.mjs
+ create mode 100644 tests/helpers/vocabulary.mjs
+ create mode 100644 tests/neutral-domains.test.mjs
+ create mode 100644 tests/neutrality.test.mjs
+ create mode 100644 tests/render.test.mjs
+ create mode 100644 tests/scaffold.test.mjs
+ create mode 100644 tests/scenarios.test.mjs
+ create mode 100644 tests/schema-bounds.test.mjs
+ create mode 100644 tests/schema-subset.test.mjs
+ create mode 100644 tests/secret-scan.test.mjs
+ create mode 100644 tests/semantic-checks.test.mjs
+ create mode 100644 tests/server.test.mjs
+ create mode 100644 tests/skill-package.test.mjs
+ create mode 100644 tests/skills-workflow.test.mjs
+ create mode 100644 tests/skills.test.mjs
+ create mode 100644 tests/validate.test.mjs
+ create mode 100644 tests/view-handoff.test.mjs
+ create mode 100644 tests/vocabulary.test.mjs
+ create mode 100644 tests/workspace.test.mjs
+ create mode 100644 tools/lib/brief.mjs
+ create mode 100644 tools/lib/commit.mjs
+ create mode 100644 tools/lib/neutrality.mjs
+ create mode 100644 tools/lib/schema-subset.mjs
+ create mode 100644 tools/lib/secret-scan.mjs
+ create mode 100644 tools/lib/semantic-checks.mjs
+ create mode 100644 tools/lib/server.mjs
+ create mode 100644 tools/lib/validate.mjs
+ create mode 100644 tools/lib/workspace.mjs
+ create mode 100644 tools/neutrality-scan.mjs
+ create mode 100644 tools/watchover.mjs
+
+commit 5c662eac0449bd30eddd01c606d268f0aa510631
+Author:     WatchOver contributors <ACCOUNT_EMAIL_067>
+AuthorDate: Wed Oct 7 23:58:45 2026 +1100
+Commit:     WatchOver contributors <ACCOUNT_EMAIL_067>
+CommitDate: Wed Oct 7 23:58:45 2026 +1100
+
+    Prepare WatchOver 0.1.2 public edition
+
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logAllRefUpdates = false
+	ignorecase = true
+	precomposeunicode = true
+	hooksPath = /dev/null
+[user]
+	name = WatchOver contributors
+	email = <ACCOUNT_EMAIL_067>
+[commit]
+	gpgsign = false
+
+After: committed r1→r2 diff equals tested diff, one reachable root, clean, no remotes/tags, 133 archive files equal inspected hashes, root/root owners.

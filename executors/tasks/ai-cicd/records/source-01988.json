@@ -1,0 +1,227 @@
+{
+  "run_id": "RUN-W2B",
+  "independent_actor": "Operations Coordinator, outside Deployer",
+  "queries": [
+    {
+      "query": "Q01_sdk",
+      "exit_code": 0,
+      "parsed_json": true,
+      "items": null,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/Q01_sdk_attempt1.stdout",
+      "error_api_disabled": false
+    },
+    {
+      "query": "Q02_project",
+      "exit_code": 0,
+      "parsed_json": false,
+      "items": null,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/Q02_project_attempt2.stdout",
+      "error_api_disabled": false
+    },
+    {
+      "query": "Q03_account",
+      "exit_code": 0,
+      "parsed_json": false,
+      "items": null,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/Q03_account_attempt3.stdout",
+      "error_api_disabled": false
+    },
+    {
+      "query": "R01_inventory",
+      "exit_code": 0,
+      "parsed_json": true,
+      "items": 141,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/R01_inventory_attempt4.stdout",
+      "error_api_disabled": false
+    },
+    {
+      "query": "R02_instances",
+      "exit_code": 0,
+      "parsed_json": true,
+      "items": 0,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/R02_instances_attempt5.stdout",
+      "error_api_disabled": false
+    },
+    {
+      "query": "R03_disks",
+      "exit_code": 0,
+      "parsed_json": true,
+      "items": 0,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/R03_disks_attempt6.stdout",
+      "error_api_disabled": false
+    },
+    {
+      "query": "R04_addresses",
+      "exit_code": 0,
+      "parsed_json": true,
+      "items": 0,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/R04_addresses_attempt7.stdout",
+      "error_api_disabled": false
+    },
+    {
+      "query": "R05_networks",
+      "exit_code": 0,
+      "parsed_json": true,
+      "items": 1,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/R05_networks_attempt8.stdout",
+      "error_api_disabled": false
+    },
+    {
+      "query": "R06_firewalls",
+      "exit_code": 0,
+      "parsed_json": true,
+      "items": 4,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/R06_firewalls_attempt9.stdout",
+      "error_api_disabled": false
+    },
+    {
+      "query": "R07_run",
+      "exit_code": 0,
+      "parsed_json": true,
+      "items": 0,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/R07_run_attempt10.stdout",
+      "error_api_disabled": false
+    },
+    {
+      "query": "R08_buckets",
+      "exit_code": 0,
+      "parsed_json": true,
+      "items": 0,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/R08_buckets_attempt11.stdout",
+      "error_api_disabled": false
+    },
+    {
+      "query": "R09_sql",
+      "exit_code": 1,
+      "parsed_json": false,
+      "items": null,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/R09_sql_attempt12.stdout",
+      "error_api_disabled": true
+    },
+    {
+      "query": "R10_subnets",
+      "exit_code": 0,
+      "parsed_json": true,
+      "items": 42,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/R10_subnets_attempt13.stdout",
+      "error_api_disabled": false
+    },
+    {
+      "query": "R11_project_ssh",
+      "exit_code": 0,
+      "parsed_json": true,
+      "items": null,
+      "task_name_hits": [],
+      "stdout": "READONLY_RESIDUAL/R11_project_ssh_attempt14.stdout",
+      "error_api_disabled": false
+    }
+  ],
+  "primary_asset_count": 141,
+  "primary_asset_types": [
+    "cloudbilling.googleapis.com/ProjectBillingInfo",
+    "cloudresourcemanager.googleapis.com/Project",
+    "compute.googleapis.com/Firewall",
+    "compute.googleapis.com/InstanceSettings",
+    "compute.googleapis.com/Network",
+    "compute.googleapis.com/Project",
+    "compute.googleapis.com/Route",
+    "compute.googleapis.com/Subnetwork",
+    "logging.googleapis.com/LogBucket",
+    "logging.googleapis.com/LogSink",
+    "serviceusage.googleapis.com/Service"
+  ],
+  "known_task_resource_hits": 0,
+  "deployment_exact_ssh_key_hits": 0,
+  "retained_default_network_observed": true,
+  "primary_inventory_prior_resource_x_positive_control": [
+    {
+      "source": "execution/w2b_formal_entry_2026-10-05/evidence/CP-01_FORCED_INTERRUPT/READONLY_SNAPSHOT/asset_inventory_attempt1.stdout",
+      "sha256": "<PRIVATE_REF_03087>",
+      "resource_x_detected": true,
+      "matching_assets": 1
+    }
+  ],
+  "dns": [
+    {
+      "query": "DNS_AAAA_AUTH",
+      "exit_code": 0,
+      "status": "NXDOMAIN",
+      "authoritative": true,
+      "answer_rows": 1,
+      "deployment_a_value_present": false,
+      "soa_positive": false
+    },
+    {
+      "query": "DNS_A_AUTH_1",
+      "exit_code": 0,
+      "status": "NXDOMAIN",
+      "authoritative": true,
+      "answer_rows": 1,
+      "deployment_a_value_present": false,
+      "soa_positive": false
+    },
+    {
+      "query": "DNS_A_AUTH_2",
+      "exit_code": 0,
+      "status": "NXDOMAIN",
+      "authoritative": true,
+      "answer_rows": 1,
+      "deployment_a_value_present": false,
+      "soa_positive": false
+    },
+    {
+      "query": "DNS_CNAME_AUTH",
+      "exit_code": 0,
+      "status": "NXDOMAIN",
+      "authoritative": true,
+      "answer_rows": 1,
+      "deployment_a_value_present": false,
+      "soa_positive": false
+    },
+    {
+      "query": "DNS_NS",
+      "exit_code": 0,
+      "status": "NOERROR",
+      "authoritative": false,
+      "answer_rows": 2,
+      "deployment_a_value_present": false,
+      "soa_positive": false
+    },
+    {
+      "query": "DNS_SOA_POSITIVE_1",
+      "exit_code": 0,
+      "status": "NOERROR",
+      "authoritative": true,
+      "answer_rows": 1,
+      "deployment_a_value_present": false,
+      "soa_positive": true
+    },
+    {
+      "query": "DNS_SOA_POSITIVE_2",
+      "exit_code": 0,
+      "status": "NOERROR",
+      "authoritative": true,
+      "answer_rows": 1,
+      "deployment_a_value_present": false,
+      "soa_positive": true
+    }
+  ],
+  "resource_coverage_status": "PARTIAL; SQL supplemental query failed, disabled API; no enablement",
+  "residual_billable_resources_count": null,
+  "whole_project_clean": false,
+  "status": "UNVERIFIED_COVERAGE; no known deployment resources detected in successful reads",
+  "control_cleanup_performed": false
+}

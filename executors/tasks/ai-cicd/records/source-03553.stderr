@@ -1,0 +1,13 @@
+# ma1-probe endpoint=<PRIVATE_URL_0232> run_id=RUN-W2B resource=ma1-a3-probe-RUN-W2B api_key=set
+test_01_healthcheck (test_alerta_api_smoke.AlertaApiSmoke.test_01_healthcheck) ... ok
+test_02_create_alert_returns_201 (test_alerta_api_smoke.AlertaApiSmoke.test_02_create_alert_returns_201) ... # ma1-probe create status=201 id=<NATIVE_ID_2470>
+ok
+test_03_retrieve_alert (test_alerta_api_smoke.AlertaApiSmoke.test_03_retrieve_alert) ... ok
+test_04_list_contains_alert (test_alerta_api_smoke.AlertaApiSmoke.test_04_list_contains_alert) ... ok
+test_05_delete_alert (test_alerta_api_smoke.AlertaApiSmoke.test_05_delete_alert) ... ok
+test_06_confirm_absent (test_alerta_api_smoke.AlertaApiSmoke.test_06_confirm_absent) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.897s
+
+OK

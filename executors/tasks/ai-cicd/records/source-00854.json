@@ -1,0 +1,1204 @@
+{
+  "candidate_manifest": [
+    {
+      "path": "W2A_ACTOR_STARTUP_PROMPTS_DRAFT_r1.md",
+      "expected": "<PRIVATE_REF_01048>",
+      "actual": "<PRIVATE_REF_01048>",
+      "match": true
+    },
+    {
+      "path": "W2A_ENTRY_RESET_PACKET_DRAFT_r1.md",
+      "expected": "<PRIVATE_REF_02488>",
+      "actual": "<PRIVATE_REF_02488>",
+      "match": true
+    },
+    {
+      "path": "W2A_RUN_CARD_DRAFT_r1.md",
+      "expected": "<PRIVATE_REF_01271>",
+      "actual": "<PRIVATE_REF_01271>",
+      "match": true
+    },
+    {
+      "path": "W2_FORMAL_RUN_RELEASE_DRAFT_r1.md",
+      "expected": "<PRIVATE_REF_02334>",
+      "actual": "<PRIVATE_REF_02334>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/BOUNDARY_EVENTS.md",
+      "expected": "<PRIVATE_REF_01757>",
+      "actual": "<PRIVATE_REF_01757>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/EXEC_ACK.md",
+      "expected": "<PRIVATE_REF_01121>",
+      "actual": "<PRIVATE_REF_01121>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/FINAL_HANDOFF_TO_OPERATIONS_COORDINATOR_r1.md",
+      "expected": "<PRIVATE_REF_00893>",
+      "actual": "<PRIVATE_REF_00893>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/HARNESS_MANIFEST_0.3.0.json",
+      "expected": "<PRIVATE_REF_03556>",
+      "actual": "<PRIVATE_REF_03556>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/HARNESS_REFS_0.3.0.json",
+      "expected": "<PRIVATE_REF_01490>",
+      "actual": "<PRIVATE_REF_01490>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/LOCAL_PREPARATION_SUBMISSION_r1.md",
+      "expected": "<PRIVATE_REF_02473>",
+      "actual": "<PRIVATE_REF_02473>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi_controls/EPI_RUN_LOG.txt",
+      "expected": "<PRIVATE_REF_02692>",
+      "actual": "<PRIVATE_REF_02692>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi_controls/observed_matching_lock.json",
+      "expected": "<PRIVATE_REF_03002>",
+      "actual": "<PRIVATE_REF_03002>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi_controls/observed_mismatch.json",
+      "expected": "<PRIVATE_REF_02486>",
+      "actual": "<PRIVATE_REF_02486>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi_controls/raw/ep_i/ep_i_check_1791107335204.json",
+      "expected": "<PRIVATE_REF_01501>",
+      "actual": "<PRIVATE_REF_01501>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi_controls/raw/ep_i/ep_i_check_1791107335239.json",
+      "expected": "<PRIVATE_REF_03264>",
+      "actual": "<PRIVATE_REF_03264>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi_controls/raw/ep_i/ep_i_check_1791107335294.json",
+      "expected": "<PRIVATE_REF_00549>",
+      "actual": "<PRIVATE_REF_00549>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi_controls/raw/ep_i/ep_i_check_1791107335329.json",
+      "expected": "<PRIVATE_REF_02841>",
+      "actual": "<PRIVATE_REF_02841>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi_controls/raw/ep_i/ep_i_check_1791107335476.json",
+      "expected": "<PRIVATE_REF_01912>",
+      "actual": "<PRIVATE_REF_01912>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi_controls/raw/ep_i/ep_i_probe_1791107335406.json",
+      "expected": "<PRIVATE_REF_00905>",
+      "actual": "<PRIVATE_REF_00905>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi_controls/targets_real.json",
+      "expected": "<PRIVATE_REF_02079>",
+      "actual": "<PRIVATE_REF_02079>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/epi_run.sh",
+      "expected": "<PRIVATE_REF_00901>",
+      "actual": "<PRIVATE_REF_00901>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/pa4_raw/full_suite_tap.txt",
+      "expected": "<PRIVATE_REF_03283>",
+      "actual": "<PRIVATE_REF_03283>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/pa4_raw/manifest_negative_control.json",
+      "expected": "<PRIVATE_REF_02481>",
+      "actual": "<PRIVATE_REF_02481>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/pa4_raw/manifest_positive_control.json",
+      "expected": "<PRIVATE_REF_00540>",
+      "actual": "<PRIVATE_REF_00540>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/w2b_export/W2B_ACTIVATION_BLOCK.txt",
+      "expected": "<PRIVATE_REF_00243>",
+      "actual": "<PRIVATE_REF_00243>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/w2b_export/W2B_EXPORT_SHA256SUMS",
+      "expected": "<PRIVATE_REF_02216>",
+      "actual": "<PRIVATE_REF_02216>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/wf9_controls/WF9_RUN_LOG.txt",
+      "expected": "<PRIVATE_REF_01578>",
+      "actual": "<PRIVATE_REF_01578>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/wf9_controls/raw/discoverability/discoverability_1791107309971.json",
+      "expected": "<PRIVATE_REF_00247>",
+      "actual": "<PRIVATE_REF_00247>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/wf9_controls/raw/discoverability/discoverability_1791107310004.json",
+      "expected": "<PRIVATE_REF_03455>",
+      "actual": "<PRIVATE_REF_03455>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/wf9_controls/raw/discoverability/discoverability_1791107310041.json",
+      "expected": "<PRIVATE_REF_01172>",
+      "actual": "<PRIVATE_REF_01172>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/wf9_controls/raw/discoverability/discoverability_1791107310081.json",
+      "expected": "<PRIVATE_REF_02090>",
+      "actual": "<PRIVATE_REF_02090>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/wf9_controls/raw/discoverability/discoverability_1791107310121.json",
+      "expected": "<PRIVATE_REF_01535>",
+      "actual": "<PRIVATE_REF_01535>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/wf9_controls/targets_real.json",
+      "expected": "<PRIVATE_REF_02079>",
+      "actual": "<PRIVATE_REF_02079>",
+      "match": true
+    },
+    {
+      "path": "evidence/executor/wf9_run.sh",
+      "expected": "<PRIVATE_REF_03188>",
+      "actual": "<PRIVATE_REF_03188>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/PA4_CONTROLS.md",
+      "expected": "<PRIVATE_REF_02290>",
+      "actual": "<PRIVATE_REF_02290>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/fixtures/approval_fixture.jsonl",
+      "expected": "<PRIVATE_REF_02408>",
+      "actual": "<PRIVATE_REF_02408>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/fixtures/controller_fixture.json",
+      "expected": "<PRIVATE_REF_03536>",
+      "actual": "<PRIVATE_REF_03536>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/fixtures/project_inventory_fixture.json",
+      "expected": "<PRIVATE_REF_01372>",
+      "actual": "<PRIVATE_REF_01372>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/fixtures/reset_groups_fixture.json",
+      "expected": "<PRIVATE_REF_01749>",
+      "actual": "<PRIVATE_REF_01749>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/fixtures/run_card_fixture.json",
+      "expected": "<PRIVATE_REF_01240>",
+      "actual": "<PRIVATE_REF_01240>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/fixtures/snapshot_fixture.json",
+      "expected": "<PRIVATE_REF_03691>",
+      "actual": "<PRIVATE_REF_03691>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/fixtures/transcript_fixture.jsonl",
+      "expected": "<PRIVATE_REF_01863>",
+      "actual": "<PRIVATE_REF_01863>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tests/approvalExtract.test.js",
+      "expected": "<PRIVATE_REF_01935>",
+      "actual": "<PRIVATE_REF_01935>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tests/entryCheck.test.js",
+      "expected": "<PRIVATE_REF_02021>",
+      "actual": "<PRIVATE_REF_02021>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tests/evidenceRegistryCheck.test.js",
+      "expected": "<PRIVATE_REF_03420>",
+      "actual": "<PRIVATE_REF_03420>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tests/pa4.test.js",
+      "expected": "<PRIVATE_REF_02554>",
+      "actual": "<PRIVATE_REF_02554>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tests/pa4_fixtures.js",
+      "expected": "<PRIVATE_REF_02887>",
+      "actual": "<PRIVATE_REF_02887>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tests/packageIncrement.test.js",
+      "expected": "<PRIVATE_REF_02855>",
+      "actual": "<PRIVATE_REF_02855>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tests/projectInventory.test.js",
+      "expected": "<PRIVATE_REF_02165>",
+      "actual": "<PRIVATE_REF_02165>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tests/render.test.js",
+      "expected": "<PRIVATE_REF_01461>",
+      "actual": "<PRIVATE_REF_01461>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tests/secretScan.test.js",
+      "expected": "<PRIVATE_REF_02063>",
+      "actual": "<PRIVATE_REF_02063>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tests/snapshot.test.js",
+      "expected": "<PRIVATE_REF_02452>",
+      "actual": "<PRIVATE_REF_02452>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/bin/experiment-control-tool.js",
+      "expected": "<PRIVATE_REF_01211>",
+      "actual": "<PRIVATE_REF_01211>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/package-lock.json",
+      "expected": "<PRIVATE_REF_01155>",
+      "actual": "<PRIVATE_REF_01155>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/package.json",
+      "expected": "<PRIVATE_REF_01594>",
+      "actual": "<PRIVATE_REF_01594>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/approvalExtract.js",
+      "expected": "<PRIVATE_REF_02224>",
+      "actual": "<PRIVATE_REF_02224>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/credDelivery.js",
+      "expected": "<PRIVATE_REF_01802>",
+      "actual": "<PRIVATE_REF_01802>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/discoverability.js",
+      "expected": "<PRIVATE_REF_01746>",
+      "actual": "<PRIVATE_REF_01746>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/entryCheck.js",
+      "expected": "<PRIVATE_REF_02923>",
+      "actual": "<PRIVATE_REF_02923>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/entryPreflight.js",
+      "expected": "<PRIVATE_REF_02919>",
+      "actual": "<PRIVATE_REF_02919>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/evidenceRegistryCheck.js",
+      "expected": "<PRIVATE_REF_01261>",
+      "actual": "<PRIVATE_REF_01261>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/harnessManifest.js",
+      "expected": "<PRIVATE_REF_03553>",
+      "actual": "<PRIVATE_REF_03553>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/hcLock.js",
+      "expected": "<PRIVATE_REF_01645>",
+      "actual": "<PRIVATE_REF_01645>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/interruptDetect.js",
+      "expected": "<PRIVATE_REF_03411>",
+      "actual": "<PRIVATE_REF_03411>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/lib/chainVerify.js",
+      "expected": "<PRIVATE_REF_02580>",
+      "actual": "<PRIVATE_REF_02580>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/lib/cli.js",
+      "expected": "<PRIVATE_REF_01744>",
+      "actual": "<PRIVATE_REF_01744>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/lib/identity.js",
+      "expected": "<PRIVATE_REF_01566>",
+      "actual": "<PRIVATE_REF_01566>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/lib/rollout.js",
+      "expected": "<PRIVATE_REF_01671>",
+      "actual": "<PRIVATE_REF_01671>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/lib/util.js",
+      "expected": "<PRIVATE_REF_02680>",
+      "actual": "<PRIVATE_REF_02680>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/packageIncrement.js",
+      "expected": "<PRIVATE_REF_03488>",
+      "actual": "<PRIVATE_REF_03488>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/packetComplete.js",
+      "expected": "<PRIVATE_REF_02561>",
+      "actual": "<PRIVATE_REF_02561>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/projectInventory.js",
+      "expected": "<PRIVATE_REF_00937>",
+      "actual": "<PRIVATE_REF_00937>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/render.js",
+      "expected": "<PRIVATE_REF_00927>",
+      "actual": "<PRIVATE_REF_00927>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/resourceX.js",
+      "expected": "<PRIVATE_REF_02299>",
+      "actual": "<PRIVATE_REF_02299>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/secretScan.js",
+      "expected": "<PRIVATE_REF_03552>",
+      "actual": "<PRIVATE_REF_03552>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/slipCapture.js",
+      "expected": "<PRIVATE_REF_00002>",
+      "actual": "<PRIVATE_REF_00002>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/snapshot.js",
+      "expected": "<PRIVATE_REF_03133>",
+      "actual": "<PRIVATE_REF_03133>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/src/syntheticScan.js",
+      "expected": "<PRIVATE_REF_01347>",
+      "actual": "<PRIVATE_REF_01347>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/support/billable_create_rules.json",
+      "expected": "<PRIVATE_REF_02353>",
+      "actual": "<PRIVATE_REF_02353>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/support/codex_home_template/config.toml",
+      "expected": "<PRIVATE_REF_03638>",
+      "actual": "<PRIVATE_REF_03638>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/support/packet_required_items.json",
+      "expected": "<PRIVATE_REF_00570>",
+      "actual": "<PRIVATE_REF_00570>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/support/prohibited_labels.json",
+      "expected": "<PRIVATE_REF_00665>",
+      "actual": "<PRIVATE_REF_00665>",
+      "match": true
+    },
+    {
+      "path": "tool/experiment-control-tool-0.3.0/tool/support/runtime_lock_w2.json",
+      "expected": "<PRIVATE_REF_02231>",
+      "actual": "<PRIVATE_REF_02231>",
+      "match": true
+    }
+  ],
+  "primary_pins": {
+    "evidence/executor/LOCAL_PREPARATION_SUBMISSION_r1.md": "<PRIVATE_REF_02473>",
+    "evidence/executor/EVIDENCE_MANIFEST_r1.sha256": "<PRIVATE_REF_02492>",
+    "evidence/executor/HARNESS_MANIFEST_0.3.0.json": "<PRIVATE_REF_03556>",
+    "evidence/executor/w2b_export/W2B_EXPORT_SHA256SUMS": "<PRIVATE_REF_02216>",
+    "evidence/executor/w2b_export/W2B_ACTIVATION_BLOCK.txt": "<PRIVATE_REF_00243>",
+    "tool/experiment-control-tool-0.3.0/tool/support/runtime_lock_w2.json": "<PRIVATE_REF_02231>"
+  },
+  "export": [
+    {
+      "path": "app/web-ui/app.js",
+      "expected": "<PRIVATE_REF_02469>",
+      "actual": "<PRIVATE_REF_02469>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "app/web-ui/freshness.mjs",
+      "expected": "<PRIVATE_REF_01848>",
+      "actual": "<PRIVATE_REF_01848>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "app/web-ui/index.html",
+      "expected": "<PRIVATE_REF_01020>",
+      "actual": "<PRIVATE_REF_01020>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "app/web-ui/render.mjs",
+      "expected": "<PRIVATE_REF_03673>",
+      "actual": "<PRIVATE_REF_03673>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "app/web-ui/styles.css",
+      "expected": "<PRIVATE_REF_01747>",
+      "actual": "<PRIVATE_REF_01747>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "schema/event.schema.json",
+      "expected": "<PRIVATE_REF_01999>",
+      "actual": "<PRIVATE_REF_01999>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "schema/state.schema.json",
+      "expected": "<PRIVATE_REF_01409>",
+      "actual": "<PRIVATE_REF_01409>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "skills/providers/aws.md",
+      "expected": "<PRIVATE_REF_02164>",
+      "actual": "<PRIVATE_REF_02164>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": false,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "skills/providers/azure.md",
+      "expected": "<PRIVATE_REF_02350>",
+      "actual": "<PRIVATE_REF_02350>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": false,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "skills/providers/dns-cloudflare.md",
+      "expected": "<PRIVATE_REF_03743>",
+      "actual": "<PRIVATE_REF_03743>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": false,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "skills/providers/gcp.md",
+      "expected": "<PRIVATE_REF_03035>",
+      "actual": "<PRIVATE_REF_03035>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": false,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "skills/providers/nectar.md",
+      "expected": "<PRIVATE_REF_01245>",
+      "actual": "<PRIVATE_REF_01245>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": false,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "skills/router.md",
+      "expected": "<PRIVATE_REF_03657>",
+      "actual": "<PRIVATE_REF_03657>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "skills/stages/execute.md",
+      "expected": "<PRIVATE_REF_02027>",
+      "actual": "<PRIVATE_REF_02027>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "skills/stages/plan.md",
+      "expected": "<PRIVATE_REF_01936>",
+      "actual": "<PRIVATE_REF_01936>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "skills/stages/recon.md",
+      "expected": "<PRIVATE_REF_02325>",
+      "actual": "<PRIVATE_REF_02325>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "skills/stages/recover.md",
+      "expected": "<PRIVATE_REF_01041>",
+      "actual": "<PRIVATE_REF_01041>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "skills/stages/verify-handoff.md",
+      "expected": "<PRIVATE_REF_03710>",
+      "actual": "<PRIVATE_REF_03710>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "tools/lib/schema-subset.mjs",
+      "expected": "<PRIVATE_REF_01546>",
+      "actual": "<PRIVATE_REF_01546>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "tools/lib/secret-scan.mjs",
+      "expected": "<PRIVATE_REF_03377>",
+      "actual": "<PRIVATE_REF_03377>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "tools/lib/semantic-checks.mjs",
+      "expected": "<PRIVATE_REF_01801>",
+      "actual": "<PRIVATE_REF_01801>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "tools/lib/server.mjs",
+      "expected": "<PRIVATE_REF_01253>",
+      "actual": "<PRIVATE_REF_01253>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "tools/lib/validate.mjs",
+      "expected": "<PRIVATE_REF_01109>",
+      "actual": "<PRIVATE_REF_01109>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "tools/lib/workspace.mjs",
+      "expected": "<PRIVATE_REF_01391>",
+      "actual": "<PRIVATE_REF_01391>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    },
+    {
+      "path": "tools/watchover.mjs",
+      "expected": "<PRIVATE_REF_00144>",
+      "actual": "<PRIVATE_REF_00144>",
+      "match": true,
+      "approved_commit_match": true,
+      "in_literal_allowlist": true,
+      "mode": "0o444",
+      "dbc4_scan_hits": []
+    }
+  ],
+  "export_parent_mode": "0o111",
+  "baseline": [
+    {
+      "path": "tool/bin/experiment-control-tool.js",
+      "baseline_sha256": "<PRIVATE_REF_01558>",
+      "candidate_sha256": "<PRIVATE_REF_01211>",
+      "unchanged": false
+    },
+    {
+      "path": "tool/package-lock.json",
+      "baseline_sha256": "<PRIVATE_REF_01010>",
+      "candidate_sha256": "<PRIVATE_REF_01155>",
+      "unchanged": false
+    },
+    {
+      "path": "tool/package.json",
+      "baseline_sha256": "<PRIVATE_REF_01097>",
+      "candidate_sha256": "<PRIVATE_REF_01594>",
+      "unchanged": false
+    },
+    {
+      "path": "tool/src/approvalExtract.js",
+      "baseline_sha256": "<PRIVATE_REF_02224>",
+      "candidate_sha256": "<PRIVATE_REF_02224>",
+      "unchanged": true
+    },
+    {
+      "path": "tool/src/entryCheck.js",
+      "baseline_sha256": "<PRIVATE_REF_02923>",
+      "candidate_sha256": "<PRIVATE_REF_02923>",
+      "unchanged": true
+    },
+    {
+      "path": "tool/src/evidenceRegistryCheck.js",
+      "baseline_sha256": "<PRIVATE_REF_01261>",
+      "candidate_sha256": "<PRIVATE_REF_01261>",
+      "unchanged": true
+    },
+    {
+      "path": "tool/src/lib/chainVerify.js",
+      "baseline_sha256": "<PRIVATE_REF_02580>",
+      "candidate_sha256": "<PRIVATE_REF_02580>",
+      "unchanged": true
+    },
+    {
+      "path": "tool/src/lib/cli.js",
+      "baseline_sha256": "<PRIVATE_REF_01744>",
+      "candidate_sha256": "<PRIVATE_REF_01744>",
+      "unchanged": true
+    },
+    {
+      "path": "tool/src/lib/identity.js",
+      "baseline_sha256": "<PRIVATE_REF_01566>",
+      "candidate_sha256": "<PRIVATE_REF_01566>",
+      "unchanged": true
+    },
+    {
+      "path": "tool/src/lib/util.js",
+      "baseline_sha256": "<PRIVATE_REF_02680>",
+      "candidate_sha256": "<PRIVATE_REF_02680>",
+      "unchanged": true
+    },
+    {
+      "path": "tool/src/packageIncrement.js",
+      "baseline_sha256": "<PRIVATE_REF_03488>",
+      "candidate_sha256": "<PRIVATE_REF_03488>",
+      "unchanged": true
+    },
+    {
+      "path": "tool/src/projectInventory.js",
+      "baseline_sha256": "<PRIVATE_REF_00937>",
+      "candidate_sha256": "<PRIVATE_REF_00937>",
+      "unchanged": true
+    },
+    {
+      "path": "tool/src/render.js",
+      "baseline_sha256": "<PRIVATE_REF_00927>",
+      "candidate_sha256": "<PRIVATE_REF_00927>",
+      "unchanged": true
+    },
+    {
+      "path": "tool/src/secretScan.js",
+      "baseline_sha256": "<PRIVATE_REF_01518>",
+      "candidate_sha256": "<PRIVATE_REF_03552>",
+      "unchanged": false
+    },
+    {
+      "path": "tool/src/snapshot.js",
+      "baseline_sha256": "<PRIVATE_REF_03133>",
+      "candidate_sha256": "<PRIVATE_REF_03133>",
+      "unchanged": true
+    }
+  ],
+  "references": [
+    {
+      "label": "R14:ma1_verify_r14.py",
+      "expected": "<PRIVATE_REF_02821>",
+      "actual": "<PRIVATE_REF_02821>",
+      "match": true
+    },
+    {
+      "label": "R14:ma1_prov_scan_r14.py",
+      "expected": "<PRIVATE_REF_03208>",
+      "actual": "<PRIVATE_REF_03208>",
+      "match": true
+    },
+    {
+      "label": "R14:PROFILE_REGISTRY_R14.json",
+      "expected": "<PRIVATE_REF_02152>",
+      "actual": "<PRIVATE_REF_02152>",
+      "match": true
+    },
+    {
+      "label": "R14:SHA256SUMS_ADAPTER_STAGE_R14",
+      "expected": "<PRIVATE_REF_00132>",
+      "actual": "<PRIVATE_REF_00132>",
+      "match": true
+    },
+    {
+      "label": "R14:STATIC_CHECK_LOG_R14.md",
+      "expected": "<PRIVATE_REF_00961>",
+      "actual": "<PRIVATE_REF_00961>",
+      "match": true
+    },
+    {
+      "label": "R14:ma1_guest_capture_r13.sh",
+      "expected": "<PRIVATE_REF_02133>",
+      "actual": "<PRIVATE_REF_02133>",
+      "match": true
+    },
+    {
+      "label": "R14:ma1_webui_build.sh",
+      "expected": "<PRIVATE_REF_01351>",
+      "actual": "<PRIVATE_REF_01351>",
+      "match": true
+    },
+    {
+      "label": "R14:alerta_webui_fetch.py",
+      "expected": "<PRIVATE_REF_02962>",
+      "actual": "<PRIVATE_REF_02962>",
+      "match": true
+    },
+    {
+      "label": "R14:alerta_probe.py",
+      "expected": "<PRIVATE_REF_02248>",
+      "actual": "<PRIVATE_REF_02248>",
+      "match": true
+    },
+    {
+      "label": "R14:gw.sh",
+      "expected": "<PRIVATE_REF_02525>",
+      "actual": "<PRIVATE_REF_02525>",
+      "match": true
+    },
+    {
+      "label": "R14:redact_w2.pl",
+      "expected": "<PRIVATE_REF_03716>",
+      "actual": "<PRIVATE_REF_03716>",
+      "match": true
+    },
+    {
+      "label": "R14:ADAPTER_RECORD_R14_ALERTA_SUBMISSION.md",
+      "expected": "<PRIVATE_REF_02800>",
+      "actual": "<PRIVATE_REF_02800>",
+      "match": true
+    },
+    {
+      "label": "R14:MA1_ADAPTER_RECORD_FINAL_R14_ALERTA.md",
+      "expected": "<PRIVATE_REF_02057>",
+      "actual": "<PRIVATE_REF_02057>",
+      "match": true
+    },
+    {
+      "label": "R14:REVIEW_RETURN_ALERTA_R14.md",
+      "expected": "<PRIVATE_REF_02241>",
+      "actual": "<PRIVATE_REF_02241>",
+      "match": true
+    },
+    {
+      "label": "R14:FINAL_HANDOFF_TO_OPERATIONS_COORDINATOR_ALERTA_R14.md",
+      "expected": "<PRIVATE_REF_03594>",
+      "actual": "<PRIVATE_REF_03594>",
+      "match": true
+    },
+    {
+      "label": "PRE_W2 ratified body",
+      "expected": "<PRIVATE_REF_01075>",
+      "actual": "<PRIVATE_REF_01075>",
+      "match": true
+    },
+    {
+      "label": "R14 Addendum ratified sidecar",
+      "expected": "<PRIVATE_REF_03121>",
+      "actual": "<PRIVATE_REF_03121>",
+      "match": true
+    },
+    {
+      "label": "HC frozen material",
+      "expected": "<PRIVATE_REF_02212>",
+      "actual": "<PRIVATE_REF_02212>",
+      "match": true
+    },
+    {
+      "label": "Checkpoint protocol (W1-C4/W1-C9 source)",
+      "expected": "<PRIVATE_REF_01722>",
+      "actual": "<PRIVATE_REF_01722>",
+      "match": true
+    },
+    {
+      "label": "W1 next-round corrections (PA-1 source)",
+      "expected": "<PRIVATE_REF_02102>",
+      "actual": "<PRIVATE_REF_02102>",
+      "match": true
+    },
+    {
+      "label": "Role/model registry (WF-5 source)",
+      "expected": "<PRIVATE_REF_03161>",
+      "actual": "<PRIVATE_REF_03161>",
+      "match": true
+    },
+    {
+      "label": "Baseline experiment-control-tool 0.2.0 entry point (unchanged)",
+      "expected": "<PRIVATE_REF_01558>",
+      "actual": "<PRIVATE_REF_01558>",
+      "match": true
+    }
+  ],
+  "raw_controls": [
+    {
+      "path": "evidence/executor/wf9_controls/raw/discoverability/discoverability_1791107309971.json",
+      "sha256": "<PRIVATE_REF_00247>",
+      "verdict": "CLEAN",
+      "failures": null,
+      "target_findings": [],
+      "label_findings_count": 0,
+      "unlistable": [],
+      "observed_runtime": null
+    },
+    {
+      "path": "evidence/executor/wf9_controls/raw/discoverability/discoverability_1791107310004.json",
+      "sha256": "<PRIVATE_REF_03455>",
+      "verdict": "LABELLED",
+      "failures": null,
+      "target_findings": [],
+      "label_findings_count": 17,
+      "unlistable": [],
+      "observed_runtime": null
+    },
+    {
+      "path": "evidence/executor/wf9_controls/raw/discoverability/discoverability_1791107310041.json",
+      "sha256": "<PRIVATE_REF_01172>",
+      "verdict": "DISCOVERABLE",
+      "failures": null,
+      "target_findings": [
+        "W2B_EXPORT"
+      ],
+      "label_findings_count": 0,
+      "unlistable": [],
+      "observed_runtime": null
+    },
+    {
+      "path": "evidence/executor/wf9_controls/raw/discoverability/discoverability_1791107310081.json",
+      "sha256": "<PRIVATE_REF_02090>",
+      "verdict": "DISCOVERABLE",
+      "failures": null,
+      "target_findings": [
+        "W2B_EXPORT"
+      ],
+      "label_findings_count": 146,
+      "unlistable": [],
+      "observed_runtime": null
+    },
+    {
+      "path": "evidence/executor/wf9_controls/raw/discoverability/discoverability_1791107310121.json",
+      "sha256": "<PRIVATE_REF_01535>",
+      "verdict": "LABELLED",
+      "failures": null,
+      "target_findings": [],
+      "label_findings_count": 146,
+      "unlistable": [
+        {
+          "dir": "/private/tmp/q2d7363ee",
+          "code": "EACCES",
+          "via": "parent_chain:/private/tmp"
+        }
+      ],
+      "observed_runtime": null
+    },
+    {
+      "path": "evidence/executor/epi_controls/raw/ep_i/ep_i_check_1791107335204.json",
+      "sha256": "<PRIVATE_REF_01501>",
+      "verdict": "PASS",
+      "failures": [],
+      "target_findings": [],
+      "label_findings_count": 0,
+      "unlistable": null,
+      "observed_runtime": {
+        "codex_cli_version": "codex-cli 0.160.0",
+        "model": "gpt-5.6-sol",
+        "model_reasoning_effort": "high",
+        "approval_policy": "on-request",
+        "sandbox_mode": "workspace-write",
+        "check_for_update_on_startup": "false",
+        "enabled_plugins": [],
+        "mcp_servers": []
+      }
+    },
+    {
+      "path": "evidence/executor/epi_controls/raw/ep_i/ep_i_check_1791107335239.json",
+      "sha256": "<PRIVATE_REF_03264>",
+      "verdict": "FAIL",
+      "failures": [
+        "PROHIBITED_AUTOLOAD"
+      ],
+      "target_findings": [],
+      "label_findings_count": 0,
+      "unlistable": null,
+      "observed_runtime": {
+        "codex_cli_version": "codex-cli 0.160.0",
+        "model": "gpt-5.6-sol",
+        "model_reasoning_effort": "high",
+        "approval_policy": "on-request",
+        "sandbox_mode": "workspace-write",
+        "check_for_update_on_startup": "false",
+        "enabled_plugins": [],
+        "mcp_servers": []
+      }
+    },
+    {
+      "path": "evidence/executor/epi_controls/raw/ep_i/ep_i_check_1791107335294.json",
+      "sha256": "<PRIVATE_REF_00549>",
+      "verdict": "FAIL",
+      "failures": [
+        "RUNTIME_PIN_MISMATCH"
+      ],
+      "target_findings": [],
+      "label_findings_count": 0,
+      "unlistable": null,
+      "observed_runtime": {
+        "codex_cli_version": "codex-cli 0.160.0",
+        "model": "gpt-6.1-sol",
+        "model_reasoning_effort": "high",
+        "approval_policy": "on-request",
+        "sandbox_mode": "workspace-write",
+        "check_for_update_on_startup": "false",
+        "enabled_plugins": [],
+        "mcp_servers": []
+      }
+    },
+    {
+      "path": "evidence/executor/epi_controls/raw/ep_i/ep_i_check_1791107335329.json",
+      "sha256": "<PRIVATE_REF_02841>",
+      "verdict": "PASS",
+      "failures": [],
+      "target_findings": [],
+      "label_findings_count": 0,
+      "unlistable": null,
+      "observed_runtime": {
+        "codex_cli_version": "codex-cli 0.160.0",
+        "model": "gpt-5.6-sol",
+        "model_reasoning_effort": "high",
+        "approval_policy": "on-request",
+        "sandbox_mode": "workspace-write",
+        "check_for_update_on_startup": "false",
+        "enabled_plugins": [],
+        "mcp_servers": []
+      }
+    },
+    {
+      "path": "evidence/executor/epi_controls/raw/ep_i/ep_i_check_1791107335476.json",
+      "sha256": "<PRIVATE_REF_01912>",
+      "verdict": "FAIL",
+      "failures": [
+        "RUNTIME_PIN_MISMATCH",
+        "CONFIG_EXPOSES_PROHIBITED",
+        "PROHIBITED_AUTOLOAD"
+      ],
+      "target_findings": [],
+      "label_findings_count": 0,
+      "unlistable": null,
+      "observed_runtime": {
+        "codex_cli_version": "codex-cli 0.160.0",
+        "model": "gpt-6.1-sol",
+        "model_reasoning_effort": "high",
+        "approval_policy": "on-request",
+        "sandbox_mode": "workspace-write",
+        "check_for_update_on_startup": null,
+        "enabled_plugins": [
+          "browser@openai-bundled",
+          "documents@openai-primary-runtime",
+          "github@openai-curated",
+          "pdf@openai-primary-runtime",
+          "presentations@openai-primary-runtime",
+          "spreadsheets@openai-primary-runtime",
+          "template-creator@openai-primary-runtime",
+          "warp@codex-warp"
+        ],
+        "mcp_servers": [
+          "node_repl",
+          "openaiDeveloperDocs"
+        ],
+        "features": {
+          "js_repl": "false"
+        }
+      }
+    },
+    {
+      "path": "evidence/executor/epi_controls/raw/ep_i/ep_i_probe_1791107335406.json",
+      "sha256": "<PRIVATE_REF_00905>",
+      "verdict": null,
+      "failures": null,
+      "target_findings": [],
+      "label_findings_count": 0,
+      "unlistable": null,
+      "observed_runtime": {
+        "codex_cli_version": "codex-cli 0.160.0",
+        "model": "gpt-6.1-sol",
+        "model_reasoning_effort": "high",
+        "approval_policy": "on-request",
+        "sandbox_mode": "workspace-write",
+        "check_for_update_on_startup": null,
+        "enabled_plugins": [
+          "browser@openai-bundled",
+          "documents@openai-primary-runtime",
+          "github@openai-curated",
+          "pdf@openai-primary-runtime",
+          "presentations@openai-primary-runtime",
+          "spreadsheets@openai-primary-runtime",
+          "template-creator@openai-primary-runtime",
+          "warp@codex-warp"
+        ],
+        "mcp_servers": [
+          "node_repl",
+          "openaiDeveloperDocs"
+        ],
+        "features": {
+          "js_repl": "false"
+        }
+      }
+    }
+  ],
+  "scan_positive_control": true
+}

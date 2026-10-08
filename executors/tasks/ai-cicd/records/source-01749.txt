@@ -1,0 +1,41 @@
+$ gcloud compute firewall-rules create <W2_RUN_RESOURCE_PREFIX>-web --network=<W2_RUN_RESOURCE_PREFIX>-net --direction=INGRESS --allow=tcp:80,tcp:443 --source-ranges=0.0.0.0/0 --target-tags=<W2_RUN_RESOURCE_PREFIX> --format=json --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+[
+  {
+    "allowed": [
+      {
+        "IPProtocol": "tcp",
+        "ports": [
+          "80"
+        ]
+      },
+      {
+        "IPProtocol": "tcp",
+        "ports": [
+          "443"
+        ]
+      }
+    ],
+    "creationTimestamp": "2026-10-05T03:09:08.585-07:00",
+    "description": "",
+    "direction": "INGRESS",
+    "disabled": false,
+    "id": "<NUMERIC_RESOURCE_0045>",
+    "kind": "compute#firewall",
+    "logConfig": {
+      "enable": false
+    },
+    "name": "<W2_RUN_RESOURCE_PREFIX>-web",
+    "network": "<PRIVATE_URL_0282>",
+    "priority": 1000,
+    "selfLink": "<PRIVATE_URL_0273>",
+    "sourceRanges": [
+      "0.0.0.0/0"
+    ],
+    "targetTags": [
+      "<W2_RUN_RESOURCE_PREFIX>"
+    ]
+  }
+]
+Creating firewall...
+..Created [<PRIVATE_URL_0273>].
+done.

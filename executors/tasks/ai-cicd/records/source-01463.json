@@ -1,0 +1,74 @@
+{
+  "artifact_class": "ACTION_RECEIPT_RESULT",
+  "receipt_id": "AI-CICD-20261005-W2B-CP01-READONLY-001",
+  "actor": "Operations Coordinator",
+  "started_at": "2026-10-05T20:34:56.381+11:00",
+  "completed_at": "2026-10-05T20:37:42+11:00",
+  "target": "<CLOUD_PROJECT> / interruption inventory",
+  "bundle_consumed": 1,
+  "provider_command_attempts_consumed": 8,
+  "provider_command_attempt_cap": 10,
+  "status": "COMPLETE_NO_REUSE",
+  "all_commands_exit_zero": true,
+  "approved_mutations": 0,
+  "performed_mutations": 0,
+  "scope_limits": "Independent point-in-time inventory and operation status only, not HTTPS/app/data acceptance. VM output/metadata is private; no whole-project CLEAN claim. Cloud Asset can lag, supplemental direct reads retained.",
+  "raw_query_metadata": [
+    {
+      "query": "asset_inventory",
+      "attempt": 1,
+      "exit_code": 0,
+      "stdout_sha256": "<PRIVATE_REF_03087>",
+      "stderr_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "query": "vm_describe",
+      "attempt": 2,
+      "exit_code": 0,
+      "stdout_sha256": "<PRIVATE_REF_01040>",
+      "stderr_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "query": "disk_inventory",
+      "attempt": 3,
+      "exit_code": 0,
+      "stdout_sha256": "<PRIVATE_REF_02642>",
+      "stderr_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "query": "address_inventory",
+      "attempt": 4,
+      "exit_code": 0,
+      "stdout_sha256": "<PRIVATE_REF_02317>",
+      "stderr_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "query": "network_inventory",
+      "attempt": 5,
+      "exit_code": 0,
+      "stdout_sha256": "<PRIVATE_REF_01073>",
+      "stderr_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "query": "subnet_inventory",
+      "attempt": 6,
+      "exit_code": 0,
+      "stdout_sha256": "<PRIVATE_REF_01484>",
+      "stderr_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "query": "firewall_inventory",
+      "attempt": 7,
+      "exit_code": 0,
+      "stdout_sha256": "<PRIVATE_REF_01429>",
+      "stderr_sha256": "<PRIVATE_REF_03399>"
+    },
+    {
+      "query": "operation_inventory",
+      "attempt": 8,
+      "exit_code": 0,
+      "stdout_sha256": "<PRIVATE_REF_03712>",
+      "stderr_sha256": "<PRIVATE_REF_03399>"
+    }
+  ]
+}

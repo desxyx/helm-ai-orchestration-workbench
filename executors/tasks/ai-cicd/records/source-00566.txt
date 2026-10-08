@@ -1,0 +1,9 @@
+This is an optional narrow independent VerifyOnly return for the existing Reviewer, not a new product review or live experiment.
+
+Human Operator authorized deletion of the inventoried Mac experiment runtime files and W1/W2/W3 workload source working copies, while preserving experimental data and conversations. Read README.md, PLAN.json and RESULT.json in this directory. The exact Owner source and execution lane are in <OPERATIONS_ROOT>/tasks/AI_CICD/OWNER_DECISION_LEDGER.md.
+
+Inspect the deletion categories, source pins/patch custody, duplicate-to-retained mappings and retained-file baseline. Confirm no product, remote repository, cloud, Windows or other-task mutation. Originals sealed as experimental evidence remain present; source/build working copies and identified caches are the deletion targets. MA-1 evidence fixtures and npm debug logs are retained.
+
+On the actual Mac only, cleanup.py verify rechecks the recorded preserved bytes without deleting anything. Do not run prepare/apply, restore sources, inspect secret contents, contact a live role, or run experimental/cloud verifiers. Windows clones do not contain every local custody original and cannot reproduce this whole-machine baseline; absent local originals there do not establish a Mac deletion failure.
+
+Record the exact checked scope, mismatches (if any) and limitations in a new independent return file. Operations Coordinator's operational before/after hash checks are not an independent Reviewer verdict. This review does not certify W3 outcome, causal eligibility, public sanitization or product behavior.

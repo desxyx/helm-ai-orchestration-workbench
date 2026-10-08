@@ -1,0 +1,4 @@
+Sanitized historical reconstruction for a screenshot. No cloud actions performed.
+Source: W2B CP-01 watchover/state.json and events.jsonl; event prefix stops at evt-0023, before the first approval.
+The decision card is reconstructed from the retained plan and request, not an original pending-state snapshot.
+Original fact timestamps and historical price estimates remain unchanged; current preview preparation time is not a new verification.

@@ -1,0 +1,20 @@
+{
+  "run_id": "RUN-W2B",
+  "frozen_tool_raw_verdict": "PASS_NO_REAL_SECRET_MATCHES",
+  "scan_result_path": "source-03498.json",
+  "canary": {
+    "plant": {
+      "path": "source-03497.json",
+      "sha256": "<PRIVATE_REF_03320>"
+    },
+    "found": true,
+    "cleanup": {
+      "path": "source-03496.json",
+      "sha256": "<PRIVATE_REF_01779>"
+    }
+  },
+  "coverage": "Both captured native transcripts and full retained text representation of pre-verification workspace; private whole archive retained",
+  "coverage_gaps": "Dependency/git/cache directories, binary/image pixels and large generated assets withheld from text corpus; source custody manifest lists exclusions. Controller-specific private credentials/HC/Observer notes not arm corpus.",
+  "synthetic_custody": "No artificial registry invented for Deployer-created values; password-like candidates retained unclassified; independently generated verification credentials not counted as Deployer exposure.",
+  "M10": "UNVERIFIED pending Observer against corpus completeness and candidate classification; raw scanner PASS never silently promoted to whole-arm secret-free claim"
+}

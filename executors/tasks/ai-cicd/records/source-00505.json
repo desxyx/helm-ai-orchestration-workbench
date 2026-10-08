@@ -1,0 +1,805 @@
+{
+  "commit": "5c662eac0449bd30eddd01c606d268f0aa510631",
+  "tree": "<PRIVATE_REF_00957>",
+  "files": 133,
+  "manifest": [
+    {
+      "path": ".gitignore",
+      "git_blob": "<PRIVATE_REF_03041>",
+      "bytes": 242,
+      "sha256": "<PRIVATE_REF_03610>"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob": "<PRIVATE_REF_02741>",
+      "bytes": 1089,
+      "sha256": "<PRIVATE_REF_01616>"
+    },
+    {
+      "path": "README.md",
+      "git_blob": "<PRIVATE_REF_01957>",
+      "bytes": 10221,
+      "sha256": "<PRIVATE_REF_00891>"
+    },
+    {
+      "path": "SECURITY.md",
+      "git_blob": "<PRIVATE_REF_02124>",
+      "bytes": 4017,
+      "sha256": "<PRIVATE_REF_01487>"
+    },
+    {
+      "path": "app/web-ui/app.js",
+      "git_blob": "<PRIVATE_REF_01699>",
+      "bytes": 2241,
+      "sha256": "<PRIVATE_REF_02469>"
+    },
+    {
+      "path": "app/web-ui/freshness.mjs",
+      "git_blob": "<PRIVATE_REF_01286>",
+      "bytes": 4734,
+      "sha256": "<PRIVATE_REF_02900>"
+    },
+    {
+      "path": "app/web-ui/index.html",
+      "git_blob": "<PRIVATE_REF_02956>",
+      "bytes": 704,
+      "sha256": "<PRIVATE_REF_01020>"
+    },
+    {
+      "path": "app/web-ui/render.mjs",
+      "git_blob": "<PRIVATE_REF_02868>",
+      "bytes": 17784,
+      "sha256": "<PRIVATE_REF_01934>"
+    },
+    {
+      "path": "app/web-ui/styles.css",
+      "git_blob": "<PRIVATE_REF_02123>",
+      "bytes": 7792,
+      "sha256": "<PRIVATE_REF_01315>"
+    },
+    {
+      "path": "docs/architecture.md",
+      "git_blob": "<PRIVATE_REF_03324>",
+      "bytes": 4629,
+      "sha256": "<PRIVATE_REF_01857>"
+    },
+    {
+      "path": "docs/design-decisions.md",
+      "git_blob": "<PRIVATE_REF_02227>",
+      "bytes": 17898,
+      "sha256": "<PRIVATE_REF_02711>"
+    },
+    {
+      "path": "docs/provenance.md",
+      "git_blob": "<PRIVATE_REF_03400>",
+      "bytes": 2103,
+      "sha256": "<PRIVATE_REF_02779>"
+    },
+    {
+      "path": "docs/validation.md",
+      "git_blob": "<PRIVATE_REF_02294>",
+      "bytes": 4350,
+      "sha256": "<PRIVATE_REF_02758>"
+    },
+    {
+      "path": "fixtures/invalid/malformed-events-line/events.jsonl",
+      "git_blob": "<PRIVATE_REF_01231>",
+      "bytes": 1338,
+      "sha256": "<PRIVATE_REF_02709>"
+    },
+    {
+      "path": "fixtures/invalid/malformed-events-line/expected.json",
+      "git_blob": "<PRIVATE_REF_02801>",
+      "bytes": 149,
+      "sha256": "<PRIVATE_REF_02479>"
+    },
+    {
+      "path": "fixtures/invalid/malformed-events-line/state.json",
+      "git_blob": "<PRIVATE_REF_01938>",
+      "bytes": 7044,
+      "sha256": "<PRIVATE_REF_03332>"
+    },
+    {
+      "path": "fixtures/invalid/malformed-state-json/events.jsonl",
+      "git_blob": "<PRIVATE_REF_03061>",
+      "bytes": 1587,
+      "sha256": "<PRIVATE_REF_03307>"
+    },
+    {
+      "path": "fixtures/invalid/malformed-state-json/expected.json",
+      "git_blob": "<PRIVATE_REF_01980>",
+      "bytes": 132,
+      "sha256": "<PRIVATE_REF_02155>"
+    },
+    {
+      "path": "fixtures/invalid/malformed-state-json/state.json",
+      "git_blob": "<PRIVATE_REF_01448>",
+      "bytes": 7004,
+      "sha256": "<PRIVATE_REF_02905>"
+    },
+    {
+      "path": "fixtures/invalid/planted-secret-canary/events.jsonl",
+      "git_blob": "<PRIVATE_REF_03457>",
+      "bytes": 6081,
+      "sha256": "<PRIVATE_REF_00533>"
+    },
+    {
+      "path": "fixtures/invalid/planted-secret-canary/expected.json",
+      "git_blob": "<PRIVATE_REF_03517>",
+      "bytes": 225,
+      "sha256": "<PRIVATE_REF_02521>"
+    },
+    {
+      "path": "fixtures/invalid/planted-secret-canary/state.json",
+      "git_blob": "<PRIVATE_REF_01759>",
+      "bytes": 12818,
+      "sha256": "<PRIVATE_REF_02578>"
+    },
+    {
+      "path": "fixtures/invalid/schema-invalid-secret-value-field/events.jsonl",
+      "git_blob": "<PRIVATE_REF_03061>",
+      "bytes": 1587,
+      "sha256": "<PRIVATE_REF_03307>"
+    },
+    {
+      "path": "fixtures/invalid/schema-invalid-secret-value-field/expected.json",
+      "git_blob": "<PRIVATE_REF_03366>",
+      "bytes": 255,
+      "sha256": "<PRIVATE_REF_03318>"
+    },
+    {
+      "path": "fixtures/invalid/schema-invalid-secret-value-field/state.json",
+      "git_blob": "<PRIVATE_REF_02169>",
+      "bytes": 7074,
+      "sha256": "<PRIVATE_REF_00148>"
+    },
+    {
+      "path": "fixtures/invalid/schema-invalid-status/events.jsonl",
+      "git_blob": "<PRIVATE_REF_03061>",
+      "bytes": 1587,
+      "sha256": "<PRIVATE_REF_03307>"
+    },
+    {
+      "path": "fixtures/invalid/schema-invalid-status/expected.json",
+      "git_blob": "<PRIVATE_REF_02571>",
+      "bytes": 213,
+      "sha256": "<PRIVATE_REF_01731>"
+    },
+    {
+      "path": "fixtures/invalid/schema-invalid-status/state.json",
+      "git_blob": "<PRIVATE_REF_03563>",
+      "bytes": 7037,
+      "sha256": "<PRIVATE_REF_01593>"
+    },
+    {
+      "path": "fixtures/packages/reduced-no-dns/package-omissions.json",
+      "git_blob": "<PRIVATE_REF_01612>",
+      "bytes": 235,
+      "sha256": "<PRIVATE_REF_03591>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/01-recon/events.jsonl",
+      "git_blob": "<PRIVATE_REF_03061>",
+      "bytes": 1587,
+      "sha256": "<PRIVATE_REF_03307>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/01-recon/state.json",
+      "git_blob": "<PRIVATE_REF_01938>",
+      "bytes": 7044,
+      "sha256": "<PRIVATE_REF_03332>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/02-approval-pending/events.jsonl",
+      "git_blob": "<PRIVATE_REF_02274>",
+      "bytes": 2776,
+      "sha256": "<PRIVATE_REF_01888>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/02-approval-pending/state.json",
+      "git_blob": "<PRIVATE_REF_03645>",
+      "bytes": 10823,
+      "sha256": "<PRIVATE_REF_03727>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/03-long-operation/events.jsonl",
+      "git_blob": "<PRIVATE_REF_03607>",
+      "bytes": 6038,
+      "sha256": "<PRIVATE_REF_01940>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/03-long-operation/state.json",
+      "git_blob": "<PRIVATE_REF_01759>",
+      "bytes": 12818,
+      "sha256": "<PRIVATE_REF_02578>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/04-verification-failed/events.jsonl",
+      "git_blob": "<PRIVATE_REF_02178>",
+      "bytes": 7257,
+      "sha256": "<PRIVATE_REF_02553>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/04-verification-failed/state.json",
+      "git_blob": "<PRIVATE_REF_01443>",
+      "bytes": 13755,
+      "sha256": "<PRIVATE_REF_02234>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/05-incident/events.jsonl",
+      "git_blob": "<PRIVATE_REF_01479>",
+      "bytes": 8344,
+      "sha256": "<PRIVATE_REF_02496>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/05-incident/state.json",
+      "git_blob": "<PRIVATE_REF_02478>",
+      "bytes": 14141,
+      "sha256": "<PRIVATE_REF_02912>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/06-recovered/events.jsonl",
+      "git_blob": "<PRIVATE_REF_03167>",
+      "bytes": 9212,
+      "sha256": "<PRIVATE_REF_03750>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/06-recovered/state.json",
+      "git_blob": "<PRIVATE_REF_02850>",
+      "bytes": 13987,
+      "sha256": "<PRIVATE_REF_01423>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/07-verified/events.jsonl",
+      "git_blob": "<PRIVATE_REF_01962>",
+      "bytes": 10398,
+      "sha256": "<PRIVATE_REF_01780>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/07-verified/state.json",
+      "git_blob": "<PRIVATE_REF_01680>",
+      "bytes": 14650,
+      "sha256": "<PRIVATE_REF_02327>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/08-handoff/events.jsonl",
+      "git_blob": "<PRIVATE_REF_00889>",
+      "bytes": 10964,
+      "sha256": "<PRIVATE_REF_01607>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/08-handoff/state.json",
+      "git_blob": "<PRIVATE_REF_03654>",
+      "bytes": 16195,
+      "sha256": "<PRIVATE_REF_01239>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/09-teardown/events.jsonl",
+      "git_blob": "<PRIVATE_REF_01096>",
+      "bytes": 12816,
+      "sha256": "<PRIVATE_REF_02232>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/09-teardown/state.json",
+      "git_blob": "<PRIVATE_REF_01438>",
+      "bytes": 15115,
+      "sha256": "<PRIVATE_REF_02798>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/10-closed/events.jsonl",
+      "git_blob": "<PRIVATE_REF_00966>",
+      "bytes": 14579,
+      "sha256": "<PRIVATE_REF_02392>"
+    },
+    {
+      "path": "fixtures/valid/lifecycle/10-closed/state.json",
+      "git_blob": "<PRIVATE_REF_03358>",
+      "bytes": 15489,
+      "sha256": "<PRIVATE_REF_01907>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/awaiting-acceptance/events.jsonl",
+      "git_blob": "<PRIVATE_REF_02421>",
+      "bytes": 2395,
+      "sha256": "<PRIVATE_REF_02110>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/awaiting-acceptance/state.json",
+      "git_blob": "<PRIVATE_REF_01652>",
+      "bytes": 2660,
+      "sha256": "<PRIVATE_REF_02751>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/interrupted/events.jsonl",
+      "git_blob": "<PRIVATE_REF_00878>",
+      "bytes": 2484,
+      "sha256": "<PRIVATE_REF_02563>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/interrupted/state.json",
+      "git_blob": "<PRIVATE_REF_00936>",
+      "bytes": 2556,
+      "sha256": "<PRIVATE_REF_01765>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/package-gap/events.jsonl",
+      "git_blob": "<PRIVATE_REF_02696>",
+      "bytes": 497,
+      "sha256": "<PRIVATE_REF_03715>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/package-gap/state.json",
+      "git_blob": "<PRIVATE_REF_01803>",
+      "bytes": 2608,
+      "sha256": "<PRIVATE_REF_01728>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/services-and-names/events.jsonl",
+      "git_blob": "<PRIVATE_REF_01007>",
+      "bytes": 4580,
+      "sha256": "<PRIVATE_REF_00955>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/services-and-names/state.json",
+      "git_blob": "<PRIVATE_REF_03508>",
+      "bytes": 7788,
+      "sha256": "<PRIVATE_REF_03168>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/shared-object-delta/events.jsonl",
+      "git_blob": "<PRIVATE_REF_02434>",
+      "bytes": 4186,
+      "sha256": "<PRIVATE_REF_03031>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/shared-object-delta/state.json",
+      "git_blob": "<PRIVATE_REF_03083>",
+      "bytes": 3625,
+      "sha256": "<PRIVATE_REF_01994>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/view-handoff-confirmed/events.jsonl",
+      "git_blob": "<PRIVATE_REF_03286>",
+      "bytes": 1653,
+      "sha256": "<PRIVATE_REF_00140>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/view-handoff-confirmed/state.json",
+      "git_blob": "<PRIVATE_REF_02508>",
+      "bytes": 3634,
+      "sha256": "<PRIVATE_REF_03267>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/view-handoff-exception/events.jsonl",
+      "git_blob": "<PRIVATE_REF_03156>",
+      "bytes": 1737,
+      "sha256": "<PRIVATE_REF_01087>"
+    },
+    {
+      "path": "fixtures/valid/scenarios/view-handoff-exception/state.json",
+      "git_blob": "<PRIVATE_REF_01018>",
+      "bytes": 4213,
+      "sha256": "<PRIVATE_REF_01570>"
+    },
+    {
+      "path": "fixtures/valid/status/assumed/events.jsonl",
+      "git_blob": "<PRIVATE_REF_01729>",
+      "bytes": 254,
+      "sha256": "<PRIVATE_REF_01061>"
+    },
+    {
+      "path": "fixtures/valid/status/assumed/state.json",
+      "git_blob": "<PRIVATE_REF_02245>",
+      "bytes": 1567,
+      "sha256": "<PRIVATE_REF_01472>"
+    },
+    {
+      "path": "fixtures/valid/status/blocked/events.jsonl",
+      "git_blob": "<PRIVATE_REF_01729>",
+      "bytes": 254,
+      "sha256": "<PRIVATE_REF_01061>"
+    },
+    {
+      "path": "fixtures/valid/status/blocked/state.json",
+      "git_blob": "<PRIVATE_REF_02010>",
+      "bytes": 1652,
+      "sha256": "<PRIVATE_REF_02285>"
+    },
+    {
+      "path": "fixtures/valid/status/stale/events.jsonl",
+      "git_blob": "<PRIVATE_REF_01295>",
+      "bytes": 566,
+      "sha256": "<PRIVATE_REF_02101>"
+    },
+    {
+      "path": "fixtures/valid/status/stale/state.json",
+      "git_blob": "<PRIVATE_REF_01866>",
+      "bytes": 1621,
+      "sha256": "<PRIVATE_REF_01745>"
+    },
+    {
+      "path": "fixtures/valid/status/unknown/events.jsonl",
+      "git_blob": "<PRIVATE_REF_01729>",
+      "bytes": 254,
+      "sha256": "<PRIVATE_REF_01061>"
+    },
+    {
+      "path": "fixtures/valid/status/unknown/state.json",
+      "git_blob": "<PRIVATE_REF_02304>",
+      "bytes": 1527,
+      "sha256": "<PRIVATE_REF_02080>"
+    },
+    {
+      "path": "fixtures/valid/status/user_confirmed/events.jsonl",
+      "git_blob": "<PRIVATE_REF_01729>",
+      "bytes": 254,
+      "sha256": "<PRIVATE_REF_01061>"
+    },
+    {
+      "path": "fixtures/valid/status/user_confirmed/state.json",
+      "git_blob": "<PRIVATE_REF_00995>",
+      "bytes": 1577,
+      "sha256": "<PRIVATE_REF_01831>"
+    },
+    {
+      "path": "fixtures/valid/status/verified_local/events.jsonl",
+      "git_blob": "<PRIVATE_REF_01840>",
+      "bytes": 588,
+      "sha256": "<PRIVATE_REF_02984>"
+    },
+    {
+      "path": "fixtures/valid/status/verified_local/state.json",
+      "git_blob": "<PRIVATE_REF_01405>",
+      "bytes": 1803,
+      "sha256": "<PRIVATE_REF_00970>"
+    },
+    {
+      "path": "fixtures/valid/status/verified_remote/events.jsonl",
+      "git_blob": "<PRIVATE_REF_01393>",
+      "bytes": 559,
+      "sha256": "<PRIVATE_REF_03007>"
+    },
+    {
+      "path": "fixtures/valid/status/verified_remote/state.json",
+      "git_blob": "<PRIVATE_REF_03726>",
+      "bytes": 1637,
+      "sha256": "<PRIVATE_REF_02326>"
+    },
+    {
+      "path": "integrations/catalog.json",
+      "git_blob": "<PRIVATE_REF_02293>",
+      "bytes": 13406,
+      "sha256": "<PRIVATE_REF_01474>"
+    },
+    {
+      "path": "package.json",
+      "git_blob": "<PRIVATE_REF_03082>",
+      "bytes": 361,
+      "sha256": "<PRIVATE_REF_03412>"
+    },
+    {
+      "path": "schema/event.schema.json",
+      "git_blob": "<PRIVATE_REF_00528>",
+      "bytes": 4000,
+      "sha256": "<PRIVATE_REF_01999>"
+    },
+    {
+      "path": "schema/state.schema.json",
+      "git_blob": "<PRIVATE_REF_01197>",
+      "bytes": 13055,
+      "sha256": "<PRIVATE_REF_01409>"
+    },
+    {
+      "path": "skills/providers/aws.md",
+      "git_blob": "<PRIVATE_REF_01144>",
+      "bytes": 1147,
+      "sha256": "<PRIVATE_REF_02199>"
+    },
+    {
+      "path": "skills/providers/azure.md",
+      "git_blob": "<PRIVATE_REF_01455>",
+      "bytes": 1063,
+      "sha256": "<PRIVATE_REF_02829>"
+    },
+    {
+      "path": "skills/providers/dns-cloudflare.md",
+      "git_blob": "<PRIVATE_REF_02019>",
+      "bytes": 3252,
+      "sha256": "<PRIVATE_REF_01932>"
+    },
+    {
+      "path": "skills/providers/gcp.md",
+      "git_blob": "<PRIVATE_REF_03321>",
+      "bytes": 4384,
+      "sha256": "<PRIVATE_REF_03682>"
+    },
+    {
+      "path": "skills/providers/nectar.md",
+      "git_blob": "<PRIVATE_REF_01374>",
+      "bytes": 1226,
+      "sha256": "<PRIVATE_REF_01373>"
+    },
+    {
+      "path": "skills/router.md",
+      "git_blob": "<PRIVATE_REF_02983>",
+      "bytes": 12483,
+      "sha256": "<PRIVATE_REF_01580>"
+    },
+    {
+      "path": "skills/stages/execute.md",
+      "git_blob": "<PRIVATE_REF_03380>",
+      "bytes": 4717,
+      "sha256": "<PRIVATE_REF_01205>"
+    },
+    {
+      "path": "skills/stages/plan.md",
+      "git_blob": "<PRIVATE_REF_03554>",
+      "bytes": 5550,
+      "sha256": "<PRIVATE_REF_01135>"
+    },
+    {
+      "path": "skills/stages/recon.md",
+      "git_blob": "<PRIVATE_REF_01234>",
+      "bytes": 2378,
+      "sha256": "<PRIVATE_REF_02325>"
+    },
+    {
+      "path": "skills/stages/recover.md",
+      "git_blob": "<PRIVATE_REF_02459>",
+      "bytes": 3445,
+      "sha256": "<PRIVATE_REF_02780>"
+    },
+    {
+      "path": "skills/stages/verify-handoff.md",
+      "git_blob": "<PRIVATE_REF_00973>",
+      "bytes": 4546,
+      "sha256": "<PRIVATE_REF_02087>"
+    },
+    {
+      "path": "tests/brief.test.mjs",
+      "git_blob": "<PRIVATE_REF_02097>",
+      "bytes": 8788,
+      "sha256": "<PRIVATE_REF_03253>"
+    },
+    {
+      "path": "tests/browser.test.mjs",
+      "git_blob": "<PRIVATE_REF_01493>",
+      "bytes": 11080,
+      "sha256": "<PRIVATE_REF_02811>"
+    },
+    {
+      "path": "tests/browser/view_check.py",
+      "git_blob": "<PRIVATE_REF_02589>",
+      "bytes": 6250,
+      "sha256": "<PRIVATE_REF_01495>"
+    },
+    {
+      "path": "tests/catalog.test.mjs",
+      "git_blob": "<PRIVATE_REF_03401>",
+      "bytes": 2888,
+      "sha256": "<PRIVATE_REF_01357>"
+    },
+    {
+      "path": "tests/cli.test.mjs",
+      "git_blob": "<PRIVATE_REF_03440>",
+      "bytes": 7172,
+      "sha256": "<PRIVATE_REF_01307>"
+    },
+    {
+      "path": "tests/commit-state.test.mjs",
+      "git_blob": "<PRIVATE_REF_02482>",
+      "bytes": 12699,
+      "sha256": "<PRIVATE_REF_02030>"
+    },
+    {
+      "path": "tests/design-decisions.test.mjs",
+      "git_blob": "<PRIVATE_REF_01279>",
+      "bytes": 5638,
+      "sha256": "<PRIVATE_REF_02526>"
+    },
+    {
+      "path": "tests/docs.test.mjs",
+      "git_blob": "<PRIVATE_REF_02653>",
+      "bytes": 6133,
+      "sha256": "<PRIVATE_REF_02036>"
+    },
+    {
+      "path": "tests/fixtures.test.mjs",
+      "git_blob": "<PRIVATE_REF_00675>",
+      "bytes": 5154,
+      "sha256": "<PRIVATE_REF_01751>"
+    },
+    {
+      "path": "tests/freshness.test.mjs",
+      "git_blob": "<PRIVATE_REF_01914>",
+      "bytes": 4776,
+      "sha256": "<PRIVATE_REF_01860>"
+    },
+    {
+      "path": "tests/helpers/fixtures.mjs",
+      "git_blob": "<PRIVATE_REF_02249>",
+      "bytes": 1891,
+      "sha256": "<PRIVATE_REF_02026>"
+    },
+    {
+      "path": "tests/helpers/python.mjs",
+      "git_blob": "<PRIVATE_REF_01496>",
+      "bytes": 551,
+      "sha256": "<PRIVATE_REF_01420>"
+    },
+    {
+      "path": "tests/helpers/vocabulary.mjs",
+      "git_blob": "<PRIVATE_REF_02208>",
+      "bytes": 4966,
+      "sha256": "<PRIVATE_REF_03239>"
+    },
+    {
+      "path": "tests/neutral-domains.test.mjs",
+      "git_blob": "<PRIVATE_REF_01123>",
+      "bytes": 2166,
+      "sha256": "<PRIVATE_REF_01168>"
+    },
+    {
+      "path": "tests/neutrality.test.mjs",
+      "git_blob": "<PRIVATE_REF_03720>",
+      "bytes": 3687,
+      "sha256": "<PRIVATE_REF_01210>"
+    },
+    {
+      "path": "tests/render.test.mjs",
+      "git_blob": "<PRIVATE_REF_01215>",
+      "bytes": 9911,
+      "sha256": "<PRIVATE_REF_02267>"
+    },
+    {
+      "path": "tests/scaffold.test.mjs",
+      "git_blob": "<PRIVATE_REF_01987>",
+      "bytes": 2347,
+      "sha256": "<PRIVATE_REF_00990>"
+    },
+    {
+      "path": "tests/scenarios.test.mjs",
+      "git_blob": "<PRIVATE_REF_01789>",
+      "bytes": 10665,
+      "sha256": "<PRIVATE_REF_03580>"
+    },
+    {
+      "path": "tests/schema-bounds.test.mjs",
+      "git_blob": "<PRIVATE_REF_01532>",
+      "bytes": 4196,
+      "sha256": "<PRIVATE_REF_01502>"
+    },
+    {
+      "path": "tests/schema-subset.test.mjs",
+      "git_blob": "<PRIVATE_REF_02732>",
+      "bytes": 6564,
+      "sha256": "<PRIVATE_REF_02360>"
+    },
+    {
+      "path": "tests/secret-scan.test.mjs",
+      "git_blob": "<PRIVATE_REF_02688>",
+      "bytes": 9153,
+      "sha256": "<PRIVATE_REF_02197>"
+    },
+    {
+      "path": "tests/semantic-checks.test.mjs",
+      "git_blob": "<PRIVATE_REF_03123>",
+      "bytes": 19712,
+      "sha256": "<PRIVATE_REF_00129>"
+    },
+    {
+      "path": "tests/server.test.mjs",
+      "git_blob": "<PRIVATE_REF_01629>",
+      "bytes": 5339,
+      "sha256": "<PRIVATE_REF_02119>"
+    },
+    {
+      "path": "tests/skill-package.test.mjs",
+      "git_blob": "<PRIVATE_REF_02185>",
+      "bytes": 4715,
+      "sha256": "<PRIVATE_REF_01836>"
+    },
+    {
+      "path": "tests/skills-workflow.test.mjs",
+      "git_blob": "<PRIVATE_REF_01000>",
+      "bytes": 15597,
+      "sha256": "<PRIVATE_REF_03699>"
+    },
+    {
+      "path": "tests/skills.test.mjs",
+      "git_blob": "<PRIVATE_REF_02322>",
+      "bytes": 7483,
+      "sha256": "<PRIVATE_REF_00670>"
+    },
+    {
+      "path": "tests/validate.test.mjs",
+      "git_blob": "<PRIVATE_REF_01842>",
+      "bytes": 15667,
+      "sha256": "<PRIVATE_REF_01997>"
+    },
+    {
+      "path": "tests/view-handoff.test.mjs",
+      "git_blob": "<PRIVATE_REF_02575>",
+      "bytes": 6384,
+      "sha256": "<PRIVATE_REF_02071>"
+    },
+    {
+      "path": "tests/vocabulary.test.mjs",
+      "git_blob": "<PRIVATE_REF_01331>",
+      "bytes": 5158,
+      "sha256": "<PRIVATE_REF_02292>"
+    },
+    {
+      "path": "tests/workspace.test.mjs",
+      "git_blob": "<PRIVATE_REF_02018>",
+      "bytes": 11220,
+      "sha256": "<PRIVATE_REF_01509>"
+    },
+    {
+      "path": "tools/lib/brief.mjs",
+      "git_blob": "<PRIVATE_REF_02143>",
+      "bytes": 5238,
+      "sha256": "<PRIVATE_REF_02854>"
+    },
+    {
+      "path": "tools/lib/commit.mjs",
+      "git_blob": "<PRIVATE_REF_03019>",
+      "bytes": 4274,
+      "sha256": "<PRIVATE_REF_01692>"
+    },
+    {
+      "path": "tools/lib/neutrality.mjs",
+      "git_blob": "<PRIVATE_REF_01508>",
+      "bytes": 2724,
+      "sha256": "<PRIVATE_REF_02098>"
+    },
+    {
+      "path": "tools/lib/schema-subset.mjs",
+      "git_blob": "<PRIVATE_REF_03139>",
+      "bytes": 8900,
+      "sha256": "<PRIVATE_REF_01362>"
+    },
+    {
+      "path": "tools/lib/secret-scan.mjs",
+      "git_blob": "<PRIVATE_REF_02527>",
+      "bytes": 5345,
+      "sha256": "<PRIVATE_REF_02402>"
+    },
+    {
+      "path": "tools/lib/semantic-checks.mjs",
+      "git_blob": "<PRIVATE_REF_02805>",
+      "bytes": 16824,
+      "sha256": "<PRIVATE_REF_02960>"
+    },
+    {
+      "path": "tools/lib/server.mjs",
+      "git_blob": "<PRIVATE_REF_01837>",
+      "bytes": 3562,
+      "sha256": "<PRIVATE_REF_01253>"
+    },
+    {
+      "path": "tools/lib/validate.mjs",
+      "git_blob": "<PRIVATE_REF_03210>",
+      "bytes": 12123,
+      "sha256": "<PRIVATE_REF_03433>"
+    },
+    {
+      "path": "tools/lib/workspace.mjs",
+      "git_blob": "<PRIVATE_REF_02129>",
+      "bytes": 6328,
+      "sha256": "<PRIVATE_REF_01063>"
+    },
+    {
+      "path": "tools/neutrality-scan.mjs",
+      "git_blob": "<PRIVATE_REF_01437>",
+      "bytes": 1626,
+      "sha256": "<PRIVATE_REF_01304>"
+    },
+    {
+      "path": "tools/watchover.mjs",
+      "git_blob": "<PRIVATE_REF_02918>",
+      "bytes": 7422,
+      "sha256": "<PRIVATE_REF_01187>"
+    }
+  ]
+}

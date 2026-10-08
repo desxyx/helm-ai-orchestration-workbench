@@ -1,0 +1,37 @@
+{
+  "manifest_sha256": "<PRIVATE_REF_02988>",
+  "files": 62,
+  "native_response_bindings": [
+    {
+      "question_id": "M8",
+      "native_original_sha256": "<PRIVATE_REF_02750>",
+      "delivered_sha256": "<PRIVATE_REF_02750>",
+      "native_is_error": false,
+      "native_original_verifiable": true
+    },
+    {
+      "question_id": "A6_RESOURCE",
+      "native_original_sha256": "<PRIVATE_REF_01738>",
+      "delivered_sha256": "<PRIVATE_REF_01738>",
+      "native_is_error": false,
+      "native_original_verifiable": true
+    },
+    {
+      "question_id": "A6_COMMITS",
+      "native_original_sha256": "<PRIVATE_REF_01289>",
+      "delivered_sha256": "<PRIVATE_REF_01289>",
+      "native_is_error": false,
+      "native_original_verifiable": true
+    },
+    {
+      "question_id": "A6_CONFIG",
+      "native_original_sha256": "<PRIVATE_REF_03005>",
+      "delivered_sha256": "<PRIVATE_REF_03005>",
+      "native_is_error": false,
+      "native_original_verifiable": true
+    }
+  ],
+  "observer_receipts": "NOT_RECEIVED",
+  "prompt_delivery": "PENDING_OWNER_RELAY",
+  "pre_delivery_canonical_arm_path_aliases_applied": 8
+}

@@ -1,0 +1,61 @@
+{
+  "taskName": "AI_CICD",
+  "lastUpdated": "2026-09-28T14:53:38+10:00",
+  "taskSeqCounter": 16,
+  "roles": {
+    "Operations Coordinator": {
+      "label": "Operations Coordinator",
+      "status": "CLEAN attestation issued; T0 brief ready",
+      "statusUpdated": "2026-09-28T14:53:38+10:00"
+    },
+    "reviewer": {
+      "label": "Reviewer",
+      "name": "N/A for W1",
+      "status": "Governance review PASS; live W1 has no Reviewer",
+      "statusUpdated": "2026-09-28T14:27:53+10:00"
+    },
+    "executors": [
+      {
+        "id": "exec-1",
+        "label": "W1 Deployer",
+        "name": "GPT-5.6 Sol High — fresh session pending",
+        "status": "Fresh Bare session ready; no model message yet",
+        "statusUpdated": "2026-09-28T14:53:38+10:00"
+      }
+    ],
+    "Human Operator": {
+      "label": "Human Operator",
+      "status": "Entry held; local Council Member A experiment authorized",
+      "statusUpdated": "2026-09-28T12:29:00+10:00"
+    }
+  },
+  "tasks": [
+    {
+      "id": "task-1",
+      "title": "Complete W1 R1-R8 and issue reset attestation",
+      "status": "in_progress",
+      "owner": "Operations Coordinator",
+      "notes": "CLEAN immutable reset attestation and source-verification Entry 0 issued. Send the rendered frozen brief byte-for-byte as the first Deployer message; its delivery is T0."
+    }
+  ],
+  "memos": {
+    "Operations Coordinator": {
+      "text": "Entry CLEAN. Waiting for byte-exact frozen brief delivery at T0.",
+      "updated": "2026-09-28T14:53:38+10:00"
+    },
+    "reviewer": {
+      "text": "W1 live run has no Reviewer.",
+      "updated": "2026-09-28T12:02:29+10:00"
+    },
+    "executors": {
+      "exec-1": {
+        "text": "Fresh session required; Bare visibility rules apply.",
+        "updated": "2026-09-28T12:02:29+10:00"
+      }
+    },
+    "Human Operator": {
+      "text": "Send W1_DEPLOYER_BRIEF_RENDERED.txt exactly as the first Deployer message, then paste the first response to Operations Coordinator.",
+      "updated": "2026-09-28T14:53:38+10:00"
+    }
+  }
+}

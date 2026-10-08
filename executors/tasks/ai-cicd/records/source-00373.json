@@ -1,0 +1,30 @@
+{
+  "run_id": "RUN-W3",
+  "status": "PASS",
+  "label": "DIRECT",
+  "validated_at_utc": "2026-10-07T00:48:33.878008+00:00",
+  "event_count": 349,
+  "success_claim_count": 105,
+  "question_count": 8,
+  "event_schema": "packet/event.schema.json",
+  "event_validation_method": "Offline implementation of all constraints present in supplied simple event schema: required/properties/additionalProperties/const/enum/type/pattern/maxLength/minimum/items. No external schema library or network used.",
+  "metrics_validation_method": "Structural conformance to metrics.schema.json template; it is not a formal JSON Schema. Primary/secondary/accounting field sets, labels/locators, M1/M2/M5/M9 and acceptance consistency checked.",
+  "locators_checked": 739,
+  "packet_hashes_rechecked": 77,
+  "packet_mismatches": 0,
+  "final_output_identifier_alias_check": "PASS for identifiers derived only from packet; screenshots not reproduced. This alias check is not M10 secret scanning.",
+  "errors": [],
+  "sealed_files": [
+    "packet_integrity.json",
+    "record_audit.json",
+    "RUN_W3_ACCEPTANCE_MATRIX.json",
+    "RUN_W3_EVENTS.jsonl",
+    "RUN_W3_IDENTITY.json",
+    "RUN_W3_METRICS.json",
+    "RUN_W3_OBSERVER_REPORT.md",
+    "RUN_W3_SOURCE_PROVENANCE.json",
+    "RUN_W3_TRACEABILITY.json",
+    "RUN_W3_EVIDENCE_PROVENANCE.json",
+    "RUN_W3_VALIDATION.json"
+  ]
+}

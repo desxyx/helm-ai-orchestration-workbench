@@ -1,0 +1,22 @@
+{
+  "attempt": 10,
+  "query": "R07_run",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "run",
+    "services",
+    "list",
+    "--platform=managed",
+    "--project=<CLOUD_PROJECT>",
+    "--quiet",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T23:57:05.969+11:00",
+  "end_utc": "2026-10-05T23:57:07.471+11:00",
+  "exit_code": 0,
+  "stdout": "R07_run_attempt10.stdout",
+  "stdout_sha256": "<PRIVATE_REF_01383>",
+  "stderr": "R07_run_attempt10.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

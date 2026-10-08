@@ -1,0 +1,24 @@
+{
+  "attempt": 7,
+  "query": "DNS_CNAME_AUTH",
+  "executable": "/usr/bin/dig",
+  "argv": [
+    "+time=3",
+    "+tries=1",
+    "+noall",
+    "+answer",
+    "+authority",
+    "+comments",
+    "@<DNS_RESOLVER_A>",
+    "<W2_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN>",
+    "CNAME"
+  ],
+  "start_utc": "2026-10-05T23:58:45.998+11:00",
+  "end_utc": "2026-10-05T23:58:46.032+11:00",
+  "exit_code": 0,
+  "stdout": "DNS_CNAME_AUTH_attempt7.stdout",
+  "stdout_sha256": "<PRIVATE_REF_02592>",
+  "stderr": "DNS_CNAME_AUTH_attempt7.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

@@ -1,0 +1,2 @@
+$ env W2_RUN_TEST_URL=http://127.0.0.1:18080 node <CLIENT_HOME>/Workspaces/site-02/app/deployment-<W2_RUN_RESOURCE_PREFIX>/verify-ui.mjs before
+{"phase":"before","url":"http://127.0.0.1:18080","tested_at":"2026-10-05T10:11:16.410Z","website_signup":true,"website_login_fresh_browser":true,"alert_displayed":true,"alert_id":"<NATIVE_ID_1482>","javascript_errors":[]}

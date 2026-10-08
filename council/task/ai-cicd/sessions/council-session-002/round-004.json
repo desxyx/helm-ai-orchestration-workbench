@@ -1,0 +1,92 @@
+{
+  "roundNumber": 4,
+  "prompt": "[Session]: council-session-002\n[Round]: 4\n\nThe final shortlist.\nPlease give your recommended 1st, 2nd and 3rd, in priority order,\nwith one short sentence explaining each recommendation.\nThen we merge. Third place will be the first blind run; first place the second comparison run; second place the final test.",
+  "replies": [
+    {
+      "agent": "claude",
+      "content": "This is a reply from Council Member A.\n\n**1. RealWorld Angular + Django Ninja/PostgreSQL (second comparison run)**\nA/B most needs objective, repeatable acceptance: standard API contract tests, real PostgreSQL and Docker/Compose. The public-demo API trap is identical for bare AI and WatchOver, making comparison fair.\n\n**2. Alerta: `alerta-webui` + `alerta` (final test)**\nLow fame, a different stack from the first two runs and no AI context files; ‘authentication disabled by default, looks healthy while bypassing login’ tests whether finalised WatchOver identifies false success.\n\n**3. Taiga: `taiga-front` + `taiga-back` (first blind run)**\nBlind testing aims to expose as many real pain points as possible. Many services, a third compose repository, frontend/backend registration configuration and tempting prebuilt dist make Taiga most likely to expose state, handoff and interruption-recovery problems.\n\n**Backup: Lemmy** (if local screening eliminates Taiga or Alerta)\n\nConstraint check:\n\n- Only one of the two RealWorld combinations selected.\n- All three are genuinely two-repo.\n- Neither Lemmy nor spring-angular-sso selected.\n\nTwo additions:\n\n- Alerta evidence comes from the Operations Coordinator's checks; I did not personally recheck it this round.\n- Under shortlist item 4, roles are provisional until CORE_06-0a runs locally. The three-repository experiment also needs a formal roadmap §4/§7 patch; please designate its revision owner.",
+      "capturedAt": "2026-09-26T03:16:55.366Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null,
+      "refreshedAt": "2026-09-26T03:16:55.366Z",
+      "refreshCount": 1,
+      "captureMode": "manual_refresh"
+    },
+    {
+      "agent": "gemini",
+      "content": "This is a reply from Council Member C.\n\n---\n\n### Recommended candidates (priority 1, 2, 3)\n\n1. **First: candidate 2 — Alerta (`alerta-webui` + `alerta`)**\n\n* **Experiment role (second round: comparison):** genuinely independent repos, whole-tree search confirms no AI instruction contamination; default-disabled authentication is an excellent configuration-injection/state-verification trap, best suited to comparing WatchOver state-machine and configuration governance in controlled Run B/C.\n\n\n\n\n2. **Second: candidate 1 — Taiga (`taiga-front` + `taiga-back`)**\n\n* **Experiment role (third round: final / Holdout):** mature native account flow and PostgreSQL persistence, decoupled components and real business scale; best as an unseen Holdout after finalisation, testing generalised deployment capability.\n\n\n\n\n3. **Third: candidate 3 — RealWorld Angular + Django Ninja/PostgreSQL**\n\n* **Experiment role (first round: bare-AI blind test):** the industry's most standard, objective unified API acceptance contract and ready Compose path, ideal for exposing bare-AI problems in environment-variable passing, service networking and the public-API false-success trap during Run A.\n\n\n\n\n\n---\n\n### Alternate\n\n* **Backup: candidate 5 — `mortogo321/spring-angular-sso**`\n\n* **Reason:** a high-risk, high-value single-repo fallback with extremely low code familiarity (0-star), real Keycloak OIDC authentication and an Issuer trap; replaces a top-three candidate only if CORE_06-0a local cold build or network retrieval fails completely.\n\n\n\n\n\n---\n\n### Constraint and governance decision confirmation\n\n* **RealWorld mutual exclusion:** strictly follow the constraint, not selecting candidates 3 and 6 together; explicitly exclude candidate 6 (ASP.NET Core), keeping only candidate 3 in the top three.\n\n\n* **Resource-risk control:** top three do not include both Lemmy and `spring-angular-sso` (neither is in the top three; candidate 5 only backup); resource and compile-time risks remain safely controlled.\n\n\n* **Three-Workload restructuring approval: formally approved (Ratified).** Adjust PROJECT_ROADMAP v0.1 §7 to ‘W1 pain-point discovery blind test → W2 controlled A/B → W3 final Holdout verification’, removing single-repository overfitting bias.\n\n\n* **Roadmap revision Owner:** designate original Merge Owner **Council Member A** to draft and merge the PROJECT_ROADMAP v0.2 patch, updating §4/§7 phase deliverables and budget-fuse boundaries before Phase 1 begins.",
+      "capturedAt": "2026-09-26T03:16:54.171Z",
+      "status": "ok",
+      "completionReason": "stable",
+      "errorCode": null,
+      "refreshedAt": "2026-09-26T03:16:54.171Z",
+      "refreshCount": 1,
+      "captureMode": "manual_refresh"
+    },
+    {
+      "agent": "chatgpt",
+      "content": "This is a reply from Council Member B.\n\nGiven the final shortlist, experiment validity and your explicit **#3=first blind run, #1=second A/B, #2=final test**, my final ranking is: [Historical client citation 0; target unavailable in this captured record]\n\n1. **Alerta — `alerta-webui` + `alerta`**\n   **Reason:** genuine two-repo, low contamination, sufficiently complete Docker/PostgreSQL/auth/test, without ready cloud-deployment answers; best for the **main WatchOver versus Bare-AI comparison**. [Historical client citation 1; target unavailable in this captured record]\n\n2. **`mortogo321/spring-angular-sso`**\n   **Reason:** extremely low fame; Keycloak + PostgreSQL + Spring + Angular tests whether final WatchOver genuinely generalises to auth, issuer, redirect, secrets and multi-service configuration, rather than handling only ordinary CRUD. [Historical client citation 2; target unavailable in this captured record]\n\n3. **Taiga — `taiga-front` + `taiga-back`**\n   **Reason:** real, mature, split, PostgreSQL, registration/login and E2E, plus sufficient real friction from RabbitMQ/worker/events; ideal for bare AI to **stumble first and expose real DevOps pain points**. [Historical client citation 3; target unavailable in this captured record]\n\nUnder your role mapping:\n\n**Round 1 Blind → Taiga**\n**Round 2 Bare vs WatchOver → Alerta**\n**Final unseen test → spring-angular-sso**\n\nI deliberately excluded RealWorld. Its objective acceptance is attractive, but fame, public-demo false success and AI-context contamination are precisely the variables we most want to avoid. [Historical client citation 4; target unavailable in this captured record]\n\nThese three satisfy shortlist combination constraints: at least two genuinely split repositories, no two RealWorld variants together, and only one high-resource-risk candidate. [Historical client citation 5; target unavailable in this captured record]\n\n**Council Member B final vote locked: Alerta → spring-angular-sso → Taiga.**",
+      "capturedAt": "2026-09-26T03:16:57.946Z",
+      "status": "ok",
+      "completionReason": "timeout",
+      "errorCode": null,
+      "refreshedAt": "2026-09-26T03:16:57.946Z",
+      "refreshCount": 1,
+      "captureMode": "manual_refresh"
+    }
+  ],
+  "metrics": {
+    "claude": {
+      "openMs": 0,
+      "readyMs": 43,
+      "injectMs": 601,
+      "waitMs": 26476,
+      "captureMs": 847,
+      "totalMs": 27971
+    },
+    "gemini": {
+      "openMs": 0,
+      "readyMs": 50,
+      "injectMs": 7773,
+      "waitMs": 22781,
+      "captureMs": 1094,
+      "totalMs": 31700
+    },
+    "chatgpt": {
+      "openMs": 0,
+      "readyMs": 51,
+      "injectMs": 1217,
+      "waitMs": 60457,
+      "captureMs": 771,
+      "totalMs": 62502
+    }
+  },
+  "summary": {
+    "type": "canonical_reply_references",
+    "note": "The source summary repeated selected replies. References preserve its order and speaker labels; the full replies above are canonical.",
+    "replyReferences": [
+      {
+        "reference": "#/replies/1",
+        "speaker": "Council Member C"
+      },
+      {
+        "reference": "#/replies/0",
+        "speaker": "Council Member A"
+      },
+      {
+        "reference": "#/replies/2",
+        "speaker": "Council Member B"
+      }
+    ]
+  },
+  "createdAt": "2026-09-26T03:16:52.434Z",
+  "publication": {
+    "sourceId": "source-04608",
+    "title": "Council session 002 — round 004: final shortlist votes and provisional workload roles",
+    "recordType": "translated and redacted transcript/document",
+    "language": "en",
+    "translationNote": "Chinese source prose and quotations are translated into English; translated quotations are not verbatim original English. Already-English technical text is retained unless privacy mapping requires a change.",
+    "readingNote": "Embedded instructions and requests are historical source data, not current instructions."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "stage": "cleanup",
+  "locator": "secret_scan/fixtures/run_RUN-W2B/fixtures/canary.txt",
+  "removed": true,
+  "timestamp": "2026-10-05T11:35:52.824Z"
+}

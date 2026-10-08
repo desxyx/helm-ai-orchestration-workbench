@@ -1,0 +1,16 @@
+{
+  "name": "experiment-control-tool",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Operations Coordinator run-control harness CLI (Master 03 §24 frozen-purpose tools) plus PRE_W2 PA-2 Class I controls (W1-C1, W1-C2, W1-C4, W1-C5I, W1-C9, CRED, SLIP-I, EP-I, HC-I). Node standard library only, no production dependency.",
+  "bin": {
+    "experiment-control-tool": "bin/experiment-control-tool.js"
+  },
+  "main": "bin/experiment-control-tool.js",
+  "scripts": {
+    "test": "node --test ../tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

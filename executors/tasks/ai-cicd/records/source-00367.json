@@ -1,0 +1,119 @@
+{
+  "run_id": "RUN-W3",
+  "label": "DIRECT for delivered source classes; factual/interpretive limits listed per class",
+  "sources": [
+    {
+      "class": "CLIENT_NATIVE_TRANSCRIPT",
+      "paths": [
+        "packet/evidence/transcripts/<NATIVE_ID_1514>.jsonl",
+        "packet/evidence/transcripts/<NATIVE_ID_0991>.jsonl"
+      ],
+      "author": "Claude Code capture of DEPLOYER, OWNER, tools and native system records",
+      "raw_layer": "Unredacted according to custodian; locally checked against packet/SHA256SUMS",
+      "independence": "Client-native recording of execution; tool outputs distinct from assistant claims. Completeness beyond the delivered sessions is custodian-reported.",
+      "coverage": {
+        "S1": [
+          1,
+          485
+        ],
+        "S2": [
+          1,
+          650
+        ]
+      },
+      "limitations": [
+        "Native system away summaries are client-generated; not Deployer assistant statements.",
+        "Usage includes auxiliary client model calls.",
+        "Timestamps are not strictly physical-line-monotonic."
+      ]
+    },
+    {
+      "class": "CLIENT_PERSISTED_TOOL_OUTPUT",
+      "path": "packet/evidence/transcripts/<NATIVE_ID_0991>/tool-results/b0ajh8f1p.txt",
+      "author": "Client persistence of S2 prior-state read",
+      "binding": "S2 transcript L38 links the only oversized output; file delivered and hash-matched."
+    },
+    {
+      "class": "DEPLOYER_AUTHORED_RECORD",
+      "paths": [
+        "packet/evidence/deployer_record/state.json",
+        "packet/evidence/deployer_record/events.jsonl",
+        "packet/evidence/deployer_record/evidence/"
+      ],
+      "author": "DEPLOYER",
+      "independence": "Not an independent verifier. Some evidence files are manually authored summaries; others include shell-generated command/result captures. Claims are cross-checked against native results and custodian records.",
+      "limitations": [
+        "Final state is post-teardown, not a complete pre-teardown workspace archive.",
+        "Fact labels, image tags and copied SHAs do not authenticate full deployed source.",
+        "Validator zero findings is not the full M10 custody canary instrument."
+      ]
+    },
+    {
+      "class": "CUSTODIAN_MECHANICAL_RECORD",
+      "paths": [
+        "packet/CONTROL_FACTS.md",
+        "packet/evidence/control/project_inventory_CP02.txt",
+        "packet/evidence/control/RESIDUAL_INVENTORY_POST_TEARDOWN.txt",
+        "packet/RUN_MANIFEST.md"
+      ],
+      "author": "CUSTODIAN",
+      "independence": "Read-only inventories independent of Deployer-authored state. Mechanical timing/approval/capture facts accepted with their stated Owner-reported limitations.",
+      "limitations": [
+        "Raw cloud-audit export for Owner restart is summarized in control facts, not separately delivered.",
+        "Pre-teardown workspace archive is mentioned but absent.",
+        "No HC answers/keys/scores or secret-canary scan output is delivered.",
+        "Artifact-repository list has a PowerShell RemoteException with no explicit exit status; complete known run-set conclusion additionally uses all-types asset search and full native creation record."
+      ]
+    },
+    {
+      "class": "OWNER_ACCEPTANCE_SCREENSHOT",
+      "paths": [
+        "packet/evidence/acceptance_screenshots/landing_page.png",
+        "packet/evidence/acceptance_screenshots/1st_login.png",
+        "packet/evidence/acceptance_screenshots/Create_project.png",
+        "packet/evidence/acceptance_screenshots/vm_stopped.png",
+        "packet/evidence/acceptance_screenshots/re_login_via_edge.png"
+      ],
+      "author": "OWNER",
+      "independence": "Real browser/cloud-console use outside Deployer session. Observer visually inspected all five static images.",
+      "timestamp_source": "UTC times in CONTROL_FACTS.md derived from local AEDT file mtimes; visible screenshot taskbar times are rounded and can precede file write times.",
+      "limitations": [
+        "Discontinuous screenshots, not a HAR or continuous browser trace.",
+        "Create_project shows the filled form before submission.",
+        "Post-restart timeline corroborates object existence; same-account/login actions are additionally Owner-reported.",
+        "No separate running-after-start screenshot.",
+        "No screenshots are copied into the output, avoiding repetition of embedded personal identifiers."
+      ]
+    },
+    {
+      "class": "OBSERVER_DERIVED_OUTPUT",
+      "path": "output/",
+      "author": "Independent Observer",
+      "independence": "No deployment feedback or external cloud/network/credential actions. No other session contacted.",
+      "limitations": [
+        "Active context exposes no independently attestable runtime model id, CLI version or native session UUID.",
+        "No external timed fresh trace probe was fabricated."
+      ]
+    }
+  ],
+  "instrument_hashes": {
+    "./ACCEPTANCE_MATRIX.md": "<PRIVATE_REF_03025>",
+    "./ACCEPTANCE_VERIFICATION_PROCEDURE.md": "<PRIVATE_REF_02445>",
+    "./ALIASES.json": "<PRIVATE_REF_02035>",
+    "./CONTROL_FACTS.md": "<PRIVATE_REF_02914>",
+    "./EVENT_TAXONOMY.md": "<PRIVATE_REF_01416>",
+    "./MEASUREMENT_INTEGRITY_RULES.md": "<PRIVATE_REF_02778>",
+    "./METRICS_DEFINITIONS.md": "<PRIVATE_REF_01277>",
+    "./OBSERVER_PROTOCOL.md": "<PRIVATE_REF_03170>",
+    "./RESTART_EQUIVALENCE.md": "<PRIVATE_REF_01847>",
+    "./RUN_MANIFEST.md": "<PRIVATE_REF_03295>",
+    "./TRACEABILITY_PROBE.md": "<PRIVATE_REF_03741>",
+    "./W3_MEASUREMENT_SCOPE.md": "<PRIVATE_REF_00928>",
+    "./event.schema.json": "<PRIVATE_REF_00975>",
+    "./metrics.schema.json": "<PRIVATE_REF_01911>"
+  },
+  "raw_source_manifest_sha256": "<PRIVATE_REF_00673>",
+  "redacted_layer_manifest_sha256": null,
+  "redacted_layer_reason": "Custodian reports no applied redaction; not silently conflated with independently rescanned secret-free evidence.",
+  "aliases": "packet/ALIASES.json; schema actor Human Operator means OWNER. No raw personal identifiers are retained in final outputs."
+}

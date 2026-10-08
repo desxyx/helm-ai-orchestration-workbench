@@ -1,0 +1,110 @@
+{
+  "api_url": "<PRIVATE_URL_0232>",
+  "app_profile": "alerta",
+  "custody_tag": "62a8c8254f96e791",
+  "deployment_inventory": null,
+  "events": [
+    {
+      "deployment_inventory": null,
+      "fixtures": {
+        "test_alerta_api_smoke.py": "<PRIVATE_REF_00881>",
+        "test_alerta_ui_flow.py": "<PRIVATE_REF_03225>"
+      },
+      "kind": "init",
+      "script_sha256": "<PRIVATE_REF_02821>",
+      "utc": "2026-10-05T11:05:47Z"
+    },
+    {
+      "detail": {
+        "steps": [
+          "01_ui_signup",
+          "02_first_login",
+          "03_authenticated_view",
+          "04_logout",
+          "05_protected_denial",
+          "06_wrong_password_rejected",
+          "07_second_login",
+          "08_authenticated_view_again"
+        ]
+      },
+      "exit": 0,
+      "kind": "a4",
+      "screenshots": "disabled",
+      "started": "2026-10-05T11:05:47Z",
+      "stderr": {
+        "path": "source-00632.err",
+        "redacted_occurrences": 0,
+        "sha256": "<PRIVATE_REF_03399>"
+      },
+      "stdout": {
+        "path": "source-03552.stdout",
+        "redacted_occurrences": 0,
+        "sha256": "<PRIVATE_REF_02301>"
+      },
+      "utc": "2026-10-05T11:05:53Z",
+      "verdict": "PASS"
+    },
+    {
+      "key_http": 201,
+      "key_id": "<NATIVE_ID_2725>",
+      "key_owner_matches_bound_identity": true,
+      "kind": "derive-key",
+      "login_http": 200,
+      "scopes": [
+        "write"
+      ],
+      "utc": "2026-10-05T11:05:53Z",
+      "verdict": "PASS"
+    },
+    {
+      "backend_correlation": {
+        "detail": "malformed: empty or binary",
+        "locator": "source-00632.err",
+        "ok": false,
+        "sha256": "<PRIVATE_REF_03399>"
+      },
+      "endpoint": "<PRIVATE_URL_0232>",
+      "exit": 0,
+      "kind": "a3",
+      "mode": "P",
+      "probe_alert_id": "<NATIVE_ID_2470>",
+      "ran": 6,
+      "started": "2026-10-05T11:23:08Z",
+      "stderr": {
+        "path": "source-03553.stderr",
+        "redacted_occurrences": 0,
+        "sha256": "<PRIVATE_REF_02534>"
+      },
+      "stdout": {
+        "path": "source-00632.err",
+        "redacted_occurrences": 0,
+        "sha256": "<PRIVATE_REF_03399>"
+      },
+      "summary": "OK",
+      "tests": {
+        "test_01_healthcheck": "ok",
+        "test_02_create_alert_returns_201": "ok",
+        "test_03_retrieve_alert": "ok",
+        "test_04_list_contains_alert": "ok",
+        "test_05_delete_alert": "ok",
+        "test_06_confirm_absent": "ok"
+      },
+      "utc": "2026-10-05T11:23:09Z",
+      "verdict": "FAIL"
+    }
+  ],
+  "fixtures_dir": "<HELM_ROOT>/council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/INDEPENDENT_VERIFICATION/fixtures",
+  "identity_fingerprint": "<PRIVATE_RESOURCE_FINGERPRINT>",
+  "objects": {},
+  "out_dir": "<HELM_ROOT>/council/task/AI_CICD/execution/w2b_formal_entry_2026-10-05/evidence/INDEPENDENT_VERIFICATION/captures",
+  "restart": null,
+  "results": {
+    "A3-P": "FAIL",
+    "A4": "PASS",
+    "derive-key": "PASS"
+  },
+  "run_id": "RUN-W2B",
+  "schema": "ma1-verify/14",
+  "script_sha256": "<PRIVATE_REF_02821>",
+  "ui_url": "<PRIVATE_URL_0233>"
+}

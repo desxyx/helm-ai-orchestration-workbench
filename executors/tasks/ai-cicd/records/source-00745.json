@@ -1,0 +1,20 @@
+{
+  "artifact_class": "SEALED_CUSTODY_BINDING_SUPPLEMENT",
+  "qualitative_comment_binding": {
+    "run_id": "RUN-W2B",
+    "mapping": "W2B WatchOver Basic",
+    "basis": "Existing separately retained OWNER_FIRST_IMPRESSION.json and OWNER_VIEW_TIMELINESS_20261005T212050.json both bind RUN-W2B; exact requested qualitative excerpts only",
+    "source_digests": {
+      "OWNER_FIRST_IMPRESSION.json": "<PRIVATE_REF_00989>",
+      "OWNER_VIEW_TIMELINESS_20261005T212050.json": "<PRIVATE_REF_02450>"
+    },
+    "HC_excluded": true,
+    "status": "Owner subjective self-report, not HC grade/latency/causation"
+  },
+  "comparison_topology_scope": "Both sealed reports support one-VM/two-disk/static-address/custom-network topology. Do not assert that their architecture actually differs solely because one report describes Compose more explicitly; architecture choices were not bound in the goal brief. Region choices differ in retained custodian provider snapshots, but these raw files are not supplied to analyst. Treat region difference as a declared environmental confound, and unproven software-stack differences as UNKNOWN.",
+  "M8_probe_orchestration": "Custodian retained one fresh-session/four-query requested orchestration for both arms; each starts with a new requested UUID, then resumes within that same measurement session. W2B native responses are available, W2A native-response delivery/hash gaps persist. Do not imply separate A6 session design just because the A report describes three answer groups and individual timers. Both timings are external; missing finer confirmation for the A native replies remains disclosed.",
+  "citation_correction": "A sealed primary field is M1_passed_acceptance, not primary.M1; preserve exact full metric keys when giving JSON locators",
+  "no_score_change": true,
+  "no_further_instrument_execution": true,
+  "no_raw_HC_or_private_provider_delivery": true
+}

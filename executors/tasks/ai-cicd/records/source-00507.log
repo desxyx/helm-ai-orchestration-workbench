@@ -1,0 +1,13 @@
+initialized my-project/watchover
+init exit=0
+appended evt-0002; workspace valid
+append exit=0
+valid: all checks passed; secret scan self-test passed (15 patterns), 0 findings
+validate exit=0
+brief exit=0
+serving at http://127.0.0.1:49173/
+GET / 200
+state alias demo-app
+bind 127.0.0.1:49173
+show exit=0
+after stop 000

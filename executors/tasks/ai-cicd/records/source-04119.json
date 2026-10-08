@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-10-05T19:56:36+11:00",
+  "run_id": "RUN-W2B",
+  "type": "OPERATOR_VIEW_START",
+  "workspace": "<CLIENT_HOME>/Workspaces/site-02/app/watchover",
+  "facts_checked_without_reading_content": {
+    "state_exists": true,
+    "events_exists": true,
+    "prior_listener_on_7431": false
+  },
+  "command": "node /private/tmp/qefdb2bab/d1020f3ce00567b7/tools/watchover.mjs show <CLIENT_HOME>/Workspaces/site-02/app/watchover --port 7431",
+  "url": "http://127.0.0.1:7431/",
+  "server_exec_session_id": 45907,
+  "server_output": "serving; read-only; loopback only",
+  "first_launch": "sandbox EPERM; no successful listener",
+  "second_launch": "approved escalation; serving",
+  "cloud_action": false,
+  "state_modified": false,
+  "deployment_state_explained_to_owner": false,
+  "hc": "Initial HC-E1 began before view listener was available; this availability timing limitation must be retained. No answer generated or scored; original timebox not reset."
+}

@@ -1,0 +1,1916 @@
+[
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "bigqueryconnection.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigqueryconnection.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "datastore.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/datastore.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "cloudtrace.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudtrace.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "compute.googleapis.com/InstanceSettings",
+    "location": "us-central1-a",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-a/instanceSettings/InstanceSettings",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "assetType": "compute.googleapis.com/InstanceSettings",
+    "location": "australia-southeast1-c",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast1-c/instanceSettings/InstanceSettings",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "assetType": "compute.googleapis.com/InstanceSettings",
+    "location": "australia-southeast1-b",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast1-b/instanceSettings/InstanceSettings",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "assetType": "compute.googleapis.com/InstanceSettings",
+    "location": "us-central1-c",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-c/instanceSettings/InstanceSettings",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "assetType": "compute.googleapis.com/InstanceSettings",
+    "location": "us-central1-ai1a",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-ai1a/instanceSettings/InstanceSettings",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "assetType": "compute.googleapis.com/InstanceSettings",
+    "location": "us-central1-d",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-d/instanceSettings/InstanceSettings",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "assetType": "compute.googleapis.com/InstanceSettings",
+    "location": "us-central1-b",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-b/instanceSettings/InstanceSettings",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "assetType": "compute.googleapis.com/InstanceSettings",
+    "location": "us-central1-f",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-f/instanceSettings/InstanceSettings",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "assetType": "compute.googleapis.com/InstanceSettings",
+    "location": "australia-southeast1-a",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/australia-southeast1-a/instanceSettings/InstanceSettings",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0146>",
+      "sizeGb": 20,
+      "type": "pd-balanced",
+      "users": [
+        "<PRIVATE_URL_0454>"
+      ]
+    },
+    "assetType": "compute.googleapis.com/Disk",
+    "createTime": "2026-10-05T02:59:43Z",
+    "displayName": "<W2_RUN_RESOURCE_PREFIX>-alerta",
+    "location": "us-central1-a",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-a/disks/<W2_RUN_RESOURCE_PREFIX>-alerta",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "READY"
+  },
+  {
+    "additionalAttributes": {
+      "deletionProtection": "FALSE",
+      "externalIPs": [
+        "<IP_ADDRESS_114>"
+      ],
+      "hasFullApiAccess": false,
+      "id": "<NUMERIC_RESOURCE_0107>",
+      "internalIPs": [
+        "<IP_ADDRESS_092>"
+      ],
+      "machineType": "e2-small",
+      "networkInterfaceNames": [
+        "nic0"
+      ],
+      "networkInterfaceNetworks": [
+        "<PRIVATE_URL_0283>"
+      ],
+      "networkInterfaceStackTypes": [
+        "IPV4_ONLY"
+      ]
+    },
+    "assetType": "compute.googleapis.com/Instance",
+    "createTime": "2026-10-05T02:59:43Z",
+    "displayName": "<W2_RUN_RESOURCE_PREFIX>-alerta",
+    "labels": {
+      "app": "alerta",
+      "hostname": "<W2_RUN_RESOURCE_PREFIX>",
+      "managed-by": "codex"
+    },
+    "location": "us-central1-a",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-a/instances/<W2_RUN_RESOURCE_PREFIX>-alerta",
+    "networkTags": [
+      "<W2_RUN_RESOURCE_PREFIX>"
+    ],
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "RUNNING"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0116>",
+      "sizeGb": 20,
+      "type": "pd-balanced",
+      "users": [
+        "<PRIVATE_URL_0454>"
+      ]
+    },
+    "assetType": "compute.googleapis.com/Disk",
+    "createTime": "2026-10-05T02:59:36Z",
+    "displayName": "<W2_RUN_RESOURCE_PREFIX>-data",
+    "location": "us-central1-a",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/zones/us-central1-a/disks/<W2_RUN_RESOURCE_PREFIX>-data",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "READY"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0014>"
+    },
+    "assetType": "compute.googleapis.com/Firewall",
+    "createTime": "2026-10-05T02:59:28Z",
+    "displayName": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+    "networkTags": [
+      "<W2_RUN_RESOURCE_PREFIX>"
+    ],
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0123>"
+    },
+    "assetType": "compute.googleapis.com/Firewall",
+    "createTime": "2026-10-05T02:59:21Z",
+    "displayName": "<W2_RUN_RESOURCE_PREFIX>-web",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/<W2_RUN_RESOURCE_PREFIX>-web",
+    "networkTags": [
+      "<W2_RUN_RESOURCE_PREFIX>"
+    ],
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0027>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-05T02:59:12Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_090>/24.",
+    "displayName": "default-route-r-eef4de55899f0b48",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-eef4de55899f0b48",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_091>",
+      "id": "<NUMERIC_RESOURCE_0178>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-05T02:59:10Z",
+    "displayName": "<W2_RUN_RESOURCE_PREFIX>-subnet",
+    "location": "us-central1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-central1/subnetworks/<W2_RUN_RESOURCE_PREFIX>-subnet",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0058>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-05T02:58:59Z",
+    "description": "Default route to the Internet.",
+    "displayName": "default-route-07774ab0aa9f9ea3",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-07774ab0aa9f9ea3",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0050>"
+    },
+    "assetType": "compute.googleapis.com/Network",
+    "createTime": "2026-10-05T02:58:54Z",
+    "displayName": "<W2_RUN_RESOURCE_PREFIX>-network",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/networks/<W2_RUN_RESOURCE_PREFIX>-network",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "address": "<IP_ADDRESS_114>",
+      "id": "<NUMERIC_RESOURCE_0021>"
+    },
+    "assetType": "compute.googleapis.com/Address",
+    "createTime": "2026-10-05T02:22:22Z",
+    "displayName": "<W2_RUN_RESOURCE_PREFIX>-ip",
+    "location": "us-central1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-central1/addresses/<W2_RUN_RESOURCE_PREFIX>-ip",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "IN_USE"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0140>"
+    },
+    "assetType": "compute.googleapis.com/Firewall",
+    "createTime": "2026-10-03T06:51:41Z",
+    "description": "Allow SSH from anywhere",
+    "displayName": "default-allow-ssh",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/default-allow-ssh",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0136>"
+    },
+    "assetType": "compute.googleapis.com/Firewall",
+    "createTime": "2026-10-03T06:51:41Z",
+    "description": "Allow internal traffic on the default network",
+    "displayName": "default-allow-internal",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/default-allow-internal",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0128>"
+    },
+    "assetType": "compute.googleapis.com/Firewall",
+    "createTime": "2026-10-03T06:51:41Z",
+    "description": "Allow RDP from anywhere",
+    "displayName": "default-allow-rdp",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/default-allow-rdp",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0173>"
+    },
+    "assetType": "compute.googleapis.com/Firewall",
+    "createTime": "2026-10-03T06:51:41Z",
+    "description": "Allow ICMP from anywhere",
+    "displayName": "default-allow-icmp",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/firewalls/default-allow-icmp",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0054>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:25Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_060>/20.",
+    "displayName": "default-route-r-fd0a3dcbdd77a5e1",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-fd0a3dcbdd77a5e1",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0055>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:25Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_082>/20.",
+    "displayName": "default-route-r-08afdb119e58851d",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-08afdb119e58851d",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0138>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:23Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_062>/20.",
+    "displayName": "default-route-r-72e85f5a4344fac7",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-72e85f5a4344fac7",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0089>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:23Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_021>/20.",
+    "displayName": "default-route-r-5b3525456957a2a4",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-5b3525456957a2a4",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0165>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:23Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_058>/20.",
+    "displayName": "default-route-r-4f56f79a206c6d61",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-4f56f79a206c6d61",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0175>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:23Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_028>/20.",
+    "displayName": "default-route-r-652337358b87066c",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-652337358b87066c",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0113>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:23Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_030>/20.",
+    "displayName": "default-route-r-d8e099d7beb47ad7",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-d8e099d7beb47ad7",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0025>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:22Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_040>/20.",
+    "displayName": "default-route-r-d115567d5a7e9960",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-d115567d5a7e9960",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0163>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:22Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_017>/20.",
+    "displayName": "default-route-r-ebf74dea0ecca4c4",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-ebf74dea0ecca4c4",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0143>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:21Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_078>/20.",
+    "displayName": "default-route-r-3281cc5338784261",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-3281cc5338784261",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0171>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:21Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_046>/20.",
+    "displayName": "default-route-r-ef54a44c321896ba",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-ef54a44c321896ba",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0083>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:21Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_074>/20.",
+    "displayName": "default-route-r-392edddde8575506",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-392edddde8575506",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0072>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:21Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_036>/20.",
+    "displayName": "default-route-r-9e93ea27dc58e8cb",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-9e93ea27dc58e8cb",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0053>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:21Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_052>/20.",
+    "displayName": "default-route-r-aa8793972556640e",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-aa8793972556640e",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0049>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:21Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_064>/20.",
+    "displayName": "default-route-r-697884d0455b03c7",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-697884d0455b03c7",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0017>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:21Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_011>/20.",
+    "displayName": "default-route-r-12bd2cc6b47161c6",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-12bd2cc6b47161c6",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0137>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:20Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_066>/20.",
+    "displayName": "default-route-r-ae6bf3dc12365cf3",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-ae6bf3dc12365cf3",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0052>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:20Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_076>/20.",
+    "displayName": "default-route-r-b4754674155d6072",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-b4754674155d6072",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0047>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:20Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_054>/20.",
+    "displayName": "default-route-r-07769da34a88a113",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-07769da34a88a113",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0003>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:20Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_088>/20.",
+    "displayName": "default-route-r-825e5fa65ef9818b",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-825e5fa65ef9818b",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0103>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:20Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_015>/20.",
+    "displayName": "default-route-r-a015083363c97dda",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-a015083363c97dda",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0061>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:20Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_042>/20.",
+    "displayName": "default-route-r-111e37d279b0acfb",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-111e37d279b0acfb",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0042>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:20Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_044>/20.",
+    "displayName": "default-route-r-0879960bb11dd637",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-0879960bb11dd637",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0148>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:19Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_086>/20.",
+    "displayName": "default-route-r-9fe60665d942e3d8",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-9fe60665d942e3d8",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_061>",
+      "id": "<NUMERIC_RESOURCE_0169>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:19Z",
+    "displayName": "default",
+    "location": "australia-southeast2",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/australia-southeast2/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0075>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:19Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_032>/20.",
+    "displayName": "default-route-r-e456bb71211ce6a0",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-e456bb71211ce6a0",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0130>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:19Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_070>/20.",
+    "displayName": "default-route-r-78a5d4078c43b1b6",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-78a5d4078c43b1b6",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0168>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:19Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_080>/20.",
+    "displayName": "default-route-r-e76eef126367bf51",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-e76eef126367bf51",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0127>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:19Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_034>/20.",
+    "displayName": "default-route-r-c90e0d30402ca451",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-c90e0d30402ca451",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0087>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:19Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_026>/20.",
+    "displayName": "default-route-r-628de5eadd63def3",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-628de5eadd63def3",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0106>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:19Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_009>/20.",
+    "displayName": "default-route-r-fb5ad1895b3772af",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-fb5ad1895b3772af",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0051>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:19Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_024>/20.",
+    "displayName": "default-route-r-4f62f144ee431513",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-4f62f144ee431513",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_083>",
+      "id": "<NUMERIC_RESOURCE_0098>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:19Z",
+    "displayName": "default",
+    "location": "africa-south1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/africa-south1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0034>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:19Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_007>/20.",
+    "displayName": "default-route-r-1a2d9b710e4a30b6",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-1a2d9b710e4a30b6",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0037>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:18Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_050>/20.",
+    "displayName": "default-route-r-27891267a62ba6c3",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-27891267a62ba6c3",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0099>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:18Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_048>/20.",
+    "displayName": "default-route-r-ec3628f32ac50041",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-ec3628f32ac50041",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0093>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:18Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_038>/20.",
+    "displayName": "default-route-r-c24e9b904a491500",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-c24e9b904a491500",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0080>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:18Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_013>/20.",
+    "displayName": "default-route-r-b14959b6ce122dfd",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-b14959b6ce122dfd",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0028>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:18Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_056>/20.",
+    "displayName": "default-route-r-ca2b900824a2ec61",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-ca2b900824a2ec61",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0036>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:18Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_084>/20.",
+    "displayName": "default-route-r-53d46e6d3cdc9756",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-53d46e6d3cdc9756",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0076>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:18Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_072>/20.",
+    "displayName": "default-route-r-0faabd2ddf8a7780",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-0faabd2ddf8a7780",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0024>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:18Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_019>/20.",
+    "displayName": "default-route-r-6ac014ace3bc137d",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-6ac014ace3bc137d",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0100>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:18Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_004>/20.",
+    "displayName": "default-route-r-c890a92bf4db7fdb",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-c890a92bf4db7fdb",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_041>",
+      "id": "<NUMERIC_RESOURCE_0151>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:18Z",
+    "displayName": "default",
+    "location": "asia-east2",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/asia-east2/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0018>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:18Z",
+    "description": "Default local route to the subnetwork <IP_ADDRESS_068>/20.",
+    "displayName": "default-route-r-0848246e394f579a",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-r-0848246e394f579a",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_029>",
+      "id": "<NUMERIC_RESOURCE_0092>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:17Z",
+    "displayName": "default",
+    "location": "southamerica-east1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/southamerica-east1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_031>",
+      "id": "<NUMERIC_RESOURCE_0015>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:17Z",
+    "displayName": "default",
+    "location": "asia-south1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/asia-south1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_065>",
+      "id": "<NUMERIC_RESOURCE_0177>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:17Z",
+    "displayName": "default",
+    "location": "europe-west8",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-west8/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_047>",
+      "id": "<NUMERIC_RESOURCE_0118>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:17Z",
+    "displayName": "default",
+    "location": "asia-northeast3",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/asia-northeast3/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_059>",
+      "id": "<NUMERIC_RESOURCE_0040>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:17Z",
+    "displayName": "default",
+    "location": "asia-south2",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/asia-south2/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_067>",
+      "id": "<NUMERIC_RESOURCE_0081>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:17Z",
+    "displayName": "default",
+    "location": "europe-west9",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-west9/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_063>",
+      "id": "<NUMERIC_RESOURCE_0166>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:17Z",
+    "displayName": "default",
+    "location": "southamerica-west1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/southamerica-west1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_037>",
+      "id": "<NUMERIC_RESOURCE_0010>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:17Z",
+    "displayName": "default",
+    "location": "europe-north1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-north1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_022>",
+      "id": "<NUMERIC_RESOURCE_0121>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:17Z",
+    "displayName": "default",
+    "location": "australia-southeast1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/australia-southeast1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_005>",
+      "id": "<NUMERIC_RESOURCE_0105>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "us-central1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-central1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_089>",
+      "id": "<NUMERIC_RESOURCE_0139>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "asia-southeast3",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/asia-southeast3/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_025>",
+      "id": "<NUMERIC_RESOURCE_0159>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "europe-west2",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-west2/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_016>",
+      "id": "<NUMERIC_RESOURCE_0002>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "asia-northeast1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/asia-northeast1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_045>",
+      "id": "<NUMERIC_RESOURCE_0172>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "asia-northeast2",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/asia-northeast2/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_077>",
+      "id": "<NUMERIC_RESOURCE_0060>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "europe-west12",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-west12/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_049>",
+      "id": "<NUMERIC_RESOURCE_0066>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "us-west3",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-west3/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_027>",
+      "id": "<NUMERIC_RESOURCE_0129>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "europe-west3",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-west3/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_012>",
+      "id": "<NUMERIC_RESOURCE_0142>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "asia-east1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/asia-east1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_053>",
+      "id": "<NUMERIC_RESOURCE_0111>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "asia-southeast2",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/asia-southeast2/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_043>",
+      "id": "<NUMERIC_RESOURCE_0070>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "europe-west6",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-west6/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_051>",
+      "id": "<NUMERIC_RESOURCE_0101>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "us-west4",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-west4/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_057>",
+      "id": "<NUMERIC_RESOURCE_0108>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "northamerica-northeast2",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/northamerica-northeast2/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_071>",
+      "id": "<NUMERIC_RESOURCE_0110>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "europe-southwest1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-southwest1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_087>",
+      "id": "<NUMERIC_RESOURCE_0144>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "europe-north2",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-north2/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_073>",
+      "id": "<NUMERIC_RESOURCE_0131>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "us-south1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-south1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_069>",
+      "id": "<NUMERIC_RESOURCE_0001>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "us-east5",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-east5/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_010>",
+      "id": "<NUMERIC_RESOURCE_0133>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "us-west1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-west1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_033>",
+      "id": "<NUMERIC_RESOURCE_0164>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "northamerica-northeast1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/northamerica-northeast1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_039>",
+      "id": "<NUMERIC_RESOURCE_0069>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "us-west2",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-west2/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_085>",
+      "id": "<NUMERIC_RESOURCE_0174>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "northamerica-south1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/northamerica-south1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_079>",
+      "id": "<NUMERIC_RESOURCE_0155>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "me-central1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/me-central1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_008>",
+      "id": "<NUMERIC_RESOURCE_0115>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "europe-west1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-west1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_020>",
+      "id": "<NUMERIC_RESOURCE_0149>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "us-east4",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-east4/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_081>",
+      "id": "<NUMERIC_RESOURCE_0079>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "europe-west10",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-west10/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_035>",
+      "id": "<NUMERIC_RESOURCE_0008>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "europe-west4",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-west4/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_018>",
+      "id": "<NUMERIC_RESOURCE_0147>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "asia-southeast1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/asia-southeast1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_014>",
+      "id": "<NUMERIC_RESOURCE_0161>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "us-east1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/us-east1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_075>",
+      "id": "<NUMERIC_RESOURCE_0120>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "me-west1",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/me-west1/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "gatewayAddress": "<IP_ADDRESS_055>",
+      "id": "<NUMERIC_RESOURCE_0006>"
+    },
+    "assetType": "compute.googleapis.com/Subnetwork",
+    "createTime": "2026-10-03T06:51:16Z",
+    "displayName": "default",
+    "location": "europe-central2",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/regions/europe-central2/subnetworks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0090>"
+    },
+    "assetType": "compute.googleapis.com/Route",
+    "createTime": "2026-10-03T06:51:13Z",
+    "description": "Default route to the Internet.",
+    "displayName": "default-route-43d14511ef5a4294",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/routes/default-route-43d14511ef5a4294",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0141>"
+    },
+    "assetType": "compute.googleapis.com/Network",
+    "createTime": "2026-10-03T06:51:08Z",
+    "description": "Default network for the project",
+    "displayName": "default",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>/global/networks/default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "additionalAttributes": {
+      "id": "<NUMERIC_RESOURCE_0109>",
+      "xpnProjectStatus": "UNSPECIFIED_XPN_PROJECT_STATUS"
+    },
+    "assetType": "compute.googleapis.com/Project",
+    "createTime": "2026-10-03T06:51:03Z",
+    "displayName": "<CLOUD_PROJECT>",
+    "location": "global",
+    "name": "//compute.googleapis.com/projects/<CLOUD_PROJECT>",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "assetType": "cloudbilling.googleapis.com/ProjectBillingInfo",
+    "displayName": "projects/<CLOUD_PROJECT>/billingInfo",
+    "location": "global",
+    "name": "//cloudbilling.googleapis.com/projects/<CLOUD_PROJECT>/billingInfo",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ACTIVE"
+  },
+  {
+    "additionalAttributes": {
+      "projectId": "<CLOUD_PROJECT>"
+    },
+    "assetType": "cloudresourcemanager.googleapis.com/Project",
+    "createTime": "2026-09-25T06:33:14Z",
+    "displayName": "WatchOver AI DevOps",
+    "location": "global",
+    "name": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ACTIVE"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "storage-component.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage-component.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "bigqueryreservation.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigqueryreservation.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "logging.googleapis.com/LogSink",
+    "displayName": "_Required",
+    "location": "global",
+    "name": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/sinks/_Required",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "billingbudgets.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/billingbudgets.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "servicemanagement.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/servicemanagement.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "dataplex.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/dataplex.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "logging.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/logging.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "analyticshub.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/analyticshub.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "bigquery.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquery.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "pubsub.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/pubsub.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "logging.googleapis.com/LogBucket",
+    "description": "Default bucket",
+    "displayName": "_Default",
+    "location": "global",
+    "name": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/locations/global/buckets/_Default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ACTIVE"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "artifactregistry.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/artifactregistry.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "apptopology.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/apptopology.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "oslogin.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/oslogin.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "monitoring.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/monitoring.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "bigquerymigration.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerymigration.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "bigquerystorage.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerystorage.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "telemetry.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/telemetry.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "bigquerydatapolicy.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerydatapolicy.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "compute.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/compute.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "logging.googleapis.com/LogSink",
+    "displayName": "_Default",
+    "location": "global",
+    "name": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/sinks/_Default",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "bigquerydatatransfer.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/bigquerydatatransfer.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "sql-component.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/sql-component.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "run.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/run.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "storage.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "cloudapis.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudapis.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "containerregistry.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/containerregistry.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "iap.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/iap.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "dataform.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/dataform.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "cloudasset.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/cloudasset.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "storage-api.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/storage-api.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "serviceusage.googleapis.com/Service",
+    "displayName": "serviceusage.googleapis.com",
+    "location": "global",
+    "name": "//serviceusage.googleapis.com/projects/<PROJECT_NUMBER>/services/serviceusage.googleapis.com",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ENABLED"
+  },
+  {
+    "assetType": "logging.googleapis.com/LogBucket",
+    "description": "Audit bucket",
+    "displayName": "_Required",
+    "location": "global",
+    "name": "//logging.googleapis.com/projects/<PROJECT_NUMBER>/locations/global/buckets/_Required",
+    "parentAssetType": "cloudresourcemanager.googleapis.com/Project",
+    "parentFullResourceName": "//cloudresourcemanager.googleapis.com/projects/<CLOUD_PROJECT>",
+    "project": "projects/<PROJECT_NUMBER>",
+    "state": "ACTIVE"
+  }
+]

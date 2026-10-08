@@ -1,0 +1,255 @@
+$ gcloud compute networks subnets list '--format=json(name,id,region,network)' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+[
+  {
+    "id": "<NUMERIC_RESOURCE_0105>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0399>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0115>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0365>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0133>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0411>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0142>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0317>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0161>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0401>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0002>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0321>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0147>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0331>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0149>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0403>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0121>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0345>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0159>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0367>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0129>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0369>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0092>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0389>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0015>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0327>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0164>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0383>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0008>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0371>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0010>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0355>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0069>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0413>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0151>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0319>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0070>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0373>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0172>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0323>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0118>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0325>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0066>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0415>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0101>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0417>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0111>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0333>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0006>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0353>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0108>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0385>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0040>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0329>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0169>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0351>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0166>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0391>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0177>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0375>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0081>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0377>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0001>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0405>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0110>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0359>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0131>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0407>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0120>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0381>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0060>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0365>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0155>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0379>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0079>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0363>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0098>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0315>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0174>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0387>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0144>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0357>"
+  },
+  {
+    "id": "<NUMERIC_RESOURCE_0139>",
+    "name": "default",
+    "network": "<PRIVATE_URL_0281>",
+    "region": "<PRIVATE_URL_0335>"
+  }
+]

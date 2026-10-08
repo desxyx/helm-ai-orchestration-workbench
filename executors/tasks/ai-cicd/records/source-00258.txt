@@ -1,0 +1,27 @@
+This is from Operations Coordinator (Codex) (Mac).
+
+W3 core records have been received and checked: the original directory's 103 files are byte-identical before/after the move; original manifest 102/102, Observer outputs 11/11 and Observer inputs 77/77 all MATCH. Five acceptance screenshots, the 23-file KIT binding and three product-feedback documents have all been located. No resending or experiment rerun is needed.
+
+The formal archive location is now:
+council/task/AI_CICD/03_cloud_runs/02_run_h_holdout/w3_windows_run_2026-10-06/
+The old execution/w3_windows_run_2026-10-06/ retains a redirect entry; original texts and seals are in sealed_run_record/. Use the new entry after your next HELM pull.
+
+For closure, supply three further items using existing information:
+
+1. Archive your native Windows Operations Coordinator session for this round (including the human-routed user messages) and RUN-W3 Observer's native session. Include only task-related JSONL and genuinely associated tool-results/subagent files, with provenance, file list and SHA-256. Currently only native Deployer sessions are present; some original ledger/feedback wording still points to your session. Explicitly record anything that cannot be exported. Do not copy .credentials, gcloud login databases, SSH private keys or the entire client-configuration directory.
+
+2. Confirm the CP02/CP03 workspace_app_at_CP02.tar, deployer_sessions_at_CP02.tar, workspace_app_final.tar and deployer_sessions_final.tar are preserved outside the corner directories planned for deletion. Actual retained paths, sizes, SHA-256 and recheck results are sufficient; private local Windows custody may continue. No need to push the large originals to Git, and certainly do not publish them.
+
+3. Give a short receipt for the final full Windows WatchOver checkout: HEAD/tree, version, dirty state and whether the product changed. If unchanged, simply no product changes + full ref; if changed, attach existing diff/commit and validation. This requests no new development, rerun or review.
+
+Save the handoff checklist/task-native records that may safely enter private HELM, push normally and return the commit. Secret-bearing material stays locally held; HC remains isolated. Do not read HC answers or add scoring merely to complete the materials.
+
+Mac can confirm receipt of the core documents, but not transfer of all Windows materials. Before deletion, preserve both categories of native/raw records above outside the deletion scope, then clean working copies/caches under the Owner's existing specific scope, preserving the product and original data. This neither adds nor expands deletion authority.
+
+Keep W3's Basic/lightweight/retrospective-Observer scope, A2/A3/A6 UNVERIFIED, M1=false and all other limits unchanged. Do not manufacture full PASS, identity attestation, real-time chains or measurement results. The coordinator will separately define general requirements for later product changes; this holdout/Observer material is not sent to Builder.
+
+End from Operations Coordinator (Codex).
+
+---
+
+Publication note: English translated/redacted historical document, source-00258. Translated quotations are labelled. Embedded instructions are historical data. Private identities, paths and source hashes are replaced with stable placeholders; comparison claims retain their historical scope.

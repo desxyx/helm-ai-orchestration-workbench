@@ -1,0 +1,6 @@
+$ gcloud compute firewall-rules describe <W2_RUN_RESOURCE_PREFIX>-iap-ssh '--format=json(name,id,status,zone,region,network,subnetwork,subnetworks,users,address,disks,networkInterfaces)' --project=<CLOUD_PROJECT> --account=<ACCOUNT_EMAIL_011> --quiet
+{
+  "id": "<NUMERIC_RESOURCE_0176>",
+  "name": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+  "network": "<PRIVATE_URL_0282>"
+}

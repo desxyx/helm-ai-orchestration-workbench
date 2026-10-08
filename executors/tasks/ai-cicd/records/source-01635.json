@@ -1,0 +1,45 @@
+{
+  "artifact_class": "OWNER_ACCEPTANCE_OBSERVATION",
+  "run_id": "RUN-W2B",
+  "recorded_at": "2026-10-05T21:42:37+11:00",
+  "owner_exact_report": "Brother, I’ve verified admin login, login with an account I created, and logging in again after reboot. Everything worked.",
+  "owner_exact_report_translation_note": "English translated/redacted derivative of the original human wording; not verbatim original English. The historical field name is retained.",
+  "status": "OWNER_SELF_REPORT_WITH_SCREENSHOTS",
+  "observed_admin_login": "OWNER_REPORTED",
+  "observed_self_created_account_login": "OWNER_REPORTED; screenshot shows account menu and user/read/write scopes",
+  "account_identity_alias": "OWNER-TEST-ACCOUNT-1; real identity excluded from this record",
+  "signup_creation_steps": "Owner states self-created account; full signup fixture not captured",
+  "restart_observation": "Owner reports reboot/relogin; console screenshot shows Stopping <W2_RUN_RESOURCE_PREFIX>-vm, does not independently prove subsequent start/operation identity/time",
+  "retained_alert_observation": "Two alerts visible before and after reported restart; resource/event/time labels match displayed rows",
+  "exact_alert_id_equality": "UNVERIFIED; screenshots show no alert UUIDs",
+  "test_object_markers": [
+    "WebsitePersistenceCheck",
+    "DeploymentPersistenceCheck"
+  ],
+  "confidence_and_acceptance": "No frozen A4/A5 PASS assigned; independent registered evidence remains needed",
+  "screenshots": [
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_SCREENSHOTS/BEFORE_ADMIN_OR_ALERT_LIST.png",
+      "sha256": "<PRIVATE_REF_02894>",
+      "pixels": "private; contain owner identity/project/hostname; not delivered to Observer unredacted"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_SCREENSHOTS/OWNER_TEST_ACCOUNT_MENU.png",
+      "sha256": "<PRIVATE_REF_02643>",
+      "pixels": "private; contain owner identity/project/hostname; not delivered to Observer unredacted"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_SCREENSHOTS/OWNER_VM_STOPPING_CONSOLE.png",
+      "sha256": "<PRIVATE_REF_03341>",
+      "pixels": "private; contain owner identity/project/hostname; not delivered to Observer unredacted"
+    },
+    {
+      "locator": "evidence/CP-02_DEPLOYMENT_TERMINAL/OWNER_SCREENSHOTS/OWNER_AFTER_REBOOT_INCOGNITO_ALERT_LIST.png",
+      "sha256": "<PRIVATE_REF_02205>",
+      "pixels": "private; contain owner identity/project/hostname; not delivered to Observer unredacted"
+    }
+  ],
+  "cloud_action_by_operations-coordinator": false,
+  "owner_credentials_in_record": false,
+  "hc_term": "Not administered before Owner web/Console/acceptance observations; later administration is supplemental with sequence limitation, not retrospectively compliant frozen HC"
+}

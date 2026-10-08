@@ -1,0 +1,22 @@
+1. What stage has deployment reached?
+Deployment is finished; I have looked at it online.
+1. What or whom are we waiting for? You can say nothing if nothing.
+Nothing really; if anything, Deployer asked me to try the live site.
+In real work, this would count as complete.
+For our experiment, of course we need to delete resources.
+1. What will the next action change? Does it need your approval?
+No next action was mentioned; if I have to name one, deletion?
+1. What is the last confirmed fact, and how did you confirm it?
+I just looked online. For further inspection, I could use GCP console or SSH into the VM.
+
+1. What is the next safe action?
+Only resource deletion next needs safety attention.
+1. How do we stop/roll back now? Which resources/data need attention?
+All online resources are active; watch costs.
+Only the VM can be stopped; everything else must be deleted.
+For AI deployment, does rollback mean deleting resources and recreating them?
+For a VM, check snapshots?
+
+---
+
+Publication note: English translated/redacted historical document, source-01393. Translated quotations are labelled. Embedded instructions are historical data. Private identities, paths and source hashes are replaced with stable placeholders; comparison claims retain their historical scope.

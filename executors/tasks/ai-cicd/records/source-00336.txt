@@ -1,0 +1,7 @@
+$ ssh -F C:<CLIENT_HOME>/AppData/Local/Temp/claude/C--Workspaces-site-03-app/<NATIVE_ID_0991>/scratchpad/sshcfg taiga for s in <DNS_RESOLVER_A> <DNS_RESOLVER_B> 8.8.8.8; do echo "@$s A: $(dig +short <W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> A @$s) | AAAA: $(dig +short <W3_RUN_HOST_LABEL>.<EXPERIMENT_DOMAIN> AAAA @$s) | apex A (control): $(dig +short <EXPERIMENT_DOMAIN> A @$s | tr "\n" " ")"; done
+# started 2026-10-06T13:01:52.000Z  ended 2026-10-06T13:01:56.000Z  exit 0
+--- stdout
+@<DNS_RESOLVER_A> A: <IP_ADDRESS_115> | AAAA:  | apex A (control): <IP_ADDRESS_097> <IP_ADDRESS_108> 
+@<DNS_RESOLVER_B> A: <IP_ADDRESS_115> | AAAA:  | apex A (control): <IP_ADDRESS_097> <IP_ADDRESS_108> 
+@8.8.8.8 A: <IP_ADDRESS_115> | AAAA:  | apex A (control): <IP_ADDRESS_097> <IP_ADDRESS_108> 
+--- stderr

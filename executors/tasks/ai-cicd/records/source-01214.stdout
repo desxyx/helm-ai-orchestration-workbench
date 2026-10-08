@@ -1,0 +1,176 @@
+[
+  {
+    "allowed": [
+      {
+        "IPProtocol": "icmp"
+      }
+    ],
+    "creationTimestamp": "2026-10-02T23:51:41.186-07:00",
+    "description": "Allow ICMP from anywhere",
+    "direction": "INGRESS",
+    "disabled": false,
+    "id": "<NUMERIC_RESOURCE_0173>",
+    "kind": "compute#firewall",
+    "logConfig": {
+      "enable": false
+    },
+    "name": "default-allow-icmp",
+    "network": "<PRIVATE_URL_0281>",
+    "priority": 65534,
+    "selfLink": "<PRIVATE_URL_0268>",
+    "sourceRanges": [
+      "0.0.0.0/0"
+    ]
+  },
+  {
+    "allowed": [
+      {
+        "IPProtocol": "tcp",
+        "ports": [
+          "0-65535"
+        ]
+      },
+      {
+        "IPProtocol": "udp",
+        "ports": [
+          "0-65535"
+        ]
+      },
+      {
+        "IPProtocol": "icmp"
+      }
+    ],
+    "creationTimestamp": "2026-10-02T23:51:41.019-07:00",
+    "description": "Allow internal traffic on the default network",
+    "direction": "INGRESS",
+    "disabled": false,
+    "id": "<NUMERIC_RESOURCE_0136>",
+    "kind": "compute#firewall",
+    "logConfig": {
+      "enable": false
+    },
+    "name": "default-allow-internal",
+    "network": "<PRIVATE_URL_0281>",
+    "priority": 65534,
+    "selfLink": "<PRIVATE_URL_0269>",
+    "sourceRanges": [
+      "<IP_ADDRESS_004>/9"
+    ]
+  },
+  {
+    "allowed": [
+      {
+        "IPProtocol": "tcp",
+        "ports": [
+          "3389"
+        ]
+      }
+    ],
+    "creationTimestamp": "2026-10-02T23:51:41.130-07:00",
+    "description": "Allow RDP from anywhere",
+    "direction": "INGRESS",
+    "disabled": false,
+    "id": "<NUMERIC_RESOURCE_0128>",
+    "kind": "compute#firewall",
+    "logConfig": {
+      "enable": false
+    },
+    "name": "default-allow-rdp",
+    "network": "<PRIVATE_URL_0281>",
+    "priority": 65534,
+    "selfLink": "<PRIVATE_URL_0270>",
+    "sourceRanges": [
+      "0.0.0.0/0"
+    ]
+  },
+  {
+    "allowed": [
+      {
+        "IPProtocol": "tcp",
+        "ports": [
+          "22"
+        ]
+      }
+    ],
+    "creationTimestamp": "2026-10-02T23:51:41.074-07:00",
+    "description": "Allow SSH from anywhere",
+    "direction": "INGRESS",
+    "disabled": false,
+    "id": "<NUMERIC_RESOURCE_0140>",
+    "kind": "compute#firewall",
+    "logConfig": {
+      "enable": false
+    },
+    "name": "default-allow-ssh",
+    "network": "<PRIVATE_URL_0281>",
+    "priority": 65534,
+    "selfLink": "<PRIVATE_URL_0271>",
+    "sourceRanges": [
+      "0.0.0.0/0"
+    ]
+  },
+  {
+    "allowed": [
+      {
+        "IPProtocol": "tcp",
+        "ports": [
+          "22"
+        ]
+      }
+    ],
+    "creationTimestamp": "2026-10-04T19:59:28.637-07:00",
+    "description": "",
+    "direction": "INGRESS",
+    "disabled": false,
+    "id": "<NUMERIC_RESOURCE_0014>",
+    "kind": "compute#firewall",
+    "logConfig": {
+      "enable": false
+    },
+    "name": "<W2_RUN_RESOURCE_PREFIX>-iap-ssh",
+    "network": "<PRIVATE_URL_0283>",
+    "priority": 1000,
+    "selfLink": "<PRIVATE_URL_0272>",
+    "sourceRanges": [
+      "<IP_ADDRESS_119>/20"
+    ],
+    "targetTags": [
+      "<W2_RUN_RESOURCE_PREFIX>"
+    ]
+  },
+  {
+    "allowed": [
+      {
+        "IPProtocol": "tcp",
+        "ports": [
+          "80"
+        ]
+      },
+      {
+        "IPProtocol": "tcp",
+        "ports": [
+          "443"
+        ]
+      }
+    ],
+    "creationTimestamp": "2026-10-04T19:59:21.735-07:00",
+    "description": "",
+    "direction": "INGRESS",
+    "disabled": false,
+    "id": "<NUMERIC_RESOURCE_0123>",
+    "kind": "compute#firewall",
+    "logConfig": {
+      "enable": false
+    },
+    "name": "<W2_RUN_RESOURCE_PREFIX>-web",
+    "network": "<PRIVATE_URL_0283>",
+    "priority": 1000,
+    "selfLink": "<PRIVATE_URL_0273>",
+    "sourceRanges": [
+      "0.0.0.0/0"
+    ],
+    "targetTags": [
+      "<W2_RUN_RESOURCE_PREFIX>"
+    ]
+  }
+]

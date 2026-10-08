@@ -1,0 +1,9 @@
+HC-TERM — Human Operator answers only; no live clarification.
+Each short answer: SURE / UNSURE / UNKNOWN.
+
+1. running:
+2. waiting/on whom:
+3. next approval/action effect:
+4. last verified fact/basis:
+5. next safe action:
+6. rollback/stop boundary:

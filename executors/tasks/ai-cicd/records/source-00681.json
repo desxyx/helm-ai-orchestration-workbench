@@ -1,0 +1,28 @@
+{
+  "targets": [
+    {
+      "alias": "HELM",
+      "path": "<HELM_ROOT>"
+    },
+    {
+      "alias": "PRODUCT_REPO",
+      "path": "<CLIENT_HOME>/Desktop/helmls-studio/watchover-ai-devops"
+    },
+    {
+      "alias": "W2B_EXPORT_R2",
+      "path": "/private/tmp/qefdb2bab/d1020f3ce00567b7"
+    },
+    {
+      "alias": "MA1_ROOT",
+      "path": "<CLIENT_HOME>/Desktop/Coding/WatchOver_AI_CICD_MA1_2026-09-30"
+    },
+    {
+      "alias": "W1_PRIOR_ARM",
+      "path": "<CLIENT_HOME>/Desktop/Coding/WatchOver_AI_CICD_W1_2026-09-28"
+    },
+    {
+      "alias": "WORKLOAD_POOL",
+      "path": "<CLIENT_HOME>/Desktop/Coding/WatchOver_AI_DevOps_Workloads"
+    }
+  ]
+}

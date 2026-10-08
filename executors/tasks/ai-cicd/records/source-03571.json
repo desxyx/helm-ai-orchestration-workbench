@@ -1,0 +1,11 @@
+{
+  "source_orchestrator_sha256": "<PRIVATE_REF_03509>",
+  "actual_orchestrator_sha256": "<PRIVATE_REF_03636>",
+  "only_substitutions": [
+    "neutral run alias",
+    "dedicated corpus workspace"
+  ],
+  "questions_models_restrictions_and_external_timing_unchanged": true,
+  "authority": "AI-CICD-20261005-W2B-VERIFY-TRACE-001",
+  "status": "NOT_LAUNCHED"
+}

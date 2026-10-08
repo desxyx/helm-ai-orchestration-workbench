@@ -1,0 +1,11 @@
+{
+  "run_id": "RUN-W2A",
+  "status": "FOUR_ANSWERS_SEALED; OBSERVER_GRADING_PENDING; TO_BE_REFERENCED_BY_RUN_CLOSE",
+  "observer_attachment_path": "/private/tmp/survey-18f7/work/closure_inputs/TRACE_PROBE",
+  "sha256sums": "<PRIVATE_REF_02305>",
+  "question_count": 4,
+  "total_elapsed_seconds_external": 124.82532558299135,
+  "source_session_id": "<NATIVE_ID_2154>",
+  "model": "claude-sonnet-5-5",
+  "no_custodian_grade": true
+}

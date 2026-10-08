@@ -1,0 +1,12 @@
+{
+  "run_id": "RUN-W2B",
+  "aliases": {
+    "PROJECT": "PROJECT-P",
+    "HOSTNAME": "HOST-H",
+    "GCP_ACCOUNT": "ACCOUNT-A",
+    "DEPLOYER": "DEPLOYER",
+    "OBSERVER": "OBSERVER"
+  },
+  "canonical_arm_mapping": "WITHHELD_UNTIL_COMPARISON_SEAL",
+  "record_rule": "Custodian aliases personal identifiers in delivered packets; do not reproduce private identity values."
+}

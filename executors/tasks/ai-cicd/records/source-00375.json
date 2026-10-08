@@ -1,0 +1,477 @@
+{
+  "run_id": "RUN-W3",
+  "verified_at_utc": "2026-10-07T00:37:05.8294526Z",
+  "manifest_sha256": "<PRIVATE_REF_00673>",
+  "checked_count": 77,
+  "match_count": 77,
+  "issues": [],
+  "files": [
+    {
+      "path": "./ACCEPTANCE_MATRIX.md",
+      "expected_sha256": "<PRIVATE_REF_03025>",
+      "actual_sha256": "<PRIVATE_REF_03025>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./ACCEPTANCE_VERIFICATION_PROCEDURE.md",
+      "expected_sha256": "<PRIVATE_REF_02445>",
+      "actual_sha256": "<PRIVATE_REF_02445>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./ALIASES.json",
+      "expected_sha256": "<PRIVATE_REF_02035>",
+      "actual_sha256": "<PRIVATE_REF_02035>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./CONTROL_FACTS.md",
+      "expected_sha256": "<PRIVATE_REF_02914>",
+      "actual_sha256": "<PRIVATE_REF_02914>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./EVENT_TAXONOMY.md",
+      "expected_sha256": "<PRIVATE_REF_01416>",
+      "actual_sha256": "<PRIVATE_REF_01416>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./MEASUREMENT_INTEGRITY_RULES.md",
+      "expected_sha256": "<PRIVATE_REF_02778>",
+      "actual_sha256": "<PRIVATE_REF_02778>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./METRICS_DEFINITIONS.md",
+      "expected_sha256": "<PRIVATE_REF_01277>",
+      "actual_sha256": "<PRIVATE_REF_01277>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./OBSERVER_PROTOCOL.md",
+      "expected_sha256": "<PRIVATE_REF_03170>",
+      "actual_sha256": "<PRIVATE_REF_03170>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./RESTART_EQUIVALENCE.md",
+      "expected_sha256": "<PRIVATE_REF_01847>",
+      "actual_sha256": "<PRIVATE_REF_01847>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./RUN_MANIFEST.md",
+      "expected_sha256": "<PRIVATE_REF_03295>",
+      "actual_sha256": "<PRIVATE_REF_03295>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./TRACEABILITY_PROBE.md",
+      "expected_sha256": "<PRIVATE_REF_03741>",
+      "actual_sha256": "<PRIVATE_REF_03741>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./W3_MEASUREMENT_SCOPE.md",
+      "expected_sha256": "<PRIVATE_REF_00928>",
+      "actual_sha256": "<PRIVATE_REF_00928>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./event.schema.json",
+      "expected_sha256": "<PRIVATE_REF_00975>",
+      "actual_sha256": "<PRIVATE_REF_00975>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/acceptance_screenshots/1st_login.png",
+      "expected_sha256": "<PRIVATE_REF_01262>",
+      "actual_sha256": "<PRIVATE_REF_01262>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/acceptance_screenshots/Create_project.png",
+      "expected_sha256": "<PRIVATE_REF_00138>",
+      "actual_sha256": "<PRIVATE_REF_00138>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/acceptance_screenshots/landing_page.png",
+      "expected_sha256": "<PRIVATE_REF_00534>",
+      "actual_sha256": "<PRIVATE_REF_00534>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/acceptance_screenshots/re_login_via_edge.png",
+      "expected_sha256": "<PRIVATE_REF_03291>",
+      "actual_sha256": "<PRIVATE_REF_03291>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/acceptance_screenshots/vm_stopped.png",
+      "expected_sha256": "<PRIVATE_REF_03206>",
+      "actual_sha256": "<PRIVATE_REF_03206>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/control/DEPLOYER_CONTINUATION_MESSAGE.txt",
+      "expected_sha256": "<PRIVATE_REF_01179>",
+      "actual_sha256": "<PRIVATE_REF_01179>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/control/DEPLOYER_OPENING_MESSAGE.txt",
+      "expected_sha256": "<PRIVATE_REF_02386>",
+      "actual_sha256": "<PRIVATE_REF_02386>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/control/RESIDUAL_INVENTORY_POST_TEARDOWN.txt",
+      "expected_sha256": "<PRIVATE_REF_01505>",
+      "actual_sha256": "<PRIVATE_REF_01505>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/control/TEARDOWN_PROMPT.txt",
+      "expected_sha256": "<PRIVATE_REF_02476>",
+      "actual_sha256": "<PRIVATE_REF_02476>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/control/W3_DEPLOYER_BRIEF.txt",
+      "expected_sha256": "<PRIVATE_REF_03637>",
+      "actual_sha256": "<PRIVATE_REF_03637>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/control/project_inventory_CP02.txt",
+      "expected_sha256": "<PRIVATE_REF_02464>",
+      "actual_sha256": "<PRIVATE_REF_02464>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/README.md",
+      "expected_sha256": "<PRIVATE_REF_03547>",
+      "actual_sha256": "<PRIVATE_REF_03547>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/events.jsonl",
+      "expected_sha256": "<PRIVATE_REF_03004>",
+      "actual_sha256": "<PRIVATE_REF_03004>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0002-gcp-identity.txt",
+      "expected_sha256": "<PRIVATE_REF_00576>",
+      "actual_sha256": "<PRIVATE_REF_00576>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0003-gcp-inventory.txt",
+      "expected_sha256": "<PRIVATE_REF_02971>",
+      "actual_sha256": "<PRIVATE_REF_02971>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0004-dns-precheck.txt",
+      "expected_sha256": "<PRIVATE_REF_01110>",
+      "actual_sha256": "<PRIVATE_REF_01110>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0005-source-checkout.txt",
+      "expected_sha256": "<PRIVATE_REF_02500>",
+      "actual_sha256": "<PRIVATE_REF_02500>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0006-app-config-findings.txt",
+      "expected_sha256": "<PRIVATE_REF_00152>",
+      "actual_sha256": "<PRIVATE_REF_00152>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0007-price-catalog.txt",
+      "expected_sha256": "<PRIVATE_REF_03431>",
+      "actual_sha256": "<PRIVATE_REF_03431>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0008-preflight.txt",
+      "expected_sha256": "<PRIVATE_REF_02186>",
+      "actual_sha256": "<PRIVATE_REF_02186>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0009-address-create.txt",
+      "expected_sha256": "<PRIVATE_REF_03571>",
+      "actual_sha256": "<PRIVATE_REF_03571>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0010-resume-inventory.txt",
+      "expected_sha256": "<PRIVATE_REF_01092>",
+      "actual_sha256": "<PRIVATE_REF_01092>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0011-firewall-create.txt",
+      "expected_sha256": "<PRIVATE_REF_02516>",
+      "actual_sha256": "<PRIVATE_REF_02516>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0012-disk-create.txt",
+      "expected_sha256": "<PRIVATE_REF_03135>",
+      "actual_sha256": "<PRIVATE_REF_03135>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0013-snapshot-policy-create.txt",
+      "expected_sha256": "<PRIVATE_REF_01858>",
+      "actual_sha256": "<PRIVATE_REF_01858>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0014-disk-attach-policy.txt",
+      "expected_sha256": "<PRIVATE_REF_03118>",
+      "actual_sha256": "<PRIVATE_REF_03118>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0015-created-describe.txt",
+      "expected_sha256": "<PRIVATE_REF_03010>",
+      "actual_sha256": "<PRIVATE_REF_03010>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0016-vm-create.txt",
+      "expected_sha256": "<PRIVATE_REF_03013>",
+      "actual_sha256": "<PRIVATE_REF_03013>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0017-vm-absent-check.txt",
+      "expected_sha256": "<PRIVATE_REF_02581>",
+      "actual_sha256": "<PRIVATE_REF_02581>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0018-vm-create.txt",
+      "expected_sha256": "<PRIVATE_REF_03651>",
+      "actual_sha256": "<PRIVATE_REF_03651>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0019-vm-describe.txt",
+      "expected_sha256": "<PRIVATE_REF_01076>",
+      "actual_sha256": "<PRIVATE_REF_01076>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0020-stage-check.txt",
+      "expected_sha256": "<PRIVATE_REF_03290>",
+      "actual_sha256": "<PRIVATE_REF_03290>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0021-vm-ssh-key.txt",
+      "expected_sha256": "<PRIVATE_REF_03230>",
+      "actual_sha256": "<PRIVATE_REF_03230>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0022-setup-vm.txt",
+      "expected_sha256": "<PRIVATE_REF_02213>",
+      "actual_sha256": "<PRIVATE_REF_02213>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0023-dns-precheck2.txt",
+      "expected_sha256": "<PRIVATE_REF_01732>",
+      "actual_sha256": "<PRIVATE_REF_01732>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0024-dns-record-check.txt",
+      "expected_sha256": "<PRIVATE_REF_02082>",
+      "actual_sha256": "<PRIVATE_REF_02082>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0025-build-result.txt",
+      "expected_sha256": "<PRIVATE_REF_03681>",
+      "actual_sha256": "<PRIVATE_REF_03681>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0026-compose-up.txt",
+      "expected_sha256": "<PRIVATE_REF_01335>",
+      "actual_sha256": "<PRIVATE_REF_01335>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0027-back-crashloop.txt",
+      "expected_sha256": "<PRIVATE_REF_02438>",
+      "actual_sha256": "<PRIVATE_REF_02438>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0028-crlf-cause.txt",
+      "expected_sha256": "<PRIVATE_REF_01928>",
+      "actual_sha256": "<PRIVATE_REF_01928>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0029-tarball-blob-check.txt",
+      "expected_sha256": "<PRIVATE_REF_03150>",
+      "actual_sha256": "<PRIVATE_REF_03150>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0030-setup-vm-rerun.txt",
+      "expected_sha256": "<PRIVATE_REF_02446>",
+      "actual_sha256": "<PRIVATE_REF_02446>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0031-rebuild-result.txt",
+      "expected_sha256": "<PRIVATE_REF_01592>",
+      "actual_sha256": "<PRIVATE_REF_01592>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0032-compose-up2.txt",
+      "expected_sha256": "<PRIVATE_REF_02837>",
+      "actual_sha256": "<PRIVATE_REF_02837>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0033-e2e-create.txt",
+      "expected_sha256": "<PRIVATE_REF_01676>",
+      "actual_sha256": "<PRIVATE_REF_01676>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0034-e2e-create.txt",
+      "expected_sha256": "<PRIVATE_REF_02182>",
+      "actual_sha256": "<PRIVATE_REF_02182>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0035-deployed-ref-health.txt",
+      "expected_sha256": "<PRIVATE_REF_02787>",
+      "actual_sha256": "<PRIVATE_REF_02787>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0036-expected-blobs.txt",
+      "expected_sha256": "<PRIVATE_REF_03073>",
+      "actual_sha256": "<PRIVATE_REF_03073>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0037-vm-stop-start.txt",
+      "expected_sha256": "<PRIVATE_REF_01595>",
+      "actual_sha256": "<PRIVATE_REF_01595>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0038-e2e-after-restart.txt",
+      "expected_sha256": "<PRIVATE_REF_02462>",
+      "actual_sha256": "<PRIVATE_REF_02462>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0039-teardown-inventory-before.txt",
+      "expected_sha256": "<PRIVATE_REF_01054>",
+      "actual_sha256": "<PRIVATE_REF_01054>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0040-dns-removed-check.txt",
+      "expected_sha256": "<PRIVATE_REF_01198>",
+      "actual_sha256": "<PRIVATE_REF_01198>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0041-delete-vm.txt",
+      "expected_sha256": "<PRIVATE_REF_03289>",
+      "actual_sha256": "<PRIVATE_REF_03289>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0042-delete-disk.txt",
+      "expected_sha256": "<PRIVATE_REF_02584>",
+      "actual_sha256": "<PRIVATE_REF_02584>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0043-delete-policy.txt",
+      "expected_sha256": "<PRIVATE_REF_01909>",
+      "actual_sha256": "<PRIVATE_REF_01909>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0044-delete-firewall.txt",
+      "expected_sha256": "<PRIVATE_REF_02137>",
+      "actual_sha256": "<PRIVATE_REF_02137>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0045-dns-removed-check2.txt",
+      "expected_sha256": "<PRIVATE_REF_03407>",
+      "actual_sha256": "<PRIVATE_REF_03407>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0046-delete-ip.txt",
+      "expected_sha256": "<PRIVATE_REF_02338>",
+      "actual_sha256": "<PRIVATE_REF_02338>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/evidence/0047-teardown-inventory-after.txt",
+      "expected_sha256": "<PRIVATE_REF_01730>",
+      "actual_sha256": "<PRIVATE_REF_01730>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/deployer_record/state.json",
+      "expected_sha256": "<PRIVATE_REF_01056>",
+      "actual_sha256": "<PRIVATE_REF_01056>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/transcripts/<NATIVE_ID_0991>.jsonl",
+      "expected_sha256": "<PRIVATE_REF_02699>",
+      "actual_sha256": "<PRIVATE_REF_02699>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/transcripts/<NATIVE_ID_0991>/tool-results/b0ajh8f1p.txt",
+      "expected_sha256": "<PRIVATE_REF_02195>",
+      "actual_sha256": "<PRIVATE_REF_02195>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./evidence/transcripts/<NATIVE_ID_1514>.jsonl",
+      "expected_sha256": "<PRIVATE_REF_02595>",
+      "actual_sha256": "<PRIVATE_REF_02595>",
+      "status": "MATCH"
+    },
+    {
+      "path": "./metrics.schema.json",
+      "expected_sha256": "<PRIVATE_REF_01911>",
+      "actual_sha256": "<PRIVATE_REF_01911>",
+      "status": "MATCH"
+    }
+  ],
+  "label": "DIRECT",
+  "confidence": null,
+  "verification_order": "All listed hashes verified before reading packet definitions or evidence beyond SHA256SUMS.",
+  "unlisted_packet_files": [],
+  "semantic_issues_locator": "output/RUN_W3_IDENTITY.json; output/RUN_W3_OBSERVER_REPORT.md#2. Evidence integrity"
+}

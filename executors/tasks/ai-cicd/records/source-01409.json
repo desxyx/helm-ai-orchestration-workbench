@@ -1,0 +1,57 @@
+{
+  "run_id": "RUN-W2B",
+  "checkpoints": [
+    {
+      "checkpoint": 1,
+      "packet_file": "CP-01_PACKETS.json",
+      "packet_sha256": "<PRIVATE_REF_02289>",
+      "segments": 81,
+      "sequence_first": 1,
+      "sequence_last": 81,
+      "source_line_range": [
+        1,
+        352
+      ],
+      "lossless_reconstruction": true,
+      "time_range": "2026-10-05T08:36:18.976Z .. 2026-10-05T09:25:32.344Z",
+      "attachments": 82
+    },
+    {
+      "checkpoint": 2,
+      "packet_file": "CP-02_PACKETS.json",
+      "packet_sha256": "<PRIVATE_REF_01308>",
+      "segments": 98,
+      "sequence_first": 82,
+      "sequence_last": 179,
+      "source_line_range": [
+        1,
+        528
+      ],
+      "lossless_reconstruction": true,
+      "time_range": "2026-10-05T09:57:29.089Z .. 2026-10-05T10:25:01.311Z",
+      "attachments": 167
+    },
+    {
+      "checkpoint": 3,
+      "packet_file": "CP-03_PACKETS.json",
+      "packet_sha256": "<PRIVATE_REF_03474>",
+      "segments": 45,
+      "sequence_first": 180,
+      "sequence_last": 224,
+      "source_line_range": [
+        529,
+        734
+      ],
+      "lossless_reconstruction": true,
+      "attachments": 130,
+      "manifest_sha256": "<PRIVATE_REF_01812>",
+      "observer_ingestion": "NOT_YET_ACKNOWLEDGED"
+    }
+  ],
+  "neutral_inbox": "/private/tmp/survey-7c92/work/inbox",
+  "manifest_sha256": "<PRIVATE_REF_01067>",
+  "observer_receipts": "OWNER_RELAYED_AGGREGATE_ACK: CP01 81, CP02 98; individual receipt ledger pending final custody",
+  "prompt_delivery": "OWNER_RELAY_CONFIRMS_READ_AND_INGESTION",
+  "source_coverage": "S1 1–352; S2 1–734, CP03 covers529–734 exactly; all224segments chain verified",
+  "supplement_integrity": "OWNER_RELAY_CONFIRMS62/62"
+}

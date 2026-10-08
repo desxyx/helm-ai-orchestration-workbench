@@ -1,0 +1,11 @@
+{
+  "key": "RUN-W2A_HC-INT",
+  "answer_sha256": "<PRIVATE_REF_02822>",
+  "locked_at": "2026-10-05T02:45:27.888Z",
+  "elapsed_seconds_from_delivery": 513,
+  "time_box_exceeded": false,
+  "confidence_marks": "NOT_RECORDED; no inference or backfill",
+  "consultation_note": "Answer references console observation; timing relative to probe delivery is not established. Preserve for independent procedure assessment.",
+  "score": "NOT_SCORED; Operations Coordinator/Observer do not derive key or grade",
+  "custody_verdict": "VERIFIED"
+}

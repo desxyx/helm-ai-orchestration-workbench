@@ -1,0 +1,47 @@
+{
+  "captured_at": "2026-10-05T23:55:56.183293+11:00",
+  "source": "<CLIENT_HOME>/.codex/sessions/2026/10/05/rollout-2026-10-05T20-56-23-<NATIVE_ID_0078>.jsonl",
+  "prefix_528_exact": true,
+  "line_count": 734,
+  "increment_line_range": [
+    529,
+    734
+  ],
+  "increment_sha256": "<PRIVATE_REF_03350>",
+  "full_sha256": "<PRIVATE_REF_03541>",
+  "increment_first_timestamp": "2026-10-05T11:49:06.361Z",
+  "increment_last_timestamp": "2026-10-05T12:53:16.150Z",
+  "teardown_events": [
+    {
+      "line": 557,
+      "timestamp": "2026-10-05T12:32:44.400Z",
+      "type": "response_item",
+      "payload_type": "message",
+      "role": "user"
+    },
+    {
+      "line": 641,
+      "timestamp": "2026-10-05T12:40:35.873Z",
+      "type": "response_item",
+      "payload_type": "message",
+      "role": "assistant"
+    },
+    {
+      "line": 648,
+      "timestamp": "2026-10-05T12:48:05.836Z",
+      "type": "response_item",
+      "payload_type": "message",
+      "role": "user"
+    },
+    {
+      "line": 731,
+      "timestamp": "2026-10-05T12:53:16.055Z",
+      "type": "response_item",
+      "payload_type": "message",
+      "role": "assistant"
+    }
+  ],
+  "workspace_close_files": 227,
+  "authority": "Local custody only, independent provider residual not executed",
+  "observer_private_output_read": false
+}

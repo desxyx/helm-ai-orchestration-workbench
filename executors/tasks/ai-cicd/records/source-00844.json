@@ -1,0 +1,925 @@
+{
+  "tool": "discoverability",
+  "run_id": "DRYRUN",
+  "workspace_relative_to_chain_top": "scb6c4a9d/site/app",
+  "targets": [
+    "W2B_EXPORT",
+    "HELM",
+    "PRODUCT_REPO"
+  ],
+  "labels_checked": 14,
+  "label_check_above_chain_top": false,
+  "entries_listed": 431,
+  "entry_cap_reached": false,
+  "findings": [
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/Operations Coordinator-science-review.FsckOu",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/Operations Coordinator-science-review.FsckOu/Mapper/helm",
+      "label": "HELM",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/Operations Coordinator-science-review.FsckOu/Platform/helm",
+      "label": "HELM",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/OPERATIONS_COORDINATOR_ai_cicd_init",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/claude-501/-Users-<ACCOUNT>-Desktop-Coding-WatchOver-AI-CICD-MA1-2026-09-30-executor",
+      "label": "WatchOver",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/claude-501/-Users-<ACCOUNT>-Desktop-Coding-WatchOver-AI-CICD-W1-2026-09-28-observer",
+      "label": "WatchOver",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/claude-501/-Users-<ACCOUNT>-Desktop-Coding-WatchOver-AI-CICD-W1-2026-09-28-observer",
+      "label": "Observer",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/claude-501/-Users-<ACCOUNT>-Desktop-helmls-studio-watchover-ai-devops",
+      "label": "HELM",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/claude-501/-Users-<ACCOUNT>-Desktop-helmls-studio-watchover-ai-devops",
+      "label": "WatchOver",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/claude-501/-Users-<ACCOUNT>-Desktop-project-H-E-L-M-council-task-AI-CICD",
+      "label": "Council",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/claude-501/-Users-<ACCOUNT>-Desktop-project-H-E-L-M-council-task-AI-CICD-execution-w2-entry-preparation",
+      "label": "Council",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/helm_candidates.txt",
+      "label": "HELM",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/helm_grep_err.txt",
+      "label": "HELM",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/helm_hits.txt",
+      "label": "HELM",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/helm_hits2.txt",
+      "label": "HELM",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "TARGET_LISTED",
+      "target": "W2B_EXPORT",
+      "via": "parent_chain:/private/tmp",
+      "entry": "/private/tmp/q2d7363ee/f76066e97ceb7e3b"
+    },
+    {
+      "kind": "TARGET_LISTED",
+      "target": "W2B_EXPORT",
+      "via": "parent_chain:/private/tmp",
+      "entry": "/private/tmp/q2d7363ee/f76066e97ceb7e3b/app"
+    },
+    {
+      "kind": "TARGET_LISTED",
+      "target": "W2B_EXPORT",
+      "via": "parent_chain:/private/tmp",
+      "entry": "/private/tmp/q2d7363ee/f76066e97ceb7e3b/schema"
+    },
+    {
+      "kind": "TARGET_LISTED",
+      "target": "W2B_EXPORT",
+      "via": "parent_chain:/private/tmp",
+      "entry": "/private/tmp/q2d7363ee/f76066e97ceb7e3b/skills"
+    },
+    {
+      "kind": "TARGET_LISTED",
+      "target": "W2B_EXPORT",
+      "via": "parent_chain:/private/tmp",
+      "entry": "/private/tmp/q2d7363ee/f76066e97ceb7e3b/tools"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w1_council_authority_20260928",
+      "label": "Council",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w1_council_export_groups_20260928",
+      "label": "Council",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-appr-0dvxiu",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-appr-3I7APL",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-appr-DiieET",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-appr-LvOORd",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-appr-VAaBkR",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-appr-YZ9XL7",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-appr-nnxeMS",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-appr-rCxDAn",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-appr-zzFC1E",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-0wrwa0",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-1zKR3g",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-7Ufnc1",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-7W8xh9",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-8UAmEQ",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-BJ30KG",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-ESvlPx",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-HwmeKE",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-MJVIqo",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-OMEJqu",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-Vpekj9",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-aOrhg3",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-eDAbZ9",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-h6MPjs",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-jBWphv",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-khiSeX",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-pu1tzK",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-entry-vei1ei",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-inv-BzKF57",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-inv-HaDo4Q",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-inv-L8YVTI",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-inv-NbuCPX",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-inv-U3aIPj",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-inv-yFUw7N",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-1RNClO",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-38SX2a",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-5NafQ1",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-7jHNiK",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-8efjQo",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-ABq0E1",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-CP7wIA",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-E3WUTy",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-ENdy84",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-OJ47uB",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-RXAKZ3",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-WOHwUz",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-iX5OOS",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-ktUdoE",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-pkginc-xs7L8o",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-3LmOGr",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-9xDny3",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-ANKQH6",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-EEMt6O",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-KSE4fv",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-R9xs2G",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-STYPo2",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-aQbX1d",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-dGPfTg",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-dUEqlw",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-j8X2MZ",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-m8eFn5",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-nffhft",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-ot48ZT",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-registry-vKzcoq",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-B0Uki8",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-CSGMgf",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-DYGnO8",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-ELwBW3",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-GNDamu",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-K0HjRs",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-N4B5kq",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-N9c802",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-YzljDU",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-dMz9M5",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-iH7dgW",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-jVLOn0",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-olAPxR",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-q2d9Jo",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-render-vCWqyq",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-3RCZY5",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-4uk31H",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-5qKY1o",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-85Uqnz",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-AETEf3",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-FICVPw",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-Gq7j7d",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-PUMYRn",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-Rz6YTI",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-S8yb9b",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-SBxLtn",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-StTC6x",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-ULKVnj",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-UztAcm",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-V6OQQ0",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-YFQtuT",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-a0JbI5",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-dL1RRk",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-eB83A9",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-gQPvyH",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-glmYiP",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-itmbGX",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-jtPodx",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-l1MgYw",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-uXWZoO",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-uj3uvd",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-wIl155",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-yG7rh6",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-yGrQh6",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-secret-zcwcyR",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-snap-HDy5iA",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-snap-PZD8aL",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-snap-SC2XXU",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-snap-UcykJ9",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-snap-cef9wy",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-snap-gBu3QT",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-snap-gOwbOR",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-snap-n4ZHxx",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-snap-ndFxKc",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-snap-qBUGYR",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-snap-rfuctA",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/w2prep_exec_tmp/t/experiment-control-tool-test-snap-vEBwZj",
+      "label": "Operations Coordinator",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-attempt2-browser-evidence.json",
+      "label": "WatchOver",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-attempt2-precleanup.png",
+      "label": "WatchOver",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-codex-instruction-probe",
+      "label": "WatchOver",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-harness-dryrun-workspace",
+      "label": "WatchOver",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-harness-evidence-prepatch",
+      "label": "WatchOver",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-harness-scan-corpus",
+      "label": "WatchOver",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover-r3-screens-20260929",
+      "label": "WatchOver",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover_attempt2_browser_check.py",
+      "label": "WatchOver",
+      "via": "parent_chain:/private/tmp"
+    },
+    {
+      "kind": "LABELLED_PARENT_ENTRY",
+      "entry": "/private/tmp/watchover_bundle_metadata",
+      "label": "WatchOver",
+      "via": "parent_chain:/private/tmp"
+    }
+  ],
+  "unlistable": [],
+  "verdict": "DISCOVERABLE",
+  "timestamp": "2026-10-04T09:48:30.081Z"
+}

@@ -1,0 +1,13 @@
+<PRIVATE_REF_02907>  lima-2.2.0-Darwin-arm64.tar.gz
+<PRIVATE_REF_04038>  lima-2.2.0-Darwin-x86_64.tar.gz
+<PRIVATE_REF_04883>  lima-2.2.0-Linux-aarch64.tar.gz
+<PRIVATE_REF_05193>  lima-2.2.0-Linux-x86_64.tar.gz
+<PRIVATE_REF_04974>  lima-2.2.0-go-mod-vendor.tar.gz
+<PRIVATE_REF_04392>  lima-additional-guestagents-2.2.0-Darwin-arm64.tar.gz
+<PRIVATE_REF_05640>  lima-additional-guestagents-2.2.0-Darwin-x86_64.tar.gz
+<PRIVATE_REF_05782>  lima-additional-guestagents-2.2.0-Linux-aarch64.tar.gz
+<PRIVATE_REF_05016>  lima-additional-guestagents-2.2.0-Linux-x86_64.tar.gz
+<PRIVATE_REF_05793>  lima-2.2.0-Windows-AMD64.zip
+<PRIVATE_REF_05651>  lima-2.2.0-Windows-ARM64.zip
+<PRIVATE_REF_05560>  lima-additional-guestagents-2.2.0-Windows-AMD64.zip
+<PRIVATE_REF_05023>  lima-additional-guestagents-2.2.0-Windows-ARM64.zip

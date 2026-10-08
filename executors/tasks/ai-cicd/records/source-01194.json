@@ -1,0 +1,23 @@
+{
+  "attempt": 4,
+  "query": "Q04_address",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "compute",
+    "addresses",
+    "describe",
+    "<W2_RUN_RESOURCE_PREFIX>-ip",
+    "--region=us-central1",
+    "--project=<CLOUD_PROJECT>",
+    "--quiet",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T14:39:48.272+11:00",
+  "end_utc": "2026-10-05T14:39:48.609+11:00",
+  "exit_code": 1,
+  "stdout": "Q04_address_attempt4.stdout",
+  "stdout_sha256": "<PRIVATE_REF_03399>",
+  "stderr": "Q04_address_attempt4.stderr",
+  "stderr_sha256": "<PRIVATE_REF_01574>",
+  "exclusive_stdout": true
+}

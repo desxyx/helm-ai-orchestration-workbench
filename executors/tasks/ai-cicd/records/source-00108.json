@@ -1,0 +1,33 @@
+{
+  "input": {
+    "run_id": "DRYRUN",
+    "master_versions": "M01 v1.4 / M02 v1.2 / M03 v1.0",
+    "reset_attestation_result": "FIXTURE_CLEAN",
+    "checkpoint_triggers": [
+      "FORCED_INTERRUPT",
+      "DEPLOYMENT_TERMINAL",
+      "RUN_CLOSE"
+    ],
+    "fuse_reminders": {
+      "F1": "3 repeated errors",
+      "F2": "8h cumulative",
+      "F3": "USD 40"
+    },
+    "approval_response_pointer": "OWNER_INTERACTION_SET.md#6.2",
+    "continuation_prompt_pointer": "CHECKPOINT_PROTOCOL.md#6.2",
+    "acceptance_verification_order_pointer": "ACCEPTANCE_VERIFICATION_PROCEDURE.md",
+    "teardown_prompt_pointer": "OWNER_INTERACTION_SET.md#6.5",
+    "w1_postmortem_prompt_pointer": "RUN_W1_POSTMORTEM_PROMPT.md",
+    "evidence_harness_invocation_pointers": [
+      "experiment-control-tool entry-check",
+      "experiment-control-tool snapshot"
+    ],
+    "current_spend_envelope": "USD 0 of USD 40",
+    "final_closure_checklist": [
+      "teardown declared",
+      "residual inspection complete",
+      "DNS reset confirmed"
+    ]
+  },
+  "output_path": "rendered/RUN_CARD_DRYRUN.md"
+}

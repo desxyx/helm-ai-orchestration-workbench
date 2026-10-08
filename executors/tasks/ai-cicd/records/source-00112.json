@@ -1,0 +1,8 @@
+{
+  "stage": "scan",
+  "canaryFound": true,
+  "matches": [],
+  "files_scanned": 2,
+  "skipped": [],
+  "timestamp": "2026-09-26T12:58:54.347Z"
+}

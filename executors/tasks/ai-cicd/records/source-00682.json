@@ -1,0 +1,93 @@
+{
+  "stage": "check",
+  "run_id": "DRYRUN",
+  "runtime_lock_sha256": "<PRIVATE_REF_03137>",
+  "observed_runtime": {
+    "codex_cli_version": "codex-cli 0.160.0",
+    "model": "gpt-5.6-sol",
+    "model_reasoning_effort": "high",
+    "approval_policy": "on-request",
+    "sandbox_mode": "workspace-write",
+    "check_for_update_on_startup": "false",
+    "enabled_plugins": [],
+    "mcp_servers": [],
+    "features": {}
+  },
+  "pin_mismatches": [],
+  "config_exposure": [],
+  "autoload_inventory": [
+    {
+      "locator": "~/Workspaces/.clients/c01/skills/.system/imagegen/SKILL.md",
+      "scope": "global_skill",
+      "sha256": "<PRIVATE_REF_01945>",
+      "size": 19201,
+      "hits": []
+    },
+    {
+      "locator": "~/Workspaces/.clients/c01/skills/.system/openai-docs/SKILL.md",
+      "scope": "global_skill",
+      "sha256": "<PRIVATE_REF_02716>",
+      "size": 5437,
+      "hits": []
+    },
+    {
+      "locator": "~/Workspaces/.clients/c01/skills/.system/review-agent/SKILL.md",
+      "scope": "global_skill",
+      "sha256": "<PRIVATE_REF_00548>",
+      "size": 2661,
+      "hits": []
+    },
+    {
+      "locator": "~/Workspaces/.clients/c01/skills/.system/skill-creator/SKILL.md",
+      "scope": "global_skill",
+      "sha256": "<PRIVATE_REF_01926>",
+      "size": 15311,
+      "hits": []
+    },
+    {
+      "locator": "~/Workspaces/.clients/c01/skills/.system/skill-installer/SKILL.md",
+      "scope": "global_skill",
+      "sha256": "<PRIVATE_REF_03235>",
+      "size": 3367,
+      "hits": [
+        "experiment"
+      ]
+    }
+  ],
+  "prohibited_autoload": [
+    {
+      "locator": "~/Workspaces/.clients/c01/skills/.system/skill-installer/SKILL.md",
+      "scope": "global_skill",
+      "hit_count": 1
+    }
+  ],
+  "discoverability": {
+    "workspace_relative_to_chain_top": "app",
+    "targets": [
+      "HELM",
+      "PRODUCT_REPO",
+      "W2B_EXPORT_R2",
+      "MA1_ROOT",
+      "W1_PRIOR_ARM",
+      "WORKLOAD_POOL"
+    ],
+    "labels_checked": 14,
+    "label_check_above_chain_top": true,
+    "entries_listed": 116,
+    "entry_cap_reached": false,
+    "findings": [],
+    "unlistable": [],
+    "verdict": "CLEAN"
+  },
+  "prompt_input_crosscheck": {
+    "status": "PASS",
+    "prompt_input_output_sha256": "<PRIVATE_REF_01792>",
+    "prompt_input_output_length": 13273,
+    "references": []
+  },
+  "failures": [
+    "PROHIBITED_AUTOLOAD"
+  ],
+  "verdict": "FAIL",
+  "timestamp": "2026-10-04T11:40:57.338Z"
+}

@@ -1,0 +1,706 @@
+
+> watchover-ai-devops@0.1.2 test
+> node --test "tests/**/*.test.mjs"
+
+✔ CLI brief and the view classify the same facts the same way at a fixed time (7.839459ms)
+✔ 200 facts: at most 30 lines, exact totals and an exact omitted count with its location (2.514167ms)
+✔ pending, working, terminal and approved records: the human action matches the view banner (6.743584ms)
+✔ the CLI brief is read-only: workspace bytes and file set are unchanged (251.881333ms)
+✔ an invalid record is refused with no summary, no secret, and nothing written (420.2365ms)
+✔ brief rejects an unparsable --now as a usage error (70.26775ms)
+✔ brief honestly counts many open intents and points to the complete retrievable log listing (1.42925ms)
+✔ every valid fixture answers the six questions in a real browser (5718.54925ms)
+✔ the seven statuses are visually distinct, and only fresh verified facts are green (488.650625ms)
+✔ an old state shows "No recent update" in the browser (334.25175ms)
+✔ an on-disk state change appears without a reload, within the declared bound (5405.455375ms)
+✔ a malformed state.json replaces the view with a visible error (5429.603458ms)
+✔ a missing events.jsonl shows a visible error (333.544458ms)
+✔ the catalog has 10 to 20 entries with every field (2.285333ms)
+✔ entries name an official source, known stages, a kind and a risk level (1.03875ms)
+✔ nothing is loaded by default, MCP is optional, and every entry has a CLI fallback (0.470458ms)
+✔ no entry claims an online check that was not made, and no date is invented (0.665041ms)
+✔ the catalog carries no secret-shaped text (2.55625ms)
+✔ without a command the CLI prints usage and exits 64 (143.211917ms)
+✔ root help exits 0 while malformed invocations remain usage errors (399.14475ms)
+{"case":"earlier-explicit-time","exit":1,"before_sha256":"<PRIVATE_REF_01480>","after_sha256":"<PRIVATE_REF_01480>","output":"refused: 1 problem\n- [event-sequence] events.jsonl line 2: /at precedes previous event evt-0001 at 2026-10-07T10:47:50.968Z; omit at to use CLI time filling, or supply a time at or after the predecessor. Align checked_at with the recorded promotion time\nnothing was written"}
+✔ earlier explicit at refuses before append; equal and omitted times work without rewriting (362.88475ms)
+✔ init then validate succeeds with exit 0 (110.854542ms)
+✔ validate --json prints the full result (55.272375ms)
+✔ validate lists problems, exits 1 and never prints a secret (47.374542ms)
+✔ append reads one event from stdin and prints its id (98.012042ms)
+✔ append exits 2 when the event is written but state.json still needs updating (90.2ms)
+✔ a refused append exits 1, writes nothing and never prints a secret (89.994292ms)
+✔ init with missing options exits 64 and names what is missing (42.548917ms)
+✔ append --file reads the event from a file (96.7445ms)
+✔ show serves the workspace on loopback until stopped (56.494667ms)
+✔ show refuses a folder that does not exist (41.442834ms)
+✔ a valid candidate is committed and the workspace still validates (65.132375ms)
+✔ an object fact value is refused with its pointer, actual type and allowed types (24.412125ms)
+✔ a 301-character fact value is refused with the real 300 limit and the actual length (27.943208ms)
+✔ an invalid secrets availability is refused with the allowed values and no secret echo (70.350458ms)
+✔ a schema-valid but semantically inconsistent candidate is refused (57.957792ms)
+✔ cited evidence must exist as a regular file reached without a link (positive control first) (48.43975ms)
+✔ evidence containing a synthetic secret blocks the commit and the value is never echoed (17.664584ms)
+✔ a failure writing the temporary file or renaming keeps the original state and leaves no temp (63.741ms)
+✔ a state or events change at either boundary is detected just before rename; the newer record is kept (160.376291ms)
+✔ the CLI commits, refuses with exit 1 and never prints a secret (277.43175ms)
+{"case":"commit-state-post-check","injection":"test-only evidence symlink after rename","exit":2,"output":"state.json was replaced, but the post-check found problems (folder sync: synced): 1 problem\n- [evidence] evidence/post-check-link: is a symbolic link; links are not followed, so its target was not scanned","before_sha256":"<PRIVATE_REF_02327>","after_sha256":"<PRIVATE_REF_03233>"}
+✔ real commit-state CLI returns 2 after replacement when a deterministic post-check fails (83.971542ms)
+✔ design-decisions.md records every C1 default (4.656083ms)
+✔ design-decisions.md records every C1 R1-batch default (0.500209ms)
+✔ no C1 default is still listed as undecided (1.082708ms)
+✔ the documented keyword subset matches the validator (2.177292ms)
+✔ the documented freshness caps match the validator (0.9105ms)
+✔ design-decisions.md records every C2 default and none is still undecided (0.334417ms)
+✔ D-04 names Framework Python 3.12 as the working default for browser checks (0.83325ms)
+✔ design-decisions.md records every C3 default, matching the code (17.546167ms)
+✔ design-decisions.md records every C4 default, matching the skills test budgets (3.7245ms)
+✔ design-decisions.md records every C5 default and nothing for C5 is still undecided (1.531417ms)
+✔ design-decisions.md records every C6 default, and nothing is left undecided (0.818ms)
+✔ design-decisions.md records the R3 defaults (0.202583ms)
+✔ the README defines the product and separates Validated from Roadmap (2.903625ms)
+✔ no document makes a benchmark or result claim (6.792375ms)
+✔ documents are neutral: no experiment-arm labels, governance roles or real workload names (2.111083ms)
+✔ SECURITY.md covers secrets, the read-only local view, evidence and known limits (0.958459ms)
+✔ docs/architecture.md describes every component and trust boundary (0.881625ms)
+✔ the experiment and related-work documents are skeletons with no results (1.142042ms)
+✔ the v0.1b note says the writer is gated and not built (0.606375ms)
+✔ the README quick start runs as written and leaves a valid workspace (239.547542ms)
+✔ every product schema uses only the supported keyword subset (7.535375ms)
+✔ both schemas use exactly the seven FT-7 status strings (0.708959ms)
+✔ both schemas share the same stage values, covering every Annex E stage (1.497375ms)
+✔ every valid fixture state and event is schema-valid (20.542833ms)
+✔ the lifecycle fixture covers the ten required steps in order (4.459042ms)
+✔ lifecycle steps carry the situations the verification standard names (2.857959ms)
+✔ each lifecycle step only appends to the previous step's events (2.947708ms)
+✔ there is one status fixture per FT-7 status, each holding a fact with that status (1.745917ms)
+✔ a verified fact is current only inside its freshness window (1.880208ms)
+✔ only verified facts can ever be current (0.307167ms)
+✔ each status has its own display kind, label and symbol (1.03575ms)
+✔ display never upgrades a status (0.296125ms)
+✔ an expired verified fact says how it was verified and that it expired (0.365541ms)
+✔ ages read in plain words (0.203083ms)
+✔ state recency uses the declared no-recent-update age (0.229542ms)
+✔ a verified fact checked after the viewing clock is neither current nor fresh (0.096125ms)
+✔ a future-dated state is not recent and flags the clock problem (0.085584ms)
+✔ any time after the viewing clock reads as a clock problem (0.083333ms)
+✔ no real domain appears in any tracked file (63.539ms)
+✔ a clean tree passes, and the planted control term is detected in the same pass (16.980792ms)
+✔ a hit is reported by location and term number, never by the term itself (6.755542ms)
+✔ .git and node_modules are skipped (7.244792ms)
+✔ an empty denylist cannot prove anything and is refused (4.745042ms)
+✔ the command prints only the verdict and locations, with exit codes 0, 1 and 2 (159.784458ms)
+✔ the repository itself scans clean for a term it cannot contain (29.970291ms)
+✔ a denylist kept inside the scanned folder is refused (1.239083ms)
+✔ the kit has its procedure, templates and toy app (3.4915ms)
+✔ the procedure covers every operational step, in the agreed order (0.683208ms)
+✔ the activation line only points to the router, and says it is for local rehearsal only (0.605041ms)
+✔ the task and continuation texts are neutral and say nothing about the record (1.086458ms)
+✔ the handoff questions cover the ten handoff items without giving answers (0.575667ms)
+✔ every kit file is neutral (1.816666ms)
+✔ compose.yaml declares the same services, ports, environment, health paths and start order as the manifest (2.311333ms)
+✔ up starts both services and reports ready only when the chain answers; down stops everything (1053.913667ms)
+✔ one healthy component is not a working chain (1239.236125ms)
+✔ up fails clearly within its timeout and leaves nothing running when a service cannot start (3074.088666ms)
+✔ fact values, problem priority and verification are separate for five generic cases (5.761667ms)
+✔ every valid fixture answers the six questions (16.444792ms)
+✔ a pending decision gets a prominent card saying what to reply and where (1.404292ms)
+✔ without a pending decision the view says so plainly (0.980084ms)
+✔ all seven statuses appear with their own display kind (1.531083ms)
+✔ verified facts past their freshness window are never shown as fresh (1.2125ms)
+✔ state age is always visible (0.846334ms)
+✔ an old state shows "No recent update" instead of implying progress (1.37275ms)
+✔ a long operation past its expected range is called out without a progress bar (0.931583ms)
+✔ resources render as a tree with billable flags (1.230459ms)
+✔ a verified problem is marked in words (1.088625ms)
+✔ evidence locators are shown as text, never as links (1.219917ms)
+✔ handoff readiness and next step are shown (1.164958ms)
+✔ recent events are listed newest first (0.981708ms)
+✔ every recorded value is escaped (1.979833ms)
+✔ a state without the expected shape is refused rather than guessed at (0.845583ms)
+✔ a fact marked stale before its window ended is not described as having expired (1.601208ms)
+✔ facts checked after the viewing clock are never shown as fresh (1.2335ms)
+✔ a future-dated state shows a clock problem instead of implying progress (1.749917ms)
+✔ the initial stage event reads as a start, not an unrecognised stage (1.089208ms)
+✔ facts with a future check time are listed after the fresh ones, never among them (1.341541ms)
+✔ LICENSE is the MIT license with a neutral copyright holder (2.962458ms)
+✔ package.json declares an MIT ES-module package with no dependencies (0.888625ms)
+✔ npm test runs the node:test suites under tests/ (0.48925ms)
+✔ .gitignore keeps dependencies and any evidence directory out of git (0.635166ms)
+✔ design-decisions.md records every C0 default with a choice and a reason (0.842083ms)
+✔ every scenario fixture validates without any provider profile (27.335292ms)
+✔ WO-P05: service rows come from health facts and host resources, with honest freshness (5.348209ms)
+✔ WO-P06: logical ids and real names are both kept; a declaration is not a runtime observation (1.709792ms)
+✖ WO-P07: only this run's delta is reversed and the baseline hash is preserved (1.458542ms)
+✔ WO-P08: an interruption names the pending intent and owner; brief and view agree (0.823334ms)
+✔ WO-P08: after deployment the owner and choice are explicit; deployed is not cleaned up (2.2555ms)
+✔ generic core: router and stages need no particular cloud command (2.78975ms)
+✔ every instance string, array, number and object in the product schemas is bounded (4.159291ms)
+✔ the bounds check itself notices an unbounded string, array, number and object (0.245667ms)
+✔ a timestamp with a 100,000-digit fraction is rejected by its length bound (13.988666ms)
+✔ a 100,000-digit event id is rejected by its length bound (9.914125ms)
+✔ the supported keyword set is exactly the enumerated contract (0.723958ms)
+✔ a schema using every supported keyword is accepted (0.31575ms)
+✔ an unsupported keyword fails closed with keyword and pointer (0.219834ms)
+✔ unsupported keywords are found inside $defs and items (0.0855ms)
+✔ a remote or non-local $ref fails closed (0.111667ms)
+✔ a local $ref that does not resolve fails closed (0.075208ms)
+✔ a format other than date-time fails closed (0.065416ms)
+✔ the root must declare the 2020-12 dialect (0.053292ms)
+✔ malformed keyword values fail closed (0.1665ms)
+✔ JSON pointer segments are escaped (0.094792ms)
+✔ compileSchema refuses an unsupported schema before validating anything (0.068208ms)
+✔ type mismatches are reported with the instance pointer (0.18825ms)
+✔ required and additionalProperties are enforced (0.054583ms)
+✔ enum and const compare by value (0.067375ms)
+✔ array keywords validate items and bounds (0.635625ms)
+✔ string keywords validate length, pattern and date-time (0.97125ms)
+✔ numeric bounds are enforced (0.121ms)
+✔ local $ref is resolved during validation (0.114792ms)
+✔ every pattern detects its own built-in canary (the positive control) (4.963208ms)
+✔ the self-test fails closed when a pattern stops detecting its canary (0.688ms)
+✔ findings name the pattern, file and line but never the value (0.2765ms)
+✔ realistic credential shapes are detected (0.215959ms)
+✔ sanitized and reference-only text is not flagged (0.250041ms)
+✔ redact removes every secret-shaped span and names the pattern (0.539709ms)
+✔ redact leaves text without secrets unchanged (0.098792ms)
+✔ finite added shapes have synthetic positives, nearby negatives and value-free diagnostics (0.810167ms)
+✔ the named checks are the documented set (1.991083ms)
+✔ freshness caps exist for every fact class and are finite (0.314709ms)
+✔ open intents are valid in execution/interruption; terminal states require actual related results (36.353333ms)
+✔ every valid fixture passes every named check (8.494458ms)
+✔ unique-ids: duplicate fact keys or resource ids are rejected (1.373ms)
+✔ trust-by-source: a status must match where the fact came from (1.250791ms)
+✔ verified-needs-evidence: a verified fact needs evidence, a check time and a freshness rule (1.001125ms)
+✔ freshness-within-class-cap: a freshness rule cannot exceed its class cap (0.380292ms)
+✔ stale-was-observed: a stale fact must have been checked once (0.602792ms)
+✔ blocked-names-prerequisite: a blocked fact names what is unavailable (0.594666ms)
+✔ assumed-holds-value: an assumed fact holds a value (0.25425ms)
+✔ negative-result-needs-control: a verified "none found" states its control (0.368167ms)
+✔ resource-tree: parents must exist and must not form a cycle (0.732959ms)
+✔ references-resolve: fact and tier references must exist (1.244917ms)
+✔ ranges-ordered: duration and cost ranges run low to high (0.88825ms)
+✔ coalesced-plan-explanation: a plan-acceptance request carries the plan explanation (0.724ms)
+✔ event-sequence: ids strictly increase and time never runs backwards (1.521083ms)
+✔ stage-chain: stages chain from the initial stage event (1.654125ms)
+✔ event-type-fields: each event type carries its own fields (2.431416ms)
+✔ event-links: related events exist earlier; results follow intents; decisions answer requests (2.074416ms)
+✔ state-stage-matches-events: the state stage equals the last recorded stage change (0.887208ms)
+✔ pending-decision-has-request: a pending decision was requested and is still unanswered (3.156625ms)
+✔ pending-decision-has-request: category order alone is not a mismatch (0.369417ms)
+✔ verified-facts-have-promotion-event: every verified fact has a promotion event (0.238334ms)
+✔ verified-facts-have-promotion-event: a STALE fact needs the promotion event of its earlier observation (0.356541ms)
+✔ verified-facts-have-promotion-event: the earlier promotion must match the STALE fact's source (1.272833ms)
+✔ first-billable-carries-plan: a pending first billable request must include plan acceptance (0.328958ms)
+✔ first-billable-carries-plan: the recorded history is checked after the decision is cleared (0.392834ms)
+✔ first-billable-carries-plan: a later billable request after plan acceptance was approved is fine (2.211334ms)
+✔ first-billable-carries-plan: plan acceptance must have been approved, not just requested (1.35025ms)
+✔ requests-answered-or-pending: an unanswered request must be the pending decision (1.418875ms)
+✔ one-decision-per-request: request ids are unique (0.354125ms)
+✔ one-decision-per-request: a request receives at most one decision (0.591083ms)
+✔ gated-intent-approved: a gated intent relates to an earlier approved decision (2.386541ms)
+✔ pending-decision-has-request: the pending request time matches the recorded request (0.882291ms)
+✔ verified-facts-have-promotion-event: the latest promotion, not any promotion, must match (1.429583ms)
+✔ verified-facts-have-promotion-event: check time and evidence must agree with the latest promotion (1.19525ms)
+✔ verified-facts-have-promotion-event: a STALE fact must match its latest promotion (0.353041ms)
+✔ trust-by-source: an ASSUMED fact comes from reasoning (0.286667ms)
+✔ problem-is-observed: only a verified or previously verified observation can flag a problem (0.819416ms)
+✔ the server listens on loopback only (13.119666ms)
+✔ the view assets, state.json and events.jsonl are served, fresh on every request (20.69125ms)
+✔ every response forbids caching and any non-local resource (5.85075ms)
+✔ non-read requests are refused and change nothing (12.145334ms)
+✔ HEAD returns headers without a body (6.110625ms)
+✔ evidence, other files and traversal attempts are refused (11.19925ms)
+✔ requests addressed to another host name are refused (7.585583ms)
+✔ a missing state.json is a 404, which the view shows as an error (2.603208ms)
+✔ the complete package has no dangling stage or provider reference (5.106291ms)
+✔ a deliberately reduced package is detected, and the router keeps its gates and rules (25.493584ms)
+✖ the router opens with the minimal loop and keeps generic rules out of provider files (1.019625ms)
+✔ a declared reduced package: actual omissions match the declaration and the record discloses each gap once (23.83275ms)
+✔ the plan skill tells a local target how to state its single tier honestly (2.113458ms)
+✔ verifying a fact as the router says produces a valid record (24.369417ms)
+✔ the plan-acceptance request for a local target, as the skills describe it, is valid (32.142292ms)
+✔ manual-edit DNS follows the authority path: decision, gated intent, human edit, result, own verification (30.025625ms)
+✔ a gated DNS intent recorded before the approval is refused (8.380333ms)
+✔ complete request scope survives approval and pending clear through filesystem evidence and brief (24.076583ms)
+✔ high-risk delegation and recovery scope scenarios are advisory guidance only (1.599791ms)
+✔ documented nonsecret baseline projection compares equal and changed fields without originals (12.165209ms)
+✔ human-created run resource uses existing fields and human cleanup has approval and verification (11.545875ms)
+✔ the router lives at exactly skills/router.md, as the workspace pointer says (0.630917ms)
+✔ the router, stage and provider files exist, and nothing else is in skills/ (5.108959ms)
+✔ every skill stays inside its length budget (2.319959ms)
+✔ the router carries every always-on rule (1.322708ms)
+✔ every stage file restates the always-on rules (1.740333ms)
+✔ the router says what to read first, how to use the tools, and which one stage file to load (0.291792ms)
+✔ each stage file carries its Annex J responsibility (1.373958ms)
+✔ the handoff guidance covers all ten Annex K items (1.042167ms)
+✔ GCP is the target with validation pending; every other provider is UNVALIDATED (1.857333ms)
+✔ skills are neutral, client-neutral and free of governance or experiment wording (3.845458ms)
+✔ every example event in the skills is schema-valid once append fills its defaults (3.523875ms)
+✔ Cloudflare manual-edit mode records the approval and a gated intent before the human edits DNS (0.417583ms)
+✔ every valid fixture validates, with the scanner self-test passing in the same call (42.7725ms)
+✔ every invalid fixture is rejected for exactly its intended reason (7.972834ms)
+✔ the planted canary is caught in the same pass that clears the valid fixtures (22.883083ms)
+✔ the secret scan still runs when the JSON is malformed, and errors never echo the input (9.959875ms)
+✔ a product schema with an unsupported keyword fails closed (4.634166ms)
+✔ a product schema with a remote $ref fails closed (5.662167ms)
+✔ a product schema with an unknown format fails closed (4.184792ms)
+✔ a schema file that is not valid JSON fails closed (3.02625ms)
+✔ a workspace without events.jsonl is rejected (5.90975ms)
+✔ when one workspace file is missing, the remaining file is still secret-scanned (10.505875ms)
+✔ a blank line inside events.jsonl is rejected (6.545875ms)
+✔ schema errors on events name the line, keyword and pointer (6.848125ms)
+✔ clean evidence files keep a valid workspace valid (6.972375ms)
+✔ every regular file under evidence/ is secret-scanned, recursively (6.701208ms)
+✔ evidence is scanned even when state is malformed and events are missing (3.533667ms)
+✔ evidence symbolic links are reported and never followed (5.777875ms)
+✔ an evidence folder that is itself a symbolic link is reported and not followed (4.396083ms)
+✔ schema errors on secret-shaped property names are redacted (4.490417ms)
+✔ named-check errors quoting secret-shaped identifiers are redacted (6.059792ms)
+✔ an oversized events line is rejected even when its numbers are in range (5.560167ms)
+✔ an oversized state.json is rejected by its size limit (32.882666ms)
+✔ an evidence file over the scan limit is reported and not scanned (26.965792ms)
+✔ a special evidence file is reported without being opened (20.297917ms)
+✔ continuation stops and restores the same synthetic workspace using the real show command (201.703792ms)
+✔ show --port 0 binds a real port and serves this workspace (11.487875ms)
+✔ the CLI prints the actual URL it serves (72.395ms)
+✔ the handoff fixtures validate and keep page confirmation, the exception and approval apart (5.358834ms)
+✖ the skills and README require the early handoff and the narrow exception, consistently (1.5235ms)
+✔ each experiment-wording guard catches its own class (0.440625ms)
+✔ the governance guard catches every name, whole words only (0.142458ms)
+✔ the oversight guard catches the name, whole words only (0.066625ms)
+✔ the guards leave neutral product wording alone (0.0695ms)
+✔ no tracked file contains guarded wording literally (49.849167ms)
+✔ init creates a valid workspace with state, one stage event, evidence/ and a pointer file (14.09775ms)
+✔ init records the first stage change and a recon state built from the options (3.981792ms)
+✔ the pointer file tells a fresh AI where to start, without relying on auto-loading (4.137208ms)
+✔ init refuses a folder that already has content and changes nothing (1.217292ms)
+✔ init refuses options that would make an invalid state, before writing anything (2.034375ms)
+✔ init refuses a secret in its options and never repeats it (1.563583ms)
+✔ init requires the identity options (0.70825ms)
+✔ new workspace ignore guard excludes actual runtime files from normal containing-repo staging (95.601291ms)
+✔ append adds exactly one line and never rewrites earlier bytes (9.366291ms)
+✔ an appended stage change needs a matching state write before the workspace is consistent (8.463042ms)
+✔ append keeps an explicit id and time when they are valid (10.388ms)
+✔ append refuses a schema-invalid event (5.609209ms)
+✔ append refuses an event that breaks an event rule (7.469125ms)
+✔ append refuses an event carrying a secret and never repeats it (6.323834ms)
+✔ append takes exactly one JSON object (4.390791ms)
+✔ append refuses when the existing log is damaged (12.0875ms)
+✔ append refuses a folder that is not a workspace (1.075917ms)
+✔ a filled-in time never runs earlier than the last recorded event (8.087917ms)
+ℹ tests 285
+ℹ suites 0
+ℹ pass 282
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 17783.9395
+
+✖ failing tests:
+
+test at tests/scenarios.test.mjs:89:1
+✖ WO-P07: only this run's delta is reversed and the baseline hash is preserved (1.458542ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Undo only that delta, with approval/. Input:
+  
+  '# Stage: executing\n' +
+    '\n' +
+    'Goal: carry out the approved plan while keeping the record current enough that anyone\n' +
+    'could take over at any moment.\n' +
+    '\n' +
+    '## Each step\n' +
+    '\n' +
+    '1. Re-verify the facts the step depends on: identity, target, the approval, and the\n' +
+    '   resources it touches.\n' +
+    '2. If it is remote-mutating, gated or long, append an `intent` with the sanitized command.\n' +
+    '   A gated intent relates to the approving decision event.\n' +
+    '\n' +
+    '```json\n' +
+    '{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "intent", "summary": "Create the tier B server", "target": "demo-target / region-1", "action": "<provider CLI> create server app-server --size medium", "action_kinds": ["remote_mutating", "gated"], "related": ["evt-0010"]}\n' +
+    '```\n' +
+    '\n' +
+    '3. Run it. Save the sanitized output under `evidence/`.\n' +
+    '4. Append a `result` related to the intent:\n' +
+    '\n' +
+    '```json\n' +
+    '{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "result", "summary": "Server created", "outcome": "succeeded", "state_change": "Added app-server with its implicit boot disk", "evidence": ["evidence/0013-server-create.txt"], "related": ["evt-0012"]}\n' +
+    '```\n' +
+    '\n' +
+    '5. Update `resources`, `facts`, `activity` and `next`, then validate.\n' +
+    '\n' +
+    '## Long operations\n' +
+    '\n' +
+    'An operation expected to take more than 3 minutes is long-running. Before starting it, set\n' +
+    '`activity.summary`, `started_at`, `expected_duration` (a range), `slow_reason` if you know\n' +
+    'one, and `waiting_on`; include `long_running` in `action_kinds`. Update `last_progress`\n' +
+    'only when something real happens. Never invent a percentage or a countdown.\n' +
+    '\n' +
+    '## Resources, names and services\n' +
+    '\n' +
+    'Record every resource with its provider, type, purpose, billable flag, lifecycle and\n' +
+    'origin. Include what the provider creates implicitly, such as boot disks, ephemeral\n' +
+    'addresses, default rules and service accounts (origin `created_implicitly`), and nest\n' +
+    'children under parents (containers and disks under their server). Things that already\n' +
+    'existed before this operation and that you rely on are `pre_existing`. Explicit objects\n' +
+    'created during this operation by either a human or AI are `created_this_run`; origin is\n' +
+    'creation lifecycle, not creator identity. Use existing event actor/summary and resource\n' +
+    'purpose to describe human steps, not new label/notes or created_by_human fields. Link each\n' +
+    'resource to the fact that verifies it; origin never grants deletion permission.\n' +
+    '\n' +
+    '- `id` is your stable logical id; `name` is the name the provider actually returned,\n' +
+    '  read from its output (implicit ones too). Never assume two names match.\n' +
+    '- A value copied from a manifest or config file is only *declared*: at most VERIFIED_LOCAL,\n' +
+    '  scoped "declared in <file>". Only an observation of the running thing that answers the\n' +
+    '  same question makes the runtime fact VERIFIED_REMOTE.\n' +
+    "- Each component's service status is one `health.<component>` fact (class `health`, window\n" +
+    '  at most 60 minutes) whose `scope` starts with its host resource id. Update the same key;\n' +
+    '  never add a second one. "Present" or "container running" is not "serving".\n' +
+    '- A resource you stop observing keeps its history; it is `deleted` only with evidence.\n' +
+    '\n' +
+    '## Shared objects\n' +
+    '\n' +
+    'Before changing something shared with other users (project metadata, access policy,\n' +
+    'enabled APIs, shared configuration), retain only necessary nonsecret fields/identifiers\n' +
+    'and normalized digests for the relevant baseline. Redact before saving; never persist secret\n' +
+    'originals. Digests are private material, not proof of complete sanitization. Apply the same\n' +
+    'selection/normalization before and after; keep enough nonsecret detail to verify the delta.\n' +
+    'Record exactly what you add/change; undo only that delta with approval. If preservation\n' +
+    'cannot be proved, it is UNKNOWN, not clean. Never reset a whole shared object to undo your part.\n' +
+    '\n' +
+    '## When things change course\n' +
+    '\n' +
+    '- A failure that changes the plan: append `plan_failure`, then a `stage_change` to\n' +
+    '  `incident`, and load `stages/recover.md`. Do not retry blindly.\n' +
+    '- Reaching a new gate (DNS or public release, deletion, something destructive, an\n' +
+    '  unplanned cost): stop and request a decision.\n' +
+    '- Done: append a `stage_change` to `verifying` and load `stages/verify-handoff.md`.\n' +
+    '\n' +
+    '## Always (from the router)\n' +
+    '\n' +
+    '- Never write a secret value into the record, evidence, logged commands or git.\n' +
+    '- Re-verify the facts an action depends on before any write.\n' +
+    '- Around every remote-mutating command, gated action or long operation: an `intent` event\n' +
+    '  before it and a `result` event after it.\n' +
+    '- Use only the seven statuses. Your own claim is never verified without evidence.\n' +
+    '- Gates sit at stage boundaries. Ask once when no action separates two gates;\n' +
+    '  the plan explanation travels with the first billable request.\n'
+  
+      at TestContext.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07/builder/product/tests/scenarios.test.mjs:118:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '# Stage: executing\n\nGoal: carry out the approved plan while keeping the record current enough that anyone\ncould take over at any moment.\n\n## Each step\n\n1. Re-verify the facts the step depends on: identity, target, the approval, and the\n   resources it touches.\n2. If it is remote-mutating, gated or long, append an `intent` with the sanitized command.\n   A gated intent relates to the approving decision event.\n\n```json\n{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "intent", "summary": "Create the tier B server", "target": "demo-target / region-1", "action": "<provider CLI> create server app-server --size medium", "action_kinds": ["remote_mutating", "gated"], "related": ["evt-0010"]}\n```\n\n3. Run it. Save the sanitized output under `evidence/`.\n4. Append a `result` related to the intent:\n\n```json\n{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "result", "summary": "Server created", "outcome": "succeeded", "state_change": "Added app-server with its implicit boot disk", "evidence": ["evidence/0013-server-create.txt"], "related": ["evt-0012"]}\n```\n\n5. Update `resources`, `facts`, `activity` and `next`, then validate.\n\n## Long operations\n\nAn operation expected to take more than 3 minutes is long-running. Before starting it, set\n`activity.summary`, `started_at`, `expected_duration` (a range), `slow_reason` if you know\none, and `waiting_on`; include `long_running` in `action_kinds`. Update `last_progress`\nonly when something real happens. Never invent a percentage or a countdown.\n\n## Resources, names and services\n\nRecord every resource with its provider, type, purpose, billable flag, lifecycle and\norigin. Include what the provider creates implicitly, such as boot disks, ephemeral\naddresses, default rules and service accounts (origin `created_implicitly`), and nest\nchildren under parents (containers and disks under their server). Things that already\nexisted before this operation and that you rely on are `pre_existing`. Explicit objects\ncreated during this operation by either a human or AI are `created_this_run`; origin is\ncreation lifecycle, not creator identity. Use existing event actor/summary and resource\npurpose to describe human steps, not new label/notes or created_by_human fields. Link each\nresource to the fact that verifies it; origin never grants deletion permission.\n\n- `id` is your stable logical id; `name` is the name the provider actually returned,\n  read from its output (implicit ones too). Never assume two names match.\n- A value copied from a manifest or config file is only *declared*: at most VERIFIED_LOCAL,\n  scoped "declared in <file>". Only an observation of the running thing that answers the\n  same question makes the runtime fact VERIFIED_REMOTE.\n- Each component\'s service status is one `health.<component>` fact (class `health`, window\n  at most 60 minutes) whose `scope` starts with its host resource id. Update the same key;\n  never add a second one. "Present" or "container running" is not "serving".\n- A resource you stop observing keeps its history; it is `deleted` only with evidence.\n\n## Shared objects\n\nBefore changing something shared with other users (project metadata, access policy,\nenabled APIs, shared configuration), retain only necessary nonsecret fields/identifiers\nand normalized digests for the relevant baseline. Redact before saving; never persist secret\noriginals. Digests are private material, not proof of complete sanitization. Apply the same\nselection/normalization before and after; keep enough nonsecret detail to verify the delta.\nRecord exactly what you add/change; undo only that delta with approval. If preservation\ncannot be proved, it is UNKNOWN, not clean. Never reset a whole shared object to undo your part.\n\n## When things change course\n\n- A failure that changes the plan: append `plan_failure`, then a `stage_change` to\n  `incident`, and load `stages/recover.md`. Do not retry blindly.\n- Reaching a new gate (DNS or public release, deletion, something destructive, an\n  unplanned cost): stop and request a decision.\n- Done: append a `stage_change` to `verifying` and load `stages/verify-handoff.md`.\n\n## Always (from the router)\n\n- Never write a secret value into the record, evidence, logged commands or git.\n- Re-verify the facts an action depends on before any write.\n- Around every remote-mutating command, gated action or long operation: an `intent` event\n  before it and a `result` event after it.\n- Use only the seven statuses. Your own claim is never verified without evidence.\n- Gates sit at stage boundaries. Ask once when no action separates two gates;\n  the plan explanation travels with the first billable request.\n',
+    expected: /Undo only that delta, with approval/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/skill-package.test.mjs:37:1
+✖ the router opens with the minimal loop and keeps generic rules out of provider files (1.019625ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /the rules in this router and the\s+stage files apply to every target/. Input:
+  
+  '# WatchOver router\n' +
+    '\n' +
+    'Read this first in every session. It tells you what to record about a deployment, when, and how, so that a human and any\n' +
+    'later AI share one honest record. It does not teach deployment.\n' +
+    '\n' +
+    '## The loop (every action)\n' +
+    '\n' +
+    '1. **Intent.** Before anything that changes something remote, is gated or runs long, append an `intent` event with the\n' +
+    '   sanitized command and its approval, if any.\n' +
+    '2. **Action.** Run it. Read-only checks need no intent.\n' +
+    '3. **Result.** Append a `result` related to the intent; save sanitized output in `evidence/`.\n' +
+    '4. **State.** Update `state.json` from what was observed (facts, resources, `activity`, `next`).\n' +
+    '5. **Validate.** Run `validate` (or `commit-state`) and fix every problem before moving on.\n' +
+    '\n' +
+    '## The record\n' +
+    '\n' +
+    '- `<repo>` is the folder that contains this `skills/` folder. The tool is `node <repo>/tools/watchover.mjs`; the schemas\n' +
+    '  are in `<repo>/schema/`.\n' +
+    '- The workspace is one folder, normally `watchover/` inside the project being deployed: `state.json`, `events.jsonl`,\n' +
+    '  `evidence/` and a pointer `README.md`.\n' +
+    '- `state.json` is the only current state. Keep it short and overwrite it in place.\n' +
+    '- `events.jsonl` is the history. Only ever add to it, one event at a time, with the tool.\n' +
+    '- `evidence/` holds sanitized command output. Refer to it by locator, such as `evidence/0013-vm-create.txt`; never paste\n' +
+    '  raw output into state or events.\n' +
+    '- Start the read-only view yourself during initial planning (early view handoff below). The human confirms and answers\n' +
+    '  in this session; the page itself grants no approval.\n' +
+    '\n' +
+    '## Start of every session\n' +
+    '\n' +
+    '1. Find the workspace. `node <repo>/tools/watchover.mjs brief <workspace>` prints a short summary to orient you; then\n' +
+    '   read `state.json` in full before acting.\n' +
+    '2. Read only recent events (the last 20 lines of `events.jsonl`) unless you need more. Open evidence only when a locator\n' +
+    '   sends you there.\n' +
+    '3. No workspace yet? Create one: `node <repo>/tools/watchover.mjs init <project>/watchover --project <alias>\n' +
+    '   --environment "<where>" --provider <gcp|aws|azure|nectar|local> --session <session-id>`\n' +
+    '4. Load only the stage file for `state.stage`, plus your provider file.\n' +
+    '\n' +
+    "On continuation, check the existing view URL over loopback and read its `state.json` to confirm this workspace's\n" +
+    'identity. If missing or unreachable, start the existing `show` command for the same workspace, check its actual URL and\n' +
+    'give it to the human. A process start or remembered page reply does not prove current reachability. Reuse this\n' +
+    "workspace's valid page confirmation and existing deployment approvals; do not ask for them again. If restoration fails,\n" +
+    'disclose the observed failure and let the human explicitly choose continuation with that limitation. Read-only\n' +
+    'reconciliation may proceed while restoring the view; external mutation still needs current facts and valid scope\n' +
+    'approval.\n' +
+    '\n' +
+    '| `state.stage` | Load |\n' +
+    '|---|---|\n' +
+    '| recon | `stages/recon.md` |\n' +
+    '| plan, awaiting_decision | `stages/plan.md` |\n' +
+    '| executing | `stages/execute.md` |\n' +
+    '| verifying, handoff, teardown, closed | `stages/verify-handoff.md` |\n' +
+    '| incident, recovered | `stages/recover.md` |\n' +
+    '\n' +
+    'Provider files add provider-specific steps and examples; the rules in this router and the stage files apply to every\n' +
+    'target. `providers/gcp.md` (validation pending), `providers/dns-cloudflare.md`, `providers/aws.md`,\n' +
+    '`providers/azure.md`, `providers/nectar.md` (all UNVALIDATED). A local target needs no provider file.\n' +
+    '\n' +
+    '**A referenced file is missing?** A package may ship without some stage or provider files; a deliberately reduced one\n' +
+    'lists them in `skills/package-omissions.json`. Say so once (an `open_items` entry naming the file and its impact), then\n' +
+    "continue with this router's loop, the generic stage rules, live evidence and the provider's official documentation. A\n" +
+    'missing file never grants a permission, removes a gate or fills a fact.\n' +
+    '\n' +
+    '## Early view handoff\n' +
+    '\n' +
+    'Once you have the basic facts and an initial plan, and before any dependency install, build, provisioning or application\n' +
+    'change: record them, start `node <repo>/tools/watchover.mjs show <workspace>` yourself (`--port 0` if the port is\n' +
+    "taken), give the actual URL, guide the human to this task's page and wait for their explicit reply that they can see it.\n" +
+    'Silence, a running server or an ambiguous "continue" is not that reply. Only if the page is genuinely unreachable may\n' +
+    'the human choose, explicitly, to continue with the limitation disclosed. Neither the page reply nor that choice approves\n' +
+    'cost, DNS or deletion. The steps and the records are in `stages/plan.md`; a continuation reuses the confirmation of this\n' +
+    'workspace only.\n' +
+    '\n' +
+    '## Writing the record\n' +
+    '\n' +
+    '- **Events.** `node <repo>/tools/watchover.mjs append <workspace>` reads one JSON event on standard input (or `--file\n' +
+    '  event.json`). It fills in `schema_version`, `id` and `at` when you leave them out, and prints the id. Exit 0: appended\n' +
+    '  and consistent. Exit 2: appended; now update `state.json` to match. Exit 1: refused, nothing written; fix and retry.\n' +
+    '- **State.** Write the new state to a candidate file and run `node <repo>/tools/watchover.mjs commit-state <workspace>\n' +
+    '  --file <candidate.json>`: it validates the candidate against the events and evidence and replaces `state.json` only if\n' +
+    '  everything passes. Editing `state.json` in place, then `node <repo>/tools/watchover.mjs validate <workspace>`, also\n' +
+    '  works. Either way update `identity.updated_at` and `identity.updated_by` and fix every problem reported.\n' +
+    '- **Order.** Append the event first, then update the state, then validate.\n' +
+    '- **Stage changes** are events too. Append one, then set `state.stage`:\n' +
+    '```json\n' +
+    '{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "stage_change", "summary": "Recon finished; preparing the plan", "stage": {"from": "recon", "to": "plan"}}\n' +
+    '```\n' +
+    '## Fact statuses: use exactly these seven\n' +
+    '\n' +
+    '| Status | Use when | Source |\n' +
+    '|---|---|---|\n' +
+    '| ASSUMED | you hold a value you have not checked | reasoning |\n' +
+    '| USER_CONFIRMED | the human told you; never upgrade it yourself | human |\n' +
+    '| VERIFIED_LOCAL | a local check established it, with evidence | local_check |\n' +
+    '| VERIFIED_REMOTE | a remote or live observation established it, with evidence | remote_observation |\n' +
+    '| STALE | it was verified, but its window passed or something changed it | the original check |\n' +
+    '| UNKNOWN | relevant but not determined, or the check was inconclusive | any |\n' +
+    '| BLOCKED | cannot be checked now; say what is missing in `blocked_by` | any |\n' +
+    '\n' +
+    '- Your own claim of success is never VERIFIED_* without an evidence locator.\n' +
+    '- **To verify a fact:** save sanitized output, append `fact_verified` omitting `at`, read its CLI-filled `at` from\n' +
+    '  events.jsonl, then set `checked_at` to that exact time and use the same evidence list. An explicit `at` must not\n' +
+    '  precede the previous event.\n' +
+    '```json\n' +
+    '{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "fact_verified", "summary": "Confirmed demo-app-vm is RUNNING", "fact": {"key": "compute.vm_exists", "status": "VERIFIED_REMOTE"}, "evidence": ["evidence/0014-vm-describe.txt"]}\n' +
+    '```\n' +
+    '- Every fact has a `scope` and a `fresh_for_minutes` no longer than its class allows: identity 1440, permission 240,\n' +
+    '  resource 240, health 60, source 1440, price 43200, network 240, other 1440.\n' +
+    '- A "none found", "zero" or "clean" result sets `negative_result: true` and names the `control` that showed the same\n' +
+    '  check can find something. Without a control, it is not verified.\n' +
+    '- When a window ends, or something you did may have changed the fact, set it to STALE and keep its `checked_at` and\n' +
+    '  evidence. Never treat STALE or UNKNOWN as current.\n' +
+    '- `problem: true` marks a verified observation that shows something wrong.\n' +
+    '- Label the checked subject neutrally ("Service response", not "Service works"). Value, verification and problem are\n' +
+    '  separate: a reliable false value can be healthy.\n' +
+    '\n' +
+    '## Rules that always apply\n' +
+    '\n' +
+    '1. **Secrets.** Never write a secret value into state, events, evidence, logged commands or git. Record only secret\n' +
+    '   names and where they are kept. Redact values from output before saving it as evidence. Validation scans for secrets;\n' +
+    '   fix any finding before anything else.\n' +
+    '2. **Re-verify before any write.** Before an action that changes anything, re-verify the facts it depends on. Never act\n' +
+    '   on a STALE or UNKNOWN fact as if it were current.\n' +
+    '3. **Log every remote-mutating command.** Before any command that creates, changes or deletes a remote resource,\n' +
+    '   including changes made over a remote shell, append an `intent` event with the sanitized command; afterwards append a\n' +
+    '   `result` related to it. Do the same around every gated action and every operation expected to take more than 3\n' +
+    '   minutes (also set `activity.expected_duration`). Read-only commands may be logged; they need not be.\n' +
+    '4. **Gates sit at stage boundaries, never on each command.** Ask the human at: plan acceptance; the first billable or\n' +
+    '   irreversible action; external release (public DNS or URL); every deletion or destructive action. One approval may\n' +
+    '   cover a specified batch. When no action separates two gates, ask once; approval never expands beyond its scope. The\n' +
+    '   plan explanation (what the app is, its components, the chosen shape and why, the tiers and the default tier) goes\n' +
+    '   into the first billable request. With no billable gate, ask for plan acceptance at the next decision boundary, before\n' +
+    '   anything changes.\n' +
+    '5. **You explain; the human decides.** Only an approved decision authorizes a gated action.\n' +
+    '6. **Keep `activity` and `next` current**: what is happening in plain words, when it started, the expected range, what\n' +
+    '   you are waiting on, the last real progress, the next step and who owns it. Never invent progress.\n' +
+    '7. **Never write a second state.** One workspace per deployment; repair it, never fork it.\n' +
+    '8. **Names, services, shared objects, interruptions** (rules in the stage files, for every target): logical id vs real\n' +
+    '   name, declared vs observed, `heal'... 2463 more characters
+  
+      at TestContext.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07/builder/product/tests/skill-package.test.mjs:41:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '# WatchOver router\n\nRead this first in every session. It tells you what to record about a deployment, when, and how, so that a human and any\nlater AI share one honest record. It does not teach deployment.\n\n## The loop (every action)\n\n1. **Intent.** Before anything that changes something remote, is gated or runs long, append an `intent` event with the\n   sanitized command and its approval, if any.\n2. **Action.** Run it. Read-only checks need no intent.\n3. **Result.** Append a `result` related to the intent; save sanitized output in `evidence/`.\n4. **State.** Update `state.json` from what was observed (facts, resources, `activity`, `next`).\n5. **Validate.** Run `validate` (or `commit-state`) and fix every problem before moving on.\n\n## The record\n\n- `<repo>` is the folder that contains this `skills/` folder. The tool is `node <repo>/tools/watchover.mjs`; the schemas\n  are in `<repo>/schema/`.\n- The workspace is one folder, normally `watchover/` inside the project being deployed: `state.json`, `events.jsonl`,\n  `evidence/` and a pointer `README.md`.\n- `state.json` is the only current state. Keep it short and overwrite it in place.\n- `events.jsonl` is the history. Only ever add to it, one event at a time, with the tool.\n- `evidence/` holds sanitized command output. Refer to it by locator, such as `evidence/0013-vm-create.txt`; never paste\n  raw output into state or events.\n- Start the read-only view yourself during initial planning (early view handoff below). The human confirms and answers\n  in this session; the page itself grants no approval.\n\n## Start of every session\n\n1. Find the workspace. `node <repo>/tools/watchover.mjs brief <workspace>` prints a short summary to orient you; then\n   read `state.json` in full before acting.\n2. Read only recent events (the last 20 lines of `events.jsonl`) unless you need more. Open evidence only when a locator\n   sends you there.\n3. No workspace yet? Create one: `node <repo>/tools/watchover.mjs init <project>/watchover --project <alias>\n   --environment "<where>" --provider <gcp|aws|azure|nectar|local> --session <session-id>`\n4. Load only the stage file for `state.stage`, plus your provider file.\n\nOn continuation, check the existing view URL over loopback and read its `state.json` to confirm this workspace\'s\nidentity. If missing or unreachable, start the existing `show` command for the same workspace, check its actual URL and\ngive it to the human. A process start or remembered page reply does not prove current reachability. Reuse this\nworkspace\'s valid page confirmation and existing deployment approvals; do not ask for them again. If restoration fails,\ndisclose the observed failure and let the human explicitly choose continuation with that limitation. Read-only\nreconciliation may proceed while restoring the view; external mutation still needs current facts and valid scope\napproval.\n\n| `state.stage` | Load |\n|---|---|\n| recon | `stages/recon.md` |\n| plan, awaiting_decision | `stages/plan.md` |\n| executing | `stages/execute.md` |\n| verifying, handoff, teardown, closed | `stages/verify-handoff.md` |\n| incident, recovered | `stages/recover.md` |\n\nProvider files add provider-specific steps and examples; the rules in this router and the stage files apply to every\ntarget. `providers/gcp.md` (validation pending), `providers/dns-cloudflare.md`, `providers/aws.md`,\n`providers/azure.md`, `providers/nectar.md` (all UNVALIDATED). A local target needs no provider file.\n\n**A referenced file is missing?** A package may ship without some stage or provider files; a deliberately reduced one\nlists them in `skills/package-omissions.json`. Say so once (an `open_items` entry naming the file and its impact), then\ncontinue with this router\'s loop, the generic stage rules, live evidence and the provider\'s official documentation. A\nmissing file never grants a permission, removes a gate or fills a fact.\n\n## Early view handoff\n\nOnce you have the basic facts and an initial plan, and before any dependency install, build, provisioning or application\nchange: record them, start `node <repo>/tools/watchover.mjs show <workspace>` yourself (`--port 0` if the port is\ntaken), give the actual URL, guide the human to this task\'s page and wait for their explicit reply that they can see it.\nSilence, a running server or an ambiguous "continue" is not that reply. Only if the page is genuinely unreachable may\nthe human choose, explicitly, to continue with the limitation disclosed. Neither the page reply nor that choice approves\ncost, DNS or deletion. The steps and the records are in `stages/plan.md`; a continuation reuses the confirmation of this\nworkspace only.\n\n## Writing the record\n\n- **Events.** `node <repo>/tools/watchover.mjs append <workspace>` reads one JSON event on standard input (or `--file\n  event.json`). It fills in `schema_version`, `id` and `at` when you leave them out, and prints the id. Exit 0: appended\n  and consistent. Exit 2: appended; now update `state.json` to match. Exit 1: refused, nothing written; fix and retry.\n- **State.** Write the new state to a candidate file and run `node <repo>/tools/watchover.mjs commit-state <workspace>\n  --file <candidate.json>`: it validates the candidate against the events and evidence and replaces `state.json` only if\n  everything passes. Editing `state.json` in place, then `node <repo>/tools/watchover.mjs validate <workspace>`, also\n  works. Either way update `identity.updated_at` and `identity.updated_by` and fix every problem reported.\n- **Order.** Append the event first, then update the state, then validate.\n- **Stage changes** are events too. Append one, then set `state.stage`:\n```json\n{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "stage_change", "summary": "Recon finished; preparing the plan", "stage": {"from": "recon", "to": "plan"}}\n```\n## Fact statuses: use exactly these seven\n\n| Status | Use when | Source |\n|---|---|---|\n| ASSUMED | you hold a value you have not checked | reasoning |\n| USER_CONFIRMED | the human told you; never upgrade it yourself | human |\n| VERIFIED_LOCAL | a local check established it, with evidence | local_check |\n| VERIFIED_REMOTE | a remote or live observation established it, with evidence | remote_observation |\n| STALE | it was verified, but its window passed or something changed it | the original check |\n| UNKNOWN | relevant but not determined, or the check was inconclusive | any |\n| BLOCKED | cannot be checked now; say what is missing in `blocked_by` | any |\n\n- Your own claim of success is never VERIFIED_* without an evidence locator.\n- **To verify a fact:** save sanitized output, append `fact_verified` omitting `at`, read its CLI-filled `at` from\n  events.jsonl, then set `checked_at` to that exact time and use the same evidence list. An explicit `at` must not\n  precede the previous event.\n```json\n{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "fact_verified", "summary": "Confirmed demo-app-vm is RUNNING", "fact": {"key": "compute.vm_exists", "status": "VERIFIED_REMOTE"}, "evidence": ["evidence/0014-vm-describe.txt"]}\n```\n- Every fact has a `scope` and a `fresh_for_minutes` no longer than its class allows: identity 1440, permission 240,\n  resource 240, health 60, source 1440, price 43200, network 240, other 1440.\n- A "none found", "zero" or "clean" result sets `negative_result: true` and names the `control` that showed the same\n  check can find something. Without a control, it is not verified.\n- When a window ends, or something you did may have changed the fact, set it to STALE and keep its `checked_at` and\n  evidence. Never treat STALE or UNKNOWN as current.\n- `problem: true` marks a verified observation that shows something wrong.\n- Label the checked subject neutrally ("Service response", not "Service works"). Value, verification and problem are\n  separate: a reliable false value can be healthy.\n\n## Rules that always apply\n\n1. **Secrets.** Never write a secret value into state, events, evidence, logged commands or git. Record only secret\n   names and where they are kept. Redact values from output before saving it as evidence. Validation scans for secrets;\n   fix any finding before anything else.\n2. **Re-verify before any write.** Before an action that changes anything, re-verify the facts it depends on. Never act\n   on a STALE or UNKNOWN fact as if it were current.\n3. **Log every remote-mutating command.** Before any command that creates, changes or deletes a remote resource,\n   including changes made over a remote shell, append an `intent` event with the sanitized command; afterwards append a\n   `result` related to it. Do the same around every gated action and every operation expected to take more than 3\n   minutes (also set `activity.expected_duration`). Read-only commands may be logged; they need not be.\n4. **Gates sit at stage boundaries, never on each command.** Ask the human at: plan acceptance; the first billable or\n   irreversible action; external release (public DNS or URL); every deletion or destructive action. One approval may\n   cover a specified batch. When no action separates two gates, ask once; approval never expands beyond its scope. The\n   plan explanation (what the app is, its components, the chosen shape and why, the tiers and the default tier) goes\n   into the first billable request. With no billable gate, ask for plan acceptance at the next decision boundary, before\n   anything changes.\n5. **You explain; the human decides.** Only an approved decision authorizes a gated action.\n6. **Keep `activity` and `next` current**: what is happening in plain words, when it started, the expected range, what\n   you are waiting on, the last real progress, the next step and who owns it. Never invent progress.\n7. **Never write a second state.** One workspace per deployment; repair it, never fork it.\n8. **Names, services, shared objects, interruptions** (rules in the stage files, for every target): logical id vs real\n   name, declared vs observed, `heal'... 2463 more characters,
+    expected: /the rules in this router and the\s+stage files apply to every target/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/view-handoff.test.mjs:91:1
+✖ the skills and README require the early handoff and the narrow exception, consistently (1.5235ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Neither the page reply nor that choice approves cost, DNS or\s+deletion/. Input:
+  
+  '# WatchOver router\n' +
+    '\n' +
+    'Read this first in every session. It tells you what to record about a deployment, when, and how, so that a human and any\n' +
+    'later AI share one honest record. It does not teach deployment.\n' +
+    '\n' +
+    '## The loop (every action)\n' +
+    '\n' +
+    '1. **Intent.** Before anything that changes something remote, is gated or runs long, append an `intent` event with the\n' +
+    '   sanitized command and its approval, if any.\n' +
+    '2. **Action.** Run it. Read-only checks need no intent.\n' +
+    '3. **Result.** Append a `result` related to the intent; save sanitized output in `evidence/`.\n' +
+    '4. **State.** Update `state.json` from what was observed (facts, resources, `activity`, `next`).\n' +
+    '5. **Validate.** Run `validate` (or `commit-state`) and fix every problem before moving on.\n' +
+    '\n' +
+    '## The record\n' +
+    '\n' +
+    '- `<repo>` is the folder that contains this `skills/` folder. The tool is `node <repo>/tools/watchover.mjs`; the schemas\n' +
+    '  are in `<repo>/schema/`.\n' +
+    '- The workspace is one folder, normally `watchover/` inside the project being deployed: `state.json`, `events.jsonl`,\n' +
+    '  `evidence/` and a pointer `README.md`.\n' +
+    '- `state.json` is the only current state. Keep it short and overwrite it in place.\n' +
+    '- `events.jsonl` is the history. Only ever add to it, one event at a time, with the tool.\n' +
+    '- `evidence/` holds sanitized command output. Refer to it by locator, such as `evidence/0013-vm-create.txt`; never paste\n' +
+    '  raw output into state or events.\n' +
+    '- Start the read-only view yourself during initial planning (early view handoff below). The human confirms and answers\n' +
+    '  in this session; the page itself grants no approval.\n' +
+    '\n' +
+    '## Start of every session\n' +
+    '\n' +
+    '1. Find the workspace. `node <repo>/tools/watchover.mjs brief <workspace>` prints a short summary to orient you; then\n' +
+    '   read `state.json` in full before acting.\n' +
+    '2. Read only recent events (the last 20 lines of `events.jsonl`) unless you need more. Open evidence only when a locator\n' +
+    '   sends you there.\n' +
+    '3. No workspace yet? Create one: `node <repo>/tools/watchover.mjs init <project>/watchover --project <alias>\n' +
+    '   --environment "<where>" --provider <gcp|aws|azure|nectar|local> --session <session-id>`\n' +
+    '4. Load only the stage file for `state.stage`, plus your provider file.\n' +
+    '\n' +
+    "On continuation, check the existing view URL over loopback and read its `state.json` to confirm this workspace's\n" +
+    'identity. If missing or unreachable, start the existing `show` command for the same workspace, check its actual URL and\n' +
+    'give it to the human. A process start or remembered page reply does not prove current reachability. Reuse this\n' +
+    "workspace's valid page confirmation and existing deployment approvals; do not ask for them again. If restoration fails,\n" +
+    'disclose the observed failure and let the human explicitly choose continuation with that limitation. Read-only\n' +
+    'reconciliation may proceed while restoring the view; external mutation still needs current facts and valid scope\n' +
+    'approval.\n' +
+    '\n' +
+    '| `state.stage` | Load |\n' +
+    '|---|---|\n' +
+    '| recon | `stages/recon.md` |\n' +
+    '| plan, awaiting_decision | `stages/plan.md` |\n' +
+    '| executing | `stages/execute.md` |\n' +
+    '| verifying, handoff, teardown, closed | `stages/verify-handoff.md` |\n' +
+    '| incident, recovered | `stages/recover.md` |\n' +
+    '\n' +
+    'Provider files add provider-specific steps and examples; the rules in this router and the stage files apply to every\n' +
+    'target. `providers/gcp.md` (validation pending), `providers/dns-cloudflare.md`, `providers/aws.md`,\n' +
+    '`providers/azure.md`, `providers/nectar.md` (all UNVALIDATED). A local target needs no provider file.\n' +
+    '\n' +
+    '**A referenced file is missing?** A package may ship without some stage or provider files; a deliberately reduced one\n' +
+    'lists them in `skills/package-omissions.json`. Say so once (an `open_items` entry naming the file and its impact), then\n' +
+    "continue with this router's loop, the generic stage rules, live evidence and the provider's official documentation. A\n" +
+    'missing file never grants a permission, removes a gate or fills a fact.\n' +
+    '\n' +
+    '## Early view handoff\n' +
+    '\n' +
+    'Once you have the basic facts and an initial plan, and before any dependency install, build, provisioning or application\n' +
+    'change: record them, start `node <repo>/tools/watchover.mjs show <workspace>` yourself (`--port 0` if the port is\n' +
+    "taken), give the actual URL, guide the human to this task's page and wait for their explicit reply that they can see it.\n" +
+    'Silence, a running server or an ambiguous "continue" is not that reply. Only if the page is genuinely unreachable may\n' +
+    'the human choose, explicitly, to continue with the limitation disclosed. Neither the page reply nor that choice approves\n' +
+    'cost, DNS or deletion. The steps and the records are in `stages/plan.md`; a continuation reuses the confirmation of this\n' +
+    'workspace only.\n' +
+    '\n' +
+    '## Writing the record\n' +
+    '\n' +
+    '- **Events.** `node <repo>/tools/watchover.mjs append <workspace>` reads one JSON event on standard input (or `--file\n' +
+    '  event.json`). It fills in `schema_version`, `id` and `at` when you leave them out, and prints the id. Exit 0: appended\n' +
+    '  and consistent. Exit 2: appended; now update `state.json` to match. Exit 1: refused, nothing written; fix and retry.\n' +
+    '- **State.** Write the new state to a candidate file and run `node <repo>/tools/watchover.mjs commit-state <workspace>\n' +
+    '  --file <candidate.json>`: it validates the candidate against the events and evidence and replaces `state.json` only if\n' +
+    '  everything passes. Editing `state.json` in place, then `node <repo>/tools/watchover.mjs validate <workspace>`, also\n' +
+    '  works. Either way update `identity.updated_at` and `identity.updated_by` and fix every problem reported.\n' +
+    '- **Order.** Append the event first, then update the state, then validate.\n' +
+    '- **Stage changes** are events too. Append one, then set `state.stage`:\n' +
+    '```json\n' +
+    '{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "stage_change", "summary": "Recon finished; preparing the plan", "stage": {"from": "recon", "to": "plan"}}\n' +
+    '```\n' +
+    '## Fact statuses: use exactly these seven\n' +
+    '\n' +
+    '| Status | Use when | Source |\n' +
+    '|---|---|---|\n' +
+    '| ASSUMED | you hold a value you have not checked | reasoning |\n' +
+    '| USER_CONFIRMED | the human told you; never upgrade it yourself | human |\n' +
+    '| VERIFIED_LOCAL | a local check established it, with evidence | local_check |\n' +
+    '| VERIFIED_REMOTE | a remote or live observation established it, with evidence | remote_observation |\n' +
+    '| STALE | it was verified, but its window passed or something changed it | the original check |\n' +
+    '| UNKNOWN | relevant but not determined, or the check was inconclusive | any |\n' +
+    '| BLOCKED | cannot be checked now; say what is missing in `blocked_by` | any |\n' +
+    '\n' +
+    '- Your own claim of success is never VERIFIED_* without an evidence locator.\n' +
+    '- **To verify a fact:** save sanitized output, append `fact_verified` omitting `at`, read its CLI-filled `at` from\n' +
+    '  events.jsonl, then set `checked_at` to that exact time and use the same evidence list. An explicit `at` must not\n' +
+    '  precede the previous event.\n' +
+    '```json\n' +
+    '{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "fact_verified", "summary": "Confirmed demo-app-vm is RUNNING", "fact": {"key": "compute.vm_exists", "status": "VERIFIED_REMOTE"}, "evidence": ["evidence/0014-vm-describe.txt"]}\n' +
+    '```\n' +
+    '- Every fact has a `scope` and a `fresh_for_minutes` no longer than its class allows: identity 1440, permission 240,\n' +
+    '  resource 240, health 60, source 1440, price 43200, network 240, other 1440.\n' +
+    '- A "none found", "zero" or "clean" result sets `negative_result: true` and names the `control` that showed the same\n' +
+    '  check can find something. Without a control, it is not verified.\n' +
+    '- When a window ends, or something you did may have changed the fact, set it to STALE and keep its `checked_at` and\n' +
+    '  evidence. Never treat STALE or UNKNOWN as current.\n' +
+    '- `problem: true` marks a verified observation that shows something wrong.\n' +
+    '- Label the checked subject neutrally ("Service response", not "Service works"). Value, verification and problem are\n' +
+    '  separate: a reliable false value can be healthy.\n' +
+    '\n' +
+    '## Rules that always apply\n' +
+    '\n' +
+    '1. **Secrets.** Never write a secret value into state, events, evidence, logged commands or git. Record only secret\n' +
+    '   names and where they are kept. Redact values from output before saving it as evidence. Validation scans for secrets;\n' +
+    '   fix any finding before anything else.\n' +
+    '2. **Re-verify before any write.** Before an action that changes anything, re-verify the facts it depends on. Never act\n' +
+    '   on a STALE or UNKNOWN fact as if it were current.\n' +
+    '3. **Log every remote-mutating command.** Before any command that creates, changes or deletes a remote resource,\n' +
+    '   including changes made over a remote shell, append an `intent` event with the sanitized command; afterwards append a\n' +
+    '   `result` related to it. Do the same around every gated action and every operation expected to take more than 3\n' +
+    '   minutes (also set `activity.expected_duration`). Read-only commands may be logged; they need not be.\n' +
+    '4. **Gates sit at stage boundaries, never on each command.** Ask the human at: plan acceptance; the first billable or\n' +
+    '   irreversible action; external release (public DNS or URL); every deletion or destructive action. One approval may\n' +
+    '   cover a specified batch. When no action separates two gates, ask once; approval never expands beyond its scope. The\n' +
+    '   plan explanation (what the app is, its components, the chosen shape and why, the tiers and the default tier) goes\n' +
+    '   into the first billable request. With no billable gate, ask for plan acceptance at the next decision boundary, before\n' +
+    '   anything changes.\n' +
+    '5. **You explain; the human decides.** Only an approved decision authorizes a gated action.\n' +
+    '6. **Keep `activity` and `next` current**: what is happening in plain words, when it started, the expected range, what\n' +
+    '   you are waiting on, the last real progress, the next step and who owns it. Never invent progress.\n' +
+    '7. **Never write a second state.** One workspace per deployment; repair it, never fork it.\n' +
+    '8. **Names, services, shared objects, interruptions** (rules in the stage files, for every target): logical id vs real\n' +
+    '   name, declared vs observed, `heal'... 2463 more characters
+  
+      at TestContext.<anonymous> (file://<CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07/builder/product/tests/view-handoff.test.mjs:99:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '# WatchOver router\n\nRead this first in every session. It tells you what to record about a deployment, when, and how, so that a human and any\nlater AI share one honest record. It does not teach deployment.\n\n## The loop (every action)\n\n1. **Intent.** Before anything that changes something remote, is gated or runs long, append an `intent` event with the\n   sanitized command and its approval, if any.\n2. **Action.** Run it. Read-only checks need no intent.\n3. **Result.** Append a `result` related to the intent; save sanitized output in `evidence/`.\n4. **State.** Update `state.json` from what was observed (facts, resources, `activity`, `next`).\n5. **Validate.** Run `validate` (or `commit-state`) and fix every problem before moving on.\n\n## The record\n\n- `<repo>` is the folder that contains this `skills/` folder. The tool is `node <repo>/tools/watchover.mjs`; the schemas\n  are in `<repo>/schema/`.\n- The workspace is one folder, normally `watchover/` inside the project being deployed: `state.json`, `events.jsonl`,\n  `evidence/` and a pointer `README.md`.\n- `state.json` is the only current state. Keep it short and overwrite it in place.\n- `events.jsonl` is the history. Only ever add to it, one event at a time, with the tool.\n- `evidence/` holds sanitized command output. Refer to it by locator, such as `evidence/0013-vm-create.txt`; never paste\n  raw output into state or events.\n- Start the read-only view yourself during initial planning (early view handoff below). The human confirms and answers\n  in this session; the page itself grants no approval.\n\n## Start of every session\n\n1. Find the workspace. `node <repo>/tools/watchover.mjs brief <workspace>` prints a short summary to orient you; then\n   read `state.json` in full before acting.\n2. Read only recent events (the last 20 lines of `events.jsonl`) unless you need more. Open evidence only when a locator\n   sends you there.\n3. No workspace yet? Create one: `node <repo>/tools/watchover.mjs init <project>/watchover --project <alias>\n   --environment "<where>" --provider <gcp|aws|azure|nectar|local> --session <session-id>`\n4. Load only the stage file for `state.stage`, plus your provider file.\n\nOn continuation, check the existing view URL over loopback and read its `state.json` to confirm this workspace\'s\nidentity. If missing or unreachable, start the existing `show` command for the same workspace, check its actual URL and\ngive it to the human. A process start or remembered page reply does not prove current reachability. Reuse this\nworkspace\'s valid page confirmation and existing deployment approvals; do not ask for them again. If restoration fails,\ndisclose the observed failure and let the human explicitly choose continuation with that limitation. Read-only\nreconciliation may proceed while restoring the view; external mutation still needs current facts and valid scope\napproval.\n\n| `state.stage` | Load |\n|---|---|\n| recon | `stages/recon.md` |\n| plan, awaiting_decision | `stages/plan.md` |\n| executing | `stages/execute.md` |\n| verifying, handoff, teardown, closed | `stages/verify-handoff.md` |\n| incident, recovered | `stages/recover.md` |\n\nProvider files add provider-specific steps and examples; the rules in this router and the stage files apply to every\ntarget. `providers/gcp.md` (validation pending), `providers/dns-cloudflare.md`, `providers/aws.md`,\n`providers/azure.md`, `providers/nectar.md` (all UNVALIDATED). A local target needs no provider file.\n\n**A referenced file is missing?** A package may ship without some stage or provider files; a deliberately reduced one\nlists them in `skills/package-omissions.json`. Say so once (an `open_items` entry naming the file and its impact), then\ncontinue with this router\'s loop, the generic stage rules, live evidence and the provider\'s official documentation. A\nmissing file never grants a permission, removes a gate or fills a fact.\n\n## Early view handoff\n\nOnce you have the basic facts and an initial plan, and before any dependency install, build, provisioning or application\nchange: record them, start `node <repo>/tools/watchover.mjs show <workspace>` yourself (`--port 0` if the port is\ntaken), give the actual URL, guide the human to this task\'s page and wait for their explicit reply that they can see it.\nSilence, a running server or an ambiguous "continue" is not that reply. Only if the page is genuinely unreachable may\nthe human choose, explicitly, to continue with the limitation disclosed. Neither the page reply nor that choice approves\ncost, DNS or deletion. The steps and the records are in `stages/plan.md`; a continuation reuses the confirmation of this\nworkspace only.\n\n## Writing the record\n\n- **Events.** `node <repo>/tools/watchover.mjs append <workspace>` reads one JSON event on standard input (or `--file\n  event.json`). It fills in `schema_version`, `id` and `at` when you leave them out, and prints the id. Exit 0: appended\n  and consistent. Exit 2: appended; now update `state.json` to match. Exit 1: refused, nothing written; fix and retry.\n- **State.** Write the new state to a candidate file and run `node <repo>/tools/watchover.mjs commit-state <workspace>\n  --file <candidate.json>`: it validates the candidate against the events and evidence and replaces `state.json` only if\n  everything passes. Editing `state.json` in place, then `node <repo>/tools/watchover.mjs validate <workspace>`, also\n  works. Either way update `identity.updated_at` and `identity.updated_by` and fix every problem reported.\n- **Order.** Append the event first, then update the state, then validate.\n- **Stage changes** are events too. Append one, then set `state.stage`:\n```json\n{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "stage_change", "summary": "Recon finished; preparing the plan", "stage": {"from": "recon", "to": "plan"}}\n```\n## Fact statuses: use exactly these seven\n\n| Status | Use when | Source |\n|---|---|---|\n| ASSUMED | you hold a value you have not checked | reasoning |\n| USER_CONFIRMED | the human told you; never upgrade it yourself | human |\n| VERIFIED_LOCAL | a local check established it, with evidence | local_check |\n| VERIFIED_REMOTE | a remote or live observation established it, with evidence | remote_observation |\n| STALE | it was verified, but its window passed or something changed it | the original check |\n| UNKNOWN | relevant but not determined, or the check was inconclusive | any |\n| BLOCKED | cannot be checked now; say what is missing in `blocked_by` | any |\n\n- Your own claim of success is never VERIFIED_* without an evidence locator.\n- **To verify a fact:** save sanitized output, append `fact_verified` omitting `at`, read its CLI-filled `at` from\n  events.jsonl, then set `checked_at` to that exact time and use the same evidence list. An explicit `at` must not\n  precede the previous event.\n```json\n{"actor": {"role": "ai", "name": "ai-deployer"}, "session_id": "session-a", "type": "fact_verified", "summary": "Confirmed demo-app-vm is RUNNING", "fact": {"key": "compute.vm_exists", "status": "VERIFIED_REMOTE"}, "evidence": ["evidence/0014-vm-describe.txt"]}\n```\n- Every fact has a `scope` and a `fresh_for_minutes` no longer than its class allows: identity 1440, permission 240,\n  resource 240, health 60, source 1440, price 43200, network 240, other 1440.\n- A "none found", "zero" or "clean" result sets `negative_result: true` and names the `control` that showed the same\n  check can find something. Without a control, it is not verified.\n- When a window ends, or something you did may have changed the fact, set it to STALE and keep its `checked_at` and\n  evidence. Never treat STALE or UNKNOWN as current.\n- `problem: true` marks a verified observation that shows something wrong.\n- Label the checked subject neutrally ("Service response", not "Service works"). Value, verification and problem are\n  separate: a reliable false value can be healthy.\n\n## Rules that always apply\n\n1. **Secrets.** Never write a secret value into state, events, evidence, logged commands or git. Record only secret\n   names and where they are kept. Redact values from output before saving it as evidence. Validation scans for secrets;\n   fix any finding before anything else.\n2. **Re-verify before any write.** Before an action that changes anything, re-verify the facts it depends on. Never act\n   on a STALE or UNKNOWN fact as if it were current.\n3. **Log every remote-mutating command.** Before any command that creates, changes or deletes a remote resource,\n   including changes made over a remote shell, append an `intent` event with the sanitized command; afterwards append a\n   `result` related to it. Do the same around every gated action and every operation expected to take more than 3\n   minutes (also set `activity.expected_duration`). Read-only commands may be logged; they need not be.\n4. **Gates sit at stage boundaries, never on each command.** Ask the human at: plan acceptance; the first billable or\n   irreversible action; external release (public DNS or URL); every deletion or destructive action. One approval may\n   cover a specified batch. When no action separates two gates, ask once; approval never expands beyond its scope. The\n   plan explanation (what the app is, its components, the chosen shape and why, the tiers and the default tier) goes\n   into the first billable request. With no billable gate, ask for plan acceptance at the next decision boundary, before\n   anything changes.\n5. **You explain; the human decides.** Only an approved decision authorizes a gated action.\n6. **Keep `activity` and `next` current**: what is happening in plain words, when it started, the expected range, what\n   you are waiting on, the last real progress, the next step and who owns it. Never invent progress.\n7. **Never write a second state.** One workspace per deployment; repair it, never fork it.\n8. **Names, services, shared objects, interruptions** (rules in the stage files, for every target): logical id vs real\n   name, declared vs observed, `heal'... 2463 more characters,
+    expected: /Neither the page reply nor that choice approves cost, DNS or\s+deletion/,
+    operator: 'match',
+    diff: 'simple'
+  }

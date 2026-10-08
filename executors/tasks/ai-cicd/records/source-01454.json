@@ -1,0 +1,17 @@
+{
+  "artifact_class": "RESOURCE_X_DESIGNATION",
+  "run_id": "RUN-W2B",
+  "defined_at": "2026-10-05T20:37:42+11:00",
+  "resource_name": "<W2_RUN_RESOURCE_PREFIX>-ip",
+  "provider_resource_type": "compute.googleapis.com/Address",
+  "provider_id": "<NUMERIC_RESOURCE_0095>",
+  "region": "australia-southeast2",
+  "creation_timestamp": "2026-10-05T02:25:00.645-07:00",
+  "first_billable_basis": "Provisioning script sequence places static address create before data disk and VM. Original local create-static-IP evidence retained, independent exact address snapshot matches provider identity.",
+  "original_creation_output_locator": "evidence/CP-01_FORCED_INTERRUPT/local_snapshot_private/watchover/evidence/0045-create-static-ip.txt",
+  "original_creation_output_sha256": "<PRIVATE_REF_03668>",
+  "original_output_parsed": true,
+  "original_provider_id_matches": true,
+  "observer_packet_propagation": "PENDING_REDACTION_AND_PACKET_DELIVERY",
+  "interpretation": "Do not redefine first resource by Console screenshot; pause at completed provisioning-script boundary, no app deployment command in captured script."
+}

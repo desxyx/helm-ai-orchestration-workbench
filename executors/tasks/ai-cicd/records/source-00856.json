@@ -1,0 +1,422 @@
+{
+  "fixture": "/private/tmp/t740c6b4e/independent_layout",
+  "listing_negative": {
+    "workspace_relative_to_chain_top": "site/app",
+    "targets": [
+      "W2B_EXPORT"
+    ],
+    "labels_checked": 0,
+    "label_check_above_chain_top": false,
+    "entries_listed": 112,
+    "entry_cap_reached": false,
+    "findings": [],
+    "unlistable": [],
+    "verdict": "CLEAN"
+  },
+  "listing_positive": {
+    "workspace_relative_to_chain_top": "site/app",
+    "targets": [
+      "W2B_EXPORT"
+    ],
+    "labels_checked": 0,
+    "label_check_above_chain_top": false,
+    "entries_listed": 113,
+    "entry_cap_reached": false,
+    "findings": [
+      {
+        "kind": "SYMLINK_TO_TARGET",
+        "target": "W2B_EXPORT",
+        "via": "workspace_tree",
+        "entry": "/private/tmp/t740c6b4e/independent_layout/site/app/shared"
+      }
+    ],
+    "unlistable": [],
+    "verdict": "DISCOVERABLE"
+  },
+  "known_exact_path_router_read_bytes": 7876,
+  "claim_limit": "same-user local fixture listing controls only; no actual experimental runtime or read-denial attestation",
+  "export_files": [
+    {
+      "path": "app/web-ui/app.js",
+      "kind": "file"
+    },
+    {
+      "path": "app/web-ui/freshness.mjs",
+      "kind": "file"
+    },
+    {
+      "path": "app/web-ui/index.html",
+      "kind": "file"
+    },
+    {
+      "path": "app/web-ui/render.mjs",
+      "kind": "file"
+    },
+    {
+      "path": "app/web-ui/styles.css",
+      "kind": "file"
+    },
+    {
+      "path": "schema/event.schema.json",
+      "kind": "file"
+    },
+    {
+      "path": "schema/state.schema.json",
+      "kind": "file"
+    },
+    {
+      "path": "skills/providers/aws.md",
+      "kind": "file"
+    },
+    {
+      "path": "skills/providers/azure.md",
+      "kind": "file"
+    },
+    {
+      "path": "skills/providers/dns-cloudflare.md",
+      "kind": "file"
+    },
+    {
+      "path": "skills/providers/gcp.md",
+      "kind": "file"
+    },
+    {
+      "path": "skills/providers/nectar.md",
+      "kind": "file"
+    },
+    {
+      "path": "skills/router.md",
+      "kind": "file"
+    },
+    {
+      "path": "skills/stages/execute.md",
+      "kind": "file"
+    },
+    {
+      "path": "skills/stages/plan.md",
+      "kind": "file"
+    },
+    {
+      "path": "skills/stages/recon.md",
+      "kind": "file"
+    },
+    {
+      "path": "skills/stages/recover.md",
+      "kind": "file"
+    },
+    {
+      "path": "skills/stages/verify-handoff.md",
+      "kind": "file"
+    },
+    {
+      "path": "tools/lib/schema-subset.mjs",
+      "kind": "file"
+    },
+    {
+      "path": "tools/lib/secret-scan.mjs",
+      "kind": "file"
+    },
+    {
+      "path": "tools/lib/semantic-checks.mjs",
+      "kind": "file"
+    },
+    {
+      "path": "tools/lib/server.mjs",
+      "kind": "file"
+    },
+    {
+      "path": "tools/lib/validate.mjs",
+      "kind": "file"
+    },
+    {
+      "path": "tools/lib/workspace.mjs",
+      "kind": "file"
+    },
+    {
+      "path": "tools/watchover.mjs",
+      "kind": "file"
+    }
+  ],
+  "pa4_raw_index": [
+    {
+      "fixture": "pa4-c1n-bM9tX1",
+      "area": "secret_scan",
+      "locator": "/private/tmp/t740c6b4e/pa4-c1n-bM9tX1/ev/secret_scan/secret_scan_plant_1791107908599.json",
+      "sha256": "<PRIVATE_REF_02091>",
+      "verdict": null,
+      "stage": "plant"
+    },
+    {
+      "fixture": "pa4-c1n-bM9tX1",
+      "area": "synthetic_scan",
+      "locator": "/private/tmp/t740c6b4e/pa4-c1n-bM9tX1/ev/synthetic_scan/synthetic_scan_1791107908600.json",
+      "sha256": "<PRIVATE_REF_03678>",
+      "verdict": "PASS_NO_REAL_SECRET_MATCHES",
+      "stage": "scan"
+    },
+    {
+      "fixture": "pa4-c1p-L6b7SL",
+      "area": "secret_scan",
+      "locator": "/private/tmp/t740c6b4e/pa4-c1p-L6b7SL/ev/secret_scan/secret_scan_plant_1791107908597.json",
+      "sha256": "<PRIVATE_REF_02921>",
+      "verdict": null,
+      "stage": "plant"
+    },
+    {
+      "fixture": "pa4-c1p-L6b7SL",
+      "area": "synthetic_scan",
+      "locator": "/private/tmp/t740c6b4e/pa4-c1p-L6b7SL/ev/synthetic_scan/synthetic_redact_1791107908598.json",
+      "sha256": "<PRIVATE_REF_02582>",
+      "verdict": "REDACTED_CLEAN",
+      "stage": "redact"
+    },
+    {
+      "fixture": "pa4-c1p-L6b7SL",
+      "area": "synthetic_scan",
+      "locator": "/private/tmp/t740c6b4e/pa4-c1p-L6b7SL/ev/synthetic_scan/synthetic_scan_1791107908598.json",
+      "sha256": "<PRIVATE_REF_03234>",
+      "verdict": "PASS_NO_REAL_SECRET_MATCHES",
+      "stage": "scan"
+    },
+    {
+      "fixture": "pa4-c2n-N6Z1T9",
+      "area": "resource_x",
+      "locator": "/private/tmp/t740c6b4e/pa4-c2n-N6Z1T9/ev/resource_x/resource_x_define_1791107908601.json",
+      "sha256": "<PRIVATE_REF_01743>",
+      "verdict": null,
+      "stage": "define"
+    },
+    {
+      "fixture": "pa4-c2n-N6Z1T9",
+      "area": "resource_x",
+      "locator": "/private/tmp/t740c6b4e/pa4-c2n-N6Z1T9/ev/resource_x/resource_x_propagate_1791107908601.json",
+      "sha256": "<PRIVATE_REF_01922>",
+      "verdict": null,
+      "stage": "propagate"
+    },
+    {
+      "fixture": "pa4-c2n-N6Z1T9",
+      "area": "resource_x",
+      "locator": "/private/tmp/t740c6b4e/pa4-c2n-N6Z1T9/ev/resource_x/resource_x_verify_1791107908601.json",
+      "sha256": "<PRIVATE_REF_02461>",
+      "verdict": "SOURCE_MISMATCH",
+      "stage": "verify"
+    },
+    {
+      "fixture": "pa4-c2p-gjNW7U",
+      "area": "resource_x",
+      "locator": "/private/tmp/t740c6b4e/pa4-c2p-gjNW7U/ev/resource_x/resource_x_define_1791107908600.json",
+      "sha256": "<PRIVATE_REF_03459>",
+      "verdict": null,
+      "stage": "define"
+    },
+    {
+      "fixture": "pa4-c2p-gjNW7U",
+      "area": "resource_x",
+      "locator": "/private/tmp/t740c6b4e/pa4-c2p-gjNW7U/ev/resource_x/resource_x_propagate_1791107908600.json",
+      "sha256": "<PRIVATE_REF_01660>",
+      "verdict": null,
+      "stage": "propagate"
+    },
+    {
+      "fixture": "pa4-c2p-gjNW7U",
+      "area": "resource_x",
+      "locator": "/private/tmp/t740c6b4e/pa4-c2p-gjNW7U/ev/resource_x/resource_x_verify_1791107908600.json",
+      "sha256": "<PRIVATE_REF_01044>",
+      "verdict": "MATCH",
+      "stage": "verify"
+    },
+    {
+      "fixture": "pa4-c4n-zAQZLv",
+      "area": "interrupt_detect",
+      "locator": "/private/tmp/t740c6b4e/pa4-c4n-zAQZLv/ev/interrupt_detect/interrupt_detect_1791107908604.json",
+      "sha256": "<PRIVATE_REF_01377>",
+      "verdict": "ARMED_PENDING_RESULT",
+      "stage": null
+    },
+    {
+      "fixture": "pa4-c4p-u3UR60",
+      "area": "interrupt_detect",
+      "locator": "/private/tmp/t740c6b4e/pa4-c4p-u3UR60/ev/interrupt_detect/interrupt_detect_1791107908602.json",
+      "sha256": "<PRIVATE_REF_03165>",
+      "verdict": "FIRED",
+      "stage": null
+    },
+    {
+      "fixture": "pa4-c4p-u3UR60",
+      "area": "interrupt_detect",
+      "locator": "/private/tmp/t740c6b4e/pa4-c4p-u3UR60/ev/interrupt_detect/interrupt_detect_1791107908603.json",
+      "sha256": "<PRIVATE_REF_02691>",
+      "verdict": "FIRED",
+      "stage": null
+    },
+    {
+      "fixture": "pa4-c9n-2Gc8ZS",
+      "area": "package_increment",
+      "locator": "/private/tmp/t740c6b4e/pa4-c9n-2Gc8ZS/ev/package_increment/packets_cp1_1791107908610.json",
+      "sha256": "<PRIVATE_REF_01661>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "fixture": "pa4-c9n-2Gc8ZS",
+      "area": "package_increment",
+      "locator": "/private/tmp/t740c6b4e/pa4-c9n-2Gc8ZS/ev/package_increment/packets_cp2_1791107908610.json",
+      "sha256": "<PRIVATE_REF_01439>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "fixture": "pa4-c9n-2Gc8ZS",
+      "area": "package_increment",
+      "locator": "/private/tmp/t740c6b4e/pa4-c9n-2Gc8ZS/ev/package_increment/packets_cp3_1791107908610.json",
+      "sha256": "<PRIVATE_REF_01499>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "fixture": "pa4-c9p-sNAKPb",
+      "area": "package_increment",
+      "locator": "/private/tmp/t740c6b4e/pa4-c9p-sNAKPb/ev/package_increment/packets_cp1_1791107908609.json",
+      "sha256": "<PRIVATE_REF_01661>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "fixture": "pa4-c9p-sNAKPb",
+      "area": "package_increment",
+      "locator": "/private/tmp/t740c6b4e/pa4-c9p-sNAKPb/ev/package_increment/packets_cp2_1791107908609.json",
+      "sha256": "<PRIVATE_REF_01439>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "fixture": "pa4-c9p-sNAKPb",
+      "area": "package_increment",
+      "locator": "/private/tmp/t740c6b4e/pa4-c9p-sNAKPb/ev/package_increment/packets_cp3_1791107908609.json",
+      "sha256": "<PRIVATE_REF_01499>",
+      "verdict": null,
+      "stage": null
+    },
+    {
+      "fixture": "pa4-crn-YQFyFE",
+      "area": "cred_delivery",
+      "locator": "/private/tmp/t740c6b4e/pa4-crn-YQFyFE/ev/cred_delivery/cred_deliver_1791107908612.json",
+      "sha256": "<PRIVATE_REF_01817>",
+      "verdict": null,
+      "stage": "deliver"
+    },
+    {
+      "fixture": "pa4-crn-YQFyFE",
+      "area": "cred_delivery",
+      "locator": "/private/tmp/t740c6b4e/pa4-crn-YQFyFE/ev/cred_delivery/cred_verify_1791107908612.json",
+      "sha256": "<PRIVATE_REF_03470>",
+      "verdict": "MISMATCH",
+      "stage": "verify"
+    },
+    {
+      "fixture": "pa4-crp-aRI1pU",
+      "area": "cred_delivery",
+      "locator": "/private/tmp/t740c6b4e/pa4-crp-aRI1pU/ev/cred_delivery/cred_deliver_1791107908611.json",
+      "sha256": "<PRIVATE_REF_01101>",
+      "verdict": null,
+      "stage": "deliver"
+    },
+    {
+      "fixture": "pa4-crp-aRI1pU",
+      "area": "cred_delivery",
+      "locator": "/private/tmp/t740c6b4e/pa4-crp-aRI1pU/ev/cred_delivery/cred_verify_1791107908611.json",
+      "sha256": "<PRIVATE_REF_01118>",
+      "verdict": "MATCH",
+      "stage": "verify"
+    },
+    {
+      "fixture": "pa4-hcc-KtQQlC",
+      "area": "hc_custody",
+      "locator": "/private/tmp/t740c6b4e/pa4-hcc-KtQQlC/ev/hc_custody/hc_deliver_1791107908627.json",
+      "sha256": "<PRIVATE_REF_01257>",
+      "verdict": null,
+      "stage": "deliver"
+    },
+    {
+      "fixture": "pa4-hcc-KtQQlC",
+      "area": "hc_custody",
+      "locator": "/private/tmp/t740c6b4e/pa4-hcc-KtQQlC/ev/hc_custody/hc_lock_1791107908627.json",
+      "sha256": "<PRIVATE_REF_02630>",
+      "verdict": null,
+      "stage": "lock"
+    },
+    {
+      "fixture": "pa4-hcn-FJeZkq",
+      "area": "hc_custody",
+      "locator": "/private/tmp/t740c6b4e/pa4-hcn-FJeZkq/ev/hc_custody/hc_deliver_1791107908626.json",
+      "sha256": "<PRIVATE_REF_01404>",
+      "verdict": null,
+      "stage": "deliver"
+    },
+    {
+      "fixture": "pa4-hcn-FJeZkq",
+      "area": "hc_custody",
+      "locator": "/private/tmp/t740c6b4e/pa4-hcn-FJeZkq/ev/hc_custody/hc_lock_1791107908626.json",
+      "sha256": "<PRIVATE_REF_02917>",
+      "verdict": null,
+      "stage": "lock"
+    },
+    {
+      "fixture": "pa4-hcn-FJeZkq",
+      "area": "hc_custody",
+      "locator": "/private/tmp/t740c6b4e/pa4-hcn-FJeZkq/ev/hc_custody/hc_verify_1791107908626.json",
+      "sha256": "<PRIVATE_REF_02346>",
+      "verdict": "ALTERATION_DETECTED",
+      "stage": "verify"
+    },
+    {
+      "fixture": "pa4-hcp-3ftf6d",
+      "area": "hc_custody",
+      "locator": "/private/tmp/t740c6b4e/pa4-hcp-3ftf6d/ev/hc_custody/hc_deliver_1791107908625.json",
+      "sha256": "<PRIVATE_REF_02645>",
+      "verdict": null,
+      "stage": "deliver"
+    },
+    {
+      "fixture": "pa4-hcp-3ftf6d",
+      "area": "hc_custody",
+      "locator": "/private/tmp/t740c6b4e/pa4-hcp-3ftf6d/ev/hc_custody/hc_lock_1791107908625.json",
+      "sha256": "<PRIVATE_REF_02856>",
+      "verdict": null,
+      "stage": "lock"
+    },
+    {
+      "fixture": "pa4-hcp-3ftf6d",
+      "area": "hc_custody",
+      "locator": "/private/tmp/t740c6b4e/pa4-hcp-3ftf6d/ev/hc_custody/hc_verify_1791107908625.json",
+      "sha256": "<PRIVATE_REF_00933>",
+      "verdict": "VERIFIED",
+      "stage": "verify"
+    },
+    {
+      "fixture": "pa4-sli-mZihLi",
+      "area": "slip_capture",
+      "locator": "/private/tmp/t740c6b4e/pa4-sli-mZihLi/ev/slip_capture/slip_capture_1791107908613.json",
+      "sha256": "<PRIVATE_REF_01643>",
+      "verdict": "CAPTURE_INCOMPLETE",
+      "stage": null
+    },
+    {
+      "fixture": "pa4-sln-kZoGFq",
+      "area": "slip_capture",
+      "locator": "/private/tmp/t740c6b4e/pa4-sln-kZoGFq/ev/slip_capture/slip_capture_1791107908613.json",
+      "sha256": "<PRIVATE_REF_01196>",
+      "verdict": "NO_PRE_T0_OUTPUT",
+      "stage": null
+    },
+    {
+      "fixture": "pa4-slp-7hIJLO",
+      "area": "slip_capture",
+      "locator": "/private/tmp/t740c6b4e/pa4-slp-7hIJLO/ev/slip_capture/slip_capture_1791107908612.json",
+      "sha256": "<PRIVATE_REF_00921>",
+      "verdict": "PRE_T0_ACTIVITY_CAPTURED",
+      "stage": null
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "attempt": 3,
+  "query": "disk_inventory",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "compute",
+    "disks",
+    "list",
+    "--project=<CLOUD_PROJECT>",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T20:35:06.209+11:00",
+  "end_utc": "2026-10-05T20:35:08.046+11:00",
+  "exit_code": 0,
+  "stdout": "disk_inventory_attempt3.stdout",
+  "stdout_sha256": "<PRIVATE_REF_02642>",
+  "stderr": "disk_inventory_attempt3.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

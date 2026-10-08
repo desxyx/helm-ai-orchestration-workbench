@@ -1,0 +1,22 @@
+{
+  "lock": "W2 shared runtime lock v1 (WF-5 / RT-E input for EP-I)",
+  "status": "PROPOSED_LOCAL — values observed locally 2026-10-04; model live availability and Human Operator confirmation of the common mode pin are PENDING",
+  "applies_to": "Deployer client in every executed W2 arm (W2A, W2B; W2C only if accepted before W2A T0)",
+  "frozen_registry": "ROLE_MODEL_REGISTRY §3.2: Deployer GPT-5.6 Sol High (Codex CLI)",
+  "pins": {
+    "codex_cli_version": "codex-cli 0.160.0",
+    "model": "gpt-5.6-sol",
+    "model_reasoning_effort": "high",
+    "approval_policy": "on-request",
+    "sandbox_mode": "workspace-write",
+    "check_for_update_on_startup": "false",
+    "enabled_plugins": [],
+    "mcp_servers": []
+  },
+  "client_home": "dedicated experiment CODEX_HOME created from codex_home_template/config.toml; the operator's global ~/.codex is not used by any arm",
+  "observer_record_only": {
+    "client": "Claude Code 2.1.289",
+    "model_registry_row": "Claude Sonnet 5",
+    "exact_model_id": "PENDING_LIVE_ENTRY"
+  }
+}

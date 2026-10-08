@@ -1,0 +1,7 @@
+$ gcloud compute instances create <RUN_VM_OR_BOOT_DISK> --zone australia-southeast1-b --machine-type e2-small --image-family debian-12 --image-project debian-cloud --boot-disk-size 20GB --boot-disk-type pd-balanced --address <RUN_STATIC_IP> --network-tier PREMIUM --tags taiga-web --disk name=<RUN_DATA_DISK>,device-name=<RUN_DATA_DISK>,mode=rw,boot=no,auto-delete=no --shielded-secure-boot --project <CLOUD_PROJECT>
+# started 2026-10-06T12:52:32.000Z  ended 2026-10-06T12:52:50.000Z  exit 1
+--- stdout
+--- stderr
+ERROR: (gcloud.compute.instances.create) Could not fetch resource:
+ - The resource '<ACCOUNT_EMAIL_002>' of type 'serviceAccount' was not found.
+

@@ -1,0 +1,24 @@
+{
+  "attempt": 1,
+  "query": "DNS_NS",
+  "executable": "/usr/bin/dig",
+  "argv": [
+    "+time=3",
+    "+tries=1",
+    "+noall",
+    "+answer",
+    "+authority",
+    "+comments",
+    "@1.1.1.1",
+    "<EXPERIMENT_DOMAIN>",
+    "NS"
+  ],
+  "start_utc": "2026-10-05T23:58:45.700+11:00",
+  "end_utc": "2026-10-05T23:58:45.955+11:00",
+  "exit_code": 0,
+  "stdout": "DNS_NS_attempt1.stdout",
+  "stdout_sha256": "<PRIVATE_REF_01581>",
+  "stderr": "DNS_NS_attempt1.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

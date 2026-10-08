@@ -1,0 +1,36 @@
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: acorn-import-phases@1.0.4
+npm warn Found: acorn@6.4.2
+npm warn node_modules/acorn
+npm warn   acorn@"^6.1.1" from @alerta/vue-authenticate@1.5.0
+npm warn   node_modules/@alerta/vue-authenticate
+npm warn     @alerta/vue-authenticate@"github:alerta/vue-authenticate" from the root project
+npm warn   3 more (acorn-dynamic-import, acorn-jsx, vue-authenticate)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer acorn@"^6.0.0" from acorn-dynamic-import@4.0.0
+npm warn node_modules/acorn-dynamic-import
+npm warn   peer acorn-dynamic-import@"^4.0.0" from @alerta/vue-authenticate@1.5.0
+npm warn   node_modules/@alerta/vue-authenticate
+npm warn   1 more (vue-authenticate)
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: acorn-import-phases@1.0.4
+npm warn Found: acorn@6.4.2
+npm warn node_modules/acorn
+npm warn   acorn@"^6.1.1" from @alerta/vue-authenticate@1.5.0
+npm warn   node_modules/@alerta/vue-authenticate
+npm warn     @alerta/vue-authenticate@"github:alerta/vue-authenticate" from the root project
+npm warn   3 more (acorn-dynamic-import, acorn-jsx, vue-authenticate)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer acorn@"^6.0.0" from acorn-dynamic-import@4.0.0
+npm warn node_modules/acorn-dynamic-import
+npm warn   peer acorn-dynamic-import@"^4.0.0" from @alerta/vue-authenticate@1.5.0
+npm warn   node_modules/@alerta/vue-authenticate
+npm warn   1 more (vue-authenticate)
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: acorn-import-phases@1.0.4
+npm warn Found: peer acorn@"^8.14.0" from the root project
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer acorn@"^8.14.0" from the root project

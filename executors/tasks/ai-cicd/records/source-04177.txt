@@ -1,0 +1,8 @@
+workspace=<CLIENT_HOME>/Desktop/helmls-studio/watchover-final-patch-2026-10-07/builder/product
+branch=final-patch-2026-10-07
+commit=<PRIVATE_REF_03069>
+tree=<PRIVATE_REF_01459>
+version=0.1.2
+working_tree=clean
+supersedes_candidate=<PRIVATE_REF_01925>
+

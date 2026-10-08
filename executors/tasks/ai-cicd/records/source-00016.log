@@ -1,0 +1,19 @@
+=== migrate against local PostgreSQL ===
+  Applying comments.0001_initial... OK
+  Applying jwt_ninja.0001_initial... OK
+  Applying jwt_ninja.0002_session_refresh_token_rotation... OK
+  Applying jwt_ninja.0003_session_location_session_user_agent... OK
+  Applying sessions.0001_initial... OK
+=== start server (run1) ===
+Watching for file changes with StatReloader
+[26/Sep/2026 14:05:39] "GET /api/tags HTTP/1.1" 200 12
+=== register ===
+[26/Sep/2026 14:05:39] "POST /api/users HTTP/1.1" 201 339
+{"user": {"username": "pgscreeninguser", "email": "<ACCOUNT_EMAIL_041>", "bio": null, "image": null, "token": "<CREDENTIAL_REMOVED>"}}
+=== restart server (run2), same postgres database ===
+Watching for file changes with StatReloader
+[26/Sep/2026 14:05:41] "GET /api/tags HTTP/1.1" 200 12
+=== login after restart, no re-registration ===
+[26/Sep/2026 14:05:41] "POST /api/users/login HTTP/1.1" 200 339
+{"user": {"username": "pgscreeninguser", "email": "<ACCOUNT_EMAIL_041>", "bio": null, "image": null, "token": "<CREDENTIAL_REMOVED>"}}
+=== done ===

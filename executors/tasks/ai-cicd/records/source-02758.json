@@ -1,0 +1,17 @@
+{
+  "attempt": 1,
+  "query": "Q01_sdk",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "version",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T23:56:36.313+11:00",
+  "end_utc": "2026-10-05T23:56:36.641+11:00",
+  "exit_code": 0,
+  "stdout": "Q01_sdk_attempt1.stdout",
+  "stdout_sha256": "<PRIVATE_REF_02674>",
+  "stderr": "Q01_sdk_attempt1.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

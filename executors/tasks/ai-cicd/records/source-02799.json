@@ -1,0 +1,21 @@
+{
+  "attempt": 14,
+  "query": "R11_project_ssh",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "compute",
+    "project-info",
+    "describe",
+    "--project=<CLOUD_PROJECT>",
+    "--quiet",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T23:57:06.307+11:00",
+  "end_utc": "2026-10-05T23:57:07.512+11:00",
+  "exit_code": 0,
+  "stdout": "R11_project_ssh_attempt14.stdout",
+  "stdout_sha256": "<PRIVATE_REF_02506>",
+  "stderr": "R11_project_ssh_attempt14.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

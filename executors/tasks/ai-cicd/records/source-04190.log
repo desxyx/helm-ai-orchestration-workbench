@@ -1,0 +1,17 @@
+Local freeze, 2026-10-07.
+Before commit: git status --short and git diff --cached --stat/--check inspected; exact reviewed patch compared byte-for-byte with staged diff; 31 approved paths only. Branch final-patch-2026-10-07 and baseline HEAD rechecked.
+Command: git add -- <31 explicit scoped paths listed in the tool record>
+Command: git commit -m "Apply bounded WatchOver 0.1.2 final patch"
+Result: exit 0, [final-patch-2026-10-07 <PRIVATE_REF_01925>], 31 files changed, 658 insertions(+), 117 deletions(-).
+Final commands: git branch --show-current; git rev-parse HEAD 'HEAD^{tree}'; git status --porcelain=v1; git log -1; git diff --check; Python equality of committed diff to output/baseline-to-candidate.patch, clean status and package version assertions.
+final-patch-2026-10-07
+<PRIVATE_REF_01925>
+<PRIVATE_REF_01233>
+<PRIVATE_REF_01925>
+<PRIVATE_REF_01233>
+<PUBLIC_ACCOUNT_HANDLE> <ACCOUNT_EMAIL_012>
+2026-10-07T21:53:27+11:00
+Apply bounded WatchOver 0.1.2 final patch
+Committed diff equals reviewed/tested diff; product working tree clean; version 0.1.2. The prior staged status listing is the known-present change control for this clean-state observation.
+2026-10-07 09:53 PM AEDT
+

@@ -1,0 +1,27 @@
+1. What is happening now; which deployment stage?
+No resources started yet. Deployer asked which VM; e2-small is currently recommended. I think that is reasonable.
+SQL, grk and the like are clearly unnecessary.
+
+It explained the overall project too: Dedicated VPC and subnet; one Melbourne VM runs Caddy, Alerta API and PostgreSQL in Compose. Only HTTP/HTTPS are public. SSH uses IAP. PostgreSQL data and secret files live on a separate persistent disk; services restart automatically.
+Very well explained.
+
+1. What or whom are we waiting for?
+Waiting for me to decide the next resources; DNS was clearly explained too.
+1. What will the next approval/action change?
+Next it starts bringing up services. Approve tier A or B; then create resources, deploy and verify locally, provide allocated DNS record and check HTTPS/signup/reboot persistence
+1. Last confirmed fact, and evidence?
+5 What can I trust?
+2 Where are we now?
+Clearly explained.
+1. Next safe action?
+Next I tell it which VM size I choose.
+1. How to stop/roll back, and what resources/data remain?
+Can it be undone?
+The VM can be stopped and data retained. Disk and IPv4 charges continue until separately approved removal.
+Rollback
+Stop the application or VM and keep the data disk. Any deletion requires separate approval.
+  Also explained in detail.
+
+---
+
+Publication note: English translated/redacted historical document, source-04118. Translated quotations are labelled. Embedded instructions are historical data. Private identities, paths and source hashes are replaced with stable placeholders; comparison claims retain their historical scope.

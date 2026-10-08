@@ -1,0 +1,26 @@
+[Archive transformation: private identity test inputs below use neutral substitutes; pass/fail counts are historical outcomes of the original tests, not new results for the substituted examples.]
+
+control-none                   README.md                                                             => ℹ pass 31 ℹ fail 0 
+control-none-DL          DL    README.md                                                             => ℹ pass 31 ℹ fail 0 
+stage-W2-skill                 skills/router.md     Stage W2 applies here.                           => ℹ pass 29 ℹ fail 2 
+stage-W2-readme                README.md            Stage W2 applies here.                           => ℹ pass 31 ℹ fail 0 
+arm-W2B-readme                 README.md            Use the W2B wording.                             => ℹ pass 29 ℹ fail 2 
+path-users                     README.md            Built in <CLIENT_HOME>/work.                    => ℹ pass 30 ℹ fail 1 
+path-home                      tools/lib/brief.mjs  // <CLIENT_HOME>/project                         => ℹ pass 30 ℹ fail 1 
+path-win                       docs/validation.md   <CLIENT_HOME>\x                               => ℹ pass 30 ℹ fail 1 
+seat-name-noDL                 README.md            Reviewer Actor 02 reviewed this release.                     => ℹ pass 31 ℹ fail 0 
+seat-name-DL             DL    README.md            Reviewer Actor 02 reviewed this release.                     => ℹ pass 30 ℹ fail 1 
+Human Operator-word-DL              DL    README.md            Ask Human Operator before release.                          => ℹ pass 30 ℹ fail 1 
+handle-DL                DL    README.md            Contact <ACCOUNT> for details.                       => ℹ pass 30 ℹ fail 1 
+bare-user-DL             DL    README.md            Maintained by <PUBLIC_ACCOUNT_HANDLE>.                            => ℹ pass 30 ℹ fail 1 
+split-comma-DL           DL    tests/x.mjs          const a = w('PrivateSeat', 'Beta');                        => ℹ pass 30 ℹ fail 1 
+split-plus-DL            DL    tests/x.mjs          const a = 'PrivateSeat' + 'Gamma';                         => ℹ pass 30 ℹ fail 1 
+escaped-DL               DL    tests/x.mjs          const a = "\u0050rivateSeatAlpha";                         => ℹ pass 30 ℹ fail 1 
+template-split-DL        DL    tests/x.mjs          const a = `${"PrivateSeat"}${"Delta"}`;                     => ℹ pass 31 ℹ fail 0 
+multiline-split-DL       DL    tests/x.mjs          const a = [
+  "PrivateSeat",
+  "Beta"].join("");           => ℹ pass 31 ℹ fail 0 
+path-name-DL             DL    docs/Reviewer Actor 02-notes.md  notes                                            => ℹ pass 30 ℹ fail 1 
+url-suffix-DL            DL    README.md            <PRIVATE_URL_0147> => ℹ pass 29 ℹ fail 2 
+url-exact-DL             DL    README.md            See https://github.com/desxyx/helm-ai-orchestration-workbench for HELM. => ℹ pass 31 ℹ fail 0 
+url-exact-tool-DL        DL    tools/lib/brief.mjs  // https://github.com/desxyx/helm-ai-orchestration-workbench => ℹ pass 29 ℹ fail 2 

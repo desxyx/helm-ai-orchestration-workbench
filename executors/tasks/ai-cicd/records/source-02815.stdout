@@ -1,0 +1,10 @@
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 16744
+;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; AUTHORITY SECTION:
+<EXPERIMENT_DOMAIN>.		1800	IN	SOA	<DNS_RESOLVER_A>. dns.cloudflare.com. 2416690228 10000 2400 604800 1800
+

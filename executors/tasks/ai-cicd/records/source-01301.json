@@ -1,0 +1,21 @@
+{
+  "attempt": 6,
+  "query": "R06_firewalls",
+  "executable": "/opt/homebrew/bin/gcloud",
+  "argv": [
+    "compute",
+    "firewall-rules",
+    "list",
+    "--project=<CLOUD_PROJECT>",
+    "--quiet",
+    "--format=json"
+  ],
+  "start_utc": "2026-10-05T16:09:10.645+11:00",
+  "end_utc": "2026-10-05T16:09:12.036+11:00",
+  "exit_code": 0,
+  "stdout": "R06_firewalls_attempt6.stdout",
+  "stdout_sha256": "<PRIVATE_REF_03458>",
+  "stderr": "R06_firewalls_attempt6.stderr",
+  "stderr_sha256": "<PRIVATE_REF_03399>",
+  "exclusive_stdout": true
+}

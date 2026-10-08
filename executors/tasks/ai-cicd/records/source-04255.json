@@ -1,0 +1,54 @@
+{
+  "observed_at": "2026-10-06T16:37:23+11:00",
+  "round_files": [
+    "r1_ENTRY_PRESERVATION.json",
+    "r1_STAGE_RELEASE.md",
+    "r2_STAGE_RELEASE.md",
+    "r3_CONTEXT_CONTINUATION_AMENDMENT.md"
+  ],
+  "role_files": [],
+  "absence_positive_control": {
+    "instrument": "Path.is_file over same rounds directory",
+    "known_present_r2_release": true
+  },
+  "branch": "main",
+  "HEAD": "<PRIVATE_REF_02752>",
+  "HEAD_tree": "<PRIVATE_REF_02761>",
+  "version": "0.1.0-a",
+  "status": " M README.md\n M skills/router.md\n M skills/stages/plan.md\n",
+  "input_hashes": {
+    "source-04235.txt": "<PRIVATE_REF_02106>",
+    "source-04237.md": "<PRIVATE_REF_01854>",
+    "source-04234.md": "<PRIVATE_REF_02638>",
+    "source-04257.md": "<PRIVATE_REF_02647>",
+    "source-04258.md": "<PRIVATE_REF_01366>",
+    "../../../../userops/tasks/ai-cicd/records/source-04442.txt": "<PRIVATE_REF_02661>",
+    "../../../../userops/tasks/ai-cicd/records/source-04440.md": "<PRIVATE_REF_03439>",
+    "../../../../userops/tasks/ai-cicd/records/source-04431.md": "<PRIVATE_REF_03694>",
+    "../../../../userops/tasks/ai-cicd/records/source-04444.md": "<PRIVATE_REF_01410>"
+  },
+  "retained_modifications": [
+    {
+      "path": "README.md",
+      "sha256": "<PRIVATE_REF_02679>",
+      "git_blob": "<PRIVATE_REF_03738>"
+    },
+    {
+      "path": "skills/router.md",
+      "sha256": "<PRIVATE_REF_01884>",
+      "git_blob": "<PRIVATE_REF_01929>"
+    },
+    {
+      "path": "skills/stages/plan.md",
+      "sha256": "<PRIVATE_REF_01167>",
+      "git_blob": "<PRIVATE_REF_02946>"
+    }
+  ],
+  "plan_arrival": {
+    "path": "rounds/r2_PLAN.md",
+    "sha256": "<PRIVATE_REF_03074>",
+    "current_next": "REVIEWER_PLAN",
+    "Executor_model_declared": "Claude Opus 5.5",
+    "plan_or_candidate_accepted": false
+  }
+}

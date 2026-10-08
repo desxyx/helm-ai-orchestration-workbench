@@ -1,0 +1,23 @@
+﻿Captured 2026-10-06T12:34:44Z. Pre-flight re-verification before the first create (read-only).
+## gcloud config get account / project
+<ACCOUNT_EMAIL_011>
+<CLOUD_PROJECT>
+## billing
+True
+## roles
+roles/owner
+## planned names present? (expect none)
+addresses:
+firewall rules named taiga-*:
+disks:
+instances:
+snapshot schedules:
+CONTROL: firewall rules (all):
+default-allow-icmp
+default-allow-internal
+default-allow-rdp
+default-allow-ssh
+## image family debian-12
+debian-12-bookworm-v20260921	READY
+## zone australia-southeast1-b
+australia-southeast1-b	UP

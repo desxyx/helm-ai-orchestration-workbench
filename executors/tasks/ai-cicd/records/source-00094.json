@@ -1,0 +1,47 @@
+[
+  {
+    "approval_id": "DRYRUN-A001",
+    "run_id": "DRYRUN",
+    "timestamp": "2026-09-26T00:00:00Z",
+    "category": "BILLABLE",
+    "request_locator": "approval_fixture.jsonl:line=1",
+    "decision": "APPROVED",
+    "decision_locator": "approval_fixture.jsonl:line=2"
+  },
+  {
+    "approval_id": "DRYRUN-A002",
+    "run_id": "DRYRUN",
+    "timestamp": "2026-09-26T00:01:00Z",
+    "category": "DNS",
+    "request_locator": "approval_fixture.jsonl:line=3",
+    "decision": "REFUSED:Not approved: outside project.",
+    "decision_locator": "approval_fixture.jsonl:line=4"
+  },
+  {
+    "approval_id": "DRYRUN-A003",
+    "run_id": "DRYRUN",
+    "timestamp": "2026-09-26T00:02:00Z",
+    "category": "DELETE",
+    "request_locator": "approval_fixture.jsonl:line=5",
+    "decision": "REFUSED:Not approved: over budget.",
+    "decision_locator": "approval_fixture.jsonl:line=6"
+  },
+  {
+    "approval_id": "DRYRUN-A004",
+    "run_id": "DRYRUN",
+    "timestamp": "2026-09-26T00:03:00Z",
+    "category": "DESTRUCTIVE",
+    "request_locator": "approval_fixture.jsonl:line=7",
+    "decision": "REFUSED:Not approved: not created in this run.",
+    "decision_locator": "approval_fixture.jsonl:line=8"
+  },
+  {
+    "approval_id": "DRYRUN-A005",
+    "run_id": "DRYRUN",
+    "timestamp": "2026-09-26T00:04:00Z",
+    "category": "BILLABLE",
+    "request_locator": "approval_fixture.jsonl:line=9",
+    "decision": "UNVERIFIED",
+    "decision_locator": "approval_fixture.jsonl:line=10"
+  }
+]
