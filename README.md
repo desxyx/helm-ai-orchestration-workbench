@@ -6,6 +6,18 @@ Most multi-model AI setups fail the same way: no accountability between models, 
 
 This is not a prompt template. It is a working system with defined protocols, layered authority, and traceable records built up over 120+ real sessions.
 
+## Showcase: WatchOver / AI CI/CD
+
+This CI/CD project is a showcase of HELM in use, from the first requirements and Council discussions to implementation, deployment runs, independent review and public release.
+
+<https://github.com/desxyx/helm-ai-orchestration-workbench/tree/main/council/task/ai-cicd>
+
+The English, translated and redacted records show the actual operating details: decisions, manual message routing, interruptions and recovery, failed checks, rework, W1–W3 experiments, and the Mac-to-Windows handoff. Missing evidence and experimental limitations remain visible.
+
+Follow the [Council conversations](council/task/ai-cicd/sessions/README.md), [Executor and Reviewer records](executors/tasks/ai-cicd/README.md), and [UserOps coordination records](userops/tasks/ai-cicd/README.md), or start with the case timeline and reading guides.
+
+The resulting product is [WatchOver AI DevOps](https://github.com/helmls-studio/watchover-ai-devops).
+
 ## Architecture
 
 ```mermaid
@@ -138,7 +150,7 @@ That matters because the long-term direction is not "keep the human manually sti
 
 ## UserOps Layer
 
-The newest public slice adds the missing operational spine between raw human routing and formal Council/Executor work.
+UserOps provides the operational spine between human routing and formal Council/Executor work. The WatchOver showcase now includes a [translated and redacted task record](userops/tasks/ai-cicd/README.md) of that layer in use.
 
 This layer does not vote. It does not implement. It does not overrule review gates. Its job is to keep the system coherent across time:
 
@@ -178,7 +190,7 @@ Public structure and prototype entry:
 
 ## Protocol Refresh: Evidence, Convergence, Independent Review
 
-The latest public slice refreshes all three governing documents together, because a rule added to one layer is checked against the other two before it lands:
+The public governing documents define the boundaries between the three layers. A rule added to one layer is checked against the other two before it lands:
 
 - [Council Constitution — Public v1.7](council/council_constitution_v1.7.md): Frozen Truth must pass an evidence admission check before it can bind execution; merged Council results require an independent phase, a cross-review phase, and one designated merge owner; re-entry triggers are based on boundary expansion, not arbitrary counts.
 - [Executor Charter — Public v1.0](executors/EXECUTOR%20CHARTER%20—%20v1.0.md): role-scoped loading, a first-class Reviewer appendix, raw-first review, cross-model-family independence, and a hard rule that whoever authored a change is never the sole source of its acceptance.
@@ -218,16 +230,3 @@ Local browser login state is intentionally not included in this repository and s
 - Private identities, machine-local paths, browser data, and personal operating traces are removed.
 - The public naming surface uses `Claude`, `Gemini`, and `ChatGPT`.
 - The goal is to show why H.E.L.M works, how the layers cooperate, and how the system has matured — without publishing the full private operating history.
-
-## Contributors
-
-This public repository includes substantial contribution from the following AI collaborators:
-
-- Claude
-- Gemini
-- ChatGPT
-
-
-## WatchOver / AI_CICD process archive
-
-The [complete available translated/redacted process](council/task/ai-cicd/README.md) links the [Council](council/task/ai-cicd/council-records/README.md), [Executor / Reviewer](executors/tasks/ai-cicd/README.md) and [UserOps](userops/tasks/ai-cicd/README.md) layers, including experiments, failures, manual routing and evidence limits.
