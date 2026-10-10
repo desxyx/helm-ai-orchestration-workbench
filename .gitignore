@@ -8,3 +8,4 @@ user/data/temp/
 user/web_data/save_score/
 user/web_data/todolist/
 npm-debug.log*
+user/platform/*.log

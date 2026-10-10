@@ -1,3 +1,5 @@
+const { isCaptured, exclusionReason } = globalThis.HELMReplyPredicates;
+
 const state = {
   sessions: [],
   selectedSession: null,
@@ -73,9 +75,14 @@ function setAgentState(agent, data) {
   const stage = $(`stage-${agent}`);
   const content = $(`content-${agent}`);
 
-  badge.className = `agent-badge ${data.status}`;
-  badge.textContent = data.status;
-  stage.textContent = data.message || "";
+  const reply = { ...data, status: data.status === "done" ? "ok" : data.status };
+  const hasArtifact = Boolean(data.content || data.errorCode || data.staleSuspect ||
+    ["ok", "done", "error"].includes(data.status));
+  const excluded = hasArtifact && !isCaptured(reply);
+  const status = excluded ? "error" : data.status;
+  badge.className = `agent-badge ${status}`;
+  badge.textContent = status;
+  stage.textContent = excluded ? `Reply excluded: ${exclusionReason(reply)}` : data.message || "";
   content.textContent = data.content || "";
 }
 
@@ -184,7 +191,7 @@ function isReplyCaptured(round, agent) {
   }
 
   const reply = round.replies.find((item) => item.agent === agent);
-  return Boolean(reply && reply.status === "ok" && String(reply.content || "").trim());
+  return isCaptured(reply);
 }
 
 function areAllRepliesCaptured(round) {
@@ -223,7 +230,7 @@ function isManualDispatchOverrideActive() {
 
 function armManualDispatchOverride({
   silent = false,
-  message = "Manual dispatch override armed for this round. Dispatch can proceed without all three captured replies.",
+  message = "Manual dispatch override armed for this round. Excluded replies remain marked and stay out of the summary.",
 } = {}) {
   const round = getSelectedRound();
   if (!round) {
@@ -422,6 +429,7 @@ function renderSelectedSession() {
 
     const reply = round ? round.replies.find((item) => item.agent === agent) : null;
     setAgentState(agent, {
+      ...reply,
       status: reply ? reply.status : "queued",
       message: reply ? reply.completionReason || "done" : "Waiting to start.",
       content: reply ? reply.content : "",
@@ -795,13 +803,14 @@ function handleReplyRefreshed(data) {
     if (state.activeRun.agents?.[data.agent]) {
       state.activeRun.agents[data.agent] = {
         ...state.activeRun.agents[data.agent],
-        status: "done",
+        status: isCaptured(data.reply) ? "done" : "error",
         stage: "capture",
         message: "Reply manually refreshed.",
         content: data.reply?.content || state.activeRun.agents[data.agent].content,
         completionReason:
           data.reply?.completionReason || state.activeRun.agents[data.agent].completionReason,
         errorCode: data.reply?.errorCode || null,
+        staleSuspect: data.reply?.staleSuspect === true,
       };
     }
   }
@@ -815,8 +824,10 @@ function handleReplyRefreshed(data) {
   // effect of what appeared to be a simple "re-fetch" action.
   renderControls();
   setGlobalStatus(
-    "done",
-    `Refreshed ${data.label || AGENT_TITLES[data.agent] || data.agent} reply for round_${data.roundNumber}.`
+    isCaptured(data.reply) ? "done" : "error",
+    isCaptured(data.reply)
+      ? `Refreshed ${data.label || AGENT_TITLES[data.agent] || data.agent} reply for round_${data.roundNumber}.`
+      : `Refreshed reply excluded: ${exclusionReason(data.reply)}. Raw content remains available for inspection.`
   );
 }
 

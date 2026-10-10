@@ -9,8 +9,7 @@ const assert = require("node:assert/strict");
 
 const { waitForHybridCompletion } = require("../src/utils/completion");
 
-// Fake page whose busy selector never clears — the shape of the live failure where a
-// finished reply still read as "busy" and the wait only ended at the hard timeout.
+// Synthetic Stop visibility is authoritative; Copy readiness must not override it.
 function stuckBusyPage() {
   return {
     on() {},
@@ -24,6 +23,7 @@ const FAST = {
   pollIntervalMs: 10,
   stabilityWindowMs: 30,
   hardTimeoutMs: 3000,
+  busyHardTimeoutMs: 3000,
   probeAfterMs: 40,
   probeIntervalMs: 30,
   probeBusyQuietMs: 60,
@@ -31,39 +31,43 @@ const FAST = {
 };
 const STUCK_BUSY = { busySelectors: ["button.stop"] };
 
-test("a stuck busy signal no longer costs the whole hard timeout when the probe confirms", async () => {
+test("CORE06 target historical replacement: a confirmed Copy cannot complete while Stop remains visible", async () => {
   const startedAt = Date.now();
   const result = await waitForHybridCompletion({
     page: stuckBusyPage(),
     readReplyState: async () => ({ count: 2, text: "copy_ready:2:40" }),
-    completionConfig: FAST,
+    completionConfig: { ...FAST, hardTimeoutMs: 200, busyHardTimeoutMs: 200 },
     detectionConfig: STUCK_BUSY,
     baselineState: { count: 1, text: "" },
     probeFinished: async () => true,
     label: "test",
   });
 
-  assert.equal(result.reason, "stable_probe");
-  assert.ok(Date.now() - startedAt < FAST.hardTimeoutMs / 2, "should finish well before the hard timeout");
+  assert.equal(result.completed, false);
+  assert.equal(result.reason, "timeout");
+  assert.ok(Date.now() - startedAt >= 200, "visible Stop must prevent early completion");
 });
 
-test("without a probe the same stuck signal still runs to the hard timeout (baseline behaviour)", async () => {
+test("CORE06 target historical replacement: without a probe a visible Stop uses the busy hard timeout", async () => {
+  const startedAt = Date.now();
   const result = await waitForHybridCompletion({
     page: stuckBusyPage(),
     readReplyState: async () => ({ count: 2, text: "copy_ready:2:40" }),
-    completionConfig: { ...FAST, hardTimeoutMs: 400 },
+    completionConfig: { ...FAST, hardTimeoutMs: 40, busyHardTimeoutMs: 200 },
     detectionConfig: STUCK_BUSY,
     baselineState: { count: 1, text: "" },
   });
 
   assert.equal(result.reason, "timeout");
+  assert.equal(result.completed, false);
+  assert.ok(Date.now() - startedAt >= 200, "generic cap cannot truncate the busy window");
 });
 
 test("a probe that keeps saying not-ready never ends the wait early", async () => {
   const result = await waitForHybridCompletion({
     page: stuckBusyPage(),
     readReplyState: async () => ({ count: 2, text: "copy_ready:2:40" }),
-    completionConfig: { ...FAST, hardTimeoutMs: 500 },
+    completionConfig: { ...FAST, hardTimeoutMs: 500, busyHardTimeoutMs: 500 },
     detectionConfig: STUCK_BUSY,
     baselineState: { count: 1, text: "" },
     probeFinished: async () => false,
@@ -81,7 +85,7 @@ test("while the reply text is still changing the probe is never consulted", asyn
       length += 1;
       return { count: 2, text: `copy_ready:2:${length}` };
     },
-    completionConfig: { ...FAST, hardTimeoutMs: 500 },
+    completionConfig: { ...FAST, hardTimeoutMs: 500, busyHardTimeoutMs: 500 },
     detectionConfig: STUCK_BUSY,
     baselineState: { count: 1, text: "" },
     probeFinished: async () => {
@@ -98,9 +102,10 @@ test("a single positive probe is not enough; a negative in between resets the st
   const answers = [true, false, true, true];
   let calls = 0;
   const result = await waitForHybridCompletion({
-    page: stuckBusyPage(),
+    // No Stop: preserve streak-reset coverage without requiring busy completion.
+    page: { on() {}, off() {}, evaluate: async () => "", locator: () => ({ first: () => ({ isVisible: async () => false }) }) },
     readReplyState: async () => ({ count: 2, text: "copy_ready:2:40" }),
-    completionConfig: FAST,
+    completionConfig: { ...FAST, stabilityWindowMs: 2000 },
     detectionConfig: STUCK_BUSY,
     baselineState: { count: 1, text: "" },
     probeFinished: async () => answers[Math.min(calls++, answers.length - 1)],
@@ -110,12 +115,13 @@ test("a single positive probe is not enough; a negative in between resets the st
   assert.ok(calls >= 4, `expected the reset streak to need 4 probes, saw ${calls}`);
 });
 
-test("hovering is only allowed after the content has been unchanged for a long while", async () => {
+test("CORE06 target historical replacement: stable content never permits hover while Stop remains visible", async () => {
   const seen = [];
+  let reads = 0;
   await waitForHybridCompletion({
     page: stuckBusyPage(),
-    readReplyState: async () => ({ count: 2, text: "copy_ready:2:40" }),
-    completionConfig: { ...FAST, hardTimeoutMs: 900, probeHoverAfterUnchangedMs: 300 },
+    readReplyState: async () => { reads += 1; return { count: 2, text: "copy_ready:2:40" }; },
+    completionConfig: { ...FAST, hardTimeoutMs: 900, busyHardTimeoutMs: 900, probeHoverAfterUnchangedMs: 300 },
     detectionConfig: STUCK_BUSY,
     baselineState: { count: 1, text: "" },
     probeFinished: async (_page, options) => {
@@ -124,8 +130,8 @@ test("hovering is only allowed after the content has been unchanged for a long w
     },
   });
 
-  assert.equal(seen[0], false, "first probe must not hover");
-  assert.ok(seen.includes(true), "a long-unchanged reply eventually allows hover");
+  assert.ok(reads > 0, "positive control: generation loop was exercised");
+  assert.equal(seen.some(Boolean), false, "Stop forbids hover even after the old threshold");
 });
 
 test("the heuristic path is unchanged when nothing blocks it", async () => {

@@ -1,35 +1,11 @@
 const config = require("../../config");
-const { randomBetween, sleep } = require("./time");
+const { createAgentError, sendFailureMessage } = require("./errors");
+const { sleep } = require("./time");
+const { withClipboardLock } = require("./clipboardLock");
 
 const injectionConfig = config.injection || {};
-const DEFAULT_PROMPT_LEAD_TYPED_CHARS = 100;
 const DEFAULT_PROMPT_PASTE_PAUSE_MS = 1000;
-const DEFAULT_INPUT_SETTLE_TIMEOUT_MS = 4000;
-const DEFAULT_INPUT_EMPTY_TIMEOUT_MS = 2000;
-
-async function typePromptWithStructuredNewlines(page, text, baseDelayMs) {
-  const lines = text.split("\n");
-
-  for (let lineIndex = 0; lineIndex < lines.length; lineIndex += 1) {
-    const line = lines[lineIndex];
-
-    for (const char of line) {
-      const delay = randomBetween(baseDelayMs, baseDelayMs + 40);
-      await page.keyboard.type(char, { delay });
-    }
-
-    if (lineIndex < lines.length - 1) {
-      await page.keyboard.press("Shift+Enter");
-    }
-  }
-}
-
-function getPromptLines(text) {
-  return text
-    .split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean);
-}
+const PASTE_HOLD_AFTER_KEYPRESS_MS = 300;
 
 function normalizeInputText(text) {
   return String(text || "")
@@ -37,16 +13,6 @@ function normalizeInputText(text) {
     .replace(/\r/g, "")
     .replace(/\s+/g, " ")
     .trim();
-}
-
-function hasPositiveSubmissionEvidence(evidence = {}) {
-  return Boolean(
-    evidence.stopSelector ||
-      evidence.stopButtonVisible ||
-      evidence.userTurnAdded ||
-      evidence.assistantTurnAdded ||
-      evidence.urlChanged
-  );
 }
 
 function resolvePromptSections(payload) {
@@ -71,13 +37,6 @@ function buildFullPromptText(payload) {
   }
 
   return promptBlock ? `${promptBlock}\n\n${summaryBlock}` : summaryBlock;
-}
-
-function resolveLeadTypedChars() {
-  const configuredTypedChars = Number.parseInt(injectionConfig.promptLeadTypedChars, 10);
-  return Number.isInteger(configuredTypedChars) && configuredTypedChars > 0
-    ? configuredTypedChars
-    : DEFAULT_PROMPT_LEAD_TYPED_CHARS;
 }
 
 function resolvePromptPastePauseMs() {
@@ -148,78 +107,9 @@ async function readInputText(locator) {
     .catch(() => "");
 }
 
-async function waitForInputText(
-  locator,
-  expectedText,
-  timeoutMs = DEFAULT_INPUT_SETTLE_TIMEOUT_MS
-) {
-  const normalizedExpected = normalizeInputText(expectedText);
-  const deadline = Date.now() + timeoutMs;
-
-  while (Date.now() < deadline) {
-    const currentInputText = await readInputText(locator);
-
-    if (normalizeInputText(currentInputText) === normalizedExpected) {
-      return true;
-    }
-
-    await sleep(100);
-  }
-
-  return false;
-}
-
-async function waitForInputEmpty(locator, timeoutMs = DEFAULT_INPUT_EMPTY_TIMEOUT_MS) {
-  return waitForInputText(locator, "", timeoutMs);
-}
-
-async function clearInput(page, locator) {
-  await locator.click();
-
-  const modifier = process.platform === "darwin" ? "Meta" : "Control";
-  await page.keyboard.press(`${modifier}+A`).catch(() => null);
-  await page.keyboard.press("Backspace").catch(() => null);
-
-  if (await waitForInputEmpty(locator, 600)) {
-    return;
-  }
-
-  // F02: Preferred fallback — locator.focus() + locator.fill("").
-  // Playwright's fill() triggers the full event chain (React synthetic events +
-  // ProseMirror handleDOMEvents), unlike innerHTML="" + native dispatchEvent which
-  // bypasses React's synthetic pipeline and leaves ProseMirror in dirty state.
-  let fallbackCleared = false;
-  try {
-    await locator.focus();
-    await locator.fill("");
-    fallbackCleared = await waitForInputEmpty(locator, 1200);
-  } catch {
-    // fill() unsupported or threw — fall through to direct DOM fallback
-  }
-
-  if (!fallbackCleared) {
-    await locator
-      .evaluate((element) => {
-        if (
-          element instanceof HTMLTextAreaElement ||
-          element instanceof HTMLInputElement
-        ) {
-          element.value = "";
-        } else if ("value" in element && typeof element.value === "string") {
-          element.value = "";
-        } else if (element.isContentEditable) {
-          element.innerHTML = "";
-        } else {
-          element.textContent = "";
-        }
-
-        element.dispatchEvent(new Event("input", { bubbles: true }));
-        element.dispatchEvent(new Event("change", { bubbles: true }));
-      })
-      .catch(() => null);
-
-    await waitForInputEmpty(locator, 1200);
-  }
+function clipboardFailure(field, cause) {
+  return createAgentError('send_uncertain', sendFailureMessage(field), { blockingField: field },
+    cause ? { cause } : {});
 }
 
 async function pasteText(page, text) {
@@ -227,65 +117,30 @@ async function pasteText(page, text) {
     return;
   }
 
-  await page.evaluate(async (value) => {
-    await navigator.clipboard.writeText(value);
-  }, text);
-
   const modifier = process.platform === "darwin" ? "Meta" : "Control";
-  await page.keyboard.press(`${modifier}+V`);
-}
 
-async function insertTextFast(page, text) {
-  if (!text) {
-    return;
-  }
-
-  await page.keyboard.insertText(text);
-}
-
-function splitPromptForInjection(text) {
-  const chars = Array.from(text || "");
-
-  if (!chars.length) {
-    return {
-      typedText: "",
-      pastedText: "",
-    };
-  }
-
-  const typedChars = resolveLeadTypedChars();
-  const resolvedTypedChars = Math.min(chars.length, typedChars);
-
-  return {
-    typedText: chars.slice(0, resolvedTypedChars).join(""),
-    pastedText: chars.slice(resolvedTypedChars).join(""),
-  };
-}
-
-async function appendText(page, text, baseDelayMs, { preferPaste = true } = {}) {
-  if (!text) {
-    return;
-  }
-
-  if (preferPaste) {
+  // Held for the whole write -> verify -> Cmd+V sequence: the three provider browsers share one
+  // OS clipboard, so without the lock another agent's paste or copy can swap the content in
+  // between and this agent pastes the wrong text.
+  await withClipboardLock(async () => {
     try {
-      await pasteText(page, text);
-      return;
-    } catch {
-      return appendText(page, text, baseDelayMs, { preferPaste: false });
+      await page.evaluate(async (value) => navigator.clipboard.writeText(value), text);
+    } catch (error) {
+      throw clipboardFailure('clipboard.writeText', error);
     }
-  }
 
-  try {
-    await insertTextFast(page, text);
-    return;
-  } catch {
-    await typePromptWithStructuredNewlines(page, text, baseDelayMs);
-  }
-}
+    // A rejected, unavailable or different readback means the paste could carry other
+    // content, so nothing is pasted.
+    const readBack = await page
+      .evaluate(async () => navigator.clipboard.readText())
+      .catch(() => null);
+    if (readBack !== text) {
+      throw clipboardFailure('clipboard.readbackMismatch');
+    }
 
-function resolveInjectionMode(mode) {
-  return mode === "insert" ? "insert" : "paste";
+    await page.keyboard.press(`${modifier}+V`);
+    await sleep(PASTE_HOLD_AFTER_KEYPRESS_MS);
+  });
 }
 
 async function pauseBeforePaste(ms) {
@@ -294,68 +149,19 @@ async function pauseBeforePaste(ms) {
   }
 }
 
-async function injectPromptBlock(
-  page,
-  text,
-  baseDelayMs,
-  { mode = "paste", pauseBeforePasteMs = 0 } = {}
-) {
-  if (resolveInjectionMode(mode) === "insert") {
-    await appendText(page, text, baseDelayMs, { preferPaste: false });
-    return;
-  }
-
-  const segments = splitPromptForInjection(text);
-
-  if (!segments.typedText && !segments.pastedText) {
-    return;
-  }
-
-  if (segments.typedText) {
-    await typePromptWithStructuredNewlines(page, segments.typedText, baseDelayMs);
-  }
-
-  if (segments.pastedText) {
-    await pauseBeforePaste(pauseBeforePasteMs);
-    await appendText(page, segments.pastedText, baseDelayMs, { preferPaste: true });
-  }
-}
-
-async function injectPrompt(page, payload, baseDelayMs, options = {}) {
-  const { promptBlock, summaryBlock } = resolvePromptSections(payload);
-  const pastePauseMs = resolvePromptPastePauseMs();
-  const promptMode = resolveInjectionMode(options.promptMode);
-  const summaryMode = resolveInjectionMode(options.summaryMode);
-
-  if (promptBlock) {
-    await injectPromptBlock(page, promptBlock, baseDelayMs, {
-      mode: promptMode,
-      pauseBeforePasteMs: promptMode === "paste" ? pastePauseMs : 0,
-    });
-  }
-
-  if (summaryBlock) {
-    const summarySuffix = promptBlock ? `\n\n${summaryBlock}` : summaryBlock;
-    const pauseBeforeSummaryMs =
-      promptBlock && summaryMode === "paste" ? pastePauseMs : 0;
-    await pauseBeforePaste(pauseBeforeSummaryMs);
-    await appendText(page, summarySuffix, baseDelayMs, {
-      preferPaste: summaryMode === "paste",
-    });
-  }
+// One clipboard payload includes prompt and carried summary at every length. The normal
+// route has no typing/insert fallback: a failed paste is uncertain, never permission to
+// mutate the composer a second time.
+async function injectPrompt(page, payload) {
+  await pauseBeforePaste(resolvePromptPastePauseMs());
+  await pasteText(page, buildFullPromptText(payload));
 }
 
 module.exports = {
   buildFullPromptText,
-  clearInput,
   findEditableInput,
-  getPromptLines,
-  hasPositiveSubmissionEvidence,
   injectPrompt,
   normalizeInputText,
   pasteText,
   readInputText,
-  typePromptWithStructuredNewlines,
-  waitForInputEmpty,
-  waitForInputText,
 };

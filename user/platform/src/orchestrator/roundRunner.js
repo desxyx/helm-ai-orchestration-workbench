@@ -1,6 +1,7 @@
 const sessionStore = require("../storage/sessionStore");
 const { getErrorCode } = require("../utils/errors");
 const logger = require("../utils/logger");
+const { isCaptured, exclusionReason } = require("../utils/predicates");
 
 function buildTimeoutAutoUnlockContent(agentName) {
   return `[capture timeout] ${agentName} reply was not captured before the provider copy button became available. Dispatch auto-unlocked by operator timeout policy.`;
@@ -112,49 +113,60 @@ async function runRound({
 
     if (completion.reason === "error") {
       const error = new Error(`${agentName} completion polling failed.`);
-      error.code = "completion_polling_failed";
+      error.code = completion.errorCode || "completion_polling_failed";
       throw error;
     }
 
     if (completion.reason === "timeout") {
+      status = "error";
       errorCode = "completion_timeout";
-      logger.warn(`[${agentName}] [wait] Completion timed out; attempting capture.`);
+      logger.warn(`[${agentName}] [wait] Completion timed out; retaining an excluded timeout diagnostic.`);
     }
 
     if (completion.reason === "stalled") {
+      status = "error";
       errorCode = "completion_not_started";
       logger.warn(
-        `[${agentName}] [wait] Reply did not visibly start in time; attempting capture anyway.`
+        `[${agentName}] [wait] Reply did not visibly start in time; captured gate stays closed.`
       );
     }
 
-    logger.stage(agentName, "capture", "Capturing last reply.");
-    if (onStage) {
-      await onStage({ agent: agentName, stage: "capture", message: "Capturing last reply." });
-    }
-    const captureStartedAt = Date.now();
-    try {
-      content = await adapter.captureLastReply(page);
-    } catch (error) {
-      if (completion.reason === "timeout") {
-        timings.captureMs = Date.now() - captureStartedAt;
-        content = buildTimeoutAutoUnlockContent(agentName);
-        logger.warn(
-          `[${agentName}] [capture] ${error.message}. Recording bounded timeout placeholder and auto-unlocking dispatch.`
-        );
-      } else {
+    if (["timeout", "stalled"].includes(completion.reason)) {
+      // BUSY may still be visible on a hard timeout. Never hover/click a Copy
+      // control then, or treat an old turn as a recovery from a start failure.
+      content = completion.reason === "timeout" ? buildTimeoutAutoUnlockContent(agentName) : "";
+      timings.captureMs = 0;
+    } else {
+      logger.stage(agentName, "capture", "Capturing last reply.");
+      if (onStage) {
+        await onStage({ agent: agentName, stage: "capture", message: "Capturing last reply." });
+      }
+      const captureStartedAt = Date.now();
+      try {
+        content = await adapter.captureLastReply(page);
+        if (typeof content !== "string") {
+          const captured = content;
+          content = String(captured?.content || "");
+          if (captured?.errorCode || captured?.status === "error") {
+            status = "error";
+            errorCode = errorCode || captured.errorCode || "capture_timeout";
+          }
+        }
+      } catch (error) {
+        error.code = error.code === "refresh_unverified" ? "refresh_unverified" : "capture_timeout";
         throw error;
       }
+      timings.captureMs = Date.now() - captureStartedAt;
+      logger.info(
+        `[${agentName}] Captured ${content.length} characters (${completionReason}).`
+      );
     }
-    timings.captureMs = Date.now() - captureStartedAt;
-    logger.info(
-      `[${agentName}] Captured ${content.length} characters (${completionReason}).`
-    );
+
   } catch (error) {
     status = "error";
     completionReason = "error";
     errorCode = getErrorCode(error, "round_failed");
-    content = `ERROR: ${error.message}`;
+    content = String(error.content ?? error.details?.content ?? `ERROR: ${error.message}`);
     logger.error(`[${agentName}] Round failed (${errorCode}): ${error.message}`);
   }
 
@@ -166,6 +178,14 @@ async function runRound({
     logger.warn(
       `[${agentName}] [capture] Reply is identical to the previous round's reply; flagged staleSuspect.`
     );
+  }
+
+  // Preserve staleSuspect as a flag on the original result; the common rule
+  // excludes it without silently reclassifying a legitimate repeated reply.
+  const capturedReply = { status, content, errorCode, completionReason, staleSuspect };
+  if (status === "ok" && !staleSuspect && !isCaptured(capturedReply)) {
+    status = "error";
+    errorCode = exclusionReason(capturedReply);
   }
 
   const round = sessionStore.buildRound({

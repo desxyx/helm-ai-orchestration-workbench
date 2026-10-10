@@ -5,13 +5,7 @@ module.exports = {
     url: "https://claude.ai",
     conversationUrl: "https://claude.ai/new",
     userDataDir: "browser-profiles/claude",
-    inputSelector: 'div[contenteditable="true"]',
-    lastReplySelector: '[data-testid="assistant-message"]',
-    replySelectors: [
-      '[data-testid="assistant-message"]',
-      '[data-testid*="assistant"]',
-      "p.font-claude-response-body",
-    ],
+    inputSelector: '[data-testid="chat-input"][contenteditable="true"]',
     verificationText: "Verifying you are human",
     navigationTimeoutMs: 120000,
     inputReadyTimeoutMs: 30000,
@@ -20,9 +14,8 @@ module.exports = {
     // Claude uses React 18 + ProseMirror contentEditable — strictest event requirements.
     injection: {
       inputSettleTimeoutMs: 8000,
-      sendButtonReadyTimeoutMs: 2500,
       // Claude.ai: Enter = newline (not send). Disable shared-base Enter fallback.
-      // Platform-aware send key (Meta+Enter / Control+Enter) is used instead — see claude.js.
+      // Source key mapping is retained; CORE_06 uses only the fact-sheet Send click.
       submitWithEnter: false,
       // CORE_06: Windows-only bounded timing repair for Path A settle false-fail.
       // stableForMs reduced so DOM needs fewer quiet-ms to pass; timeout extended for budget.
@@ -38,12 +31,7 @@ module.exports = {
     url: "https://gemini.google.com",
     conversationUrl: "https://gemini.google.com/app",
     userDataDir: "browser-profiles/gemini",
-    inputSelector: 'textarea, div[contenteditable="true"], rich-textarea .ql-editor',
-    replySelectors: [
-      'div[id^="model-response-message-content"]',
-      ".model-response-text",
-      '[data-message-author-role="model"]',
-    ],
+    inputSelector: 'rich-textarea .ql-editor[contenteditable="true"]',
     verificationText: "Verify it's you",
     navigationTimeoutMs: 120000,
     inputReadyTimeoutMs: 30000,
@@ -53,17 +41,7 @@ module.exports = {
     injection: {},
     completionDetection: {
       stabilityWindowMs: 5000,
-      fastStabilityWindowMs: 1500,
-      fastReplyMinChars: 24,
-      networkQuietMs: 1000,
       startTimeoutMs: 30000,
-      requestUrlPatterns: [
-        "BardFrontendService",
-        "streamGenerateContent",
-        "GenerateContent",
-        "ContentGenerator",
-      ],
-      busyTextPatterns: ["Show thinking", "Thinking"],
       busySelectors: ['button:has-text("Stop")'],
     },
   },
@@ -72,24 +50,7 @@ module.exports = {
     url: "https://chatgpt.com",
     conversationUrl: "https://chatgpt.com/",
     userDataDir: "browser-profiles/chatgpt",
-    inputSelectors: [
-      "#prompt-textarea",
-      '[data-testid="prompt-textarea"]',
-      '[contenteditable="true"][data-lexical-editor="true"]',
-      'form[data-chatgpt-composer] [data-composer-markdown][contenteditable="true"][role="textbox"]',
-      'textarea[data-id="root"]',
-      'textarea[placeholder*="Message"]',
-      "textarea",
-      'div[contenteditable="true"]',
-    ],
-    replySelectors: [
-      '[data-turn-key]:has([data-conversation-role="assistant"])',
-      'section[data-turn="assistant"]',
-      '[data-testid^="conversation-turn-"][data-turn="assistant"]',
-      '[data-testid^="conversation-turn-"][data-message-author-role="assistant"]',
-      '[data-testid^="conversation-turn-"]:has([data-message-author-role="assistant"])',
-      '[data-message-author-role="assistant"]',
-    ],
+    inputSelectors: ['div[contenteditable="true"][role="textbox"]'],
     verificationText: "Verify you are human",
     navigationTimeoutMs: 120000,
     inputReadyTimeoutMs: 30000,
@@ -99,24 +60,7 @@ module.exports = {
     injection: {},
     completionDetection: {
       stabilityWindowMs: 2500,
-      fastStabilityWindowMs: 1500,
-      fastReplyMinChars: 24,
-      networkQuietMs: 1000,
-      busyCooldownMs: 800,
-      postTimeoutGraceMs: 10000,
-      postTimeoutStabilityMs: 3000,
-      requestUrlPatterns: [
-        "backend-api",
-        "/conversation",
-        "/responses",
-        "/messages",
-      ],
-      busyTextPatterns: ["Thinking", "Thought for", "Stop generating"],
-      busySelectors: [
-        'button:has-text("Stop generating")',
-        'button:has-text("Thinking")',
-        'button:has-text("Thought for")',
-      ],
+      busySelectors: ['button:has-text("Stop generating")'],
     },
   },
 
@@ -126,27 +70,24 @@ module.exports = {
     // Shared by all three adapters (none overrides it). Long research/writing replies
     // routinely ran past the old 60s cap; per operator decision, unified at 180s.
     hardTimeoutMs: 180000,
-    networkQuietMs: 1500,
-    startTimeoutMs: 5000,
+    // A visible Stop remains BUSY for up to 15 minutes; generic capture/start
+    // budgets must not truncate a still-generating turn.
+    busyHardTimeoutMs: 900000,
+    // Measured from the single Send click; ends as soon as BUSY or the new reply appears.
+    startTimeoutMs: 30000,
   },
 
   injection: {
     keystrokeDelayMs: 40,
     submitWithEnter: true,
-    promptLeadTypedChars: 100,
     promptPastePauseMs: 1000,
     inputSettleTimeoutMs: 4000,
-    sendSettledTimeoutMs: 2000,
-    sendButtonReadyTimeoutMs: 2500,
-    longPromptThresholdChars: 320,
-    longPromptTypedRatio: 0.3,
   },
 
   // Diagnostic flags — all false by default. Enable only for specific test runs.
   diagnostics: {
-    // Test 2 toggle: set true to bypass type-lead strategy and paste full prompt at once
-    // on Claude and ChatGPT. Isolates whether mixed type+paste is the Windows failure source.
-    // Reset to false after Test 2 completes. Never leave enabled in production.
+    // Compatibility flag retained. Normal injection is now one full paste in
+    // either mode; this flag cannot re-enable lead typing or submit retries.
     forceFullPaste: false,
   },
 

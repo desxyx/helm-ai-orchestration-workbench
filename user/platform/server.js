@@ -12,6 +12,7 @@ const { applyStaleSuspect, runRound } = require("./src/orchestrator/roundRunner"
 const sessionStore = require("./src/storage/sessionStore");
 const auditStore = require("./src/storage/auditStore");
 const logger = require("./src/utils/logger");
+const { isCaptured, exclusionReason } = require("./src/utils/predicates");
 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3030;
 const HOST = "127.0.0.1";
@@ -136,21 +137,10 @@ function getAgentById(agentId) {
 function buildSummary(replies) {
   return AGENTS.map(({ id, label }) => {
     const reply = replies.find((item) => item.agent === id);
+    if (!reply) return "";
     const replyContent = String(reply?.content || "").trim();
-
-    if (!replyContent) {
-      return "";
-    }
-
-    if (reply?.status && reply.status !== "ok") {
-      return "";
-    }
-
-    if (/^ERROR:/i.test(replyContent)) {
-      return "";
-    }
-
     const heading = label.charAt(0).toUpperCase() + label.slice(1);
+    if (!isCaptured(reply)) return `[${heading} reply excluded: ${exclusionReason(reply)}]`;
     return [
       `[Reply Start: ${heading}]`,
       "~~~~text",
@@ -363,11 +353,12 @@ async function runAgent({ agent, prompt, roundNumber, session }) {
   activeRun.agents[agent.id] = {
     ...activeRun.agents[agent.id],
     stage: "done",
-    status: reply.status === "ok" ? "done" : "error",
-    message: reply.status === "ok" ? "Reply captured." : reply.content,
+    status: isCaptured(reply) ? "done" : "error",
+    message: isCaptured(reply) ? "Reply captured." : `Reply excluded: ${exclusionReason(reply)}`,
     content: reply.content,
     completionReason: reply.completionReason,
     errorCode: reply.errorCode,
+    staleSuspect: reply.staleSuspect === true,
     metrics: round.metrics[agent.id] || round.metrics,
   };
 
@@ -375,7 +366,11 @@ async function runAgent({ agent, prompt, roundNumber, session }) {
     AGENTS.map(({ id }) => ({
       agent: id,
       content: activeRun.agents[id].content,
-    })).filter((item) => item.content)
+      status: activeRun.agents[id].status === "done" ? "ok" : "error",
+      errorCode: activeRun.agents[id].errorCode,
+      completionReason: activeRun.agents[id].completionReason,
+      staleSuspect: activeRun.agents[id].staleSuspect,
+    })).filter((item) => item.content || item.errorCode)
   );
 
   sendEvent("agent_result", {
@@ -557,9 +552,6 @@ async function handleRefreshReply({ sessionId, roundNumber, agentId }) {
         summary: "",
         createdAt: activeRun?.startedAt || new Date().toISOString(),
       };
-      currentSession.rounds.push(targetRound);
-      currentSession.rounds.sort((a, b) => a.roundNumber - b.roundNumber);
-      sessionStore.writeSession(currentSession);
     }
   } else {
     const latestRound = getLatestRound(currentSession);
@@ -584,11 +576,33 @@ async function handleRefreshReply({ sessionId, roundNumber, agentId }) {
   await browser.page.bringToFront().catch(() => null);
   // force: true — this is an operator-initiated manual refresh, so the normal automatic-capture
   // visibility/enabled gate is bypassed in favor of grabbing the bottom-most copy control directly.
-  const content = await agent.adapter.captureLastReply(browser.page, { force: true });
+  let content = "";
+  let captureErrorCode = null;
+  try {
+    const captured = await agent.adapter.captureLastReply(browser.page, { force: true });
+    if (typeof captured === "string") content = captured;
+    else {
+      content = String(captured?.content || "");
+      captureErrorCode = captured?.errorCode || (captured?.status === "error" ? "capture_timeout" : null);
+    }
+  } catch (error) {
+    // A diagnostic recovery must keep its raw native Copy text inspectable.
+    content = String(error.content ?? error.details?.content ?? "");
+    captureErrorCode = error.code === "refresh_unverified" ? "refresh_unverified" : "capture_timeout";
+  }
+  if (!content.trim()) {
+    const error = new Error('Manual refresh failed: capture_timeout; previous reply is preserved.');
+    error.code = 'capture_timeout';
+    throw error;
+  }
+  if (!currentSession.rounds.includes(targetRound)) {
+    currentSession.rounds.push(targetRound);
+    currentSession.rounds.sort((a, b) => a.roundNumber - b.roundNumber);
+  }
   const refreshedAt = new Date().toISOString();
   const existingReply = targetRound.replies.find((reply) => reply.agent === agent.id);
-  const previousStatus = existingReply?.status || null;
   const previousCompletionReason = existingReply?.completionReason || null;
+  const previousWasCaptured = isCaptured(existingReply);
 
   const reply =
     existingReply ||
@@ -610,10 +624,10 @@ async function handleRefreshReply({ sessionId, roundNumber, agentId }) {
   reply.refreshedAt = refreshedAt;
   reply.refreshCount = (reply.refreshCount || 0) + 1;
   reply.captureMode = "manual_refresh";
-  reply.status = "ok";
-  reply.errorCode = null;
+  reply.status = captureErrorCode ? "error" : "ok";
+  reply.errorCode = captureErrorCode;
   reply.completionReason =
-    previousStatus === "ok" && previousCompletionReason
+    previousWasCaptured && previousCompletionReason
       ? previousCompletionReason
       : "manual_refresh";
   applyStaleSuspect(reply, currentSession, roundNumber);
@@ -630,10 +644,9 @@ async function handleRefreshReply({ sessionId, roundNumber, agentId }) {
   // F04: Only promote manual-refresh content into the carry layer when ALL agents
   // have valid captured replies. A REFRESH that captured wrong-round content would
   // otherwise silently corrupt the next round's council reference block.
-  const allRepliesVerified = AGENTS.every(({ id }) => {
-    const r = targetRound.replies.find((reply) => reply.agent === id);
-    return r && r.status === "ok" && r.content && !r.content.startsWith("ERROR:");
-  });
+  const allRepliesVerified = AGENTS.every(({ id }) =>
+    isCaptured(targetRound.replies.find((reply) => reply.agent === id))
+  );
 
   if (allRepliesVerified) {
     activeSession.carriedSummary = targetRound.summary;
@@ -657,11 +670,12 @@ async function handleRefreshReply({ sessionId, roundNumber, agentId }) {
       activeRun.agents[agent.id] = {
         ...activeRun.agents[agent.id],
         stage: "capture",
-        status: "done",
-        message: "Reply manually refreshed.",
+        status: isCaptured(reply) ? "done" : "error",
+        message: isCaptured(reply) ? "Reply manually refreshed." : `Reply excluded: ${exclusionReason(reply)}`,
         content: reply.content,
         completionReason: reply.completionReason,
-        errorCode: null,
+        errorCode: reply.errorCode,
+        staleSuspect: reply.staleSuspect === true,
       };
     }
   }
@@ -735,6 +749,12 @@ function serveStatic(res, pathname) {
     }[ext] || "application/octet-stream";
 
   res.writeHead(200, { "Content-Type": contentType });
+  if (normalizedPath === path.join(PUBLIC_DIR, "app.js")) {
+    // Deliver the very same predicate used by Node without a second browser copy.
+    const shared = fs.readFileSync(path.join(__dirname, "src/utils/predicates.js"), "utf8");
+    res.end(shared + "\n" + fs.readFileSync(normalizedPath, "utf8"));
+    return;
+  }
   fs.createReadStream(normalizedPath).pipe(res);
 }
 

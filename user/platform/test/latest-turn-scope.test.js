@@ -67,7 +67,7 @@ async function withPage(t, html, run) {
 test("an earlier turn's copy button never counts for the latest turn", async (t) => {
   await withPage(t, geminiTurn("round 1 reply", true) + geminiTurn("round 2 stre", false), async (page) => {
     const state = await readLatestTurnState(page, GEMINI_SCOPE);
-    assert.deepEqual(state, { count: 2, copyAttached: false, textLength: 12 });
+    assert.deepEqual({ ...state, textDigest: typeof state.textDigest }, { count: 2, started: true, id: 'latest', copyAttached: false, textLength: 12, textDigest: 'string' });
 
     const locator = await locateLatestTurnCopyButton(page, GEMINI_SCOPE);
     assert.equal(await locator.count(), 0);

@@ -2,7 +2,6 @@ const assert = require("node:assert/strict");
 const test = require("node:test");
 
 const {
-  hasPositiveSubmissionEvidence,
   injectPrompt,
 } = require("../src/utils/prompt");
 
@@ -14,6 +13,9 @@ function createPageFixture({ failInsert = false } = {}) {
     events,
     page: {
       evaluate: async (_callback, value) => {
+        if (value === undefined) {
+          return clipboardText; // clipboard read-back
+        }
         clipboardText = value;
         events.push(["clipboard", value]);
       },
@@ -35,7 +37,7 @@ function createPageFixture({ failInsert = false } = {}) {
   };
 }
 
-test("insert mode keeps a long prompt and summary off the clipboard", async () => {
+test("obsolete insert mode still uses one full paste for a long prompt and summary", async () => {
   const fixture = createPageFixture();
   const longPrompt = "prompt ".repeat(700);
   const longSummary = "summary ".repeat(1500);
@@ -47,24 +49,70 @@ test("insert mode keeps a long prompt and summary off the clipboard", async () =
     { promptMode: "insert", summaryMode: "insert" }
   );
 
-  assert.deepEqual(fixture.events, [
-    ["insertText", longPrompt],
-    ["insertText", `\n\n${longSummary}`],
-  ]);
+  const full = `${longPrompt}\n\n${longSummary}`;
+  assert.deepEqual(fixture.events, [["clipboard", full], ["press", PASTE_KEY, full]]);
 });
 
-test("default summary mode preserves the existing clipboard-paste path", async () => {
+const PASTE_KEY = process.platform === "darwin" ? "Meta+V" : "Control+V";
+
+test("every long non-empty payload uses one full clipboard paste without lead typing", async () => {
+  const fixture = createPageFixture();
+  const prompt = "P".repeat(150);
+  const summary = "S".repeat(300);
+  const full = `${prompt}\n\n${summary}`;
+
+  await injectPrompt(fixture.page, { promptBlock: prompt, summaryBlock: summary }, 0);
+
+  assert.deepEqual(fixture.events.filter(([name]) => name === "clipboard"), [["clipboard", full]]);
+  assert.deepEqual(fixture.events.filter(([name]) => name === "press"), [["press", PASTE_KEY, full]]);
+  assert.equal(fixture.events.some(([name]) => name === "type" || name === "insertText"), false);
+});
+
+test("every short non-empty payload uses one full clipboard paste without lead typing", async () => {
   const fixture = createPageFixture();
 
   await injectPrompt(fixture.page, { promptBlock: "", summaryBlock: "summary" }, 0);
 
-  assert.deepEqual(fixture.events, [
-    ["clipboard", "summary"],
-    ["press", process.platform === "darwin" ? "Meta+V" : "Control+V", "summary"],
-  ]);
+  assert.deepEqual(fixture.events.filter(([name]) => name === "clipboard"), [["clipboard", "summary"]]);
+  assert.deepEqual(fixture.events.filter(([name]) => name === "press"), [["press", PASTE_KEY, "summary"]]);
+  assert.equal(fixture.events.some(([name]) => name === "type" || name === "insertText"), false);
 });
 
-test("insert mode falls back to structured typing without clipboard paste", async () => {
+test("concurrent pastes from different agents never interleave on the shared clipboard", async () => {
+  const { pasteText } = require("../src/utils/prompt");
+  const shared = { clipboard: "", log: [] };
+  const makePage = (name) => ({
+    evaluate: async (_callback, value) => {
+      if (value === undefined) {
+        return shared.clipboard;
+      }
+      await new Promise((resolve) => setTimeout(resolve, 5));
+      shared.clipboard = value;
+    },
+    keyboard: {
+      press: async () => {
+        shared.log.push([name, shared.clipboard]);
+      },
+    },
+  });
+
+  await Promise.all([
+    pasteText(makePage("claude"), "claude-text"),
+    pasteText(makePage("chatgpt"), "chatgpt-text"),
+    pasteText(makePage("gemini"), "gemini-text"),
+  ]);
+
+  assert.deepEqual(
+    shared.log.sort(),
+    [
+      ["chatgpt", "chatgpt-text"],
+      ["claude", "claude-text"],
+      ["gemini", "gemini-text"],
+    ]
+  );
+});
+
+test("obsolete insert mode keeps newlines in one full paste even when insert is unavailable", async () => {
   const fixture = createPageFixture({ failInsert: true });
 
   await injectPrompt(
@@ -74,32 +122,6 @@ test("insert mode falls back to structured typing without clipboard paste", asyn
     { promptMode: "insert" }
   );
 
-  assert.equal(fixture.events.some(([name]) => name === "clipboard"), false);
-  assert.deepEqual(fixture.events, [
-    ["insertText", "A\nB"],
-    ["type", "A"],
-    ["press", "Shift+Enter", ""],
-    ["type", "B"],
-  ]);
+  assert.deepEqual(fixture.events, [["clipboard", "A\nB"], ["press", PASTE_KEY, "A\nB"]]);
 });
 
-test("an empty composer alone is not submission evidence", () => {
-  assert.equal(
-    hasPositiveSubmissionEvidence({
-      currentInputEmpty: true,
-      stopButtonVisible: false,
-      userTurnAdded: false,
-      assistantTurnAdded: false,
-      urlChanged: false,
-    }),
-    false
-  );
-
-  assert.equal(
-    hasPositiveSubmissionEvidence({
-      currentInputEmpty: true,
-      userTurnAdded: true,
-    }),
-    true
-  );
-});
