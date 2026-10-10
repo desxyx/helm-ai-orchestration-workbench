@@ -2,6 +2,31 @@
 
 Public development story for H.E.L.M.
 
+## 2026-10-10
+
+The platform transport layer was rebuilt around one goal set by the Chair: group paste, group send, and group capture must work across all three providers. Some read/write fidelity was knowingly traded for that, because the manual backup controls (Refresh Reply, Shift override) cover the edge cases.
+
+How the work was run:
+
+- Midway through, the Chair judged that the upgrade had drifted: too many ad-hoc rounds, a reviewer drafting designs, and the operations steward running the live service itself. The task was reset rather than patched forward. Earlier execution files were kept as history only, and any role or action prompts inside them were declared void.
+- Roles were narrowed after the reset. The Executor writes all code and runs its own live self-tests. The Reviewer only reviews code, data, and reports, and does not propose designs. The operations steward gates stages, keeps the records, and touches the live service only for the final cold-start acceptance.
+- Every candidate was pinned by per-file SHA-256 locators, and every review bound itself to exact hashes. Evidence rounds were write-once. Where a write-once file was appended to by mistake, the mistake was recorded and later rounds used new files.
+- Rework rounds were capped. The last candidate was declared final before it was built, with a rule written in advance: any further finding of the same class becomes an accepted residual instead of opening another round. This stopped the review loop from narrowing the same timing window forever.
+- Known limits were recorded as explicit Chair decisions, never as hidden passes. Example: a provider's fresh session can fail to send when its very first message is very long. That is accepted because, in real use, the first message is always short.
+
+Platform changes in `user/platform`:
+
+- Group send: one clipboard paste and one Send click per provider, wrapped in a composer transaction with a shared clipboard lock (`clipboardLock.js`, `composerTransaction.js`). There is no blind resend. If sending cannot be confirmed, the reply is excluded instead of retried.
+- Completion: the start of a reply is detected from the provider's Stop/busy control or a new assistant turn. Completion requires the Stop control to be gone, followed by two stable Copy probes.
+- Capture: native Copy, scoped to the new turn only. The capture target is re-checked after the clipboard lock is acquired, and Copy must be clickable immediately, with no long wait in which the reply could be swapped. All paths share one `isCaptured` predicate (`predicates.js`).
+- Long prompts with lines starting with `- ` are no longer refused, and the composer locator no longer misreads a fresh chat.
+- Excluded or stale replies stay marked and are kept out of the carried summary. The dispatch guard and Shift override behave as documented.
+- The runtime got smaller while gaining these guarantees. The test suite grew to 307 offline tests (`node --test test/*.test.js`), including negative tests whose mutation controls show they fail when the fix is removed.
+
+Acceptance: the Reviewer passed the final candidate on evidence. After that, a separate cold-start group run covered short, 53K-character long, and continuation prompts, plus Refresh, Shift, stale detection, and the dispatch guard. It finished in one uninterrupted pass: 15 pastes, 15 sends, 16 captures, zero send or capture failures. The Chair then accepted the stage.
+
+The lesson this time was about process, not code: when a task drifts, reset roles and evidence rules first, then let the code follow.
+
 ## 2026-09-28
 
 The three governing documents were refreshed together: Council Constitution Public v1.7, Executor Charter Public v1.0, and UserOps Charter Public v0.5. The previous public editions are kept under the archive folders so the evolution stays visible.
