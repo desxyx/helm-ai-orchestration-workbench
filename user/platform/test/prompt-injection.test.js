@@ -125,3 +125,145 @@ test("obsolete insert mode keeps newlines in one full paste even when insert is 
   assert.deepEqual(fixture.events, [["clipboard", "A\nB"], ["press", PASTE_KEY, "A\nB"]]);
 });
 
+
+// Each platform VM uses the same cached real clipboard lock as the direct-require tests above.
+const realConfig = require("../config");
+const realErrors = require("../src/utils/errors");
+const realClipboardLock = require("../src/utils/clipboardLock");
+const { load, clock } = require("./core06-fixtures/harness");
+
+function loadPlatformPrompt(platform) {
+  const fixtureTime = clock();
+  return load("src/utils/prompt.js", {
+    time: fixtureTime,
+    globals: { process: { platform, env: {} } },
+    overrides: {
+      "../../config": realConfig,
+      "./errors": realErrors,
+      "./time": { sleep: fixtureTime.sleep },
+      "./clipboardLock": realClipboardLock,
+    },
+  }).api;
+}
+
+function createReadbackFixture({ readback, rejectWrite = false, rejectRead = false }) {
+  const events = [];
+  return {
+    events,
+    page: {
+      evaluate: async (_callback, value) => {
+        if (value !== undefined) {
+          events.push(["write", value]);
+          if (rejectWrite) throw new Error("write denied");
+          return;
+        }
+        events.push(["read"]);
+        if (rejectRead) throw new Error("read denied");
+        return readback;
+      },
+      keyboard: {
+        press: async key => events.push(["press", key]),
+        type: async value => events.push(["type", value]),
+        insertText: async value => events.push(["insertText", value]),
+      },
+    },
+  };
+}
+
+const boundaryLF = "A \u4e2d\u6587 😀\n\nB\t C\u00a0D\nend";
+const boundaryCRLF = boundaryLF.replace(/\n/g, "\r\n");
+for (const platform of ["win32", "darwin", "linux"]) {
+  const key = platform === "darwin" ? "Meta+V" : "Control+V";
+  for (const [name, text, readback, allowed] of [
+    ["exact LF", boundaryLF, boundaryLF, true],
+    ["exact CRLF", boundaryCRLF, boundaryCRLF, true],
+    ["LF to CRLF", boundaryLF, boundaryCRLF, platform === "win32"],
+    ["CRLF to LF", boundaryCRLF, boundaryLF, platform === "win32"],
+  ]) {
+    test(`clipboard boundary ${platform}: ${name}`, async () => {
+      const api = loadPlatformPrompt(platform);
+      const fixture = createReadbackFixture({ readback });
+      if (allowed) {
+        await api.pasteText(fixture.page, text);
+        assert.deepEqual(fixture.events, [["write", text], ["read"], ["press", key]]);
+      } else {
+        await assert.rejects(() => api.pasteText(fixture.page, text), error =>
+          error.code === "send_uncertain" && error.details.blockingField === "clipboard.readbackMismatch");
+        assert.deepEqual(fixture.events, [["write", text], ["read"]]);
+      }
+    });
+  }
+
+  for (const [name, options, field, expectedReads] of [
+    ["write rejection", { rejectWrite: true }, "clipboard.writeText", 0],
+    ["read rejection", { rejectRead: true }, "clipboard.readbackMismatch", 1],
+    ["null readback", { readback: null }, "clipboard.readbackMismatch", 1],
+    ["empty readback", { readback: "" }, "clipboard.readbackMismatch", 1],
+    ["non-string readback", { readback: { text: boundaryLF } }, "clipboard.readbackMismatch", 1],
+  ]) {
+    test(`clipboard boundary ${platform}: ${name} stays fail-closed`, async () => {
+      const fixture = createReadbackFixture(options);
+      await assert.rejects(() => loadPlatformPrompt(platform).pasteText(fixture.page, boundaryLF), error =>
+        error.code === "send_uncertain" && error.details.blockingField === field);
+      assert.deepEqual(fixture.events, [["write", boundaryLF], ...Array.from({ length: expectedReads }, () => ["read"])]);
+    });
+  }
+}
+
+for (const [name, readback] of [
+  ["missing body character", boundaryCRLF.replace("B", "")],
+  ["extra body character", boundaryCRLF + "x"],
+  ["missing newline", boundaryCRLF.replace("\r\n", "")],
+  ["missing blank line", boundaryCRLF.replace("\r\n\r\n", "\r\n")],
+  ["inserted space", boundaryCRLF.replace("B", " B")],
+  ["NBSP replaced", boundaryCRLF.replace("\u00a0", " ")],
+  ["tab replaced", boundaryCRLF.replace("\t", " ")],
+  ["emoji changed", boundaryCRLF.replace("😀", "😁")],
+  ["other seat text", "other-seat\r\nreply"],
+]) {
+  test(`clipboard boundary win32: ${name} with CRLF stays rejected`, async () => {
+    const fixture = createReadbackFixture({ readback });
+    await assert.rejects(() => loadPlatformPrompt("win32").pasteText(fixture.page, boundaryLF), error =>
+      error.code === "send_uncertain" && error.details.blockingField === "clipboard.readbackMismatch");
+    assert.deepEqual(fixture.events, [["write", boundaryLF], ["read"]]);
+  });
+}
+
+test("clipboard boundary win32: lone CR cannot be exchanged for LF", async () => {
+  const fixture = createReadbackFixture({ readback: "A\nB" });
+  await assert.rejects(() => loadPlatformPrompt("win32").pasteText(fixture.page, "A\rB"), error =>
+    error.code === "send_uncertain" && error.details.blockingField === "clipboard.readbackMismatch");
+  assert.deepEqual(fixture.events, [["write", "A\rB"], ["read"]]);
+});
+
+test("A22: platform VMs serialize concurrent pastes on one real clipboard lock", async () => {
+  const shared = { clipboard: "", log: [] };
+  const makePage = name => ({
+    evaluate: async (_callback, value) => {
+      if (value === undefined) return shared.clipboard;
+      await new Promise(resolve => setTimeout(resolve, 5));
+      shared.clipboard = value;
+    },
+    keyboard: {
+      press: async () => {
+        // Real host delay creates an overlap window even though the VM's hold sleep is virtual.
+        await new Promise(resolve => setTimeout(resolve, 15));
+        shared.log.push([name, shared.clipboard]);
+      },
+    },
+  });
+  await Promise.all([
+    loadPlatformPrompt("win32").pasteText(makePage("claude"), "claude-text"),
+    loadPlatformPrompt("darwin").pasteText(makePage("chatgpt"), "chatgpt-text"),
+    loadPlatformPrompt("linux").pasteText(makePage("gemini"), "gemini-text"),
+  ]);
+  // Same clipboard-content assertion as the original direct-require concurrency test.
+  assert.deepEqual(
+    shared.log.sort(),
+    [
+      ["chatgpt", "chatgpt-text"],
+      ["claude", "claude-text"],
+      ["gemini", "gemini-text"],
+    ]
+  );
+});

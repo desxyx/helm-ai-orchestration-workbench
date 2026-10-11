@@ -134,7 +134,14 @@ async function pasteText(page, text) {
     const readBack = await page
       .evaluate(async () => navigator.clipboard.readText())
       .catch(() => null);
-    if (readBack !== text) {
+    let readbackMatches = readBack === text;
+    if (process.platform === 'win32') {
+      readbackMatches = typeof readBack === 'string' &&
+        readBack.replace(/\r\n/g, '\n') === text.replace(/\r\n/g, '\n');
+    } else if (process.platform === 'darwin') {
+      readbackMatches = readBack === text;
+    }
+    if (!readbackMatches) {
       throw clipboardFailure('clipboard.readbackMismatch');
     }
 

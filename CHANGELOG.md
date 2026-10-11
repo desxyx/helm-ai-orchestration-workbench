@@ -2,6 +2,16 @@
 
 Public development story for H.E.L.M.
 
+## 2026-10-11
+
+The platform rebuild was carried over to Windows, and both platforms now pass on the same code.
+
+- The Chair pointed out a gap: the rebuild had been accepted on macOS only, even though the platform is meant to run on both macOS and Windows. Much of the platform's earlier instability came from each side patching only its own machine.
+- A separate Windows team (Executor, Reviewer, and operations steward) ran the accepted build on Windows. They found one real defect. Windows rewrote line endings on the clipboard (LF to CRLF), so the strict paste readback check refused every multi-line message.
+- The fix is a single `process.platform === 'win32'` branch in `user/platform/src/utils/prompt.js`. Only on Windows, CRLF and LF count as equal when the clipboard is read back. Any other difference is still refused, and macOS keeps the exact comparison unchanged. 38 new tests cover the win32, darwin, and other branches, plus the shared clipboard lock. The suite now has 345 tests.
+- Each side verified independently. On Windows: offline suite, a 57K-character paste into the composer, a live three-provider smoke run, and a cold-start check by the operations steward. On macOS, after pulling the Windows commit: offline 345/345, the Windows steward's smoke script, and a full live cold-start group run (15 pastes, 15 sends, 16 captures, zero failures).
+- Added `user/platform/DUAL_PLATFORM_RULES.md`. Every future platform change must keep one codebase and put platform differences only in config overrides or explicit `process.platform` branches. It must also pass offline and live checks on both macOS and Windows before it counts as done.
+
 ## 2026-10-10
 
 The platform transport layer was rebuilt around one goal set by the Chair: group paste, group send, and group capture must work across all three providers. Some read/write fidelity was knowingly traded for that, because the manual backup controls (Refresh Reply, Shift override) cover the edge cases.
