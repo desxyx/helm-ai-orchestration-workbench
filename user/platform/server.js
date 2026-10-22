@@ -349,12 +349,24 @@ async function runAgent({ agent, prompt, roundNumber, session }) {
     },
   });
 
-  const reply = round.replies[0];
+  // A manual Refresh of this seat that landed while it was still running is kept on disk
+  // (sessionStore.appendRound); publish that result rather than the late automatic one.
+  const persisted = sessionStore
+    .loadSession(session.sessionId)
+    ?.rounds?.find((item) => item.roundNumber === roundNumber)
+    ?.replies?.find((item) => item.agent === agent.id);
+  const manual = persisted?.captureMode === "manual_refresh";
+  if (manual) {
+    logger.info(`[${agent.id}] Automatic result for round_${roundNumber} superseded by the manual refresh.`);
+  }
+  const reply = manual ? persisted : round.replies[0];
   activeRun.agents[agent.id] = {
     ...activeRun.agents[agent.id],
     stage: "done",
     status: isCaptured(reply) ? "done" : "error",
-    message: isCaptured(reply) ? "Reply captured." : `Reply excluded: ${exclusionReason(reply)}`,
+    message: isCaptured(reply)
+      ? manual ? "Reply manually refreshed." : "Reply captured."
+      : `Reply excluded: ${exclusionReason(reply)}`,
     content: reply.content,
     completionReason: reply.completionReason,
     errorCode: reply.errorCode,
@@ -535,14 +547,78 @@ async function handleRefreshReply({ sessionId, roundNumber, agentId }) {
     throw new Error("Manual refresh is only available for the active session.");
   }
 
-  const currentSession = sessionStore.loadSession(activeSession.session.sessionId);
-  if (!currentSession) {
+  const snapshot = sessionStore.loadSession(activeSession.session.sessionId);
+  if (!snapshot) {
     throw new Error("Active session data could not be loaded.");
   }
 
-  let targetRound = getRoundByNumber(currentSession, roundNumber);
+  if (!isLiveRunningRound) {
+    const latestRound = getLatestRound(snapshot);
+    if (!latestRound) {
+      throw new Error("There is no captured round to refresh yet.");
+    }
 
-  if (isLiveRunningRound) {
+    if (!Number.isInteger(roundNumber) || roundNumber !== latestRound.roundNumber) {
+      throw new Error(
+        "Manual refresh is only available for the latest round in the active session."
+      );
+    }
+  }
+
+  logger.info(
+    `[${agent.id}] Manual refresh requested for ${snapshot.sessionId} / round_${roundNumber}.`
+  );
+
+  // What this refresh was allowed against; re-established after the capture below.
+  const owner = activeSession;
+  const runAtStart = activeRun;
+  const nextRoundAtStart = activeSession.nextRoundNumber;
+  const browser = activeSession.browsers[agent.id];
+  await browser.page.bringToFront().catch(() => null);
+  // force: true — the operator's Refresh names the page's latest reply as this round's reply
+  // (operator rule); the normal automatic-capture gates are bypassed.
+  let content = "";
+  let captureErrorCode = null;
+  try {
+    const captured = await agent.adapter.captureLastReply(browser.page, { force: true });
+    if (typeof captured === "string") content = captured;
+    else {
+      content = String(captured?.content || "");
+      captureErrorCode = captured?.errorCode || (captured?.status === "error" ? "capture_timeout" : null);
+    }
+  } catch (error) {
+    content = String(error.content ?? error.details?.content ?? "");
+    captureErrorCode = "capture_timeout";
+  }
+  if (!content.trim()) {
+    const error = new Error('Manual refresh failed: capture_timeout; previous reply is preserved.');
+    error.code = 'capture_timeout';
+    throw error;
+  }
+
+  // Commit. Everything below is synchronous: no other refresh, round write or session switch
+  // can interleave between reading the session from disk and writing it back.
+  const superseded = (reason) => {
+    logger.warn(`[${agent.id}] Manual refresh discarded: ${reason}; nothing was written.`);
+    const error = new Error(`Manual refresh discarded: ${reason}. Nothing was written; refresh again.`);
+    error.code = "refresh_superseded";
+    return error;
+  };
+  if (activeSession !== owner || owner.browsers?.[agent.id] !== browser) {
+    throw superseded("the active session changed during capture");
+  }
+  const stillLive = Boolean(
+    isLiveRunningRound &&
+      activeRun === runAtStart &&
+      activeRun.status === "running" &&
+      activeRun.roundNumber === roundNumber
+  );
+  const currentSession = sessionStore.loadSession(sessionId);
+  if (!currentSession) {
+    throw superseded("the active session data could not be loaded");
+  }
+  let targetRound = getRoundByNumber(currentSession, roundNumber);
+  if (stillLive) {
     if (!targetRound || targetRound.roundNumber !== roundNumber) {
       targetRound = {
         roundNumber,
@@ -554,47 +630,18 @@ async function handleRefreshReply({ sessionId, roundNumber, agentId }) {
       };
     }
   } else {
-    const latestRound = getLatestRound(currentSession);
-    if (!latestRound) {
-      throw new Error("There is no captured round to refresh yet.");
+    // A finished round stays refreshable only while it is still the latest one: no other
+    // round running or started since (a live round that finished meanwhile counts once).
+    const expectedNextRound = nextRoundAtStart + (isLiveRunningRound ? 1 : 0);
+    if (activeRun && activeRun.status === "running") {
+      throw superseded("another round is running");
     }
-
-    if (!Number.isInteger(roundNumber) || roundNumber !== latestRound.roundNumber) {
-      throw new Error(
-        "Manual refresh is only available for the latest round in the active session."
-      );
+    if (activeSession.nextRoundNumber !== expectedNextRound ||
+      getLatestRound(currentSession)?.roundNumber !== roundNumber || !targetRound) {
+      throw superseded("a newer round exists");
     }
-
-    targetRound = latestRound;
   }
 
-  logger.info(
-    `[${agent.id}] Manual refresh requested for ${currentSession.sessionId} / round_${roundNumber}.`
-  );
-
-  const browser = activeSession.browsers[agent.id];
-  await browser.page.bringToFront().catch(() => null);
-  // force: true — this is an operator-initiated manual refresh, so the normal automatic-capture
-  // visibility/enabled gate is bypassed in favor of grabbing the bottom-most copy control directly.
-  let content = "";
-  let captureErrorCode = null;
-  try {
-    const captured = await agent.adapter.captureLastReply(browser.page, { force: true });
-    if (typeof captured === "string") content = captured;
-    else {
-      content = String(captured?.content || "");
-      captureErrorCode = captured?.errorCode || (captured?.status === "error" ? "capture_timeout" : null);
-    }
-  } catch (error) {
-    // A diagnostic recovery must keep its raw native Copy text inspectable.
-    content = String(error.content ?? error.details?.content ?? "");
-    captureErrorCode = error.code === "refresh_unverified" ? "refresh_unverified" : "capture_timeout";
-  }
-  if (!content.trim()) {
-    const error = new Error('Manual refresh failed: capture_timeout; previous reply is preserved.');
-    error.code = 'capture_timeout';
-    throw error;
-  }
   if (!currentSession.rounds.includes(targetRound)) {
     currentSession.rounds.push(targetRound);
     currentSession.rounds.sort((a, b) => a.roundNumber - b.roundNumber);
@@ -641,22 +688,10 @@ async function handleRefreshReply({ sessionId, roundNumber, agentId }) {
   sessionStore.writeSession(currentSession);
   activeSession.session = currentSession;
 
-  // F04: Only promote manual-refresh content into the carry layer when ALL agents
-  // have valid captured replies. A REFRESH that captured wrong-round content would
-  // otherwise silently corrupt the next round's council reference block.
-  const allRepliesVerified = AGENTS.every(({ id }) =>
-    isCaptured(targetRound.replies.find((reply) => reply.agent === id))
-  );
-
-  if (allRepliesVerified) {
-    activeSession.carriedSummary = targetRound.summary;
-    logger.info(`[${agent.id}] Manual refresh: all agents verified, carriedSummary updated.`);
-  } else {
-    logger.warn(
-      `[${agent.id}] Manual refresh: not all agents verified — carriedSummary NOT updated. ` +
-        `Previous summary preserved.`
-    );
-  }
+  // The refreshed round's summary is what the next round carries. Excluded seats appear only
+  // as markers (buildSummary), exactly as when a dispatched round completes.
+  activeSession.carriedSummary = targetRound.summary;
+  logger.info(`[${agent.id}] Manual refresh: carriedSummary updated from round_${roundNumber}.`);
 
   if (
     activeRun &&

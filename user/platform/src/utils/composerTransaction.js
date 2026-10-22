@@ -81,9 +81,11 @@ async function readComposer(editor, spec) {
     cardSelector: spec.attachmentSelector }).catch(() => null);
 }
 
-// Inline: non-empty editor text unchanged for stableForMs. Attachment: the current card
-// set unchanged and not visibly processing. Provider formatting of the text is accepted.
-async function waitForSettled(editor, spec, { timeoutMs, stableForMs }) {
+// Cards are counted against baseCards, the attachments the operator had already added
+// before the paste. Inline (no new card): non-empty editor text unchanged for stableForMs.
+// Attachment (cards grew): the card set unchanged. Either way no card may still be
+// processing. Provider formatting of the text is accepted.
+async function waitForSettled(editor, spec, { timeoutMs, stableForMs }, baseCards = 0) {
   const deadline = Date.now() + timeoutMs;
   let fingerprint = null;
   let since = Date.now();
@@ -92,19 +94,19 @@ async function waitForSettled(editor, spec, { timeoutMs, stableForMs }) {
     snapshot = await readComposer(editor, spec);
     if (snapshot?.error) return { ready: false, error: true, mode: 'attachment', cards: snapshot.cards };
     if (snapshot) {
-      const mode = snapshot.cards > 0 ? 'attachment' : 'inline';
+      const mode = snapshot.cards > baseCards ? 'attachment' : 'inline';
       const next = `${snapshot.cards}:${snapshot.busy}:${normalizeInputText(snapshot.text).length}`;
       if (next !== fingerprint) {
         fingerprint = next;
         since = Date.now();
       }
-      const hasContent = mode === 'attachment' ? !snapshot.busy : Boolean(normalizeInputText(snapshot.text));
+      const hasContent = !snapshot.busy && (mode === 'attachment' || Boolean(normalizeInputText(snapshot.text)));
       const needed = mode === 'attachment' ? Math.max(stableForMs, ATTACHMENT_STABLE_MS) : stableForMs;
       if (hasContent && Date.now() - since >= needed) return { ready: true, mode, cards: snapshot.cards };
     }
     await sleep(100);
   }
-  return { ready: false, mode: snapshot?.cards ? 'attachment' : 'inline', cards: snapshot?.cards ?? null };
+  return { ready: false, mode: snapshot?.cards > baseCards ? 'attachment' : 'inline', cards: snapshot?.cards ?? null };
 }
 
 // Send must stay actionable (Playwright trial click: visible, enabled, stable, receives
@@ -205,7 +207,12 @@ async function sendOnce(page, payload, spec) {
     if (await stopVisible(page, spec.stopSelector)) throw uncertain('send.stopActive');
     const before = await readComposer(editor, spec);
     if (!before) throw uncertain('composer.scope');
-    if (normalizeInputText(before.text) || before.cards > 0) throw uncertain('composer.initiallyEmpty');
+    // Leftover draft text is never merged with a new prompt. Attachments already in the
+    // composer are the operator's own files (constitution, references) and are sent along.
+    if (normalizeInputText(before.text)) {
+      logger.info(`[DIAG][${spec.name}][send] composer_not_empty textLength=${normalizeInputText(before.text).length} cards=${before.cards}`);
+      throw uncertain('composer.initiallyEmpty');
+    }
 
     const previous = contexts.get(page);
     contexts.delete(page);
@@ -227,10 +234,12 @@ async function sendOnce(page, payload, spec) {
     phase = 'post-paste';
     logger.info(`[DIAG][${spec.name}][send] paste_done`);
 
-    const settled = await waitForSettled(editor, spec, spec.settle);
+    const settled = await waitForSettled(editor, spec, spec.settle, before.cards);
     if (settled.error) throw uncertain('attachment.error');
     if (!settled.ready) throw uncertain('composer.settled');
-    if (settled.cards > 1) throw uncertain('attachment.exactlyOne');
+    // The paste may add at most one card (the provider turning a long prompt into a file).
+    if (settled.cards > before.cards + 1) throw uncertain('attachment.exactlyOne');
+    if (settled.cards < before.cards) logger.info(`[DIAG][${spec.name}][send] cards_decreased before=${before.cards} after=${settled.cards}`);
     // A provider whose attachment UI has no verified readiness facts never sends one.
     if (settled.mode === 'attachment' && spec.attachmentVerified === false) throw uncertain('attachment.unverifiedProvider');
     const ready = await waitForSendReady(page, spec, spec.sendReadyTimeoutMs);
@@ -248,7 +257,7 @@ async function sendOnce(page, payload, spec) {
     catch (error) { throw uncertain('send.click', error); }
     actions.sends = 1;
     phase = 'post-click';
-    logger.info(`[DIAG][${spec.name}][send] send_clicked mode=${settled.mode} attachments=${settled.cards} elapsedMs=${Date.now() - startedAt}`);
+    logger.info(`[DIAG][${spec.name}][send] send_clicked mode=${settled.mode} attachments=${settled.cards} baseAttachments=${before.cards} elapsedMs=${Date.now() - startedAt}`);
   } catch (error) {
     const failure = error?.code === 'send_uncertain' || error?.code === 'selector_not_found'
       ? error : uncertain('send.unknown', error);

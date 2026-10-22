@@ -308,8 +308,11 @@ function mergeReplies(existingReplies, incomingReplies) {
     }
 
     const existingReply = merged[existingIndex];
+    // A manual Refresh is the operator naming this seat's reply; a late automatic result for
+    // the same round never replaces it.
     const keepExistingReply =
-      existingReply?.status === "ok" && incomingReply?.status !== "ok";
+      existingReply?.captureMode === "manual_refresh" ||
+      (existingReply?.status === "ok" && incomingReply?.status !== "ok");
 
     if (keepExistingReply) {
       continue;
@@ -321,12 +324,15 @@ function mergeReplies(existingReplies, incomingReplies) {
   return merged;
 }
 
+// Merges one seat's round result into the session as it is on disk now, not into the object
+// the run started with: a manual Refresh may have written other replies since then.
 function appendRound(session, round) {
-  const existingRound = session.rounds.find((item) => item.roundNumber === round.roundNumber);
+  const current = (session?.sessionId && loadSession(session.sessionId)) || session;
+  const existingRound = current.rounds.find((item) => item.roundNumber === round.roundNumber);
 
   if (!existingRound) {
-    session.rounds.push(round);
-    session.rounds.sort((a, b) => a.roundNumber - b.roundNumber);
+    current.rounds.push(round);
+    current.rounds.sort((a, b) => a.roundNumber - b.roundNumber);
   } else {
     existingRound.prompt = round.prompt;
     existingRound.replies = mergeReplies(existingRound.replies || [], round.replies || []);
@@ -337,8 +343,8 @@ function appendRound(session, round) {
     existingRound.createdAt = round.createdAt;
   }
 
-  writeSession(session);
-  return session;
+  writeSession(current);
+  return current;
 }
 
 function listSessions() {

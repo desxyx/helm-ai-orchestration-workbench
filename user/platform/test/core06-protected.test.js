@@ -21,12 +21,20 @@ for (const [name, setup, expected] of [
   ['active run', f => { f.state.activeRun = { status: 'running', roundNumber: 2 }; }, 'current round'],
   ['no live session', f => { f.state.activeSession = null; }, 'fresh session'],
   ['active refresh', f => { f.state.refreshingAgents.claude = true; }, 'refresh'],
-  ['unchanged summary', f => { f.state.selectedSession.rounds.unshift({ roundNumber: 1, summary: 'fixture summary' }); }, 'previous round'],
 ]) test('CORE06 Annex A5 control: override does not bypass ' + name, () => {
   const f = appFixture(allValid().slice(0, 2));
   f.api.armManualDispatchOverride({ silent: true });
   setup(f);
   assert.ok(f.api.getDispatchBlockReason().includes(expected));
+});
+
+// Stage 4 (operator rule 2026-10-21): Shift override is also the way past a repeated summary.
+test('CORE06 Annex A5 control: unchanged summary blocks without override and not with it', () => {
+  const f = appFixture(allValid().slice(0, 2));
+  f.state.selectedSession.rounds.unshift({ roundNumber: 1, summary: 'fixture summary' });
+  assert.ok(f.api.getDispatchBlockReason().length > 0);
+  f.api.armManualDispatchOverride({ silent: true });
+  assert.equal(f.api.getDispatchBlockReason(), '');
 });
 
 test('CORE06 Annex A2 control: a completed seat refreshes immediately; a running seat waits 120s', () => {

@@ -2,6 +2,27 @@
 
 Public development story for H.E.L.M.
 
+## 2026-10-22
+
+The platform was repaired for how the council is actually used, after the first real sessions on the rebuilt platform got stuck.
+
+- The Chair reported three problems. Files uploaded into the provider composers before a dispatch made the platform refuse to send. A reply captured with Refresh Reply was marked unverified and left out of the summary. The hidden Shift override no longer got past the dispatch guard.
+- The Chair set the rule for this repair: a manual Refresh always means "this is the reply for the current round", because the operator only clicks it when they are ready to continue the council. The Executor designed and built the fix, and the Reviewer reviewed it. The platform still has to work on both macOS and Windows.
+
+Platform changes in `user/platform`:
+
+- Attachments: the composer is checked relative to what is already there. Files the operator uploaded before dispatch are sent along with the prompt. Only leftover draft text still refuses, before anything is pasted (`composer.initiallyEmpty`). A paste that adds more than one new attachment is refused (`attachment.exactlyOne`). Uploads that are still processing or show an error still block sending.
+- Refresh Reply takes the page's latest reply and ignores any earlier dispatch binding, so a reply the operator sent by hand is the one captured. It uses only that reply's own Copy control. If the latest reply has no Copy yet, nothing is captured and the previous record is kept. It never falls back to another turn's Copy.
+- Every Refresh updates the carried summary. Excluded seats appear only as markers, and a reply identical to the previous round's is still flagged stale.
+- Shift override also gets past a summary that repeats the previous round's.
+- Refresh results are committed in one synchronous step after the capture, and re-checked against the active session and round (`refresh_superseded`). A late automatic result no longer overwrites a manual one, and round writes merge into the session on disk.
+- The UI follows the ordered server event stream only. The Refresh HTTP reply only reports success or failure, so it can no longer arrive ahead of an older event and be rolled back.
+- Tests: 61 new tests in `test/core06-stage4.test.js`. The suite has 406 tests, and serial runs and `npm test` both pass. Mutation controls show each fix's tests fail when that fix is removed.
+
+How it was run: the Reviewer sent the work back twice and passed it on the third review. Three problems were found. A Refresh could fall back to another turn's Copy. An older event could roll back a newer Refresh in the UI; this one took two rounds, because the first fix covered only one direction. And the report was too strong: an earlier `npm test` run had in fact failed, but the report did not say so. That failure is recorded as cause unknown. Each round fixed only what was found, without reopening the design.
+
+Acceptance (macOS): a cold-start live run on the final candidate covered pre-uploaded files with short and 53K-character prompts, a hand-sent reply captured by Refresh and carried into the next real payload, a refusal on leftover draft text, stale detection, and a Shift-override dispatch. It produced 11 pastes, 11 sends and 18 native Copies, with one intended refusal, no retries and no capture failures. One usage note came out of it: a Refresh clicked before a slow provider has started its new reply captures the previous one, so refresh again once the new reply appears. Windows regression is still pending under `DUAL_PLATFORM_RULES.md`.
+
 ## 2026-10-11
 
 The platform rebuild was carried over to Windows, and both platforms now pass on the same code.

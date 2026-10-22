@@ -164,6 +164,16 @@ function installSim(cfg) {
   editor.addEventListener('click', () => log.editorClicks++);
   if (cfg.leftoverDraft) editor.textContent = 'leftover draft';
   if (cfg.leftoverCard) cards.insertAdjacentHTML('beforeend', cardHtml);
+  // Files the operator uploaded before dispatch (constitution, references).
+  for (let i = 0; i < (cfg.preAttached || 0); i++) {
+    const card = el(cardHtml);
+    if (cfg.preError) card.insertAdjacentHTML('beforeend', '<span role="alert">upload failed</span>');
+    if (cfg.preBusyMs) {
+      card.setAttribute('aria-busy', 'true');
+      sim.at(cfg.preBusyMs, () => { card.removeAttribute('aria-busy'); updateSend(); });
+    }
+    cards.append(card);
+  }
   if (cfg.stopBeforePaste) stop.hidden = false;
 
   const hasContent = () => Boolean(editor.innerText.trim()) || cards.children.length > 0;
@@ -206,6 +216,7 @@ function installSim(cfg) {
     } else {
       editor.innerText = editor.innerText + text;
     }
+    if (cfg.pasteDropsCard) cards.firstElementChild?.remove();
     updateSend();
     if (cfg.stopAfterPasteMs !== undefined) sim.at(cfg.stopAfterPasteMs, () => { stop.hidden = false; });
   });
@@ -214,8 +225,9 @@ function installSim(cfg) {
   send.addEventListener('click', () => {
     log.send++;
     if (cfg.clickNoop) return;
-    const file = cards.children.length > 0;
     const text = editor.innerText;
+    // The user turn shows the prompt text unless the prompt itself went into a card.
+    const file = !text.trim() && cards.children.length > 0;
     const reply = cfg.reply || `native reply ${log.send}`;
     sim.at(cfg.userDelayMs ?? 50, () => {
       const root = ensureList();
@@ -304,6 +316,13 @@ function installSim(cfg) {
       });
     });
   });
+  // The operator sends a message by hand in the provider page and gets a finished reply.
+  sim.manualTurn = (userText, replyText, copy = true) => {
+    ensureList().append(userNode(userText));
+    const node = assistantNode(replyText, copy);
+    ensureList().append(node);
+    sim.replies.push(node);
+  };
   window.__sim = sim;
 }
 
@@ -360,9 +379,11 @@ async function simulate(provider, cfg = {}, { platform = process.platform, confi
     return round.replies[0];
   };
   const actions = () => page.evaluate(() => ({ ...window.__sim.log }));
+  const manualTurn = (userText, replyText, { copy = true } = {}) =>
+    page.evaluate(([u, r, c]) => window.__sim.manualTurn(u, r, c), [userText, replyText, copy]);
   const dom = (fn, arg) => page.evaluate(fn, arg);
   const close = () => context.close();
-  return { page, adapter, run, actions, dom, logs, time, persisted, close, transaction };
+  return { page, adapter, run, actions, dom, logs, time, persisted, close, transaction, manualTurn };
 }
 
 module.exports = { simulate, closeSharedBrowser, sharedBrowser };

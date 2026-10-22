@@ -413,8 +413,9 @@ async function clickCopyAndRead(page, messageLocator, copyButtonTarget, { force 
 }
 
 // Shared automatic and manual-refresh capture of one reply. Automatic capture requires the
-// dispatch-bound reply that completion confirmed (same id); a manual Refresh without that
-// binding falls back to the latest turn and is always reported unverified.
+// dispatch-bound reply that completion confirmed (same id). A manual Refresh (force) is the
+// operator naming the page's latest reply as this round's reply: any dispatch binding is
+// ignored, so a reply the operator sent by hand after an earlier dispatch is the one taken.
 async function captureReply(page, { scope, baseline = null, confirmedId = null, force = false,
   timeoutMs, label = "adapter" }) {
   const none = page.locator("[data-helm-no-target]").first();
@@ -424,19 +425,13 @@ async function captureReply(page, { scope, baseline = null, confirmedId = null, 
       turnAttribute: REPLY_TARGET_ATTRIBUTE, baseline: bound ? baseline : null })
     .catch(() => null);
 
-  let bound = Boolean(baseline);
-  let state = bound ? await select(true) : null;
-  let unverified = false;
+  const bound = Boolean(baseline) && !force;
+  const state = bound ? await select(true) : force ? await select(false) : null;
   if (!state?.started) {
     if (!force) {
       throw createCopyCaptureError("no_new_assistant_turn", `${label} has no reply for this dispatch.`);
     }
-    bound = false;
-    unverified = true;
-    state = await select(false);
-    if (!state?.started) {
-      throw createCopyCaptureError("selector_not_found", `${label} assistant reply was not found.`);
-    }
+    throw createCopyCaptureError("selector_not_found", `${label} assistant reply was not found.`);
   }
   // The confirmed key is "<id>:<digest>": same reply position and same reply text.
   const keyOf = (value) => `${value.id}:${value.textDigest}`;
@@ -450,14 +445,10 @@ async function captureReply(page, { scope, baseline = null, confirmedId = null, 
     throw createCopyCaptureError("capture_target_changed", `${label} reply target changed before Copy.`);
   }
 
-  let copyButton = await pollForCopyButton(turnLocator, resolveTarget, 250, timeoutMs,
+  // Only the latest reply's own Copy counts. Without it nothing is captured, even on a manual
+  // Refresh: another turn's Copy would return that turn's text as this round's reply.
+  const copyButton = await pollForCopyButton(turnLocator, resolveTarget, 250, timeoutMs,
     { requireEnabled: !force });
-  if (!copyButton && force) {
-    // Manual Refresh Reply: the operator has looked at the page; take the bottom-most Copy
-    // directly. Its provenance is unknown, so the result is diagnostic only.
-    copyButton = page.locator(scope.copyButtonSelector).last();
-    unverified = true;
-  }
   if (!copyButton) {
     throw createCopyCaptureError("selector_not_found", `${label} copy button did not resolve.`);
   }
@@ -467,12 +458,7 @@ async function captureReply(page, { scope, baseline = null, confirmedId = null, 
     if (!current?.started) return false;
     return phase === "afterClick" ? current.id === expectedId.split(":")[0] : keyOf(current) === expectedId;
   } : null;
-  const content = await clickCopyAndRead(page, turnLocator, copyButton, { force, verify });
-  if (unverified) {
-    throw createCopyCaptureError("refresh_unverified",
-      "Refresh Reply content lacks verified post-dispatch provenance and is diagnostic only.", { content });
-  }
-  return content;
+  return clickCopyAndRead(page, turnLocator, copyButton, { force, verify });
 }
 
 module.exports = {

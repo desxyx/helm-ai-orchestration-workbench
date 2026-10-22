@@ -71,11 +71,15 @@ for (const provider of PROVIDERS) {
   });
 
   // X5: leftovers are real action concerns; the draft is never cleared or replaced.
-  for (const [label, cfg] of [['leftover draft text', { leftoverDraft: true }], ['leftover attachment', { leftoverCard: true }]]) {
-    test(`X5 ${provider}: ${label} refuses before any paste`, async () => {
-      refused(await scenario(provider, { history: 1, ...cfg }, 'next prompt'), 'composer.initiallyEmpty', { pastes: 0 });
-    });
-  }
+  test(`X5 ${provider}: leftover draft text refuses before any paste`, async () => {
+    refused(await scenario(provider, { history: 1, leftoverDraft: true }, 'next prompt'), 'composer.initiallyEmpty', { pastes: 0 });
+  });
+  // Stage 4: an attachment already in the composer is the operator's own file and is sent along.
+  test(`X5 ${provider}: an attachment already in the composer is sent with the prompt`, async () => {
+    const result = await scenario(provider, { history: 1, leftoverCard: true }, 'next prompt');
+    sent(result);
+    assert.ok(result.logs.some((line) => line.includes('send_clicked mode=inline attachments=1 baseAttachments=1')));
+  });
 
   // X5 (live A1 finding): a second matching textbox inside history does not block the composer.
   test(`X5 ${provider}: an extra matching editor inside history leaves the composer usable`, async () => {
@@ -341,11 +345,12 @@ for (const provider of PROVIDERS) {
       assert.equal((await sim.actions()).copy, 2);
     } finally { await sim.close(); }
   });
-  test(`X11 ${provider}: Refresh without a dispatch binding is refresh_unverified with raw content`, async () => {
+  // Stage 4 (operator rule): Refresh without a dispatch binding captures the page's latest reply.
+  test(`X11 ${provider}: Refresh without a dispatch binding captures the latest reply`, async () => {
     const sim = await simulate(provider, { history: 2 });
     try {
-      await assert.rejects(sim.adapter.captureLastReply(sim.page, { force: true }),
-        (error) => error.code === 'refresh_unverified' && error.details.content === 'old answer 1');
+      assert.equal(await sim.adapter.captureLastReply(sim.page, { force: true }), 'old answer 1');
+      assert.equal((await sim.actions()).copy, 1);
     } finally { await sim.close(); }
   });
 

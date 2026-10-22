@@ -36,6 +36,7 @@ const SAVE_TYPE_CONFIG = {
 const MANUAL_REFRESH_UNLOCK_FALLBACK_MS = 120000;
 const INCOMPLETE_REPLIES_BLOCK_REASON =
   "Dispatch stays disabled until all three replies are captured.";
+const SAME_SUMMARY_BLOCK_REASON = "Dispatch stays disabled because this summary matches the previous round.";
 
 function setGlobalStatus(_status, message) {
   const target = $("global-message");
@@ -244,7 +245,8 @@ function armManualDispatchOverride({
     return false;
   }
 
-  if (areAllRepliesCaptured(round)) {
+  // Override is also the way past a summary that repeats the previous round's.
+  if (areAllRepliesCaptured(round) && !isSummarySameAsPreviousRound(state.selectedSession, round)) {
     state.manualDispatchOverrideKey = "";
     if (!silent) {
       setGlobalStatus("done", "All three replies are already captured. Manual override was not needed.");
@@ -321,8 +323,8 @@ function getDispatchBlockReason() {
     return INCOMPLETE_REPLIES_BLOCK_REASON;
   }
 
-  if (isSummarySameAsPreviousRound(state.selectedSession, round)) {
-    return "Dispatch stays disabled because this summary matches the previous round.";
+  if (!isManualDispatchOverrideActive() && isSummarySameAsPreviousRound(state.selectedSession, round)) {
+    return SAME_SUMMARY_BLOCK_REASON;
   }
 
   return "";
@@ -330,7 +332,7 @@ function getDispatchBlockReason() {
 
 function getDispatchHintMessage(blockReason) {
   if (blockReason) {
-    if (blockReason === INCOMPLETE_REPLIES_BLOCK_REASON) {
+    if (blockReason === INCOMPLETE_REPLIES_BLOCK_REASON || blockReason === SAME_SUMMARY_BLOCK_REASON) {
       return `${blockReason} If you've manually verified the live chats, Shift+click the Session Refresh button to arm override and allow dispatch.`;
     }
 
@@ -905,12 +907,14 @@ async function refreshAgentReply(agent) {
   setGlobalStatus("running", `Refreshing ${AGENT_TITLES[agent] || agent} latest reply...`);
 
   try {
-    const data = await postJson("/api/refresh-reply", {
+    // The result reaches the view as the reply_refreshed event, in order with every other
+    // server event. Applying this HTTP reply as well could put it before an older event still
+    // on its way, which would then roll the view back.
+    await postJson("/api/refresh-reply", {
       sessionId: state.selectedSession.sessionId,
       roundNumber: round.roundNumber,
       agent,
     });
-    handleReplyRefreshed(data);
   } catch (error) {
     setGlobalStatus("error", error.message);
   } finally {

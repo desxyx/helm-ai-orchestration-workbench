@@ -75,16 +75,19 @@ function roundFixture() {
   return { ...m, run, logs, persisted };
 }
 
-function serverFixture({ replies = [], capture = async () => 'native refreshed Copy', runReply = null, browserPage = { bringToFront: async () => {} }, staticFiles = null } = {}) {
+function serverFixture({ replies = [], capture = async () => 'native refreshed Copy', runReply = null, browserPage = { bringToFront: async () => {} }, staticFiles = null, isolated = false } = {}) {
   const logs = logger();
   const time = clock();
   const session = { sessionId: 'fixture-session', createdAt: new time.Date().toISOString(), rounds: [{ roundNumber: 2, replies: structuredClone(replies), summary: 'old round summary' }] };
   const writes = [];
   let opened = 0;
+  // isolated: every load parses its own copy of what is "on disk", as the real store does.
+  let disk = structuredClone(session);
   const adapter = { captureLastReply: capture, open: async () => { opened += 1; } };
   const store = {
-    loadSession: () => session, listSessions: () => [{ sessionId: session.sessionId, latestRoundNumber: 2 }],
-    writeSession: value => writes.push(structuredClone(value)),
+    loadSession: () => isolated ? structuredClone(disk) : session,
+    listSessions: () => [{ sessionId: session.sessionId, latestRoundNumber: 2 }],
+    writeSession: value => { writes.push(structuredClone(value)); if (isolated) disk = structuredClone(value); },
     createSession: () => ({ sessionId: 'fresh-fixture-session', rounds: [], createdAt: new time.Date().toISOString() }),
   };
   const unsafeFs = new Proxy({}, { get: (_o, name) => {
@@ -106,11 +109,12 @@ function serverFixture({ replies = [], capture = async () => 'native refreshed C
       if (!runReply) throw Error('unexpected dispatch');
       return { roundNumber: 2, replies: [structuredClone(runReply)], metrics: {} };
     } },
-  }, expose: `module.exports = { buildSummary, handleRefreshReply, handleNewSession, buildPromptPayload, normalizeRuntimeError, runAgent, serveStatic,
+  }, expose: `module.exports = { buildSummary, handleRefreshReply, handleNewSession, buildPromptPayload, normalizeRuntimeError, runAgent, serveStatic, getUiState,
     getState: () => ({ activeSession, activeRun }),
-    setState: (session, run) => { activeSession = session; activeRun = run; } };` });
+    setState: (session, run) => { activeSession = session; activeRun = run; },
+    addClient: (client) => clients.add(client), sendEvent };` });
   m.api.setState({ session, nextRoundNumber: 3, carriedSummary: 'preserved carry', browsers: Object.fromEntries(['claude', 'gemini', 'chatgpt'].map(id => [id, { page: browserPage }])) }, null);
-  return { ...m, session, writes, logs, opened: () => opened };
+  return { ...m, session, writes, logs, opened: () => opened, disk: () => disk, setDisk: value => { disk = structuredClone(value); } };
 }
 
 function appFixture(replies = []) {
@@ -127,9 +131,12 @@ function appFixture(replies = []) {
     HELMReplyPredicates: require('../../src/utils/predicates'),
     document: { getElementById: node },
     window: { confirm: message => { calls.confirmations.push(message); return true; }, clearTimeout() {}, setTimeout() {} },
-    fetch: async (url, options) => { calls.posts.push({ url, body: JSON.parse(options.body) }); return { ok: true, json: async () => ({}) }; },
+    fetch: async (url, options) => { calls.posts.push({ url, body: JSON.parse(options.body) });
+      const data = calls.respond ? await calls.respond(url, JSON.parse(options.body)) : {};
+      return { ok: true, json: async () => data }; },
   }, expose: `module.exports = { state, isReplyCaptured, areAllRepliesCaptured, getDispatchBlockReason, armManualDispatchOverride,
-    isManualDispatchOverrideActive, canRefreshReply, getManualRefreshRemainingMs, dispatchPrompt, createNewSession, toggleSummaryAttachment,
+    isManualDispatchOverrideActive, canRefreshReply, getManualRefreshRemainingMs, dispatchPrompt, createNewSession, toggleSummaryAttachment, handleReplyRefreshed,
+    handleSnapshot, handleSessionContext, handleRunStarted, handleAgentResult, handleRunCompleted, refreshAgentReply,
     silenceRendering: () => { renderControls = () => {}; } };` });
   const state = m.api.state;
   state.activeSession = { sessionId: 'fixture-session', roundNumber: 3 };

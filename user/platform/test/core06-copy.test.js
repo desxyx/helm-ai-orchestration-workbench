@@ -70,13 +70,15 @@ test('CORE06 target Copy: final extraction has at most one target scroll and hov
   assert.ok(f.moves.filter(x => x === 'hover').length <= 1, 'no repeated target hovering');
 });
 
-for (const provider of ['claude', 'chatgpt', 'gemini']) test(`CORE06 target ${provider}: unbound forced Copy is refresh_unverified`, async (t) => {
+// Stage 4 (operator rule 2026-10-21): a manual Refresh names the page's latest reply as this
+// round's reply, so an unbound forced Copy is an ordinary capture.
+for (const provider of ['claude', 'chatgpt', 'gemini']) test(`CORE06 target ${provider}: unbound forced Copy captures the page's latest reply`, async (t) => {
   const f = await refreshFixture(provider);
   t.after(f.close);
   const result = await inspectCapture(() => f.api.captureLastReply(f.page, { force: true }));
-  assert.equal((await f.actions()).copy, 1, 'positive control: fallback Copy was read');
-  assert.equal(result.content, f.content, 'raw unverified Copy must reach the caller intact');
-  assert.equal(result.errorCode, 'refresh_unverified');
+  assert.equal((await f.actions()).copy, 1, 'positive control: one native Copy was read');
+  assert.equal(result.content, f.content, 'the latest reply reaches the caller intact');
+  assert.equal(result.errorCode, null);
 });
 
 let browser;

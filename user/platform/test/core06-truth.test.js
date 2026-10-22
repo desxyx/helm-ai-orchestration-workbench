@@ -110,10 +110,15 @@ test('CORE06 target: repeated reply requires explicit override and stays exclude
   assert.equal(serverFixture().api.buildSummary(replies).includes('[Claude reply excluded: staleSuspect]'), true);
 });
 
-test('CORE06 control: F04 refresh does not promote carry until all seats have valid replies', async () => {
+// Stage 4: F04 relaxed (operator rule). Every refresh carries the round's summary; seats that are
+// missing contribute nothing and excluded seats contribute only their marker.
+test('CORE06 control: F04 refresh carries the round summary even when seats are missing', async () => {
   const f = serverFixture({ replies: [validReply('claude')] });
   await f.api.handleRefreshReply({ sessionId: f.session.sessionId, roundNumber: 2, agentId: 'claude' });
-  assert.equal(f.api.getState().activeSession.carriedSummary, 'preserved carry');
+  const carry = f.api.getState().activeSession.carriedSummary;
+  assert.ok(carry.includes('native refreshed Copy'));
+  assert.equal(carry.includes('Gemini'), false);
+  assert.equal(carry.includes('ChatGPT'), false);
 });
 
 test('CORE06 control: F04 refresh promotes carry when every seat is valid', async () => {
@@ -123,12 +128,16 @@ test('CORE06 control: F04 refresh promotes carry when every seat is valid', asyn
 });
 
 for (const [name, patch] of [ ['stale', { staleSuspect: true }], ['legacy timeout', { completionReason: 'timeout', errorCode: 'completion_timeout' }] ]) {
-  test('CORE06 target: F04 refuses carry promotion when another seat is ' + name, async () => {
+  test('CORE06 target: F04 carries the summary with only a marker when another seat is ' + name, async () => {
     const replies = allValid();
     Object.assign(replies[0], patch);
     const f = serverFixture({ replies });
     await f.api.handleRefreshReply({ sessionId: f.session.sessionId, roundNumber: 2, agentId: 'claude' });
-    assert.equal(f.api.getState().activeSession.carriedSummary, 'preserved carry');
+    const carry = f.api.getState().activeSession.carriedSummary;
+    assert.ok(carry.includes('native refreshed Copy'));
+    assert.ok(carry.includes('native reply for chatgpt'));
+    assert.ok(carry.includes('[Gemini reply excluded: ' + (patch.errorCode || 'staleSuspect') + ']'));
+    assert.equal(carry.includes('native reply for gemini'), false, 'excluded text never enters the carry');
   });
 }
 
@@ -141,7 +150,8 @@ function activeRefresh(f) {
 }
 
 for (const provider of ['claude', 'chatgpt', 'gemini']) {
-  test(`CORE06 target server ${provider}: unbound forced refresh retains raw error and excludes it everywhere`, async (t) => {
+  // Stage 4 (operator rule 2026-10-21): the unbound Refresh is this round's reply and is carried.
+  test(`CORE06 target server ${provider}: unbound forced refresh is captured and carried everywhere`, async (t) => {
     const copy = await refreshFixture(provider);
     t.after(copy.close);
     const f = serverFixture({ replies: allValid(), capture: copy.api.captureLastReply, browserPage: copy.page });
@@ -162,13 +172,14 @@ for (const provider of ['claude', 'chatgpt', 'gemini']) {
       activeSummary: f.api.getState().activeRun.summary,
     };
     console.log('CORE06_REFRESH_METRIC ' + JSON.stringify({ provider, ...actual }));
-    assert.deepEqual({ ...actual, activeSummary: undefined }, {
-      status: 'error', errorCode: 'refresh_unverified', content: copy.content,
-      markerCount: 1, summaryContainsRaw: false, carry: 'preserved carry',
-      activeErrorCode: 'refresh_unverified', activeSummary: undefined,
+    assert.deepEqual({ ...actual, carry: undefined, activeSummary: undefined }, {
+      status: 'ok', errorCode: null, content: copy.content,
+      markerCount: 0, summaryContainsRaw: true, carry: undefined,
+      activeErrorCode: null, activeSummary: undefined,
     });
-    assert.equal(actual.activeSummary.split(marker).length - 1, 1);
-    assert.equal(actual.activeSummary.includes(copy.content), false);
+    assert.equal(actual.carry, round.summary);
+    assert.equal(actual.activeSummary, round.summary);
+    assert.equal(actual.activeSummary.includes(copy.content), true);
   });
   test(`CORE06 control server ${provider}: dispatch-bound forced refresh stays ok and promotes verified carry`, async (t) => {
     const copy = await refreshFixture(provider, { scoped: true, content: 'verified native Copy for ' + provider });

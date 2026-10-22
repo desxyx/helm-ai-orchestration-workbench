@@ -153,7 +153,7 @@ async function runRound({
           }
         }
       } catch (error) {
-        error.code = error.code === "refresh_unverified" ? "refresh_unverified" : "capture_timeout";
+        error.code = "capture_timeout";
         throw error;
       }
       timings.captureMs = Date.now() - captureStartedAt;
