@@ -1,0 +1,18 @@
+{
+  "edition": "Public v0.6",
+  "entry": "userops/USEROPS_CHARTER.md",
+  "default_scope": "Task",
+  "scopes": {
+    "Task": [
+      "userops/charter/core/always_on.md",
+      "userops/charter/core/task.md"
+    ],
+    "Master": [
+      "userops/charter/core/always_on.md",
+      "userops/charter/core/master.md"
+    ]
+  },
+  "references": {
+    "decision_cards": "userops/charter/references/decision_cards.md"
+  }
+}

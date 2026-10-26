@@ -1,18 +1,11 @@
-This file is a navigation aid only. It carries no governance authority.
-In any conflict with the charter or constitution, those documents win.
+# H.E.L.M
 
-H.E.L.M is a local-first layered repository for browser-based multi-model decision work, executor operations, review artifacts, and session-side records.
+This is a navigation and version guide only. It does not activate documents merely by naming them. Follow the human chair's task-specific start instruction.
 
-## Layer Map
+| Layer | Current public edition | Entry |
+| --- | --- | --- |
+| Council | 1.8 | `council/COUNCIL_CONSTITUTION.md` |
+| Executor / Reviewer | 1.1 | `executors/EXECUTOR_CHARTER.md` |
+| UserOps | 0.6 | `userops/USEROPS_CHARTER.md` |
 
-- Council: `council/` holds constitutions, templates, archive material, and task briefs.
-- Executors: `executors/` holds the charter, vault records, skills, tools, and MCP notes.
-- Orchestration: `user/` holds the local platform, runtime data, handoffs, review outputs, and helper scripts.
-
-## Load Order
-
-1. `executors/EXECUTOR CHARTER — v1.0.md`
-2. `council/council_constitution_v1.7.md`
-3. Current entry brief under `council/task/`
-
-Charter and constitution take precedence over this file.
+The public repository is a curated demonstration with a runnable platform under `user/platform/`; it is not the full private operating archive. For a human walkthrough start at [README](README.md). Charters and active task instructions take precedence over this navigation aid.

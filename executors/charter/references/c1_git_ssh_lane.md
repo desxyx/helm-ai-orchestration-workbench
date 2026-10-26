@@ -1,0 +1,3 @@
+# Executor Charter — Public v1.1 — C1 — Git/SSH Lane
+
+Trigger: acting as the Git/SSH channel or performing a commit, push, merge or PR. Read Common + Executor first; a lane never exempts its operator from Executor obligations. Inspect the actual staged set against authorized scope, the accepted snapshot and any protected content before committing. A request to commit does not authorize a content edit, and a content-edit request does not authorize publication. A Git/SSH channel is never an independent acceptance signer. Report only actions actually observed, with the resulting revision where applicable.

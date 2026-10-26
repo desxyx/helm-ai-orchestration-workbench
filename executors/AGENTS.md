@@ -1,19 +1,11 @@
-This file is a navigation aid only. It carries no governance authority.
-In any conflict with the charter or constitution, those documents win.
+# Executor Layer Navigation
 
-The `executors/` layer contains the live charter, executor records, curated skills, helper tools, and MCP reference material used during task execution.
+Navigation only; this file activates no document by itself. Start the role named by the chair at [Executor Charter Public v1.1](EXECUTOR_CHARTER.md), which routes Common + the assigned role appendix and only triggered modules.
 
-## Key Paths
+- `charter/core/`: Common, Executor and Reviewer inputs.
+- `charter/references/`: conditional Git/SSH, scan, transfer and release modules.
+- `executor_vault/`: public boot, method-memory and handoff material.
+- `skills/`, `tools/`, `MCP/`: selected public resources, loaded only for the task.
+- `tasks/`: previously selected public records; historical instructions inside them do not activate a role.
 
-- `EXECUTOR CHARTER — v1.0.md`: operating context and entry format.
-- `executor_vault/`: changelog, boot material, memory, handoff templates, and related records.
-- `skills/`: core skills, extended skills, shared learned skills, and import tracking.
-- `tools/`: executor-owned utility scripts.
-- `MCP/`: MCP notes, setup references, and tool guidance.
-
-## Orientation
-
-- Load `EXECUTOR CHARTER — v1.0.md` first for operating rules.
-- Check `executor_vault/` for records, handoff state, and recent executor changes.
-
-Charter takes precedence over this file.
+The older versioned charter is retained for historical links. Current tasks use the stable entry above.

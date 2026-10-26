@@ -6,11 +6,26 @@ Most multi-model AI setups fail the same way: no accountability between models, 
 
 This is not a prompt template. It is a working system with defined protocols, layered authority, and traceable records built up over 120+ real sessions.
 
+## What One Task Looks Like
+
+You operate three browser Council seats and separate local work sessions. The platform helps dispatch prompts and collect replies; **you remain the link between Council, local work and approval**. UserOps is the local operations steward that keeps the task resumable.
+
+1. **Open the platform and enable ChatGPT, Claude and Gemini.** Start the local platform using the commands below, open its UI, and sign in to the three provider sessions. These are separate model sessions, not shared memory.
+2. **Give Council its constitution and a problem.** Load the [Council Constitution](council/COUNCIL_CONSTITUTION.md), then discuss viewpoints, options and tradeoffs. Compare and vote to converge, with one merge owner responsible for the delivery contract. The result is a scoped `core_06.md` file for the local team; voting does not turn an unverified factual claim into truth.
+3. **Start UserOps locally and run preflight.** In a fresh local session load [UserOps](userops/USEROPS_CHARTER.md) in normal Task scope. It sets up task state and decision records, checks the contract against actual files, tools and permissions, and records the selected inputs. You route a decision-level mismatch back to Council before implementation.
+4. **Bring in an Executor and an independent Reviewer.** Start separate local sessions, assign the two roles, and load the [Executor Charter entry](executors/EXECUTOR_CHARTER.md) in each. It routes them to Common + their own appendix. Cross-model-family review is the default; for example, a ChatGPT Executor and a Claude Reviewer. The Reviewer does not implement the work it accepts.
+5. **Read the contract and acknowledge it.** Point both roles at the actual task files and active release. For a Git-tracked contract, provide its commit SHA and path. The Executor returns `EXEC_ACK` with scope, assumptions, evidence expectations and first action; for a formal Council-issued task, confirm that ACK before implementation.
+6. **Implement, then independently review.** The Executor works within the approved goal and boundaries. The Reviewer inspects the raw changes and evidence, records a verdict, and gives the complete blocking rework set when needed. Each role writes its own record under `rounds/rN/`; a corrected attempt gets a new round.
+7. **Route problems through UserOps and the chair.** Ordinary bugs and in-scope rework stay with the local team. If evidence breaks the contract or a protected boundary must change, UserOps prepares the question and you decide the required Council route. A review preference alone does not create a new task requirement.
+8. **Finish and leave a usable record.** Collect the accepted deliverables, Reviewer result, unresolved limits and any owner/trigger for deferred work; confirm closure. UserOps updates the task state and captures reusable lessons. Review PASS, human acceptance and permission to publish remain separate decisions.
+
+The files left behind are practical: a task entry/contract, one current state surface, a decision ledger, and the applicable round submissions/reviews. Records grow only when the task needs them. A small direct chair task can use the lighter entry path without a Council-issued contract; an approved light task has no separate loadout, preflight or Human Briefing file, while retaining its checks and approval boundaries.
+
 ## Showcase: WatchOver / AI CI/CD
 
 This CI/CD project is a showcase of HELM in use, from the first requirements and Council discussions to implementation, deployment runs, independent review and public release.
 
-<https://github.com/desxyx/helm-ai-orchestration-workbench/tree/main/council/task/ai-cicd>
+[Open the showcase guide](council/task/ai-cicd/README.md).
 
 The English, translated and redacted records show the actual operating details: decisions, manual message routing, interruptions and recovery, failed checks, rework, W1–W3 experiments, and the Mac-to-Windows handoff. Missing evidence and experimental limitations remain visible.
 
@@ -41,7 +56,7 @@ flowchart LR
         Obs["Observer\n〈 Evaluation Only 〉"]
         Exec -->|"work product"| Rev
         Rev -->|"✓ PASS"| Return(["EXEC_RETURN"])
-        Rev -->|"✗ FAIL + rework point"| Exec
+        Rev -->|"rework set"| Exec
         Obs -.->|"reviewer quality check"| Rev
     end
 
@@ -128,7 +143,7 @@ H.E.L.M treats the execution side as three distinct roles, not one flat "assista
 
 - **Executor** — pushes implementation forward under approved scope
 - **Reviewer** — verifies claims against file reality and runnable evidence; read-only
-- **Observer** — watches blast radius and stage discipline; evaluates reviewer quality
+- **Observer** — optional evaluation of blast radius, stage discipline and reviewer quality; it is not required for every task
 
 This role split costs extra tokens. The tradeoff is worth it because it prevents a more expensive failure mode: long debugging loops caused by weak review, blurred authority, or untracked stage drift.
 
@@ -188,15 +203,19 @@ Public structure and prototype entry:
 - [H.E.L.M structure map](H.E.L.M_structure.md)
 - [Test environment role-pack prototype](test_environment/README.md)
 
-## Protocol Refresh: Evidence, Convergence, Independent Review
+## Current Protocol: Smaller Loads, Clearer Evidence
 
-The public governing documents define the boundaries between the three layers. A rule added to one layer is checked against the other two before it lands:
+| Layer | Public edition | Start here |
+| --- | --- | --- |
+| Council | 1.8 | [Council Constitution](council/COUNCIL_CONSTITUTION.md) |
+| Executor / Reviewer | 1.1 | [Executor Charter](executors/EXECUTOR_CHARTER.md) |
+| UserOps | 0.6 | [UserOps Charter](userops/USEROPS_CHARTER.md) |
 
-- [Council Constitution — Public v1.7](council/council_constitution_v1.7.md): Frozen Truth must pass an evidence admission check before it can bind execution; merged Council results require an independent phase, a cross-review phase, and one designated merge owner; re-entry triggers are based on boundary expansion, not arbitrary counts.
-- [Executor Charter — Public v1.0](executors/EXECUTOR%20CHARTER%20—%20v1.0.md): role-scoped loading, a first-class Reviewer appendix, raw-first review, cross-model-family independence, and a hard rule that whoever authored a change is never the sole source of its acceptance.
-- [UserOps Charter — Public v0.5](userops/USEROPS_CHARTER.md): preflight into a neutral task entry, write-once evidence artifacts, a capped priority memory index, and cold-start takeover readiness.
+The two local charters now have small, stable entry files and role-scoped packages. An Executor loads Common + Executor; a Reviewer loads Common + Reviewer. UserOps normally loads Task scope; Master is explicitly started for cross-task maintenance and never blocks a task's progress.
 
-The documents got sharper, not heavier: each layer still loads only what its role needs.
+Evidence matches the question being answered: commit SHA + paths for Git-tracked baselines, raw bytes/hashes when physical bytes matter or a contract is outside Git, semantic checks for rule preservation, and tests/observation for behavior. Round reports hold the evidence once rather than duplicating manifests. Approved light tasks keep one current state surface and only the records their triggers require; they retain independent acceptance and action approval boundaries.
+
+The Executor owns implementation choices inside approved boundaries. Reviewers distinguish actual blockers from logged improvements and contract questions; ordinary rework continues locally unless scope drifts. Nobody is the sole acceptor of their own work. These are workflow rules, not a claim that a release or live deployment has already been verified.
 
 ## Run The Public Platform
 

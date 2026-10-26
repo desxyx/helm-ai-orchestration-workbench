@@ -1,12 +1,12 @@
 # H.E.L.M Structure
 
-Updated: 2026-05-11
+Updated: 2026-10-26
 
 This public structure map is a curated, redacted navigation guide. It is not a governance authority. If it conflicts with the public Council Constitution, Executor Charter, or task contracts, those documents win.
 
 ## How H.E.L.M Runs
 
-H.E.L.M has four practical working surfaces:
+H.E.L.M has these practical working surfaces:
 
 - `council/` - decision layer: constitution, templates, task contracts, and redacted review artifacts.
 - `executors/` - execution layer: executor charter, skills, MCP notes, handoff memory, and task records.
@@ -32,8 +32,8 @@ README.md
 CHANGELOG.md
 AGENTS.md
 H.E.L.M_structure.md
-council/council_constitution_v1.7.md
-executors/EXECUTOR CHARTER - v1.0.md
+council/COUNCIL_CONSTITUTION.md
+executors/EXECUTOR_CHARTER.md
 test_environment/README.md
 ```
 
@@ -57,7 +57,7 @@ ai_council_public/
 
 ```text
 council/
-|-- council_constitution_v1.7.md
+|-- COUNCIL_CONSTITUTION.md     # Public v1.8; earlier public editions remain history
 |-- assets/
 |-- kickoff/
 |-- task/
@@ -66,16 +66,7 @@ council/
 
 ### Public Council Tasks
 
-Only selected redacted task notes are included.
-
-```text
-council/task/
-|-- README.md
-|-- platform_capture_review/
-|-- operations-stewardship-rollout/
-|-- local-role-pack-experiment/
-`-- Claude Code leaking/
-```
+Only previously selected, redacted records are included. See the [public task guide](council/task/README.md) and the root README's existing showcase links. Historical records are evidence, not current task instructions.
 
 ### Public Council Templates
 
@@ -93,7 +84,8 @@ The public template library is intentionally compressed. The full private templa
 
 ```text
 executors/
-|-- EXECUTOR CHARTER - v1.0.md
+|-- EXECUTOR_CHARTER.md        # Public v1.1 entry
+|-- charter/                    # role cores, triggered modules, package index
 |-- AGENTS.md
 |-- ENV_STATE.md
 |-- executor_vault/
@@ -165,7 +157,9 @@ user/tools/
 ```text
 userops/
 |-- README.md
-|-- USEROPS_CHARTER.md
+|-- USEROPS_CHARTER.md          # Public v0.6 entry
+|-- charter/                    # Always-on, Task, Master, decision cards, package index
+|-- archive/                    # prior public v0.5
 |-- USEROPS_CONFIG.example.md
 |-- memory/
 |   |-- MEMORY.md

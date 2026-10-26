@@ -2,6 +2,16 @@
 
 Public development story for H.E.L.M.
 
+## 2026-10-26
+
+The public protocol editions now reflect Council 1.8, Executor 1.1 and UserOps 0.6, with stable entry paths and compressed, role-scoped local charter packages. Previous public editions remain available as historical references.
+
+- Added a human-facing eight-step task walkthrough: browser Council discussion and convergence, local UserOps preflight, separate Executor/Reviewer entry, contract ACK, implementation/review, escalation and closure.
+- Git-tracked baselines use commit SHA + paths; byte hashes remain for outside-Git contracts or physical-byte requirements. Evidence lives once in role-authored round reports. Baseline pins change at approved release points rather than following HEAD.
+- Approved light tasks keep one state surface and minimal records; no separate loadout, preflight note or Human Briefing file is required. Applicable checks and approvals remain. Boards are conditional, and Master scope never blocks Task scope.
+- Executor autonomy stays inside approved boundaries. Reviews separate blockers, logged improvements and contract questions; re-review follows the actual correction and regression scope. Round count is information, while scope drift triggers a chair decision.
+- Updated entry navigation, package indexes, UserOps config example and task-state template. This documentation refresh adds no private task/session material and changes no platform runtime code.
+
 ## 2026-10-22
 
 The platform was repaired for how the council is actually used, after the first real sessions on the rebuilt platform got stuck.

@@ -18,12 +18,23 @@ UserOps helps the human chair answer:
 - What decision changed scope, risk, or authority?
 - What should be remembered after this task closes?
 
+## Start a Scope
+
+Load [UserOps Public v0.6](USEROPS_CHARTER.md) in Task scope for ordinary work. It reads Always-on + Task, keeps the task's state and routing, and can finish with Master offline. Load Master explicitly only for cross-task memory or coordination; it reads Always-on + Master. The package keeps these responsibilities separate without creating new acceptance authority.
+
+For an approved light task, keep one `TASK_STATE.md`, a `DECISION_LEDGER.md` and `interactions.md`; put preflight and selected resources in the state/entry. Round evidence remains in `rounds/rN/`. Add a board only if requested or needed for parallel groups. The template tree is a menu, not a requirement to create every file.
+
 ## Public Files
 
 ```text
 userops/
 |-- README.md
 |-- USEROPS_CHARTER.md
+|-- charter/
+|   |-- core/                 # Always-on, Task, explicitly loaded Master
+|   |-- references/           # decision cards
+|   `-- section_index.json
+|-- archive/                 # previous public v0.5
 |-- USEROPS_CONFIG.example.md
 |-- memory/
 |   |-- MEMORY.md

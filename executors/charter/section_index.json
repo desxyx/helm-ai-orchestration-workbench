@@ -1,0 +1,13 @@
+{
+  "edition": "Public v1.1",
+  "entry": "executors/EXECUTOR_CHARTER.md",
+  "sections": {
+    "Part I": "executors/charter/core/common.md",
+    "Part II": "executors/charter/core/executor.md",
+    "Part III": "executors/charter/core/reviewer.md",
+    "C1": "executors/charter/references/c1_git_ssh_lane.md",
+    "C2": "executors/charter/references/c2_audit_scan_findings.md",
+    "C3": "executors/charter/references/c3_cross_environment_transfer.md",
+    "C4": "executors/charter/references/c4_external_release.md"
+  }
+}
